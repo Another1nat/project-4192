@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0f14">
+  <title>Terrain Layouts — Your Game</title>
+  <style>
+    :root { --bg:#0b0f14; --card:#161d27; --line:#2a3546; --accent:#22c55e; --text:#e6edf8; --muted:#9aa7b8; }
+    * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    body { margin:0 auto; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+           padding:max(12px, env(safe-area-inset-top)) 14px max(24px, env(safe-area-inset-bottom)); max-width:980px; }
+    header { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    header a { color:#fff; text-decoration:none; min-height:44px; display:inline-flex; align-items:center; padding:0 14px; border:1px solid var(--line);
+               border-radius:12px; background:var(--card); font-weight:700; }
+    h1 { font-size:1.3rem; margin:0; flex:1; } h1 #t-h1b { color:var(--accent); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin:12px 0; }
+    .lbl { color:var(--muted); font-size:.74rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin:2px 0 8px; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .chip { min-height:44px; padding:0 14px; border-radius:12px; border:1px solid var(--line); background:#10161e; color:var(--text); font-weight:700; cursor:pointer; font-size:.9rem; }
+    .chip.on { background:rgba(34,197,94,.16); border-color:var(--accent); color:#86efac; }
+    #title { font-weight:800; margin:2px 0 4px; } #sub { color:var(--muted); font-size:.86rem; line-height:1.5; }
+    .map { border:1px solid var(--line); border-radius:14px; overflow:auto; background:#0b0f14; }
+    .map img { display:block; width:100%; height:auto; } .map.zoom img { width:200%; }
+    .tools { display:flex; gap:8px; margin:10px 0 0; flex-wrap:wrap; }
+    table { width:100%; border-collapse:collapse; font-size:.86rem; } th, td { padding:7px 8px; border-top:1px solid #243044; text-align:left; }
+    th { color:var(--muted); font-weight:600; } td.n { font-variant-numeric:tabular-nums; }
+    .sw { display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:6px; border:1px solid #000; }
+    .checks { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; }
+    .chk { background:#10161e; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+    .chk b { display:block; font-size:1.25rem; } .chk span { color:var(--muted); font-size:.78rem; line-height:1.4; }
+    .ok { color:#86efac; } .warn { color:#fbbf24; }
+    .scroll { overflow-x:auto; }
+    footer { color:#667; font-size:.74rem; line-height:1.55; margin-top:22px; } footer a { color:var(--accent); }
+    @media print { body { background:#fff; color:#000; max-width:none; } header, .chips, .tools, footer, .lbl { display:none; } .card { border:none; background:#fff; } th { color:#333; } }
+  </style>
+</head>
+<body>
+  <header><a href="index.html#home">‹ <span id="t-back">Back</span></a><h1><span id="t-h1a">Terrain</span> <span id="t-h1b">Layouts</span></h1></header>
+
+  <div class="card">
+    <div class="lbl" id="t-map">Deployment map</div><div class="chips" id="maps"></div>
+    <div class="lbl" id="t-var">Layout</div><div class="chips" id="vars"></div>
+    <div id="title"></div><div id="sub"></div>
+  </div>
+
+  <div class="map" id="map"></div>
+  <div class="tools">
+    <button class="chip" id="b-zoom">Zoom</button>
+    <button class="chip" id="b-print">Print</button>
+  </div>
+
+  <div class="card"><div class="lbl" id="t-setup">Setup: piece centres</div><div class="scroll" id="setup"></div>
+    <div id="setup-note" style="color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.5"></div></div>
+  <div class="card"><div class="lbl" id="t-checks">Checks</div><div class="checks" id="checks"></div></div>
+  <div class="card"><div class="lbl" id="t-kit">Terrain kit (12 pieces)</div><div class="scroll" id="kit"></div></div>
+
+  <footer id="foot"></footer>
+
+  <script>
+  (function () {
+    const lang = () => { try { return localStorage.getItem('gdm_lang') === 'es' ? 'es' : 'en'; } catch (e) { return 'en'; } };
+    const S = (en, es) => lang() === 'es' ? es : en;
+    const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const MAPS = [['FC', 'A · Frontline Clash', 'A · Choque Frontal'], ['BG', 'B · Broken Ground', 'B · Tierra Rota'], ['PI', 'C · Pincer', 'C · Tenaza']];
+    const FILL = { RL: '#3f4652', RS: '#4b5563', BL: '#9a8f7a', LW: '#8a94a3', CR: '#a77b52' };
+    const TERRAIN = { dense: ['Dense: blocks line of sight', 'Densa: bloquea la línea de visión'], light: ['Light: cover', 'Ligera: cobertura'], exposed: ['Exposed: infantry cover inside', 'Expuesta: cobertura para infantería dentro'] };
+    const q = new URLSearchParams(location.search); const m0 = (q.get('layout') || 'FC-1').split('-');
+    let st = { m: m0[0] || 'FC', v: m0[1] || '1' }, data = null, zoom = false;
+
+    function chips(id, items, cur, on) {
+      const el = document.getElementById(id); el.innerHTML = '';
+      items.forEach(([k, label]) => { const b = document.createElement('button'); b.className = 'chip' + (k === cur ? ' on' : ''); b.textContent = label; b.onclick = () => on(k); el.appendChild(b); });
+    }
+    const pct = x => Math.round(100 * x) + '%';
+    function chk(label, value, good, note) {
+      return `<div class="chk"><b class="${good ? 'ok' : 'warn'}">${esc(value)}</b><span>${esc(label)}<br>${esc(note)}</span></div>`;
+    }
+
+    function paint() {
+      document.documentElement.lang = lang();
+      const T = (id, en, es) => { const e = document.getElementById(id); if (e) e.textContent = S(en, es); };
+      T('t-back', 'Back', 'Volver'); T('t-h1a', 'Terrain', 'Disposiciones'); T('t-h1b', 'Layouts', 'de terreno'); T('t-map', 'Deployment map', 'Mapa de despliegue');
+      T('t-var', 'Layout', 'Disposición'); T('t-setup', 'Setup: piece centres', 'Montaje: centros de las piezas'); T('t-checks', 'Checks', 'Comprobaciones');
+      T('t-kit', 'Terrain kit (12 pieces)', 'Kit de terreno (12 piezas)'); T('b-zoom', zoom ? S('Fit', 'Ajustar') : 'Zoom', zoom ? 'Ajustar' : 'Zoom'); T('b-print', 'Print', 'Imprimir');
+      chips('maps', MAPS.map(([k, en, es]) => [k, S(en, es)]), st.m, k => { st.m = k; paint(); });
+      chips('vars', ['1', '2', '3'].map(k => [k, k]), st.v, k => { st.v = k; paint(); });
+      const code = `${st.m}-${st.v}`, L = data && data[code];
+      history.replaceState(null, '', '?layout=' + code);
+      if (!L) { document.getElementById('title').textContent = S('Layout not found', 'Disposición no encontrada'); return; }
+      document.getElementById('title').textContent = S(L.title, L.title_es);
+      document.getElementById('sub').textContent = S('Table 44" × 30". Red = attacker, blue = defender. The layout is rotated 180° around the centre, so both sides get the same table. Dashed circles: 3" objective control.',
+        'Mesa de 44" × 30". Rojo = atacante, azul = defensor. La disposición gira 180° sobre el centro, así ambos lados tienen la misma mesa. Círculos discontinuos: control de objetivo de 3".');
+      const map = document.getElementById('map'); map.className = 'map' + (zoom ? ' zoom' : '');
+      map.innerHTML = `<img alt="${esc(L.title)}" src="assets/layouts_4192/${esc(code)}.svg">`;
+      // setup table
+      const rows = L.pieces.map(p => `<tr><td><b>${esc(p.code)}</b></td><td><span class="sw" style="background:${FILL[p.type] || '#666'}"></span>${esc(S(p.kind, p.kind_es))}</td>
+        <td class="n">${p.size_in[0]}" × ${p.size_in[1]}"</td><td class="n">${p.height_in}"</td><td class="n">${p.from_left_in}"</td><td class="n">${p.from_front_in}"</td>
+        <td class="n">${p.type === 'CR' ? '–' : p.rotation_deg + '°'}</td><td>${esc(S(...(TERRAIN[p.terrain] || ['', ''])))}</td></tr>`).join('');
+      document.getElementById('setup').innerHTML = `<table><tr><th>${S('Piece', 'Pieza')}</th><th>${S('Type', 'Tipo')}</th><th>${S('Size', 'Tamaño')}</th><th>${S('Height', 'Altura')}</th>
+        <th>${S('From left', 'Desde izq.')}</th><th>${S('From front', 'Desde frente')}</th><th>${S('Rotation', 'Rotación')}</th><th>${S('Rules', 'Reglas')}</th></tr>${rows}</table>`;
+      document.getElementById('setup-note').textContent = S('"From left" and "From front" give the centre of each piece in inches, measured from the left table edge and from the attacker\'s (red, bottom) edge. Rotation: degrees anticlockwise from the long table edge.',
+        '"Desde izq." y "Desde frente" dan el centro de cada pieza en pulgadas, medido desde el borde izquierdo y desde el borde del atacante (rojo, abajo). Rotación: grados en sentido antihorario desde el borde largo de la mesa.');
+      // checks
+      const c = L.checks;
+      document.getElementById('checks').innerHTML = [
+        chk(S('Sightlines between deployment zones blocked by Dense terrain', 'Líneas de visión entre zonas bloqueadas por terreno denso'), pct(c.sightlines_blocked), c.sightlines_blocked >= 0.78,
+            S('target 80–95%: a few open lanes stay for long guns', 'objetivo 80–95%: quedan algunos carriles para armas de largo alcance')),
+        chk(S('Table covered by terrain', 'Mesa cubierta por terreno'), pct(c.coverage), c.coverage >= 0.19 && c.coverage <= 0.28, S('target 19–28%', 'objetivo 19–28%')),
+        chk(S('Route for big models (4" wide) to every objective', 'Ruta para modelos grandes (4" de ancho) a cada objetivo'), c.big_model_route ? S('Yes', 'Sí') : S('No', 'No'), c.big_model_route,
+            S('Class 4–5 can reach both zones and all objectives', 'Clase 4–5 llega a ambas zonas y a todos los objetivos')),
+        chk(S('Safe deployment ground (red / blue)', 'Terreno seguro para desplegar (rojo / azul)'), c.shelter.map(pct).join(' / '), true,
+            S('share of each zone mostly hidden from the enemy zone', 'parte de cada zona casi oculta de la zona enemiga')),
+        chk(S('Lines to the centre objective blocked (red / blue)', 'Líneas al objetivo central bloqueadas (rojo / azul)'), c.centre_blocked.map(pct).join(' / '), true,
+            S('the centre is contested, not hidden', 'el centro se disputa, no queda oculto')),
+        chk(S('Nearest terrain to each objective', 'Terreno más cercano a cada objetivo'), c.objective_cover_in.map(x => x + '"').join(' · '), c.objective_cover_in.every(x => x >= 1.5 && x <= 5),
+            S('cover within 1.5–5", never on the marker', 'cobertura a 1.5–5", nunca sobre el marcador')),
+      ].join('');
+    }
+
+    function kit() {
+      const K = [['RL', 4, 'Large Ruin', 'Ruina grande', '8" × 6"', '5"', 'dense'], ['RS', 2, 'Small Ruin', 'Ruina pequeña', '6" × 4"', '4"', 'dense'],
+                 ['BL', 2, 'Barricade', 'Barricada', '6" × 1.5"', '1.5"', 'light'], ['LW', 2, 'Low Wall', 'Muro bajo', '5" × 2"', '2"', 'light'],
+                 ['CR', 2, 'Crater', 'Cráter', '4" ⌀', '–', 'exposed']];
+      document.getElementById('kit').innerHTML = `<table><tr><th>#</th><th>${S('Piece', 'Pieza')}</th><th>${S('Footprint', 'Huella')}</th><th>${S('Height', 'Altura')}</th><th>${S('Rules', 'Reglas')}</th></tr>` +
+        K.map(([t, n, en, es, size, h, ter]) => `<tr><td>${n}×</td><td><span class="sw" style="background:${FILL[t]}"></span>${esc(S(en, es))}</td><td>${size}</td><td>${h}</td><td>${esc(S(...TERRAIN[ter]))}</td></tr>`).join('') + '</table>';
+    }
+
+    document.getElementById('b-zoom').onclick = () => { zoom = !zoom; paint(); };
+    document.getElementById('b-print').onclick = () => window.print();
+    document.getElementById('foot').innerHTML = S('Your Game terrain layouts are original, generated by <code>gametheory/scripts/layout_gen.py</code> and checked for line of sight, movement and objective cover. Game content: CC BY-NC-SA 4.0.',
+      'Las disposiciones de Your Game son originales, generadas por <code>gametheory/scripts/layout_gen.py</code> y comprobadas en línea de visión, movimiento y cobertura de objetivos. Contenido del juego: CC BY-NC-SA 4.0.');
+    fetch('data/layouts_4192.json').then(r => r.json()).then(d => { data = d; kit(); paint(); })
+      .catch(() => { document.getElementById('title').textContent = S('Could not load the layouts.', 'No se pudieron cargar las disposiciones.'); });
+  })();
+  </script>
+</body>
+</html>

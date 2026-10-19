@@ -9,6 +9,7 @@ test them.
 | [CORE_RULES_MANUAL_4192.md](CORE_RULES_MANUAL_4192.md) | The full core rules: activations, combat, terrain, Command Points, suppression. |
 | [CORE_RULES_REFERENCE_2PAGE.md](CORE_RULES_REFERENCE_2PAGE.md) | Two-page quick reference for the table. |
 | [MISSIONS_AND_TACTICAL_DECK.md](MISSIONS_AND_TACTICAL_DECK.md) | Scoring, the three deployment maps, terrain standard, the 12 Tactical cards. |
+| [TERRAIN_LAYOUTS.md](TERRAIN_LAYOUTS.md) | The 12-piece terrain kit, how layouts are generated and checked, the 9 current layouts. |
 | [UNIVERSAL_KEYWORDS_AND_STRATAGEMS.md](UNIVERSAL_KEYWORDS_AND_STRATAGEMS.md) | Keyword and tactic lexicon. |
 | [STARTER_FORCES_1000PT.md](STARTER_FORCES_1000PT.md) | Ready-to-play 1,000-point armies. |
 

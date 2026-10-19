@@ -121,8 +121,11 @@ def candidate(mp, rnd):
             gap = GAP_MIN if KIT[k]['los'] else GAP_LIGHT
             if any(p.distance(q2) < gap or p.distance(t2) < gap for _, _, _, _, q2, t2 in half):
                 continue
-            if k != 'CR' and p.intersection(zones[0]).area > 0.6 * p.area and k == 'RL' and rnd.random() < 0.5:
-                continue      # keep most of the big ruins out of the zones, but allow one sometimes
+            def in_zone(poly):     # a half-piece in either zone puts one Dense piece (it or its twin) in EACH zone
+                return any(poly.intersection(z).area > 0.3 * poly.area for z in zones)
+            if k in ('RL', 'RS') and in_zone(p):
+                if any(h[0] in ('RL', 'RS') and in_zone(h[4]) for h in half):
+                    continue  # at most one Dense piece per side sits in its deployment zone: the rest fills no-man's land
             half.append((k, x, y, ang, p, twin))
             ok = True
             break
@@ -299,9 +302,11 @@ def main():
             pool.append((score(m), pcs, m))
         pool.sort(key=lambda t: t[0])
         chosen = []
-        for sc, pcs, m in pool[:200]:
+        for sc, pcs, m in pool[:600]:
             if all(distance(pcs, c[1]) >= 3 for c in chosen):
                 m = metrics(mp, pcs, random.Random(1), n=600)       # re-measure the finalists with more sightlines
+                if m['blocked'] < 0.78 or not m['connected']:
+                    continue                                        # failed on the precise measure: try the next one
                 chosen.append((score(m), pcs, m))
             if len(chosen) == args.variants:
                 break

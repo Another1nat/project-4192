@@ -16,30 +16,30 @@
 <polygon points="1002.0,34.0 562.0,34.0 1002.0,342.0" fill="rgba(59,130,246,0.13)" stroke="#3b82f6" stroke-dasharray="6 4" stroke-width="1.5"/>
 <line x1="34.0" y1="364.0" x2="1002.0" y2="364.0" stroke="#555" stroke-dasharray="5 5" stroke-width="1"/>
 <line x1="518.0" y1="694.0" x2="518.0" y2="34.0" stroke="#555" stroke-dasharray="5 5" stroke-width="1"/>
-<polygon points="793.0,51.2 749.0,51.2 749.0,161.2 793.0,161.2" fill="#8a94a3" stroke="#111" stroke-width="1.5"/>
-<text x="771.0" y="112.2" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">A</text>
-<polygon points="376.1,170.6 392.6,142.2 278.4,76.2 261.9,104.6" fill="#9a8f7a" stroke="#111" stroke-width="1.5"/>
-<text x="327.3" y="129.5" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">B</text>
-<polygon points="472.5,180.3 565.7,273.6 690.0,149.3 596.8,55.8" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
-<text x="581.1" y="170.7" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">C</text>
-<polygon points="201.4,207.8 139.2,145.5 45.9,238.8 108.1,301.1" fill="#4b5563" stroke="#111" stroke-width="1.5"/>
-<text x="123.8" y="229.2" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">D</text>
-<circle cx="940.4" cy="231.3" r="44.0" fill="#a77b52" fill-opacity="0.55" stroke="#6b4a2c" stroke-width="2" stroke-dasharray="4 3"/>
-<text x="940.4" y="237.3" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">E</text>
-<polygon points="459.7,320.0 366.4,226.7 241.9,351.2 335.2,444.5" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
-<text x="350.8" y="341.6" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">F</text>
-<polygon points="576.3,408.0 669.6,501.3 794.1,376.8 700.8,283.5" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
-<text x="685.2" y="398.4" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">G</text>
-<circle cx="95.6" cy="496.7" r="44.0" fill="#a77b52" fill-opacity="0.55" stroke="#6b4a2c" stroke-width="2" stroke-dasharray="4 3"/>
-<text x="95.6" y="502.7" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">H</text>
-<polygon points="834.6,520.2 896.8,582.5 990.1,489.2 927.9,426.9" fill="#4b5563" stroke="#111" stroke-width="1.5"/>
-<text x="912.2" y="510.8" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">I</text>
-<polygon points="563.5,547.7 470.3,454.4 346.0,578.7 439.2,672.2" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
-<text x="454.9" y="569.3" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">J</text>
-<polygon points="659.9,557.4 643.4,585.8 757.6,651.8 774.1,623.4" fill="#9a8f7a" stroke="#111" stroke-width="1.5"/>
-<text x="708.7" y="610.5" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">K</text>
-<polygon points="243.0,676.8 287.0,676.8 287.0,566.8 243.0,566.8" fill="#8a94a3" stroke="#111" stroke-width="1.5"/>
-<text x="265.0" y="627.8" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">L</text>
+<circle cx="797.2" cy="92.7" r="44.0" fill="#a77b52" fill-opacity="0.55" stroke="#6b4a2c" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="797.2" y="98.7" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">A</text>
+<polygon points="48.1,129.5 79.1,160.5 157.0,82.8 125.7,51.6" fill="#8a94a3" stroke="#111" stroke-width="1.5"/>
+<text x="102.4" y="112.2" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">B</text>
+<polygon points="641.9,204.3 704.1,142.2 610.8,48.7 548.6,111.0" fill="#4b5563" stroke="#111" stroke-width="1.5"/>
+<text x="626.5" y="132.6" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">C</text>
+<polygon points="337.4,221.7 469.4,221.7 469.4,45.7 337.4,45.7" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
+<text x="403.4" y="139.7" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">D</text>
+<polygon points="448.0,301.7 464.5,330.3 578.7,264.3 562.2,235.7" fill="#9a8f7a" stroke="#111" stroke-width="1.5"/>
+<text x="513.4" y="289.0" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">E</text>
+<polygon points="821.6,210.0 728.3,303.5 852.8,427.8 946.1,334.5" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
+<text x="837.2" y="324.9" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">F</text>
+<polygon points="214.4,518.0 307.7,424.5 183.2,300.2 89.9,393.5" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
+<text x="198.8" y="415.1" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">G</text>
+<polygon points="588.0,426.3 571.5,397.7 457.3,463.7 473.8,492.3" fill="#9a8f7a" stroke="#111" stroke-width="1.5"/>
+<text x="522.6" y="451.0" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">H</text>
+<polygon points="698.6,506.3 566.6,506.3 566.6,682.3 698.6,682.3" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
+<text x="632.6" y="600.3" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">I</text>
+<polygon points="394.1,523.7 331.9,585.8 425.2,679.3 487.4,617.0" fill="#4b5563" stroke="#111" stroke-width="1.5"/>
+<text x="409.5" y="607.4" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">J</text>
+<polygon points="987.9,598.5 956.9,567.5 879.0,645.2 910.3,676.4" fill="#8a94a3" stroke="#111" stroke-width="1.5"/>
+<text x="933.6" y="627.8" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">K</text>
+<circle cx="238.8" cy="635.3" r="44.0" fill="#a77b52" fill-opacity="0.55" stroke="#6b4a2c" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="238.8" y="641.3" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">L</text>
 <circle cx="166.0" cy="562.0" r="66.0" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 4"/>
 <circle cx="166.0" cy="562.0" r="13" fill="#fff" stroke="#ef4444" stroke-width="4"/>
 <text x="166.0" y="567.0" text-anchor="middle" font-size="14" font-weight="800" fill="#ef4444">1</text>
@@ -55,30 +55,30 @@
 <circle cx="782.0" cy="562.0" r="66.0" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 4"/>
 <circle cx="782.0" cy="562.0" r="13" fill="#fff" stroke="#22c55e" stroke-width="4"/>
 <text x="782.0" y="567.0" text-anchor="middle" font-size="14" font-weight="800" fill="#22c55e">5</text>
-<line x1="685.2" y1="392.4" x2="1002.0" y2="392.4" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="685.2" y1="392.4" x2="685.2" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="843.6" y="388.4" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">14.4"</text>
-<text x="689.2" y="543.2" font-size="13" font-weight="700" fill="#1d4ed8">13.7"</text>
-<line x1="95.6" y1="496.7" x2="34.0" y2="496.7" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="95.6" y1="496.7" x2="95.6" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="64.8" y="492.7" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">2.8"</text>
-<text x="99.6" y="595.3" font-size="13" font-weight="700" fill="#1d4ed8">9.0"</text>
-<line x1="912.2" y1="504.8" x2="1002.0" y2="504.8" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="912.2" y1="504.8" x2="912.2" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="957.1" y="500.8" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">4.1"</text>
-<text x="916.2" y="599.4" font-size="13" font-weight="700" fill="#1d4ed8">8.6"</text>
-<line x1="454.9" y1="563.3" x2="34.0" y2="563.3" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="454.9" y1="563.3" x2="454.9" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="244.4" y="559.3" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">19.1"</text>
-<text x="458.9" y="628.7" font-size="13" font-weight="700" fill="#1d4ed8">5.9"</text>
-<line x1="708.7" y1="604.5" x2="1002.0" y2="604.5" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="708.7" y1="604.5" x2="708.7" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="855.4" y="600.5" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">13.3"</text>
-<text x="712.7" y="649.2" font-size="13" font-weight="700" fill="#1d4ed8">4.1"</text>
-<line x1="265.0" y1="621.8" x2="34.0" y2="621.8" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="265.0" y1="621.8" x2="265.0" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="149.5" y="617.8" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">10.5"</text>
-<text x="269.0" y="657.9" font-size="13" font-weight="700" fill="#1d4ed8">3.3"</text>
+<line x1="198.8" y1="409.1" x2="34.0" y2="409.1" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="198.8" y1="409.1" x2="198.8" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="116.4" y="405.1" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">7.5"</text>
+<text x="202.8" y="551.5" font-size="13" font-weight="700" fill="#1d4ed8">12.9"</text>
+<line x1="522.6" y1="445.0" x2="1002.0" y2="445.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="522.6" y1="445.0" x2="522.6" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="762.3" y="441.0" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">21.8"</text>
+<text x="526.6" y="569.5" font-size="13" font-weight="700" fill="#1d4ed8">11.3"</text>
+<line x1="632.6" y1="594.3" x2="1002.0" y2="594.3" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="632.6" y1="594.3" x2="632.6" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="817.3" y="590.3" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">16.8"</text>
+<text x="636.6" y="644.2" font-size="13" font-weight="700" fill="#1d4ed8">4.5"</text>
+<line x1="409.5" y1="601.4" x2="34.0" y2="601.4" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="409.5" y1="601.4" x2="409.5" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="221.8" y="597.4" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">17.1"</text>
+<text x="413.5" y="647.7" font-size="13" font-weight="700" fill="#1d4ed8">4.2"</text>
+<line x1="933.6" y1="621.8" x2="1002.0" y2="621.8" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="933.6" y1="621.8" x2="933.6" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="967.8" y="617.8" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">3.1"</text>
+<text x="937.6" y="657.9" font-size="13" font-weight="700" fill="#1d4ed8">3.3"</text>
+<line x1="238.8" y1="635.3" x2="34.0" y2="635.3" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="238.8" y1="635.3" x2="238.8" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="136.4" y="631.3" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">9.3"</text>
+<text x="242.8" y="664.6" font-size="13" font-weight="700" fill="#1d4ed8">2.7"</text>
 <text x="34" y="24" font-size="15" font-weight="800" fill="#e6edf8">Broken Ground — Layout 2</text>
 <text x="1002" y="24" text-anchor="end" font-size="12" fill="#9aa7b8">44" × 30" · centres measured from the nearest side and the front edge · 180° symmetric</text>
 </svg>

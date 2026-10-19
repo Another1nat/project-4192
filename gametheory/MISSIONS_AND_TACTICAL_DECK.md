@@ -35,10 +35,16 @@ Coordinates are (x along the 44″ edge, y along the 30″ edge), measured from 
 **Grand (44″ × 60″):** use map A with 7 objectives (add two at (11, 30) and (33, 30)).
 
 ### Terrain standard (every map)
-- **4 Dense ruins:** two blocking the centre line of sight between deployment zones, two on the flanks. Footprints about 8″ × 6″.
-- **4 Light pieces** (barricades and walls) near the flank objectives.
-- **2 Exposed pieces** (craters, rubble) in the deployment zones.
-- **No line of sight across the full table without crossing a ruin.** This is what the battle simulator's v2 terrain model assumes: half of units in cover, and hidden beyond 12″ about 35% of the time.
+The 12-piece kit and 9 ready-made layouts (3 per map) are in [TERRAIN_LAYOUTS.md](TERRAIN_LAYOUTS.md) (page: `website/terrain.html`).
+- **6 Dense pieces:** 4 Large Ruins (8″ × 6″, 5″ tall) and 2 Small Ruins (6″ × 4″). At most one per side inside its deployment zone; the rest fill no-man's land.
+- **4 Light pieces:** 2 Barricades (6″ × 1.5″) and 2 Low Walls (5″ × 2″).
+- **2 Exposed pieces:** craters (4″), one in each deployment zone.
+- **Checks every layout passes:**
+  - 80–95 % of zone-to-zone sightlines blocked (Frontline Clash is the most open map, about 80 %);
+  - 19–28 % of the table covered;
+  - a 4″-wide route for big models to every objective;
+  - cover 1.5–5″ from each objective;
+  - 180° symmetric.
 
 ---
 
