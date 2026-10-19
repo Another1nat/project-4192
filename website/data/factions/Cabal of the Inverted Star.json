@@ -1,0 +1,3087 @@
+{
+ "name": "Cabal of the Inverted Star",
+ "factionKeyword": "Cabal of the Inverted Star",
+ "verb": "CAST",
+ "identity": "Warp-geomancer sorcerers, hollow automata and mutating spawn. Every Sorcerer casts one spell per activation: cast safely on 2D6 or channel on 3D6 for a stronger effect and a backlash risk. Signature trick: swapping two of your units.",
+ "sources": [
+  "Project 4192 — gametheory/factions/14_cabal_of_inverted_star.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "The Inverted Rite (spells)",
+   "description": "Each Sorcerer (a Leader with a [PSYCHIC / ARCANE] weapon) may cast 1 spell per activation without spending an Action; each spell once per round for the army. Roll 2D6 (safe) or 3D6 (channel: the effect is doubled where marked ×2; if 2+ dice show a 1, the Sorcerer suffers D3 Fatal Wounds). Spells: Hex-Bolt (6+) D3 Fatal Wounds to an enemy unit within 18″ ×2 · Veil of Mirrors (6+) a friendly unit within 12″ is −1 to be Hit until the End of Round · Warp-Breach (7+) a friendly unit's weapons get +1 PEN this round · Withering Gaze (7+) an enemy unit within 18″ gets −1 to Hit until the End of Round · Chrono-Step (8+) a friendly unit within 12″ makes a 3″ move ×2 · Inverted Geometry (9+) swap two friendly unengaged units within 18″ of the Sorcerer (counts as their move)."
+  },
+  {
+   "name": "Gamble — Channel the Star",
+   "description": "Built into every cast: roll 3D6 instead of 2D6 — marked effects are doubled; if two or more dice show a 1, the Sorcerer suffers D3 Fatal Wounds. (Risk: durability (dice).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "14-det1",
+   "name": "Grand Coven",
+   "cost": 1,
+   "playstyle": "Three or four sorcerers, a wall of automata, spells every activation.",
+   "rules": [
+    {
+     "id": "14-det1-r1",
+     "name": "Coven",
+     "description": "Sorcerers within 6″ of another friendly Sorcerer get +1 to casting rolls; Hex-Bolt can be cast twice per round."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "14-det1-e1",
+     "name": "Grimoire of the Inverted Star",
+     "cost": 10,
+     "description": "**Master of the Astral Geometry** only. Knows one extra spell: Unmaking (9+): an enemy unit within 18″ loses WARD until the End of Round.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cabal of the Inverted Star"
+       ],
+       "datasheet": "Master of the Astral Geometry"
+      }
+     ]
+    },
+    {
+     "id": "14-det1-e2",
+     "name": "Familiar",
+     "cost": 10,
+     "description": "**Sorcerer-Adept** only. Re-roll one casting die per round.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cabal of the Inverted Star"
+       ],
+       "datasheet": "Sorcerer-Adept"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "14-det1-s1",
+     "name": "Arcane Surge",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A spell is cast",
+     "target": "",
+     "effect": "+2 to the casting roll.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "14-det1-s2",
+     "name": "Dispel",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy [PSYCHIC / ARCANE] effect targets a unit within 12″ of a Sorcerer",
+     "target": "",
+     "effect": "Roll 2D6: on 7+ it is cancelled.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "14-det1-s3",
+     "name": "Siphon the Warp",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Sorcerer suffers backlash",
+     "target": "",
+     "effect": "Ignore it.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "14-det2",
+   "name": "Automaton Legion",
+   "cost": 1,
+   "playstyle": "Hollow automata advance under arcane fire.",
+   "rules": [
+    {
+     "id": "14-det2-r1",
+     "name": "All Is Ash",
+     "description": "Hollow and Hex-Plated Automata have WARD 5+; their ranged weapons gain [SHREDDING WOUNDS] while within 6″ of a Sorcerer."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "14-det2-e1",
+     "name": "Soul-Binding",
+     "cost": 15,
+     "description": "**Hex-Blade Exalted** only. The attached unit has UNYIELDING 6+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cabal of the Inverted Star"
+       ],
+       "datasheet": "Hex-Blade Exalted"
+      }
+     ]
+    },
+    {
+     "id": "14-det2-e2",
+     "name": "Inferno Rounds",
+     "cost": 10,
+     "description": "**Hollow Automata** only. +1 PEN with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cabal of the Inverted Star"
+       ],
+       "datasheet": "Hollow Automata"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "14-det2-s1",
+     "name": "Warp-Flame Volley",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An Automata unit Shoots",
+     "target": "",
+     "effect": "Weapons gain [IGNORES COVER].",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "14-det2-s2",
+     "name": "March of the Dead Souls",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An Automata unit activates",
+     "target": "",
+     "effect": "It may Move and Shoot without the [HEAVY] penalty.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "14-det2-s3",
+     "name": "Dust Reforms",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase",
+     "target": "",
+     "effect": "Return D3 slain models to an Automata unit within 6″ of a Sorcerer.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "14-det3",
+   "name": "Geometry Weavers",
+   "cost": 1,
+   "playstyle": "Board control: swap, step and confuse.",
+   "rules": [
+    {
+     "id": "14-det3-r1",
+     "name": "Geometry Weavers",
+     "description": "Inverted Geometry costs 1 CP instead of a cast (still once per round). Units that were swapped get [STEALTH] until the End of Round."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "14-det3-e1",
+     "name": "Tesseract Key",
+     "cost": 10,
+     "description": "**Seer of the Inverted Star** only. Inverted Geometry range is 24″.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cabal of the Inverted Star"
+       ],
+       "datasheet": "Seer of the Inverted Star"
+      }
+     ]
+    },
+    {
+     "id": "14-det3-e2",
+     "name": "Mirror-Shard Robe",
+     "cost": 15,
+     "description": "**Master of the Astral Geometry** only. The attached unit is [STEALTH].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cabal of the Inverted Star"
+       ],
+       "datasheet": "Master of the Astral Geometry"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "14-det3-s1",
+     "name": "Fold Space",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is targeted by a Charge",
+     "target": "",
+     "effect": "It makes a 3″ move before the roll.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "14-det3-s2",
+     "name": "Doubled Geometry",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Inverted Geometry is cast",
+     "target": "",
+     "effect": "Cast it a second time this round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "14-det3-s3",
+     "name": "Lost in the Maze",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit within 12″ of a Sorcerer activates",
+     "target": "",
+     "effect": "−2″ to its moves this activation.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "14-master-of-the-astral-geometry",
+   "name": "Master of the Astral Geometry",
+   "role": "Leader",
+   "composition": "■ **1 Master of the Astral Geometry**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Master of the Astral Geometry"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grand Sorcerer",
+     "description": "Casts 2 spells per activation; +1 to casting rolls.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Geometry Unbound",
+     "description": "Inverted Geometry can be cast for 1 CP instead of rolling.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Astral bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Master of the Astral Geometry"
+     ]
+    },
+    {
+     "name": "Force-stave",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Master of the Astral Geometry"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Master of the Astral Geometry",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Master of the Astral Geometry",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Astral bolt",
+       "count": 1
+      },
+      {
+       "item": "Force-stave",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Hex-Plated Automata",
+      "Astral Disc-Riders",
+      "Mutated Warp-Spawn",
+      "Hexfire Battery"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "14-sorcerer-adept",
+   "name": "Sorcerer-Adept",
+   "role": "Leader",
+   "composition": "■ **1 Sorcerer-Adept**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Sorcerer-Adept"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sorcerer",
+     "description": "Casts 1 spell per activation.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Warded Robes",
+     "description": "The attached unit has WARD 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warp-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Sorcerer-Adept"
+     ]
+    },
+    {
+     "name": "Force-stave",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sorcerer-Adept"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Sorcerer-Adept",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sorcerer-Adept",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Warp-bolt",
+       "count": 1
+      },
+      {
+       "item": "Force-stave",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Warp-Touched Thralls",
+      "Hollow Automata",
+      "Star-Cult Acolytes",
+      "Plume-Kin Raiders",
+      "Star-Wisps"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "14-hex-blade-exalted",
+   "name": "Hex-Blade Exalted",
+   "role": "Leader",
+   "composition": "■ **1 Hex-Blade Exalted**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Hex-Blade Exalted"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Battle-Sorcerer",
+     "description": "Casts 1 spell per activation (Warp-Breach or Veil only).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Unmaking Edge",
+     "description": "Melee critical wounds become Fatal Wounds.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warp-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Hex-Blade Exalted"
+     ]
+    },
+    {
+     "name": "Hex-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Hex-Blade Exalted"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Hex-Blade Exalted",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hex-Blade Exalted",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Warp-bolt",
+       "count": 1
+      },
+      {
+       "item": "Hex-sword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Hex-Plated Automata",
+      "Astral Disc-Riders",
+      "Mutated Warp-Spawn",
+      "Hexfire Battery"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "14-seer-of-the-inverted-star",
+   "name": "Seer of the Inverted Star",
+   "role": "Leader",
+   "composition": "■ **1 Seer of the Inverted Star**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Seer of the Inverted Star"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Fate-Weaver",
+     "description": "Once per round, re-roll one casting roll made within 12″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Sorcerer",
+     "description": "Casts 1 spell (Withering Gaze or Hex-Bolt only).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fate-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Seer of the Inverted Star"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Seer of the Inverted Star"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Seer of the Inverted Star",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Seer of the Inverted Star",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Fate-bolt",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Warp-Touched Thralls",
+      "Hollow Automata",
+      "Star-Cult Acolytes",
+      "Plume-Kin Raiders",
+      "Star-Wisps"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "14-warp-touched-thralls",
+   "name": "Warp-Touched Thralls",
+   "role": "Battleline",
+   "composition": "■ **10 Warp-Touched Thralls**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "EXPENDABLE",
+    "Warp-Touched Thralls"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Expendable Geometry",
+     "description": "May be one of the units swapped by Inverted Geometry even if engaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warp-flame pistols",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Warp-Touched Thralls"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Warp-Touched Thralls"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Warp-Touched Thralls",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Warp-Touched Thralls",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Warp-flame pistols",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sorcerer-Adept",
+    "Seer of the Inverted Star"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "14-hollow-automata",
+   "name": "Hollow Automata",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Hollow Automata"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "All Is Ash",
+     "description": "+1 ARM (to 3+ cap) against Damage 1 attacks.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Bound Spirits",
+     "description": "Hollow and fearless: cannot be Rattled.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Inferno-bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1",
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Hollow Automata"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Hollow Automata"
+     ]
+    }
+   ],
+   "points": 155,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 155,
+     "models": [
+      {
+       "name": "Hollow Automata",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Hollow Automata",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 200,
+     "models": [
+      {
+       "name": "Hollow Automata",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 220,
+     "models": [
+      {
+       "name": "Hollow Automata",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 240,
+     "models": [
+      {
+       "name": "Hollow Automata",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 265,
+     "models": [
+      {
+       "name": "Hollow Automata",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hollow Automata",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Inferno-bolter",
+       "count": 1
+      },
+      {
+       "item": "Chain-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sorcerer-Adept",
+    "Seer of the Inverted Star"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "14-hex-plated-automata",
+   "name": "Hex-Plated Automata",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Hex-Plated Automata"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "All Is Ash",
+     "description": "+1 ARM (to 3+ cap) against Damage 1 attacks.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warp-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Hex-Plated Automata"
+     ]
+    },
+    {
+     "name": "Hex-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Hex-Plated Automata"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Hex-Plated Automata",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Hex-Plated Automata",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Hex-Plated Automata",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hex-Plated Automata",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Warp-flamer",
+       "count": 1
+      },
+      {
+       "item": "Hex-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Geometry",
+    "Hex-Blade Exalted"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "14-star-cult-acolytes",
+   "name": "Star-Cult Acolytes",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Star-Cult Acolytes"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ritual Circle",
+     "description": "A Sorcerer within 3″ of this unit gets +1 to casting rolls.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Battle rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Star-Cult Acolytes"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Star-Cult Acolytes"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Star-Cult Acolytes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Star-Cult Acolytes",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Star-Cult Acolytes",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Star-Cult Acolytes",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Star-Cult Acolytes",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Star-Cult Acolytes",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Star-Cult Acolytes",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Battle rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sorcerer-Adept",
+    "Seer of the Inverted Star"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "14-plume-kin-raiders",
+   "name": "Plume-Kin Raiders",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Plume-Kin Raiders"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ambush Flock",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Hidden Paths",
+     "description": "[INFILTRATORS].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bow",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Plume-Kin Raiders"
+     ]
+    },
+    {
+     "name": "Avian blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Plume-Kin Raiders"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Plume-Kin Raiders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Plume-Kin Raiders",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Plume-Kin Raiders",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Plume-Kin Raiders",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Plume-Kin Raiders",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Plume-Kin Raiders",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Plume-Kin Raiders",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bow",
+       "count": 1
+      },
+      {
+       "item": "Avian blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sorcerer-Adept",
+    "Seer of the Inverted Star"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "14-astral-disc-riders",
+   "name": "Astral Disc-Riders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "11\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Astral Disc-Riders"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Skim",
+     "description": "May Shoot after Falling Back.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warp-glaives",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Astral Disc-Riders"
+     ]
+    },
+    {
+     "name": "Disc-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Astral Disc-Riders"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Astral Disc-Riders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Astral Disc-Riders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Astral Disc-Riders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Astral Disc-Riders",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "11\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Warp-glaives",
+       "count": 1
+      },
+      {
+       "item": "Disc-blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Geometry",
+    "Hex-Blade Exalted"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "14-star-wisps",
+   "name": "Star-Wisps",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "Star-Wisps"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Unstable Form",
+     "description": "WARD 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warp-fire",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Star-Wisps"
+     ]
+    },
+    {
+     "name": "Mutant limbs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Star-Wisps"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Star-Wisps",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Star-Wisps",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Star-Wisps",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Star-Wisps",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Star-Wisps",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Star-Wisps",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Star-Wisps",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Warp-fire",
+       "count": 1
+      },
+      {
+       "item": "Mutant limbs",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sorcerer-Adept",
+    "Seer of the Inverted Star"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "14-mutated-warp-spawn",
+   "name": "Mutated Warp-Spawn",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Mutated Warp-Spawn"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Gift of Mutation",
+     "description": "When a friendly Leader is destroyed within 9″, place a Mutated Warp-Spawn unit of 3 where it died (once per battle).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Mutant limbs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "D6+1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Mutated Warp-Spawn"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Mutated Warp-Spawn",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Mutated Warp-Spawn",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Mutated Warp-Spawn",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Mutated Warp-Spawn",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Mutant limbs",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Geometry",
+    "Hex-Blade Exalted"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "14-hexfire-battery",
+   "name": "Hexfire Battery",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Hexfire Battery"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Burning Hex",
+     "description": "An enemy unit hit cannot use WARD until the End of Round on a 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hexfire cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Hexfire Battery"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Hexfire Battery"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Hexfire Battery",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Hexfire Battery",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hexfire Battery",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Hexfire cannon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Geometry",
+    "Hex-Blade Exalted"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "14-rune-plate-walker",
+   "name": "Rune-Plate Walker",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Rune-Plate Walker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Rune-Plate Walker"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sigil-Wards",
+     "description": "WARD 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warp-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Rune-Plate Walker"
+     ]
+    },
+    {
+     "name": "Hex-fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Rune-Plate Walker"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Rune-Plate Walker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rune-Plate Walker",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Warp-flamer",
+       "count": 1
+      },
+      {
+       "item": "Hex-fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "14-spawn-horror",
+   "name": "Spawn-Horror",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Spawn-Horror**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "8",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Spawn-Horror"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Unpredictable",
+     "description": "At the start of its activation roll a D6: 1–2 +2″ MOV · 3–4 +1 Attack · 5–6 UNYIELDING 5+ until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Writhing tentacles",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Spawn-Horror"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Spawn-Horror",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Spawn-Horror",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "8",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Writhing tentacles",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "14-cosmic-vortex-beast",
+   "name": "Cosmic Vortex-Beast",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Cosmic Vortex-Beast**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Cosmic Vortex-Beast"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Warp-Vortex",
+     "description": "Once per round, one enemy unit within 9″ suffers D3 Fatal Wounds on a 4+ and is Rattled.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Vortex-tentacles",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "8",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Cosmic Vortex-Beast"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Cosmic Vortex-Beast"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Cosmic Vortex-Beast",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cosmic Vortex-Beast",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Vortex-tentacles",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Winged Star-Paragon"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "14-warp-prism-engine",
+   "name": "Warp-Prism Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Warp-Prism Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Warp-Prism Engine"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Arcane Amplifier",
+     "description": "Sorcerers within 6″ add 3″ to spell ranges.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Prism-beam",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Warp-Prism Engine"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Warp-Prism Engine"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Warp-Prism Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Warp-Prism Engine",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Prism-beam",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Winged Star-Paragon"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "14-spire-barge",
+   "name": "Spire-Barge",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Spire-Barge**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "FLY",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Spire-Barge"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Floating Spire",
+     "description": "Embarked Sorcerers may cast spells (measure from the hull).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Spire-Barge"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Spire-Barge"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Spire-Barge",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Spire-Barge",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "9\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Winged Star-Paragon"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "14-winged-star-paragon",
+   "name": "Winged Star-Paragon",
+   "role": "Leader",
+   "composition": "■ **1 Winged Star-Paragon**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Leader",
+    "FLY",
+    "HARDENED",
+    "Winged Star-Paragon"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Greater Sorcerer",
+     "description": "Casts 2 spells per activation; +1 to casting rolls.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Astral Ward",
+     "description": "WARD 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Star-fire",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Winged Star-Paragon"
+     ]
+    },
+    {
+     "name": "Astral stave",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Winged Star-Paragon"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Winged Star-Paragon",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Winged Star-Paragon",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Star-fire",
+       "count": 1
+      },
+      {
+       "item": "Astral stave",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Cosmic Vortex-Beast",
+      "Warp-Prism Engine",
+      "Spire-Barge"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "14-inverted-star-monolith",
+   "name": "Inverted Star Monolith",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Inverted Star Monolith**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Inverted Star Monolith"
+   ],
+   "factionKeywords": [
+    "Cabal of the Inverted Star"
+   ],
+   "abilities": [
+    {
+     "name": "The Inverted Rite (spells)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Living Ritual",
+     "description": "Counts as a Sorcerer (1 spell per activation); friendly casting rolls within 12″ get +1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Star-lance",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6+2",
+     "keywords": [
+      "HEAVY",
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Inverted Star Monolith"
+     ]
+    },
+    {
+     "name": "Warp-flare",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Inverted Star Monolith"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Inverted Star Monolith"
+     ]
+    }
+   ],
+   "points": 285,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 285,
+     "models": [
+      {
+       "name": "Inverted Star Monolith",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Inverted Star Monolith",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Star-lance",
+       "count": 1
+      },
+      {
+       "item": "Warp-flare",
+       "count": 1
+      },
+      {
+       "item": "Titan stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

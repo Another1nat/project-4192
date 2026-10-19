@@ -1,0 +1,3032 @@
+{
+ "name": "Black-Bile Congregation",
+ "factionKeyword": "Black-Bile Congregation",
+ "verb": "CORRODE",
+ "identity": "Bloated plague-knights, shambling pox-carriers and rot-engines. Slow and very hard to kill; an armour-rotting aura grows each round (3″ → 6″ → 9″), so the longer the battle goes, the worse it is to stand near them.",
+ "sources": [
+  "Project 4192 — gametheory/factions/12_black_bile_congregation.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Aura of Rust & Rot · Bloated Resilience",
+   "description": "Enemy units within Contagion Range of any Black-Bile unit have −1 ARM (not cumulative). Contagion Range: 3″ in Round 1, 6″ in Round 2, 9″ from Round 3. Black-Bile units (except [EXPENDABLE] ones) have UNYIELDING 5+."
+  },
+  {
+   "name": "Gamble — Rupture the Blight-Sacs",
+   "description": "When a unit activates: each enemy unit within 3″ suffers D3 Fatal Wounds on a 4+. That Black-Bile unit loses UNYIELDING for the rest of the battle. (Risk: durability (permanent).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "12-det1",
+   "name": "Infected Ground",
+   "cost": 1,
+   "playstyle": "Take objectives, rot them, walk on.",
+   "rules": [
+    {
+     "id": "12-det1-r1",
+     "name": "Corrupted Objectives",
+     "description": "Objectives you control are [SECURED] and emit a 3″ Contagion aura (−1 ARM) until an enemy controls them."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "12-det1-e1",
+     "name": "Censer of Rot",
+     "cost": 30,
+     "description": "**Lord of Black Bile** only. The attached unit has UNYIELDING 5+ even if ruptured.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Black-Bile Congregation"
+       ],
+       "datasheet": "Lord of Black Bile"
+      }
+     ]
+    },
+    {
+     "id": "12-det1-e2",
+     "name": "Pox-Banner",
+     "cost": 10,
+     "description": "**Blight-Knights** only. +1 CTRL per model.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Black-Bile Congregation"
+       ],
+       "datasheet": "Blight-Knights"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "12-det1-s1",
+     "name": "Fester",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "End of Round",
+     "target": "",
+     "effect": "An enemy unit within 3″ of a corrupted objective suffers D3 Fatal Wounds on a 4+.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "12-det1-s2",
+     "name": "Rot from Within",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit takes an objective you corrupted",
+     "target": "",
+     "effect": "It is Rattled.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "12-det1-s3",
+     "name": "Seep",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase",
+     "target": "",
+     "effect": "Contagion Range is +3″ this round (max 9″).",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "12-det2",
+   "name": "Death-Blister Brotherhood",
+   "cost": 1,
+   "playstyle": "Melee hordes that punish anything that fights them.",
+   "rules": [
+    {
+     "id": "12-det2-r1",
+     "name": "Spreaders of Filth",
+     "description": "Every Black-Bile model destroyed in melee inflicts 1 Fatal Wound on the attacking unit on a 5+."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "12-det2-e1",
+     "name": "Blister-Mantle",
+     "cost": 25,
+     "description": "**Rot-Herald Champion** only. UNYIELDING 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Black-Bile Congregation"
+       ],
+       "datasheet": "Rot-Herald Champion"
+      }
+     ]
+    },
+    {
+     "id": "12-det2-e2",
+     "name": "Plague-Bell",
+     "cost": 20,
+     "description": "**Pox-Physician** only. Friendly Class 1 units within 6″ get +1 Attack in melee on a round they charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Black-Bile Congregation"
+       ],
+       "datasheet": "Pox-Physician"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "12-det2-s1",
+     "name": "Burst Open",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is destroyed in melee",
+     "target": "",
+     "effect": "Every enemy unit within 3″ suffers D3 Fatal Wounds on a 4+.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "12-det2-s2",
+     "name": "Shambling Tide",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 1 unit declares a Charge",
+     "target": "",
+     "effect": "+2″ to the roll.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "12-det2-s3",
+     "name": "Endless Pox",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase, once per battle",
+     "target": "",
+     "effect": "Return a destroyed Pox-Carriers unit at half strength within 6″ of your table edge.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "12-det3",
+   "name": "Smog Engines",
+   "cost": 1,
+   "playstyle": "Daemon-engines and drones behind a curtain of filth.",
+   "rules": [
+    {
+     "id": "12-det3-r1",
+     "name": "Smog and Smoke",
+     "description": "Friendly Class 1–2 units within 9″ of a Black-Bile Class 3–5 unit are [STEALTH] against attacks from more than 12″."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "12-det3-e1",
+     "name": "Daemon-Furnace",
+     "cost": 10,
+     "description": "**Blight-Furnace Bell-Tank** only. Corrupting Smog range 9″.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Black-Bile Congregation"
+       ],
+       "datasheet": "Blight-Furnace Bell-Tank"
+      }
+     ]
+    },
+    {
+     "id": "12-det3-e2",
+     "name": "Rot-Crew",
+     "cost": 55,
+     "description": "**Necrotic Siege-Crawler** only. UNYIELDING improves by 1 (5+).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Black-Bile Congregation"
+       ],
+       "datasheet": "Necrotic Siege-Crawler"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "12-det3-s1",
+     "name": "Choking Clouds",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit within 9″ of a Class 3–5 unit Shoots",
+     "target": "",
+     "effect": "−1 to Hit.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "12-det3-s2",
+     "name": "Grinding Advance",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit activates",
+     "target": "",
+     "effect": "+2″ MOV.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "12-det3-s3",
+     "name": "Rusted Ram",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4 unit ends a Charge",
+     "target": "",
+     "effect": "Crushing Impact for 0 CP.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "12-lord-of-black-bile",
+   "name": "Lord of Black Bile",
+   "role": "Leader",
+   "composition": "■ **1 Lord of Black Bile**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Lord of Black Bile"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lord of Decay",
+     "description": "The attached unit re-rolls melee Wound rolls of 1.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Spreading Rot",
+     "description": "Contagion Range from this model is +3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Lord of Black Bile"
+     ]
+    },
+    {
+     "name": "Manreaper scythe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Lord of Black Bile"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Lord of Black Bile",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lord of Black Bile",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Manreaper scythe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Blight-Lord Plate-Knights",
+      "Bloat-Fly Riders",
+      "Bile-Ogres",
+      "Bile-Mortar Team"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "12-rot-herald-champion",
+   "name": "Rot-Herald Champion",
+   "role": "Leader",
+   "composition": "■ **1 Rot-Herald Champion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Rot-Herald Champion"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Herald of Pestilence",
+     "description": "The attached unit gets +1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Rot-Herald Champion"
+     ]
+    },
+    {
+     "name": "Rot-maul",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Rot-Herald Champion"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Rot-Herald Champion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rot-Herald Champion",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Rot-maul",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Blight-Lord Plate-Knights",
+      "Bloat-Fly Riders",
+      "Bile-Ogres",
+      "Bile-Mortar Team"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "12-pox-physician",
+   "name": "Pox-Physician",
+   "role": "Leader",
+   "composition": "■ **1 Pox-Physician**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "4\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Pox-Physician"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grotesque Surgery",
+     "description": "The attached unit ignores damage on 5+ instead of 6+ (UNYIELDING improves by 1, max 5+).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Stitch the Bloat",
+     "description": "Once per round, heal D3 MIGHT on a friendly unit within 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Pox-Physician"
+     ]
+    },
+    {
+     "name": "Bone-saw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Pox-Physician"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Pox-Physician",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pox-Physician",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Bone-saw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Pox-Carriers",
+      "Blight-Knights",
+      "Blight-Spewer Squad",
+      "Death-Blister Brethren",
+      "Pox-Mites"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "12-miasmic-hexer",
+   "name": "Miasmic Hexer",
+   "role": "Leader",
+   "composition": "■ **1 Miasmic Hexer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "4\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Miasmic Hexer"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Miasma",
+     "description": "Friendly units within 6″ count as [STEALTH] against attacks from more than 12″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pox-curse",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Miasmic Hexer"
+     ]
+    },
+    {
+     "name": "Plague-knife",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Miasmic Hexer"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Miasmic Hexer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Miasmic Hexer",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pox-curse",
+       "count": 1
+      },
+      {
+       "item": "Plague-knife",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Pox-Carriers",
+      "Blight-Knights",
+      "Blight-Spewer Squad",
+      "Death-Blister Brethren",
+      "Pox-Mites"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "12-pox-carriers",
+   "name": "Pox-Carriers",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "EXPENDABLE",
+    "Pox-Carriers"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Shamblers",
+     "description": "UNYIELDING 6+ (instead of Bloated Resilience).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Join the Host",
+     "description": "Once per round, when an enemy Class 1 model is destroyed within 3″, return 1 slain model to this unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rotting hands",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Pox-Carriers"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Pox-Carriers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Pox-Carriers",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Pox-Carriers",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Pox-Carriers",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Pox-Carriers",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Pox-Carriers",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pox-Carriers",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rotting hands",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Pox-Physician",
+    "Miasmic Hexer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "12-blight-knights",
+   "name": "Blight-Knights",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Blight-Knights"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Infected Ground",
+     "description": "Objectives this unit controls stay controlled ([SECURED]).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blight-bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Blight-Knights"
+     ]
+    },
+    {
+     "name": "Rusted cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blight-Knights"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Blight-Knights",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Blight-Knights",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Blight-Knights",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Blight-Knights",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 230,
+     "models": [
+      {
+       "name": "Blight-Knights",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 250,
+     "models": [
+      {
+       "name": "Blight-Knights",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blight-Knights",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Blight-bolter",
+       "count": 1
+      },
+      {
+       "item": "Rusted cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Pox-Physician",
+    "Miasmic Hexer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "12-blight-lord-plate-knights",
+   "name": "Blight-Lord Plate-Knights",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Blight-Lord Plate-Knights"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bubotic Weapons",
+     "description": "Melee Hit rolls of 5+ are critical and auto-wound ([IMPALING HITS]).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blight-combi",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Blight-Lord Plate-Knights"
+     ]
+    },
+    {
+     "name": "Bubotic axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Blight-Lord Plate-Knights"
+     ]
+    }
+   ],
+   "points": 185,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 185,
+     "models": [
+      {
+       "name": "Blight-Lord Plate-Knights",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 230,
+     "models": [
+      {
+       "name": "Blight-Lord Plate-Knights",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 280,
+     "models": [
+      {
+       "name": "Blight-Lord Plate-Knights",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blight-Lord Plate-Knights",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Blight-combi",
+       "count": 1
+      },
+      {
+       "item": "Bubotic axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lord of Black Bile",
+    "Rot-Herald Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "12-blight-spewer-squad",
+   "name": "Blight-Spewer Squad",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Blight-Spewer Squad**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Blight-Spewer Squad"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Clouds of Filth",
+     "description": "Units hit by this unit are within Contagion Range until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bile-spewer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Blight-Spewer Squad"
+     ]
+    },
+    {
+     "name": "Rusted cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blight-Spewer Squad"
+     ]
+    }
+   ],
+   "points": 200,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 200,
+     "models": [
+      {
+       "name": "Blight-Spewer Squad",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blight-Spewer Squad",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Bile-spewer",
+       "count": 1
+      },
+      {
+       "item": "Rusted cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Pox-Physician",
+    "Miasmic Hexer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "12-death-blister-brethren",
+   "name": "Death-Blister Brethren",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Death-Blister Brethren"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Spreaders of Filth",
+     "description": "Each model of this unit destroyed in melee: the attacking unit suffers 1 Fatal Wound on a 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rot-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Death-Blister Brethren"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Death-Blister Brethren",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Death-Blister Brethren",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Death-Blister Brethren",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Death-Blister Brethren",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Death-Blister Brethren",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Death-Blister Brethren",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Death-Blister Brethren",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rot-blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Pox-Physician",
+    "Miasmic Hexer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "12-pox-mites",
+   "name": "Pox-Mites",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "EXPENDABLE",
+    "Pox-Mites"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Underfoot",
+     "description": "Enemy units within 1″ of this unit cannot Fall Back unless they pass a D6 roll of 3+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rotting hands",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Pox-Mites"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Pox-Mites",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Pox-Mites",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Pox-Mites",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Pox-Mites",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Pox-Mites",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Pox-Mites",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pox-Mites",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rotting hands",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Pox-Physician",
+    "Miasmic Hexer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "12-bloat-fly-riders",
+   "name": "Bloat-Fly Riders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Bloat-Fly Riders"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Droning Swarm",
+     "description": "Enemy units within 6″ suffer −1″ to Charge rolls.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bile-spitter",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Bloat-Fly Riders"
+     ]
+    },
+    {
+     "name": "Plague-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Bloat-Fly Riders"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Bloat-Fly Riders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Bloat-Fly Riders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Bloat-Fly Riders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bloat-Fly Riders",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bile-spitter",
+       "count": 1
+      },
+      {
+       "item": "Plague-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lord of Black Bile",
+    "Rot-Herald Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "12-bile-ogres",
+   "name": "Bile-Ogres",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Bile-Ogres"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Splitting Seams",
+     "description": "+1 Attack in melee while damaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bloated fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Bile-Ogres"
+     ]
+    }
+   ],
+   "points": 170,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 170,
+     "models": [
+      {
+       "name": "Bile-Ogres",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Bile-Ogres",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 255,
+     "models": [
+      {
+       "name": "Bile-Ogres",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bile-Ogres",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bloated fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lord of Black Bile",
+    "Rot-Herald Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "12-bile-mortar-team",
+   "name": "Bile-Mortar Team",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Bile-Mortar Team"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pestilent Shells",
+     "description": "Units hit are within Contagion Range until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bile-mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Bile-Mortar Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bile-Mortar Team"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Bile-Mortar Team",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Bile-Mortar Team",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bile-Mortar Team",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bile-mortar",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lord of Black Bile",
+    "Rot-Herald Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "12-blight-hauler-engine",
+   "name": "Blight-Hauler Engine",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Blight-Hauler Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "4\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "10",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Blight-Hauler Engine"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rotting Engine",
+     "description": "UNYIELDING improves to 5+ while within 6″ of another Blight-Hauler.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bile-cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Blight-Hauler Engine"
+     ]
+    },
+    {
+     "name": "Grinding jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Blight-Hauler Engine"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Blight-Hauler Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blight-Hauler Engine",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "4\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Bile-cannon",
+       "count": 1
+      },
+      {
+       "item": "Grinding jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "12-foetid-bloat-drone",
+   "name": "Foetid Bloat-Drone",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Foetid Bloat-Drone**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "7",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Foetid Bloat-Drone"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Foul Downdraft",
+     "description": "Units within 3″ of it at the end of its move suffer 1 Fatal Wound on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Plaguespitters",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Foetid Bloat-Drone"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Foetid Bloat-Drone"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Foetid Bloat-Drone",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Foetid Bloat-Drone",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "7",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Plaguespitters",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "12-necrotic-siege-crawler",
+   "name": "Necrotic Siege-Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Necrotic Siege-Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "18",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Necrotic Siege-Crawler"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rust-Fumes",
+     "description": "Contagion Range from this unit is +3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Battle cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Necrotic Siege-Crawler"
+     ]
+    },
+    {
+     "name": "Bile-spewer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Necrotic Siege-Crawler"
+     ]
+    },
+    {
+     "name": "Grinding tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Necrotic Siege-Crawler"
+     ]
+    }
+   ],
+   "points": 220,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 220,
+     "models": [
+      {
+       "name": "Necrotic Siege-Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Necrotic Siege-Crawler",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "18",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "18",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Battle cannon",
+       "count": 1
+      },
+      {
+       "item": "Bile-spewer",
+       "count": 1
+      },
+      {
+       "item": "Grinding tracks",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "12-blight-furnace-bell-tank",
+   "name": "Blight-Furnace Bell-Tank",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Blight-Furnace Bell-Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "6\"",
+    "MS": "6+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Blight-Furnace Bell-Tank"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Corrupting Smog",
+     "description": "Enemy units within 6″ suffer −1 to WARD and UNYIELDING rolls.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rot-mortar",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Blight-Furnace Bell-Tank"
+     ]
+    },
+    {
+     "name": "Grinding tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blight-Furnace Bell-Tank"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Blight-Furnace Bell-Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blight-Furnace Bell-Tank",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "6+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rot-mortar",
+       "count": 1
+      },
+      {
+       "item": "Grinding tracks",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "12-bile-hauler-transport",
+   "name": "Bile-Hauler Transport",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Bile-Hauler Transport**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Bile-Hauler Transport"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Seeping Hull",
+     "description": "Embarked units count as within Contagion Range sources.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Bile-Hauler Transport"
+     ]
+    },
+    {
+     "name": "Grinding tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bile-Hauler Transport"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Bile-Hauler Transport",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bile-Hauler Transport",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Grinding tracks",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "12-bloated-rot-behemoth",
+   "name": "Bloated Rot-Behemoth",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Bloated Rot-Behemoth**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Bloated Rot-Behemoth"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Spew",
+     "description": "Once per round, D3 Fatal Wounds on a 3+ to a unit within 6″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Bloated Rot-Behemoth"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Bloated Rot-Behemoth"
+     ]
+    }
+   ],
+   "points": 190,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 190,
+     "models": [
+      {
+       "name": "Bloated Rot-Behemoth",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bloated Rot-Behemoth",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "12-great-unclean-engine",
+   "name": "Great Unclean Engine",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Great Unclean Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "20",
+    "CTRL": "6",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Great Unclean Engine"
+   ],
+   "factionKeywords": [
+    "Black-Bile Congregation"
+   ],
+   "abilities": [
+    {
+     "name": "Aura of Rust & Rot · Bloated Resilience",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rot-Bells",
+     "description": "Contagion Range from this model is 9″ from Round 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pestilence cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Great Unclean Engine"
+     ]
+    },
+    {
+     "name": "Bile-geysers",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Great Unclean Engine"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Great Unclean Engine"
+     ]
+    }
+   ],
+   "points": 420,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 420,
+     "models": [
+      {
+       "name": "Great Unclean Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Great Unclean Engine",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "20",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "20",
+     "CTRL": "6",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Pestilence cannon",
+       "count": 1
+      },
+      {
+       "item": "Bile-geysers",
+       "count": 1
+      },
+      {
+       "item": "Titan stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

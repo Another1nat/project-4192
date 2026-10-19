@@ -1,0 +1,3061 @@
+{
+ "name": "Frost-Skaer Blood-Raiders",
+ "factionKeyword": "Frost-Skaer Blood-Raiders",
+ "verb": "SAGA",
+ "identity": "Runic berserkers, shield-walls, frost-bear riders and war-mammoths. The army improves permanently by completing public Sagas mid-battle, so both players fight over whether the deed happens.",
+ "sources": [
+  "Project 4192 — gametheory/factions/09_frost_skaer_blood_raiders.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Sworn Sagas",
+   "description": "Three public Sagas; each unlocks a permanent army-wide rune the moment it is completed: Saga of the Warrior-Born (destroy an enemy Leader) → melee [STRIKE FIRST] on a round your unit charged; Saga of the Beast-Slayer (destroy a Class 4–5 unit) → melee weapons gain [IMPALING HITS]; Saga of the Bear (a unit below Half-Strength survives a round) → UNYIELDING 6+."
+  },
+  {
+   "name": "Gamble — Death-Saga Boast",
+   "description": "Command Phase: one Leader boasts a deed for this round (destroy a named enemy unit, or control a named objective). Success: +1 CP and that Leader gets +1 Attack for the rest of the battle. Failure: the Leader and its attached unit are Rattled. (Risk: tempo.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "09-det1",
+   "name": "Saga of the Hunt",
+   "cost": 1,
+   "playstyle": "Fast packs and riders hunting leaders.",
+   "rules": [
+    {
+     "id": "09-det1-r1",
+     "name": "Berserker Fury",
+     "description": "Units below Starting Strength (or damaged) get +1 Attack in melee; Leaders get +2."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "09-det1-e1",
+     "name": "Wolf-Pelt Cloak",
+     "cost": 10,
+     "description": "**Wolf-Skin Huntress** only. [STEALTH].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Frost-Skaer Blood-Raiders"
+       ],
+       "datasheet": "Wolf-Skin Huntress"
+      }
+     ]
+    },
+    {
+     "id": "09-det1-e2",
+     "name": "Hunter's Torc",
+     "cost": 15,
+     "description": "**Jarl Saga-Lord** only. The attached unit gets +1 Attack in melee.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Frost-Skaer Blood-Raiders"
+       ],
+       "datasheet": "Jarl Saga-Lord"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "09-det1-s1",
+     "name": "Runic Brand of the Wolf",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit activates (once per battle)",
+     "target": "",
+     "effect": "It may Move and then Charge this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "09-det1-s2",
+     "name": "Blood in the Snow",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit is destroyed",
+     "target": "",
+     "effect": "One friendly unit within 6″ heals D3 MIGHT.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "09-det1-s3",
+     "name": "Saga-Seeker",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Saga is completed",
+     "target": "",
+     "effect": "Gain 1 CP.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "09-det2",
+   "name": "Saga of the Storm",
+   "cost": 1,
+   "playstyle": "Shamans and shield-walls advancing under the blizzard.",
+   "rules": [
+    {
+     "id": "09-det2-r1",
+     "name": "Blizzard",
+     "description": "Frost-Shaman Howling Blizzard range is 9″; enemy units more than 18″ away cannot target Frost-Skaer Class 1–2 units."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "09-det2-e1",
+     "name": "Storm-Rune Staff",
+     "cost": 10,
+     "description": "**Runic Frost-Shaman** only. The attached unit has WARD 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Frost-Skaer Blood-Raiders"
+       ],
+       "datasheet": "Runic Frost-Shaman"
+      }
+     ]
+    },
+    {
+     "id": "09-det2-e2",
+     "name": "Ice-Rimed Shields",
+     "cost": 10,
+     "description": "**Shield-Wall Huscarls** only. +1 ARM (to 3+ cap).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Frost-Skaer Blood-Raiders"
+       ],
+       "datasheet": "Shield-Wall Huscarls"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "09-det2-s1",
+     "name": "Whiteout",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase",
+     "target": "",
+     "effect": "Until the End of Round, enemy ranged attacks beyond 12″ suffer −1 to Hit.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "09-det2-s2",
+     "name": "Frozen Ground",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit within 9″ of a Shaman declares a Charge",
+     "target": "",
+     "effect": "−2″ to the Charge roll.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "09-det2-s3",
+     "name": "Hail of Spears",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit shoots at a unit within 8″",
+     "target": "",
+     "effect": "Its weapons gain [HAILFIRE 1].",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "09-det3",
+   "name": "Mammoth Stampede",
+   "cost": 1,
+   "playstyle": "Giants, mammoths and chariots in a single crushing wave.",
+   "rules": [
+    {
+     "id": "09-det3-r1",
+     "name": "Stampede",
+     "description": "Class 3–5 Frost-Skaer units get +1″ MOV and their Crushing Impact rolls get +1."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "09-det3-e1",
+     "name": "Elder's Rune-Harness",
+     "cost": 15,
+     "description": "**Armored War-Mammoth** only. UNYIELDING 6+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Frost-Skaer Blood-Raiders"
+       ],
+       "datasheet": "Armored War-Mammoth"
+      }
+     ]
+    },
+    {
+     "id": "09-det3-e2",
+     "name": "Beast-Caller's Horn",
+     "cost": 10,
+     "description": "**Skald of the Long Hall** only. Friendly Class 3–5 units within 9″ get +2″ to Charge rolls.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Frost-Skaer Blood-Raiders"
+       ],
+       "datasheet": "Skald of the Long Hall"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "09-det3-s1",
+     "name": "Trumpeting Charge",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4–5 unit declares a Charge",
+     "target": "",
+     "effect": "Re-roll the Charge roll.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "09-det3-s2",
+     "name": "Crushing Weight",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit triggers Crushing Impact",
+     "target": "",
+     "effect": "Inflict +D3 Fatal Wounds.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "09-det3-s3",
+     "name": "Thick Hide",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4–5 unit is targeted",
+     "target": "",
+     "effect": "Incoming Damage −1 for the attack.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "09-jarl-saga-lord",
+   "name": "Jarl Saga-Lord",
+   "role": "Leader",
+   "composition": "■ **1 Jarl Saga-Lord**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Jarl Saga-Lord"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lord of the Long Hall",
+     "description": "The attached unit re-rolls melee Wound rolls of 1.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Saga-Keeper",
+     "description": "Sagas completed within 12″ of this model also give +1 CP (once each).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Throwing axe",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Jarl Saga-Lord"
+     ]
+    },
+    {
+     "name": "Frost-forged axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Jarl Saga-Lord"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Jarl Saga-Lord",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Jarl Saga-Lord",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Throwing axe",
+       "count": 1
+      },
+      {
+       "item": "Frost-forged axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Hearth-Wardens",
+      "Frost-Bear Riders",
+      "Harpoon-Ballista Crew"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "09-jarl-on-frost-bear",
+   "name": "Jarl on Frost-Bear",
+   "role": "Leader",
+   "composition": "■ **1 Jarl on Frost-Bear**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "11\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "9",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Leader",
+    "Jarl on Frost-Bear"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bear-Rage",
+     "description": "+1 Attack in melee on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Jarl on Frost-Bear"
+     ]
+    },
+    {
+     "name": "Bear claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Jarl on Frost-Bear"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Jarl on Frost-Bear",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Jarl on Frost-Bear",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "11\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "9",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Rune-axe",
+       "count": 1
+      },
+      {
+       "item": "Bear claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Frost-Wolf Chariot",
+      "Ice-Troll"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "09-runic-frost-shaman",
+   "name": "Runic Frost-Shaman",
+   "role": "Leader",
+   "composition": "■ **1 Runic Frost-Shaman**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Runic Frost-Shaman"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Howling Blizzard",
+     "description": "Friendly units within 6″ count as [STEALTH]; enemy Charges ending within 6″ suffer −1″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Frost-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Runic Frost-Shaman"
+     ]
+    },
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Runic Frost-Shaman"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Runic Frost-Shaman",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Runic Frost-Shaman",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Frost-bolt",
+       "count": 1
+      },
+      {
+       "item": "Rune-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Blood-Skaer Raiders",
+      "Shield-Wall Huscarls",
+      "Hall-Guard Berserkers",
+      "Wolf-Kin Pack",
+      "Long-Bow Skirmishers",
+      "Raven-Winged Seers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-skald-of-the-long-hall",
+   "name": "Skald of the Long Hall",
+   "role": "Leader",
+   "composition": "■ **1 Skald of the Long Hall**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Skald of the Long Hall"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Battle-Chant",
+     "description": "Friendly Class 1 units within 6″ get +1 Attack on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Skald of the Long Hall"
+     ]
+    },
+    {
+     "name": "Bearded axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Skald of the Long Hall"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Skald of the Long Hall",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Skald of the Long Hall",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Bearded axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Blood-Skaer Raiders",
+      "Shield-Wall Huscarls",
+      "Hall-Guard Berserkers",
+      "Wolf-Kin Pack",
+      "Long-Bow Skirmishers",
+      "Raven-Winged Seers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-wolf-skin-huntress",
+   "name": "Wolf-Skin Huntress",
+   "role": "Leader",
+   "composition": "■ **1 Wolf-Skin Huntress**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "Wolf-Skin Huntress"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Mark the Prey",
+     "description": "Once per round, an enemy unit hit by her counts as \"named\" for Death-Saga Boasts.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rune-bow",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Wolf-Skin Huntress"
+     ]
+    },
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Wolf-Skin Huntress"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Wolf-Skin Huntress",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Wolf-Skin Huntress",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rune-bow",
+       "count": 1
+      },
+      {
+       "item": "Rune-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Blood-Skaer Raiders",
+      "Shield-Wall Huscarls",
+      "Hall-Guard Berserkers",
+      "Wolf-Kin Pack",
+      "Long-Bow Skirmishers",
+      "Raven-Winged Seers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-blood-skaer-raiders",
+   "name": "Blood-Skaer Raiders",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Blood-Skaer Raiders"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Berserker Fury",
+     "description": "+1 Attack in melee while below Starting Strength.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Throwing axes",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Blood-Skaer Raiders"
+     ]
+    },
+    {
+     "name": "Bearded axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blood-Skaer Raiders"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Blood-Skaer Raiders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Blood-Skaer Raiders",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Blood-Skaer Raiders",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Blood-Skaer Raiders",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Blood-Skaer Raiders",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Blood-Skaer Raiders",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blood-Skaer Raiders",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Throwing axes",
+       "count": 1
+      },
+      {
+       "item": "Bearded axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Runic Frost-Shaman",
+    "Skald of the Long Hall",
+    "Wolf-Skin Huntress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-shield-wall-huscarls",
+   "name": "Shield-Wall Huscarls",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Shield-Wall Huscarls"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shield-Wall",
+     "description": "Enemies get −1 to Hit this unit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Throwing spears",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Shield-Wall Huscarls"
+     ]
+    },
+    {
+     "name": "Axe & shield",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Shield-Wall Huscarls"
+     ]
+    }
+   ],
+   "points": 160,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 160,
+     "models": [
+      {
+       "name": "Shield-Wall Huscarls",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Shield-Wall Huscarls",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Shield-Wall Huscarls",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 230,
+     "models": [
+      {
+       "name": "Shield-Wall Huscarls",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 250,
+     "models": [
+      {
+       "name": "Shield-Wall Huscarls",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 275,
+     "models": [
+      {
+       "name": "Shield-Wall Huscarls",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Shield-Wall Huscarls",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Throwing spears",
+       "count": 1
+      },
+      {
+       "item": "Axe & shield",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Runic Frost-Shaman",
+    "Skald of the Long Hall",
+    "Wolf-Skin Huntress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-hall-guard-berserkers",
+   "name": "Hall-Guard Berserkers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "6+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Hall-Guard Berserkers"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Trance of Fury",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Berserker Fury",
+     "description": "+1 Attack while below Starting Strength.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Great axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Hall-Guard Berserkers"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Hall-Guard Berserkers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Hall-Guard Berserkers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Hall-Guard Berserkers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Hall-Guard Berserkers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Hall-Guard Berserkers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Hall-Guard Berserkers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hall-Guard Berserkers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "6+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Great axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Runic Frost-Shaman",
+    "Skald of the Long Hall",
+    "Wolf-Skin Huntress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-wolf-kin-pack",
+   "name": "Wolf-Kin Pack",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Wolf-Kin Pack"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lead the Raid",
+     "description": "[SCOUTS 6″].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Wolf-fangs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Wolf-Kin Pack"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Wolf-Kin Pack",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Wolf-Kin Pack",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Wolf-Kin Pack",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Wolf-Kin Pack",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Wolf-Kin Pack",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Wolf-Kin Pack",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Wolf-Kin Pack",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Wolf-fangs",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Runic Frost-Shaman",
+    "Skald of the Long Hall",
+    "Wolf-Skin Huntress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-hearth-wardens",
+   "name": "Hearth-Wardens",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Hearth-Wardens"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Oath-Bound Guard",
+     "description": "Damage to an attached Leader is taken by this unit on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rune-crossbows",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Hearth-Wardens"
+     ]
+    },
+    {
+     "name": "Great axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Hearth-Wardens"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Hearth-Wardens",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Hearth-Wardens",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 195,
+     "models": [
+      {
+       "name": "Hearth-Wardens",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hearth-Wardens",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Rune-crossbows",
+       "count": 1
+      },
+      {
+       "item": "Great axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Jarl Saga-Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "09-frost-bear-riders",
+   "name": "Frost-Bear Riders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Frost-Bear Riders"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bear Charge",
+     "description": "Crushing Impact for 0 CP on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bear claws & spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Frost-Bear Riders"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Frost-Bear Riders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Frost-Bear Riders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Frost-Bear Riders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Frost-Bear Riders",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bear claws & spear",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Jarl Saga-Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "09-long-bow-skirmishers",
+   "name": "Long-Bow Skirmishers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "6+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "Long-Bow Skirmishers"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Hunters' Eyes",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Long-bow",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Long-Bow Skirmishers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Long-Bow Skirmishers"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Long-Bow Skirmishers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Long-Bow Skirmishers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Long-Bow Skirmishers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Long-Bow Skirmishers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "6+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Long-bow",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Runic Frost-Shaman",
+    "Skald of the Long Hall",
+    "Wolf-Skin Huntress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-raven-winged-seers",
+   "name": "Raven-Winged Seers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Raven-Winged Seers"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Omen",
+     "description": "Once per round, an enemy unit within 12″ loses Cover until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Raven-curse",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Raven-Winged Seers"
+     ]
+    },
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Raven-Winged Seers"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Raven-Winged Seers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Raven-Winged Seers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Raven-Winged Seers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Raven-Winged Seers",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Raven-curse",
+       "count": 1
+      },
+      {
+       "item": "Rune-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Runic Frost-Shaman",
+    "Skald of the Long Hall",
+    "Wolf-Skin Huntress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "09-harpoon-ballista-crew",
+   "name": "Harpoon-Ballista Crew",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Harpoon-Ballista Crew"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Haul In",
+     "description": "Its [HARPOON] drags 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Whale-harpoon",
+     "type": "Ranged",
+     "range": "30\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "HARPOON"
+     ],
+     "models": [
+      "Harpoon-Ballista Crew"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Harpoon-Ballista Crew"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Harpoon-Ballista Crew",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Harpoon-Ballista Crew",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Harpoon-Ballista Crew",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Whale-harpoon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Jarl Saga-Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "09-frost-wolf-chariot",
+   "name": "Frost-Wolf Chariot",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Frost-Wolf Chariot**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "10",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Frost-Wolf Chariot"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Scythed Wheels",
+     "description": "Crushing Impact for 0 CP on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Javelins",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Frost-Wolf Chariot"
+     ]
+    },
+    {
+     "name": "Scythed wheels & wolves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Frost-Wolf Chariot"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Frost-Wolf Chariot",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Frost-Wolf Chariot",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Javelins",
+       "count": 1
+      },
+      {
+       "item": "Scythed wheels & wolves",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Jarl on Frost-Bear"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "09-ice-troll",
+   "name": "Ice-Troll",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Ice-Troll**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "9\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Ice-Troll"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Regeneration",
+     "description": "At the End of Round, heal D3 MIGHT.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Troll claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Ice-Troll"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Ice-Troll",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ice-Troll",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Troll claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Jarl on Frost-Bear"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "09-frost-giant",
+   "name": "Frost-Giant",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Frost-Giant**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Frost-Giant"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Hurl Raider",
+     "description": "Once per round, place one friendly Class 1 unit within 6″ wholly within 9″ of its position (not within 3″ of enemies).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Glacier club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Frost-Giant"
+     ]
+    },
+    {
+     "name": "Tusks & trunk",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Frost-Giant"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Frost-Giant",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Frost-Giant",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Glacier club",
+       "count": 1
+      },
+      {
+       "item": "Tusks & trunk",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "09-armored-war-mammoth",
+   "name": "Armored War-Mammoth",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Armored War-Mammoth**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Armored War-Mammoth"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Glacial Trample",
+     "description": "After it charges, one engaged unit suffers D3 Fatal Wounds on a 2+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Howdah archers",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Armored War-Mammoth"
+     ]
+    },
+    {
+     "name": "Tusks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Armored War-Mammoth"
+     ]
+    },
+    {
+     "name": "Tusks & trunk",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Armored War-Mammoth"
+     ]
+    }
+   ],
+   "points": 170,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 170,
+     "models": [
+      {
+       "name": "Armored War-Mammoth",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Armored War-Mammoth",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Howdah archers",
+       "count": 1
+      },
+      {
+       "item": "Tusks",
+       "count": 1
+      },
+      {
+       "item": "Tusks & trunk",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "09-longship-ice-sled",
+   "name": "Longship Ice-Sled",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Longship Ice-Sled**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "11\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "13",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Longship Ice-Sled"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Raid Landing",
+     "description": "Units that disembark may declare a Charge this activation.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rune-ballista",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Longship Ice-Sled"
+     ]
+    },
+    {
+     "name": "Prow-ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Longship Ice-Sled"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Longship Ice-Sled",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Longship Ice-Sled",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "11\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "13",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Rune-ballista",
+       "count": 1
+      },
+      {
+       "item": "Prow-ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "09-ancient-elder-mammoth",
+   "name": "Ancient Elder Mammoth",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Ancient Elder Mammoth**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "11\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Ancient Elder Mammoth"
+   ],
+   "factionKeywords": [
+    "Frost-Skaer Blood-Raiders"
+   ],
+   "abilities": [
+    {
+     "name": "Sworn Sagas",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Stampede",
+     "description": "After it charges, every enemy unit within 3″ suffers D3 Fatal Wounds on a 3+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Mammoth stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Ancient Elder Mammoth"
+     ]
+    },
+    {
+     "name": "Tusks & trunk",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Ancient Elder Mammoth"
+     ]
+    },
+    {
+     "name": "War-tower archers",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Ancient Elder Mammoth"
+     ]
+    }
+   ],
+   "points": 265,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 265,
+     "models": [
+      {
+       "name": "Ancient Elder Mammoth",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ancient Elder Mammoth",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "11\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Mammoth stomp",
+       "count": 1
+      },
+      {
+       "item": "Tusks & trunk",
+       "count": 1
+      },
+      {
+       "item": "War-tower archers",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

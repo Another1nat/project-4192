@@ -1,0 +1,3090 @@
+{
+ "name": "Astral Shadow-Clans",
+ "factionKeyword": "Astral Shadow-Clans",
+ "verb": "AGONY",
+ "identity": "Dark-tech raider clans and cyber-ronin swordsmen on blade-skiffs. Glass cannons that grow stronger as the battle bleeds: every enemy unit they destroy adds Agony they spend to empower their next strike.",
+ "sources": [
+  "Project 4192 — gametheory/factions/20_astral_shadow_clans.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Agony Harvest",
+   "description": "Start the battle with 2 Agony (max 4). Gain 1 each time an enemy unit is destroyed. When a unit activates, spend 1 Agony to Empower it until the end of the activation: re-roll Hit rolls, +1 PEN in melee and +2″ to Charge rolls. Agony is your own resource; it is never placed on enemy units."
+  },
+  {
+   "name": "Gamble — All-In Assassination",
+   "description": "Once per battle, spend ALL Agony (minimum 2) when a unit activates: its weapons gain [PRECISION] and [SHREDDING WOUNDS] this activation; you cannot gain Agony again until the End of Round. (Risk: resource.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "20-det1",
+   "name": "Skysplinter Raiders",
+   "cost": 1,
+   "playstyle": "Skiffs and barges deliver strike teams, then fly on.",
+   "rules": [
+    {
+     "id": "20-det1-r1",
+     "name": "Skysplinter Assault",
+     "description": "Units that disembarked this round get +1 to Wound and [CRASHING]."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "20-det1-e1",
+     "name": "Umbral Veil",
+     "cost": 20,
+     "description": "**Master of the Astral Edge** only. WARD 3+ until the first time a WARD roll of 1 is made, then no WARD.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Astral Shadow-Clans"
+       ],
+       "datasheet": "Master of the Astral Edge"
+      }
+     ]
+    },
+    {
+     "id": "20-det1-e2",
+     "name": "Agony-Tap",
+     "cost": 10,
+     "description": "**Flesh-Sculptor** only. Start the battle with 3 Agony.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Astral Shadow-Clans"
+       ],
+       "datasheet": "Flesh-Sculptor"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "20-det1-s1",
+     "name": "Lightning Raid",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A transport moves",
+     "target": "",
+     "effect": "Embarked units may disembark after its move and still Charge.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "20-det1-s2",
+     "name": "Splinter Storm",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit Shoots",
+     "target": "",
+     "effect": "Weapons gain [ANTI-INFANTRY 3+].",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "20-det1-s3",
+     "name": "Skiff Dive",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A [FLY] unit is targeted",
+     "target": "",
+     "effect": "−1 to Hit.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "20-det2",
+   "name": "Cyber-Ronin",
+   "cost": 1,
+   "playstyle": "Sword-saints and duelists in the open, no transports.",
+   "rules": [
+    {
+     "id": "20-det2-r1",
+     "name": "Way of the Blade",
+     "description": "Melee weapons gain [STRIKE FIRST] on a round the unit charged; units that spend Agony also gain [PRECISION]."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "20-det2-e1",
+     "name": "Ancestral Blade",
+     "cost": 15,
+     "description": "**Cyber-Ronin Sword-Saint** only. +1 Damage in melee on a round he charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Astral Shadow-Clans"
+       ],
+       "datasheet": "Cyber-Ronin Sword-Saint"
+      }
+     ]
+    },
+    {
+     "id": "20-det2-e2",
+     "name": "Duelist's Discipline",
+     "cost": 10,
+     "description": "**Cyber-Ronin Duelists** only. Enemies get −1 to Hit them in melee.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Astral Shadow-Clans"
+       ],
+       "datasheet": "Cyber-Ronin Duelists"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "20-det2-s1",
+     "name": "Draw and Cut",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged",
+     "target": "",
+     "effect": "Its Retaliation Strike resolves before the charger fights.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "20-det2-s2",
+     "name": "Kensei",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit destroys an enemy Leader",
+     "target": "",
+     "effect": "Gain 2 Agony.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "20-det2-s3",
+     "name": "Bladestorm",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is selected to Fight",
+     "target": "",
+     "effect": "Its melee weapons gain [REAPING 1].",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "20-det3",
+   "name": "Venom Cabal",
+   "cost": 1,
+   "playstyle": "Poison gunlines and flesh-sculptors.",
+   "rules": [
+    {
+     "id": "20-det3-r1",
+     "name": "Venom",
+     "description": "Ranged weapons with [IMPALING HITS] also gain [ANTI-INFANTRY 4+]; Flesh-Sculptors heal D3 MIGHT on the attached unit at the End of Round."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "20-det3-e1",
+     "name": "Elixir of Agony",
+     "cost": 15,
+     "description": "**Flesh-Sculptor** only. Friendly units within 6″ get +1 to Wound in melee on a round they charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Astral Shadow-Clans"
+       ],
+       "datasheet": "Flesh-Sculptor"
+      }
+     ]
+    },
+    {
+     "id": "20-det3-e2",
+     "name": "Hex-Venom Rounds",
+     "cost": 10,
+     "description": "**Shadow-Kabar Raiders** only. +1 PEN with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Astral Shadow-Clans"
+       ],
+       "datasheet": "Shadow-Kabar Raiders"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "20-det3-s1",
+     "name": "Toxin Cloud",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit Shoots",
+     "target": "",
+     "effect": "Units hit suffer −1″ MOV until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "20-det3-s2",
+     "name": "Pain-Fuelled",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An Agony is spent",
+     "target": "",
+     "effect": "Heal 1 MIGHT on the empowered unit.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "20-det3-s3",
+     "name": "Lethal Dose",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit targets a Class 1 unit",
+     "target": "",
+     "effect": "Re-roll Wound rolls.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "20-master-of-the-astral-edge",
+   "name": "Master of the Astral Edge",
+   "role": "Leader",
+   "composition": "■ **1 Master of the Astral Edge**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Master of the Astral Edge"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lord of Agony",
+     "description": "Gain 1 Agony when this model destroys an enemy model (max once per round).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Blade-Masters",
+     "description": "The attached unit gets +1 Attack in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blast-pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Master of the Astral Edge"
+     ]
+    },
+    {
+     "name": "Void-katana",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Master of the Astral Edge"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Master of the Astral Edge",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Master of the Astral Edge",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Blast-pistol",
+       "count": 1
+      },
+      {
+       "item": "Void-katana",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Cyber-Ronin Duelists",
+      "Sky-Board Reavers",
+      "Pain-Sculpted Brutes",
+      "Ronin Iron-Wardens",
+      "Void-Lance Team"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "20-cyber-ronin-sword-saint",
+   "name": "Cyber-Ronin Sword-Saint",
+   "role": "Leader",
+   "composition": "■ **1 Cyber-Ronin Sword-Saint**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Cyber-Ronin Sword-Saint"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Iaijutsu",
+     "description": "[STRIKE FIRST].",
+     "type": "datasheet"
+    },
+    {
+     "name": "Perfect Cut",
+     "description": "Melee [PRECISION]; crits on 5+ auto-wound.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Splinter pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Cyber-Ronin Sword-Saint"
+     ]
+    },
+    {
+     "name": "Monomolecular nodachi",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Cyber-Ronin Sword-Saint"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Cyber-Ronin Sword-Saint",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cyber-Ronin Sword-Saint",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Splinter pistol",
+       "count": 1
+      },
+      {
+       "item": "Monomolecular nodachi",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Cyber-Ronin Duelists",
+      "Sky-Board Reavers",
+      "Pain-Sculpted Brutes",
+      "Ronin Iron-Wardens",
+      "Void-Lance Team"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "20-flesh-sculptor",
+   "name": "Flesh-Sculptor",
+   "role": "Leader",
+   "composition": "■ **1 Flesh-Sculptor**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Flesh-Sculptor"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grafted Resilience",
+     "description": "The attached unit has UNYIELDING 5+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Harvest",
+     "description": "When the attached unit destroys an enemy unit, gain 1 extra Agony (max 4).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Venom injector",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Flesh-Sculptor"
+     ]
+    },
+    {
+     "name": "Monomolecular katana",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Flesh-Sculptor"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Flesh-Sculptor",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Flesh-Sculptor",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Venom injector",
+       "count": 1
+      },
+      {
+       "item": "Monomolecular katana",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Shadow-Kabar Raiders",
+      "Arena-Blade Cultists",
+      "Umbral Stalkers",
+      "Void-Wing Scourges"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "20-void-veil-assassin",
+   "name": "Void-Veil Assassin",
+   "role": "Leader",
+   "composition": "■ **1 Void-Veil Assassin**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Void-Veil Assassin"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Fade",
+     "description": "May Fall Back and still Shoot or Charge.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Splinter pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Void-Veil Assassin"
+     ]
+    },
+    {
+     "name": "Shadow-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Void-Veil Assassin"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Void-Veil Assassin",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Void-Veil Assassin",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Splinter pistol",
+       "count": 1
+      },
+      {
+       "item": "Shadow-blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Shadow-Kabar Raiders",
+      "Arena-Blade Cultists",
+      "Umbral Stalkers",
+      "Void-Wing Scourges"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "20-shadow-kabar-raiders",
+   "name": "Shadow-Kabar Raiders",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Shadow-Kabar Raiders"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Raid Strike",
+     "description": "Units that disembarked this round get +1 to Wound.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Splinter rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "IMPALING HITS",
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Shadow-Kabar Raiders"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Shadow-Kabar Raiders"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Shadow-Kabar Raiders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Shadow-Kabar Raiders",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Shadow-Kabar Raiders",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Shadow-Kabar Raiders",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Shadow-Kabar Raiders",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Shadow-Kabar Raiders",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Shadow-Kabar Raiders",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Splinter rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Flesh-Sculptor",
+    "Void-Veil Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "20-arena-blade-cultists",
+   "name": "Arena-Blade Cultists",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Arena-Blade Cultists"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Arena Dodge",
+     "description": "Enemies get −1 to Hit them in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Arena-Blade Cultists"
+     ]
+    },
+    {
+     "name": "Hydra-gauntlets",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Arena-Blade Cultists"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Arena-Blade Cultists",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Arena-Blade Cultists",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Arena-Blade Cultists",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Arena-Blade Cultists",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Arena-Blade Cultists",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Arena-Blade Cultists",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Arena-Blade Cultists",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Hydra-gauntlets",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Flesh-Sculptor",
+    "Void-Veil Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "20-cyber-ronin-duelists",
+   "name": "Cyber-Ronin Duelists",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Cyber-Ronin Duelists"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blade Discipline",
+     "description": "[STRIKE FIRST] on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Killing Edge",
+     "description": "Melee Hit rolls of 5+ auto-wound.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monomolecular katana",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Cyber-Ronin Duelists"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Cyber-Ronin Duelists",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Cyber-Ronin Duelists",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Cyber-Ronin Duelists",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cyber-Ronin Duelists",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Monomolecular katana",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Edge",
+    "Cyber-Ronin Sword-Saint"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "20-umbral-stalkers",
+   "name": "Umbral Stalkers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "SCOUTS 6\"",
+    "UNSEEN 12\"",
+    "Umbral Stalkers"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Shadow-Step",
+     "description": "After it Fights, it may make a 3″ move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Shadow-fire",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Umbral Stalkers"
+     ]
+    },
+    {
+     "name": "Monomolecular katana",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Umbral Stalkers"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Umbral Stalkers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Umbral Stalkers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Umbral Stalkers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Umbral Stalkers",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Shadow-fire",
+       "count": 1
+      },
+      {
+       "item": "Monomolecular katana",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Flesh-Sculptor",
+    "Void-Veil Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "20-sky-board-reavers",
+   "name": "Sky-Board Reavers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "14\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Sky-Board Reavers"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Eviscerating Fly-By",
+     "description": "When it moves over an enemy unit, roll a D6 per Reaver: each 4+ is 1 Fatal Wound (max 1 unit per activation).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Splinter pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Sky-Board Reavers"
+     ]
+    },
+    {
+     "name": "Bladed vanes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Sky-Board Reavers"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Sky-Board Reavers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Sky-Board Reavers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Sky-Board Reavers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sky-Board Reavers",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "14\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Splinter pistol",
+       "count": 1
+      },
+      {
+       "item": "Bladed vanes",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Edge",
+    "Cyber-Ronin Sword-Saint"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "20-void-wing-scourges",
+   "name": "Void-Wing Scourges",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Void-Wing Scourges"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Strike and Soar",
+     "description": "After it Shoots, it may make a 3″ move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Void-Wing Scourges"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Void-Wing Scourges"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Void-Wing Scourges",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Void-Wing Scourges",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Void-Wing Scourges",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Void-Wing Scourges",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Void-lance",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Flesh-Sculptor",
+    "Void-Veil Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "20-pain-sculpted-brutes",
+   "name": "Pain-Sculpted Brutes",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "5",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Pain-Sculpted Brutes"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sculpted Flesh",
+     "description": "UNYIELDING 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Flesh-gauntlets",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Pain-Sculpted Brutes"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Pain-Sculpted Brutes",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Pain-Sculpted Brutes",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Pain-Sculpted Brutes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pain-Sculpted Brutes",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "5",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Flesh-gauntlets",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Edge",
+    "Cyber-Ronin Sword-Saint"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "20-ronin-iron-wardens",
+   "name": "Ronin Iron-Wardens",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Ronin Iron-Wardens"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bodyguard Oath",
+     "description": "An attached Leader's damage is taken by this unit on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Splinter pistols",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Ronin Iron-Wardens"
+     ]
+    },
+    {
+     "name": "Klaive-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Ronin Iron-Wardens"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Ronin Iron-Wardens",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Ronin Iron-Wardens",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Ronin Iron-Wardens",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ronin Iron-Wardens",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Splinter pistols",
+       "count": 1
+      },
+      {
+       "item": "Klaive-glaive",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Edge",
+    "Cyber-Ronin Sword-Saint"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "20-void-lance-team",
+   "name": "Void-Lance Team",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Void-Lance Team"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grav-Platform",
+     "description": "May Shoot after a Move without penalty.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Void-Lance Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Void-Lance Team"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Void-Lance Team",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Void-Lance Team",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Void-Lance Team",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Void-lance",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Master of the Astral Edge",
+    "Cyber-Ronin Sword-Saint"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "20-bladed-sky-skiff",
+   "name": "Bladed Sky-Skiff",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Bladed Sky-Skiff**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "14\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "5",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "TRANSPORT 6",
+    "Bladed Sky-Skiff"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 6",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Skysplinter Assault",
+     "description": "Units that disembark from it get +1 to Wound and [CRASHING] that round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Bladed Sky-Skiff"
+     ]
+    },
+    {
+     "name": "Bladed hull",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bladed Sky-Skiff"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Bladed Sky-Skiff",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bladed Sky-Skiff",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "14\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "5",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Void-lance",
+       "count": 1
+      },
+      {
+       "item": "Bladed hull",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "20-agony-engine-construct",
+   "name": "Agony-Engine Construct",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Agony-Engine Construct**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "7",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Agony-Engine Construct"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sculpted Engine",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Agony-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Agony-Engine Construct"
+     ]
+    },
+    {
+     "name": "Surgical blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Agony-Engine Construct"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Agony-Engine Construct",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Agony-Engine Construct",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "7",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Agony-flamer",
+       "count": 1
+      },
+      {
+       "item": "Surgical blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "20-void-ravager-gunship",
+   "name": "Void-Ravager Gunship",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Void-Ravager Gunship**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "14\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "14",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Void-Ravager Gunship"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Hit and Fade",
+     "description": "After it Shoots, it may make a 3″ move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Void-Ravager Gunship"
+     ]
+    },
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Void-Ravager Gunship"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Void-Ravager Gunship"
+     ]
+    }
+   ],
+   "points": 160,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 160,
+     "models": [
+      {
+       "name": "Void-Ravager Gunship",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Void-Ravager Gunship",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "14\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "14",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Void-lance",
+       "count": 1
+      },
+      {
+       "item": "Void-lance",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "20-shadow-barge",
+   "name": "Shadow-Barge",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Shadow-Barge**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "14\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "11",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 3",
+    "FLY",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Shadow-Barge"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 3",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Raider Deck",
+     "description": "Units may disembark after it moved and still Charge.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Splinter-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Shadow-Barge"
+     ]
+    },
+    {
+     "name": "Bladed keel",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Shadow-Barge"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Shadow-Barge",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Shadow-Barge",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "11",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "14\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "11",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Splinter-cannon",
+       "count": 1
+      },
+      {
+       "item": "Bladed keel",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "20-agony-colossus",
+   "name": "Agony-Colossus",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Agony-Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "11\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "13",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Agony-Colossus"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Feeds on Pain",
+     "description": "Gain 1 Agony the first time it destroys an enemy unit each round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Flesh-scythes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "8",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Agony-Colossus"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Agony-Colossus"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Agony-Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Agony-Colossus",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "11\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "13",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Flesh-scythes",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "20-void-bomber",
+   "name": "Void-Bomber",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Void-Bomber**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "16\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "11",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Void-Bomber"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bombing Run",
+     "description": "Its bombs target a unit it moved over this activation (range: the unit it passed).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Void-bombs",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Void-Bomber"
+     ]
+    },
+    {
+     "name": "Splinter-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Void-Bomber"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Void-Bomber",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Void-Bomber",
+     "M": "16\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "11",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "16\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "11",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Void-bombs",
+       "count": 1
+      },
+      {
+       "item": "Splinter-cannon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "20-umbral-dread-cruiser",
+   "name": "Umbral Dread-Cruiser",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Umbral Dread-Cruiser**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "16\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "18",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "FLY",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Umbral Dread-Cruiser"
+   ],
+   "factionKeywords": [
+    "Astral Shadow-Clans"
+   ],
+   "abilities": [
+    {
+     "name": "Agony Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Pain-Amplifier",
+     "description": "While on the battlefield, Agony maximum is 5.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Umbral Dread-Cruiser"
+     ]
+    },
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Umbral Dread-Cruiser"
+     ]
+    },
+    {
+     "name": "Splinter-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Umbral Dread-Cruiser"
+     ]
+    },
+    {
+     "name": "Splinter-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Umbral Dread-Cruiser"
+     ]
+    }
+   ],
+   "points": 200,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 200,
+     "models": [
+      {
+       "name": "Umbral Dread-Cruiser",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Umbral Dread-Cruiser",
+     "M": "16\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "18",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "16\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "18",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Void-lance",
+       "count": 1
+      },
+      {
+       "item": "Void-lance",
+       "count": 1
+      },
+      {
+       "item": "Splinter-cannon",
+       "count": 1
+      },
+      {
+       "item": "Splinter-cannon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

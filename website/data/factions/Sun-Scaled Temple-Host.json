@@ -1,0 +1,3236 @@
+{
+ "name": "Sun-Scaled Temple-Host",
+ "factionKeyword": "Sun-Scaled Temple-Host",
+ "verb": "SAVAGE",
+ "identity": "Saurian temple-warriors, scaleling skirmishers and primeval thunder-lizards. Every saurian and beast bites as well as strikes, and they become crueller against anything already bleeding.",
+ "sources": [
+  "Project 4192 — gametheory/factions/17_sun_scaled_temple_host.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Predatory Jaws · Cold-Blooded",
+   "description": "Saurian Class 1–2 units and every Class 3–5 beast carry Predatory jaws ([EXTRA ATTACKS], [SHREDDING WOUNDS]). Cold-Blooded: melee Hit rolls of 5+ are critical against enemy units that are below Starting Strength or damaged, and Sun-Scaled units ignore negative modifiers to their melee Hit rolls."
+  },
+  {
+   "name": "Gamble — Apex Savagery",
+   "description": "When a unit is selected to Fight: +1 Damage on its melee weapons this activation, but it has −1 ARM until it next activates. (Risk: exposure (durability).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "17-det1",
+   "name": "Sunclaw Hunt",
+   "cost": 1,
+   "playstyle": "Beasts and raptors running down the wounded.",
+   "rules": [
+    {
+     "id": "17-det1-r1",
+     "name": "Rampage",
+     "description": "Monstrous Rampage applies to all Class 4–5 Sun-Scaled units; Class 2–5 units get +1″ to Charge rolls against units below Starting Strength."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "17-det1-e1",
+     "name": "Ancient Scar",
+     "cost": 15,
+     "description": "**Old-Blood on Tyrant-Lizard** only. UNYIELDING 6+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Scaled Temple-Host"
+       ],
+       "datasheet": "Old-Blood on Tyrant-Lizard"
+      }
+     ]
+    },
+    {
+     "id": "17-det1-e2",
+     "name": "Blood-Crest",
+     "cost": 15,
+     "description": "**Scar-Veteran Old-Blood** only. +1 Damage on a round he charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Scaled Temple-Host"
+       ],
+       "datasheet": "Scar-Veteran Old-Blood"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "17-det1-s1",
+     "name": "Savage Bite",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is selected to Fight",
+     "target": "",
+     "effect": "Its Predatory jaws get +1 Attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "17-det1-s2",
+     "name": "Scent of Prey",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit is damaged",
+     "target": "",
+     "effect": "One friendly unit within 12″ makes a 3″ move toward it.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "17-det1-s3",
+     "name": "Primal Roar",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4–5 unit ends a Charge",
+     "target": "",
+     "effect": "Engaged enemy units are Rattled on a 4+.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "17-det2",
+   "name": "Starborne Prophecy",
+   "cost": 1,
+   "playstyle": "The plan of the elders: a cosmic asterism shapes the battle.",
+   "rules": [
+    {
+     "id": "17-det2-r1",
+     "name": "Asterisms",
+     "description": "At deployment pick 1; in Round 3 pick a second (both active). Great Drake (+1 to Wound in melee on a round the unit charged) · Hunter's Steed (+2″ MOV) · Sage's Staff (+1 ARM to 3+ cap against ranged attacks)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "17-det2-e1",
+     "name": "Starstone Cartouche",
+     "cost": 10,
+     "description": "**Sun-Priest Astromancer** only. Pick the second asterism in Round 2.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Scaled Temple-Host"
+       ],
+       "datasheet": "Sun-Priest Astromancer"
+      }
+     ]
+    },
+    {
+     "id": "17-det2-e2",
+     "name": "Comet-Fragment Blade",
+     "cost": 10,
+     "description": "**Star-Sage Elder** only. The attached unit has WARD 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Scaled Temple-Host"
+       ],
+       "datasheet": "Star-Sage Elder"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "17-det2-s1",
+     "name": "Celestial Alignment",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase",
+     "target": "",
+     "effect": "One unit benefits from all three asterisms until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "17-det2-s2",
+     "name": "Predestined Strike",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is selected to Shoot or Fight",
+     "target": "",
+     "effect": "Re-roll Hit rolls of 1.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "17-det2-s3",
+     "name": "Sky-Fire Comet",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase, once per battle",
+     "target": "",
+     "effect": "An enemy unit within 24″ of a Leader suffers D6 Fatal Wounds on a 3+.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "17-det3",
+   "name": "Coalesced Scales",
+   "cost": 1,
+   "playstyle": "Armoured saurians and shell-beasts holding the temple.",
+   "rules": [
+    {
+     "id": "17-det3-r1",
+     "name": "Scaly Skin",
+     "description": "Saurian Class 2 units and Class 4–5 beasts reduce incoming PEN by 1 (min 0)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "17-det3-e1",
+     "name": "Obsidian Scale-Plate",
+     "cost": 10,
+     "description": "**Temple-Guard Saurians** only. +1 ARM (to 3+ cap).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Scaled Temple-Host"
+       ],
+       "datasheet": "Temple-Guard Saurians"
+      }
+     ]
+    },
+    {
+     "id": "17-det3-e2",
+     "name": "Thick-Scaled Hide",
+     "cost": 15,
+     "description": "**Horned Shell-Bastion** only. UNYIELDING 6+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Scaled Temple-Host"
+       ],
+       "datasheet": "Horned Shell-Bastion"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "17-det3-s1",
+     "name": "Cold Endurance",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is targeted",
+     "target": "",
+     "effect": "Incoming Damage −1 (min 1) for the attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "17-det3-s2",
+     "name": "Unbreakable Line",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit within 3″ of an objective is charged",
+     "target": "",
+     "effect": "It is not Rattled; +1 to Wound on its Retaliation Strike.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "17-det3-s3",
+     "name": "Temple Stand",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase",
+     "target": "",
+     "effect": "One unit gets [SECURED] until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "17-star-sage-elder",
+   "name": "Star-Sage Elder",
+   "role": "Leader",
+   "composition": "■ **1 Star-Sage Elder**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "9",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Leader",
+    "FLY",
+    "Star-Sage Elder"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "The Great Plan",
+     "description": "Once per round, re-roll one Charge roll or one casting/Pyre-like roll for a friendly unit within 12″; +1 CP in Round 3.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Celestial Ward",
+     "description": "Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Star-light",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Star-Sage Elder"
+     ]
+    },
+    {
+     "name": "Palanquin guards",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Star-Sage Elder"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Star-Sage Elder",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Star-Sage Elder",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "9",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Star-light",
+       "count": 1
+      },
+      {
+       "item": "Palanquin guards",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Feathered Sky-Serpent"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "17-scar-veteran-old-blood",
+   "name": "Scar-Veteran Old-Blood",
+   "role": "Leader",
+   "composition": "■ **1 Scar-Veteran Old-Blood**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Scar-Veteran Old-Blood"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Primal Fury",
+     "description": "The attached unit gets +1 Attack in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-stone blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Scar-Veteran Old-Blood"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Scar-Veteran Old-Blood"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Scar-Veteran Old-Blood",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scar-Veteran Old-Blood",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Sun-stone blade",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Temple-Guard Saurians",
+      "Raptor-Knights",
+      "Horned Brute-Saurians",
+      "Fire-Spitter Handlers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "17-sun-priest-astromancer",
+   "name": "Sun-Priest Astromancer",
+   "role": "Leader",
+   "composition": "■ **1 Sun-Priest Astromancer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Sun-Priest Astromancer"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shrouding Light",
+     "description": "Friendly units within 6″ are [STEALTH] against attacks from more than 12″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Read the Stars",
+     "description": "Once per battle, change the Starborne asterism (any detachment).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Solar bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Sun-Priest Astromancer"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sun-Priest Astromancer"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Sun-Priest Astromancer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sun-Priest Astromancer",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Solar bolt",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Saurian Spawn-Warriors",
+      "Scaleling Javelin-Scouts",
+      "Raptor Pack",
+      "Wing-Lizard Riders",
+      "Chameleon Snipers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "17-chameleon-stalker",
+   "name": "Chameleon Stalker",
+   "role": "Leader",
+   "composition": "■ **1 Chameleon Stalker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Chameleon Stalker"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Vanish",
+     "description": "After it Shoots, it may make a 3″ move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Poison blowpipe",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "PRECISION",
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Chameleon Stalker"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Chameleon Stalker"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Chameleon Stalker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Chameleon Stalker",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Poison blowpipe",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Saurian Spawn-Warriors",
+      "Scaleling Javelin-Scouts",
+      "Raptor Pack",
+      "Wing-Lizard Riders",
+      "Chameleon Snipers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "17-saurian-spawn-warriors",
+   "name": "Saurian Spawn-Warriors",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Saurian Spawn-Warriors"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shield-Phalanx",
+     "description": "Enemies get −1 to Hit them in melee while they are within 3″ of an objective.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Javelins",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Saurian Spawn-Warriors"
+     ]
+    },
+    {
+     "name": "Obsidian club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Saurian Spawn-Warriors"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Saurian Spawn-Warriors"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Saurian Spawn-Warriors",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 200,
+     "models": [
+      {
+       "name": "Saurian Spawn-Warriors",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Saurian Spawn-Warriors",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 250,
+     "models": [
+      {
+       "name": "Saurian Spawn-Warriors",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 270,
+     "models": [
+      {
+       "name": "Saurian Spawn-Warriors",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 295,
+     "models": [
+      {
+       "name": "Saurian Spawn-Warriors",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Saurian Spawn-Warriors",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Javelins",
+       "count": 1
+      },
+      {
+       "item": "Obsidian club",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sun-Priest Astromancer",
+    "Chameleon Stalker"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "17-scaleling-javelin-scouts",
+   "name": "Scaleling Javelin-Scouts",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "SCOUTS 6\"",
+    "Scaleling Javelin-Scouts"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Chameleon Skin",
+     "description": "[STEALTH] while in terrain.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Dart-pipes",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Scaleling Javelin-Scouts"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scaleling Javelin-Scouts"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Scaleling Javelin-Scouts",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Scaleling Javelin-Scouts",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Scaleling Javelin-Scouts",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Scaleling Javelin-Scouts",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Scaleling Javelin-Scouts",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Scaleling Javelin-Scouts",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scaleling Javelin-Scouts",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Dart-pipes",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sun-Priest Astromancer",
+    "Chameleon Stalker"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "17-raptor-pack",
+   "name": "Raptor Pack",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Raptor Pack"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pack Hunters",
+     "description": "+2″ to Charge rolls against units below Starting Strength.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sickle claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Raptor Pack"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Raptor Pack"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Raptor Pack",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Raptor Pack",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Raptor Pack",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Raptor Pack",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Raptor Pack",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Raptor Pack",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Raptor Pack",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sickle claws",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sun-Priest Astromancer",
+    "Chameleon Stalker"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "17-temple-guard-saurians",
+   "name": "Temple-Guard Saurians",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Temple-Guard Saurians"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sworn Guardians",
+     "description": "An attached Leader's damage is taken by this unit on a 4+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Unshakeable",
+     "description": "Cannot be Rattled.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Temple halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Temple-Guard Saurians"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Temple-Guard Saurians"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Temple-Guard Saurians",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 220,
+     "models": [
+      {
+       "name": "Temple-Guard Saurians",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 250,
+     "models": [
+      {
+       "name": "Temple-Guard Saurians",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Temple-Guard Saurians",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Temple halberd",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scar-Veteran Old-Blood"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "17-raptor-knights",
+   "name": "Raptor-Knights",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "11\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Raptor-Knights"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blood-Frenzied Mounts",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Javelins",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Raptor-Knights"
+     ]
+    },
+    {
+     "name": "Raptor-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Raptor-Knights"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Raptor-Knights"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Raptor-Knights",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Raptor-Knights",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Raptor-Knights",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Raptor-Knights",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "11\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Javelins",
+       "count": 1
+      },
+      {
+       "item": "Raptor-spear",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scar-Veteran Old-Blood"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "17-wing-lizard-riders",
+   "name": "Wing-Lizard Riders",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Wing-Lizard Riders"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Dropping Rocks",
+     "description": "Once per round, when it moves over an enemy unit, D3 Fatal Wounds on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Star-darts",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Wing-Lizard Riders"
+     ]
+    },
+    {
+     "name": "Raking talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Wing-Lizard Riders"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Wing-Lizard Riders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Wing-Lizard Riders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Wing-Lizard Riders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Wing-Lizard Riders",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Star-darts",
+       "count": 1
+      },
+      {
+       "item": "Raking talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sun-Priest Astromancer",
+    "Chameleon Stalker"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "17-horned-brute-saurians",
+   "name": "Horned Brute-Saurians",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Horned Brute-Saurians"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sweeping Blows",
+     "description": "Melee weapons gain [REAPING 1] against Class 1 units.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Stone maul",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Horned Brute-Saurians"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Horned Brute-Saurians"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Horned Brute-Saurians",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Horned Brute-Saurians",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 240,
+     "models": [
+      {
+       "name": "Horned Brute-Saurians",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Horned Brute-Saurians",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Stone maul",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scar-Veteran Old-Blood"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "17-chameleon-snipers",
+   "name": "Chameleon Snipers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Chameleon Snipers"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Ambush Position",
+     "description": "+1 to Hit in Round 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Poison blowpipe",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Chameleon Snipers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Chameleon Snipers"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Chameleon Snipers",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Chameleon Snipers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Chameleon Snipers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Poison blowpipe",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sun-Priest Astromancer",
+    "Chameleon Stalker"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "17-fire-spitter-handlers",
+   "name": "Fire-Spitter Handlers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Fire-Spitter Handlers"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Goad the Beast",
+     "description": "Re-roll the number of attacks.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fire-spitter beast",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Fire-Spitter Handlers"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Fire-Spitter Handlers"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Fire-Spitter Handlers",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Fire-Spitter Handlers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Fire-Spitter Handlers",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Fire-spitter beast",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scar-Veteran Old-Blood"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "17-feathered-sky-serpent",
+   "name": "Feathered Sky-Serpent",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Feathered Sky-Serpent**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Feathered Sky-Serpent"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sky-Strike",
+     "description": "May Charge after Falling Back.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-breath",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH"
+     ],
+     "models": [
+      "Feathered Sky-Serpent"
+     ]
+    },
+    {
+     "name": "Raking claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Feathered Sky-Serpent"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Feathered Sky-Serpent"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Feathered Sky-Serpent",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Feathered Sky-Serpent",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Sun-breath",
+       "count": 1
+      },
+      {
+       "item": "Raking claws",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Sage Elder"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "17-horned-shell-bastion",
+   "name": "Horned Shell-Bastion",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Horned Shell-Bastion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Horned Shell-Bastion"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Scaly Carapace",
+     "description": "Incoming Damage −1 against Damage 2+ attacks.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Solar engine-beam",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "6+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Horned Shell-Bastion"
+     ]
+    },
+    {
+     "name": "Tail-club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Horned Shell-Bastion"
+     ]
+    }
+   ],
+   "points": 225,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 225,
+     "models": [
+      {
+       "name": "Horned Shell-Bastion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Horned Shell-Bastion",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Solar engine-beam",
+       "count": 1
+      },
+      {
+       "item": "Tail-club",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Old-Blood on Tyrant-Lizard"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "17-thunder-lizard-howdah",
+   "name": "Thunder-Lizard Howdah",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Thunder-Lizard Howdah**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Thunder-Lizard Howdah"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Unstoppable Stampede",
+     "description": "Crushing Impact for 0 CP on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Howdah dart-pipes",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Thunder-Lizard Howdah"
+     ]
+    },
+    {
+     "name": "Horns & stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Thunder-Lizard Howdah"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Thunder-Lizard Howdah"
+     ]
+    }
+   ],
+   "points": 210,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 210,
+     "models": [
+      {
+       "name": "Thunder-Lizard Howdah",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Thunder-Lizard Howdah",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Howdah dart-pipes",
+       "count": 1
+      },
+      {
+       "item": "Horns & stomp",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Old-Blood on Tyrant-Lizard"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "17-sun-engine-shell-beast",
+   "name": "Sun-Engine Shell-Beast",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Sun-Engine Shell-Beast**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "13",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Sun-Engine Shell-Beast"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Light of the Sun",
+     "description": "Friendly units within 6″ get +1 ARM (to 3+ cap).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-engine",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6+2",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Sun-Engine Shell-Beast"
+     ]
+    },
+    {
+     "name": "Tail-club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Sun-Engine Shell-Beast"
+     ]
+    }
+   ],
+   "points": 165,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 165,
+     "models": [
+      {
+       "name": "Sun-Engine Shell-Beast",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sun-Engine Shell-Beast",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "13",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sun-engine",
+       "count": 1
+      },
+      {
+       "item": "Tail-club",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Old-Blood on Tyrant-Lizard"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "17-old-blood-on-tyrant-lizard",
+   "name": "Old-Blood on Tyrant-Lizard",
+   "role": "Leader",
+   "composition": "■ **1 Old-Blood on Tyrant-Lizard**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Leader",
+    "HARDENED",
+    "Old-Blood on Tyrant-Lizard"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blood-Roar",
+     "description": "Friendly units within 9″ get +1 Attack on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Monstrous Rampage",
+     "description": "At the end of its Fight, roll a D6 vs an engaged enemy: on 3+ D3 Fatal Wounds and −2 CTRL to it until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sunbolt gauntlet & blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Old-Blood on Tyrant-Lizard"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Old-Blood on Tyrant-Lizard"
+     ]
+    },
+    {
+     "name": "Thunder-lizard maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Old-Blood on Tyrant-Lizard"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Old-Blood on Tyrant-Lizard",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Old-Blood on Tyrant-Lizard",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Sunbolt gauntlet & blade",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      },
+      {
+       "item": "Thunder-lizard maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Horned Shell-Bastion",
+      "Thunder-Lizard Howdah",
+      "Sun-Engine Shell-Beast",
+      "Wild Tyrant-Lizard"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "17-wild-tyrant-lizard",
+   "name": "Wild Tyrant-Lizard",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Wild Tyrant-Lizard**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Wild Tyrant-Lizard"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Monstrous Rampage",
+     "description": "At the end of its Fight, roll a D6 vs an engaged enemy: on 3+ D3 Fatal Wounds and −2 CTRL until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Raking claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Wild Tyrant-Lizard"
+     ]
+    },
+    {
+     "name": "Thunder-lizard maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Wild Tyrant-Lizard"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "EXTRA ATTACKS",
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Wild Tyrant-Lizard"
+     ]
+    }
+   ],
+   "points": 205,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 205,
+     "models": [
+      {
+       "name": "Wild Tyrant-Lizard",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Wild Tyrant-Lizard",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Raking claws",
+       "count": 1
+      },
+      {
+       "item": "Thunder-lizard maw",
+       "count": 1
+      },
+      {
+       "item": "Predatory jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Old-Blood on Tyrant-Lizard"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "17-elder-thunder-titan",
+   "name": "Elder Thunder-Titan",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Elder Thunder-Titan**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Elder Thunder-Titan"
+   ],
+   "factionKeywords": [
+    "Sun-Scaled Temple-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Predatory Jaws · Cold-Blooded",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Monstrous Rampage",
+     "description": "At the end of its Fight, every engaged enemy unit: on 3+ D3 Fatal Wounds and −2 CTRL until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Elder Thunder-Titan"
+     ]
+    },
+    {
+     "name": "Thunder-lizard maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Elder Thunder-Titan"
+     ]
+    },
+    {
+     "name": "Howdah war-crew",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Elder Thunder-Titan"
+     ]
+    }
+   ],
+   "points": 305,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 305,
+     "models": [
+      {
+       "name": "Elder Thunder-Titan",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Elder Thunder-Titan",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Titan stomp",
+       "count": 1
+      },
+      {
+       "item": "Thunder-lizard maw",
+       "count": 1
+      },
+      {
+       "item": "Howdah war-crew",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

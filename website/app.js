@@ -46,8 +46,31 @@ setTimeout(() => {
 // FACTIONS: one entry per faction. Each one loads data/factions/<name>.json (see README.md for the format).
 // banner = picture in assets/banners/, color = the faction colour the whole UI takes on.
 const FACTIONS = [
-    { id: 1, group: 'Example Alliance', name: 'Example Faction', banner: 'assets/banners/0.jpg', color: '#c8a24a' },
-    { id: 2, group: 'Example Alliance', name: 'Second Faction', banner: 'assets/banners/0.jpg', color: '#3f8fd8' }
+    { id: 1, group: 'Crown of Solis', name: 'Auric Solar-Host', banner: 'assets/banners/0.jpg', color: '#e5b93f' },
+    { id: 2, group: 'Crown of Solis', name: 'Golgotha Trench-Legions', banner: 'assets/banners/0.jpg', color: '#8a9a5b' },
+    { id: 3, group: 'Crown of Solis', name: 'Sun-Pyre Witch-Courts', banner: 'assets/banners/0.jpg', color: '#e2683c' },
+    { id: 4, group: 'Crown of Solis', name: 'Aegis Knight-Houses', banner: 'assets/banners/0.jpg', color: '#4f8fd6' },
+    { id: 5, group: 'Crown of Solis', name: 'Abyssal Bathys-Corps', banner: 'assets/banners/0.jpg', color: '#2bb3a8' },
+    { id: 6, group: 'Nocturne Covenants', name: 'Sanguine Aristocracy', banner: 'assets/banners/0.jpg', color: '#c2324a' },
+    { id: 7, group: 'Nocturne Covenants', name: 'Mordant Ghoul-Courts', banner: 'assets/banners/0.jpg', color: '#9c8f6e' },
+    { id: 8, group: 'Nocturne Covenants', name: 'Prometheus Flesh-Guilds', banner: 'assets/banners/0.jpg', color: '#5fb36b' },
+    { id: 9, group: 'Nocturne Covenants', name: 'Frost-Skaer Blood-Raiders', banner: 'assets/banners/0.jpg', color: '#7fc8e8' },
+    { id: 10, group: 'Nocturne Covenants', name: 'Dread-Fleet Buccaneers', banner: 'assets/banners/0.jpg', color: '#d9a441' },
+    { id: 11, group: 'Hellbreach Legions', name: 'Cinder-Gorged Legion', banner: 'assets/banners/0.jpg', color: '#e0412f' },
+    { id: 12, group: 'Hellbreach Legions', name: 'Black-Bile Congregation', banner: 'assets/banners/0.jpg', color: '#7a9b3a' },
+    { id: 13, group: 'Hellbreach Legions', name: 'Moloch Iron-Forged', banner: 'assets/banners/0.jpg', color: '#b56b2e' },
+    { id: 14, group: 'Hellbreach Legions', name: 'Cabal of the Inverted Star', banner: 'assets/banners/0.jpg', color: '#5b6ee8' },
+    { id: 15, group: 'Hellbreach Legions', name: 'Velvet-Scourge Syndicate', banner: 'assets/banners/0.jpg', color: '#d65fa8' },
+    { id: 16, group: 'Celestial Dominion', name: 'Starfire High-Court', banner: 'assets/banners/0.jpg', color: '#f2d26b' },
+    { id: 17, group: 'Celestial Dominion', name: 'Sun-Scaled Temple-Host', banner: 'assets/banners/0.jpg', color: '#3fbf8f' },
+    { id: 18, group: 'Celestial Dominion', name: 'Obsidian Forge-Tombs', banner: 'assets/banners/0.jpg', color: '#c9853a' },
+    { id: 19, group: 'Celestial Dominion', name: 'Skitter-Kin & Rad-Scavengers', banner: 'assets/banners/0.jpg', color: '#9bc23c' },
+    { id: 20, group: 'Celestial Dominion', name: 'Astral Shadow-Clans', banner: 'assets/banners/0.jpg', color: '#9a6ad6' },
+    { id: 21, group: 'Voidborn Convergence', name: 'Rift-Stalker Menagerie', banner: 'assets/banners/0.jpg', color: '#a3a9b4' },
+    { id: 22, group: 'Voidborn Convergence', name: 'Radiant Concordat', banner: 'assets/banners/0.jpg', color: '#e8e4dc' },
+    { id: 23, group: 'Voidborn Convergence', name: 'Apex Bio-Swarm', banner: 'assets/banners/0.jpg', color: '#b24bd1' },
+    { id: 24, group: 'Voidborn Convergence', name: 'Diesel-Skull War-Horde', banner: 'assets/banners/0.jpg', color: '#88c040' },
+    { id: 25, group: 'Voidborn Convergence', name: 'Eclipse Shadow-Fiends', banner: 'assets/banners/0.jpg', color: '#6d7cff' }
 ];
 
 
@@ -104,12 +127,7 @@ window.switchView = (viewId, pushHistory=true) => {
         if (viewId !== 'home' && viewId !== 'new-roster') {
             const banners = target.querySelectorAll('.home-header-card');
             if (banners.length > 0) {
-                const bannerList = [
-                    '0.jpg', '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', 
-                    '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', 
-                    '15.jpg', '16.1.jpg', '17.1.jpg', '18.1.jpg', '19.jpg', '20.jpg', 
-                    '21.jpg', '22.jpg', '23.jpg', '24.jpg', '25.jpg', '26.jpg', '27.jpg', '28.jpg'
-                ];
+                const bannerList = ['0.jpg'];   // header pictures in assets/banners/ (add more files here to rotate them)
                 const randImg = bannerList[Math.floor(Math.random() * bannerList.length)];
                 banners.forEach(b => b.style.backgroundImage = `url('assets/banners/${randImg}')`);
             }
@@ -133,7 +151,7 @@ if(!history.state && !location.hash.includes('access_token=') && !location.hash.
 }
 
 
-let selectedPoints = 2000;
+let selectedPoints = 1000;
 
 function selectPoints(btn, pts) {
     document.querySelectorAll('.pt-btn').forEach(b => b.classList.remove('active'));
@@ -180,7 +198,7 @@ function openRosterBuilder(roster) {
     // Normalize faction object if string or missing banner
     let fac = roster.faction;
     if (typeof fac === 'string') {
-        fac = (typeof FACTIONS !== 'undefined' && FACTIONS.find(f => f.name.toLowerCase() === fac.toLowerCase())) || { name: fac, banner: 'assets/banners/1.jpg' };
+        fac = (typeof FACTIONS !== 'undefined' && FACTIONS.find(f => f.name.toLowerCase() === fac.toLowerCase())) || { name: fac, banner: 'assets/banners/0.jpg' };
         roster.faction = fac;
     } else if (!fac || !fac.banner) {
         fac = (fac && typeof FACTIONS !== 'undefined' && FACTIONS.find(f => f.name && f.name.toLowerCase() === fac.name.toLowerCase())) || (typeof FACTIONS !== 'undefined' ? FACTIONS[0] : { name: 'Faction', banner: 'assets/banners/1.jpg' });
@@ -207,7 +225,7 @@ function openRosterBuilder(roster) {
     const rnEl = document.getElementById('rb-roster-name');
     if (rnEl) rnEl.textContent = roster.name || 'Untitled Roster';
     const lpEl = document.getElementById('rb-limit-pts');
-    if (lpEl) lpEl.innerHTML = `/ ${roster.pointsLimit || 2000} pts <i class="fa-solid fa-pencil" style="font-size:0.7rem; color:#6a7a8c;"></i>`;
+    if (lpEl) lpEl.innerHTML = `/ ${roster.pointsLimit || 1000} pts <i class="fa-solid fa-pencil" style="font-size:0.7rem; color:#6a7a8c;"></i>`;
     
     // Al abrir el builder, pre-cargamos la data de la facción para que cuando le de a "Add Unit" ya esté lista.
     // Además extrae los detachments y los renderiza.
@@ -717,7 +735,7 @@ window.selectUnit = function(safeId) {
     const statBlock = (st, title) => { let h = title ? `<div style="font-size:0.78rem; color:#8c99b0; margin:0 0 6px;">${title}</div>` : ''; h += '<div class="ds-stats-row" style="margin-bottom:14px; display:flex; gap:10px; flex-wrap:wrap;">';
         for (const [key, val] of Object.entries(st)) h += `<div class="ds-stat-box" style="background:#1a222d; border:1px solid #2a3545; border-radius:6px; padding:10px; text-align:center; flex:1; min-width:50px;"><span style="display:block; font-size:0.75rem; color:#888; text-transform:uppercase;">${key}</span><strong style="display:block; font-size:1.1rem; margin-top:5px; color:#fff;">${val}</strong></div>`;
         return h + '</div>'; };
-    if (unit.models && unit.models.length > 1 && unit.models.some(m => ['T', 'Sv', 'W', 'Ld', 'OC', 'M'].some(k => m[k] !== unit.models[0][k]))) statsHtml = unit.models.map(m => statBlock(Object.assign({ M: m.M, T: m.T, Sv: m.Sv, W: m.W, Ld: m.Ld, OC: m.OC }, m.invuln && m.invuln !== '-' ? { INV: m.invuln } : {}), m.name)).join('');
+    if (unit.models && unit.models.length > 1 && unit.models.some(m => ['MOV', 'MS', 'RS', 'ARM', 'MIGHT', 'CTRL'].some(k => m[k] !== unit.models[0][k]))) statsHtml = unit.models.map(m => statBlock(Object.assign({ MOV: m.MOV, MS: m.MS, RS: m.RS, ARM: m.ARM, MIGHT: m.MIGHT, CTRL: m.CTRL }, m.invuln && m.invuln !== '-' ? { WARD: m.invuln } : {}), m.name)).join('');
     else if (unit.stats) statsHtml = statBlock(unit.stats, '');
 
     // 2. Invuln Save
@@ -725,7 +743,7 @@ window.selectUnit = function(safeId) {
     if (unit.invuln && unit.invuln !== '-') {
         invulnHtml = `
             <div style="background:#1a222d; border:1px solid var(--accent); border-radius:6px; padding:10px; margin-bottom:20px; text-align:center; color:var(--accent); font-weight:bold; letter-spacing:1px; font-size:1.1rem;">
-                INVULNERABLE SAVE: ${unit.invuln}
+                WARD: ${unit.invuln}
             </div>
         `;
     }
@@ -743,7 +761,7 @@ window.selectUnit = function(safeId) {
                 });
             }
             let isMelee = w.type === 'Melee' || w.range === 'Melee';
-            let bsName = isMelee ? 'WS' : 'BS';
+            let bsName = 'Hit';   // 4192: hit roll = the unit's MS (melee) or RS (ranged)
             
             weaponsHtml += `
                 <div style="background:#141b25; border:1px solid #1a222d; border-radius:6px; padding:10px;">
@@ -752,8 +770,8 @@ window.selectUnit = function(safeId) {
                         <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">Range</div>
                         <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">A</div>
                         <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">${bsName}</div>
-                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">S</div>
-                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">AP</div>
+                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">Wound</div>
+                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">PEN</div>
                         <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">D</div>
                     </div>
                     <div style="display:flex; justify-content:space-between; padding:5px;">
@@ -901,7 +919,7 @@ function saveRosters() {
 }
 
 // ---------- roster builder helpers ----------
-window.rosterMaxDp = limit => limit > 2000 ? 4 : limit > 1000 ? 3 : 2;
+window.rosterMaxDp = limit => 1;   // 4192: one faction, one Detachment (each Detachment costs 1 DP)
 window.rosterUsedDp = roster => (STATE.currentFactionDetachments || []).filter(d => (roster.detachments || []).includes(d.id)).reduce((s, d) => s + (parseInt(d.dpCost) || 0), 0);
 window.fdChips = function (fd) {
     return String(fd || '').split(',').map(x => x.trim()).filter(Boolean).map(x => { const c = getFDColor(x); return `<span style="display:inline-block; background:${c}33; color:#fff; border:1px solid ${c}; border-radius:6px; padding:2px 8px; font-size:0.68rem; font-weight:700; margin:4px 6px 0 0;">${x}</span>`; }).join('');
@@ -985,7 +1003,7 @@ window.snapAbilities = function (u, plain) {
 };
 window.rosterSnap39k = function (u) {
     const s = u.stats || {}, plain = t => String(t == null ? '' : t).replace(/\*\*(.*?)\*\*/g, '$1');
-    const statLine = (m) => { const c = [['M', m.M], ['T', m.T], ['SV', m.Sv], ['W', m.W], ['LD', m.Ld], ['OC', m.OC]].map(([k, v]) => [k, String(v == null ? '-' : v)]); const iv = m.invuln != null ? m.invuln : u.invuln; if (iv && iv !== '-') c.push(['INV', iv]); return c; };
+    const statLine = (m) => { const c = (m.MOV != null ? [['MOV', m.MOV], ['MS', m.MS], ['RS', m.RS], ['ARM', m.ARM], ['MIGHT', m.MIGHT], ['CTRL', m.CTRL]].concat(m.WARD ? [['WARD', m.WARD]] : [], m.UNY ? [['UNY', m.UNY]] : []) : [['M', m.M], ['T', m.T], ['SV', m.Sv], ['W', m.W], ['LD', m.Ld], ['OC', m.OC]]).map(([k, v]) => [k, String(v == null ? '-' : v)]); const iv = m.invuln != null ? m.invuln : u.invuln; if (iv && iv !== '-') c.push(['INV', iv]); return c; };
     const statList = (u.models && u.models.length > 1) ? u.models.map(m => ({ n: m.name, c: statLine(m) })) : [{ n: u.name, c: statLine(s) }];
     const weapons = (u.weapons || []).map(w => ({ t: (w.type === 'Melee' || w.range === 'Melee') ? 'm' : 'r', n: w.name + (w.optional ? ' (option)' : ''), k: (w.keywords || []).slice(), c: [w.range || '', w.A || '', w.BS || '', w.S || '', w.AP || '', w.D || ''] }));
     const seen = new Set(), gl = window.BL_GLOSSARY || {}, kr = [];
@@ -1016,7 +1034,7 @@ window.rosterDetailsHtml = function (index, s) {
         const list = group((s.weapons || []).filter(w => w.t === t), w => w.n + JSON.stringify(w.c) + w.k.join()); if (!list.length) return '';
         return `<div style="margin-top:12px;"><div style="font-size:0.72rem; font-weight:700; letter-spacing:.1em; color:var(--accent); margin-bottom:6px;">${title}</div>${list.map(w => `<div style="background:#0f1a30; border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:8px 10px; margin-bottom:6px;">
             <div style="display:flex; align-items:baseline; gap:6px; flex-wrap:wrap;"><b style="color:#fff;">${w.n}</b>${w.count > 1 ? `<span style="color:#8c99b0; font-size:0.75rem;">×${w.count}</span>` : ''}${w.k.map(k => `<span style="background:rgba(255,255,255,.08); border-radius:6px; padding:1px 7px; font-size:0.65rem; font-weight:700; color:#cfd8e3;">${k}</span>`).join('')}</div>
-            <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:4px; margin-top:6px; text-align:center;">${['Range', 'A', skill, 'S', 'AP', 'D'].map((l, i) => `<div><div style="font-size:0.58rem; color:#8c99b0;">${l}</div><div style="font-weight:700; color:#fff; font-size:0.9rem;">${w.c[i] || '–'}</div></div>`).join('')}</div></div>`).join('')}</div>`;
+            <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:4px; margin-top:6px; text-align:center;">${['Range', 'A', 'Hit', 'Wound', 'PEN', 'D'].map((l, i) => `<div><div style="font-size:0.58rem; color:#8c99b0;">${l}</div><div style="font-weight:700; color:#fff; font-size:0.9rem;">${w.c[i] || '–'}</div></div>`).join('')}</div></div>`).join('')}</div>`;
     };
     const ab = (s.abilities || []).map(x => {
         const isCore = x.g === 'Core' || /\bcore\b/i.test(x.n || '') || /^(leader|support|deadly demise|deep strike|infiltrators|scouts|stealth|feel no pain|lone operative|firing deck)/i.test(x.n || '');
@@ -1191,9 +1209,7 @@ function renderRosterBuilder() {
     blRelinkDetachments(currentActiveRoster);
     
     let usedDp = 0;
-    let maxDp = 2;
-    if (currentActiveRoster.pointsLimit > 1000 && currentActiveRoster.pointsLimit <= 2000) maxDp = 3;
-    else if (currentActiveRoster.pointsLimit > 2000) maxDp = 4;
+    let maxDp = rosterMaxDp(currentActiveRoster.pointsLimit);
     
     // Renderizar Detachments
     const detContainer = document.getElementById('roster-detachment-container');
@@ -1427,7 +1443,7 @@ window.toggleDetachmentSidebar = function() {
 window.openDetachmentModal = function() {
     const listContainer = document.getElementById('detachment-modal-list');
     let html = '';
-    const maxDp = rosterMaxDp(currentActiveRoster ? currentActiveRoster.pointsLimit : 2000), usedDp = currentActiveRoster ? rosterUsedDp(currentActiveRoster) : 0, left = maxDp - usedDp;
+    const maxDp = rosterMaxDp(currentActiveRoster ? currentActiveRoster.pointsLimit : 1000), usedDp = currentActiveRoster ? rosterUsedDp(currentActiveRoster) : 0, left = maxDp - usedDp;
     
     // Summary banner
     html += `<div style="color:#9aa7b8; font-size:0.85rem; margin-bottom:14px; background:#141b25; padding:12px 14px; border-radius:8px; border:1px solid #1a222d; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
@@ -1647,7 +1663,7 @@ window.renderGDMMissions = function() {
         
 
         const types = (window.GDM_DATA.factions || []), primaryGroups = {}, colors = {};
-        types.forEach((t, i) => { primaryGroups[t] = window.GDM_DATA.matrix[i] || []; colors[t] = BL_TYPE_PALETTE[i % BL_TYPE_PALETTE.length]; });
+        types.forEach((t, i) => { primaryGroups[t] = [...new Set(window.GDM_DATA.matrix[i] || [])]; colors[t] = BL_TYPE_PALETTE[i % BL_TYPE_PALETTE.length]; });
         const rgb = c => { const n = parseInt(c.slice(1), 16); return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`; };
         Object.keys(primaryGroups).forEach((group, i) => {
             const c = colors[group], r = rgb(c);
@@ -1683,7 +1699,7 @@ window.renderGDMMissions = function() {
         let secHtml = `
             <div style="margin-bottom:10px; border:1px solid #2a3546; border-radius:8px; overflow:hidden;">
                 <div onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'grid' : 'none'" style="background:#2a3546; color:#fff; padding:15px; font-weight:bold; cursor:pointer; display:flex; justify-content:space-between;">
-                    <span>Attacker Secondaries</span>
+                    <span>Tactical Cards</span>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div style="display:none; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:10px; padding:15px; background:#0b0f16;">
@@ -1701,26 +1717,7 @@ window.renderGDMMissions = function() {
         });
         secHtml += `</div></div>`;
         
-        secHtml += `
-            <div style="margin-bottom:10px; border:1px solid #2a3546; border-radius:8px; overflow:hidden;">
-                <div onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'grid' : 'none'" style="background:#2a3546; color:#fff; padding:15px; font-weight:bold; cursor:pointer; display:flex; justify-content:space-between;">
-                    <span>Defender Secondaries</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div style="display:none; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:10px; padding:15px; background:#0b0f16;">
-        `;
-        window.GDM_DATA.secondaryMissions.sort().forEach(m => {
-            let formatted = m.toLowerCase().replace(/ /g, '-').replace(/'s/g, '-s');
-            if (formatted === 'secure-no-mans-land') formatted = 'secure-no-man-s-land';
-            let path = `assets/secondary/defender/${formatted}.png`;
-            let backPath = `assets/secondary/defender/${formatted}-back.png`;
-            secHtml += `
-                <div onclick="MSHEET.open('secondary', '${m.replace(/'/g, "\\'")}', 'defender')" style="background:#1a232f; border:1px solid #333; border-radius:6px; padding:10px; text-align:center; cursor:pointer; display:flex; flex-direction:column; justify-content:center; min-height:80px;">
-                    <span style="color:#fff; font-size:0.8rem; font-weight:bold;">${m}</span>
-                </div>
-            `;
-        });
-        secHtml += `</div></div>`;
+        // 4192: one Tactical deck shared by both players (no attacker / defender split)
         html += secHtml;
 
         sContainer.innerHTML = html;
@@ -1965,21 +1962,11 @@ window.addUnitToActiveRoster = function(safeId, opts) {
         if(u.name === unit.name) count++;
     });
     
-    const role = (unit.role || '').toUpperCase();
-    const isEpicHero = role === 'EPIC HERO';
-    const isBattleline = role === 'BATTLELINE';
-    const isDedicatedTransport = role === 'DEDICATED TRANSPORT';
-    
-    if (isEpicHero && count >= 1) {
-        alert('You can only include 1 of each Epic Hero.');
-        return;
-    }
-    if ((isBattleline || isDedicatedTransport) && count >= 6) {
-        alert('You can only include up to 6 of each Battleline or Dedicated Transport unit.');
-        return;
-    }
-    if (!isEpicHero && !isBattleline && !isDedicatedTransport && count >= 3) {
-        alert('You can only include up to 3 of this datasheet.');
+    // 4192 muster: 2 copies of a datasheet (3 for Battleline) in a Standard game — limits per game size in army_check.js
+    const lim = currentActiveRoster.pointsLimit || 1000, sz = window.ARMYCHECK ? ARMYCHECK.SIZES[lim <= 500 ? 'skirmish' : lim <= 1000 ? 'standard' : 'grand'] : { same: 2, blSame: 3 };
+    const cap = unit.role === 'Battleline' ? sz.blSame : sz.same;
+    if (count >= cap) {
+        alert(`You can only include up to ${cap} of this datasheet${unit.role === 'Battleline' ? ' (Battleline)' : ''} at ${lim} pts.`);
         return;
     }
     // more than one size, or a leader to pair with: ask first (one tap still adds a unit with nothing to choose)

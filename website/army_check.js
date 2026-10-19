@@ -1,43 +1,69 @@
-/* Army-list check panel in the roster builder: points, detachments (DP), datasheet copies, a CHARACTER. */
+/* Army-list check panel in the roster builder — Project 4192 muster rules (CORE_RULES_MANUAL_4192.md §7). */
 (function () {
     const lang = () => { try { return localStorage.getItem('gdm_lang') || 'en'; } catch (e) { return 'en'; } };
     const S = (en, es) => lang() === 'es' ? es : en;
     const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // game sizes (unit_calculator.py GAME_SIZES): units, leaders, Class 4–5, Class 5, copies, Battleline copies, min Battleline, enhancements
+    const SIZES = {
+        skirmish: { name: ['Skirmish', 'Escaramuza'], units: [3, 8], leaders: [1, 2], big: 1, c5: 0, same: 2, blSame: 2, minBl: 1, enh: 2 },
+        standard: { name: ['Standard', 'Estándar'], units: [5, 15], leaders: [1, 3], big: 3, c5: 1, same: 2, blSame: 3, minBl: 2, enh: 2 },
+        grand: { name: ['Grand', 'Gran batalla'], units: [7, 20], leaders: [1, 4], big: 5, c5: 2, same: 3, blSame: 5, minBl: 3, enh: 3 }
+    };
+    const sizeOf = lim => lim <= 500 ? SIZES.skirmish : lim <= 1000 ? SIZES.standard : SIZES.grand;
 
-    function roleOf(u) { const d = (STATE.currentFactionData || []).find(x => String(x.id) === String(u.id)); return d ? String(d.role || '').toUpperCase() : ''; }
+    const sheet = u => (STATE.currentFactionData || []).find(x => String(x.id) === String(u.id)) || {};
+    const isLeader = d => d.role === 'Leader';
+    const isBl = d => d.role === 'Battleline';
+    const classOf = d => +d.class || +((d.stats || {}).CLASS) || 1;
+
     function check(r) {
-        const out = [], units = r.units || [], used = units.reduce((s, u) => s + (+u.pts || 0), 0), lim = r.pointsLimit || 0;
+        const out = [], units = r.units || [], used = units.reduce((s, u) => s + (+u.pts || 0), 0), lim = r.pointsLimit || 1000, z = sizeOf(lim);
+        const ok = t => out.push({ lvl: 'ok', t }), err = t => out.push({ lvl: 'err', t }), warn = t => out.push({ lvl: 'warn', t });
         if (!units.length) return [{ lvl: 'warn', t: S('No units yet.', 'Aún no hay unidades.') }];
-        out.push(used > lim ? { lvl: 'err', t: S(`Over the points limit by ${used - lim} pts (${used}/${lim}).`, `Superas el límite por ${used - lim} pts (${used}/${lim}).`) }
-                            : { lvl: 'ok', t: S(`Points ${used}/${lim} (${lim - used} left).`, `Puntos ${used}/${lim} (te quedan ${lim - used}).`) });
-        // detachments + DP
-        const dets = (r.detachments || []).concat(r.detachmentId ? [r.detachmentId] : []), all = STATE.currentFactionDetachments || [];
-        if (!dets.length) out.push({ lvl: 'warn', t: S('No detachment selected.', 'No hay destacamento seleccionado.') });
-        else {
-            const dp = all.filter(d => dets.includes(d.id)).reduce((s, d) => s + (+d.dpCost || 0), 0), max = lim > 2000 ? 4 : lim > 1000 ? 3 : 2;
-            out.push(dp > max ? { lvl: 'err', t: S(`Detachment points ${dp}/${max} — too many.`, `Puntos de destacamento ${dp}/${max}: demasiados.`) } : { lvl: 'ok', t: S(`Detachments ${dp}/${max} DP.`, `Destacamentos ${dp}/${max} DP.`) });
-        }
-        // copies per datasheet
-        const by = {}; units.forEach(u => { const k = u.id; (by[k] = by[k] || { n: 0, u }).n++; });
-        let bad = 0; Object.values(by).forEach(({ n, u }) => {
-            const role = roleOf(u), cap = /EPIC/.test(role) ? 1 : /BATTLELINE|TRANSPORT/.test(role) ? 6 : 3;
-            if (n > cap) { bad++; out.push({ lvl: 'err', t: S(`${u.name}: ${n} copies (max ${cap}).`, `${u.name}: ${n} copias (máx. ${cap}).`) }); }
-        });
-        if (!bad) out.push({ lvl: 'ok', t: S('Datasheet copies are within limits.', 'Las copias de datasheet están dentro del límite.') });
-        // enhancements
+        const known = (STATE.currentFactionData || []).length > 0, ds = units.map(sheet);
+        // points
+        if (used > lim) err(S(`Over the points limit by ${used - lim} pts (${used}/${lim}).`, `Superas el límite por ${used - lim} pts (${used}/${lim}).`));
+        else ok(S(`Points ${used}/${lim} (${lim - used} left) · ${z.name[0]} game.`, `Puntos ${used}/${lim} (te quedan ${lim - used}) · partida ${z.name[1]}.`));
+        // one detachment
+        const dets = (r.detachments || []).concat(r.detachmentId ? [r.detachmentId] : []);
+        if (!dets.length) warn(S('Choose 1 Detachment.', 'Elige 1 Destacamento.'));
+        else if (dets.length > 1) err(S(`${dets.length} Detachments — only 1 is allowed.`, `${dets.length} Destacamentos: solo se permite 1.`));
+        else ok(S('1 Detachment.', '1 Destacamento.'));
+        if (!known) return out;
+        // units (attached Leaders do not count toward the maximum)
+        const leaders = ds.filter(isLeader).length, others = units.length - leaders;
+        if (units.length < z.units[0]) err(S(`${units.length} units — at least ${z.units[0]}.`, `${units.length} unidades: mínimo ${z.units[0]}.`));
+        else if (others > z.units[1]) err(S(`${others} units besides Leaders — at most ${z.units[1]}.`, `${others} unidades sin contar Líderes: máximo ${z.units[1]}.`));
+        else ok(S(`${units.length} units (${z.units[0]}–${z.units[1]}; attached Leaders don't count).`, `${units.length} unidades (${z.units[0]}–${z.units[1]}; los Líderes unidos no cuentan).`));
+        // leaders / warlord
+        if (leaders < z.leaders[0]) err(S('No Leader — you need one as your Warlord.', 'Sin Líder: necesitas uno como Señor de la Guerra.'));
+        else if (leaders > z.leaders[1]) err(S(`${leaders} Leaders — at most ${z.leaders[1]}.`, `${leaders} Líderes: máximo ${z.leaders[1]}.`));
+        else ok(S(`${leaders} Leader${leaders > 1 ? 's' : ''} (${z.leaders[0]}–${z.leaders[1]}); pick 1 as Warlord.`, `${leaders} Líder${leaders > 1 ? 'es' : ''} (${z.leaders[0]}–${z.leaders[1]}); elige 1 como Señor de la Guerra.`));
+        // big units
+        const big = ds.filter(d => classOf(d) >= 4).length, c5 = ds.filter(d => classOf(d) === 5).length;
+        if (big > z.big) err(S(`${big} Class 4–5 units — at most ${z.big}.`, `${big} unidades de Clase 4–5: máximo ${z.big}.`));
+        if (c5 > z.c5) err(S(`${c5} Class 5 units — at most ${z.c5}.`, `${c5} unidades de Clase 5: máximo ${z.c5}.`));
+        if (big <= z.big && c5 <= z.c5) ok(S(`Class 4–5: ${big}/${z.big} · Class 5: ${c5}/${z.c5}.`, `Clase 4–5: ${big}/${z.big} · Clase 5: ${c5}/${z.c5}.`));
+        // copies
+        const by = {}; units.forEach((u, i) => { (by[u.id] = by[u.id] || { n: 0, u, d: ds[i] }).n++; });
+        let bad = 0; Object.values(by).forEach(({ n, u, d }) => { const cap = isBl(d) ? z.blSame : z.same;
+            if (n > cap) { bad++; err(S(`${u.name}: ${n} copies (max ${cap}).`, `${u.name}: ${n} copias (máx. ${cap}).`)); } });
+        if (!bad) ok(S(`Copies within limits (${z.same} per datasheet, ${z.blSame} Battleline).`, `Copias dentro del límite (${z.same} por datasheet, ${z.blSame} Battleline).`));
+        // battleline
+        const bl = ds.filter(isBl).length;
+        if (bl < z.minBl) err(S(`${bl} Battleline units — at least ${z.minBl}.`, `${bl} unidades Battleline: mínimo ${z.minBl}.`));
+        else ok(S(`${bl} Battleline (min ${z.minBl}).`, `${bl} Battleline (mín. ${z.minBl}).`));
+        // enhancements: one each, on different Leaders, from the chosen Detachment
         const enhs = units.filter(u => u.enh);
         if (enhs.length) {
-            const cnt = {}; enhs.forEach(u => cnt[u.enh.name] = (cnt[u.enh.name] || 0) + 1); const dup = Object.entries(cnt).some(([n, k]) => /\(upgrade\)/i.test(n) ? k > 3 : k > 1), selIds = (r.detachments || []), orphan = enhs.filter(u => !selIds.includes(u.enh.detId));
-            out.push(enhs.length > 4 ? { lvl: 'err', t: S(`Enhancements ${enhs.length}/4 — too many.`, `Mejoras ${enhs.length}/4: demasiadas.`) } : { lvl: 'ok', t: S(`Enhancements ${enhs.length}/4 (${enhs.reduce((s, u) => s + (+u.enh.cost || 0), 0)} pts).`, `Mejoras ${enhs.length}/4 (${enhs.reduce((s, u) => s + (+u.enh.cost || 0), 0)} pts).`) });
-            if (dup) out.push({ lvl: 'err', t: S('An enhancement is taken too many times (upgrades: max 3, others: once).', 'Una mejora está repetida de más (mejoras tipo Upgrade: máx. 3, las demás: una vez).') });
-            orphan.forEach(u => out.push({ lvl: 'err', t: S(`${u.enh.name}: its detachment is no longer selected.`, `${u.enh.name}: su destacamento ya no está seleccionado.`) }));
-            enhs.filter(u => /EPIC/.test(roleOf(u)) || !/CHARACTER/.test(roleOf(u) || 'CHARACTER')).forEach(u => out.push({ lvl: 'err', t: S(`${u.name} cannot take an enhancement.`, `${u.name} no puede llevar una mejora.`) }));
+            const pts = enhs.reduce((s, u) => s + (+u.enh.cost || 0), 0), cnt = {};
+            enhs.forEach(u => cnt[u.enh.name] = (cnt[u.enh.name] || 0) + 1);
+            if (enhs.length > z.enh) err(S(`Enhancements ${enhs.length}/${z.enh} — too many.`, `Mejoras ${enhs.length}/${z.enh}: demasiadas.`));
+            else ok(S(`Enhancements ${enhs.length}/${z.enh} (${pts} pts).`, `Mejoras ${enhs.length}/${z.enh} (${pts} pts).`));
+            if (Object.values(cnt).some(k => k > 1)) err(S('An enhancement is taken more than once.', 'Una mejora está repetida.'));
+            enhs.filter(u => !dets.includes(u.enh.detId)).forEach(u => err(S(`${u.enh.name}: its Detachment is not selected.`, `${u.enh.name}: su Destacamento no está seleccionado.`)));
+            enhs.filter(u => !isLeader(sheet(u))).forEach(u => err(S(`${u.name} is not a Leader and cannot take an enhancement.`, `${u.name} no es Líder y no puede llevar una mejora.`)));
         }
-        // hand-entered points
-        if (window.MFM_MANUAL && r.faction && r.faction.name === MFM_MANUAL.faction && units.some(u => { const o = window.getMFMOverride && getMFMOverride(u.name); return o && o.manual; })) out.push({ lvl: 'warn', t: MFM_MANUAL.note[lang() === 'es' ? 'es' : 'en'] });
-        // warlord
-        const hasChar = units.some(u => /CHARACTER|EPIC/.test(roleOf(u)));
-        if (units.length && (STATE.currentFactionData || []).length) out.push(hasChar ? { lvl: 'ok', t: S('Has a CHARACTER for your Warlord.', 'Tienes un PERSONAJE para tu Señor de la Guerra.') } : { lvl: 'warn', t: S('No CHARACTER — you need one to be your Warlord.', 'Sin PERSONAJE: necesitas uno como Señor de la Guerra.') });
         if (window.RULES) { try { RULES.checks(r).forEach(x => out.push(x)); } catch (e) {} }
         return out;
     }
@@ -51,9 +77,9 @@
         const res = check(r), bad = res.filter(x => x.lvl !== 'ok').length, ico = { ok: '✔', warn: '⚠', err: '✖' }, col = { ok: '#5be59a', warn: '#e5c15a', err: '#ff7b7b' };
         box.innerHTML = `<details id="roster-check-d" ${acOpen ? 'open' : ''} style="margin-top:12px; background:#10151c; border:1px solid ${bad ? '#6b5a2a' : '#2a3546'}; border-radius:10px; padding:10px 12px;"><summary style="cursor:pointer; font-weight:bold;">${bad ? '⚠ ' + S(`Army check — ${bad} to review`, `Revisión de lista — ${bad} por revisar`) : '✔ ' + S('Army check — all good', 'Revisión de lista — todo bien')}</summary>
             ${res.map(x => `<div style="color:${col[x.lvl]}; font-size:0.85rem; padding:4px 0;">${ico[x.lvl]} ${esc(x.t)}</div>`).join('')}
-            <div style="color:#667; font-size:0.7rem; margin-top:6px;">${S('Quick checks only — confirm against the current rules.', 'Revisiones rápidas: confirma con las reglas vigentes.')}</div></details>`;
+            <div style="color:#667; font-size:0.7rem; margin-top:6px;">${S('Quick checks only — confirm against the core rules (§7 Muster).', 'Revisiones rápidas: confirma con las reglas básicas (§7 Reclutamiento).')}</div></details>`;
     }
     const orig = window.renderRosterBuilder;
     window.renderRosterBuilder = function () { const r = orig.apply(this, arguments); try { paint(); } catch (e) {} return r; };
-    window.ARMYCHECK = { check, paint };
+    window.ARMYCHECK = { check, paint, SIZES };
 })();

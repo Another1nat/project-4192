@@ -68,7 +68,7 @@
     }
     function mark() { const g = GROUP[currentView()]; document.querySelectorAll('#tabbar button').forEach(b => b.classList.toggle('active', b.dataset.tab === g)); }
     // theme colour = faction of your latest roster; no rosters yet → a random faction colour per visit
-    const GREYS = ['Deathwatch', 'Agents of the Imperium', 'Grey Knights', 'Black Templars'];
+    const GREYS = [];   // factions whose accent colour is too grey to use as a theme
     function themeFaction() {
         const F = (typeof FACTIONS !== 'undefined' ? FACTIONS : []); let rs = []; try { rs = JSON.parse(localStorage.getItem('game_rosters') || '[]'); } catch (e) {}
         const names = rs.map(r => r.faction && r.faction.name).filter(Boolean); let n = null;

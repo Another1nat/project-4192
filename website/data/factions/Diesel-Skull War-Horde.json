@@ -1,0 +1,3068 @@
+{
+ "name": "Diesel-Skull War-Horde",
+ "factionKeyword": "Diesel-Skull War-Horde",
+ "verb": "RAMPAGE",
+ "identity": "Scrap-mech brutes, speed-maniac bikers and huge, inaccurate mobs. Buckets of bad dice that explode on 6s, and one battle-defining round of Scrap-Fury when the whole horde surges forward.",
+ "sources": [
+  "Project 4192 — gametheory/factions/24_diesel_skull_war_horde.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Dakka & Scrap-Fury",
+   "description": "Dakka: Diesel-Skull ranged weapons have [ASSAULT]; unmodified Hit rolls of 6 with them are critical and score 1 extra hit ([ONSLAUGHT 1]). Scrap-Fury (once per battle): declare in the Command Phase — until the End of Round, Diesel-Skull units get +1 Attack in melee and +2″ to Charge rolls."
+  },
+  {
+   "name": "Gamble — Overcrank the Engine",
+   "description": "When a Class 2–5 vehicle or bike unit activates, roll a D6: 1 the engine seizes (D3 Fatal Wounds, no Move this activation) · 2–3 +2″ MOV · 4–5 +4″ MOV · 6 +4″ MOV and +1 Attack in melee. (Risk: durability (dice).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "24-det1",
+   "name": "Speed-Cult",
+   "cost": 1,
+   "playstyle": "Bikes, buggies and wagons: everything fast, everything ramming.",
+   "rules": [
+    {
+     "id": "24-det1-r1",
+     "name": "Ramming Speed",
+     "description": "Class 2–5 vehicles and bikes get +2″ MOV and trigger Crushing Impact for 0 CP on the charge."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "24-det1-e1",
+     "name": "Red-Hot Exhaust",
+     "cost": 10,
+     "description": "**War-Boss Speed-King** only. +2″ MOV.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Diesel-Skull War-Horde"
+       ],
+       "datasheet": "War-Boss Speed-King"
+      }
+     ]
+    },
+    {
+     "id": "24-det1-e2",
+     "name": "Nitro-Tank",
+     "cost": 10,
+     "description": "**War-Buggy** only. +2″ MOV.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Diesel-Skull War-Horde"
+       ],
+       "datasheet": "War-Buggy"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "24-det1-s1",
+     "name": "Full Throttle",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A vehicle or bike unit activates",
+     "target": "",
+     "effect": "Overcrank without rolling a 1 (re-roll a result of 1).",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "24-det1-s2",
+     "name": "Wreck Run",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A vehicle is destroyed",
+     "target": "",
+     "effect": "Before removal it moves 6″ and explodes: D3 Fatal Wounds on a 4+ to every unit within 6″.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "24-det1-s3",
+     "name": "Drive-By",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A vehicle or bike unit Shoots",
+     "target": "",
+     "effect": "It may make a 3″ move after shooting.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "24-det2",
+   "name": "Bully Mobs",
+   "cost": 1,
+   "playstyle": "Big mobs and brutes in a single shouting wave.",
+   "rules": [
+    {
+     "id": "24-det2-r1",
+     "name": "Mob Rule",
+     "description": "Class 1 units with 10+ models get +1 to Hit in melee and cannot be Rattled."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "24-det2-e1",
+     "name": "Boss-Pole",
+     "cost": 15,
+     "description": "**Iron-Jaw Brute Boss** only. Friendly Class 1 units within 6″ get +1 to Hit in melee.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Diesel-Skull War-Horde"
+       ],
+       "datasheet": "Iron-Jaw Brute Boss"
+      }
+     ]
+    },
+    {
+     "id": "24-det2-e2",
+     "name": "Big Choppa",
+     "cost": 20,
+     "description": "**Scrap-Gunner Mob** only. +1 PEN in melee.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Diesel-Skull War-Horde"
+       ],
+       "datasheet": "Scrap-Gunner Mob"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "24-det2-s1",
+     "name": "Get In There!",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 1 unit declares a Charge",
+     "target": "",
+     "effect": "Re-roll the Charge roll.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "24-det2-s2",
+     "name": "Stompy Feet",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged",
+     "target": "",
+     "effect": "Its Retaliation Strike gets +1 Attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "24-det2-s3",
+     "name": "More Lads",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase, once per battle",
+     "target": "",
+     "effect": "Return D6 slain models to a Class 1 unit within 6″ of your table edge.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "24-det3",
+   "name": "Tinker-Workshop",
+   "cost": 1,
+   "playstyle": "Scrap-walkers, artillery and surgeons bolting things on.",
+   "rules": [
+    {
+     "id": "24-det3-r1",
+     "name": "Kustom Jobs",
+     "description": "At deployment, give up to 3 Class 2–5 units one upgrade each: +1 Attack on one weapon · +1 PEN on one weapon · UNYIELDING 6+."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "24-det3-e1",
+     "name": "Kustom Force-Field",
+     "cost": 15,
+     "description": "**Scrap-Surgeon** only. Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Diesel-Skull War-Horde"
+       ],
+       "datasheet": "Scrap-Surgeon"
+      }
+     ]
+    },
+    {
+     "id": "24-det3-e2",
+     "name": "Shokk-Barrel",
+     "cost": 15,
+     "description": "**Scrap-Lobba Battery** only. +1 Damage.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Diesel-Skull War-Horde"
+       ],
+       "datasheet": "Scrap-Lobba Battery"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "24-det3-s1",
+     "name": "Bolt It On",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit is damaged",
+     "target": "",
+     "effect": "Heal D3 MIGHT.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "24-det3-s2",
+     "name": "Overcharged Kannon",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit Shoots",
+     "target": "",
+     "effect": "+1 Damage; on a natural 1 to Hit it suffers 1 Fatal Wound.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "24-det3-s3",
+     "name": "Scrap-Shield",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit is targeted",
+     "target": "",
+     "effect": "Incoming PEN −1.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "24-war-boss-speed-king",
+   "name": "War-Boss Speed-King",
+   "role": "Leader",
+   "composition": "■ **1 War-Boss Speed-King**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "7",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "War-Boss Speed-King"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Call the Scrap-Fury",
+     "description": "While he lives, Scrap-Fury also gives +1 to Wound in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Biggest an' Meanest",
+     "description": "The attached unit gets +1 Attack in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Kustom shoota",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "War-Boss Speed-King"
+     ]
+    },
+    {
+     "name": "Power-klaw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "War-Boss Speed-King"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "War-Boss Speed-King",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "War-Boss Speed-King",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "7",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Kustom shoota",
+       "count": 1
+      },
+      {
+       "item": "Power-klaw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Iron-Hide Krushas",
+      "Big-Brute Bullies",
+      "War-Biker Speed-Maniacs",
+      "Rocket-Scrap Crew"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "24-iron-jaw-brute-boss",
+   "name": "Iron-Jaw Brute Boss",
+   "role": "Leader",
+   "composition": "■ **1 Iron-Jaw Brute Boss**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "7",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Iron-Jaw Brute Boss"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Too Tough",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Head-Butt Discipline",
+     "description": "The attached unit gets +1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Iron-Jaw Brute Boss"
+     ]
+    },
+    {
+     "name": "Smash-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Iron-Jaw Brute Boss"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Iron-Jaw Brute Boss",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Jaw Brute Boss",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "7",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Smash-hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Iron-Hide Krushas",
+      "Big-Brute Bullies",
+      "War-Biker Speed-Maniacs",
+      "Rocket-Scrap Crew"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "24-scrap-surgeon",
+   "name": "Scrap-Surgeon",
+   "role": "Leader",
+   "composition": "■ **1 Scrap-Surgeon**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "4",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Scrap-Surgeon"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bolt It Back On",
+     "description": "The attached unit has UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Kustom Job",
+     "description": "Once per round, heal D3 MIGHT on a Class 2–4 unit within 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Slugger",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Scrap-Surgeon"
+     ]
+    },
+    {
+     "name": "Saw-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scrap-Surgeon"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Scrap-Surgeon",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scrap-Surgeon",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Slugger",
+       "count": 1
+      },
+      {
+       "item": "Saw-blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Scrap-Gunner Mob",
+      "Dakka-Gun Mob",
+      "Scrap-Imps",
+      "Sneaky Scrap-Commandos",
+      "Jump-Rocket Stormers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "24-skull-shaman",
+   "name": "Skull-Shaman",
+   "role": "Leader",
+   "composition": "■ **1 Skull-Shaman**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "4",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Skull-Shaman"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rampage Energy",
+     "description": "Once per round, a friendly unit within 12″ gets +2″ to its next Charge roll.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Head-bang zap",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "D3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Skull-Shaman"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Skull-Shaman"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Skull-Shaman",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Skull-Shaman",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Head-bang zap",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Scrap-Gunner Mob",
+      "Dakka-Gun Mob",
+      "Scrap-Imps",
+      "Sneaky Scrap-Commandos",
+      "Jump-Rocket Stormers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "24-scrap-gunner-mob",
+   "name": "Scrap-Gunner Mob",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Scrap-Gunner Mob"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Strength in Numbers",
+     "description": "+1 Attack in melee while the unit has 10+ models.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Slugger",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Scrap-Gunner Mob"
+     ]
+    },
+    {
+     "name": "Choppa",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scrap-Gunner Mob"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Scrap-Gunner Mob",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Scrap-Gunner Mob",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Scrap-Gunner Mob",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Scrap-Gunner Mob",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Scrap-Gunner Mob",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Scrap-Gunner Mob",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scrap-Gunner Mob",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Slugger",
+       "count": 1
+      },
+      {
+       "item": "Choppa",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scrap-Surgeon",
+    "Skull-Shaman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "24-dakka-gun-mob",
+   "name": "Dakka-Gun Mob",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Dakka-Gun Mob"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "More Dakka",
+     "description": "Re-roll Hit rolls of 1 against units within 12″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Shoota",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Dakka-Gun Mob"
+     ]
+    },
+    {
+     "name": "Choppa",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Dakka-Gun Mob"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Dakka-Gun Mob",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Dakka-Gun Mob",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Dakka-Gun Mob",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Dakka-Gun Mob",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Dakka-Gun Mob",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Dakka-Gun Mob",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Dakka-Gun Mob",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Shoota",
+       "count": 1
+      },
+      {
+       "item": "Choppa",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scrap-Surgeon",
+    "Skull-Shaman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "24-scrap-imps",
+   "name": "Scrap-Imps",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **10 Scrap-Imps**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "EXPENDABLE",
+    "FRAIL",
+    "Scrap-Imps"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Imp Shields",
+     "description": "A friendly vehicle within 3″ may allocate one attack per round to this unit instead.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Scrap-blasta",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Scrap-Imps"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scrap-Imps"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Scrap-Imps",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scrap-Imps",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Scrap-blasta",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scrap-Surgeon",
+    "Skull-Shaman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "24-iron-hide-krushas",
+   "name": "Iron-Hide Krushas",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Iron-Hide Krushas"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Scrap-Plate",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Kustom rattler",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Iron-Hide Krushas"
+     ]
+    },
+    {
+     "name": "Power-klaw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Iron-Hide Krushas"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Iron-Hide Krushas",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Iron-Hide Krushas",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 220,
+     "models": [
+      {
+       "name": "Iron-Hide Krushas",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Hide Krushas",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Kustom rattler",
+       "count": 1
+      },
+      {
+       "item": "Power-klaw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "War-Boss Speed-King",
+    "Iron-Jaw Brute Boss"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "24-big-brute-bullies",
+   "name": "Big-Brute Bullies",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "4",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Big-Brute Bullies"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bully Charge",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Power-klaw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Big-Brute Bullies"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Big-Brute Bullies",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Big-Brute Bullies",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Big-Brute Bullies",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Big-Brute Bullies",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Power-klaw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "War-Boss Speed-King",
+    "Iron-Jaw Brute Boss"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "24-war-biker-speed-maniacs",
+   "name": "War-Biker Speed-Maniacs",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "14\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "War-Biker Speed-Maniacs"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Speed Freaks",
+     "description": "+2″ MOV in Round 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Dakka-guns",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "War-Biker Speed-Maniacs"
+     ]
+    },
+    {
+     "name": "Spiked wheels",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "War-Biker Speed-Maniacs"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "War-Biker Speed-Maniacs",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "War-Biker Speed-Maniacs",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "War-Biker Speed-Maniacs",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "War-Biker Speed-Maniacs",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "14\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Dakka-guns",
+       "count": 1
+      },
+      {
+       "item": "Spiked wheels",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "War-Boss Speed-King",
+    "Iron-Jaw Brute Boss"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "24-rocket-scrap-crew",
+   "name": "Rocket-Scrap Crew",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Rocket-Scrap Crew"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lucky Rockets",
+     "description": "Re-roll one Hit roll per activation.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rocket launcha",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "5+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Rocket-Scrap Crew"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rocket-Scrap Crew"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Rocket-Scrap Crew",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Rocket-Scrap Crew",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rocket-Scrap Crew",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Rocket launcha",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "War-Boss Speed-King",
+    "Iron-Jaw Brute Boss"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "24-sneaky-scrap-commandos",
+   "name": "Sneaky Scrap-Commandos",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "SCOUTS 6\"",
+    "Sneaky Scrap-Commandos"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Ambush",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Slugger",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Sneaky Scrap-Commandos"
+     ]
+    },
+    {
+     "name": "Choppa",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sneaky Scrap-Commandos"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Sneaky Scrap-Commandos",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Sneaky Scrap-Commandos",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Sneaky Scrap-Commandos",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sneaky Scrap-Commandos",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Slugger",
+       "count": 1
+      },
+      {
+       "item": "Choppa",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scrap-Surgeon",
+    "Skull-Shaman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "24-jump-rocket-stormers",
+   "name": "Jump-Rocket Stormers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Jump-Rocket Stormers"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Uncontrolled Landing",
+     "description": "May arrive 6″ from enemies (instead of 8″); roll a D6: on 1 suffer D3 Fatal Wounds.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Slugger",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Jump-Rocket Stormers"
+     ]
+    },
+    {
+     "name": "Choppa",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Jump-Rocket Stormers"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Jump-Rocket Stormers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Jump-Rocket Stormers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Jump-Rocket Stormers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Jump-Rocket Stormers",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Slugger",
+       "count": 1
+      },
+      {
+       "item": "Choppa",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Scrap-Surgeon",
+    "Skull-Shaman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "24-scrap-walker-brute",
+   "name": "Scrap-Walker Brute",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Scrap-Walker Brute**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "9",
+    "CTRL": "4"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Scrap-Walker Brute"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Unhinged",
+     "description": "+1 Attack in melee while damaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Big shoota",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scrap-Walker Brute"
+     ]
+    },
+    {
+     "name": "Crusher-klaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Scrap-Walker Brute"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Scrap-Walker Brute",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scrap-Walker Brute",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "4",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "9",
+     "CTRL": "4",
+     "equipped": [
+      {
+       "item": "Big shoota",
+       "count": 1
+      },
+      {
+       "item": "Crusher-klaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "24-war-buggy",
+   "name": "War-Buggy",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 War-Buggy**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "14\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "6",
+    "CTRL": "4"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "War-Buggy"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ramming Speed",
+     "description": "Crushing Impact for 0 CP on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Twin big shoota",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "War-Buggy"
+     ]
+    },
+    {
+     "name": "Spiked ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "War-Buggy"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "War-Buggy",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "War-Buggy",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "4",
+     "MOV": "14\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "6",
+     "CTRL": "4",
+     "equipped": [
+      {
+       "item": "Twin big shoota",
+       "count": 1
+      },
+      {
+       "item": "Spiked ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "24-tusk-beast-hauler",
+   "name": "Tusk-Beast Hauler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Tusk-Beast Hauler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "14",
+    "CTRL": "4"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Tusk-Beast Hauler"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Stampede",
+     "description": "+2″ MOV while damaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Howdah shootas",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Tusk-Beast Hauler"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Tusk-Beast Hauler"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Tusk-Beast Hauler"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Tusk-Beast Hauler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tusk-Beast Hauler",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "4",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "14",
+     "CTRL": "4",
+     "equipped": [
+      {
+       "item": "Howdah shootas",
+       "count": 1
+      },
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "24-war-rig-scrap-hauler",
+   "name": "War-Rig Scrap-Hauler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 War-Rig Scrap-Hauler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "12",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 3",
+    "TRANSPORT 12",
+    "HARDENED",
+    "War-Rig Scrap-Hauler"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 3",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 12",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Ramshackle",
+     "description": "The first time each round it would suffer damage of 3+, roll a D6: on 4+ the damage is 2.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Big shootas",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "War-Rig Scrap-Hauler"
+     ]
+    },
+    {
+     "name": "Spiked ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "War-Rig Scrap-Hauler"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "War-Rig Scrap-Hauler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "War-Rig Scrap-Hauler",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "12",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Big shootas",
+       "count": 1
+      },
+      {
+       "item": "Spiked ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "24-gun-wagon",
+   "name": "Gun-Wagon",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Gun-Wagon**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "16",
+    "CTRL": "4"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Gun-Wagon"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ramming Speed",
+     "description": "Crushing Impact for 0 CP on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Kannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Gun-Wagon"
+     ]
+    },
+    {
+     "name": "Big shootas",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Gun-Wagon"
+     ]
+    },
+    {
+     "name": "Spiked ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Gun-Wagon"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Gun-Wagon",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gun-Wagon",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "4",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "16",
+     "CTRL": "4",
+     "equipped": [
+      {
+       "item": "Kannon",
+       "count": 1
+      },
+      {
+       "item": "Big shootas",
+       "count": 1
+      },
+      {
+       "item": "Spiked ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "24-scrap-lobba-battery",
+   "name": "Scrap-Lobba Battery",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Scrap-Lobba Battery**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "6+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Scrap-Lobba Battery"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Imp Spotters",
+     "description": "May target units visible to any friendly Class 1 unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Scrap-lobbas",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Scrap-Lobba Battery"
+     ]
+    },
+    {
+     "name": "Big shoota",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Scrap-Lobba Battery"
+     ]
+    },
+    {
+     "name": "Spiked ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scrap-Lobba Battery"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Scrap-Lobba Battery",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scrap-Lobba Battery",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "6+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Scrap-lobbas",
+       "count": 1
+      },
+      {
+       "item": "Big shoota",
+       "count": 1
+      },
+      {
+       "item": "Spiked ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "24-scrap-titan-colossus",
+   "name": "Scrap-Titan Colossus",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Scrap-Titan Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "24",
+    "CTRL": "7"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Scrap-Titan Colossus"
+   ],
+   "factionKeywords": [
+    "Diesel-Skull War-Horde"
+   ],
+   "abilities": [
+    {
+     "name": "Dakka & Scrap-Fury",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Wreck Run",
+     "description": "When destroyed, before removal it moves 6″ and then explodes: every unit within 6″ suffers D6 Fatal Wounds on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Supa-kannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Scrap-Titan Colossus"
+     ]
+    },
+    {
+     "name": "Big shootas",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "10",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scrap-Titan Colossus"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Scrap-Titan Colossus"
+     ]
+    }
+   ],
+   "points": 350,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 350,
+     "models": [
+      {
+       "name": "Scrap-Titan Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scrap-Titan Colossus",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "24",
+     "Ld": "-",
+     "OC": "7",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "24",
+     "CTRL": "7",
+     "equipped": [
+      {
+       "item": "Supa-kannon",
+       "count": 1
+      },
+      {
+       "item": "Big shootas",
+       "count": 1
+      },
+      {
+       "item": "Titan stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

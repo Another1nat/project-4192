@@ -1,0 +1,3116 @@
+{
+ "name": "Skitter-Kin & Rad-Scavengers",
+ "factionKeyword": "Skitter-Kin & Rad-Scavengers",
+ "verb": "SCURRY",
+ "identity": "Tunnelling rat-kin hordes with unstable rad-tech. Cheap, cowardly and slippery: once per round a unit scurries away after an enemy activation, and their weapon-teams roll the dice on overcharged guns that might explode.",
+ "sources": [
+  "Project 4192 — gametheory/factions/19_skitter_kin_rad_scavengers.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Scurry · Seething Swarm",
+   "description": "Scurry: once per round, after an enemy unit finishes an activation, one unengaged Skitter-Kin unit may make a free 3″ move (not toward the enemy that just activated). Skitter-Kin units may Fall Back without being Rattled. Seething Swarm: once per round, at the End of Round, one Class 1 [FRAIL] unit returns D3 slain models (never above Starting Strength)."
+  },
+  {
+   "name": "Gamble — More-More Rad-Power!",
+   "description": "When a unit with an [OVERLOAD] weapon is selected to Shoot, you may Overcharge: roll a D6 — 1 KABOOM: the unit suffers D3 Fatal Wounds and does not Shoot · 2–5: +1 to Wound and +1 Damage · 6: also +1 PEN and +2 Attacks. (Risk: durability (dice).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "19-det1",
+   "name": "Rad-Tech Clans",
+   "cost": 1,
+   "playstyle": "Weapon-teams and engines overcharging every activation.",
+   "rules": [
+    {
+     "id": "19-det1-r1",
+     "name": "Tinker-Tinker",
+     "description": "Overcharge rolls of 1 may be re-rolled once per round (army-wide); Weapon Teams within 3″ of a Class 1 unit are [UNSEEN 12″]."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "19-det1-e1",
+     "name": "Rad-Stone Amulet",
+     "cost": 10,
+     "description": "**Under-Chief Warlock-Engineer** only. Units within 6″ ignore Overcharge KABOOM on a 4+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Skitter-Kin & Rad-Scavengers"
+       ],
+       "datasheet": "Under-Chief Warlock-Engineer"
+      }
+     ]
+    },
+    {
+     "id": "19-det1-e2",
+     "name": "Overclocked Barrels",
+     "cost": 10,
+     "description": "**Rotary Scrap-Gun Team** only. +1 Attack.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Skitter-Kin & Rad-Scavengers"
+       ],
+       "datasheet": "Rotary Scrap-Gun Team"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "19-det1-s1",
+     "name": "Rad-Surge",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit Overcharges",
+     "target": "",
+     "effect": "Roll two dice and pick one.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "19-det1-s2",
+     "name": "Duck Behind the Slaves",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Weapon Team is targeted within 3″ of a Class 1 unit",
+     "target": "",
+     "effect": "The Class 1 unit takes the attack instead.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "19-det1-s3",
+     "name": "Burn-Out",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit suffers KABOOM",
+     "target": "",
+     "effect": "Each enemy unit within 3″ also suffers D3 Fatal Wounds.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "19-det2",
+   "name": "Burrowing Swarm",
+   "cost": 1,
+   "playstyle": "Hordes appearing from table edges and drills (no portals).",
+   "rules": [
+    {
+     "id": "19-det2-r1",
+     "name": "Underhive Ambush",
+     "description": "Up to 3 Class 1 units may start in Reserves and arrive from Round 2 wholly within 6″ of any table edge or within 3″ of a friendly Subterranean Rad-Drill, more than 8″ from enemies."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "19-det2-e1",
+     "name": "Tunnel-Map",
+     "cost": 10,
+     "description": "**Gutter-Assassin** only. One unit arriving from Reserves may arrive 6″ from enemies instead of 8″.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Skitter-Kin & Rad-Scavengers"
+       ],
+       "datasheet": "Gutter-Assassin"
+      }
+     ]
+    },
+    {
+     "id": "19-det2-e2",
+     "name": "Swarm-Master's Whip",
+     "cost": 15,
+     "description": "**Clan-Lord Clawmaster** only. Friendly Class 1 units within 6″ get +1 to Hit in melee.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Skitter-Kin & Rad-Scavengers"
+       ],
+       "datasheet": "Clan-Lord Clawmaster"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "19-det2-s1",
+     "name": "Endless Tide",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase, once per battle",
+     "target": "",
+     "effect": "Return a destroyed Class 1 [FRAIL] unit at half strength from a table edge.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "19-det2-s2",
+     "name": "Scurry Away",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit finishes an activation",
+     "target": "",
+     "effect": "Scurry a second unit this round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "19-det2-s3",
+     "name": "Overwhelm",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit with 10+ models declares a Charge",
+     "target": "",
+     "effect": "+2″ to the Charge roll.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "19-det3",
+   "name": "Skilled Manipulators",
+   "cost": 1,
+   "playstyle": "Leaders hide behind the horde while it soaks the damage.",
+   "rules": [
+    {
+     "id": "19-det3-r1",
+     "name": "Expendable Kin",
+     "description": "Leaders within 3″ of a friendly Class 1 unit have WARD 4+ against ranged attacks; any saved damage is inflicted on that Class 1 unit instead (1 Fatal Wound per save)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "19-det3-e1",
+     "name": "Cowardly Cunning",
+     "cost": 10,
+     "description": "**Under-Chief Warlock-Engineer** only. [STEALTH].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Skitter-Kin & Rad-Scavengers"
+       ],
+       "datasheet": "Under-Chief Warlock-Engineer"
+      }
+     ]
+    },
+    {
+     "id": "19-det3-e2",
+     "name": "Crown of the Gutter-King",
+     "cost": 15,
+     "description": "**Clan-Lord Clawmaster** only. The attached unit has UNYIELDING 6+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Skitter-Kin & Rad-Scavengers"
+       ],
+       "datasheet": "Clan-Lord Clawmaster"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "19-det3-s1",
+     "name": "Sacrifice the Slaves",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader is targeted in melee within 3″ of a Class 1 unit",
+     "target": "",
+     "effect": "Remove D3 models from that unit: the Leader is −1 to be Hit.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "19-det3-s2",
+     "name": "Fleeing Fury",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit Falls Back",
+     "target": "",
+     "effect": "It may Shoot this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "19-det3-s3",
+     "name": "Kin-Shield",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 2–3 unit is targeted within 3″ of a Class 1 unit",
+     "target": "",
+     "effect": "It is [STEALTH] for the attack.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "19-under-chief-warlock-engineer",
+   "name": "Under-Chief Warlock-Engineer",
+   "role": "Leader",
+   "composition": "■ **1 Under-Chief Warlock-Engineer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Under-Chief Warlock-Engineer"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Skilled Manipulator",
+     "description": "While within 3″ of a friendly Class 1 unit, damage to this model is taken by that unit on a 4+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Tinker-Tinker",
+     "description": "The attached unit re-rolls ranged Hit rolls of 1; its Overcharge KABOOM only happens on a 1 after re-rolling.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rad-pistol",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HAILFIRE 1",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Under-Chief Warlock-Engineer"
+     ]
+    },
+    {
+     "name": "Rad-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Under-Chief Warlock-Engineer"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Under-Chief Warlock-Engineer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Under-Chief Warlock-Engineer",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Rad-pistol",
+       "count": 1
+      },
+      {
+       "item": "Rad-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Rad-Fire Thrower Team",
+      "Rotary Scrap-Gun Team",
+      "Rad-Brute Packs"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "19-clan-lord-clawmaster",
+   "name": "Clan-Lord Clawmaster",
+   "role": "Leader",
+   "composition": "■ **1 Clan-Lord Clawmaster**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Clan-Lord Clawmaster"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Cornered Rat",
+     "description": "+2 Attacks in melee while damaged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Bullying Commands",
+     "description": "The attached unit gets +1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Clan-Lord Clawmaster"
+     ]
+    },
+    {
+     "name": "Warp-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Clan-Lord Clawmaster"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Clan-Lord Clawmaster",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Clan-Lord Clawmaster",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Warp-claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Rad-Fire Thrower Team",
+      "Rotary Scrap-Gun Team",
+      "Rad-Brute Packs"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "19-rad-prophet",
+   "name": "Rad-Prophet",
+   "role": "Leader",
+   "composition": "■ **1 Rad-Prophet**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Rad-Prophet"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pestilent Blessing",
+     "description": "Friendly Class 1 units within 6″ have UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Rad-Spark",
+     "description": "Once per round, one friendly unit within 12″ re-rolls its Overcharge die.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rad-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Rad-Prophet"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rad-Prophet"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Rad-Prophet",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rad-Prophet",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rad-bolt",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Clan-Scavengers",
+      "Clan-Spearkin",
+      "Iron-Tail Guard",
+      "Gutter-Stalkers",
+      "Gas-Lobber Squad",
+      "Vermin Tide"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "19-gutter-assassin",
+   "name": "Gutter-Assassin",
+   "role": "Leader",
+   "composition": "■ **1 Gutter-Assassin**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Gutter-Assassin"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Hidden in the Ranks",
+     "description": "May be set up hidden inside a friendly Class 1 unit and revealed when that unit is selected to Fight.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Poison darts",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PRECISION"
+     ],
+     "models": [
+      "Gutter-Assassin"
+     ]
+    },
+    {
+     "name": "Rad-dagger",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Gutter-Assassin"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Gutter-Assassin",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gutter-Assassin",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Poison darts",
+       "count": 1
+      },
+      {
+       "item": "Rad-dagger",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Clan-Scavengers",
+      "Clan-Spearkin",
+      "Iron-Tail Guard",
+      "Gutter-Stalkers",
+      "Gas-Lobber Squad",
+      "Vermin Tide"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "19-clan-scavengers",
+   "name": "Clan-Scavengers",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "FRAIL",
+    "Clan-Scavengers"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Strength in Numbers",
+     "description": "+1 CTRL per 5 models.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Scrap-gun",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Clan-Scavengers"
+     ]
+    },
+    {
+     "name": "Rusty blades & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Clan-Scavengers"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Clan-Scavengers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Clan-Scavengers",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Clan-Scavengers",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Clan-Scavengers",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Clan-Scavengers",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Clan-Scavengers",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Clan-Scavengers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Scrap-gun",
+       "count": 1
+      },
+      {
+       "item": "Rusty blades & teeth",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rad-Prophet",
+    "Gutter-Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "19-clan-spearkin",
+   "name": "Clan-Spearkin",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Clan-Spearkin"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shieldwall of Bodies",
+     "description": "A friendly Leader within 3″ is [STEALTH].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Scrap-sling",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Clan-Spearkin"
+     ]
+    },
+    {
+     "name": "Rusty spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Clan-Spearkin"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Clan-Spearkin",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Clan-Spearkin",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Clan-Spearkin",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Clan-Spearkin",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Clan-Spearkin",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Clan-Spearkin",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Clan-Spearkin",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Scrap-sling",
+       "count": 1
+      },
+      {
+       "item": "Rusty spear",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rad-Prophet",
+    "Gutter-Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "19-iron-tail-guard",
+   "name": "Iron-Tail Guard",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Iron-Tail Guard"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Chieftain's Guard",
+     "description": "An attached Leader's damage is taken by this unit on a 3+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Iron-Tail Guard"
+     ]
+    },
+    {
+     "name": "Serrated halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Iron-Tail Guard"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Iron-Tail Guard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Iron-Tail Guard",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Iron-Tail Guard",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Iron-Tail Guard",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Iron-Tail Guard",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Iron-Tail Guard",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Tail Guard",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy rifle",
+       "count": 1
+      },
+      {
+       "item": "Serrated halberd",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rad-Prophet",
+    "Gutter-Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "19-gutter-stalkers",
+   "name": "Gutter-Stalkers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "SCOUTS 6\"",
+    "Gutter-Stalkers"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Ambush",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Gutter-Stalkers"
+     ]
+    },
+    {
+     "name": "Paired rad-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Gutter-Stalkers"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Gutter-Stalkers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 50,
+     "models": [
+      {
+       "name": "Gutter-Stalkers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Gutter-Stalkers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gutter-Stalkers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Paired rad-blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rad-Prophet",
+    "Gutter-Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "19-rad-fire-thrower-team",
+   "name": "Rad-Fire Thrower Team",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "6+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Rad-Fire Thrower Team"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Overcharge",
+     "description": "More-More Rad-Power! (2–5: +1 Wound/+1 Damage).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Hidden Weapon Team",
+     "description": "[UNSEEN 12″] while within 3″ of a friendly Class 1 unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rad-fire thrower",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Rad-Fire Thrower Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rad-Fire Thrower Team"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Rad-Fire Thrower Team",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 45,
+     "models": [
+      {
+       "name": "Rad-Fire Thrower Team",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rad-Fire Thrower Team",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "6+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rad-fire thrower",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Under-Chief Warlock-Engineer",
+    "Clan-Lord Clawmaster"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "19-rotary-scrap-gun-team",
+   "name": "Rotary Scrap-Gun Team",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "6+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Rotary Scrap-Gun Team"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Overcharge",
+     "description": "More-More Rad-Power!",
+     "type": "datasheet"
+    },
+    {
+     "name": "Hidden Weapon Team",
+     "description": "[UNSEEN 12″] while within 3″ of a friendly Class 1 unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rotary scrap-gun",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D6+2",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "OVERLOAD"
+     ],
+     "models": [
+      "Rotary Scrap-Gun Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rotary Scrap-Gun Team"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Rotary Scrap-Gun Team",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 45,
+     "models": [
+      {
+       "name": "Rotary Scrap-Gun Team",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rotary Scrap-Gun Team",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "6+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rotary scrap-gun",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Under-Chief Warlock-Engineer",
+    "Clan-Lord Clawmaster"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "19-rad-brute-packs",
+   "name": "Rad-Brute Packs",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Rad-Brute Packs"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Cornered Ferocity",
+     "description": "+1 Attack in melee while damaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rad-grafted claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Rad-Brute Packs"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Rad-Brute Packs",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Rad-Brute Packs",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Rad-Brute Packs",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rad-Brute Packs",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rad-grafted claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Under-Chief Warlock-Engineer",
+    "Clan-Lord Clawmaster"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "19-gas-lobber-squad",
+   "name": "Gas-Lobber Squad",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "Gas-Lobber Squad"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Choking Cloud",
+     "description": "Units hit suffer −1 to Hit until the End of Round on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Choke-gas globes",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "D3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SHRAPNEL 1",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Gas-Lobber Squad"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Gas-Lobber Squad"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Gas-Lobber Squad",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 50,
+     "models": [
+      {
+       "name": "Gas-Lobber Squad",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Gas-Lobber Squad",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gas-Lobber Squad",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Choke-gas globes",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rad-Prophet",
+    "Gutter-Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "19-vermin-tide",
+   "name": "Vermin Tide",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "EXPENDABLE",
+    "FRAIL",
+    "Vermin Tide"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Endless Vermin",
+     "description": "Seething Swarm returns D3+1 models for this unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rusty blades & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Vermin Tide"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Vermin Tide",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Vermin Tide",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Vermin Tide",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Vermin Tide",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Vermin Tide",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Vermin Tide",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Vermin Tide",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rusty blades & teeth",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rad-Prophet",
+    "Gutter-Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "19-rad-wheel",
+   "name": "Rad-Wheel",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Rad-Wheel**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Rad-Wheel"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Erratic Rolling",
+     "description": "At the start of its activation roll a D6: on a 1 it moves 2D6″ in a random direction first.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Overcharge",
+     "description": "More-More Rad-Power!",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rad-arcs",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "OVERLOAD"
+     ],
+     "models": [
+      "Rad-Wheel"
+     ]
+    },
+    {
+     "name": "Crushing wheel",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "D6+2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Rad-Wheel"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Rad-Wheel",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rad-Wheel",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rad-arcs",
+       "count": 1
+      },
+      {
+       "item": "Crushing wheel",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "19-rad-brute-monstrosity",
+   "name": "Rad-Brute Monstrosity",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Rad-Brute Monstrosity**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "9\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "8",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Rad-Brute Monstrosity"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Overcharge",
+     "description": "More-More Rad-Power!",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rad-cannon arms",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "OVERLOAD"
+     ],
+     "models": [
+      "Rad-Brute Monstrosity"
+     ]
+    },
+    {
+     "name": "Mutant claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Rad-Brute Monstrosity"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Rad-Brute Monstrosity",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rad-Brute Monstrosity",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "8",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rad-cannon arms",
+       "count": 1
+      },
+      {
+       "item": "Mutant claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "19-doom-gong-engine",
+   "name": "Doom-Gong Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Doom-Gong Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "6+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "11",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Doom-Gong Engine"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Peal of Doom",
+     "description": "Friendly Class 1 units within 9″ get +1 Attack on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sonic gong-wave",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "D6+2",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "SUPPRESSIVE",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Doom-Gong Engine"
+     ]
+    },
+    {
+     "name": "Grinding wheels",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Doom-Gong Engine"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Doom-Gong Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Doom-Gong Engine",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "11",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "6+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "11",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sonic gong-wave",
+       "count": 1
+      },
+      {
+       "item": "Grinding wheels",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "19-subterranean-rad-drill",
+   "name": "Subterranean Rad-Drill",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Subterranean Rad-Drill**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "11\"",
+    "MS": "6+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "11",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "VANGUARD STRIKE",
+    "HARDENED",
+    "Subterranean Rad-Drill"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Burrow",
+     "description": "Arrives by [VANGUARD STRIKE] carrying its passengers (a unit, not a portal).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Drill-vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Subterranean Rad-Drill"
+     ]
+    },
+    {
+     "name": "Drill-head",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Subterranean Rad-Drill"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Subterranean Rad-Drill",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Subterranean Rad-Drill",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "11",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "11\"",
+     "MS": "6+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "11",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Drill-vents",
+       "count": 1
+      },
+      {
+       "item": "Drill-head",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "19-rad-arc-cannon-crawler",
+   "name": "Rad-Arc Cannon Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Rad-Arc Cannon Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "11\"",
+    "MS": "6+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Rad-Arc Cannon Crawler"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Overcharge",
+     "description": "More-More Rad-Power!",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rad-arc cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Rad-Arc Cannon Crawler"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Rad-Arc Cannon Crawler"
+     ]
+    },
+    {
+     "name": "Grinding wheels",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rad-Arc Cannon Crawler"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Rad-Arc Cannon Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rad-Arc Cannon Crawler",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "11\"",
+     "MS": "6+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rad-arc cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Grinding wheels",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "19-mutant-pit-abomination",
+   "name": "Mutant Pit-Abomination",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Mutant Pit-Abomination**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "13",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Mutant Pit-Abomination"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Too Horrible to Die",
+     "description": "The first time it would be destroyed, roll a D6: on 4+ it stays with 3 MIGHT.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Mutant claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Mutant Pit-Abomination"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Mutant Pit-Abomination"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Mutant Pit-Abomination",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Mutant Pit-Abomination",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "13",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Mutant claws",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "19-rad-colossus-engine",
+   "name": "Rad-Colossus Engine",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Rad-Colossus Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "11\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "22",
+    "CTRL": "6"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Rad-Colossus Engine"
+   ],
+   "factionKeywords": [
+    "Skitter-Kin & Rad-Scavengers"
+   ],
+   "abilities": [
+    {
+     "name": "Scurry · Seething Swarm",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Overcharge",
+     "description": "More-More Rad-Power!",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rad-storm cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Rad-Colossus Engine"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Rad-Colossus Engine"
+     ]
+    }
+   ],
+   "points": 225,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 225,
+     "models": [
+      {
+       "name": "Rad-Colossus Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rad-Colossus Engine",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "11\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "equipped": [
+      {
+       "item": "Rad-storm cannon",
+       "count": 1
+      },
+      {
+       "item": "Titan stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

@@ -1,0 +1,3176 @@
+{
+ "name": "Sun-Pyre Witch-Courts",
+ "factionKeyword": "Sun-Pyre Witch-Courts",
+ "verb": "FAITH",
+ "identity": "Zealot witch-hunters, warrior-sisters and self-scourging penitents. Fragile bodies, burning weapons, and a bank of Pyre-Dice that turns one roll per activation into a miracle.",
+ "sources": [
+  "Project 4192 — gametheory/factions/03_sun_pyre_witch_courts.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Pyre-Dice",
+   "description": "Command Phase: roll 1 D6 and bank it as a Pyre-Die (keep the result). Also bank 1 when a friendly unit is destroyed. Maximum 3 banked. Once per activation, before rolling, you may replace ONE of your own Hit, Wound, ARM-save or Charge dice with a banked die. Pyre-Dice are never used on the opponent's rolls."
+  },
+  {
+   "name": "Gamble — Martyr's Pyre",
+   "description": "Once per battle, when a unit activates, spend ALL banked Pyre-Dice (minimum 2): its weapons gain [SHREDDING WOUNDS] and +1 Damage this activation. The bank is empty afterwards. (Risk: resource.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "03-det1",
+   "name": "Burning Rose",
+   "cost": 1,
+   "playstyle": "Flamers forward: close the distance, burn the objectives.",
+   "rules": [
+    {
+     "id": "03-det1-r1",
+     "name": "Searing Purgation",
+     "description": "[SCORCH] weapons gain +1 PEN. Once per round, one [SCORCH] attack against a unit on an objective also inflicts D3 Fatal Wounds on a 5+."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "03-det1-e1",
+     "name": "Ember of the First Pyre",
+     "cost": 15,
+     "description": "**Canoness of the Pyre** only. +1 Damage to melee attacks on a round she charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Pyre Witch-Courts"
+       ],
+       "datasheet": "Canoness of the Pyre"
+      }
+     ]
+    },
+    {
+     "id": "03-det1-e2",
+     "name": "Ash-Crown",
+     "cost": 10,
+     "description": "**Grand Inquisitrix** only. The attached unit gets +1 PEN with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Pyre Witch-Courts"
+       ],
+       "datasheet": "Grand Inquisitrix"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "03-det1-s1",
+     "name": "Purging Flame",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit with [SCORCH] weapons is selected to Shoot",
+     "target": "",
+     "effect": "Re-roll its Wound rolls this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "03-det1-s2",
+     "name": "Wall of Fire",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit declares a Charge against a unit with [SCORCH] weapons",
+     "target": "",
+     "effect": "That unit's Retaliation Strike is made with one [SCORCH] weapon instead (hits automatically).",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "03-det1-s3",
+     "name": "Fan the Flames",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A friendly unit is destroyed",
+     "target": "",
+     "effect": "Bank 2 Pyre-Dice instead of 1 (max 3).",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "03-det2",
+   "name": "Penitent Host",
+   "cost": 1,
+   "playstyle": "Bleed for it: chipped squads get deadlier, so the opponent must finish what they start.",
+   "rules": [
+    {
+     "id": "03-det2-r1",
+     "name": "Blood of Martyrs",
+     "description": "Units below Starting Strength (or damaged, for single models) get +1 to Hit; below Half-Strength they also get +1 to Wound."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "03-det2-e1",
+     "name": "Scourge of Contrition",
+     "cost": 15,
+     "description": "**Confessor-Firebrand** only. Friendly units within 6″ get +1 to Wound in melee on a round they charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Pyre Witch-Courts"
+       ],
+       "datasheet": "Confessor-Firebrand"
+      }
+     ]
+    },
+    {
+     "id": "03-det2-e2",
+     "name": "Martyr's Shroud",
+     "cost": 15,
+     "description": "**Canoness of the Pyre** only. The bearer has UNYIELDING 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Pyre Witch-Courts"
+       ],
+       "datasheet": "Canoness of the Pyre"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "03-det2-s1",
+     "name": "Final Absolution",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A friendly Class 1–2 unit is destroyed in melee",
+     "target": "",
+     "effect": "Before removal, its surviving models fight once more.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "03-det2-s2",
+     "name": "Unbroken Faith",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit would become Rattled",
+     "target": "",
+     "effect": "It is not Rattled.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "03-det2-s3",
+     "name": "Rush to Martyrdom",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit below Starting Strength declares a Charge",
+     "target": "",
+     "effect": "+2″ to the Charge roll.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "03-det3",
+   "name": "Witch-Hunter Tribunal",
+   "cost": 1,
+   "playstyle": "Hunt the leaders and casters, ignore the rest.",
+   "rules": [
+    {
+     "id": "03-det3-r1",
+     "name": "Sentence of the Court",
+     "description": "Before the battle mark 2 enemy units (at least 1 must be a Leader or [PSYCHIC / ARCANE] unit if possible). Your attacks against Marked units re-roll Wound rolls of 1 and gain [PRECISION]. When a Marked unit is destroyed, bank 1 Pyre-Die."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "03-det3-e1",
+     "name": "Seal of the Tribunal",
+     "cost": 10,
+     "description": "**Grand Inquisitrix** only. The attached unit re-rolls Wound rolls of 1.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Pyre Witch-Courts"
+       ],
+       "datasheet": "Grand Inquisitrix"
+      }
+     ]
+    },
+    {
+     "id": "03-det3-e2",
+     "name": "Null-Lantern",
+     "cost": 10,
+     "description": "**Null-Maiden Warden** only. Null Aura range becomes 9″ and also applies to Fatal Wounds from spells (ignored on 5+).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sun-Pyre Witch-Courts"
+       ],
+       "datasheet": "Null-Maiden Warden"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "03-det3-s1",
+     "name": "Interrogate",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit ends a Fight action engaged with a Marked unit",
+     "target": "",
+     "effect": "Gain 1 CP (once per battle).",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "03-det3-s2",
+     "name": "Burn the Witch",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit targets a Marked [PSYCHIC / ARCANE] unit",
+     "target": "",
+     "effect": "Its weapons gain [SCORCH] and +1 Damage.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "03-det3-s3",
+     "name": "Sentence Passed",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase",
+     "target": "",
+     "effect": "Move one Mark to a new enemy unit.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "03-grand-inquisitrix",
+   "name": "Grand Inquisitrix",
+   "role": "Leader",
+   "composition": "■ **1 Grand Inquisitrix**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Grand Inquisitrix"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Witch-Mark",
+     "description": "Before the battle mark 1 enemy Leader or [PSYCHIC / ARCANE] unit. This unit and its attached unit re-roll Wound rolls against it and their attacks gain [PRECISION] against it.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Lead the Purge",
+     "description": "The attached unit re-rolls ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ember pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Grand Inquisitrix"
+     ]
+    },
+    {
+     "name": "Relic blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Grand Inquisitrix"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Grand Inquisitrix",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Grand Inquisitrix",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Ember pistol",
+       "count": 1
+      },
+      {
+       "item": "Relic blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Reliquant Warsuits",
+      "Pyre-Justiciars",
+      "Purifier Outriders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "03-canoness-of-the-pyre",
+   "name": "Canoness of the Pyre",
+   "role": "Leader",
+   "composition": "■ **1 Canoness of the Pyre**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Canoness of the Pyre"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blessed Edge",
+     "description": "Melee critical wounds become Fatal Wounds ([SHREDDING WOUNDS]).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Lead the Charge",
+     "description": "The attached unit gets +1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ember pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Canoness of the Pyre"
+     ]
+    },
+    {
+     "name": "Brazier-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "SCORCH"
+     ],
+     "models": [
+      "Canoness of the Pyre"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Canoness of the Pyre",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Canoness of the Pyre",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Ember pistol",
+       "count": 1
+      },
+      {
+       "item": "Brazier-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Reliquant Warsuits",
+      "Pyre-Justiciars",
+      "Purifier Outriders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "03-confessor-firebrand",
+   "name": "Confessor-Firebrand",
+   "role": "Leader",
+   "composition": "■ **1 Confessor-Firebrand**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Confessor-Firebrand"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Fiery Sermon",
+     "description": "Friendly units within 6″ that charged this round get +1 Attack in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Kindle Faith",
+     "description": "When this Leader activates, bank 1 Pyre-Die (max 3).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ember pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Confessor-Firebrand"
+     ]
+    },
+    {
+     "name": "Chain-scourge",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Confessor-Firebrand"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Confessor-Firebrand",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Confessor-Firebrand",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Ember pistol",
+       "count": 1
+      },
+      {
+       "item": "Chain-scourge",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Sisters of the Pyre",
+      "Pilgrim Levy",
+      "Penitent Flagellants",
+      "Purgator Vanguard",
+      "Ascendant Seraphs",
+      "Vindicant Squad",
+      "Acolyte Cell"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-null-maiden-warden",
+   "name": "Null-Maiden Warden",
+   "role": "Leader",
+   "composition": "■ **1 Null-Maiden Warden**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Null-Maiden Warden"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Null Aura",
+     "description": "Enemy [PSYCHIC / ARCANE] attacks and spells targeting friendly units within 6″ suffer −1 to Hit.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Veil of Silence",
+     "description": "The attached unit counts as [STEALTH] (−1 to be Hit at range).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ember pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Null-Maiden Warden"
+     ]
+    },
+    {
+     "name": "Blessed blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Null-Maiden Warden"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Null-Maiden Warden",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Null-Maiden Warden",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Ember pistol",
+       "count": 1
+      },
+      {
+       "item": "Blessed blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Sisters of the Pyre",
+      "Pilgrim Levy",
+      "Penitent Flagellants",
+      "Purgator Vanguard",
+      "Ascendant Seraphs",
+      "Vindicant Squad",
+      "Acolyte Cell"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-sisters-of-the-pyre",
+   "name": "Sisters of the Pyre",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Sisters of the Pyre"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sacred Rites",
+     "description": "Re-roll Hit rolls of 1 while within 3″ of an objective.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sacred bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Sisters of the Pyre"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sisters of the Pyre"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Sisters of the Pyre",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Sisters of the Pyre",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Sisters of the Pyre",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Sisters of the Pyre",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Sisters of the Pyre",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Sisters of the Pyre",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sisters of the Pyre",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Sacred bolter",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Confessor-Firebrand",
+    "Null-Maiden Warden"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-pilgrim-levy",
+   "name": "Pilgrim Levy",
+   "role": "Battleline",
+   "composition": "■ **10 Pilgrim Levy**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "EXPENDABLE",
+    "Pilgrim Levy"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Fodder for the Pyre",
+     "description": "When this unit is destroyed, bank 1 Pyre-Die even if the bank was already used this round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pilgrim musket",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Pilgrim Levy"
+     ]
+    },
+    {
+     "name": "Pitchfork & flail",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Pilgrim Levy"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Pilgrim Levy",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pilgrim Levy",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Pilgrim musket",
+       "count": 1
+      },
+      {
+       "item": "Pitchfork & flail",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Confessor-Firebrand",
+    "Null-Maiden Warden"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-penitent-flagellants",
+   "name": "Penitent Flagellants",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FRAIL",
+    "Penitent Flagellants"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Rapture of Pain",
+     "description": "UNYIELDING 5+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Frenzy of Contrition",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Chain-scourge",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Penitent Flagellants"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Penitent Flagellants",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Penitent Flagellants",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Penitent Flagellants",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Penitent Flagellants",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Penitent Flagellants",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Penitent Flagellants",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Penitent Flagellants",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Chain-scourge",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Confessor-Firebrand",
+    "Null-Maiden Warden"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-reliquant-warsuits",
+   "name": "Reliquant Warsuits",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3 Reliquant Warsuits**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Reliquant Warsuits"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sanctified Plate",
+     "description": "+1 ARM (to 3+ cap) against attacks with PEN −1 or 0.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Reliquant Warsuits"
+     ]
+    },
+    {
+     "name": "Great weapon / fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Reliquant Warsuits"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Reliquant Warsuits",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Reliquant Warsuits",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pyre-cannon",
+       "count": 1
+      },
+      {
+       "item": "Great weapon / fist",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Grand Inquisitrix",
+    "Canoness of the Pyre"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "03-pyre-justiciars",
+   "name": "Pyre-Justiciars",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Pyre-Justiciars"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sworn Bodyguard",
+     "description": "While a Leader is attached, damage allocated to the Leader is taken by this unit on a 4+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Shield-Sisters",
+     "description": "Enemies get −1 to Hit this unit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sacred bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Pyre-Justiciars"
+     ]
+    },
+    {
+     "name": "Justiciar halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Pyre-Justiciars"
+     ]
+    }
+   ],
+   "points": 155,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 155,
+     "models": [
+      {
+       "name": "Pyre-Justiciars",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 195,
+     "models": [
+      {
+       "name": "Pyre-Justiciars",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Pyre-Justiciars",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pyre-Justiciars",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Sacred bolter",
+       "count": 1
+      },
+      {
+       "item": "Justiciar halberd",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Grand Inquisitrix",
+    "Canoness of the Pyre"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "03-purgator-vanguard",
+   "name": "Purgator Vanguard",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Purgator Vanguard**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "Purgator Vanguard"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Purge at Arm's Length",
+     "description": "Ranged weapons get +1 PEN within 6″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hand-pyre",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Purgator Vanguard"
+     ]
+    },
+    {
+     "name": "Melta gun",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6",
+     "keywords": [
+      "ERADICATE 2"
+     ],
+     "models": [
+      "Purgator Vanguard"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Purgator Vanguard"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Purgator Vanguard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Purgator Vanguard",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Hand-pyre",
+       "count": 1
+      },
+      {
+       "item": "Melta gun",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Confessor-Firebrand",
+    "Null-Maiden Warden"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-ascendant-seraphs",
+   "name": "Ascendant Seraphs",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Ascendant Seraphs"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Descend in Glory",
+     "description": "[STRIKE FIRST] on a round they arrived or charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Twin ember pistols",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Ascendant Seraphs"
+     ]
+    },
+    {
+     "name": "Blessed blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Ascendant Seraphs"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Ascendant Seraphs",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Ascendant Seraphs",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Ascendant Seraphs",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ascendant Seraphs",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Twin ember pistols",
+       "count": 1
+      },
+      {
+       "item": "Blessed blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Confessor-Firebrand",
+    "Null-Maiden Warden"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-purifier-outriders",
+   "name": "Purifier Outriders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "12\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Purifier Outriders"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Cleansing Pass",
+     "description": "+1 to Hit with ranged weapons against units within 12″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sacred bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Purifier Outriders"
+     ]
+    },
+    {
+     "name": "Hand-pyre",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Purifier Outriders"
+     ]
+    },
+    {
+     "name": "Chain-scourge",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Purifier Outriders"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Purifier Outriders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Purifier Outriders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Purifier Outriders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Purifier Outriders",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "12\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sacred bolter",
+       "count": 1
+      },
+      {
+       "item": "Hand-pyre",
+       "count": 1
+      },
+      {
+       "item": "Chain-scourge",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Grand Inquisitrix",
+    "Canoness of the Pyre"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "03-vindicant-squad",
+   "name": "Vindicant Squad",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Vindicant Squad**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Vindicant Squad"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Steady Faith",
+     "description": "Re-roll ranged Hit rolls of 1 if this unit did not Move this activation.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Vindicant Squad"
+     ]
+    },
+    {
+     "name": "Missile launcher",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Vindicant Squad"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Vindicant Squad"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Vindicant Squad",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Vindicant Squad",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Pyre-cannon",
+       "count": 1
+      },
+      {
+       "item": "Missile launcher",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Confessor-Firebrand",
+    "Null-Maiden Warden"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-acolyte-cell",
+   "name": "Acolyte Cell",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "SCOUTS 6\"",
+    "Acolyte Cell"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Informants",
+     "description": "When deployed, choose 1 enemy unit: friendly units ignore Cover when targeting it in Round 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Acolyte Cell"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Acolyte Cell"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Acolyte Cell",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Acolyte Cell",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Acolyte Cell",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Acolyte Cell",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Confessor-Firebrand",
+    "Null-Maiden Warden"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "03-mortification-engine",
+   "name": "Mortification Engine",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1–2 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Mortification Engine"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Endless Contrition",
+     "description": "UNYIELDING 5+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Agony Drives Them",
+     "description": "+1 Attack while damaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hand-pyre",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Mortification Engine"
+     ]
+    },
+    {
+     "name": "Penance flails",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Mortification Engine"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Mortification Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Mortification Engine",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Mortification Engine",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Hand-pyre",
+       "count": 1
+      },
+      {
+       "item": "Penance flails",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "03-pyre-altar-crawler",
+   "name": "Pyre-Altar Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Pyre-Altar Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Pyre-Altar Crawler"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sacred Pyre",
+     "description": "Friendly Class 1–2 units within 6″ get UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Pyre-Altar Crawler"
+     ]
+    },
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Pyre-Altar Crawler"
+     ]
+    },
+    {
+     "name": "Hymn-stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Pyre-Altar Crawler"
+     ]
+    },
+    {
+     "name": "Hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Pyre-Altar Crawler"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Pyre-Altar Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pyre-Altar Crawler",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Pyre-cannon",
+       "count": 1
+      },
+      {
+       "item": "Pyre-cannon",
+       "count": 1
+      },
+      {
+       "item": "Hymn-stubber",
+       "count": 1
+      },
+      {
+       "item": "Hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "03-scourging-tank",
+   "name": "Scourging Tank",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Scourging Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Scourging Tank"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Litany of Ruin",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Penance cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Scourging Tank"
+     ]
+    },
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Scourging Tank"
+     ]
+    },
+    {
+     "name": "Hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scourging Tank"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Scourging Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scourging Tank",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Penance cannon",
+       "count": 1
+      },
+      {
+       "item": "Pyre-cannon",
+       "count": 1
+      },
+      {
+       "item": "Hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "03-sanctum-carrier",
+   "name": "Sanctum Carrier",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Sanctum Carrier**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Sanctum Carrier"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Mobile Shrine",
+     "description": "Units that disembark from this transport may re-roll 1 Charge die this round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hymn-stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Sanctum Carrier"
+     ]
+    },
+    {
+     "name": "Hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sanctum Carrier"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Sanctum Carrier",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sanctum Carrier",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Hymn-stubber",
+       "count": 1
+      },
+      {
+       "item": "Hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "03-hymn-organ-battery",
+   "name": "Hymn-Organ Battery",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Hymn-Organ Battery**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Hymn-Organ Battery"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Psalm of Fire",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hymn-organ missiles",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Hymn-Organ Battery"
+     ]
+    },
+    {
+     "name": "Hymn-stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Hymn-Organ Battery"
+     ]
+    },
+    {
+     "name": "Hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Hymn-Organ Battery"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Hymn-Organ Battery",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hymn-Organ Battery",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Hymn-organ missiles",
+       "count": 1
+      },
+      {
+       "item": "Hymn-stubber",
+       "count": 1
+      },
+      {
+       "item": "Hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "03-cathedral-colossus",
+   "name": "Cathedral Colossus",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Cathedral Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Cathedral Colossus"
+   ],
+   "factionKeywords": [
+    "Sun-Pyre Witch-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Pyre-Dice",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bells of Judgement",
+     "description": "Command Phase: bank 1 extra Pyre-Die while this model is on the battlefield (max 3).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-spear lance",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6+2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Cathedral Colossus"
+     ]
+    },
+    {
+     "name": "Pyre-mouths",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Cathedral Colossus"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Cathedral Colossus"
+     ]
+    }
+   ],
+   "points": 335,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 335,
+     "models": [
+      {
+       "name": "Cathedral Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cathedral Colossus",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Sun-spear lance",
+       "count": 1
+      },
+      {
+       "item": "Pyre-mouths",
+       "count": 1
+      },
+      {
+       "item": "Titan stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

@@ -1,0 +1,4447 @@
+{
+ "name": "Starfire High-Court",
+ "factionKeyword": "Starfire High-Court",
+ "verb": "DISENGAGE",
+ "identity": "Angelic starlight elves: few, fast, precise. They strike, then glide out of reach.",
+ "sources": [
+  "Project 4192 — gametheory/factions/16_starfire_high_court.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Solar Grace",
+   "description": "Every unit has [FLY]. After a unit finishes its Shoot or Fight action it may glide 3″, ending outside Engagement Range. This is the only post-action movement in the game."
+  },
+  {
+   "name": "Gamble — Overcharged Dawnstone",
+   "description": "Shatter a unit's gem for TWO effects at once; that unit can no longer glide for the rest of the battle. (Risk: tempo / mobility.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "16-det1",
+   "name": "Court of Blades",
+   "cost": 1,
+   "playstyle": "Melee aristocracy: Dancers and raid lord dive, kill and glide away.",
+   "rules": [
+    {
+     "id": "16-det1-r1",
+     "name": "Dance of Blades",
+     "description": "Units that glided last activation get +1 to Hit in melee this activation."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "16-det1-e1",
+     "name": "Starsteel Edge",
+     "cost": 10,
+     "description": "**High Star-Regent** only. The bearer's melee critical wounds trigger on 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Starfire High-Court"
+       ],
+       "datasheet": "High Star-Regent"
+      }
+     ]
+    },
+    {
+     "id": "16-det1-e2",
+     "name": "Mantle of Dawn",
+     "cost": 10,
+     "description": "**Star-Seer** only. Melee attacks against the bearer get −1 to Hit.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Starfire High-Court"
+       ],
+       "datasheet": "Star-Seer"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "16-det1-s1",
+     "name": "Lightning Riposte",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged",
+     "target": "",
+     "effect": "It gains [STRIKE FIRST] against that charger.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "16-det1-s2",
+     "name": "Starlight Sidestep",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is declared as a Charge target",
+     "target": "",
+     "effect": "Glide 3″ backward; the charge may fail.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "16-det1-s3",
+     "name": "Perfect Form",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader fights",
+     "target": "",
+     "effect": "Its attacks gain [PRECISION].",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "16-det2",
+   "name": "Prism Host",
+   "cost": 1,
+   "playstyle": "Ranged precision: Archers mark, the Phoenix and Skiffs delete.",
+   "rules": [
+    {
+     "id": "16-det2-r1",
+     "name": "Prismatic Link",
+     "description": "If 2+ Starfire units shoot the same target in a round, the later ones get +1 PEN against it."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "16-det2-e1",
+     "name": "Focusing Crystal",
+     "cost": 10,
+     "description": "**Star-Seer** only. The attached unit gets +1 PEN with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Starfire High-Court"
+       ],
+       "datasheet": "Star-Seer"
+      }
+     ]
+    },
+    {
+     "id": "16-det2-e2",
+     "name": "Eye of the Dawn",
+     "cost": 10,
+     "description": "**High Star-Regent** only. The bearer re-rolls ranged Hit rolls.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Starfire High-Court"
+       ],
+       "datasheet": "High Star-Regent"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "16-det2-s1",
+     "name": "Overcharged Prisms",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A vehicle shoots",
+     "target": "",
+     "effect": "+1 Damage this attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "16-det2-s2",
+     "name": "Hunting Light",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit shoots a Rattled target",
+     "target": "",
+     "effect": "Re-roll Wound rolls.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "16-det2-s3",
+     "name": "Fade from Sight",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "After a unit glides",
+     "target": "",
+     "effect": "It gains [UNSEEN 12″] until it next activates.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "16-det3",
+   "name": "Wind-Rider Host",
+   "cost": 1,
+   "playstyle": "Speed: jetbike swarms and skiffs grab objectives and never stay in reach.",
+   "rules": [
+    {
+     "id": "16-det3-r1",
+     "name": "Wind of Stars",
+     "description": "Sky-Lancers and vehicles glide 6″ instead of 3″."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "16-det3-e1",
+     "name": "Windrunner Sigil",
+     "cost": 20,
+     "description": "**High Star-Regent** only. The bearer gets +4″ Move (can join jetbikes).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Starfire High-Court"
+       ],
+       "datasheet": "High Star-Regent"
+      }
+     ]
+    },
+    {
+     "id": "16-det3-e2",
+     "name": "Star-Map",
+     "cost": 10,
+     "description": "**Star-Seer** only. The attached unit gains [SCOUTS 6″].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Starfire High-Court"
+       ],
+       "datasheet": "Star-Seer"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "16-det3-s1",
+     "name": "Lightning Raid",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A fast unit ends a Move on an objective",
+     "target": "",
+     "effect": "It counts double CTRL until the end of the round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "16-det3-s2",
+     "name": "Hit and Fade",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit finishes its activation",
+     "target": "",
+     "effect": "It may glide 3″ again.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "16-det3-s3",
+     "name": "Contrails",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is shot after Moving ≥10″",
+     "target": "",
+     "effect": "−1 to Hit against it for that attack.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "16-starlight-archers",
+   "name": "Starlight Archers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "Starlight Archers"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Prism Focus",
+     "description": "When this unit Shoots, mark the target: the next Starfire unit to attack it re-rolls Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Star-bow",
+     "type": "Ranged",
+     "range": "30\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Starlight Archers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Starlight Archers"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Starlight Archers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Starlight Archers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Starlight Archers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Starlight Archers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Starlight Archers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Starlight Archers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Starlight Archers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Star-bow",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-solar-sentinels",
+   "name": "Solar Sentinels",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2",
+    "WARD": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "STRIKE FIRST",
+    "Solar Sentinels"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "STRIKE FIRST",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Solar Sentinels"
+     ]
+    },
+    {
+     "name": "Sun-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Solar Sentinels"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Solar Sentinels",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Solar Sentinels",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Solar Sentinels",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Solar Sentinels",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Solar Sentinels",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Solar Sentinels",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Solar Sentinels",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "WARD": "6+",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Sun-glaive",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-prism-blade-dancers",
+   "name": "Prism-Blade Dancers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "Prism-Blade Dancers"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blade-Storm",
+     "description": "On the activation it charges, melee Critical Hits on 5+ and [ONSLAUGHT 1].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Prism-Blade Dancers"
+     ]
+    },
+    {
+     "name": "Dancer blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Prism-Blade Dancers"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Prism-Blade Dancers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Prism-Blade Dancers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Prism-Blade Dancers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Prism-Blade Dancers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Prism-Blade Dancers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Prism-Blade Dancers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Prism-Blade Dancers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Dancer blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-sky-lancer-riders",
+   "name": "Sky-Lancer Riders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "14\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Sky-Lancer Riders"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Twin star-carbines",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Sky-Lancer Riders"
+     ]
+    },
+    {
+     "name": "Cavalry lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Sky-Lancer Riders"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Sky-Lancer Riders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Sky-Lancer Riders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Sky-Lancer Riders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sky-Lancer Riders",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "14\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Twin star-carbines",
+       "count": 1
+      },
+      {
+       "item": "Cavalry lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Star-Regent",
+    "Prism Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "16-star-seer",
+   "name": "Star-Seer",
+   "role": "Leader",
+   "composition": "■ **1 Star-Seer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "FLY",
+    "Star-Seer"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Fortune",
+     "description": "Leader. ⟳ The attached unit has [WARD 5+] this round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Star-bolt",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Star-Seer"
+     ]
+    },
+    {
+     "name": "Witch-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "D3",
+     "keywords": [],
+     "models": [
+      "Star-Seer"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Star-Seer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Star-Seer",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Star-bolt",
+       "count": 1
+      },
+      {
+       "item": "Witch-spear",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Starlight Archers",
+      "Solar Sentinels",
+      "Prism-Blade Dancers",
+      "Sun-Spear Skirmishers",
+      "Dawn Fusion-Lancers",
+      "Moon-Eye Snipers",
+      "Sun-Wing Skyblades",
+      "Veil-Walkers",
+      "Sun-Crested Lancers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-high-star-regent",
+   "name": "High Star-Regent",
+   "role": "Leader",
+   "composition": "■ **1 High Star-Regent**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "FLY",
+    "High Star-Regent"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Path of Command",
+     "description": "Leader. The attached unit re-rolls Wound rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Starfire pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "High Star-Regent"
+     ]
+    },
+    {
+     "name": "Star-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [
+      "PRECISION"
+     ],
+     "models": [
+      "High Star-Regent"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "High Star-Regent",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "High Star-Regent",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Starfire pistol",
+       "count": 1
+      },
+      {
+       "item": "Star-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Sky-Lancer Riders",
+      "Prism Guardians",
+      "Star-Lance Platform",
+      "Dawnblade Swordmasters",
+      "Sun-Forged Wardens"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "16-astral-phoenix-construct",
+   "name": "Astral Phoenix-Construct",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Astral Phoenix-Construct**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "8",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Astral Phoenix-Construct"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Astral Phoenix-Construct"
+     ]
+    },
+    {
+     "name": "Wraith-talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Astral Phoenix-Construct"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Astral Phoenix-Construct",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Astral Phoenix-Construct",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "8",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Las-lance",
+       "count": 1
+      },
+      {
+       "item": "Wraith-talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Aelira Dawnspear, Sun-Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "16-prism-grav-skiff",
+   "name": "Prism Grav-Skiff",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Prism Grav-Skiff**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "12\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "13",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "TRANSPORT 6",
+    "HARDENED",
+    "Prism Grav-Skiff"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 6",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Prism cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Prism Grav-Skiff"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Prism Grav-Skiff"
+     ]
+    }
+   ],
+   "points": 155,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 155,
+     "models": [
+      {
+       "name": "Prism Grav-Skiff",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Prism Grav-Skiff",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "12\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "13",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Prism cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "16-star-barge-colossus",
+   "name": "Star-Barge Colossus",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Star-Barge Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "12\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "22",
+    "CTRL": "5",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Star-Barge Colossus"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Doom-lance",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6+2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Star-Barge Colossus"
+     ]
+    },
+    {
+     "name": "Solar scythe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Star-Barge Colossus"
+     ]
+    }
+   ],
+   "points": 285,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 285,
+     "models": [
+      {
+       "name": "Star-Barge Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Star-Barge Colossus",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "12\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "22",
+     "CTRL": "5",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Doom-lance",
+       "count": 1
+      },
+      {
+       "item": "Solar scythe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  },
+  {
+   "id": "16-blade-master-of-the-dawn",
+   "name": "Blade-Master of the Dawn",
+   "role": "Leader",
+   "composition": "■ **1 Blade-Master of the Dawn**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "FLY",
+    "Blade-Master of the Dawn"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Perfect Strike",
+     "description": "Leader. The attached unit's melee Hit rolls of 5+ are Critical Hits and automatically wound ([IMPALING HITS]).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Blade-Master of the Dawn"
+     ]
+    },
+    {
+     "name": "Dawn-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "PRECISION"
+     ],
+     "models": [
+      "Blade-Master of the Dawn"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Blade-Master of the Dawn",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blade-Master of the Dawn",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Dawn-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Starlight Archers",
+      "Solar Sentinels",
+      "Prism-Blade Dancers",
+      "Sun-Spear Skirmishers",
+      "Dawn Fusion-Lancers",
+      "Moon-Eye Snipers",
+      "Sun-Wing Skyblades",
+      "Veil-Walkers",
+      "Sun-Crested Lancers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-moon-shadow-ranger",
+   "name": "Moon-Shadow Ranger",
+   "role": "Leader",
+   "composition": "■ **1 Moon-Shadow Ranger**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "FLY",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Moon-Shadow Ranger"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Moon long-rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Moon-Shadow Ranger"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Moon-Shadow Ranger"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Moon-Shadow Ranger",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Moon-Shadow Ranger",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Moon long-rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Starlight Archers",
+      "Solar Sentinels",
+      "Prism-Blade Dancers",
+      "Sun-Spear Skirmishers",
+      "Dawn Fusion-Lancers",
+      "Moon-Eye Snipers",
+      "Sun-Wing Skyblades",
+      "Veil-Walkers",
+      "Sun-Crested Lancers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-sun-spear-skirmishers",
+   "name": "Sun-Spear Skirmishers",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "FLY",
+    "Sun-Spear Skirmishers"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Light sun-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sun-Spear Skirmishers"
+     ]
+    },
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Sun-Spear Skirmishers"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Sun-Spear Skirmishers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Sun-Spear Skirmishers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Sun-Spear Skirmishers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Sun-Spear Skirmishers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Sun-Spear Skirmishers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Sun-Spear Skirmishers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sun-Spear Skirmishers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Light sun-spear",
+       "count": 1
+      },
+      {
+       "item": "Carbine",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-prism-guardians",
+   "name": "Prism Guardians",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "2",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Prism Guardians"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Prism halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Prism Guardians"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Prism Guardians",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Prism Guardians",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Prism Guardians",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Prism Guardians",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "2",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Prism halberd",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Star-Regent",
+    "Prism Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "16-dawn-fusion-lancers",
+   "name": "Dawn Fusion-Lancers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Dawn Fusion-Lancers**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "Dawn Fusion-Lancers"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fusion lance",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6",
+     "keywords": [
+      "ERADICATE 2"
+     ],
+     "models": [
+      "Dawn Fusion-Lancers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Dawn Fusion-Lancers"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Dawn Fusion-Lancers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Dawn Fusion-Lancers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Fusion lance",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-star-lance-platform",
+   "name": "Star-Lance Platform",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "FLY",
+    "Star-Lance Platform"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Star-lance",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Star-Lance Platform"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Star-Lance Platform"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Star-Lance Platform",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Star-Lance Platform",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Star-Lance Platform",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Star-lance",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Star-Regent",
+    "Prism Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "16-moon-eye-snipers",
+   "name": "Moon-Eye Snipers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "INFILTRATORS",
+    "Moon-Eye Snipers"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Moon-Eye Snipers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Moon-Eye Snipers"
+     ]
+    }
+   ],
+   "points": 40,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 40,
+     "models": [
+      {
+       "name": "Moon-Eye Snipers",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 45,
+     "models": [
+      {
+       "name": "Moon-Eye Snipers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Moon-Eye Snipers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sniper rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-sun-wing-skyblades",
+   "name": "Sun-Wing Skyblades",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Sun-Wing Skyblades"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Sun-Wing Skyblades"
+     ]
+    },
+    {
+     "name": "Sky-grenades",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Sun-Wing Skyblades"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Sun-Wing Skyblades",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Sun-Wing Skyblades",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Sun-Wing Skyblades",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sun-Wing Skyblades",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Sky-grenades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-veil-walkers",
+   "name": "Veil-Walkers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "INFILTRATORS",
+    "SCOUTS 6\"",
+    "Veil-Walkers"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Veil-Walkers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Veil-Walkers"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Veil-Walkers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 50,
+     "models": [
+      {
+       "name": "Veil-Walkers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Veil-Walkers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Veil-Walkers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-prism-strider",
+   "name": "Prism Strider",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1–2 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "6",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Prism Strider"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Strider prism-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Prism Strider"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Prism Strider"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Prism Strider",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Prism Strider",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Prism Strider",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "6",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Strider prism-cannon",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Aelira Dawnspear, Sun-Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "16-starfire-prism-tank",
+   "name": "Starfire Prism-Tank",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Starfire Prism-Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "12\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "13",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Starfire Prism-Tank"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Twin prism-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Starfire Prism-Tank"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Starfire Prism-Tank"
+     ]
+    }
+   ],
+   "points": 160,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 160,
+     "models": [
+      {
+       "name": "Starfire Prism-Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Starfire Prism-Tank",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "12\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "13",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Twin prism-lance",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "16-aelira-dawnspear-sun-herald",
+   "name": "Aelira Dawnspear, Sun-Herald",
+   "role": "Leader",
+   "composition": "■ **1 Aelira Dawnspear, Sun-Herald**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "14\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "8",
+    "CTRL": "2",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Leader",
+    "FLY",
+    "Aelira Dawnspear, Sun-Herald"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Herald of Dawn",
+     "description": "Friendly units within 9″ get +1 to Hit in melee on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Second Dawn",
+     "description": "Once per battle, a unit within 12″ regains its shattered Dawnstone.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-spear throw",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Aelira Dawnspear, Sun-Herald"
+     ]
+    },
+    {
+     "name": "Dawnspear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Aelira Dawnspear, Sun-Herald"
+     ]
+    },
+    {
+     "name": "Griffon talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Aelira Dawnspear, Sun-Herald"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Aelira Dawnspear, Sun-Herald",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Aelira Dawnspear, Sun-Herald",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "14\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "8",
+     "CTRL": "2",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Sun-spear throw",
+       "count": 1
+      },
+      {
+       "item": "Dawnspear",
+       "count": 1
+      },
+      {
+       "item": "Griffon talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Astral Phoenix-Construct",
+      "Prism Strider",
+      "Light-Weaver Battery",
+      "Zephyr Elemental"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "16-prism-herald",
+   "name": "Prism Herald",
+   "role": "Leader",
+   "composition": "■ **1 Prism Herald**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "FLY",
+    "Prism Herald"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Refracting Aegis",
+     "description": "Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Prism-light",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Prism Herald"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Prism Herald"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Prism Herald",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Prism Herald",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Prism-light",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Sky-Lancer Riders",
+      "Prism Guardians",
+      "Star-Lance Platform",
+      "Dawnblade Swordmasters",
+      "Sun-Forged Wardens"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "16-dawn-sorceress",
+   "name": "Dawn Sorceress",
+   "role": "Leader",
+   "composition": "■ **1 Dawn Sorceress**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "FLY",
+    "Dawn Sorceress"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blinding Flare",
+     "description": "Once per round, an enemy unit within 18″ suffers −1 to Hit until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sunburst",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Dawn Sorceress"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Dawn Sorceress"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Dawn Sorceress",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Dawn Sorceress",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Sunburst",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Starlight Archers",
+      "Solar Sentinels",
+      "Prism-Blade Dancers",
+      "Sun-Spear Skirmishers",
+      "Dawn Fusion-Lancers",
+      "Moon-Eye Snipers",
+      "Sun-Wing Skyblades",
+      "Veil-Walkers",
+      "Sun-Crested Lancers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-sun-crested-lancers",
+   "name": "Sun-Crested Lancers",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "FLY",
+    "Sun-Crested Lancers"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shining Phalanx",
+     "description": "While every model is within 1″ of two others, attacks against this unit suffer −1 to Hit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Throwing spears",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Sun-Crested Lancers"
+     ]
+    },
+    {
+     "name": "Sun-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sun-Crested Lancers"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Sun-Crested Lancers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Sun-Crested Lancers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Sun-Crested Lancers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Sun-Crested Lancers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Sun-Crested Lancers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Sun-Crested Lancers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sun-Crested Lancers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Throwing spears",
+       "count": 1
+      },
+      {
+       "item": "Sun-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Star-Seer",
+    "Blade-Master of the Dawn",
+    "Moon-Shadow Ranger",
+    "Dawn Sorceress"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "16-dawnblade-swordmasters",
+   "name": "Dawnblade Swordmasters",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Dawnblade Swordmasters"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Perfect Strikes",
+     "description": "Melee Hit rolls of 5+ auto-wound.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Deflecting Blades",
+     "description": "Enemies get −1 to Hit them in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Greatblade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Dawnblade Swordmasters"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Dawnblade Swordmasters",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Dawnblade Swordmasters",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Dawnblade Swordmasters",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Dawnblade Swordmasters",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Greatblade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Star-Regent",
+    "Prism Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "16-sun-forged-wardens",
+   "name": "Sun-Forged Wardens",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Sun-Forged Wardens"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Prism Plate",
+     "description": "+1 ARM (to 3+ cap) against PEN 0 and −1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-repeater",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sun-Forged Wardens"
+     ]
+    },
+    {
+     "name": "Great weapon / fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Sun-Forged Wardens"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Sun-Forged Wardens",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Sun-Forged Wardens",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Sun-Forged Wardens",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sun-Forged Wardens",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Sun-repeater",
+       "count": 1
+      },
+      {
+       "item": "Great weapon / fist",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Star-Regent",
+    "Prism Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "16-light-weaver-battery",
+   "name": "Light-Weaver Battery",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Light-Weaver Battery**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "6",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Light-Weaver Battery"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Dazzle",
+     "description": "Units hit cannot claim Cover until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Light-weave array",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "IGNORES COVER",
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Light-Weaver Battery"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Light-Weaver Battery"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Light-Weaver Battery",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Light-Weaver Battery",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Light-weave array",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Aelira Dawnspear, Sun-Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "16-zephyr-elemental",
+   "name": "Zephyr Elemental",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Zephyr Elemental**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "12\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "8",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Zephyr Elemental"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Tailwind",
+     "description": "Once per round, a friendly unit within 9″ may glide an extra 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Cutting winds",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Zephyr Elemental"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Zephyr Elemental",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Zephyr Elemental",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "12\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "8",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Cutting winds",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Aelira Dawnspear, Sun-Herald"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "16-dawn-wing-gunship",
+   "name": "Dawn-Wing Gunship",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Dawn-Wing Gunship**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "16\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "12",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Dawn-Wing Gunship"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Strafing Run",
+     "description": "May Shoot after a full Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sunfire lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Dawn-Wing Gunship"
+     ]
+    },
+    {
+     "name": "Star-repeaters",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Dawn-Wing Gunship"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Dawn-Wing Gunship",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Dawn-Wing Gunship",
+     "M": "16\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "16\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "12",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Sunfire lance",
+       "count": 1
+      },
+      {
+       "item": "Star-repeaters",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "16-mountain-spirit-colossus",
+   "name": "Mountain-Spirit Colossus",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Mountain-Spirit Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Mountain-Spirit Colossus"
+   ],
+   "factionKeywords": [
+    "Starfire High-Court"
+   ],
+   "abilities": [
+    {
+     "name": "Solar Grace",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Stone Ward",
+     "description": "Friendly Class 1–2 units within 3″ claim Cover.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Avalanche fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Mountain-Spirit Colossus"
+     ]
+    },
+    {
+     "name": "Hurled boulders",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Mountain-Spirit Colossus"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Mountain-Spirit Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Mountain-Spirit Colossus",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Avalanche fists",
+       "count": 1
+      },
+      {
+       "item": "Hurled boulders",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  }
+ ],
+ "faq": []
+}

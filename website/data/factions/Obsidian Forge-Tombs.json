@@ -1,0 +1,2992 @@
+{
+ "name": "Obsidian Forge-Tombs",
+ "factionKeyword": "Obsidian Forge-Tombs",
+ "verb": "ENDURE",
+ "identity": "Undying tomb-dwarves of obsidian and liquid gold. Slow (MOV 4–5), heavily armoured, and they reanimate: a squad that is not wiped out comes back. One public Grudge, moved to whoever last killed an Obsidian unit, focuses their wrath.",
+ "sources": [
+  "Project 4192 — gametheory/factions/18_obsidian_forge_tombs.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Grudge-Reanimation · The Grudge",
+   "description": "Reanimation: at the End of Round, each Obsidian unit that is still on the battlefield rolls a D6: on a 4+ it returns 1 slain model (Class 1–2) or heals D3 MIGHT (Class 3–5). The Grudge: before the battle name 1 enemy unit as the Grudge. Obsidian units re-roll Wound rolls of 1 against it. When the Grudge is destroyed, or an enemy unit destroys an Obsidian unit, move the Grudge to that enemy unit (only one Grudge at a time)."
+  },
+  {
+   "name": "Gamble — Burn the Ancestor-Spark",
+   "description": "When a unit is selected to Shoot or Fight: +1 Damage and [IMPALING HITS] on its weapons this activation; that unit can never reanimate again. (Risk: resource (permanent).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "18-det1",
+   "name": "Immortal Shield-Wall",
+   "cost": 1,
+   "playstyle": "Slow, unbreakable infantry blocks around objectives.",
+   "rules": [
+    {
+     "id": "18-det1-r1",
+     "name": "Gromril Shield-Wall",
+     "description": "Enemies cannot re-roll Wound rolls against Obsidian Class 1–2 units; units within 3″ of an objective reanimate on a 3+."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "18-det1-e1",
+     "name": "Ancestor's Shield",
+     "cost": 10,
+     "description": "**High Thane of the Gate** only. The attached unit has WARD 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Obsidian Forge-Tombs"
+       ],
+       "datasheet": "High Thane of the Gate"
+      }
+     ]
+    },
+    {
+     "id": "18-det1-e2",
+     "name": "Oath-Stone",
+     "cost": 10,
+     "description": "**Obsidian Hearth-Guard** only. +1 CTRL per model and cannot be moved by enemy abilities.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Obsidian Forge-Tombs"
+       ],
+       "datasheet": "Obsidian Hearth-Guard"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "18-det1-s1",
+     "name": "Lock Shields",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is targeted",
+     "target": "",
+     "effect": "Incoming PEN −1 for the attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "18-det1-s2",
+     "name": "Stand of the Ancients",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged",
+     "target": "",
+     "effect": "It is not Rattled and gets +1 to Hit on its Retaliation Strike.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "18-det1-s3",
+     "name": "Magma-Tunnel Relocation",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase, once per round",
+     "target": "",
+     "effect": "An unengaged unit within 6″ of a table edge is placed within 6″ of another point on the same table edge, >8″ from enemies.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "18-det2",
+   "name": "Grudge-Hunters",
+   "cost": 1,
+   "playstyle": "Thunderers and hammerers marching on the Grudge.",
+   "rules": [
+    {
+     "id": "18-det2-r1",
+     "name": "Book of Grudges",
+     "description": "Against the Grudge, Obsidian units re-roll all Wound rolls (not just 1s) and get +2″ MOV toward it."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "18-det2-e1",
+     "name": "Grudge-Rune",
+     "cost": 10,
+     "description": "**Grudge-Thane Champion** only. Re-roll all melee Wound rolls.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Obsidian Forge-Tombs"
+       ],
+       "datasheet": "Grudge-Thane Champion"
+      }
+     ]
+    },
+    {
+     "id": "18-det2-e2",
+     "name": "Marked in Gold",
+     "cost": 10,
+     "description": "**Rune-Seer** only. The Grudge cannot gain Cover.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Obsidian Forge-Tombs"
+       ],
+       "datasheet": "Rune-Seer"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "18-det2-s1",
+     "name": "Unforgiven",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "The Grudge is destroyed",
+     "target": "",
+     "effect": "Gain 1 CP and heal D3 MIGHT on the unit that destroyed it.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "18-det2-s2",
+     "name": "Grudge Volley",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit Shoots the Grudge",
+     "target": "",
+     "effect": "Its weapons gain [HAILFIRE 1].",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "18-det2-s3",
+     "name": "Write It Down",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An Obsidian unit is destroyed",
+     "target": "",
+     "effect": "The killer becomes the Grudge AND is Rattled.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "18-det3",
+   "name": "Rune-Forge",
+   "cost": 1,
+   "playstyle": "Golems, engines and master-runes for one decisive round.",
+   "rules": [
+    {
+     "id": "18-det3-r1",
+     "name": "Forge-Runes",
+     "description": "Class 3–5 Obsidian units reanimate on a 3+; the Master-Rune can be struck twice per battle (different runes)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "18-det3-e1",
+     "name": "Anvil of Ages",
+     "cost": 10,
+     "description": "**Tomb-Priest** only. Once per round, heal D3 MIGHT on a Class 3–5 unit within 3″.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Obsidian Forge-Tombs"
+       ],
+       "datasheet": "Tomb-Priest"
+      }
+     ]
+    },
+    {
+     "id": "18-det3-e2",
+     "name": "Rune of Fury",
+     "cost": 15,
+     "description": "**Liquid-Gold Rune-Golem** only. +1 Attack in melee.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Obsidian Forge-Tombs"
+       ],
+       "datasheet": "Liquid-Gold Rune-Golem"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "18-det3-s1",
+     "name": "Strike the Rune",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit activates",
+     "target": "",
+     "effect": "It gains one Master-Rune effect this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "18-det3-s2",
+     "name": "Molten Flow",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit is damaged",
+     "target": "",
+     "effect": "Heal 1 MIGHT.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "18-det3-s3",
+     "name": "Rune of Wrath",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit is destroyed",
+     "target": "",
+     "effect": "Each enemy unit within 6″ suffers D3 Fatal Wounds on a 4+.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "18-high-thane-of-the-gate",
+   "name": "High Thane of the Gate",
+   "role": "Leader",
+   "composition": "■ **1 High Thane of the Gate**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "High Thane of the Gate"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Thane's Oath",
+     "description": "The attached unit re-rolls Wound rolls of 1 (all targets).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Keeper of the Book",
+     "description": "Once per battle, move the Grudge to any visible enemy unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rune-pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "High Thane of the Gate"
+     ]
+    },
+    {
+     "name": "Gate-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "High Thane of the Gate"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "High Thane of the Gate",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "High Thane of the Gate",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Rune-pistol",
+       "count": 1
+      },
+      {
+       "item": "Gate-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Magma-Rune Hammerers",
+      "Tomb-Warden Ironbreakers",
+      "Obsidian Gyro-Wardens",
+      "Magma-Cannon Battery"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "18-grudge-thane-champion",
+   "name": "Grudge-Thane Champion",
+   "role": "Leader",
+   "composition": "■ **1 Grudge-Thane Champion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Grudge-Thane Champion"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Settle the Score",
+     "description": "+1 Attack and +1 Damage against the Grudge.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Grudge-Thane Champion"
+     ]
+    },
+    {
+     "name": "Grudge-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Grudge-Thane Champion"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Grudge-Thane Champion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Grudge-Thane Champion",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Grudge-hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Magma-Rune Hammerers",
+      "Tomb-Warden Ironbreakers",
+      "Obsidian Gyro-Wardens",
+      "Magma-Cannon Battery"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "18-tomb-priest",
+   "name": "Tomb-Priest",
+   "role": "Leader",
+   "composition": "■ **1 Tomb-Priest**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Tomb-Priest"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rites of Return",
+     "description": "Units within 6″ reanimate on a 3+ instead of 4+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Ancestral Ward",
+     "description": "The attached unit has UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Tomb-Priest"
+     ]
+    },
+    {
+     "name": "Ancestor-staff",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Tomb-Priest"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Tomb-Priest",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tomb-Priest",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Ancestor-staff",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Obsidian Hearth-Guard",
+      "Rune-Gunner Line",
+      "Ember-Gun Thunderers",
+      "Tomb-Delvers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "18-rune-seer",
+   "name": "Rune-Seer",
+   "role": "Leader",
+   "composition": "■ **1 Rune-Seer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Rune-Seer"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Master-Rune",
+     "description": "Once per battle, Command Phase: strike one rune for the army until the End of Round — +1 Attack · +1 PEN · WARD 5+ · +3″ MOV.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rune-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Rune-Seer"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rune-Seer"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Rune-Seer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rune-Seer",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rune-bolt",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Obsidian Hearth-Guard",
+      "Rune-Gunner Line",
+      "Ember-Gun Thunderers",
+      "Tomb-Delvers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "18-obsidian-hearth-guard",
+   "name": "Obsidian Hearth-Guard",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "4\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Obsidian Hearth-Guard"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shield-Wall",
+     "description": "+1 ARM (to 3+ cap) against melee attacks.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Throwing hammers",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Obsidian Hearth-Guard"
+     ]
+    },
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Obsidian Hearth-Guard"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Obsidian Hearth-Guard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Obsidian Hearth-Guard",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Obsidian Hearth-Guard",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Obsidian Hearth-Guard",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Obsidian Hearth-Guard",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 180,
+     "models": [
+      {
+       "name": "Obsidian Hearth-Guard",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Obsidian Hearth-Guard",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "4\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Throwing hammers",
+       "count": 1
+      },
+      {
+       "item": "Rune-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tomb-Priest",
+    "Rune-Seer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "18-rune-gunner-line",
+   "name": "Rune-Gunner Line",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Rune-Gunner Line"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Measured Volleys",
+     "description": "+1 to Hit if this unit did not Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rune-gun",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Rune-Gunner Line"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rune-Gunner Line"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Rune-Gunner Line",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Rune-Gunner Line",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Rune-Gunner Line",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 180,
+     "models": [
+      {
+       "name": "Rune-Gunner Line",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 200,
+     "models": [
+      {
+       "name": "Rune-Gunner Line",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 215,
+     "models": [
+      {
+       "name": "Rune-Gunner Line",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rune-Gunner Line",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Rune-gun",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tomb-Priest",
+    "Rune-Seer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "18-magma-rune-hammerers",
+   "name": "Magma-Rune Hammerers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Magma-Rune Hammerers"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "King's Guard",
+     "description": "An attached Leader's damage is taken by this unit on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Magma-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Magma-Rune Hammerers"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Magma-Rune Hammerers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Magma-Rune Hammerers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Magma-Rune Hammerers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Magma-Rune Hammerers",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Magma-hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Thane of the Gate",
+    "Grudge-Thane Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "18-tomb-warden-ironbreakers",
+   "name": "Tomb-Warden Ironbreakers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Tomb-Warden Ironbreakers"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Unbreakable",
+     "description": "Enemies cannot re-roll Wound rolls against this unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Drake-fire pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Tomb-Warden Ironbreakers"
+     ]
+    },
+    {
+     "name": "Gromhammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Tomb-Warden Ironbreakers"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Tomb-Warden Ironbreakers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Tomb-Warden Ironbreakers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Tomb-Warden Ironbreakers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tomb-Warden Ironbreakers",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Drake-fire pistol",
+       "count": 1
+      },
+      {
+       "item": "Gromhammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Thane of the Gate",
+    "Grudge-Thane Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "18-ember-gun-thunderers",
+   "name": "Ember-Gun Thunderers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Ember-Gun Thunderers**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Ember-Gun Thunderers"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Drilled Crews",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Ember-Gun Thunderers"
+     ]
+    },
+    {
+     "name": "Rune-gun",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Ember-Gun Thunderers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Ember-Gun Thunderers"
+     ]
+    }
+   ],
+   "points": 160,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 160,
+     "models": [
+      {
+       "name": "Ember-Gun Thunderers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ember-Gun Thunderers",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Rune-gun",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tomb-Priest",
+    "Rune-Seer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "18-obsidian-gyro-wardens",
+   "name": "Obsidian Gyro-Wardens",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Obsidian Gyro-Wardens"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bomb-Bay",
+     "description": "Once per round, a unit it moved over suffers D3 Fatal Wounds on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rotor-gun",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Obsidian Gyro-Wardens"
+     ]
+    },
+    {
+     "name": "Rotor blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Obsidian Gyro-Wardens"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Obsidian Gyro-Wardens",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Obsidian Gyro-Wardens",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Obsidian Gyro-Wardens",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Obsidian Gyro-Wardens",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rotor-gun",
+       "count": 1
+      },
+      {
+       "item": "Rotor blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Thane of the Gate",
+    "Grudge-Thane Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "18-tomb-delvers",
+   "name": "Tomb-Delvers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "VANGUARD STRIKE",
+    "Tomb-Delvers"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Up from the Deep",
+     "description": "May arrive within 6″ of any table edge from Round 2 (no tunnels, no portals).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Mining charges",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ANTI-VEHICLE 4+"
+     ],
+     "models": [
+      "Tomb-Delvers"
+     ]
+    },
+    {
+     "name": "Pick-axes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Tomb-Delvers"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Tomb-Delvers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Tomb-Delvers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Tomb-Delvers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tomb-Delvers",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Mining charges",
+       "count": 1
+      },
+      {
+       "item": "Pick-axes",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tomb-Priest",
+    "Rune-Seer"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "18-magma-cannon-battery",
+   "name": "Magma-Cannon Battery",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Magma-Cannon Battery"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Anchored",
+     "description": "+1 to Hit if it did not Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Magma cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D3",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6",
+     "keywords": [
+      "ERADICATE 2"
+     ],
+     "models": [
+      "Magma-Cannon Battery"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Magma-Cannon Battery"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Magma-Cannon Battery",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Magma-Cannon Battery",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Magma-Cannon Battery",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Magma cannon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Thane of the Gate",
+    "Grudge-Thane Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "18-liquid-gold-rune-golem",
+   "name": "Liquid-Gold Rune-Golem",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Liquid-Gold Rune-Golem**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "10",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Liquid-Gold Rune-Golem"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Reform",
+     "description": "Reanimation heals 3 MIGHT (instead of D3) for this unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Molten-gold spray",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Liquid-Gold Rune-Golem"
+     ]
+    },
+    {
+     "name": "Gold-forged fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Liquid-Gold Rune-Golem"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Liquid-Gold Rune-Golem",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Liquid-Gold Rune-Golem",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Molten-gold spray",
+       "count": 1
+      },
+      {
+       "item": "Gold-forged fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "18-basalt-tomb-sentinel",
+   "name": "Basalt Tomb-Sentinel",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Basalt Tomb-Sentinel**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "10",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Basalt Tomb-Sentinel"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Living Stone",
+     "description": "+1 ARM (to 3+ cap) against PEN 0 and −1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Basalt fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Basalt Tomb-Sentinel"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Basalt Tomb-Sentinel",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Basalt Tomb-Sentinel",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Basalt fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "18-ancestor-engine",
+   "name": "Ancestor-Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Ancestor-Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Ancestor-Engine"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ancestral Core",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rune-gatling",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Ancestor-Engine"
+     ]
+    },
+    {
+     "name": "Gold-forged fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Ancestor-Engine"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Ancestor-Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ancestor-Engine",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rune-gatling",
+       "count": 1
+      },
+      {
+       "item": "Gold-forged fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "18-magma-crawler",
+   "name": "Magma-Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Magma-Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "18",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Magma-Crawler"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rune-Sighted",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Magma cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Magma-Crawler"
+     ]
+    },
+    {
+     "name": "Magma-spout",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Magma-Crawler"
+     ]
+    },
+    {
+     "name": "Obsidian treads",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Magma-Crawler"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Magma-Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Magma-Crawler",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "18",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "18",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Magma cannon",
+       "count": 1
+      },
+      {
+       "item": "Magma-spout",
+       "count": 1
+      },
+      {
+       "item": "Obsidian treads",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "18-tomb-barge",
+   "name": "Tomb-Barge",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Tomb-Barge**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "13",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Tomb-Barge"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Ancestor Vault",
+     "description": "Embarked units reanimate on a 3+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Tomb-Barge"
+     ]
+    },
+    {
+     "name": "Obsidian treads",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Tomb-Barge"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Tomb-Barge",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tomb-Barge",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "13",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Obsidian treads",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "18-rune-organ-battery",
+   "name": "Rune-Organ Battery",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Rune-Organ Battery**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "13",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Rune-Organ Battery"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rolling Volley",
+     "description": "Re-roll the number of attacks.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Organ-gun",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "3D6",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rune-Organ Battery"
+     ]
+    },
+    {
+     "name": "Obsidian treads",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rune-Organ Battery"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Rune-Organ Battery",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rune-Organ Battery",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "13",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Organ-gun",
+       "count": 1
+      },
+      {
+       "item": "Obsidian treads",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "18-magma-wyrm-construct",
+   "name": "Magma-Wyrm Construct",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Magma-Wyrm Construct**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Magma-Wyrm Construct"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Obsidian Coils",
+     "description": "Reanimation heals 3 MIGHT for this unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Magma-breath",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Magma-Wyrm Construct"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Magma-Wyrm Construct"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Magma-Wyrm Construct",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Magma-Wyrm Construct",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Magma-breath",
+       "count": 1
+      },
+      {
+       "item": "Monster talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "18-obsidian-tomb-fortress",
+   "name": "Obsidian Tomb-Fortress",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Obsidian Tomb-Fortress**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "24",
+    "CTRL": "5"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Obsidian Tomb-Fortress"
+   ],
+   "factionKeywords": [
+    "Obsidian Forge-Tombs"
+   ],
+   "abilities": [
+    {
+     "name": "Grudge-Reanimation · The Grudge",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Ancestor Shrine",
+     "description": "Friendly units within 9″ reanimate on a 3+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Magma-ordnance",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Obsidian Tomb-Fortress"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Obsidian Tomb-Fortress"
+     ]
+    },
+    {
+     "name": "Obsidian treads",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Obsidian Tomb-Fortress"
+     ]
+    }
+   ],
+   "points": 265,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 265,
+     "models": [
+      {
+       "name": "Obsidian Tomb-Fortress",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Obsidian Tomb-Fortress",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "24",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "24",
+     "CTRL": "5",
+     "equipped": [
+      {
+       "item": "Magma-ordnance",
+       "count": 1
+      },
+      {
+       "item": "Las-lance",
+       "count": 1
+      },
+      {
+       "item": "Obsidian treads",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

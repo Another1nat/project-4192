@@ -1,1 +1,82 @@
-[]
+[
+ {
+  "name": "Command Re-Roll",
+  "cost": "1",
+  "category": "Core Tactic",
+  "turn": "Immediately after rolling any single die",
+  "target": "",
+  "effect": "Reroll that single die (Hit, Wound, Save, Damage, Charge, or Hazard roll)."
+ },
+ {
+  "name": "Fire Overwatch",
+  "cost": "1",
+  "category": "Core Tactic",
+  "turn": "Right after an enemy unit finishes a Move within 18\" of a Ready unit",
+  "target": "",
+  "effect": "Your unengaged unit fires 1 ranged attack at that enemy, hitting ONLY on natural 6s. Does not exhaust the unit."
+ },
+ {
+  "name": "Heroic Intervention",
+  "cost": "1",
+  "category": "Core Tactic",
+  "turn": "Right after an enemy finishes a Charge within 6\" of an unengaged friendly unit",
+  "target": "",
+  "effect": "Your unit immediately makes a D6\" Counter-Charge into that enemy unit to join the clash!"
+ },
+ {
+  "name": "Counter-Offensive",
+  "cost": "2",
+  "category": "Core Tactic",
+  "turn": "In Melee, right after an enemy unit has finished resolving its attacks",
+  "target": "",
+  "effect": "Your engaged unit gains [STRIKE FIRST]—interrupting the melee chain to strike next before remaining enemy units!"
+ },
+ {
+  "name": "Epic Challenge",
+  "cost": "1",
+  "category": "Core Tactic",
+  "turn": "When your Leader / Character is selected to fight in Melee",
+  "target": "",
+  "effect": "That Leader's melee attacks gain [PRECISION] for this clash to duel the enemy Leader directly through bodyguards."
+ },
+ {
+  "name": "Shrapnel Grenades",
+  "cost": "1",
+  "category": "Core Tactic",
+  "turn": "During a unit's activation instead of shooting (within 8\" of an unengaged enemy)",
+  "target": "",
+  "effect": "Roll 6D6: each 4+ inflicts 1 Fatal Wound on the target enemy unit."
+ },
+ {
+  "name": "Crushing Impact",
+  "cost": "1",
+  "category": "Core Tactic",
+  "turn": "Right after a Class 4 or 5 unit finishes a Charge move",
+  "target": "",
+  "effect": "Roll D6s equal to the model's current MIGHT (max 8): each 5+ deals 1 Fatal Wound to the enemy; each 1 deals 1 Fatal Wound to yourself!"
+ },
+ {
+  "name": "Smokescreen / Brace",
+  "cost": "1",
+  "category": "Core Tactic",
+  "turn": "When your unit is targeted by an enemy Shooting attack",
+  "target": "",
+  "effect": "Your unit gains the Benefit of Cover (-1 to Hit) and reduces incoming weapon PEN by 1 for that attack."
+ },
+ {
+  "name": "Rapid Vanguard",
+  "cost": "1",
+  "category": "Core Tactic",
+  "turn": "At the end of an opponent's unit activation in Round 2 or 3",
+  "target": "",
+  "effect": "Immediately deploy 1 of your [VANGUARD STRIKE] Reserve units onto the board (>8\" from enemies) so it is ready to activate later this round."
+ },
+ {
+  "name": "Relentless Overdrive",
+  "cost": "3",
+  "category": "Core Tactic",
+  "turn": "When activating a Ready unit (Once per battle)",
+  "target": "",
+  "effect": "That unit receives 3 Actions during this activation instead of 2 (still maximum 1 Shoot and maximum 1 Charge)."
+ }
+]

@@ -9,7 +9,7 @@
     const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     const ts = () => (typeof trackerState !== 'undefined' ? trackerState : null);
     const P = n => { const t = ts(); return t ? (n === 1 ? t.p1 : t.p2) : null; };
-    const norm = f => String(f || '').replace(/’/g, "'").replace('Imperial Agents', 'Agents of the Imperium');
+    const norm = f => String(f || '').replace(/’/g, "'");
     const rosters = () => (typeof STATE !== 'undefined' && STATE.rosters) || [];
     const facData = {};   // faction name -> units
     const loading = {};

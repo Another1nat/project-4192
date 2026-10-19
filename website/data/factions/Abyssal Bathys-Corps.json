@@ -1,0 +1,3071 @@
+{
+ "name": "Abyssal Bathys-Corps",
+ "factionKeyword": "Abyssal Bathys-Corps",
+ "verb": "DRAG",
+ "identity": "Deep-sea pressure-suit divers, harpoon crews and leviathans. Slow, tough, and they pull the enemy to them: winch harpoons drag targets 3″, and a public Tide schedule tells both players when the Corps will strike.",
+ "sources": [
+  "Project 4192 — gametheory/factions/05_abyssal_bathys_corps.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Winch-Harpoons & the Rising Tide",
+   "description": "Weapons with [HARPOON] that hit a Class 1–4 unit drag it 3″ straight toward the shooter (stop 1″ away; not out of engagement). The Tide is public: Round 1 Low Tide — units more than 15″ from the shooter cannot be targeted (the Hidden cap); Round 2 Flood — +2″ MOV and ranged weapons gain [ASSAULT]; Round 3 High Tide — [STRIKE FIRST]; Round 4 Ebb — units may Fall Back and still Shoot or Charge."
+  },
+  {
+   "name": "Gamble — Anchor-Lock",
+   "description": "When a unit with [HARPOON] activates: it cannot Move for the rest of the round, but its [HARPOON] weapons get +1 PEN and drag 6″ instead of 3″. (Risk: position.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "05-det1",
+   "name": "Deep Trench",
+   "cost": 1,
+   "playstyle": "Advance under the fog and spring at High Tide.",
+   "rules": [
+    {
+     "id": "05-det1-r1",
+     "name": "Benthic Fog",
+     "description": "The Low Tide 15″ targeting cap also applies in Round 2."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "05-det1-e1",
+     "name": "Pressure-Lantern",
+     "cost": 15,
+     "description": "**Tide-Caller Oracle** only. Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Abyssal Bathys-Corps"
+       ],
+       "datasheet": "Tide-Caller Oracle"
+      }
+     ]
+    },
+    {
+     "id": "05-det1-e2",
+     "name": "Abyssal Patience",
+     "cost": 10,
+     "description": "**Trench-Lord Commodore** only. The attached unit has WARD 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Abyssal Bathys-Corps"
+       ],
+       "datasheet": "Trench-Lord Commodore"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "05-det1-s1",
+     "name": "Dive!",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit targets a friendly Class 1–2 unit",
+     "target": "",
+     "effect": "That unit counts as [STEALTH] for the attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "05-det1-s2",
+     "name": "Rise from the Deep",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "High Tide (Round 3)",
+     "target": "",
+     "effect": "One unit makes a free 3″ move before the first activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "05-det1-s3",
+     "name": "Silent Running",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit activates in Round 1–2",
+     "target": "",
+     "effect": "It is [UNSEEN 12″] until the End of Round if it does not Shoot.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "05-det2",
+   "name": "Leviathan Pod",
+   "cost": 1,
+   "playstyle": "Beasts and walkers anchor the line, divers fill the gaps.",
+   "rules": [
+    {
+     "id": "05-det2-r1",
+     "name": "Pod-Bond",
+     "description": "Class 3–5 units within 6″ of each other get UNYIELDING 6+."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "05-det2-e1",
+     "name": "Elder Leviathan",
+     "cost": 50,
+     "description": "**Abyssal Kraken** only. UNYIELDING 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Abyssal Bathys-Corps"
+       ],
+       "datasheet": "Abyssal Kraken"
+      }
+     ]
+    },
+    {
+     "id": "05-det2-e2",
+     "name": "Harpoon-Master's Claim",
+     "cost": 15,
+     "description": "**Abyssal Harpoon-Master** only. +1 Damage in melee on a round it charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Abyssal Bathys-Corps"
+       ],
+       "datasheet": "Abyssal Harpoon-Master"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "05-det2-s1",
+     "name": "Feeding Frenzy",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A beast destroys an enemy unit",
+     "target": "",
+     "effect": "Heal D3 MIGHT.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "05-det2-s2",
+     "name": "Crushing Deep",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit fights a dragged unit",
+     "target": "",
+     "effect": "+1 to Wound.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "05-det2-s3",
+     "name": "Ink Cloud",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3 unit is targeted",
+     "target": "",
+     "effect": "Attacks against it suffer −1 to Hit until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "05-det3",
+   "name": "Salvage Corps",
+   "cost": 1,
+   "playstyle": "Heavy suits and crawlers that take objectives and refuse to leave.",
+   "rules": [
+    {
+     "id": "05-det3-r1",
+     "name": "Hull-Plating",
+     "description": "Class 1–2 units reduce incoming PEN by 1 while within 3″ of an objective."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "05-det3-e1",
+     "name": "Salvage Rights",
+     "cost": 10,
+     "description": "**Trench-Lord Commodore** only. Objectives this model controls stay controlled ([SECURED]).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Abyssal Bathys-Corps"
+       ],
+       "datasheet": "Trench-Lord Commodore"
+      }
+     ]
+    },
+    {
+     "id": "05-det3-e2",
+     "name": "Rivet-Master",
+     "cost": 10,
+     "description": "**Hydraulic Harpooners** only. +1 PEN with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Abyssal Bathys-Corps"
+       ],
+       "datasheet": "Hydraulic Harpooners"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "05-det3-s1",
+     "name": "Weld the Breach",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit within 3″ of an objective activates",
+     "target": "",
+     "effect": "Heal 1 MIGHT on every model.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "05-det3-s2",
+     "name": "Claim the Wreck",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy Class 4–5 unit is destroyed within 6″",
+     "target": "",
+     "effect": "Place an objective marker where it died (counts for Tactical cards only).",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "05-det3-s3",
+     "name": "Pressure Lock",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged on an objective",
+     "target": "",
+     "effect": "It cannot be moved by enemy abilities until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "05-trench-lord-commodore",
+   "name": "Trench-Lord Commodore",
+   "role": "Leader",
+   "composition": "■ **1 Trench-Lord Commodore**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Trench-Lord Commodore"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Tide-Reader",
+     "description": "Once per battle in the Command Phase, choose the Tide for this round instead of the schedule.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Coordinated Volleys",
+     "description": "The attached unit re-rolls ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Harpoon pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HARPOON"
+     ],
+     "models": [
+      "Trench-Lord Commodore"
+     ]
+    },
+    {
+     "name": "Anchor-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Trench-Lord Commodore"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Trench-Lord Commodore",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Trench-Lord Commodore",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Harpoon pistol",
+       "count": 1
+      },
+      {
+       "item": "Anchor-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Leviathan-Plate Divers",
+      "Pressure-Hammer Brutes",
+      "Depth-Charge Team",
+      "Reef-Skimmer Outriders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "05-abyssal-harpoon-master",
+   "name": "Abyssal Harpoon-Master",
+   "role": "Leader",
+   "composition": "■ **1 Abyssal Harpoon-Master**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Abyssal Harpoon-Master"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Reel Them In",
+     "description": "This model's [HARPOON] drags 6″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Gaff Drill",
+     "description": "The attached unit gets +1 to Hit in melee against dragged units.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Grand harpoon",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [
+      "HARPOON"
+     ],
+     "models": [
+      "Abyssal Harpoon-Master"
+     ]
+    },
+    {
+     "name": "Gaff-hook",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Abyssal Harpoon-Master"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Abyssal Harpoon-Master",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Abyssal Harpoon-Master",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Grand harpoon",
+       "count": 1
+      },
+      {
+       "item": "Gaff-hook",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Leviathan-Plate Divers",
+      "Pressure-Hammer Brutes",
+      "Depth-Charge Team",
+      "Reef-Skimmer Outriders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "05-tide-caller-oracle",
+   "name": "Tide-Caller Oracle",
+   "role": "Leader",
+   "composition": "■ **1 Tide-Caller Oracle**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Tide-Caller Oracle"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pressure-Fog",
+     "description": "Friendly units within 6″ count as [STEALTH] against attacks from more than 12″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Undertow",
+     "description": "Once per round, an enemy unit within 12″ suffers −2″ to its next Charge roll.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Brine-bolt",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Tide-Caller Oracle"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Tide-Caller Oracle"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Tide-Caller Oracle",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tide-Caller Oracle",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Brine-bolt",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Trench-Dredge Divers",
+      "Hydraulic Harpooners",
+      "Hull-Breacher Divers",
+      "Lantern-Eel Swarm",
+      "Snapper Snipers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "05-sonar-spotter",
+   "name": "Sonar-Spotter",
+   "role": "Leader",
+   "composition": "■ **1 Sonar-Spotter**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "Sonar-Spotter"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Echo-Ping",
+     "description": "Once per round, mark an enemy unit within 18″: friendly [HARPOON] attacks against it get +1 to Hit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Sonar-Spotter"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sonar-Spotter"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Sonar-Spotter",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sonar-Spotter",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Trench-Dredge Divers",
+      "Hydraulic Harpooners",
+      "Hull-Breacher Divers",
+      "Lantern-Eel Swarm",
+      "Snapper Snipers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "05-trench-dredge-divers",
+   "name": "Trench-Dredge Divers",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Trench-Dredge Divers"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pressure Seal",
+     "description": "Fatal Wounds are ignored on a 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rivet gun",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Trench-Dredge Divers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Trench-Dredge Divers"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Trench-Dredge Divers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Trench-Dredge Divers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Trench-Dredge Divers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Trench-Dredge Divers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Trench-Dredge Divers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Trench-Dredge Divers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Trench-Dredge Divers",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Rivet gun",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tide-Caller Oracle",
+    "Sonar-Spotter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "05-hydraulic-harpooners",
+   "name": "Hydraulic Harpooners",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Hydraulic Harpooners"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Winch-Drag",
+     "description": "This unit's harpoons drag (core rule).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Harpoon rifle",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HARPOON"
+     ],
+     "models": [
+      "Hydraulic Harpooners"
+     ]
+    },
+    {
+     "name": "Drill-claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Hydraulic Harpooners"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Hydraulic Harpooners",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Hydraulic Harpooners",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Hydraulic Harpooners",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Hydraulic Harpooners",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Hydraulic Harpooners",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Hydraulic Harpooners",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hydraulic Harpooners",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Harpoon rifle",
+       "count": 1
+      },
+      {
+       "item": "Drill-claw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tide-Caller Oracle",
+    "Sonar-Spotter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "05-hull-breacher-divers",
+   "name": "Hull-Breacher Divers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Hull-Breacher Divers"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Crack the Hull",
+     "description": "+1 to Wound in melee against Class 3–5 units.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rivet pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Hull-Breacher Divers"
+     ]
+    },
+    {
+     "name": "Breaching drill",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Hull-Breacher Divers"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Hull-Breacher Divers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Hull-Breacher Divers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Hull-Breacher Divers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Hull-Breacher Divers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Hull-Breacher Divers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Hull-Breacher Divers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hull-Breacher Divers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rivet pistol",
+       "count": 1
+      },
+      {
+       "item": "Breaching drill",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tide-Caller Oracle",
+    "Sonar-Spotter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "05-leviathan-plate-divers",
+   "name": "Leviathan-Plate Divers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Leviathan-Plate Divers"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Crushing Hull-Plating",
+     "description": "Incoming PEN −1 (min 0).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Winch-Drag",
+     "description": "Harpoons drag.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Harpoon-gatling",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HARPOON"
+     ],
+     "models": [
+      "Leviathan-Plate Divers"
+     ]
+    },
+    {
+     "name": "Hydraulic hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Leviathan-Plate Divers"
+     ]
+    }
+   ],
+   "points": 130,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 130,
+     "models": [
+      {
+       "name": "Leviathan-Plate Divers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Leviathan-Plate Divers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 195,
+     "models": [
+      {
+       "name": "Leviathan-Plate Divers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Leviathan-Plate Divers",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Harpoon-gatling",
+       "count": 1
+      },
+      {
+       "item": "Hydraulic hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Lord Commodore",
+    "Abyssal Harpoon-Master"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "05-pressure-hammer-brutes",
+   "name": "Pressure-Hammer Brutes",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Pressure-Hammer Brutes"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Implosion Strike",
+     "description": "Melee Hit rolls of 5+ are critical and auto-wound ([IMPALING HITS]).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pressure-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Pressure-Hammer Brutes"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Pressure-Hammer Brutes",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Pressure-Hammer Brutes",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Pressure-Hammer Brutes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pressure-Hammer Brutes",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pressure-hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Lord Commodore",
+    "Abyssal Harpoon-Master"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "05-lantern-eel-swarm",
+   "name": "Lantern-Eel Swarm",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Lantern-Eel Swarm"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lure-Light",
+     "description": "Enemy units within 6″ cannot claim Cover.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Lamprey bites",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lantern-Eel Swarm"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Lantern-Eel Swarm",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Lantern-Eel Swarm",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Lantern-Eel Swarm",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Lantern-Eel Swarm",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Lantern-Eel Swarm",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Lantern-Eel Swarm",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lantern-Eel Swarm",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Lamprey bites",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tide-Caller Oracle",
+    "Sonar-Spotter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "05-depth-charge-team",
+   "name": "Depth-Charge Team",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Depth-Charge Team"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pressure Burst",
+     "description": "Units hit are Rattled on a 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Depth-charge mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Depth-Charge Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Depth-Charge Team"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Depth-Charge Team",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Depth-Charge Team",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Depth-Charge Team",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Depth-charge mortar",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Lord Commodore",
+    "Abyssal Harpoon-Master"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "05-reef-skimmer-outriders",
+   "name": "Reef-Skimmer Outriders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "11\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Reef-Skimmer Outriders"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Running Drag",
+     "description": "May drag a target 3″ in any direction (not only toward this unit).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Harpoon carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HARPOON"
+     ],
+     "models": [
+      "Reef-Skimmer Outriders"
+     ]
+    },
+    {
+     "name": "Cavalry lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Reef-Skimmer Outriders"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Reef-Skimmer Outriders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Reef-Skimmer Outriders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Reef-Skimmer Outriders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Reef-Skimmer Outriders",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "11\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Harpoon carbine",
+       "count": 1
+      },
+      {
+       "item": "Cavalry lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Lord Commodore",
+    "Abyssal Harpoon-Master"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "05-snapper-snipers",
+   "name": "Snapper Snipers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "Snapper Snipers"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Pluck from the Ledge",
+     "description": "A model dragged by this unit off terrain loses Cover until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Barbed long-harpoon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION",
+      "HARPOON"
+     ],
+     "models": [
+      "Snapper Snipers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Snapper Snipers"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Snapper Snipers",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Snapper Snipers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Snapper Snipers",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Barbed long-harpoon",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Tide-Caller Oracle",
+    "Sonar-Spotter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "05-bathys-drill-brute",
+   "name": "Bathys-Drill Brute",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Bathys-Drill Brute**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "10",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Bathys-Drill Brute"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Tunnel Approach",
+     "description": "[VANGUARD STRIKE].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Steam-vent",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Bathys-Drill Brute"
+     ]
+    },
+    {
+     "name": "Abyssal drill",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Bathys-Drill Brute"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Bathys-Drill Brute",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bathys-Drill Brute",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Steam-vent",
+       "count": 1
+      },
+      {
+       "item": "Abyssal drill",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "05-pressure-squid-horror",
+   "name": "Pressure-Squid Horror",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Pressure-Squid Horror**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Pressure-Squid Horror"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Tentacle Grab",
+     "description": "Once per Fight action, drag 1 enemy Class 1–3 unit within 6″ into engagement (3″).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Boneless",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Crushing tentacles",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Pressure-Squid Horror"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Pressure-Squid Horror",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pressure-Squid Horror",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Crushing tentacles",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "05-diving-bell-crawler",
+   "name": "Diving-Bell Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Diving-Bell Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "13",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Diving-Bell Crawler"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Bell Drop",
+     "description": "Units may disembark after this model moves and still Shoot.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bolt-caster",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Diving-Bell Crawler"
+     ]
+    },
+    {
+     "name": "Crawler ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Diving-Bell Crawler"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Diving-Bell Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Diving-Bell Crawler",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "9\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "13",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Bolt-caster",
+       "count": 1
+      },
+      {
+       "item": "Crawler ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "05-torpedo-ram-crawler",
+   "name": "Torpedo-Ram Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Torpedo-Ram Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "18",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Torpedo-Ram Crawler"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pressure Warheads",
+     "description": "+1 Damage against Class 4–5 units.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Torpedo tubes",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Torpedo-Ram Crawler"
+     ]
+    },
+    {
+     "name": "Bolt-caster",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Torpedo-Ram Crawler"
+     ]
+    },
+    {
+     "name": "Crawler ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Torpedo-Ram Crawler"
+     ]
+    }
+   ],
+   "points": 170,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 170,
+     "models": [
+      {
+       "name": "Torpedo-Ram Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Torpedo-Ram Crawler",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "18",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "18",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Torpedo tubes",
+       "count": 1
+      },
+      {
+       "item": "Bolt-caster",
+       "count": 1
+      },
+      {
+       "item": "Crawler ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "05-leviathan-diving-walker",
+   "name": "Leviathan Diving-Walker",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Leviathan Diving-Walker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Leviathan Diving-Walker"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Winch-Drag",
+     "description": "Its harpoons drag 3″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Hull Redundancy",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Harpoon-battery",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HARPOON"
+     ],
+     "models": [
+      "Leviathan Diving-Walker"
+     ]
+    },
+    {
+     "name": "Crusher fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Leviathan Diving-Walker"
+     ]
+    }
+   ],
+   "points": 200,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 200,
+     "models": [
+      {
+       "name": "Leviathan Diving-Walker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Leviathan Diving-Walker",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Harpoon-battery",
+       "count": 1
+      },
+      {
+       "item": "Crusher fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "05-abyssal-kraken",
+   "name": "Abyssal Kraken",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Abyssal Kraken**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Abyssal Kraken"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Drag to the Depths",
+     "description": "After it fights, one engaged Class 1–3 enemy unit suffers D3 Fatal Wounds on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Kraken arms",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "8",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Abyssal Kraken"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Abyssal Kraken"
+     ]
+    }
+   ],
+   "points": 165,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 165,
+     "models": [
+      {
+       "name": "Abyssal Kraken",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Abyssal Kraken",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Kraken arms",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "05-abyssal-mega-leviathan",
+   "name": "Abyssal Mega-Leviathan",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Abyssal Mega-Leviathan**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Abyssal Mega-Leviathan"
+   ],
+   "factionKeywords": [
+    "Abyssal Bathys-Corps"
+   ],
+   "abilities": [
+    {
+     "name": "Winch-Harpoons & the Rising Tide",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Tidal Wave",
+     "description": "Once per battle, every enemy Class 1–2 unit within 9″ is dragged 3″ toward it.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Abyssal Mega-Leviathan"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Abyssal Mega-Leviathan"
+     ]
+    },
+    {
+     "name": "Bile-geyser",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D6+2",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Abyssal Mega-Leviathan"
+     ]
+    }
+   ],
+   "points": 315,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 315,
+     "models": [
+      {
+       "name": "Abyssal Mega-Leviathan",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Abyssal Mega-Leviathan",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Titan stomp",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      },
+      {
+       "item": "Bile-geyser",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

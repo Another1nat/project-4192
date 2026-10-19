@@ -200,7 +200,7 @@
 
     <link rel="stylesheet" href="theme.css?v=11">
     <link rel="stylesheet" href="theme2.css?v=49">
-    <link rel="stylesheet" href="theme3.css?v=10">
+    <link rel="stylesheet" href="theme3.css?v=11">
 </head>
 <body>
     <!-- TOP NAVIGATION BAR -->
@@ -336,10 +336,8 @@
                     <label><span>|</span> POINTS LIMIT</label>
                     <div class="points-selector">
                         <button class="pt-btn" onclick="selectPoints(this, 500)">500</button>
-                        <button class="pt-btn" onclick="selectPoints(this, 1000)">1000</button>
+                        <button class="pt-btn active" onclick="selectPoints(this, 1000)">1000</button>
                         <button class="pt-btn" onclick="selectPoints(this, 1500)">1500</button>
-                        <button class="pt-btn active" onclick="selectPoints(this, 2000)">2000</button>
-                        <button class="pt-btn" onclick="selectPoints(this, 3000)">3000</button>
                     </div>
                 </div>
 
@@ -761,8 +759,8 @@
                                 ‹ Back
                             </button>
                             <div class="roster-title-block">
-                                <span id="rb-faction-name">ADEPTA SORORITAS</span>
-                                <h2 id="rb-roster-name">Adepta Sororitas 2000</h2>
+                                <span id="rb-faction-name">FACTION</span>
+                                <h2 id="rb-roster-name">Army 1000</h2>
                             </div>
                             <button class="edit-btn" onclick="editRoster()" aria-label="Edit roster name and points">
                                 <i class="fa-solid fa-pencil"></i>
@@ -784,7 +782,7 @@
                             
                             <div class="points-tracker">
                                 <span class="pts-current" id="rb-current-pts">0</span>
-                                <span class="pts-limit" id="rb-limit-pts" onclick="editRoster()" style="cursor:pointer;">/ 2000 pts <i class="fa-solid fa-pencil" style="font-size:0.7rem; color:#6a7a8c;"></i></span>
+                                <span class="pts-limit" id="rb-limit-pts" onclick="editRoster()" style="cursor:pointer;">/ 1000 pts <i class="fa-solid fa-pencil" style="font-size:0.7rem; color:#6a7a8c;"></i></span>
                             </div>
 
                             <div id="detachment-alert" style="display:none;"></div>
@@ -1157,7 +1155,7 @@
 
     <script src="missions.js?v=42"></script>
     <script src="mfm_overrides.js?v=65"></script>
-    <script src="gdm_data.js?v=44"></script>
+    <script src="gdm_data.js?v=45"></script>
     <script src="mfm_detachments.js?v=64"></script>
     <script src="detachment_rules.js?v=2"></script>
     <script src="detachment_manual.js?v=1"></script>
@@ -1166,38 +1164,38 @@
     <script src="data_version.js"></script>
     <script src="det_info.js?v=15"></script>
     <script src="tracker_3d_viewer.js?v=14"></script>
-    <script src="app.js?v=15"></script>
-    <script src="mission_text.js?v=2"></script>
-    <script src="game_tracker.js?v=1791700001"></script>
+    <script src="app.js?v=17"></script>
+    <script src="mission_text.js?v=3"></script>
+    <script src="game_tracker.js?v=1791700003"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="league_config.js?v=2"></script>
-    <script src="league.js?v=17"></script>
+    <script src="league.js?v=18"></script>
     <script src="calc.js?v=ms7"></script>
     <script src="tournament.js?v=4"></script>
-    <script src="pdf_export.js?v=21"></script>
+    <script src="pdf_export.js?v=22"></script>
     <script src="collection.js?v=3"></script>
     <script src="offline.js?v=18"></script>
-    <script src="rules_engine.js?v=3"></script>
+    <script src="rules_engine.js?v=4"></script>
     <script src="about_ui.js?v=2"></script>
-    <script src="army_check.js?v=99"></script>
+    <script src="army_check.js?v=100"></script>
     <script src="bug_report.js?v=2"></script>
     <script src="roster_share.js?v=8"></script>
     <script src="i18n.js?v=7"></script>
     <script src="help.js?v=8"></script>
     <script src="datasheets_ui.js?v=5"></script>
     <script src="home_ui.js?v=1791500000"></script>
-    <script src="tournament_lists_ui.js?v=2"></script>
-    <script src="ui_polish.js?v=17"></script>
-    <script src="ui_roster.js?v=9"></script>
+    <script src="tournament_lists_ui.js?v=3"></script>
+    <script src="ui_polish.js?v=18"></script>
+    <script src="ui_roster.js?v=10"></script>
     <script src="missions_ui.js?v=8"></script>
     <script src="data_manage.js?v=2"></script>
     <script src="admin.js?v=1791500582"></script>
     <script src="live.js?v=2"></script>
     <script src="rules_ui.js?v=5"></script>
     <script src="tracker_ui.js?v=1"></script>
-    <script src="tracker_rules.js?v=5"></script>
+    <script src="tracker_rules.js?v=6"></script>
     <script src="share_menu.js?v=9"></script>
-    <script src="tracker_army.js?v=2"></script>
+    <script src="tracker_army.js?v=3"></script>
     <script src="live_sync.js?v=1791800002"></script>
     <script src="broadcast_studio.js?v=6"></script>
 

@@ -9,7 +9,7 @@
     const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     const ts = () => (typeof trackerState !== 'undefined' ? trackerState : null);
     const P = n => { const t = ts(); return t ? (n === 1 ? t.p1 : t.p2) : null; };
-    const norm = f => String(f || '').replace(/’/g, "'").replace('Imperial Agents', 'Agents of the Imperium');
+    const norm = f => String(f || '').replace(/’/g, "'");
     const cache = {}, st = { 1: { phase: 'all', turn: 'all' }, 2: { phase: 'all', turn: 'all' } };
     const PHASES = [['all', 'All', 'Todas'], ['command', 'Command', 'Mando'], ['movement', 'Movement', 'Movimiento'], ['shooting', 'Shooting', 'Disparo'], ['charge', 'Charge', 'Carga'], ['fight', 'Fight', 'Combate']];
     const TURNS = [['all', 'Both turns', 'Ambos turnos'], ['your', 'Your turn', 'Tu turno'], ['opp', "Opponent's turn", 'Turno rival']];

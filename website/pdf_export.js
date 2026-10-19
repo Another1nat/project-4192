@@ -49,7 +49,7 @@
             // weapons
             const wtab = (title, list, skill) => {
                 if (!list.length) return; doc.setFont('helvetica', 'bold'); doc.setFontSize(7); doc.setTextColor(100);
-                shade(doc, M, y - 3, W - 2 * M, 4.4, 0.28); const cols = [['Range', 84], ['A', 102], [skill, 112], ['S', 124], ['AP', 134], ['D', 146]]; doc.setFont('helvetica', 'bold'); doc.setFontSize(7); doc.setTextColor(100); doc.text(title.toUpperCase(), M, y); cols.forEach(([t, cx]) => doc.text(t, cx, y)); doc.setTextColor(0); y += 3.8;
+                shade(doc, M, y - 3, W - 2 * M, 4.4, 0.28); const cols = [['Range', 84], ['A', 102], ['Hit', 112], ['Wound', 122], ['PEN', 134], ['D', 146]]; doc.setFont('helvetica', 'bold'); doc.setFontSize(7); doc.setTextColor(100); doc.text(title.toUpperCase(), M, y); cols.forEach(([t, cx]) => doc.text(t, cx, y)); doc.setTextColor(0); y += 3.8;
                 list.forEach((w, wi) => { const nl = lines(w.name, 62, 7.5); if (wi % 2 === 0) shade(doc, M, y - 3, W - 2 * M, 4.2 * nl.length, 0.12); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.text(nl, M + 1, y); const c = w.c;
                     [[c.Range, 84], [c.A, 102], [c.BS || c.WS, 112], [c.S, 124], [c.AP, 134], [c.D, 146]].forEach(([v, cx]) => doc.text(String(v == null ? '' : v), cx, y)); y += 4.2 * nl.length; });
                 y += 0.8;
@@ -175,7 +175,7 @@
                 st.c.forEach(([k, v]) => { doc.setFont('helvetica', 'bold'); doc.setFontSize(8); doc.text(clean(k), x, y); const kw = doc.getTextWidth(clean(k)) + 1.2; doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.text(clean(v), x + kw, y); x += kw + doc.getTextWidth(clean(v)) + 5.5; }); y += 5.5; });
             const tab = (title, list, skill) => {
                 if (!list.length) return; doc.setFont('helvetica', 'bold'); doc.setFontSize(7); doc.setTextColor(100); shade(doc, M, y - 3, W - 2 * M, 4.4, 0.28); doc.text(title, M, y);
-                [['Range', 84], ['A', 102], [skill, 112], ['S', 124], ['AP', 134], ['D', 146]].forEach(([t, cx]) => doc.text(t, cx, y)); doc.setTextColor(0); y += 3.8;
+                [['Range', 84], ['A', 102], ['Hit', 112], ['Wound', 122], ['PEN', 134], ['D', 146]].forEach(([t, cx]) => doc.text(t, cx, y)); doc.setTextColor(0); y += 3.8;
                 list.forEach((w, wi) => { const nl = lines(wname(w), 64, 7.5); need(4.2 * nl.length + 1); if (wi % 2 === 0) shade(doc, M, y - 3, W - 2 * M, 4.2 * nl.length, 0.12); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.text(nl, M + 1, y);
                     [[w.c[0], 84], [w.c[1], 102], [w.c[2], 112], [w.c[3], 124], [w.c[4], 134], [w.c[5], 146]].forEach(([v, cx]) => doc.text(clean(v), cx, y)); y += 4.2 * nl.length; }); y += 0.8;
             };

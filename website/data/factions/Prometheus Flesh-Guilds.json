@@ -1,0 +1,3012 @@
+{
+ "name": "Prometheus Flesh-Guilds",
+ "factionKeyword": "Prometheus Flesh-Guilds",
+ "verb": "GRAFT",
+ "identity": "Cyborg tech-surgeons and stitched brutes. They harvest scrap and organs from the dead around them and graft permanent upgrades onto their units mid-battle: a slow start that becomes a custom monster by Round 3.",
+ "sources": [
+  "Project 4192 — gametheory/factions/08_prometheus_flesh_guilds.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Organ & Scrap Harvest",
+   "description": "When any unit (friend or foe) is destroyed within 6″ of a Prometheus unit, gain 1 Graft (max 3 banked). When a unit activates, spend 1 Graft to give it ONE permanent upgrade for the rest of the battle: +1 PEN on one weapon · +1 to Hit with one weapon · heal D3 MIGHT and +1 MIGHT maximum (once). Each unit can take each upgrade once."
+  },
+  {
+   "name": "Gamble — Over-Graft",
+   "description": "Spend 2 Grafts on one unit at once for two different upgrades, then roll a D6: on a 1 the unit suffers D3 Fatal Wounds and loses one of the new upgrades (your choice). (Risk: durability + resource.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "08-det1",
+   "name": "Surgeon-Cult",
+   "cost": 1,
+   "playstyle": "Heal, rebuild and out-last.",
+   "rules": [
+    {
+     "id": "08-det1-r1",
+     "name": "Bloodied Instruments",
+     "description": "Field Surgery and Master of Flesh-Grafting heal +1. Grafts may also be gained when a friendly unit loses its last model within 6″ of a Leader."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "08-det1-e1",
+     "name": "Bone-Saw of Prometheus",
+     "cost": 30,
+     "description": "**Arch-Chirurgeon Prime** only. The attached unit has UNYIELDING 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Prometheus Flesh-Guilds"
+       ],
+       "datasheet": "Arch-Chirurgeon Prime"
+      }
+     ]
+    },
+    {
+     "id": "08-det1-e2",
+     "name": "Reserve Organs",
+     "cost": 10,
+     "description": "**Rust-Priest Chirurgeon** only. Field Surgery may be used twice per round.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Prometheus Flesh-Guilds"
+       ],
+       "datasheet": "Rust-Priest Chirurgeon"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "08-det1-s1",
+     "name": "Emergency Graft",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is destroyed",
+     "target": "",
+     "effect": "Gain 2 Grafts instead of 1 (max 3).",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "08-det1-s2",
+     "name": "Adrenal Shunt",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is selected to Fight",
+     "target": "",
+     "effect": "+1 Attack; it suffers 1 Fatal Wound afterward.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "08-det1-s3",
+     "name": "Stitch Them Back",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "End of Round",
+     "target": "",
+     "effect": "Return D3 slain models to a Class 1 unit within 6″ of a Leader.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "08-det2",
+   "name": "Forge-Legion",
+   "cost": 1,
+   "playstyle": "Cyborg infantry phalanxes that switch protocols each round.",
+   "rules": [
+    {
+     "id": "08-det2-r1",
+     "name": "Bionic Imperatives",
+     "description": "Command Phase, choose for the army: Protector (+1 ARM against attacks from more than 12″; ranged weapons gain [HEAVY]) or Conqueror (ranged weapons gain [ASSAULT] and +1 PEN within 9″)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "08-det2-e1",
+     "name": "Command Uplink",
+     "cost": 15,
+     "description": "**Signal-Augur** only. Friendly units within 9″ re-roll Hit rolls of 1.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Prometheus Flesh-Guilds"
+       ],
+       "datasheet": "Signal-Augur"
+      }
+     ]
+    },
+    {
+     "id": "08-det2-e2",
+     "name": "Overclocked Servos",
+     "cost": 10,
+     "description": "**Galvanic Phalanx** only. +2″ MOV.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Prometheus Flesh-Guilds"
+       ],
+       "datasheet": "Galvanic Phalanx"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "08-det2-s1",
+     "name": "Override Protocol",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit activates",
+     "target": "",
+     "effect": "Use the other Imperative for this unit this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "08-det2-s2",
+     "name": "Binharic Volley",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Two units target the same enemy",
+     "target": "",
+     "effect": "The second gets +1 to Wound.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "08-det2-s3",
+     "name": "Machine Resolve",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit would be Rattled",
+     "target": "",
+     "effect": "It is not.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "08-det3",
+   "name": "Galvanic Breach",
+   "cost": 1,
+   "playstyle": "Lightning-coils and arc weapons: trade your own MIGHT for damage.",
+   "rules": [
+    {
+     "id": "08-det3-r1",
+     "name": "Lightning-Coil Overload",
+     "description": "When a unit is selected to Shoot or Fight, it may suffer 1 Fatal Wound: its weapons gain [IMPALING HITS] this activation."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "08-det3-e1",
+     "name": "Capacitor Heart",
+     "cost": 10,
+     "description": "**Graft-Knight Paragon** only. Melee critical hits on 5+ (auto-wound).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Prometheus Flesh-Guilds"
+       ],
+       "datasheet": "Graft-Knight Paragon"
+      }
+     ]
+    },
+    {
+     "id": "08-det3-e2",
+     "name": "Storm-Coil Mantle",
+     "cost": 10,
+     "description": "**Arch-Chirurgeon Prime** only. Units within 6″ ignore the Fatal Wound from Overload on a 4+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Prometheus Flesh-Guilds"
+       ],
+       "datasheet": "Arch-Chirurgeon Prime"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "08-det3-s1",
+     "name": "Chain Lightning",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An Overloaded attack destroys a unit",
+     "target": "",
+     "effect": "Inflict D3 Fatal Wounds on another enemy unit within 6″.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "08-det3-s2",
+     "name": "Grounding Rods",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is hit by an [PSYCHIC / ARCANE] attack",
+     "target": "",
+     "effect": "It gets WARD 5+ against that attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "08-det3-s3",
+     "name": "Discharge",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged",
+     "target": "",
+     "effect": "The charging unit suffers D3 Fatal Wounds on a 4+.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "08-arch-chirurgeon-prime",
+   "name": "Arch-Chirurgeon Prime",
+   "role": "Leader",
+   "composition": "■ **1 Arch-Chirurgeon Prime**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Arch-Chirurgeon Prime"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Master of Flesh-Grafting",
+     "description": "Once per round, heal 3 MIGHT on a friendly Class 3–5 unit within 6″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Harvest Protocol",
+     "description": "Units destroyed within 9″ (not 6″) of this model give Grafts.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Arc pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Arch-Chirurgeon Prime"
+     ]
+    },
+    {
+     "name": "Surgeon's mechadendrites",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Arch-Chirurgeon Prime"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Arch-Chirurgeon Prime",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Arch-Chirurgeon Prime",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Arc pistol",
+       "count": 1
+      },
+      {
+       "item": "Surgeon's mechadendrites",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Stitched Brutes",
+      "Bionic Praetorians",
+      "Plasma-Welder Team",
+      "Galvanic Striders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "08-graft-knight-paragon",
+   "name": "Graft-Knight Paragon",
+   "role": "Leader",
+   "composition": "■ **1 Graft-Knight Paragon**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Graft-Knight Paragon"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Perfected Form",
+     "description": "The attached unit gets +1 PEN in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Arc pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Graft-Knight Paragon"
+     ]
+    },
+    {
+     "name": "Piston-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Graft-Knight Paragon"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Graft-Knight Paragon",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Graft-Knight Paragon",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Arc pistol",
+       "count": 1
+      },
+      {
+       "item": "Piston-hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Stitched Brutes",
+      "Bionic Praetorians",
+      "Plasma-Welder Team",
+      "Galvanic Striders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "08-rust-priest-chirurgeon",
+   "name": "Rust-Priest Chirurgeon",
+   "role": "Leader",
+   "composition": "■ **1 Rust-Priest Chirurgeon**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Rust-Priest Chirurgeon"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Field Surgery",
+     "description": "Once per round, heal D3 MIGHT on a friendly unit within 3″ or return 1 slain Class 1 model.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Stitch as They Fight",
+     "description": "The attached unit has UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Arc pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Rust-Priest Chirurgeon"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rust-Priest Chirurgeon"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Rust-Priest Chirurgeon",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rust-Priest Chirurgeon",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Arc pistol",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Wire-Stitched Servitors",
+      "Galvanic Phalanx",
+      "Arc-Lancer Skirmishers",
+      "Scrap-Mite Swarm"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "08-signal-augur",
+   "name": "Signal-Augur",
+   "role": "Leader",
+   "composition": "■ **1 Signal-Augur**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "Signal-Augur"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Target Uplink",
+     "description": "Friendly units within 9″ get +1 to Hit with ranged weapons against the last unit this model targeted.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Signal-Augur"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Signal-Augur"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Signal-Augur",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Signal-Augur",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Wire-Stitched Servitors",
+      "Galvanic Phalanx",
+      "Arc-Lancer Skirmishers",
+      "Scrap-Mite Swarm"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "08-wire-stitched-servitors",
+   "name": "Wire-Stitched Servitors",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Wire-Stitched Servitors"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pain-Suppressed",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Radium carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Wire-Stitched Servitors"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Wire-Stitched Servitors"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Wire-Stitched Servitors",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Wire-Stitched Servitors",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Wire-Stitched Servitors",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Wire-Stitched Servitors",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Wire-Stitched Servitors",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Wire-Stitched Servitors",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Wire-Stitched Servitors",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Radium carbine",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rust-Priest Chirurgeon",
+    "Signal-Augur"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "08-galvanic-phalanx",
+   "name": "Galvanic Phalanx",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Galvanic Phalanx"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bionic Imperatives",
+     "description": "Command Phase: Protector (+1 ARM vs attacks from >12″) or Conqueror (+1 PEN within 9″).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Galvanic rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Galvanic Phalanx"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Galvanic Phalanx"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Galvanic Phalanx",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Galvanic Phalanx",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Galvanic Phalanx",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Galvanic Phalanx",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Galvanic Phalanx",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Galvanic Phalanx",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Galvanic Phalanx",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Galvanic rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rust-Priest Chirurgeon",
+    "Signal-Augur"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "08-arc-lancer-skirmishers",
+   "name": "Arc-Lancer Skirmishers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "Arc-Lancer Skirmishers"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Lightning-Coil Overload",
+     "description": "Before attacking, suffer 1 Fatal Wound to give weapons [IMPALING HITS] and +1 Attack.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Arc-lance",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "ASSAULT",
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Arc-Lancer Skirmishers"
+     ]
+    },
+    {
+     "name": "Arc-goad",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Arc-Lancer Skirmishers"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Arc-Lancer Skirmishers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Arc-Lancer Skirmishers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Arc-Lancer Skirmishers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Arc-Lancer Skirmishers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Arc-lance",
+       "count": 1
+      },
+      {
+       "item": "Arc-goad",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rust-Priest Chirurgeon",
+    "Signal-Augur"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "08-stitched-brutes",
+   "name": "Stitched Brutes",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Stitched Brutes"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grafted Hide",
+     "description": "UNYIELDING 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hydraulic fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Stitched Brutes"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Stitched Brutes",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Stitched Brutes",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Stitched Brutes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Stitched Brutes",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Hydraulic fist",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Arch-Chirurgeon Prime",
+    "Graft-Knight Paragon"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "08-bionic-praetorians",
+   "name": "Bionic Praetorians",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Bionic Praetorians"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Graft-Ready",
+     "description": "Grafts spent on this unit may be the same upgrade twice (still max 2).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Plasma-welder",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HAILFIRE 1",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Bionic Praetorians"
+     ]
+    },
+    {
+     "name": "Piston-claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Bionic Praetorians"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Bionic Praetorians",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Bionic Praetorians",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Bionic Praetorians",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bionic Praetorians",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Plasma-welder",
+       "count": 1
+      },
+      {
+       "item": "Piston-claw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Arch-Chirurgeon Prime",
+    "Graft-Knight Paragon"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "08-plasma-welder-team",
+   "name": "Plasma-Welder Team",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Plasma-Welder Team"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Calibrated",
+     "description": "+1 to Hit if it did not Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fusion-torch",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6",
+     "keywords": [
+      "ERADICATE 2"
+     ],
+     "models": [
+      "Plasma-Welder Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Plasma-Welder Team"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Plasma-Welder Team",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Plasma-Welder Team",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Plasma-Welder Team",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Fusion-torch",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Arch-Chirurgeon Prime",
+    "Graft-Knight Paragon"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "08-galvanic-striders",
+   "name": "Galvanic Striders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Galvanic Striders"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Spider-Gait",
+     "description": "Moves over terrain as if it had [FLY] (cannot end on top of impassable terrain).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Galvanic carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Galvanic Striders"
+     ]
+    },
+    {
+     "name": "Arc-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Galvanic Striders"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Galvanic Striders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Galvanic Striders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Galvanic Striders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Galvanic Striders",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Galvanic carbine",
+       "count": 1
+      },
+      {
+       "item": "Arc-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Arch-Chirurgeon Prime",
+    "Graft-Knight Paragon"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "08-scrap-mite-swarm",
+   "name": "Scrap-Mite Swarm",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Scrap-Mite Swarm"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Scavenge",
+     "description": "When this unit destroys an enemy model, gain 1 Graft (max 3).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Claws & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scrap-Mite Swarm"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Scrap-Mite Swarm",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Scrap-Mite Swarm",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Scrap-Mite Swarm",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Scrap-Mite Swarm",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Scrap-Mite Swarm",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Scrap-Mite Swarm",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scrap-Mite Swarm",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Claws & teeth",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Rust-Priest Chirurgeon",
+    "Signal-Augur"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "08-prometheus-flesh-golem",
+   "name": "Prometheus Flesh-Golem",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Prometheus Flesh-Golem**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "8",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Prometheus Flesh-Golem"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Patchwork Flesh",
+     "description": "UNYIELDING 5+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Galvanic Revival",
+     "description": "Once per battle, when destroyed, roll a D6: on a 4+ it returns with 3 MIGHT.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Stitched fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Prometheus Flesh-Golem"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Prometheus Flesh-Golem",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Prometheus Flesh-Golem",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "8",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Stitched fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "08-galvanic-strider-walker",
+   "name": "Galvanic Strider-Walker",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Galvanic Strider-Walker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Galvanic Strider-Walker"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Targeting Cogitator",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Galvanic Strider-Walker"
+     ]
+    },
+    {
+     "name": "Arc-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Galvanic Strider-Walker"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Galvanic Strider-Walker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Galvanic Strider-Walker",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Arc-claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "08-reclamation-engine",
+   "name": "Reclamation Engine",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Reclamation Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "4\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "6",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Reclamation Engine"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Salvage Crane",
+     "description": "Units destroyed within 12″ of this model give Grafts. Once per round, heal D3 MIGHT on a Class 3–5 unit within 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rendering vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Reclamation Engine"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Reclamation Engine"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Reclamation Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Reclamation Engine",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rendering vents",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "08-tesla-pylon-crawler",
+   "name": "Tesla Pylon-Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Tesla Pylon-Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Tesla Pylon-Crawler"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Arc-Chain",
+     "description": "Each unmodified 6 to Hit inflicts 1 Fatal Wound on a different enemy unit within 6″ of the target.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Tesla discharge",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Tesla Pylon-Crawler"
+     ]
+    },
+    {
+     "name": "Crushing tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Tesla Pylon-Crawler"
+     ]
+    }
+   ],
+   "points": 130,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 130,
+     "models": [
+      {
+       "name": "Tesla Pylon-Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tesla Pylon-Crawler",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Tesla discharge",
+       "count": 1
+      },
+      {
+       "item": "Crushing tracks",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "08-iron-flesh-excavator-walker",
+   "name": "Iron-Flesh Excavator-Walker",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Iron-Flesh Excavator-Walker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Iron-Flesh Excavator-Walker"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Redundant Organs",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rendering vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Iron-Flesh Excavator-Walker"
+     ]
+    },
+    {
+     "name": "Excavator drills",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Iron-Flesh Excavator-Walker"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Iron-Flesh Excavator-Walker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Flesh Excavator-Walker",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rendering vents",
+       "count": 1
+      },
+      {
+       "item": "Excavator drills",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "08-gurney-crawler",
+   "name": "Gurney-Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Gurney-Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Gurney-Crawler"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Mobile Surgery",
+     "description": "At the End of Round, heal 1 MIGHT on each model embarked or within 3″ (or return 1 slain Class 1 model to one unit).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Gurney-Crawler"
+     ]
+    },
+    {
+     "name": "Crushing tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Gurney-Crawler"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Gurney-Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gurney-Crawler",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "9\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Crushing tracks",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "08-bio-forge-tank",
+   "name": "Bio-Forge Tank",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Bio-Forge Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Bio-Forge Tank"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Graft Lattice",
+     "description": "This unit may hold 2 copies of each graft upgrade.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Battle cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Bio-Forge Tank"
+     ]
+    },
+    {
+     "name": "Plasma-welder",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HAILFIRE 1",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Bio-Forge Tank"
+     ]
+    },
+    {
+     "name": "Crushing tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bio-Forge Tank"
+     ]
+    }
+   ],
+   "points": 170,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 170,
+     "models": [
+      {
+       "name": "Bio-Forge Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bio-Forge Tank",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Battle cannon",
+       "count": 1
+      },
+      {
+       "item": "Plasma-welder",
+       "count": 1
+      },
+      {
+       "item": "Crushing tracks",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "08-patchwork-colossus",
+   "name": "Patchwork Colossus",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Patchwork Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Patchwork Colossus"
+   ],
+   "factionKeywords": [
+    "Prometheus Flesh-Guilds"
+   ],
+   "abilities": [
+    {
+     "name": "Organ & Scrap Harvest",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Living Graft-Bank",
+     "description": "Spend Grafts on this model without them counting toward the bank limit; it starts with 1 free upgrade.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Patchwork Colossus"
+     ]
+    },
+    {
+     "name": "Grafted maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Patchwork Colossus"
+     ]
+    },
+    {
+     "name": "Rendering vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Patchwork Colossus"
+     ]
+    }
+   ],
+   "points": 275,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 275,
+     "models": [
+      {
+       "name": "Patchwork Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Patchwork Colossus",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Titan stomp",
+       "count": 1
+      },
+      {
+       "item": "Grafted maw",
+       "count": 1
+      },
+      {
+       "item": "Rendering vents",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

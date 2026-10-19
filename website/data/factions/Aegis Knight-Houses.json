@@ -1,0 +1,3089 @@
+{
+ "name": "Aegis Knight-Houses",
+ "factionKeyword": "Aegis Knight-Houses",
+ "verb": "FACING",
+ "identity": "Feudal houses of steam-and-ion war-walkers with squire retainers. Few, huge models whose shields only face forward: the opponent wins by flanking, the knight player wins by turning to meet them and by the joust.",
+ "sources": [
+  "Project 4192 — gametheory/factions/04_aegis_knight_houses.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Ion Bulwark & Thunderous Joust",
+   "description": "Class 3–5 units have WARD 5+ against ranged attacks from models whose bases are in their front 180° arc (mark the front of the base). Class 3–5 units that charged trigger Crushing Impact for 0 CP and their melee weapons gain [CRASHING] that activation."
+  },
+  {
+   "name": "Gamble — Vent the Reactor",
+   "description": "When a Class 3–5 unit activates: its front-arc WARD becomes 4+ and its weapons get +1 Attack until the End of Round. At the End of Round roll a D6: on 1–2 it suffers D3 Fatal Wounds. (Risk: durability (dice).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "04-det1",
+   "name": "Noble Lance",
+   "cost": 1,
+   "playstyle": "Big knights, few retainers: win the duels and the joust.",
+   "rules": [
+    {
+     "id": "04-det1-r1",
+     "name": "Chivalric Code",
+     "description": "Before the battle pick 1 Oath (Slay the Warlord · Hold the Line · Lay Low the Tyrant [a Class 4–5 unit]). When it is fulfilled your army becomes Honoured: +1 CP each Command Phase and Class 4–5 units get UNYIELDING 6+."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "04-det1-e1",
+     "name": "Mantle of the Liege",
+     "cost": 20,
+     "description": "**High Baron in Exalted Knight** only. The bearer has UNYIELDING 6+ from the start.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Aegis Knight-Houses"
+       ],
+       "datasheet": "High Baron in Exalted Knight"
+      }
+     ]
+    },
+    {
+     "id": "04-det1-e2",
+     "name": "Heirloom Lance",
+     "cost": 10,
+     "description": "**Gallant-Class Knight** only. +1 Damage in melee on a round it charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Aegis Knight-Houses"
+       ],
+       "datasheet": "Gallant-Class Knight"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "04-det1-s1",
+     "name": "Rotate Ion-Shields",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit is selected to Shoot a Class 3–5 unit",
+     "target": "",
+     "effect": "Treat the attacker as in the front arc for this attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "04-det1-s2",
+     "name": "Trophy Kill",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4–5 unit destroys an enemy Leader",
+     "target": "",
+     "effect": "Fulfil any Oath that targets Leaders; heal D3 MIGHT.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "04-det1-s3",
+     "name": "Knightly Challenge",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4–5 unit is selected to Fight",
+     "target": "",
+     "effect": "Choose one enemy model: all its attacks target that model (precision).",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "04-det2",
+   "name": "Squire Hunt",
+   "cost": 1,
+   "playstyle": "Packs of squire-walkers bonded to a parent knight.",
+   "rules": [
+    {
+     "id": "04-det2-r1",
+     "name": "Bondsman Hunt",
+     "description": "Squire-Walkers within 9″ of a Knight they are Bonded to (pick at deployment, up to 2 per Knight) get +1 to Hit against the last enemy unit that Knight attacked."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "04-det2-e1",
+     "name": "Huntmaster's Horn",
+     "cost": 10,
+     "description": "**Paladin-Class Knight** only. Bonded Squire-Walkers within 9″ get +1 to Hit with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Aegis Knight-Houses"
+       ],
+       "datasheet": "Paladin-Class Knight"
+      }
+     ]
+    },
+    {
+     "id": "04-det2-e2",
+     "name": "Fleet-Footed Strider",
+     "cost": 10,
+     "description": "**Squire-Walker Strider** only. +2″ MOV.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Aegis Knight-Houses"
+       ],
+       "datasheet": "Squire-Walker Strider"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "04-det2-s1",
+     "name": "Pincer Strike",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Two Squire-Walkers attack the same target this round",
+     "target": "",
+     "effect": "The second gets +1 PEN.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "04-det2-s2",
+     "name": "Flushed from Cover",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Squire-Walker hits an enemy unit in Cover",
+     "target": "",
+     "effect": "That unit loses Cover until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "04-det2-s3",
+     "name": "Covering Advance",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Squire-Walker activates",
+     "target": "",
+     "effect": "It may make a 3″ move after shooting.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "04-det3",
+   "name": "Feudal Muster",
+   "cost": 1,
+   "playstyle": "The whole household marches: retainers screen the knights.",
+   "rules": [
+    {
+     "id": "04-det3-r1",
+     "name": "Towering Bulwark",
+     "description": "Friendly Class 1–2 units within 3″ of a Class 4–5 Knight claim Cover; Knights may move over Class 1–2 enemy models."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "04-det3-e1",
+     "name": "Banner of the House",
+     "cost": 15,
+     "description": "**Banner-Squire** only. Friendly Class 1–2 units within 6″ get +1 ARM (to 3+ cap).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Aegis Knight-Houses"
+       ],
+       "datasheet": "Banner-Squire"
+      }
+     ]
+    },
+    {
+     "id": "04-det3-e2",
+     "name": "Veteran Sergeant-at-Arms",
+     "cost": 10,
+     "description": "**Herald-Seneschal** only. The attached unit gets +1 to Hit with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Aegis Knight-Houses"
+       ],
+       "datasheet": "Herald-Seneschal"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "04-det3-s1",
+     "name": "Hold the Line, Squires!",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 1–2 unit is charged",
+     "target": "",
+     "effect": "It is not Rattled and its Retaliation Strike gets +1 to Wound.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "04-det3-s2",
+     "name": "Close the Gap",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 1–2 unit is destroyed within 6″ of a Knight",
+     "target": "",
+     "effect": "That Knight may make a 3″ move.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "04-det3-s3",
+     "name": "Muster Call",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase, once per battle",
+     "target": "",
+     "effect": "Return a destroyed Feudal Squires unit at half strength within 6″ of your table edge.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "04-high-baron-in-exalted-knight",
+   "name": "High Baron in Exalted Knight",
+   "role": "Leader",
+   "composition": "■ **1 High Baron in Exalted Knight**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "5"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Leader",
+    "HARDENED",
+    "High Baron in Exalted Knight"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Liege-Lord's Command",
+     "description": "Friendly units within 9″ get +1 to Hit with ranged weapons while targeting the unit this model shot this round.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Lord of the House",
+     "description": "+1 CP the first time this model destroys an enemy unit each battle.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Thunder cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "High Baron in Exalted Knight"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "High Baron in Exalted Knight"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "High Baron in Exalted Knight"
+     ]
+    }
+   ],
+   "points": 205,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 205,
+     "models": [
+      {
+       "name": "High Baron in Exalted Knight",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "High Baron in Exalted Knight",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "5",
+     "equipped": [
+      {
+       "item": "Thunder cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Reaper chain-sword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Paladin-Class Knight",
+      "Gallant-Class Knight",
+      "Errant-Class Knight",
+      "Warden-Class Knight",
+      "Baronial Bombard",
+      "Iron Destrier Carriage"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "04-herald-seneschal",
+   "name": "Herald-Seneschal",
+   "role": "Leader",
+   "composition": "■ **1 Herald-Seneschal**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Herald-Seneschal"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Oath of the Household",
+     "description": "The attached unit re-rolls melee Wound rolls of 1.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Squire's Duty",
+     "description": "While within 6″ of a friendly Class 4–5 unit, the attached unit gets +1 CTRL per model.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Herald-Seneschal"
+     ]
+    },
+    {
+     "name": "Household greatsword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Herald-Seneschal"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Herald-Seneschal",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Herald-Seneschal",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Household greatsword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Steam-Cavaliers",
+      "Bondsmen Halberdiers",
+      "Retainer Gun-Team"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "04-sacristan-forge-wright",
+   "name": "Sacristan Forge-Wright",
+   "role": "Leader",
+   "composition": "■ **1 Sacristan Forge-Wright**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Sacristan Forge-Wright"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Field Repairs",
+     "description": "Once per round, heal D3 MIGHT on a friendly Class 3–5 unit within 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Sacristan Forge-Wright"
+     ]
+    },
+    {
+     "name": "Servo-wrench",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Sacristan Forge-Wright"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Sacristan Forge-Wright",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sacristan Forge-Wright",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Servo-wrench",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Feudal Squires",
+      "Household Men-at-Arms",
+      "Sworn Huntsmen"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "04-banner-squire",
+   "name": "Banner-Squire",
+   "role": "Leader",
+   "composition": "■ **1 Banner-Squire**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Banner-Squire"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "House Standard",
+     "description": "Friendly Class 1–2 units within 6″ count +1 CTRL per unit when contesting objectives.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Rally to the Colours",
+     "description": "Friendly Class 1–2 units within 6″ re-roll Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Squire carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Banner-Squire"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Banner-Squire"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Banner-Squire",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Banner-Squire",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Squire carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Feudal Squires",
+      "Household Men-at-Arms",
+      "Sworn Huntsmen"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "04-feudal-squires",
+   "name": "Feudal Squires",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Feudal Squires"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bondsmen",
+     "description": "+1 CTRL per model while within 6″ of a friendly Class 4–5 unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Squire carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Feudal Squires"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Feudal Squires"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Feudal Squires",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Feudal Squires",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Feudal Squires",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Feudal Squires",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Feudal Squires",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Feudal Squires",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Feudal Squires",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Squire carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sacristan Forge-Wright",
+    "Banner-Squire"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "04-household-men-at-arms",
+   "name": "Household Men-at-Arms",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Household Men-at-Arms"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pike Wall",
+     "description": "Enemies get −1 to Hit this unit in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Battle rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Household Men-at-Arms"
+     ]
+    },
+    {
+     "name": "Halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Household Men-at-Arms"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Household Men-at-Arms",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Household Men-at-Arms",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Household Men-at-Arms",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Household Men-at-Arms",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Household Men-at-Arms",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Household Men-at-Arms",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Household Men-at-Arms",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Battle rifle",
+       "count": 1
+      },
+      {
+       "item": "Halberd",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sacristan Forge-Wright",
+    "Banner-Squire"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "04-steam-cavaliers",
+   "name": "Steam-Cavaliers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "14\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Steam-Cavaliers"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ride Down",
+     "description": "Triggers Crushing Impact for 0 CP when it charges.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Squire carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Steam-Cavaliers"
+     ]
+    },
+    {
+     "name": "Steam-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Steam-Cavaliers"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Steam-Cavaliers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Steam-Cavaliers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Steam-Cavaliers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Steam-Cavaliers",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "14\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Squire carbine",
+       "count": 1
+      },
+      {
+       "item": "Steam-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald-Seneschal"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "04-bondsmen-halberdiers",
+   "name": "Bondsmen Halberdiers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Bondsmen Halberdiers"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Intercept",
+     "description": "Once per round, when an enemy unit ends a Charge within 6″ of a friendly Class 4–5 unit, this unit may move 3″ to engage it.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Battle rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bondsmen Halberdiers"
+     ]
+    },
+    {
+     "name": "Bond-halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Bondsmen Halberdiers"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Bondsmen Halberdiers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Bondsmen Halberdiers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 200,
+     "models": [
+      {
+       "name": "Bondsmen Halberdiers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bondsmen Halberdiers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Battle rifle",
+       "count": 1
+      },
+      {
+       "item": "Bond-halberd",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald-Seneschal"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "04-retainer-gun-team",
+   "name": "Retainer Gun-Team",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Retainer Gun-Team"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Braced Tripods",
+     "description": "+1 to Hit if this unit did not Move this activation.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Retainer Gun-Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Retainer Gun-Team"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Retainer Gun-Team",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Retainer Gun-Team",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Retainer Gun-Team",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald-Seneschal"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "04-sworn-huntsmen",
+   "name": "Sworn Huntsmen",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "Sworn Huntsmen"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Mark the Quarry",
+     "description": "Once per round, a unit this unit hit loses Cover against the next friendly Class 4–5 attack.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Sworn Huntsmen"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Huntsmen"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Sworn Huntsmen",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Sworn Huntsmen",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Huntsmen",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Sniper rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sacristan Forge-Wright",
+    "Banner-Squire"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "04-squire-walker-strider",
+   "name": "Squire-Walker Strider",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Squire-Walker Strider**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "8",
+    "CTRL": "4"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Squire-Walker Strider"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Squire Bond",
+     "description": "While within 9″ of a friendly Class 4–5 Knight, +2″ MOV and +1 CTRL for both.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Squire-Walker Strider"
+     ]
+    },
+    {
+     "name": "Chain-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Squire-Walker Strider"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Squire-Walker Strider",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Squire-Walker Strider",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "4",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "8",
+     "CTRL": "4",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Chain-cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "04-squire-walker-thermal-lancer",
+   "name": "Squire-Walker Thermal-Lancer",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Squire-Walker Thermal-Lancer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "8",
+    "CTRL": "4"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Squire-Walker Thermal-Lancer"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Squire Bond",
+     "description": "While within 9″ of a friendly Class 4–5 Knight, +2″ MOV and +1 CTRL for both.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Thermal lance",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6",
+     "keywords": [
+      "ERADICATE 2"
+     ],
+     "models": [
+      "Squire-Walker Thermal-Lancer"
+     ]
+    },
+    {
+     "name": "Strider claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Squire-Walker Thermal-Lancer"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Squire-Walker Thermal-Lancer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Squire-Walker Thermal-Lancer",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "4",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "8",
+     "CTRL": "4",
+     "equipped": [
+      {
+       "item": "Thermal lance",
+       "count": 1
+      },
+      {
+       "item": "Strider claw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "04-squire-walker-warden",
+   "name": "Squire-Walker Warden",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Squire-Walker Warden**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "8",
+    "CTRL": "4"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Squire-Walker Warden"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sky-Hunter Optics",
+     "description": "Re-roll ranged Hit rolls of 1 (re-roll all against [FLY]).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Missile launcher",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Squire-Walker Warden"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Squire-Walker Warden"
+     ]
+    },
+    {
+     "name": "Strider claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Squire-Walker Warden"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Squire-Walker Warden",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Squire-Walker Warden",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "4",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "8",
+     "CTRL": "4",
+     "equipped": [
+      {
+       "item": "Missile launcher",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Strider claw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "04-paladin-class-knight",
+   "name": "Paladin-Class Knight",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Paladin-Class Knight**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "5"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Paladin-Class Knight"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rapid Cycling",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Thunder cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Paladin-Class Knight"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Paladin-Class Knight"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Paladin-Class Knight"
+     ]
+    }
+   ],
+   "points": 200,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 200,
+     "models": [
+      {
+       "name": "Paladin-Class Knight",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Paladin-Class Knight",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "5",
+     "equipped": [
+      {
+       "item": "Thunder cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Reaper chain-sword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Baron in Exalted Knight"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "04-gallant-class-knight",
+   "name": "Gallant-Class Knight",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Gallant-Class Knight**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "5"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Gallant-Class Knight"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Glory Seeker",
+     "description": "+1 Attack in melee on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Gallant-Class Knight"
+     ]
+    },
+    {
+     "name": "Thunder-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "4",
+     "keywords": [],
+     "models": [
+      "Gallant-Class Knight"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Gallant-Class Knight"
+     ]
+    }
+   ],
+   "points": 205,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 205,
+     "models": [
+      {
+       "name": "Gallant-Class Knight",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gallant-Class Knight",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "5",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Thunder-hammer",
+       "count": 1
+      },
+      {
+       "item": "Reaper chain-sword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Baron in Exalted Knight"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "04-errant-class-knight",
+   "name": "Errant-Class Knight",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Errant-Class Knight**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "5"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Errant-Class Knight"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Fusion Lance",
+     "description": "+1 Damage with the Thermal cannon within 12″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Thermal cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D3",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6",
+     "keywords": [
+      "ERADICATE 2",
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Errant-Class Knight"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Errant-Class Knight"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Errant-Class Knight"
+     ]
+    }
+   ],
+   "points": 195,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 195,
+     "models": [
+      {
+       "name": "Errant-Class Knight",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Errant-Class Knight",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "5",
+     "equipped": [
+      {
+       "item": "Thermal cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Reaper chain-sword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Baron in Exalted Knight"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "04-warden-class-knight",
+   "name": "Warden-Class Knight",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Warden-Class Knight**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "5"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Warden-Class Knight"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shield the Squires",
+     "description": "Friendly Class 1–2 units within 3″ claim Cover.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Avenger rotary",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Warden-Class Knight"
+     ]
+    },
+    {
+     "name": "Gatling-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Warden-Class Knight"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Warden-Class Knight"
+     ]
+    }
+   ],
+   "points": 195,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 195,
+     "models": [
+      {
+       "name": "Warden-Class Knight",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Warden-Class Knight",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "5",
+     "equipped": [
+      {
+       "item": "Avenger rotary",
+       "count": 1
+      },
+      {
+       "item": "Gatling-flamer",
+       "count": 1
+      },
+      {
+       "item": "Reaper chain-sword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Baron in Exalted Knight"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "04-baronial-bombard",
+   "name": "Baronial Bombard",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Baronial Bombard**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "13",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Baronial Bombard"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "House Ordnance",
+     "description": "May target units visible to any friendly Class 3–5 Knight without −1 for [INDIRECT FIRE].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Siege howitzer",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Baronial Bombard"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Baronial Bombard"
+     ]
+    },
+    {
+     "name": "Armoured stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Baronial Bombard"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Baronial Bombard",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Baronial Bombard",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "13",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Siege howitzer",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Armoured stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Baron in Exalted Knight"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "04-iron-destrier-carriage",
+   "name": "Iron Destrier Carriage",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Iron Destrier Carriage**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "12\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "13",
+    "CTRL": "4"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Iron Destrier Carriage"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Squires Aboard",
+     "description": "Squires that disembark may still make a Charge this activation (no Move + Charge with the carriage itself).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Iron Destrier Carriage"
+     ]
+    },
+    {
+     "name": "Armoured stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Iron Destrier Carriage"
+     ]
+    }
+   ],
+   "points": 130,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 130,
+     "models": [
+      {
+       "name": "Iron Destrier Carriage",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron Destrier Carriage",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "4",
+     "MOV": "12\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "13",
+     "CTRL": "4",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Armoured stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Baron in Exalted Knight"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "04-bastion-class-siege-lord",
+   "name": "Bastion-Class Siege-Lord",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Bastion-Class Siege-Lord**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "12\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "24",
+    "CTRL": "6",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Bastion-Class Siege-Lord"
+   ],
+   "factionKeywords": [
+    "Aegis Knight-Houses"
+   ],
+   "abilities": [
+    {
+     "name": "Ion Bulwark & Thunderous Joust",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Towering Bulwark",
+     "description": "Friendly Class 1–2 units within 3″ claim Cover; this model moves over Class 1–2 enemy models.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Volcano-ion cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Bastion-Class Siege-Lord"
+     ]
+    },
+    {
+     "name": "Missile launcher",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Bastion-Class Siege-Lord"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Bastion-Class Siege-Lord"
+     ]
+    }
+   ],
+   "points": 410,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 410,
+     "models": [
+      {
+       "name": "Bastion-Class Siege-Lord",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bastion-Class Siege-Lord",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "24",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "12\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "24",
+     "CTRL": "6",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Volcano-ion cannon",
+       "count": 1
+      },
+      {
+       "item": "Missile launcher",
+       "count": 1
+      },
+      {
+       "item": "Titan stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

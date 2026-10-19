@@ -1,0 +1,4356 @@
+{
+ "name": "Apex Bio-Swarm",
+ "factionKeyword": "Apex Bio-Swarm",
+ "verb": "ADAPTATION",
+ "identity": "An evolving chitin hive: endless gaunts, warrior-broods and bio-titans that re-evolve every round to counter the enemy.",
+ "sources": [
+  "Project 4192 — gametheory/factions/23_apex_bio_swarm.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Synapse & Evolution",
+   "description": "Command Phase: choose 1 Bio-Adaptation for the whole army this round: Scythes (+1 PEN in melee) · Chitin (+1 ARM to the 3+ cap) · Adrenal (+2″ Move). Units within 9″ of a [SYNAPSE] model ignore Suppression."
+  },
+  {
+   "name": "Gamble — Metabolic Overdrive",
+   "description": "When a unit activates: +2″ MOV and +1 Attack in melee this activation. At the End of Round, roll a D6: on 1–2 it suffers D3 Fatal Wounds (models die of exhaustion). (Risk: durability (dice).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "23-det1",
+   "name": "Invasion Swarm",
+   "cost": 1,
+   "playstyle": "Endless gaunts: drown objectives in bodies, recycle them through Synapse.",
+   "rules": [
+    {
+     "id": "23-det1-r1",
+     "name": "Hunger of the Hive",
+     "description": "Trooper units within 9″ of Synapse get +1 Attack in melee if they outnumber their target."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "23-det1-e1",
+     "name": "Adaptive Neural Lattice",
+     "cost": 10,
+     "description": "**Hive-Sovereign Synapse-Alpha** only. Synapse range is 12″.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Apex Bio-Swarm"
+       ],
+       "datasheet": "Hive-Sovereign Synapse-Alpha"
+      }
+     ]
+    },
+    {
+     "id": "23-det1-e2",
+     "name": "Bio-Spawning Sac",
+     "cost": 15,
+     "description": "**Bio-Warrior Brood** only. Endless Swarm returns 2 Chitter-swarm models per round near this unit.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Apex Bio-Swarm"
+       ],
+       "datasheet": "Bio-Warrior Brood"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "23-det1-s1",
+     "name": "Overrun",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Trooper unit destroys a unit",
+     "target": "",
+     "effect": "Consolidate 6″ instead of 3″.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "23-det1-s2",
+     "name": "Swarm Wave",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Trooper unit is destroyed",
+     "target": "",
+     "effect": "Set up a new 10-model Chitter-Swarm at your board edge (once per battle).",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "23-det1-s3",
+     "name": "Chitin Wall",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Trooper unit is shot",
+     "target": "",
+     "effect": "+1 ARM for that attack (stacks with the Chitin adaptation to the cap).",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "23-det2",
+   "name": "Synaptic Vanguard",
+   "cost": 1,
+   "playstyle": "Ambush hunters: Shade-Stalkers and Tunnel-Wyrms strike leaders from hiding.",
+   "rules": [
+    {
+     "id": "23-det2-r1",
+     "name": "Lurking Death",
+     "description": "[VANGUARD STRIKE] and [INFILTRATORS] units get +1 to Wound on the activation they arrive or first attack."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "23-det2-e1",
+     "name": "Chameleonic Mutation",
+     "cost": 10,
+     "description": "**Shade-Stalker** only. Ranged attacks against the bearer get −1 to Hit.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Apex Bio-Swarm"
+       ],
+       "datasheet": "Shade-Stalker"
+      }
+     ]
+    },
+    {
+     "id": "23-det2-e2",
+     "name": "Pheromone Trail",
+     "cost": 10,
+     "description": "**Shade-Stalker** only. Vanguard Strike units may arrive within 6″ of the bearer (still >8″ from enemies).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Apex Bio-Swarm"
+       ],
+       "datasheet": "Shade-Stalker"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "23-det2-s1",
+     "name": "Ambush Predators",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit arrives from reserves",
+     "target": "",
+     "effect": "It may Charge this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "23-det2-s2",
+     "name": "Feeding Frenzy",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit attacks a Leader",
+     "target": "",
+     "effect": "Its attacks gain [PRECISION].",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "23-det2-s3",
+     "name": "Vanish into Burrows",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "End of the round",
+     "target": "",
+     "effect": "One unit not engaged returns to Strategic Reserves.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "23-det3",
+   "name": "Bio-Titan Assault",
+   "cost": 1,
+   "playstyle": "Monster mash: Tyrant, Carno-Brutes and a Bio-Horror walk through the enemy.",
+   "rules": [
+    {
+     "id": "23-det3-r1",
+     "name": "Primal Evolution",
+     "description": "Class 3+ units benefit from the round's Bio-Adaptation twice over (Scythes +2 PEN · Chitin +1 ARM and −1 Damage · Adrenal +4″ Move)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "23-det3-e1",
+     "name": "Monstrous Musculature",
+     "cost": 15,
+     "description": "**Carno-Brute** only. +2 melee Attacks.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Apex Bio-Swarm"
+       ],
+       "datasheet": "Carno-Brute"
+      }
+     ]
+    },
+    {
+     "id": "23-det3-e2",
+     "name": "Regenerating Chitin",
+     "cost": 20,
+     "description": "**Hive-Sovereign Synapse-Alpha** only. The bearer has [UNYIELDING 6+].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Apex Bio-Swarm"
+       ],
+       "datasheet": "Hive-Sovereign Synapse-Alpha"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "23-det3-s1",
+     "name": "Rapid Regrowth",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Brute/Behemoth suffers damage",
+     "target": "",
+     "effect": "Ignore up to 3 MIGHT from that attack (mitigation, not healing).",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "23-det3-s2",
+     "name": "Rampaging Beast",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3+ unit charges",
+     "target": "",
+     "effect": "Crushing Impact with no self-damage.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "23-det3-s3",
+     "name": "Bio-Acid Spray",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A monster is engaged",
+     "target": "",
+     "effect": "Engaged enemies suffer D3 Fatal Wounds.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "23-chitter-swarm",
+   "name": "Chitter-Swarm",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "FRAIL",
+    "Chitter-Swarm"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Endless Swarm",
+     "description": "Synapse units within 9″ may return 1 slain Gaunt per round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Flesh-borer",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Chitter-Swarm"
+     ]
+    },
+    {
+     "name": "Chitin claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Chitter-Swarm"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Chitter-Swarm",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Chitter-Swarm",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Chitter-Swarm",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Chitter-Swarm",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Chitter-Swarm",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Chitter-Swarm",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Chitter-Swarm",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Flesh-borer",
+       "count": 1
+      },
+      {
+       "item": "Chitin claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Neuro-Node Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "23-slasher-brood",
+   "name": "Slasher-Brood",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "9\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "FRAIL",
+    "Slasher-Brood"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Scything talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ONSLAUGHT 1"
+     ],
+     "models": [
+      "Slasher-Brood"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Slasher-Brood",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Slasher-Brood",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Slasher-Brood",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Slasher-Brood",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Slasher-Brood",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Slasher-Brood",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Slasher-Brood",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "9\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Scything talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Neuro-Node Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "23-bio-warrior-brood",
+   "name": "Bio-Warrior Brood",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "SYNAPSE",
+    "Bio-Warrior Brood"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Synapse Node",
+     "description": "[SYNAPSE]: friendly units within 9″ ignore Suppression.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Devourer",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bio-Warrior Brood"
+     ]
+    },
+    {
+     "name": "Rending talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bio-Warrior Brood"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Bio-Warrior Brood",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Bio-Warrior Brood",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Bio-Warrior Brood",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bio-Warrior Brood",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Devourer",
+       "count": 1
+      },
+      {
+       "item": "Rending talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Brood-Prime",
+    "Brood-Mother",
+    "Devourer Prime"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-tunnel-wyrm-brood",
+   "name": "Tunnel-Wyrm Brood",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "VANGUARD STRIKE",
+    "Tunnel-Wyrm Brood"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Burrower claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Tunnel-Wyrm Brood"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Tunnel-Wyrm Brood",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Tunnel-Wyrm Brood",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Tunnel-Wyrm Brood",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tunnel-Wyrm Brood",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Burrower claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Brood-Prime",
+    "Brood-Mother",
+    "Devourer Prime"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-shade-stalker",
+   "name": "Shade-Stalker",
+   "role": "Class 2 · Elites",
+   "composition": "■ **1 Shade-Stalker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Shade-Stalker"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Grasping talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "PRECISION"
+     ],
+     "models": [
+      "Shade-Stalker"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Shade-Stalker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Shade-Stalker",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Grasping talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Brood-Prime",
+    "Brood-Mother",
+    "Devourer Prime"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-psy-node-brood",
+   "name": "Psy-Node Brood",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3 Psy-Node Brood**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "SYNAPSE",
+    "Psy-Node Brood"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Synapse Node",
+     "description": "[SYNAPSE].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warp lance",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Psy-Node Brood"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Psy-Node Brood",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Psy-Node Brood",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Warp lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Brood-Prime",
+    "Brood-Mother",
+    "Devourer Prime"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-carno-brute",
+   "name": "Carno-Brute",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1–2 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Carno-Brute"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Carno-Brute"
+     ]
+    },
+    {
+     "name": "Bio-plasma",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D3",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Carno-Brute"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Carno-Brute",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Carno-Brute",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Carno-Brute",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Bio-plasma",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "23-hive-sovereign-synapse-alpha",
+   "name": "Hive-Sovereign Synapse-Alpha",
+   "role": "Leader",
+   "composition": "■ **1 Hive-Sovereign Synapse-Alpha**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Leader",
+    "SYNAPSE",
+    "HARDENED",
+    "Hive-Sovereign Synapse-Alpha"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Will of the Hive",
+     "description": "⟳ Once per round, one friendly unit within 9″ gets +1 to Hit in melee this round. [SYNAPSE].",
+     "type": "datasheet"
+    },
+    {
+     "name": "Synapse Node",
+     "description": "[SYNAPSE].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Hive-Sovereign Synapse-Alpha"
+     ]
+    },
+    {
+     "name": "Venom cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Hive-Sovereign Synapse-Alpha"
+     ]
+    }
+   ],
+   "points": 205,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 205,
+     "models": [
+      {
+       "name": "Hive-Sovereign Synapse-Alpha",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hive-Sovereign Synapse-Alpha",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Venom cannon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Siege-Maw Monstrosity",
+      "Spore-Pod Carrier",
+      "Crusher-Queen Behemoth",
+      "Bio-Artillery Beast",
+      "Deep-Burrow Worm"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "23-titanic-bio-horror",
+   "name": "Titanic Bio-Horror",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Titanic Bio-Horror**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "9\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "26",
+    "CTRL": "6",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "SYNAPSE",
+    "HARDENED",
+    "Titanic Bio-Horror"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Titanic Bio-Horror"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Titanic Bio-Horror"
+     ]
+    },
+    {
+     "name": "Acid-mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Titanic Bio-Horror"
+     ]
+    }
+   ],
+   "points": 380,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 380,
+     "models": [
+      {
+       "name": "Titanic Bio-Horror",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Titanic Bio-Horror",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "26",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "9\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "26",
+     "CTRL": "6",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Titan stomp",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      },
+      {
+       "item": "Acid-mortar",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  },
+  {
+   "id": "23-brood-prime",
+   "name": "Brood-Prime",
+   "role": "Leader",
+   "composition": "■ **1 Brood-Prime**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "SYNAPSE",
+    "Brood-Prime"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Alpha Instinct",
+     "description": "Leader. The attached unit gets +1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Prime talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Brood-Prime"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Brood-Prime",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brood-Prime",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Prime talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Bio-Warrior Brood",
+      "Tunnel-Wyrm Brood",
+      "Shade-Stalker",
+      "Psy-Node Brood",
+      "Chitin-Guard Brutes",
+      "Spore-Mortar Brood",
+      "Bone-Runner Pack",
+      "Venom-Lash Brood"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-brood-mother",
+   "name": "Brood-Mother",
+   "role": "Leader",
+   "composition": "■ **1 Brood-Mother**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Brood-Mother"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Spawn the Swarm",
+     "description": "⟳ Return 2 slain models to a Chitter-Swarm or Slasher-Brood within 9″ (never above starting size).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spawn-whips",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Brood-Mother"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Brood-Mother",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brood-Mother",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Spawn-whips",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Bio-Warrior Brood",
+      "Tunnel-Wyrm Brood",
+      "Shade-Stalker",
+      "Psy-Node Brood",
+      "Chitin-Guard Brutes",
+      "Spore-Mortar Brood",
+      "Bone-Runner Pack",
+      "Venom-Lash Brood"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-chitin-guard-brutes",
+   "name": "Chitin-Guard Brutes",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Chitin-Guard Brutes"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Living Shield",
+     "description": "Leader bodyguard: −1 Damage against attacks on this unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone-crusher claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Chitin-Guard Brutes"
+     ]
+    }
+   ],
+   "points": 155,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 155,
+     "models": [
+      {
+       "name": "Chitin-Guard Brutes",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Chitin-Guard Brutes",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Chitin-Guard Brutes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Chitin-Guard Brutes",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bone-crusher claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Brood-Prime",
+    "Brood-Mother",
+    "Devourer Prime"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-spore-mortar-brood",
+   "name": "Spore-Mortar Brood",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Spore-Mortar Brood"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spore mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Spore-Mortar Brood"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Spore-Mortar Brood"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Spore-Mortar Brood",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Spore-Mortar Brood",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Spore-Mortar Brood",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Spore mortar",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Brood-Prime",
+    "Brood-Mother",
+    "Devourer Prime"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-skyshrike-brood",
+   "name": "Skyshrike Brood",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "FRAIL",
+    "Skyshrike Brood"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Flesh-dart",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Skyshrike Brood"
+     ]
+    },
+    {
+     "name": "Claws & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Skyshrike Brood"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Skyshrike Brood",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Skyshrike Brood",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Skyshrike Brood",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Skyshrike Brood",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Skyshrike Brood",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Skyshrike Brood",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Skyshrike Brood",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Flesh-dart",
+       "count": 1
+      },
+      {
+       "item": "Claws & teeth",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Neuro-Node Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "23-rend-lurkers",
+   "name": "Rend-Lurkers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "INFILTRATORS",
+    "Rend-Lurkers"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rending claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Rend-Lurkers"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Rend-Lurkers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Rend-Lurkers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Rend-Lurkers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Rend-Lurkers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Rend-Lurkers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Rend-Lurkers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rend-Lurkers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Rending claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Neuro-Node Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "23-bone-runner-pack",
+   "name": "Bone-Runner Pack",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "12\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Bone-Runner Pack"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Runner talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Bone-Runner Pack"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Bone-Runner Pack",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Bone-Runner Pack",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Bone-Runner Pack",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bone-Runner Pack",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "12\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Runner talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Brood-Prime",
+    "Brood-Mother",
+    "Devourer Prime"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-horned-rampager",
+   "name": "Horned Rampager",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1–2 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Horned Rampager"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Battering Horns",
+     "description": "+1 Damage on the activation it charges.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Horned Rampager"
+     ]
+    }
+   ],
+   "points": 130,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 130,
+     "models": [
+      {
+       "name": "Horned Rampager",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Horned Rampager",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Horned Rampager",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "23-siege-maw-monstrosity",
+   "name": "Siege-Maw Monstrosity",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Siege-Maw Monstrosity**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Siege-Maw Monstrosity"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Acid siege-maw",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Siege-Maw Monstrosity"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Siege-Maw Monstrosity"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Siege-Maw Monstrosity",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Siege-Maw Monstrosity",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Acid siege-maw",
+       "count": 1
+      },
+      {
+       "item": "Monster talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hive-Sovereign Synapse-Alpha",
+    "Winged Hive-Sovereign"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "23-spore-pod-carrier",
+   "name": "Spore-Pod Carrier",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Spore-Pod Carrier**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Spore-Pod Carrier"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spore-spines",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Spore-Pod Carrier"
+     ]
+    },
+    {
+     "name": "Claws & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Spore-Pod Carrier"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Spore-Pod Carrier",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Spore-Pod Carrier",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Spore-spines",
+       "count": 1
+      },
+      {
+       "item": "Claws & teeth",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hive-Sovereign Synapse-Alpha",
+    "Winged Hive-Sovereign"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "23-crusher-queen-behemoth",
+   "name": "Crusher-Queen Behemoth",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Crusher-Queen Behemoth**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Crusher-Queen Behemoth"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Crusher-Queen Behemoth"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Crusher-Queen Behemoth"
+     ]
+    }
+   ],
+   "points": 205,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 205,
+     "models": [
+      {
+       "name": "Crusher-Queen Behemoth",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crusher-Queen Behemoth",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hive-Sovereign Synapse-Alpha",
+    "Winged Hive-Sovereign"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "23-devourer-prime",
+   "name": "Devourer Prime",
+   "role": "Leader",
+   "composition": "■ **1 Devourer Prime**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "SYNAPSE",
+    "Devourer Prime"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Lightning Predator",
+     "description": "[STRIKE FIRST].",
+     "type": "datasheet"
+    },
+    {
+     "name": "Alpha Instinct",
+     "description": "The attached unit gets +1 Attack in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone-scythes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Devourer Prime"
+     ]
+    },
+    {
+     "name": "Flesh-hooks",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Devourer Prime"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Devourer Prime",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Devourer Prime",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Bone-scythes",
+       "count": 1
+      },
+      {
+       "item": "Flesh-hooks",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Bio-Warrior Brood",
+      "Tunnel-Wyrm Brood",
+      "Shade-Stalker",
+      "Psy-Node Brood",
+      "Chitin-Guard Brutes",
+      "Spore-Mortar Brood",
+      "Bone-Runner Pack",
+      "Venom-Lash Brood"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-winged-hive-sovereign",
+   "name": "Winged Hive-Sovereign",
+   "role": "Leader",
+   "composition": "■ **1 Winged Hive-Sovereign**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "12\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "12",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Leader",
+    "FLY",
+    "SYNAPSE",
+    "HARDENED",
+    "Winged Hive-Sovereign"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Will of the Swarm",
+     "description": "Friendly units within 9″ get +1 to Wound in melee on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Synaptic Overlord",
+     "description": "Synapse range from this model is 12″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bio-cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Winged Hive-Sovereign"
+     ]
+    },
+    {
+     "name": "Monstrous scythes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Winged Hive-Sovereign"
+     ]
+    }
+   ],
+   "points": 195,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 195,
+     "models": [
+      {
+       "name": "Winged Hive-Sovereign",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Winged Hive-Sovereign",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "12\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "12",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Bio-cannon",
+       "count": 1
+      },
+      {
+       "item": "Monstrous scythes",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Siege-Maw Monstrosity",
+      "Spore-Pod Carrier",
+      "Crusher-Queen Behemoth",
+      "Bio-Artillery Beast",
+      "Deep-Burrow Worm"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "23-neuro-node-lord",
+   "name": "Neuro-Node Lord",
+   "role": "Leader",
+   "composition": "■ **1 Neuro-Node Lord**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "SYNAPSE",
+    "Neuro-Node Lord"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Neural Shield",
+     "description": "The attached unit has UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Relay Node",
+     "description": "Counts as a [SYNAPSE] model for every friendly unit within 6″ of the attached unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spine-fist",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Neuro-Node Lord"
+     ]
+    },
+    {
+     "name": "Bone-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Neuro-Node Lord"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Neuro-Node Lord",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Neuro-Node Lord",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Spine-fist",
+       "count": 1
+      },
+      {
+       "item": "Bone-sword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Chitter-Swarm",
+      "Slasher-Brood",
+      "Skyshrike Brood",
+      "Rend-Lurkers",
+      "Acid-Spitter Brood",
+      "Ripper-Maw Swarm",
+      "Pyro-Spore Swarm"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "23-acid-spitter-brood",
+   "name": "Acid-Spitter Brood",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Acid-Spitter Brood"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Corrosive",
+     "description": "Units hit suffer −1 ARM until the End of Round on a 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Acid-spitter",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Acid-Spitter Brood"
+     ]
+    },
+    {
+     "name": "Chitin claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Acid-Spitter Brood"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Acid-Spitter Brood",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Acid-Spitter Brood",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Acid-Spitter Brood",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Acid-Spitter Brood",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Acid-Spitter Brood",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Acid-Spitter Brood",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Acid-Spitter Brood",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Acid-spitter",
+       "count": 1
+      },
+      {
+       "item": "Chitin claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Neuro-Node Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "23-ripper-maw-swarm",
+   "name": "Ripper-Maw Swarm",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "EXPENDABLE",
+    "FRAIL",
+    "Ripper-Maw Swarm"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Living Carpet",
+     "description": "Enemy units within 1″ suffer −2″ MOV when they Fall Back.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ripper-maws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Ripper-Maw Swarm"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Ripper-Maw Swarm",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Ripper-Maw Swarm",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Ripper-Maw Swarm",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Ripper-Maw Swarm",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Ripper-Maw Swarm",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Ripper-Maw Swarm",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ripper-Maw Swarm",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Ripper-maws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Neuro-Node Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "23-pyro-spore-swarm",
+   "name": "Pyro-Spore Swarm",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–6 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "6+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "DETONATE D3",
+    "EXPENDABLE",
+    "FLY",
+    "FRAIL",
+    "Pyro-Spore Swarm"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "DETONATE D3",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Floating Mines",
+     "description": "When an enemy unit ends a move within 3″, one model detonates: D3 Fatal Wounds on a 3+ to that unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Drifting tendrils",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Pyro-Spore Swarm"
+     ]
+    }
+   ],
+   "points": 30,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 30,
+     "models": [
+      {
+       "name": "Pyro-Spore Swarm",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 35,
+     "models": [
+      {
+       "name": "Pyro-Spore Swarm",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 35,
+     "models": [
+      {
+       "name": "Pyro-Spore Swarm",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 40,
+     "models": [
+      {
+       "name": "Pyro-Spore Swarm",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pyro-Spore Swarm",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "6\"",
+     "MS": "6+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Drifting tendrils",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Neuro-Node Lord"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "23-venom-lash-brood",
+   "name": "Venom-Lash Brood",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Venom-Lash Brood"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Entangle",
+     "description": "Engaged enemy units cannot Fall Back on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Venom-lashes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Venom-Lash Brood"
+     ]
+    }
+   ],
+   "points": 130,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 130,
+     "models": [
+      {
+       "name": "Venom-Lash Brood",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Venom-Lash Brood",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Venom-Lash Brood",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Venom-Lash Brood",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Venom-lashes",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Brood-Prime",
+    "Brood-Mother",
+    "Devourer Prime"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "23-neuro-shrieker",
+   "name": "Neuro-Shrieker",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Neuro-Shrieker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "7",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "SYNAPSE",
+    "Neuro-Shrieker"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SYNAPSE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Shriek",
+     "description": "Units hit are Rattled on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Psychic shriek",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Neuro-Shrieker"
+     ]
+    },
+    {
+     "name": "Claws & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Neuro-Shrieker"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Neuro-Shrieker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Neuro-Shrieker",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "7",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Psychic shriek",
+       "count": 1
+      },
+      {
+       "item": "Claws & teeth",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "23-bio-artillery-beast",
+   "name": "Bio-Artillery Beast",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Bio-Artillery Beast**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "13",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Bio-Artillery Beast"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Living Ammunition",
+     "description": "Re-roll Hit rolls of 1 against units within 9″ of a [SYNAPSE] model.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bio-plasma mortar",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Bio-Artillery Beast"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Bio-Artillery Beast"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Bio-Artillery Beast",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bio-Artillery Beast",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "13",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bio-plasma mortar",
+       "count": 1
+      },
+      {
+       "item": "Monster talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hive-Sovereign Synapse-Alpha",
+    "Winged Hive-Sovereign"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "23-deep-burrow-worm",
+   "name": "Deep-Burrow Worm",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Deep-Burrow Worm**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "12",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "VANGUARD STRIKE",
+    "HARDENED",
+    "Deep-Burrow Worm"
+   ],
+   "factionKeywords": [
+    "Apex Bio-Swarm"
+   ],
+   "abilities": [
+    {
+     "name": "Synapse & Evolution",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Erupt",
+     "description": "Arrives by [VANGUARD STRIKE] carrying its passengers (a unit, not a portal).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Grinding maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Deep-Burrow Worm"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Deep-Burrow Worm",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Deep-Burrow Worm",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "12",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Grinding maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hive-Sovereign Synapse-Alpha",
+    "Winged Hive-Sovereign"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  }
+ ],
+ "faq": []
+}

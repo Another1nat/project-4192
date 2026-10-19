@@ -1,0 +1,4552 @@
+{
+ "name": "Auric Solar-Host",
+ "factionKeyword": "Auric Solar-Host",
+ "verb": "MARTIAL STANCES",
+ "identity": "The portrait faction: a pure-elite host. Gilded demigods (golden guardians / storm-forged paladin, tier 3) lead oath-sworn power-armoured Battle-Brothers (power-armoured super-soldiers, tier 2). Melee-first with specialised shooting. No chaff: 23–26 models at 1,000 pts.",
+ "sources": [
+  "Project 4192 — gametheory/factions/01_auric_solar_host.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Martial Stances & Solar Overdrive",
+   "description": "Command Phase: choose 1 Stance for the whole army this round: Aegis (incoming PEN −1) · Vanguard (ranged weapons gain [ASSAULT] and +1 to Hit within 12″) · Executioner (melee weapons gain [ONSLAUGHT 1]). HIGH RISK — Solar Overdrive (⟳ once per round, one unit, when it activates): +1 Attack on all weapons and [SHREDDING WOUNDS] this activation, but its ARM is 1 worse until it next activates."
+  },
+  {
+   "name": "Gamble — Solar Overdrive",
+   "description": "Once per round, one unit, when it activates: +1 Attack on all weapons and [SHREDDING WOUNDS] this activation, but its ARM is 1 worse until it next activates. (Risk: exposure (durability).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "01-det1",
+   "name": "Gilded Host",
+   "cost": 1,
+   "playstyle": "golden guardians-style: golden elites hold the centre; every model a hero.",
+   "rules": [
+    {
+     "id": "01-det1-r1",
+     "name": "Unbroken Phalanx",
+     "description": "Gilded units within 3″ of an objective count +1 CTRL per model; in Aegis Stance they also gain [WARD 5+] against ranged attacks."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "01-det1-e1",
+     "name": "Sunforged Aegis",
+     "cost": 20,
+     "description": "**High Aurarch Praetor** only. The bearer has [WARD 3+] (the best ward in the game; single model only).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Auric Solar-Host"
+       ],
+       "datasheet": "High Aurarch Praetor"
+      }
+     ]
+    },
+    {
+     "id": "01-det1-e2",
+     "name": "Blade of the First Oath",
+     "cost": 45,
+     "description": "**Blade-Warden Champion** only. The bearer's blades: +2 Attacks, +1 Damage.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Auric Solar-Host"
+       ],
+       "datasheet": "Blade-Warden Champion"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "01-det1-s1",
+     "name": "Alchemical Bloodline",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Gilded unit is targeted",
+     "target": "",
+     "effect": "Incoming Damage −1 (min 1) for that attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "01-det1-s2",
+     "name": "Gilded Vigil",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Gilded unit controls an objective at the End of Round",
+     "target": "",
+     "effect": "It keeps [SECURED] on that objective.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "01-det1-s3",
+     "name": "Golden Riposte",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Gilded unit is declared as a Charge target",
+     "target": "",
+     "effect": "It gains [STRIKE FIRST] against that charger this round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "01-det2",
+   "name": "Gene-Forged Host",
+   "cost": 1,
+   "playstyle": "Space-Marine-style: Sworn Battle-Brothers in numbers, Vanguard drops, tanks.",
+   "rules": [
+    {
+     "id": "01-det2-r1",
+     "name": "Oath-Doctrines",
+     "description": "Rounds 1–2 Devastator (+1 PEN on ranged when not moving), Round 3 Tactical (re-roll Wound 1s), Round 4 Assault (+1 Attack in melee). Sworn units only."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "01-det2-e1",
+     "name": "Artificer Plate",
+     "cost": 10,
+     "description": "**Sworn Lieutenant** only. The bearer has [WARD 4+].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Auric Solar-Host"
+       ],
+       "datasheet": "Sworn Lieutenant"
+      }
+     ]
+    },
+    {
+     "id": "01-det2-e2",
+     "name": "Master-crafted Sol-bolter",
+     "cost": 10,
+     "description": "**Sworn Lieutenant** only. The bearer's pistol: +2 Attacks, +1 PEN.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Auric Solar-Host"
+       ],
+       "datasheet": "Sworn Lieutenant"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "01-det2-s1",
+     "name": "Bolter Discipline",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Sworn unit Shoots",
+     "target": "",
+     "effect": "Its [HAILFIRE] applies at full range.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "01-det2-s2",
+     "name": "Sunfall Assault",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Sworn Vanguard arrive from reserves",
+     "target": "",
+     "effect": "They may Charge this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "01-det2-s3",
+     "name": "Contempt of Iron",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Sworn unit is shot",
+     "target": "",
+     "effect": "Incoming PEN −1 for that attack.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "01-det3",
+   "name": "Sunfall Spearhead",
+   "cost": 1,
+   "playstyle": "Drop-assault: Vanguard, Paladins and Lancers strike from orbit.",
+   "rules": [
+    {
+     "id": "01-det3-r1",
+     "name": "Comet Descent",
+     "description": "[VANGUARD STRIKE] units may arrive 7″ from enemies (not 8″) and get +1 to Wound on the activation they arrive."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "01-det3-e1",
+     "name": "Comet Banner",
+     "cost": 10,
+     "description": "**Sworn Lieutenant** only. The bearer and its attached unit gain [VANGUARD STRIKE].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Auric Solar-Host"
+       ],
+       "datasheet": "Sworn Lieutenant"
+      }
+     ]
+    },
+    {
+     "id": "01-det3-e2",
+     "name": "Sunfall Brand",
+     "cost": 20,
+     "description": "**Blade-Warden Champion** only. +1 Damage on the activation the bearer arrives or charges.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Auric Solar-Host"
+       ],
+       "datasheet": "Blade-Warden Champion"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "01-det3-s1",
+     "name": "Orbital Lance",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit arrives from reserves",
+     "target": "",
+     "effect": "Pick an enemy unit within 12″ of it: D3 Fatal Wounds.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "01-det3-s2",
+     "name": "Thunderous Landing",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit arrives within 9″ of an enemy",
+     "target": "",
+     "effect": "That enemy gains 1 Suppression token.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "01-det3-s3",
+     "name": "Recall to Orbit",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "End of Round",
+     "target": "",
+     "effect": "One unengaged [VANGUARD STRIKE] unit returns to Strategic Reserves.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "01-high-aurarch-praetor",
+   "name": "High Aurarch Praetor",
+   "role": "Leader",
+   "composition": "■ **1 High Aurarch Praetor**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "7",
+    "CTRL": "2",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "High Aurarch Praetor"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Golden Command",
+     "description": "Leader (Class 2). The attached unit re-rolls melee Wound rolls of 1.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Master of Stances",
+     "description": "⟳ The attached unit may benefit from a second Martial Stance this round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bastion glaive (ranged)",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "ASSAULT",
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "High Aurarch Praetor"
+     ]
+    },
+    {
+     "name": "Bastion glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "High Aurarch Praetor"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "High Aurarch Praetor",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "High Aurarch Praetor",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "7",
+     "CTRL": "2",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Bastion glaive (ranged)",
+       "count": 1
+      },
+      {
+       "item": "Bastion glaive",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Bastion Paladins",
+      "Gilded Phalanx",
+      "Gilded Sagittarii",
+      "Gilded Wardens",
+      "Sworn Shield-Veterans",
+      "Sworn Gryph-Knights"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-blade-warden-champion",
+   "name": "Blade-Warden Champion",
+   "role": "Leader",
+   "composition": "■ **1 Blade-Warden Champion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Blade-Warden Champion"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Duelist's Edge",
+     "description": "This model's melee Hit rolls of 5+ are Critical Hits, and its critical wounds become Fatal Wounds ([SHREDDING WOUNDS]).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Sworn to the Blade",
+     "description": "Leader (Class 2). On the activation the attached unit charges, its melee attacks get +1 to Hit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Twin sun-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [
+      "PRECISION"
+     ],
+     "models": [
+      "Blade-Warden Champion"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Blade-Warden Champion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blade-Warden Champion",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Twin sun-blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Bastion Paladins",
+      "Gilded Phalanx",
+      "Gilded Sagittarii",
+      "Gilded Wardens",
+      "Sworn Shield-Veterans",
+      "Sworn Gryph-Knights"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-sworn-lieutenant",
+   "name": "Sworn Lieutenant",
+   "role": "Leader",
+   "composition": "■ **1 Sworn Lieutenant**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Sworn Lieutenant"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bolter Doctrine",
+     "description": "Leader (Class 1). The attached unit re-rolls ranged Hit rolls of 1 (stacks with Oath of the Sun only as one re-roll).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Sworn Lieutenant"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Lieutenant"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Sworn Lieutenant",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Lieutenant",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Sworn Battle-Brothers",
+      "Sworn Hellstorm Squad",
+      "Sworn Assault Brothers",
+      "Sworn Pyre-Breachers",
+      "Sworn Marksmen",
+      "Sworn Vanguard",
+      "Eclipse Scouts",
+      "Sworn Lumen-Blasters"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-eclipse-hunter",
+   "name": "Eclipse Hunter",
+   "role": "Leader",
+   "composition": "■ **1 Eclipse Hunter**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "UNSEEN 12\"",
+    "INFILTRATORS",
+    "Eclipse Hunter"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Longshot rail-rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Eclipse Hunter"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Eclipse Hunter"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Eclipse Hunter",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Eclipse Hunter",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Longshot rail-rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Sworn Battle-Brothers",
+      "Sworn Hellstorm Squad",
+      "Sworn Assault Brothers",
+      "Sworn Pyre-Breachers",
+      "Sworn Marksmen",
+      "Sworn Vanguard",
+      "Eclipse Scouts",
+      "Sworn Lumen-Blasters"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-sworn-battle-brothers",
+   "name": "Sworn Battle-Brothers",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Sworn Battle-Brothers"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Oath of the Sun",
+     "description": "While within 6\" of an Auric Leader, re-roll Hit rolls of 1 for this unit's ranged attacks.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sol-bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Sworn Battle-Brothers"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Battle-Brothers"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Sworn Battle-Brothers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Sworn Battle-Brothers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Sworn Battle-Brothers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 215,
+     "models": [
+      {
+       "name": "Sworn Battle-Brothers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 235,
+     "models": [
+      {
+       "name": "Sworn Battle-Brothers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 255,
+     "models": [
+      {
+       "name": "Sworn Battle-Brothers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Battle-Brothers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Sol-bolter",
+       "count": 1
+      },
+      {
+       "item": "Chain-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sworn Lieutenant",
+    "Eclipse Hunter",
+    "Sworn Apothecarion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-sworn-hellstorm-squad",
+   "name": "Sworn Hellstorm Squad",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Sworn Hellstorm Squad"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Storm-carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "ASSAULT",
+      "SUPPRESSIVE"
+     ],
+     "models": [
+      "Sworn Hellstorm Squad"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Hellstorm Squad"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Sworn Hellstorm Squad",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Sworn Hellstorm Squad",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 180,
+     "models": [
+      {
+       "name": "Sworn Hellstorm Squad",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 200,
+     "models": [
+      {
+       "name": "Sworn Hellstorm Squad",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 220,
+     "models": [
+      {
+       "name": "Sworn Hellstorm Squad",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 240,
+     "models": [
+      {
+       "name": "Sworn Hellstorm Squad",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Hellstorm Squad",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Storm-carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sworn Lieutenant",
+    "Eclipse Hunter",
+    "Sworn Apothecarion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-sworn-assault-brothers",
+   "name": "Sworn Assault Brothers",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Sworn Assault Brothers"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shock Assault",
+     "description": "+1 Attack on the activation this unit charges.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Sworn Assault Brothers"
+     ]
+    },
+    {
+     "name": "Sun-chainsword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Assault Brothers"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Sworn Assault Brothers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Sworn Assault Brothers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Sworn Assault Brothers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Sworn Assault Brothers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Sworn Assault Brothers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 220,
+     "models": [
+      {
+       "name": "Sworn Assault Brothers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Assault Brothers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Sun-chainsword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sworn Lieutenant",
+    "Eclipse Hunter",
+    "Sworn Apothecarion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-bastion-paladins",
+   "name": "Bastion Paladins",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "VANGUARD STRIKE",
+    "Bastion Paladins"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Immovable",
+     "description": "Each time an attack is allocated to this unit, subtract 1 from its Damage (minimum 1).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-repeater",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Bastion Paladins"
+     ]
+    },
+    {
+     "name": "Solar hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Bastion Paladins"
+     ]
+    }
+   ],
+   "points": 240,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 240,
+     "models": [
+      {
+       "name": "Bastion Paladins",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 295,
+     "models": [
+      {
+       "name": "Bastion Paladins",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 345,
+     "models": [
+      {
+       "name": "Bastion Paladins",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bastion Paladins",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Sun-repeater",
+       "count": 1
+      },
+      {
+       "item": "Solar hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Aurarch Praetor",
+    "Blade-Warden Champion",
+    "The Sun-Bound Exemplar"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-gilded-phalanx",
+   "name": "Gilded Phalanx",
+   "role": "Battleline",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "2",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Battleline",
+    "Gilded Phalanx"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shield-Wall",
+     "description": "Melee attacks targeting this unit get -1 to Hit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-glaive (ranged)",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "ASSAULT",
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Gilded Phalanx"
+     ]
+    },
+    {
+     "name": "Sun-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Gilded Phalanx"
+     ]
+    }
+   ],
+   "points": 215,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 215,
+     "models": [
+      {
+       "name": "Gilded Phalanx",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 265,
+     "models": [
+      {
+       "name": "Gilded Phalanx",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 310,
+     "models": [
+      {
+       "name": "Gilded Phalanx",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gilded Phalanx",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "2",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Sun-glaive (ranged)",
+       "count": 1
+      },
+      {
+       "item": "Sun-glaive",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Aurarch Praetor",
+    "Blade-Warden Champion",
+    "The Sun-Bound Exemplar"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-sworn-pyre-breachers",
+   "name": "Sworn Pyre-Breachers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Sworn Pyre-Breachers**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Sworn Pyre-Breachers"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Breacher melta-carbine",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-4",
+     "D": "D6",
+     "keywords": [
+      "ERADICATE 2"
+     ],
+     "models": [
+      "Sworn Pyre-Breachers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Pyre-Breachers"
+     ]
+    }
+   ],
+   "points": 155,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 155,
+     "models": [
+      {
+       "name": "Sworn Pyre-Breachers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Pyre-Breachers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Breacher melta-carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sworn Lieutenant",
+    "Eclipse Hunter",
+    "Sworn Apothecarion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-gilded-sagittarii",
+   "name": "Gilded Sagittarii",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Gilded Sagittarii"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sagittarius rail-bow",
+     "type": "Ranged",
+     "range": "30\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "ANTI-VEHICLE 4+"
+     ],
+     "models": [
+      "Gilded Sagittarii"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Gilded Sagittarii"
+     ]
+    }
+   ],
+   "points": 200,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 200,
+     "models": [
+      {
+       "name": "Gilded Sagittarii",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 255,
+     "models": [
+      {
+       "name": "Gilded Sagittarii",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 300,
+     "models": [
+      {
+       "name": "Gilded Sagittarii",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gilded Sagittarii",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Sagittarius rail-bow",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Aurarch Praetor",
+    "Blade-Warden Champion",
+    "The Sun-Bound Exemplar"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-sworn-marksmen",
+   "name": "Sworn Marksmen",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "Sworn Marksmen"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Sworn Marksmen"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Marksmen"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Sworn Marksmen",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Sworn Marksmen",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Marksmen",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sniper rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sworn Lieutenant",
+    "Eclipse Hunter",
+    "Sworn Apothecarion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-sun-lancers",
+   "name": "Sun-Lancers",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **3 Sun-Lancers**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "12\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Elite",
+    "FLY",
+    "Sun-Lancers"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Solar carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Sun-Lancers"
+     ]
+    },
+    {
+     "name": "Sun-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Sun-Lancers"
+     ]
+    }
+   ],
+   "points": 205,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 205,
+     "models": [
+      {
+       "name": "Sun-Lancers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sun-Lancers",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "12\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Solar carbine",
+       "count": 1
+      },
+      {
+       "item": "Sun-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "01-sworn-vanguard",
+   "name": "Sworn Vanguard",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Sworn Vanguard"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Sunfall Descent",
+     "description": "On the activation this unit arrives from Strategic Reserves, its melee attacks get +1 to Wound.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Sworn Vanguard"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Vanguard"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Sworn Vanguard",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Sworn Vanguard",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Sworn Vanguard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Vanguard",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sworn Lieutenant",
+    "Eclipse Hunter",
+    "Sworn Apothecarion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-eclipse-scouts",
+   "name": "Eclipse Scouts",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "INFILTRATORS",
+    "Eclipse Scouts"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Forward Observers",
+     "description": "After this unit Shoots, the next Auric unit to shoot the same target this round gets +1 to Hit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Eclipse Scouts"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Eclipse Scouts"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Eclipse Scouts",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Eclipse Scouts",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Eclipse Scouts",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Eclipse Scouts",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sworn Lieutenant",
+    "Eclipse Hunter",
+    "Sworn Apothecarion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-reliquary-sentry",
+   "name": "Reliquary-Sentry",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Reliquary-Sentry**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "10",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Reliquary-Sentry"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Reliquary Fury",
+     "description": "While the army is in Executioner Stance, this model's melee weapons get +1 Attack.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Reliquary-Sentry"
+     ]
+    },
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Reliquary-Sentry"
+     ]
+    },
+    {
+     "name": "Reliquary fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Reliquary-Sentry"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Reliquary-Sentry",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Reliquary-Sentry",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Reliquary fist",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "01-aurum-dread-bastion",
+   "name": "Aurum Dread-Bastion",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Aurum Dread-Bastion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Aurum Dread-Bastion"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rotary cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Aurum Dread-Bastion"
+     ]
+    },
+    {
+     "name": "Macro sun-plasma",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D3",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [
+      "OVERLOAD"
+     ],
+     "models": [
+      "Aurum Dread-Bastion"
+     ]
+    },
+    {
+     "name": "Crusher fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Aurum Dread-Bastion"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Aurum Dread-Bastion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Aurum Dread-Bastion",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Rotary cannon",
+       "count": 1
+      },
+      {
+       "item": "Macro sun-plasma",
+       "count": 1
+      },
+      {
+       "item": "Crusher fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "01-rampart-carrier",
+   "name": "Rampart Carrier",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Rampart Carrier**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "TRANSPORT 10",
+    "FIRING DECK 2",
+    "HARDENED",
+    "Rampart Carrier"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Rampart Carrier"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rampart Carrier"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Rampart Carrier",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rampart Carrier",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "01-solar-grav-tank",
+   "name": "Solar Grav-Tank",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Solar Grav-Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Solar Grav-Tank"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Solar lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Solar Grav-Tank"
+     ]
+    },
+    {
+     "name": "Grav-repeaters",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Solar Grav-Tank"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Solar Grav-Tank"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Solar Grav-Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Solar Grav-Tank",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Solar lance",
+       "count": 1
+      },
+      {
+       "item": "Grav-repeaters",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "01-heliarch-grav-cruiser",
+   "name": "Heliarch Grav-Cruiser",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Heliarch Grav-Cruiser**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "26",
+    "CTRL": "5",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "FLY",
+    "TRANSPORT 10",
+    "FIRING DECK 2",
+    "HARDENED",
+    "Heliarch Grav-Cruiser"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Heliarch Grav-Cruiser"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Heliarch Grav-Cruiser"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Heliarch Grav-Cruiser"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Heliarch Grav-Cruiser"
+     ]
+    }
+   ],
+   "points": 345,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 345,
+     "models": [
+      {
+       "name": "Heliarch Grav-Cruiser",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Heliarch Grav-Cruiser",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "26",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "26",
+     "CTRL": "5",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Titan cannon",
+       "count": 1
+      },
+      {
+       "item": "Las-lance",
+       "count": 1
+      },
+      {
+       "item": "Las-lance",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  },
+  {
+   "id": "01-the-sun-bound-exemplar",
+   "name": "The Sun-Bound Exemplar",
+   "role": "Leader",
+   "composition": "■ **1 The Sun-Bound Exemplar**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "8",
+    "CTRL": "2",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "The Sun-Bound Exemplar"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Living Standard",
+     "description": "Friendly units within 6″ re-roll Hit rolls of 1.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Sun's Judgement",
+     "description": "Once per battle, when it fights, its melee Damage is 3.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Unbowed",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Dawn-spear (ranged)",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "The Sun-Bound Exemplar"
+     ]
+    },
+    {
+     "name": "Dawn-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "The Sun-Bound Exemplar"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "The Sun-Bound Exemplar",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "The Sun-Bound Exemplar",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "8",
+     "CTRL": "2",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Dawn-spear (ranged)",
+       "count": 1
+      },
+      {
+       "item": "Dawn-spear",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Bastion Paladins",
+      "Gilded Phalanx",
+      "Gilded Sagittarii",
+      "Gilded Wardens",
+      "Sworn Shield-Veterans",
+      "Sworn Gryph-Knights"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-sworn-apothecarion",
+   "name": "Sworn Apothecarion",
+   "role": "Leader",
+   "composition": "■ **1 Sworn Apothecarion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Sworn Apothecarion"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Gene-Seed Recovery",
+     "description": "Once per round, return 1 slain model to the attached Class 1 unit (or heal D3 MIGHT on a Class 2 model within 3″).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Combat Narthecium",
+     "description": "The attached unit has UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Sworn Apothecarion"
+     ]
+    },
+    {
+     "name": "Sun-chain blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Apothecarion"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Sworn Apothecarion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Apothecarion",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Sun-chain blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Sworn Battle-Brothers",
+      "Sworn Hellstorm Squad",
+      "Sworn Assault Brothers",
+      "Sworn Pyre-Breachers",
+      "Sworn Marksmen",
+      "Sworn Vanguard",
+      "Eclipse Scouts",
+      "Sworn Lumen-Blasters"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-gilded-wardens",
+   "name": "Gilded Wardens",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "2",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Gilded Wardens"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Vigil Unending",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Throne-Guard",
+     "description": "An attached Leader's damage is taken by this unit on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Warden halberd (ranged)",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Gilded Wardens"
+     ]
+    },
+    {
+     "name": "Warden halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Gilded Wardens"
+     ]
+    }
+   ],
+   "points": 185,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 185,
+     "models": [
+      {
+       "name": "Gilded Wardens",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Gilded Wardens",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 260,
+     "models": [
+      {
+       "name": "Gilded Wardens",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gilded Wardens",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Warden halberd (ranged)",
+       "count": 1
+      },
+      {
+       "item": "Warden halberd",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Aurarch Praetor",
+    "Blade-Warden Champion",
+    "The Sun-Bound Exemplar"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-sworn-shield-veterans",
+   "name": "Sworn Shield-Veterans",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Sworn Shield-Veterans"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Storm Shields",
+     "description": "Enemies get −1 to Hit them in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Blade Discipline",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Sworn Shield-Veterans"
+     ]
+    },
+    {
+     "name": "Sun-forged sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Sworn Shield-Veterans"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Sworn Shield-Veterans",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Sworn Shield-Veterans",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Sworn Shield-Veterans",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Shield-Veterans",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Sun-forged sword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Aurarch Praetor",
+    "Blade-Warden Champion",
+    "The Sun-Bound Exemplar"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-sworn-lumen-blasters",
+   "name": "Sworn Lumen-Blasters",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Sworn Lumen-Blasters"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Overcharged Coils",
+     "description": "Ranged weapons get +1 Damage on a round they did not Move; each natural 1 to Hit is 1 Fatal Wound to this unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Lumen-plasma",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HAILFIRE 1",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Sworn Lumen-Blasters"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sworn Lumen-Blasters"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Sworn Lumen-Blasters",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Sworn Lumen-Blasters",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Sworn Lumen-Blasters",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 180,
+     "models": [
+      {
+       "name": "Sworn Lumen-Blasters",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 195,
+     "models": [
+      {
+       "name": "Sworn Lumen-Blasters",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Sworn Lumen-Blasters",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Lumen-Blasters",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Lumen-plasma",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Sworn Lieutenant",
+    "Eclipse Hunter",
+    "Sworn Apothecarion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "01-sworn-gryph-knights",
+   "name": "Sworn Gryph-Knights",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3 Sworn Gryph-Knights**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "12\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Sworn Gryph-Knights"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Diving Strike",
+     "description": "+1 Damage in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sol-carbine",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Sworn Gryph-Knights"
+     ]
+    },
+    {
+     "name": "Sun-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Sworn Gryph-Knights"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Sworn Gryph-Knights",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Gryph-Knights",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "12\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sol-carbine",
+       "count": 1
+      },
+      {
+       "item": "Sun-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "High Aurarch Praetor",
+    "Blade-Warden Champion",
+    "The Sun-Bound Exemplar"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "01-sworn-siege-walker",
+   "name": "Sworn Siege-walker",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Sworn Siege-walker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "10",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Sworn Siege-walker"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Entombed Hero",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Wall-Breaker",
+     "description": "Crushing Impact for 0 CP against units in Dense terrain.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Sworn Siege-walker"
+     ]
+    },
+    {
+     "name": "Siege-fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Sworn Siege-walker"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Sworn Siege-walker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sworn Siege-walker",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "10",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy flamer",
+       "count": 1
+      },
+      {
+       "item": "Siege-fist",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "01-sunhawk-interceptor",
+   "name": "Sunhawk Interceptor",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Sunhawk Interceptor**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "16\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Sunhawk Interceptor"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Strafing Run",
+     "description": "May Shoot after its full Move and then make a 3″ move (aircraft only).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-lance cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Sunhawk Interceptor"
+     ]
+    },
+    {
+     "name": "Sol-bolter battery",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Sunhawk Interceptor"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Sunhawk Interceptor",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sunhawk Interceptor",
+     "M": "16\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "16\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Sun-lance cannon",
+       "count": 1
+      },
+      {
+       "item": "Sol-bolter battery",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "01-solar-lance-tank",
+   "name": "Solar Lance-Tank",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Solar Lance-Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Solar Lance-Tank"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Machine-Spirit",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Solar Lance-Tank"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Solar Lance-Tank"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Solar Lance-Tank"
+     ]
+    }
+   ],
+   "points": 185,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 185,
+     "models": [
+      {
+       "name": "Solar Lance-Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Solar Lance-Tank",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Las-lance",
+       "count": 1
+      },
+      {
+       "item": "Las-lance",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "01-aurum-sentinel-colossus",
+   "name": "Aurum Sentinel-Colossus",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Aurum Sentinel-Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Aurum Sentinel-Colossus"
+   ],
+   "factionKeywords": [
+    "Auric Solar-Host"
+   ],
+   "abilities": [
+    {
+     "name": "Martial Stances & Solar Overdrive",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Guardian of the Gate",
+     "description": "Friendly Class 1–2 units within 3″ get +1 CTRL per model.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sun-fire cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Aurum Sentinel-Colossus"
+     ]
+    },
+    {
+     "name": "Colossus fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Aurum Sentinel-Colossus"
+     ]
+    }
+   ],
+   "points": 200,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 200,
+     "models": [
+      {
+       "name": "Aurum Sentinel-Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Aurum Sentinel-Colossus",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Sun-fire cannon",
+       "count": 1
+      },
+      {
+       "item": "Colossus fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  }
+ ],
+ "faq": []
+}

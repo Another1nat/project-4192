@@ -27,7 +27,7 @@
             const match = desc.match(/^[*_]*([A-Z0-9\s'-]{3,40}?)[*_]*\s+model(?:\s+with\s+the\s+[*_]*([A-Z0-9\s'-]{3,40}?)[*_]*\s+ability)?\s+only/i);
             if (match) {
                 const reqKw = n(match[1]);
-                if (reqKw && reqKw !== 'adeptus astartes' && !ks.has(reqKw) && n(d.name) !== reqKw) {
+                if (reqKw && !ks.has(reqKw) && n(d.name) !== reqKw) {
                     return { ok: false, why: S(`Bearer must be: ${match[1].trim()}.`, `El portador debe ser: ${match[1].trim()}.`) };
                 }
                 const reqAbility = match[2] ? n(match[2]) : null;

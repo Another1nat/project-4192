@@ -1,0 +1,3072 @@
+{
+ "name": "Rift-Stalker Menagerie",
+ "factionKeyword": "Rift-Stalker Menagerie",
+ "verb": "CONTRACT",
+ "identity": "The universal proxy faction: wasteland mercenaries, outcasts and tamed beasts. Any of the 29 universal archetypes is a legal Rift-Stalker datasheet; these 20 are the named core. Before the battle you sign 2 of 5 Mercenary Contracts.",
+ "sources": [
+  "Project 4192 — gametheory/factions/21_rift_stalker_menagerie.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Mercenary Contracts (pick 2 of 5)",
+   "description": "Bounty Hunters: mark 2 enemy units; re-roll Hit and Wound rolls of 1 against them; +1 CP when one is destroyed · Guerrilla Infiltrators: 2 units gain [INFILTRATORS] and [SCOUTS 6″]; your units count as in Cover against attacks from more than 15″ · Shock & Awe: melee weapons gain [CRASHING], ranged weapons gain [ASSAULT] · Scavenged Grit: UNYIELDING 6+; Class 4–5 units heal 1 MIGHT at the End of Round · Master Tacticians: +1 CP in the Command Phase of Rounds 1 and 3. Any universal archetype (catalogue/unit_archetypes.json) is a legal datasheet at its catalogue price."
+  },
+  {
+   "name": "Gamble — Objective Wager",
+   "description": "Before deployment, secretly note one no-man's-land objective. Reveal at the end of Round 4: if you control it, +3 VP; if your opponent does, they score +2 VP. (Risk: objective.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "21-det1",
+   "name": "Free Company",
+   "cost": 1,
+   "playstyle": "Balanced mercenaries: take the contracts that fit the mission.",
+   "rules": [
+    {
+     "id": "21-det1-r1",
+     "name": "Professional Soldiers",
+     "description": "Sign a third contract (3 of 5)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "21-det1-e1",
+     "name": "Veteran's Contract",
+     "cost": 15,
+     "description": "**Wasteland Warboss** only. The attached unit has UNYIELDING 6+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Rift-Stalker Menagerie"
+       ],
+       "datasheet": "Wasteland Warboss"
+      }
+     ]
+    },
+    {
+     "id": "21-det1-e2",
+     "name": "Hazard Pay",
+     "cost": 10,
+     "description": "**Veteran Free-Blades** only. Re-roll Hit rolls of 1.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Rift-Stalker Menagerie"
+       ],
+       "datasheet": "Veteran Free-Blades"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "21-det1-s1",
+     "name": "Renegotiate",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase, once per battle",
+     "target": "",
+     "effect": "Swap one contract for another.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "21-det1-s2",
+     "name": "Covering Fire",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A friendly unit within 6″ is charged",
+     "target": "",
+     "effect": "This unit makes a ranged Retaliation Strike against the charger.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "21-det1-s3",
+     "name": "Pay the Bonus",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit destroys an enemy unit",
+     "target": "",
+     "effect": "It may make a 3″ move.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "21-det2",
+   "name": "Outcast Scavengers",
+   "cost": 1,
+   "playstyle": "Salvage crews that strip wrecks and objectives.",
+   "rules": [
+    {
+     "id": "21-det2-r1",
+     "name": "Salvage",
+     "description": "When a Class 3–5 unit (either side) is destroyed, place a Salvage marker; a unit that ends a move on it gains +1 PEN on one weapon for the rest of the battle (remove the marker)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "21-det2-e1",
+     "name": "Scrap-Plate",
+     "cost": 10,
+     "description": "**Line Mercenaries** only. +1 ARM (to 3+ cap) against PEN 0 and −1.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Rift-Stalker Menagerie"
+       ],
+       "datasheet": "Line Mercenaries"
+      }
+     ]
+    },
+    {
+     "id": "21-det2-e2",
+     "name": "Jury-Rigged Engine",
+     "cost": 10,
+     "description": "**Armoured Hauler** only. +2″ MOV.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Rift-Stalker Menagerie"
+       ],
+       "datasheet": "Armoured Hauler"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "21-det2-s1",
+     "name": "Strip It Bare",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit ends on a Salvage marker",
+     "target": "",
+     "effect": "Also heal D3 MIGHT.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "21-det2-s2",
+     "name": "Makeshift Barricade",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit did not Move",
+     "target": "",
+     "effect": "It claims Cover until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "21-det2-s3",
+     "name": "Scav-Rush",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit moves toward a Salvage marker",
+     "target": "",
+     "effect": "+2″ MOV.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "21-det3",
+   "name": "Monster Hunters",
+   "cost": 1,
+   "playstyle": "Specialists who bring down big things.",
+   "rules": [
+    {
+     "id": "21-det3-r1",
+     "name": "Big Game",
+     "description": "Re-roll Wound rolls of 1 against Class 3–5 units; Fell the Colossus Tactical card scores +1 VP."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "21-det3-e1",
+     "name": "Harpoon-Gun",
+     "cost": 10,
+     "description": "**Bounty Hunter** only. +1 PEN with ranged weapons; [HARPOON].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Rift-Stalker Menagerie"
+       ],
+       "datasheet": "Bounty Hunter"
+      }
+     ]
+    },
+    {
+     "id": "21-det3-e2",
+     "name": "Monster-Slayer Charm",
+     "cost": 10,
+     "description": "**Hired Duelist** only. +1 Damage on a round he charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Rift-Stalker Menagerie"
+       ],
+       "datasheet": "Hired Duelist"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "21-det3-s1",
+     "name": "Bait the Beast",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy Class 3–5 unit declares a Charge",
+     "target": "",
+     "effect": "The target may make a 3″ move first.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "21-det3-s2",
+     "name": "Hamstring",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 enemy is wounded",
+     "target": "",
+     "effect": "It suffers −2″ MOV until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "21-det3-s3",
+     "name": "Trophy",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 enemy is destroyed",
+     "target": "",
+     "effect": "Gain 1 CP.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "21-wasteland-warboss",
+   "name": "Wasteland Warboss",
+   "role": "Leader",
+   "composition": "■ **1 Wasteland Warboss**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Wasteland Warboss"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Paid in Full",
+     "description": "The attached unit re-rolls Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Wasteland Warboss"
+     ]
+    },
+    {
+     "name": "Relic blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Wasteland Warboss"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Wasteland Warboss",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Wasteland Warboss",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Relic blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Heavy Exo-Suits",
+      "Weapon Crew",
+      "Brute Mercenaries",
+      "Outriders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "21-hired-duelist",
+   "name": "Hired Duelist",
+   "role": "Leader",
+   "composition": "■ **1 Hired Duelist**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Hired Duelist"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Sword for Hire",
+     "description": "The attached unit gets +1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Hired Duelist"
+     ]
+    },
+    {
+     "name": "Relic blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Hired Duelist"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Hired Duelist",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hired Duelist",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Relic blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Conscript Rabble",
+      "Line Mercenaries",
+      "Veteran Free-Blades",
+      "Shock Troopers",
+      "Feral Pack",
+      "Pathfinders",
+      "Long-Rifles",
+      "Jump-Raiders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-field-medic",
+   "name": "Field Medic",
+   "role": "Leader",
+   "composition": "■ **1 Field Medic**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Field Medic"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Patch Up",
+     "description": "Once per round, heal D3 MIGHT or return 1 Class 1 model to a unit within 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Field Medic"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Field Medic"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Field Medic",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Field Medic",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Conscript Rabble",
+      "Line Mercenaries",
+      "Veteran Free-Blades",
+      "Shock Troopers",
+      "Feral Pack",
+      "Pathfinders",
+      "Long-Rifles",
+      "Jump-Raiders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-bounty-hunter",
+   "name": "Bounty Hunter",
+   "role": "Leader",
+   "composition": "■ **1 Bounty Hunter**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "Bounty Hunter"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Wanted Poster",
+     "description": "Counts as marked by Bounty Hunters even if that contract was not chosen.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Bounty Hunter"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bounty Hunter"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Bounty Hunter",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bounty Hunter",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sniper rifle",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Conscript Rabble",
+      "Line Mercenaries",
+      "Veteran Free-Blades",
+      "Shock Troopers",
+      "Feral Pack",
+      "Pathfinders",
+      "Long-Rifles",
+      "Jump-Raiders"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-conscript-rabble",
+   "name": "Conscript Rabble",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "EXPENDABLE",
+    "Conscript Rabble"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Service rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Conscript Rabble"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Conscript Rabble"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Conscript Rabble",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Conscript Rabble",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Conscript Rabble",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Conscript Rabble",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Conscript Rabble",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Conscript Rabble",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Conscript Rabble",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Service rifle",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hired Duelist",
+    "Field Medic",
+    "Bounty Hunter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-line-mercenaries",
+   "name": "Line Mercenaries",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Line Mercenaries"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Battle rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Line Mercenaries"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Line Mercenaries"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Line Mercenaries",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Line Mercenaries",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Line Mercenaries",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Line Mercenaries",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Line Mercenaries",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Line Mercenaries",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Line Mercenaries",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Battle rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hired Duelist",
+    "Field Medic",
+    "Bounty Hunter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-veteran-free-blades",
+   "name": "Veteran Free-Blades",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Veteran Free-Blades"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Veteran Free-Blades"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Veteran Free-Blades"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Veteran Free-Blades",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Veteran Free-Blades",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Veteran Free-Blades",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Veteran Free-Blades",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Veteran Free-Blades",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 230,
+     "models": [
+      {
+       "name": "Veteran Free-Blades",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Veteran Free-Blades",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy rifle",
+       "count": 1
+      },
+      {
+       "item": "Chain-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hired Duelist",
+    "Field Medic",
+    "Bounty Hunter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-shock-troopers",
+   "name": "Shock Troopers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Shock Troopers"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Shock Troopers"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Shock Troopers"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Shock Troopers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Shock Troopers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Shock Troopers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Shock Troopers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Shock Troopers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Shock Troopers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Shock Troopers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Chain-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hired Duelist",
+    "Field Medic",
+    "Bounty Hunter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-feral-pack",
+   "name": "Feral Pack",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Feral Pack"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Claws & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Feral Pack"
+     ]
+    }
+   ],
+   "points": 40,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 40,
+     "models": [
+      {
+       "name": "Feral Pack",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 45,
+     "models": [
+      {
+       "name": "Feral Pack",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 50,
+     "models": [
+      {
+       "name": "Feral Pack",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Feral Pack",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Feral Pack",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Feral Pack",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Feral Pack",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Claws & teeth",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hired Duelist",
+    "Field Medic",
+    "Bounty Hunter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-pathfinders",
+   "name": "Pathfinders",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "Pathfinders"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Pathfinders"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Pathfinders"
+     ]
+    }
+   ],
+   "points": 40,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 40,
+     "models": [
+      {
+       "name": "Pathfinders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 50,
+     "models": [
+      {
+       "name": "Pathfinders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Pathfinders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pathfinders",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hired Duelist",
+    "Field Medic",
+    "Bounty Hunter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-long-rifles",
+   "name": "Long-Rifles",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "Long-Rifles"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Long-Rifles"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Long-Rifles"
+     ]
+    }
+   ],
+   "points": 40,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 40,
+     "models": [
+      {
+       "name": "Long-Rifles",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 45,
+     "models": [
+      {
+       "name": "Long-Rifles",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Long-Rifles",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sniper rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hired Duelist",
+    "Field Medic",
+    "Bounty Hunter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-jump-raiders",
+   "name": "Jump-Raiders",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Jump-Raiders"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Jump-Raiders"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Jump-Raiders"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Jump-Raiders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Jump-Raiders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Jump-Raiders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Jump-Raiders",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Hired Duelist",
+    "Field Medic",
+    "Bounty Hunter"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "21-heavy-exo-suits",
+   "name": "Heavy Exo-Suits",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Heavy Exo-Suits"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rotary cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Heavy Exo-Suits"
+     ]
+    },
+    {
+     "name": "Great weapon / fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Heavy Exo-Suits"
+     ]
+    }
+   ],
+   "points": 165,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 165,
+     "models": [
+      {
+       "name": "Heavy Exo-Suits",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Heavy Exo-Suits",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 245,
+     "models": [
+      {
+       "name": "Heavy Exo-Suits",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Heavy Exo-Suits",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Rotary cannon",
+       "count": 1
+      },
+      {
+       "item": "Great weapon / fist",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Wasteland Warboss"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "21-weapon-crew",
+   "name": "Weapon Crew",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Weapon Crew"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Weapon Crew"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Weapon Crew"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Weapon Crew",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Weapon Crew",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Weapon Crew",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Wasteland Warboss"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "21-brute-mercenaries",
+   "name": "Brute Mercenaries",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Brute Mercenaries"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Power maul",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Brute Mercenaries"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Brute Mercenaries",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Brute Mercenaries",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Brute Mercenaries",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brute Mercenaries",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Power maul",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Wasteland Warboss"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "21-outriders",
+   "name": "Outriders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "12\"",
+    "MS": "3+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Outriders"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Outriders"
+     ]
+    },
+    {
+     "name": "Cavalry lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Outriders"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Outriders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Outriders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Outriders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Outriders",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "12\"",
+     "MS": "3+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Carbine",
+       "count": 1
+      },
+      {
+       "item": "Cavalry lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Wasteland Warboss"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "21-salvaged-walker",
+   "name": "Salvaged Walker",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Salvaged Walker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Salvaged Walker"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Salvaged Walker"
+     ]
+    },
+    {
+     "name": "Crusher fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Salvaged Walker"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Salvaged Walker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Salvaged Walker",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Crusher fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "21-tamed-beast",
+   "name": "Tamed Beast",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Tamed Beast**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "8",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Tamed Beast"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Tamed Beast"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Tamed Beast",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tamed Beast",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "8",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "21-scavenged-battle-tank",
+   "name": "Scavenged Battle-Tank",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Scavenged Battle-Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Scavenged Battle-Tank"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Battle cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Scavenged Battle-Tank"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Scavenged Battle-Tank"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scavenged Battle-Tank"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Scavenged Battle-Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scavenged Battle-Tank",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Battle cannon",
+       "count": 1
+      },
+      {
+       "item": "Las-lance",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "21-armoured-hauler",
+   "name": "Armoured Hauler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Armoured Hauler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "TRANSPORT 10",
+    "FIRING DECK 2",
+    "HARDENED",
+    "Armoured Hauler"
+   ],
+   "factionKeywords": [
+    "Rift-Stalker Menagerie"
+   ],
+   "abilities": [
+    {
+     "name": "Mercenary Contracts (pick 2 of 5)",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Armoured Hauler"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Armoured Hauler"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Armoured Hauler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Armoured Hauler",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  }
+ ],
+ "faq": []
+}

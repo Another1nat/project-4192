@@ -16,14 +16,14 @@
     function ensureBar() {
         let b = $('rb-sticky'); if (b) return b;
         b = document.createElement('div'); b.id = 'rb-sticky';
-        b.innerHTML = '<div class="rbs-main"><div class="rbs-num"><b id="rbs-cur">0</b><span id="rbs-lim">/ 2000</span></div><div class="rbs-track"><i id="rbs-fill"></i></div><div class="rbs-left" id="rbs-left"></div></div><button id="rbs-add" aria-label="Add units"><i class="fa-solid fa-plus"></i></button>';
+        b.innerHTML = '<div class="rbs-main"><div class="rbs-num"><b id="rbs-cur">0</b><span id="rbs-lim">/ 1000</span></div><div class="rbs-track"><i id="rbs-fill"></i></div><div class="rbs-left" id="rbs-left"></div></div><button id="rbs-add" aria-label="Add units"><i class="fa-solid fa-plus"></i></button>';
         document.body.appendChild(b);
         $('rbs-add').onclick = () => { const s = $('roster-pool-sidebar'); if (s) s.classList.add('open'); };
         return b;
     }
     function updateBar() {
         const b = ensureBar(), r = CAR(); const view = $('view-rosters');
-        const cur = parseInt(($('rb-current-pts') || {}).textContent, 10) || 0; const lim = r ? (r.pointsLimit || 2000) : 2000;
+        const cur = parseInt(($('rb-current-pts') || {}).textContent, 10) || 0; const lim = r ? (r.pointsLimit || 1000) : 2000;
         const pct = Math.min(100, Math.round(cur / lim * 100)), left = lim - cur;
         $('rbs-cur').textContent = cur; $('rbs-lim').textContent = '/ ' + lim;
         $('rbs-fill').style.width = pct + '%';
@@ -135,7 +135,7 @@
         // Done sits at the TOP of the list (it used to float over the units underneath)
         const d = $('pool-done-top'); if (!d) return;
         const cur = parseInt(($('rb-current-pts') || {}).textContent, 10) || 0, pts = d.querySelector('.side-pts');
-        if (pts) pts.textContent = cur + ' / ' + (r.pointsLimit || 2000);
+        if (pts) pts.textContent = cur + ' / ' + (r.pointsLimit || 1000);
     }
 
     // the Done bar only exists while the unit picker is open AND the roster screen is the active one
@@ -149,7 +149,7 @@
         const r = CAR(); if (!r) return;
         let o = $('rb-edit'); if (o) o.remove();
         o = document.createElement('div'); o.id = 'rb-edit';
-        const presets = [500, 1000, 1500, 2000, 2500, 3000];
+        const presets = [500, 1000, 1500];
         o.innerHTML = `<div class="rbe-card" role="dialog" aria-label="Edit roster">
             <div class="rbe-t">${S('Edit roster', 'Editar lista')}</div>
             <label>${S('Name', 'Nombre')}</label><input id="rbe-name" maxlength="40" value="${String(r.name).replace(/"/g, '&quot;')}" autocomplete="off">

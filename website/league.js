@@ -326,7 +326,7 @@
     // ---------- live shared games: owner publishes, anyone with the link views status ----------
     let syncTimer = null;
     const liveLink = code => location.origin + location.pathname + '?game=' + code;
-    const factionBanner = f => { const n = String(f || '').replace(/’/g, "'").replace('Imperial Agents', 'Agents of the Imperium'); const hit = (typeof FACTIONS !== 'undefined' ? FACTIONS : []).find(x => x.name === n); return hit ? hit.banner : 'assets/banners/0.jpg'; };
+    const factionBanner = f => { const n = String(f || '').replace(/’/g, "'"); const hit = (typeof FACTIONS !== 'undefined' ? FACTIONS : []).find(x => x.name === n); return hit ? hit.banner : 'assets/banners/0.jpg'; };
     const ago = t => { const s = Math.max(0, (Date.now() - new Date(t)) / 1000); return s < 60 ? 'just now' : s < 3600 ? Math.round(s / 60) + ' min ago' : s < 86400 ? Math.round(s / 3600) + ' h ago' : Math.round(s / 86400) + ' d ago'; };
     async function ensureLogin(what) {
         if (!configured) { alert('Cloud features are not set up yet.'); return false; }

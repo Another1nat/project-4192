@@ -1,0 +1,2954 @@
+{
+ "name": "Eclipse Shadow-Fiends",
+ "factionKeyword": "Eclipse Shadow-Fiends",
+ "verb": "HAUNT",
+ "identity": "The only phantom army: void-spectres, reaper-knights and wailing hosts. Their bodies ignore armour penetration (a WARD instead of ARM: 5+ for troops, 4+ for elites and Leaders), they terrify what they charge, and each round one unit vanishes into the umbra and reappears elsewhere.",
+ "sources": [
+  "Project 4192 — gametheory/factions/25_eclipse_shadow_fiends.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Ethereal Phase-Form · Wave of Terror",
+   "description": "Ethereal: Eclipse units have no ARM save; instead they have the WARD shown on their datasheet (5+ troops, 4+ elites/Leaders, 5+ for Class 4–5), which no PEN can worsen, and they are [STEALTH] against attacks from more than 12″. Wave of Terror: when an Eclipse unit ends a Charge, pick 1 engaged enemy unit: it gets −1 to Hit in melee until the End of Round."
+  },
+  {
+   "name": "Gamble — Phase-Walk",
+   "description": "When a unit activates: it moves through models and terrain and gets +2″ to its Charge roll this activation, but it loses its WARD until it next activates. (Risk: exposure.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "25-det1",
+   "name": "Midnight Procession",
+   "cost": 1,
+   "playstyle": "Disappear and reappear: the umbra army.",
+   "rules": [
+    {
+     "id": "25-det1-r1",
+     "name": "Vanishing into the Umbra",
+     "description": "At the End of Round, pick 1 unengaged Eclipse unit: remove it and set it up anywhere more than 8″ from all enemies."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "25-det1-e1",
+     "name": "Shroud of Midnight",
+     "cost": 15,
+     "description": "**Phantasm Lord on Spectral Steed** only. The attached unit is [STEALTH] at all ranges.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Eclipse Shadow-Fiends"
+       ],
+       "datasheet": "Phantasm Lord on Spectral Steed"
+      }
+     ]
+    },
+    {
+     "id": "25-det1-e2",
+     "name": "Void-Lantern",
+     "cost": 10,
+     "description": "**Lantern-Warden** only. Units set up by the Umbra within 6″ of him heal D3 MIGHT.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Eclipse Shadow-Fiends"
+       ],
+       "datasheet": "Lantern-Warden"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "25-det1-s1",
+     "name": "Fade from Sight",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is targeted",
+     "target": "",
+     "effect": "It is [STEALTH] at all ranges for the attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "25-det1-s2",
+     "name": "Return from the Umbra",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is set up by the Umbra",
+     "target": "",
+     "effect": "It may Charge in Round order as if it had moved.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "25-det1-s3",
+     "name": "Grasp of the Dead",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit Falls Back from an Eclipse unit",
+     "target": "",
+     "effect": "It suffers D3 Fatal Wounds on a 4+.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "25-det2",
+   "name": "Soul-Reapers",
+   "cost": 1,
+   "playstyle": "Scythes and blades: kill fast before the WARD fails.",
+   "rules": [
+    {
+     "id": "25-det2-r1",
+     "name": "Frightful Touch",
+     "description": "Eclipse melee Hit rolls of 6 auto-wound ([IMPALING HITS])."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "25-det2-e1",
+     "name": "Harvester's Scythe",
+     "cost": 15,
+     "description": "**Knight-Phantasm** only. +1 Damage on a round he charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Eclipse Shadow-Fiends"
+       ],
+       "datasheet": "Knight-Phantasm"
+      }
+     ]
+    },
+    {
+     "id": "25-det2-e2",
+     "name": "Reaper's Mark",
+     "cost": 30,
+     "description": "**Eclipse Reapers** only. Melee Hit rolls of 5+ auto-wound.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Eclipse Shadow-Fiends"
+       ],
+       "datasheet": "Eclipse Reapers"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "25-det2-s1",
+     "name": "Reap",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is selected to Fight",
+     "target": "",
+     "effect": "Its melee weapons gain [REAPING 1].",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "25-det2-s2",
+     "name": "Terror Incarnate",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit ends a Charge",
+     "target": "",
+     "effect": "Wave of Terror applies to every engaged enemy unit.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "25-det2-s3",
+     "name": "Spectral Fury",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is below Starting Strength",
+     "target": "",
+     "effect": "+1 Attack in melee until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "25-det3",
+   "name": "Spectral Host",
+   "cost": 1,
+   "playstyle": "The dead keep coming: lanterns, choirs and endless shades.",
+   "rules": [
+    {
+     "id": "25-det3-r1",
+     "name": "Endless Dead",
+     "description": "Soul-Tethered Summons can be used twice per round; Void-Shades return D3 slain models at the End of Round within 9″ of a Leader."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "25-det3-e1",
+     "name": "Lantern of Endless Night",
+     "cost": 10,
+     "description": "**Lantern-Warden** only. Summons range 12″.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Eclipse Shadow-Fiends"
+       ],
+       "datasheet": "Lantern-Warden"
+      }
+     ]
+    },
+    {
+     "id": "25-det3-e2",
+     "name": "Wailing Crown",
+     "cost": 20,
+     "description": "**Banshee Wailer-Queen** only. Friendly units within 6″ are [STEALTH] at all ranges.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Eclipse Shadow-Fiends"
+       ],
+       "datasheet": "Banshee Wailer-Queen"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "25-det3-s1",
+     "name": "Rise Again",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase, once per battle",
+     "target": "",
+     "effect": "Return a destroyed Class 1 unit at half strength within 6″ of a Leader.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "25-det3-s2",
+     "name": "Chill of the Grave",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit within 6″ of a Leader activates",
+     "target": "",
+     "effect": "−1″ to its moves this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "25-det3-s3",
+     "name": "Wail of the Host",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged",
+     "target": "",
+     "effect": "The charging unit suffers −1 to Hit until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "25-phantasm-lord-on-spectral-steed",
+   "name": "Phantasm Lord on Spectral Steed",
+   "role": "Leader",
+   "composition": "■ **1 Phantasm Lord on Spectral Steed**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "7",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Leader",
+    "FLY",
+    "Phantasm Lord on Spectral Steed"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lord of Dread",
+     "description": "Friendly units within 9″ get +1 to Hit in melee on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Umbral Command",
+     "description": "The Umbra redeploy can be used twice per round while he lives.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Reaper-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Phantasm Lord on Spectral Steed"
+     ]
+    },
+    {
+     "name": "Spectral hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Phantasm Lord on Spectral Steed"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Phantasm Lord on Spectral Steed",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Phantasm Lord on Spectral Steed",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "7",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Reaper-lance",
+       "count": 1
+      },
+      {
+       "item": "Spectral hooves",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Haunted Armour Colossus",
+      "Shadow-Stalker Abomination"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "25-knight-phantasm",
+   "name": "Knight-Phantasm",
+   "role": "Leader",
+   "composition": "■ **1 Knight-Phantasm**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "4",
+    "CTRL": "0",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Knight-Phantasm"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Frightful Touch",
+     "description": "The attached unit's melee Hit rolls of 6 auto-wound.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Soul-Cleaver",
+     "description": "Melee critical wounds become Fatal Wounds.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sword of the Eclipse",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Knight-Phantasm"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Knight-Phantasm",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Knight-Phantasm",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "4",
+     "CTRL": "0",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Sword of the Eclipse",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Wailing Spirit-Host",
+      "Grave-Riders",
+      "Gloom-Blade Guard",
+      "Soul-Lantern Bearers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "25-lantern-warden",
+   "name": "Lantern-Warden",
+   "role": "Leader",
+   "composition": "■ **1 Lantern-Warden**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "3",
+    "CTRL": "0",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "FLY",
+    "Lantern-Warden"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Soul-Tethered Summons",
+     "description": "Once per round, return D3 slain models (or heal 3 MIGHT) to a friendly unit within 9″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Soul-lantern",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Lantern-Warden"
+     ]
+    },
+    {
+     "name": "Soul-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lantern-Warden"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Lantern-Warden",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lantern-Warden",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "3",
+     "CTRL": "0",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Soul-lantern",
+       "count": 1
+      },
+      {
+       "item": "Soul-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Void-Shades",
+      "Eclipse Reapers",
+      "Banshee Choir",
+      "Shroud-Hounds",
+      "Grave-Arbalest Shades",
+      "Gheist-Flitters"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "25-banshee-wailer-queen",
+   "name": "Banshee Wailer-Queen",
+   "role": "Leader",
+   "composition": "■ **1 Banshee Wailer-Queen**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "3",
+    "CTRL": "0",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "FLY",
+    "Banshee Wailer-Queen"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Soul-Shriek",
+     "description": "Once per round, an enemy unit within 12″ is Rattled on a 3+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Keening wail",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "IGNORES COVER",
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Banshee Wailer-Queen"
+     ]
+    },
+    {
+     "name": "Soul-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Banshee Wailer-Queen"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Banshee Wailer-Queen",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Banshee Wailer-Queen",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "3",
+     "CTRL": "0",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Keening wail",
+       "count": 1
+      },
+      {
+       "item": "Soul-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Void-Shades",
+      "Eclipse Reapers",
+      "Banshee Choir",
+      "Shroud-Hounds",
+      "Grave-Arbalest Shades",
+      "Gheist-Flitters"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "25-void-shades",
+   "name": "Void-Shades",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "FLY",
+    "Void-Shades"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Phase",
+     "description": "Move through models and terrain.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Void-Shades"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Void-Shades",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Void-Shades",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Void-Shades",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Void-Shades",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Void-Shades",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Void-Shades",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Void-Shades",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Spectral claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lantern-Warden",
+    "Banshee Wailer-Queen"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "25-eclipse-reapers",
+   "name": "Eclipse Reapers",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "FLY",
+    "Eclipse Reapers"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Reaping Charge",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Grave-scythe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Eclipse Reapers"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Eclipse Reapers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Eclipse Reapers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Eclipse Reapers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Eclipse Reapers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Eclipse Reapers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Eclipse Reapers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Eclipse Reapers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Grave-scythe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lantern-Warden",
+    "Banshee Wailer-Queen"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "25-wailing-spirit-host",
+   "name": "Wailing Spirit-Host",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "4",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Wailing Spirit-Host"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Frightful Touch",
+     "description": "Melee Hit rolls of 6 auto-wound ([IMPALING HITS]).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Wailing Spirit-Host"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Wailing Spirit-Host",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Wailing Spirit-Host",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Wailing Spirit-Host",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Wailing Spirit-Host",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "4",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Spectral claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Knight-Phantasm"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "25-grave-riders",
+   "name": "Grave-Riders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "12\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "3",
+    "CTRL": "0",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Grave-Riders"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Deathly Charge",
+     "description": "+1 Damage in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Wraith-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Grave-Riders"
+     ]
+    }
+   ],
+   "points": 130,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 130,
+     "models": [
+      {
+       "name": "Grave-Riders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Grave-Riders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Grave-Riders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Grave-Riders",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "12\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "3",
+     "CTRL": "0",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Wraith-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Knight-Phantasm"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "25-gloom-blade-guard",
+   "name": "Gloom-Blade Guard",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Gloom-Blade Guard"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Executioner's Edge",
+     "description": "Melee Hit rolls of 5+ auto-wound.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Gloom-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Gloom-Blade Guard"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Gloom-Blade Guard",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Gloom-Blade Guard",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 235,
+     "models": [
+      {
+       "name": "Gloom-Blade Guard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gloom-Blade Guard",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Gloom-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Knight-Phantasm"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "25-banshee-choir",
+   "name": "Banshee Choir",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "SCOUTS 6\"",
+    "Banshee Choir"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Dirge",
+     "description": "Units hit cannot use Retaliation Strikes until the End of Round on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Wail",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Banshee Choir"
+     ]
+    },
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Banshee Choir"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Banshee Choir",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Banshee Choir",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Banshee Choir",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Banshee Choir",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Wail",
+       "count": 1
+      },
+      {
+       "item": "Spectral claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lantern-Warden",
+    "Banshee Wailer-Queen"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "25-shroud-hounds",
+   "name": "Shroud-Hounds",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Shroud-Hounds"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Hunt from the Dark",
+     "description": "[SCOUTS 6″].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Shroud-Hounds"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Shroud-Hounds",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Shroud-Hounds",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Shroud-Hounds",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Shroud-Hounds",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Shroud-Hounds",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Shroud-Hounds",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Shroud-Hounds",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Spectral claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lantern-Warden",
+    "Banshee Wailer-Queen"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "25-grave-arbalest-shades",
+   "name": "Grave-Arbalest Shades",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "Grave-Arbalest Shades"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ghost-Bolts",
+     "description": "Ranged weapons ignore Cover.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spectral crossbow",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Grave-Arbalest Shades"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Grave-Arbalest Shades"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Grave-Arbalest Shades",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Grave-Arbalest Shades",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Grave-Arbalest Shades",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Grave-Arbalest Shades",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Grave-Arbalest Shades",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Grave-Arbalest Shades",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Grave-Arbalest Shades",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Spectral crossbow",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lantern-Warden",
+    "Banshee Wailer-Queen"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "25-gheist-flitters",
+   "name": "Gheist-Flitters",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "FLY",
+    "VANGUARD STRIKE",
+    "Gheist-Flitters"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Flit",
+     "description": "May Fall Back and still Charge.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Gheist-Flitters"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Gheist-Flitters",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Gheist-Flitters",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Gheist-Flitters",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gheist-Flitters",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Spectral claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lantern-Warden",
+    "Banshee Wailer-Queen"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "25-soul-lantern-bearers",
+   "name": "Soul-Lantern Bearers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "2",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "FLY",
+    "Soul-Lantern Bearers"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Soul-Light",
+     "description": "Friendly units within 6″ have UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Lantern-beam",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Soul-Lantern Bearers"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Soul-Lantern Bearers"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Soul-Lantern Bearers",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Soul-Lantern Bearers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Soul-Lantern Bearers",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "2",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Lantern-beam",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Knight-Phantasm"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "25-haunted-armour-colossus",
+   "name": "Haunted Armour Colossus",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Haunted Armour Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "8",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Haunted Armour Colossus"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bound Spirit",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Possessed gauntlets",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Haunted Armour Colossus"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Haunted Armour Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Haunted Armour Colossus",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "8",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Possessed gauntlets",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Phantasm Lord on Spectral Steed"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "25-shadow-stalker-abomination",
+   "name": "Shadow-Stalker Abomination",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Shadow-Stalker Abomination**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "7",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Shadow-Stalker Abomination"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Umbral Hunter",
+     "description": "Can always be the unit chosen for the Umbra redeploy, in addition to another unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spectral talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Shadow-Stalker Abomination"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Shadow-Stalker Abomination",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Shadow-Stalker Abomination",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "7",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Spectral talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Phantasm Lord on Spectral Steed"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "25-shroud-hearse",
+   "name": "Shroud-Hearse",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Shroud-Hearse**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "11",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "FLY",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Shroud-Hearse"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Deathly Procession",
+     "description": "Units that disembark may Charge this activation.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spirit-wail",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Shroud-Hearse"
+     ]
+    },
+    {
+     "name": "Phantom steeds",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Shroud-Hearse"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Shroud-Hearse",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Shroud-Hearse",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "11",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "11",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Spirit-wail",
+       "count": 1
+      },
+      {
+       "item": "Phantom steeds",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "25-soul-reliquary-engine",
+   "name": "Soul-Reliquary Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Soul-Reliquary Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "6+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "11",
+    "CTRL": "0",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Soul-Reliquary Engine"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Reliquary Pulse",
+     "description": "At the End of Round, friendly units within 9″ heal 1 MIGHT or return 1 slain Class 1 model.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Soul-storm",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6+2",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Soul-Reliquary Engine"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Soul-Reliquary Engine"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Soul-Reliquary Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Soul-Reliquary Engine",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "11",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "8\"",
+     "MS": "6+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "11",
+     "CTRL": "0",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Soul-storm",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "25-eclipse-void-leviathan",
+   "name": "Eclipse Void-Leviathan",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Eclipse Void-Leviathan**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "13",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Eclipse Void-Leviathan"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Swallow Souls",
+     "description": "When it destroys an enemy model, heal 1 MIGHT (max 3 per round).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spectral talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Eclipse Void-Leviathan"
+     ]
+    },
+    {
+     "name": "Void-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Eclipse Void-Leviathan"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Eclipse Void-Leviathan",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Eclipse Void-Leviathan",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "13",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "13",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Spectral talons",
+       "count": 1
+      },
+      {
+       "item": "Void-maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "25-umbral-titan-wraith",
+   "name": "Umbral Titan-Wraith",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Umbral Titan-Wraith**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "20",
+    "CTRL": "5",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Umbral Titan-Wraith"
+   ],
+   "factionKeywords": [
+    "Eclipse Shadow-Fiends"
+   ],
+   "abilities": [
+    {
+     "name": "Ethereal Phase-Form · Wave of Terror",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Eclipse",
+     "description": "Once per battle, Command Phase: all enemy units more than 12″ from it count as beyond 12″ for Ethereal (STEALTH) until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Umbral Titan-Wraith"
+     ]
+    },
+    {
+     "name": "Void-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Umbral Titan-Wraith"
+     ]
+    }
+   ],
+   "points": 280,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 280,
+     "models": [
+      {
+       "name": "Umbral Titan-Wraith",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Umbral Titan-Wraith",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "20",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "20",
+     "CTRL": "5",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Titan stomp",
+       "count": 1
+      },
+      {
+       "item": "Void-maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

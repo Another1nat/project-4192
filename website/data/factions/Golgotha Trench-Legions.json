@@ -1,0 +1,4474 @@
+{
+ "name": "Golgotha Trench-Legions",
+ "factionKeyword": "Golgotha Trench-Legions",
+ "verb": "ORDERS",
+ "identity": "Faceless millions in greatcoats and gas masks. Officers turn mediocre soldiers into a machine; artillery and objectives win the war.",
+ "sources": [
+  "Project 4192 — gametheory/factions/02_golgotha_trench_legions.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Chain of Command",
+   "description": "When an Officer activates it issues 1 Order (⟳) to a friendly unit within 12″ that has not activated: Take Aim! (+1 to Hit, cannot Move) · Forward! (may Shoot after its 2nd Move) · Dig In! (Cover and Braced) · Fire Mission! (an [INDIRECT FIRE] unit hits on 4+ against any enemy a Golgotha unit can see). Orders are priced on the Officers."
+  },
+  {
+   "name": "Gamble — Danger-Close",
+   "description": "When an [INDIRECT FIRE] unit targets an enemy unit within 6″ of a friendly Golgotha unit, it re-rolls Hit rolls; each unmodified Hit roll of 1 inflicts 1 Fatal Wound on the friendly Golgotha unit closest to the target. (Risk: durability (friendly fire).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "02-det1",
+   "name": "Combined Arms Regiment",
+   "cost": 1,
+   "playstyle": "The default: infantry hold, tanks and walkers punch.",
+   "rules": [
+    {
+     "id": "02-det1-r1",
+     "name": "Born Soldiers",
+     "description": "Trooper units that issued no Order and received no Order this round get +1 to Hit with ranged weapons if they did not Move."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "02-det1-e1",
+     "name": "Grand Strategist",
+     "cost": 10,
+     "description": "**Trench-Marshal** only. This Officer issues 2 Orders per round.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Golgotha Trench-Legions"
+       ],
+       "datasheet": "Trench-Marshal"
+      }
+     ]
+    },
+    {
+     "id": "02-det1-e2",
+     "name": "Relic Lasgun",
+     "cost": 10,
+     "description": "**Trench-Marshal** only. The bearer's ranged weapon gets +1 Attack and +1 PEN.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Golgotha Trench-Legions"
+       ],
+       "datasheet": "Trench-Marshal"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "02-det1-s1",
+     "name": "Volley Fire",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Trooper unit is selected to Shoot",
+     "target": "",
+     "effect": "Its rifles gain [HAILFIRE] at full range this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "02-det1-s2",
+     "name": "Armoured Fist",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit disembarks from a Transport",
+     "target": "",
+     "effect": "It may Shoot this activation even after Rapid Disembark.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "02-det1-s3",
+     "name": "Fix Bayonets",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Trooper unit is charged",
+     "target": "",
+     "effect": "Its retaliation strike gets +1 to Wound.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "02-det2",
+   "name": "Siege Artillery Front",
+   "cost": 1,
+   "playstyle": "Static gunline: mortars, Quake-Cannons and spotters grind the enemy into the mud.",
+   "rules": [
+    {
+     "id": "02-det2-r1",
+     "name": "Pre-Registered Fire",
+     "description": "[INDIRECT FIRE] weapons get +1 to Wound against units within 6″ of an objective. Fire Mission! may be issued at 24″."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "02-det2-e1",
+     "name": "Master of Ordnance",
+     "cost": 10,
+     "description": "**Trench-Marshal** only. Fire Mission! applies to 2 artillery units, and they re-roll Wound rolls of 1.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Golgotha Trench-Legions"
+       ],
+       "datasheet": "Trench-Marshal"
+      }
+     ]
+    },
+    {
+     "id": "02-det2-e2",
+     "name": "Vox-Relay Mast",
+     "cost": 10,
+     "description": "**Trench-Marshal** only. The Order range is 24″.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Golgotha Trench-Legions"
+       ],
+       "datasheet": "Trench-Marshal"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "02-det2-s1",
+     "name": "Creeping Barrage",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Start of the round",
+     "target": "",
+     "effect": "Pick a 6″ zone. Enemy units ending a Move in it gain 1 Suppression token.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "02-det2-s2",
+     "name": "Danger Close",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An [INDIRECT FIRE] unit targets an enemy engaged with friendlies",
+     "target": "",
+     "effect": "Allowed; each natural 1 to hit hits the friendly unit instead.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "02-det2-s3",
+     "name": "Counter-Battery",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy [INDIRECT FIRE] unit shoots",
+     "target": "",
+     "effect": "After it resolves, one friendly artillery unit may shoot it.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "02-det3",
+   "name": "Grinder Brigade",
+   "cost": 1,
+   "playstyle": "Horde: bodies on every objective, never give ground.",
+   "rules": [
+    {
+     "id": "02-det3-r1",
+     "name": "Endless Waves",
+     "description": "Once per round, when a Trench-Trooper unit is destroyed, set up a new 10-model unit of Trench-Troopers wholly within 6″ of your board edge (it counts as having activated). Max 2 per battle."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "02-det3-e1",
+     "name": "Iron Discipline",
+     "cost": 10,
+     "description": "**Field Commissar** only. Friendly Troopers within 6″ ignore Rattled.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Golgotha Trench-Legions"
+       ],
+       "datasheet": "Field Commissar"
+      }
+     ]
+    },
+    {
+     "id": "02-det3-e2",
+     "name": "Banner of the Unbroken",
+     "cost": 10,
+     "description": "**Trench-Marshal** only. The attached unit counts double CTRL while it has 5+ models.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Golgotha Trench-Legions"
+       ],
+       "datasheet": "Trench-Marshal"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "02-det3-s1",
+     "name": "Hold the Line",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Trooper unit on an objective is targeted",
+     "target": "",
+     "effect": "It cannot become Pinned this round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "02-det3-s2",
+     "name": "Over the Top",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Trooper unit activates",
+     "target": "",
+     "effect": "It may Charge after a Move this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "02-det3-s3",
+     "name": "Meat Shield",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A friendly vehicle within 3″ of a Trooper unit is targeted",
+     "target": "",
+     "effect": "The shooter must target the Troopers instead if they are visible.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "02-trench-troopers",
+   "name": "Trench-Troopers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **10 Trench-Troopers**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SECURED",
+    "Trench-Troopers"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SECURED",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Special weapons",
+     "description": "Up to 2 models may take a flamer, grenade launcher, plasma gun or melta gun (+5 each).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Service rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Trench-Troopers"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Trench-Troopers"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Trench-Troopers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Trench-Troopers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Service rifle",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-storm-grenadiers",
+   "name": "Storm-Grenadiers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "Storm-Grenadiers"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Breach and Clear",
+     "description": "+1 to Wound with ranged attacks against units in or behind terrain.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hot-shot carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Storm-Grenadiers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Storm-Grenadiers"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Storm-Grenadiers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Storm-Grenadiers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Storm-Grenadiers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Storm-Grenadiers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Storm-Grenadiers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Storm-Grenadiers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Storm-Grenadiers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Hot-shot carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-heavy-weapon-battery",
+   "name": "Heavy Weapon Battery",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Heavy Weapon Battery"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Dug-In",
+     "description": "+1 ARM (to the 3+ cap) if this unit did not Move this round. Any model may swap its autocannon for a las-lance.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Heavy Weapon Battery"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Heavy Weapon Battery"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Heavy Weapon Battery",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Heavy Weapon Battery",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Heavy Weapon Battery",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lord-Marshal of the Front",
+    "Marshal-General of the Iron Line"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "02-mortar-pit",
+   "name": "Mortar Pit",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Mortar Pit"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Trench mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 1",
+      "SUPPRESSIVE"
+     ],
+     "models": [
+      "Mortar Pit"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Mortar Pit"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Mortar Pit",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Mortar Pit",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Mortar Pit",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Trench mortar",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lord-Marshal of the Front",
+    "Marshal-General of the Iron Line"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "02-trench-marshal",
+   "name": "Trench-Marshal",
+   "role": "Leader",
+   "composition": "■ **1 Trench-Marshal**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Trench-Marshal"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Orders (Take Aim!)",
+     "description": "⟳ Issues 1 Order per round (Chain of Command). Priced as Take Aim! on one squad.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Trench-Marshal"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Trench-Marshal"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Trench-Marshal",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Trench-Marshal",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Trench-Troopers",
+      "Storm-Grenadiers",
+      "Trench-Raider Squad",
+      "Flame-Trooper Squad",
+      "Scout-Sniper Pair",
+      "Drop-Chute Troopers",
+      "Engineer Sappers",
+      "Penal Legion Breachers",
+      "Cyber-Mastiff Pack"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-field-commissar",
+   "name": "Field Commissar",
+   "role": "Leader",
+   "composition": "■ **1 Field Commissar**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Field Commissar"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Summary Execution",
+     "description": "Leader. The attached unit ignores Rattled. ✦ Once per battle: when the unit would become Broken, remove 1 model instead.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Field Commissar"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Field Commissar"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Field Commissar",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Field Commissar",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Trench-Troopers",
+      "Storm-Grenadiers",
+      "Trench-Raider Squad",
+      "Flame-Trooper Squad",
+      "Scout-Sniper Pair",
+      "Drop-Chute Troopers",
+      "Engineer Sappers",
+      "Penal Legion Breachers",
+      "Cyber-Mastiff Pack"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-trench-cavalry",
+   "name": "Trench Cavalry",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Trench Cavalry"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Trench Cavalry"
+     ]
+    },
+    {
+     "name": "Explosive lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Trench Cavalry"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Trench Cavalry",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Trench Cavalry",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Trench Cavalry",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Trench Cavalry",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Explosive lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lord-Marshal of the Front",
+    "Marshal-General of the Iron Line"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "02-iron-stalker-walker",
+   "name": "Iron-Stalker Walker",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1–2 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "7",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "SCOUTS 6\"",
+    "Iron-Stalker Walker"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Iron-Stalker Walker"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Iron-Stalker Walker"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Iron-Stalker Walker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Iron-Stalker Walker",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Stalker Walker",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "7",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "02-siege-breaker-tank",
+   "name": "Siege-Breaker Tank",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Siege-Breaker Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Siege-Breaker Tank"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Battle cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Siege-Breaker Tank"
+     ]
+    },
+    {
+     "name": "Sponson stubbers",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SUPPRESSIVE"
+     ],
+     "models": [
+      "Siege-Breaker Tank"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Siege-Breaker Tank"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Siege-Breaker Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Siege-Breaker Tank",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Battle cannon",
+       "count": 1
+      },
+      {
+       "item": "Sponson stubbers",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "02-quake-cannon-battery",
+   "name": "Quake-Cannon Battery",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Quake-Cannon Battery**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "6+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Quake-Cannon Battery"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Quake cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "D6+2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2",
+      "SUPPRESSIVE"
+     ],
+     "models": [
+      "Quake-Cannon Battery"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Quake-Cannon Battery"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Quake-Cannon Battery",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Quake-Cannon Battery",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "6+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Quake cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "02-lord-marshal-of-the-front",
+   "name": "Lord-Marshal of the Front",
+   "role": "Leader",
+   "composition": "■ **1 Lord-Marshal of the Front**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Lord-Marshal of the Front"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grand Battery Order",
+     "description": "⟳ Issues 2 Orders per round; priced as Take Aim! on a second squad.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Lord-Marshal of the Front"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lord-Marshal of the Front"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Lord-Marshal of the Front",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lord-Marshal of the Front",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Heavy Weapon Battery",
+      "Mortar Pit",
+      "Trench Cavalry",
+      "Bulwark Brutes"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "02-field-chirurgeon-priest",
+   "name": "Field Chirurgeon-Priest",
+   "role": "Leader",
+   "composition": "■ **1 Field Chirurgeon-Priest**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Field Chirurgeon-Priest"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Stitch and Pray",
+     "description": "Leader. The attached unit has [UNYIELDING 6+].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Field Chirurgeon-Priest"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Field Chirurgeon-Priest"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Field Chirurgeon-Priest",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Field Chirurgeon-Priest",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Trench-Troopers",
+      "Storm-Grenadiers",
+      "Trench-Raider Squad",
+      "Flame-Trooper Squad",
+      "Scout-Sniper Pair",
+      "Drop-Chute Troopers",
+      "Engineer Sappers",
+      "Penal Legion Breachers",
+      "Cyber-Mastiff Pack"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-forward-observer",
+   "name": "Forward Observer",
+   "role": "Leader",
+   "composition": "■ **1 Forward Observer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "Forward Observer"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Call the Guns",
+     "description": "⟳ One [INDIRECT FIRE] unit shooting a target this model can see gets +1 to Hit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Forward Observer"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Forward Observer"
+     ]
+    }
+   ],
+   "points": 40,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 40,
+     "models": [
+      {
+       "name": "Forward Observer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Forward Observer",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Trench-Troopers",
+      "Storm-Grenadiers",
+      "Trench-Raider Squad",
+      "Flame-Trooper Squad",
+      "Scout-Sniper Pair",
+      "Drop-Chute Troopers",
+      "Engineer Sappers",
+      "Penal Legion Breachers",
+      "Cyber-Mastiff Pack"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-trench-raider-squad",
+   "name": "Trench-Raider Squad",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Trench-Raider Squad"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Over the Parapet",
+     "description": "+1 Attack on the activation this unit charges.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Trench shotgun",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS",
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Trench-Raider Squad"
+     ]
+    },
+    {
+     "name": "Trench club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Trench-Raider Squad"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Trench-Raider Squad",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Trench-Raider Squad",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Trench-Raider Squad",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Trench-Raider Squad",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Trench-Raider Squad",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Trench-Raider Squad",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Trench-Raider Squad",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Trench shotgun",
+       "count": 1
+      },
+      {
+       "item": "Trench club",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-bulwark-brutes",
+   "name": "Bulwark Brutes",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Bulwark Brutes"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Slab-Shield",
+     "description": "+1 ARM (to the 3+ cap).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ripper gun",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "4",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bulwark Brutes"
+     ]
+    },
+    {
+     "name": "Bulwark club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Bulwark Brutes"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Bulwark Brutes",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Bulwark Brutes",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Bulwark Brutes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bulwark Brutes",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Ripper gun",
+       "count": 1
+      },
+      {
+       "item": "Bulwark club",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Lord-Marshal of the Front",
+    "Marshal-General of the Iron Line"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "02-flame-trooper-squad",
+   "name": "Flame-Trooper Squad",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Flame-Trooper Squad**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Flame-Trooper Squad"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Trench flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Flame-Trooper Squad"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Flame-Trooper Squad"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Flame-Trooper Squad",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Flame-Trooper Squad",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Trench flamer",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-scout-sniper-pair",
+   "name": "Scout-Sniper Pair",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "Scout-Sniper Pair"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Camo-Cloaks",
+     "description": "Ranged attacks against this unit get −1 to Hit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Scout-Sniper Pair"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Scout-Sniper Pair"
+     ]
+    }
+   ],
+   "points": 40,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 40,
+     "models": [
+      {
+       "name": "Scout-Sniper Pair",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 45,
+     "models": [
+      {
+       "name": "Scout-Sniper Pair",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Scout-Sniper Pair",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sniper rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-drop-chute-troopers",
+   "name": "Drop-Chute Troopers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "VANGUARD STRIKE",
+    "Drop-Chute Troopers"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hot-shot carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Drop-Chute Troopers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Drop-Chute Troopers"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Drop-Chute Troopers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Drop-Chute Troopers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Drop-Chute Troopers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Drop-Chute Troopers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Drop-Chute Troopers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Drop-Chute Troopers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Drop-Chute Troopers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Hot-shot carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-mole-carrier-apc",
+   "name": "Mole-Carrier APC",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Mole-Carrier APC**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "TRANSPORT 10",
+    "FIRING DECK 2",
+    "HARDENED",
+    "Mole-Carrier APC"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Mole-Carrier APC"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Mole-Carrier APC"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Mole-Carrier APC",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Mole-Carrier APC",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "02-behemoth-siege-tank",
+   "name": "Behemoth Siege-Tank",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Behemoth Siege-Tank**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "8\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "26",
+    "CTRL": "5"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Behemoth Siege-Tank"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Behemoth Siege-Tank"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Behemoth Siege-Tank"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Behemoth Siege-Tank"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Behemoth Siege-Tank"
+     ]
+    }
+   ],
+   "points": 230,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 230,
+     "models": [
+      {
+       "name": "Behemoth Siege-Tank",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Behemoth Siege-Tank",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "26",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "8\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "26",
+     "CTRL": "5",
+     "equipped": [
+      {
+       "item": "Titan cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  },
+  {
+   "id": "02-marshal-general-of-the-iron-line",
+   "name": "Marshal-General of the Iron Line",
+   "role": "Leader",
+   "composition": "■ **1 Marshal-General of the Iron Line**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Marshal-General of the Iron Line"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Supreme Command",
+     "description": "Issues 2 Orders per activation; Order range 18″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Grand Battery",
+     "description": "The attached unit gets +1 to Hit with ranged weapons.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Marshal-General of the Iron Line"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Marshal-General of the Iron Line"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Marshal-General of the Iron Line",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Marshal-General of the Iron Line",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Heavy Weapon Battery",
+      "Mortar Pit",
+      "Trench Cavalry",
+      "Bulwark Brutes"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "02-regimental-colour-bearer",
+   "name": "Regimental Colour-Bearer",
+   "role": "Leader",
+   "composition": "■ **1 Regimental Colour-Bearer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Regimental Colour-Bearer"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Hold the Colours",
+     "description": "The attached unit cannot be Rattled.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Rally Point",
+     "description": "+1 CTRL per model for the attached unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Regimental Colour-Bearer"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Regimental Colour-Bearer"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Regimental Colour-Bearer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Regimental Colour-Bearer",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Trench-Troopers",
+      "Storm-Grenadiers",
+      "Trench-Raider Squad",
+      "Flame-Trooper Squad",
+      "Scout-Sniper Pair",
+      "Drop-Chute Troopers",
+      "Engineer Sappers",
+      "Penal Legion Breachers",
+      "Cyber-Mastiff Pack"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-veteran-marksman",
+   "name": "Veteran Marksman",
+   "role": "Leader",
+   "composition": "■ **1 Veteran Marksman**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "Veteran Marksman"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Ghillie Cloak",
+     "description": "[STEALTH].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Long-las",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Veteran Marksman"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Veteran Marksman"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Veteran Marksman",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Veteran Marksman",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Long-las",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Trench-Troopers",
+      "Storm-Grenadiers",
+      "Trench-Raider Squad",
+      "Flame-Trooper Squad",
+      "Scout-Sniper Pair",
+      "Drop-Chute Troopers",
+      "Engineer Sappers",
+      "Penal Legion Breachers",
+      "Cyber-Mastiff Pack"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-engineer-sappers",
+   "name": "Engineer Sappers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Engineer Sappers**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "Engineer Sappers"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Dig the Line",
+     "description": "Once per battle, place a 6″ barricade (Light terrain) wholly within 6″ of this unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Demo-charges",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "D3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ANTI-VEHICLE 4+"
+     ],
+     "models": [
+      "Engineer Sappers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Engineer Sappers"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Engineer Sappers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Engineer Sappers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Demo-charges",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-penal-legion-breachers",
+   "name": "Penal Legion Breachers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **10 Penal Legion Breachers**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "EXPENDABLE",
+    "Penal Legion Breachers"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Last Chance",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Penal Legion Breachers"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Penal Legion Breachers"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Penal Legion Breachers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Penal Legion Breachers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pistol",
+       "count": 1
+      },
+      {
+       "item": "Chain-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-cyber-mastiff-pack",
+   "name": "Cyber-Mastiff Pack",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Cyber-Mastiff Pack"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Run Ahead",
+     "description": "[SCOUTS 6″].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Steel jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Cyber-Mastiff Pack"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Cyber-Mastiff Pack",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Cyber-Mastiff Pack",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Cyber-Mastiff Pack",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Cyber-Mastiff Pack",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Cyber-Mastiff Pack",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Cyber-Mastiff Pack",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cyber-Mastiff Pack",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Steel jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Trench-Marshal",
+    "Field Commissar",
+    "Field Chirurgeon-Priest",
+    "Forward Observer",
+    "Regimental Colour-Bearer",
+    "Veteran Marksman"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "02-heavy-mortar-battery",
+   "name": "Heavy Mortar Battery",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Heavy Mortar Battery**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "4\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "6",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Heavy Mortar Battery"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Pre-Sighted",
+     "description": "Re-roll Hit rolls against units within 3″ of an objective.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6+2",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2",
+      "SUPPRESSIVE"
+     ],
+     "models": [
+      "Heavy Mortar Battery"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Heavy Mortar Battery"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Heavy Mortar Battery",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Heavy Mortar Battery",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy mortar",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "02-tank-hunter-destroyer",
+   "name": "Tank-Hunter Destroyer",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Tank-Hunter Destroyer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Tank-Hunter Destroyer"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ambush Position",
+     "description": "+1 to Hit if it did not Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hunter las-cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Tank-Hunter Destroyer"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Tank-Hunter Destroyer"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Tank-Hunter Destroyer"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Tank-Hunter Destroyer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Tank-Hunter Destroyer",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Hunter las-cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "02-inferno-crawler",
+   "name": "Inferno-Crawler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Inferno-Crawler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Inferno-Crawler"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Burn Them Out",
+     "description": "Units hit in Dense terrain are Rattled on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Inferno cannon",
+     "type": "Ranged",
+     "range": "16\"",
+     "A": "2D6",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Inferno-Crawler"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Inferno-Crawler"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Inferno-Crawler"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Inferno-Crawler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Inferno-Crawler",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Inferno cannon",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "02-raptor-drop-gunship",
+   "name": "Raptor Drop-Gunship",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Raptor Drop-Gunship**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "16\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "0"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "FLY",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Raptor Drop-Gunship"
+   ],
+   "factionKeywords": [
+    "Golgotha Trench-Legions"
+   ],
+   "abilities": [
+    {
+     "name": "Chain of Command",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Grav-Chute Drop",
+     "description": "Units may disembark after it moves (even after its full Move) and still act.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Multi-laser",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Raptor Drop-Gunship"
+     ]
+    },
+    {
+     "name": "Hellstrike missiles",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Raptor Drop-Gunship"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Raptor Drop-Gunship"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Raptor Drop-Gunship",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Raptor Drop-Gunship",
+     "M": "16\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "0",
+     "MOV": "16\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "0",
+     "equipped": [
+      {
+       "item": "Multi-laser",
+       "count": 1
+      },
+      {
+       "item": "Hellstrike missiles",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  }
+ ],
+ "faq": []
+}

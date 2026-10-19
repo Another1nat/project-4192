@@ -1,0 +1,3229 @@
+{
+ "name": "Radiant Concordat",
+ "factionKeyword": "Radiant Concordat",
+ "verb": "SPOT",
+ "identity": "Porcelain rail-gun infantry and battlesuits, blood-lotus priests, and hulking gore-ogre auxiliaries. Poor in melee, deadly when spotted targets line up, and the ogres stand in front of the porcelain.",
+ "sources": [
+  "Project 4192 — gametheory/factions/22_radiant_concordat.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+   "description": "Spot: an unengaged Concordat unit may use 1 Action to Spot a visible enemy unit; the next friendly unit to Shoot that enemy this round gets +1 to Hit and [IGNORES COVER] (one Spot per enemy unit per round). Bulwark: once per round, when an enemy unit declares a Charge against a Concordat Class 1–2 unit within 3″ of Gore-Brutes or Gore-Ogres, those ogres may make a 3″ move to engage the charger before the Charge roll."
+  },
+  {
+   "name": "Gamble — Blood-Offering",
+   "description": "When a unit Spots within 6″ of a Blood-Lotus Prior, the Prior may inflict D3 Fatal Wounds on a friendly ogre unit within 3″: the spotted attack also gains [SHREDDING WOUNDS]. (Risk: durability (friendly).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "22-det1",
+   "name": "Patient Hunter",
+   "cost": 1,
+   "playstyle": "Hold back, spot, and break them late.",
+   "rules": [
+    {
+     "id": "22-det1-r1",
+     "name": "Patient Hunter",
+     "description": "In Rounds 3–4, ranged weapons gain [ONSLAUGHT 1] against spotted units. Units that did not Move get +1 ARM (to 3+ cap) against ranged attacks."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "22-det1-e1",
+     "name": "Hunter's Patience",
+     "cost": 10,
+     "description": "**Concordat Strategos** only. The attached unit's ranged weapons gain [IMPALING HITS].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Radiant Concordat"
+       ],
+       "datasheet": "Concordat Strategos"
+      }
+     ]
+    },
+    {
+     "id": "22-det1-e2",
+     "name": "Recon Uplink",
+     "cost": 10,
+     "description": "**Lotus Pathfinder-Priest** only. Free Spot twice per round.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Radiant Concordat"
+       ],
+       "datasheet": "Lotus Pathfinder-Priest"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "22-det1-s1",
+     "name": "Ambush Volley",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit that did not Move Shoots",
+     "target": "",
+     "effect": "Re-roll Wound rolls of 1.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "22-det1-s2",
+     "name": "Spring the Trap",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit ends a move within 12″ of two Concordat units",
+     "target": "",
+     "effect": "One of them Shoots it now (once per round).",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "22-det1-s3",
+     "name": "Fall Back to Cover",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged",
+     "target": "",
+     "effect": "It may make a 3″ move before the Charge roll.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "22-det2",
+   "name": "Killing Blow",
+   "cost": 1,
+   "playstyle": "Go early: rapid advance and close-range volleys.",
+   "rules": [
+    {
+     "id": "22-det2-r1",
+     "name": "Killing Blow",
+     "description": "In Rounds 1–2, ranged weapons gain [ASSAULT] and +1 PEN within 12″."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "22-det2-e1",
+     "name": "Strike-Leader's Blade",
+     "cost": 10,
+     "description": "**Concordat Strategos** only. +2″ MOV.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Radiant Concordat"
+       ],
+       "datasheet": "Concordat Strategos"
+      }
+     ]
+    },
+    {
+     "id": "22-det2-e2",
+     "name": "Breacher Shield-Drone",
+     "cost": 10,
+     "description": "**Porcelain Breacher Team** only. +1 ARM (to 3+ cap).",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Radiant Concordat"
+       ],
+       "datasheet": "Porcelain Breacher Team"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "22-det2-s1",
+     "name": "Advance Volley",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit Moves and Shoots",
+     "target": "",
+     "effect": "Ignore the [HEAVY] penalty.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "22-det2-s2",
+     "name": "Close the Net",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Two units Shoot the same target",
+     "target": "",
+     "effect": "The second gets +1 to Wound.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "22-det2-s3",
+     "name": "Jump-Jet Strike",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A battlesuit unit Shoots",
+     "target": "",
+     "effect": "It may make a 5″ move afterward.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "22-det3",
+   "name": "Gore-Brute Retinue",
+   "cost": 1,
+   "playstyle": "Ogres in front, porcelain behind, blood-priests feeding both.",
+   "rules": [
+    {
+     "id": "22-det3-r1",
+     "name": "Gilded Bulwark",
+     "description": "Gore units within 3″ of a Porcelain unit get +1 Attack in melee; Porcelain units within 3″ of a Gore unit are [STEALTH]."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "22-det3-e1",
+     "name": "Gut-Plate of the Retinue",
+     "cost": 20,
+     "description": "**Gore-Brute Chieftain** only. UNYIELDING 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Radiant Concordat"
+       ],
+       "datasheet": "Gore-Brute Chieftain"
+      }
+     ]
+    },
+    {
+     "id": "22-det3-e2",
+     "name": "Nectar-Censer",
+     "cost": 20,
+     "description": "**Blood-Lotus Caste Prior** only. Friendly ogre units within 6″ get +1 Attack on a round they charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Radiant Concordat"
+       ],
+       "datasheet": "Blood-Lotus Caste Prior"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "22-det3-s1",
+     "name": "Meat-Shield",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Porcelain unit within 3″ of ogres is targeted",
+     "target": "",
+     "effect": "The ogres take the attack instead.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "22-det3-s2",
+     "name": "Gore-Charge",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An ogre unit declares a Charge",
+     "target": "",
+     "effect": "+2″ to the roll and Crushing Impact for 0 CP.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "22-det3-s3",
+     "name": "Blood-Tithe",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An ogre unit suffers a Blood-Offering",
+     "target": "",
+     "effect": "It heals D3 MIGHT at the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "22-concordat-strategos",
+   "name": "Concordat Strategos",
+   "role": "Leader",
+   "composition": "■ **1 Concordat Strategos**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "FLY",
+    "Concordat Strategos"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Coordinated Strike",
+     "description": "Friendly units within 9″ get +1 to Hit against a unit spotted this round (does not stack with Spot).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Patient Hunter",
+     "description": "Once per battle, give one unit [ONSLAUGHT 1] on its ranged weapons for a round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ion rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HAILFIRE 1",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Concordat Strategos"
+     ]
+    },
+    {
+     "name": "Seeker missiles",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Concordat Strategos"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Concordat Strategos"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Concordat Strategos",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Concordat Strategos",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Ion rifle",
+       "count": 1
+      },
+      {
+       "item": "Seeker missiles",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Crimson Stealth-Suits",
+      "Vanguard Rail-Suits",
+      "Siege Rail-Suits",
+      "Gilded Gore-Brutes",
+      "Gore-Ogre Bulwark Guard"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "22-blood-lotus-caste-prior",
+   "name": "Blood-Lotus Caste Prior",
+   "role": "Leader",
+   "composition": "■ **1 Blood-Lotus Caste Prior**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Blood-Lotus Caste Prior"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Offering Rite",
+     "description": "Enables the Blood-Offering gamble within 6″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Lotus Sacrament",
+     "description": "Friendly units within 6″ have UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Lotus-pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Blood-Lotus Caste Prior"
+     ]
+    },
+    {
+     "name": "Sacrificial knife",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blood-Lotus Caste Prior"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Blood-Lotus Caste Prior",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blood-Lotus Caste Prior",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Lotus-pistol",
+       "count": 1
+      },
+      {
+       "item": "Sacrificial knife",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Porcelain Strike-Infantry",
+      "Porcelain Breacher Team",
+      "Lotus Pathfinders",
+      "Lotus Drone Flight",
+      "Lotus Marksmen"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "22-gore-brute-chieftain",
+   "name": "Gore-Brute Chieftain",
+   "role": "Leader",
+   "composition": "■ **1 Gore-Brute Chieftain**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "7",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Gore-Brute Chieftain"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Gut-Roar",
+     "description": "The attached ogre unit gets +1 Attack in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Bulwark Captain",
+     "description": "The Bulwark intercept from his unit is 6″ instead of 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hand-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Gore-Brute Chieftain"
+     ]
+    },
+    {
+     "name": "Gore-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "4+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Gore-Brute Chieftain"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Gore-Brute Chieftain",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gore-Brute Chieftain",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "7",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Hand-cannon",
+       "count": 1
+      },
+      {
+       "item": "Gore-cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Crimson Stealth-Suits",
+      "Vanguard Rail-Suits",
+      "Siege Rail-Suits",
+      "Gilded Gore-Brutes",
+      "Gore-Ogre Bulwark Guard"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "22-lotus-pathfinder-priest",
+   "name": "Lotus Pathfinder-Priest",
+   "role": "Leader",
+   "composition": "■ **1 Lotus Pathfinder-Priest**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "SCOUTS 6\"",
+    "Lotus Pathfinder-Priest"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Free Spot",
+     "description": "Once per round, Spot without spending an Action.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pulse carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Lotus Pathfinder-Priest"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lotus Pathfinder-Priest"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Lotus Pathfinder-Priest",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lotus Pathfinder-Priest",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pulse carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Porcelain Strike-Infantry",
+      "Porcelain Breacher Team",
+      "Lotus Pathfinders",
+      "Lotus Drone Flight",
+      "Lotus Marksmen"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "22-porcelain-strike-infantry",
+   "name": "Porcelain Strike-Infantry",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Porcelain Strike-Infantry"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Volley Discipline",
+     "description": "If this unit Spots, it may still Shoot a different target with −1 to Hit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pulse rail-rifle",
+     "type": "Ranged",
+     "range": "30\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Porcelain Strike-Infantry"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Porcelain Strike-Infantry"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Porcelain Strike-Infantry",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Porcelain Strike-Infantry",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Porcelain Strike-Infantry",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 145,
+     "models": [
+      {
+       "name": "Porcelain Strike-Infantry",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Porcelain Strike-Infantry",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Porcelain Strike-Infantry",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Porcelain Strike-Infantry",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Pulse rail-rifle",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Lotus Caste Prior",
+    "Lotus Pathfinder-Priest"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "22-porcelain-breacher-team",
+   "name": "Porcelain Breacher Team",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Porcelain Breacher Team"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Point-Blank",
+     "description": "+1 PEN within 6″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pulse blaster",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Porcelain Breacher Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Porcelain Breacher Team"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Porcelain Breacher Team",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Porcelain Breacher Team",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Porcelain Breacher Team",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Porcelain Breacher Team",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Porcelain Breacher Team",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Porcelain Breacher Team",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Porcelain Breacher Team",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Pulse blaster",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Lotus Caste Prior",
+    "Lotus Pathfinder-Priest"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "22-lotus-pathfinders",
+   "name": "Lotus Pathfinders",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "6+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "SCOUTS 6\"",
+    "Lotus Pathfinders"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Spotter Uplink",
+     "description": "Spotting by this unit gives +1 to Hit to the next TWO friendly units.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pulse carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Lotus Pathfinders"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lotus Pathfinders"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Lotus Pathfinders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Lotus Pathfinders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Lotus Pathfinders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lotus Pathfinders",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "6+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pulse carbine",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Lotus Caste Prior",
+    "Lotus Pathfinder-Priest"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "22-crimson-stealth-suits",
+   "name": "Crimson Stealth-Suits",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3 Crimson Stealth-Suits**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "9\"",
+    "MS": "6+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Crimson Stealth-Suits"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Stealth Fields",
+     "description": "[STEALTH].",
+     "type": "datasheet"
+    },
+    {
+     "name": "Silent Spotters",
+     "description": "May Spot without being revealed (keeps [UNSEEN]).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Crimson Stealth-Suits"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Crimson Stealth-Suits"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Crimson Stealth-Suits",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crimson Stealth-Suits",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "6+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Burst cannon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Concordat Strategos",
+    "Gore-Brute Chieftain"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "22-vanguard-rail-suits",
+   "name": "Vanguard Rail-Suits",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3 Vanguard Rail-Suits**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "9\"",
+    "MS": "6+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Vanguard Rail-Suits"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Jump-Jets",
+     "description": "(1 CP Tactic) After it Shoots, it may make a 5″ move, once per round army-wide.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ion rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HAILFIRE 1",
+      "OVERLOAD"
+     ],
+     "models": [
+      "Vanguard Rail-Suits"
+     ]
+    },
+    {
+     "name": "Seeker missiles",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Vanguard Rail-Suits"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Vanguard Rail-Suits"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Vanguard Rail-Suits",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Vanguard Rail-Suits",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "6+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Ion rifle",
+       "count": 1
+      },
+      {
+       "item": "Seeker missiles",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Concordat Strategos",
+    "Gore-Brute Chieftain"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "22-siege-rail-suits",
+   "name": "Siege Rail-Suits",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Siege Rail-Suits"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Locked Stance",
+     "description": "Re-roll ranged Hit rolls of 1 if it did not Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy rail-rifle",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "ERADICATE 1"
+     ],
+     "models": [
+      "Siege Rail-Suits"
+     ]
+    },
+    {
+     "name": "Seeker missiles",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Siege Rail-Suits"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Siege Rail-Suits"
+     ]
+    }
+   ],
+   "points": 160,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 160,
+     "models": [
+      {
+       "name": "Siege Rail-Suits",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Siege Rail-Suits",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 215,
+     "models": [
+      {
+       "name": "Siege Rail-Suits",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Siege Rail-Suits",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy rail-rifle",
+       "count": 1
+      },
+      {
+       "item": "Seeker missiles",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Concordat Strategos",
+    "Gore-Brute Chieftain"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "22-gilded-gore-brutes",
+   "name": "Gilded Gore-Brutes",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Gilded Gore-Brutes"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bulwark",
+     "description": "May intercept Charges against Concordat Class 1–2 units within 3″ (core rule).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Combat-Nectar",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Gut-cannons",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Gilded Gore-Brutes"
+     ]
+    },
+    {
+     "name": "Gore-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Gilded Gore-Brutes"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Gilded Gore-Brutes",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 180,
+     "models": [
+      {
+       "name": "Gilded Gore-Brutes",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 215,
+     "models": [
+      {
+       "name": "Gilded Gore-Brutes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gilded Gore-Brutes",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Gut-cannons",
+       "count": 1
+      },
+      {
+       "item": "Gore-cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Concordat Strategos",
+    "Gore-Brute Chieftain"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "22-gore-ogre-bulwark-guard",
+   "name": "Gore-Ogre Bulwark Guard",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Gore-Ogre Bulwark Guard"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bulwark",
+     "description": "May intercept Charges (core rule).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Wall of Gut",
+     "description": "Enemies get −1 to Hit them in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hand-cannons",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Gore-Ogre Bulwark Guard"
+     ]
+    },
+    {
+     "name": "Iron-gut halberds",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Gore-Ogre Bulwark Guard"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Gore-Ogre Bulwark Guard",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Gore-Ogre Bulwark Guard",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 220,
+     "models": [
+      {
+       "name": "Gore-Ogre Bulwark Guard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gore-Ogre Bulwark Guard",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Hand-cannons",
+       "count": 1
+      },
+      {
+       "item": "Iron-gut halberds",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Concordat Strategos",
+    "Gore-Brute Chieftain"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "22-lotus-drone-flight",
+   "name": "Lotus Drone Flight",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **4–8 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "6+",
+    "RS": "4+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "Lotus Drone Flight"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shield-Drones",
+     "description": "A friendly unit within 3″ may allocate one attack per round to this unit instead.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Drone pulse-guns",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Lotus Drone Flight"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "6+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lotus Drone Flight"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Lotus Drone Flight",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Lotus Drone Flight",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Lotus Drone Flight",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Lotus Drone Flight",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Lotus Drone Flight",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lotus Drone Flight",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "6+",
+     "RS": "4+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Drone pulse-guns",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Lotus Caste Prior",
+    "Lotus Pathfinder-Priest"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "22-lotus-marksmen",
+   "name": "Lotus Marksmen",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "6+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "Lotus Marksmen"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Self-Spotting",
+     "description": "Counts as spotted against units it targets.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Long rail-rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "PRECISION"
+     ],
+     "models": [
+      "Lotus Marksmen"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lotus Marksmen"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Lotus Marksmen",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 50,
+     "models": [
+      {
+       "name": "Lotus Marksmen",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lotus Marksmen",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "6+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Long rail-rifle",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Lotus Caste Prior",
+    "Lotus Pathfinder-Priest"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "22-bulwark-rail-mech",
+   "name": "Bulwark Rail-Mech",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Bulwark Rail-Mech**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "9",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Bulwark Rail-Mech"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Nova Charge",
+     "description": "Once per battle, +1 Attack on all ranged weapons this activation.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy rail-cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [
+      "HEAVY",
+      "ERADICATE 1"
+     ],
+     "models": [
+      "Bulwark Rail-Mech"
+     ]
+    },
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Bulwark Rail-Mech"
+     ]
+    },
+    {
+     "name": "Battlesuit fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Bulwark Rail-Mech"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Bulwark Rail-Mech",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bulwark Rail-Mech",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy rail-cannon",
+       "count": 1
+      },
+      {
+       "item": "Burst cannon",
+       "count": 1
+      },
+      {
+       "item": "Battlesuit fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "22-lotus-sky-gunship",
+   "name": "Lotus Sky-Gunship",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Lotus Sky-Gunship**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "12\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Lotus Sky-Gunship"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Targeting Array",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rail-cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Lotus Sky-Gunship"
+     ]
+    },
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Lotus Sky-Gunship"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lotus Sky-Gunship"
+     ]
+    }
+   ],
+   "points": 165,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 165,
+     "models": [
+      {
+       "name": "Lotus Sky-Gunship",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lotus Sky-Gunship",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "12\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rail-cannon",
+       "count": 1
+      },
+      {
+       "item": "Burst cannon",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "22-lotus-transport-skimmer",
+   "name": "Lotus Transport Skimmer",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Lotus Transport Skimmer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "12\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "FLY",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Lotus Transport Skimmer"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Drop-Off",
+     "description": "Units may disembark after it moves and still Shoot.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Lotus Transport Skimmer"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Lotus Transport Skimmer"
+     ]
+    }
+   ],
+   "points": 115,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 115,
+     "models": [
+      {
+       "name": "Lotus Transport Skimmer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lotus Transport Skimmer",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "12\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Burst cannon",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "22-gore-mammoth-rider",
+   "name": "Gore-Mammoth Rider",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Gore-Mammoth Rider**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Gore-Mammoth Rider"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bulwark Beast",
+     "description": "Counts as Gore-Brutes for the Bulwark rule (6″).",
+     "type": "datasheet"
+    },
+    {
+     "name": "Thick Hide",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Chain-harpoon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HARPOON"
+     ],
+     "models": [
+      "Gore-Mammoth Rider"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Gore-Mammoth Rider"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "5+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Gore-Mammoth Rider"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Gore-Mammoth Rider",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gore-Mammoth Rider",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Chain-harpoon",
+       "count": 1
+      },
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "22-lotus-rail-battery",
+   "name": "Lotus Rail-Battery",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Lotus Rail-Battery**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Lotus Rail-Battery"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Guided Fire",
+     "description": "Ignores the [INDIRECT FIRE] −1 against spotted units.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Seeker-missile rack",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE"
+     ],
+     "models": [
+      "Lotus Rail-Battery"
+     ]
+    },
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Lotus Rail-Battery"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Lotus Rail-Battery",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lotus Rail-Battery",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Seeker-missile rack",
+       "count": 1
+      },
+      {
+       "item": "Burst cannon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "22-lotus-colossus-suit",
+   "name": "Lotus Colossus-Suit",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Lotus Colossus-Suit**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Lotus Colossus-Suit"
+   ],
+   "factionKeywords": [
+    "Radiant Concordat"
+   ],
+   "abilities": [
+    {
+     "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Command Uplink",
+     "description": "Once per round, Spot for free (no Action).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pulse-driver cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Lotus Colossus-Suit"
+     ]
+    },
+    {
+     "name": "Seeker missiles",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Lotus Colossus-Suit"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "5+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Lotus Colossus-Suit"
+     ]
+    }
+   ],
+   "points": 365,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 365,
+     "models": [
+      {
+       "name": "Lotus Colossus-Suit",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Lotus Colossus-Suit",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Pulse-driver cannon",
+       "count": 1
+      },
+      {
+       "item": "Seeker missiles",
+       "count": 1
+      },
+      {
+       "item": "Titan stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

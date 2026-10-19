@@ -1,0 +1,2851 @@
+{
+ "name": "Mordant Ghoul-Courts",
+ "factionKeyword": "Mordant Ghoul-Courts",
+ "verb": "REPLENISH",
+ "identity": "Cannibal ghouls who believe they are a noble court of knights. Cheap, poorly armoured hordes that refill by feasting and hit harder near their deluded kings. Each detachment is a different shared delusion.",
+ "sources": [
+  "Project 4192 — gametheory/factions/07_mordant_ghoul_courts.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Marrow-Feast & Feeding Frenzy",
+   "description": "Marrow-Feast: once per round, after a Mordant unit destroys 1+ enemy models in melee, it returns D3 slain models (Class 1) or heals D3 MIGHT (Class 2–5), never above Starting Strength. Feeding Frenzy: Class 1 Mordant units wholly within 9″ of a friendly Mordant Leader get +1 Attack in melee."
+  },
+  {
+   "name": "Gamble — Delusional Crusade",
+   "description": "When a Leader activates, it may suffer 2 Fatal Wounds (cannot be saved or ignored): +2 Attacks and [CRASHING] on its melee weapons this activation. (Risk: durability (voluntary).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "07-det1",
+   "name": "The Royal Hunt",
+   "cost": 1,
+   "playstyle": "Delusion: the court is hunting a great beast. Monsters and knights chase big targets.",
+   "rules": [
+    {
+     "id": "07-det1-r1",
+     "name": "Royal Hunt",
+     "description": "Re-roll Wound rolls against Class 4–5 units. Class 2–4 Mordant units get +2″ MOV in Round 1."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "07-det1-e1",
+     "name": "Huntmaster's Horn",
+     "cost": 20,
+     "description": "**Ghoul-King on Royal Corpse-Drake** only. Re-roll all melee Wound rolls.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Mordant Ghoul-Courts"
+       ],
+       "datasheet": "Ghoul-King on Royal Corpse-Drake"
+      }
+     ]
+    },
+    {
+     "id": "07-det1-e2",
+     "name": "Trophy of the Beast",
+     "cost": 10,
+     "description": "**Crypt-Seneschal** only. +1 Damage on a round he charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Mordant Ghoul-Courts"
+       ],
+       "datasheet": "Crypt-Seneschal"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "07-det1-s1",
+     "name": "Bring It Down!",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4–5 enemy is wounded",
+     "target": "",
+     "effect": "The next friendly unit to attack it gets +1 to Hit.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "07-det1-s2",
+     "name": "The Hunt Is On",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase",
+     "target": "",
+     "effect": "One Class 2–4 unit makes a free 3″ move.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "07-det1-s3",
+     "name": "Feast on the Kill",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4–5 enemy is destroyed",
+     "target": "",
+     "effect": "Every Mordant unit within 6″ triggers Marrow-Feast.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "07-det2",
+   "name": "The Grand Feast",
+   "cost": 1,
+   "playstyle": "Delusion: a royal banquet. Leaders earn Deeds and the hordes grow frenzied.",
+   "rules": [
+    {
+     "id": "07-det2-r1",
+     "name": "Noble Deeds",
+     "description": "Each Leader gains 1 Deed per enemy model it destroys. At 3 Deeds, Feeding Frenzy from that Leader also gives +1 to Wound; at 6 Deeds it returns 1 slain Class 2 model to a unit within 6″ (once per round)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "07-det2-e1",
+     "name": "Gilded Goblet",
+     "cost": 15,
+     "description": "**Ghoul-King of the Carrion Throne** only. Friendly units within 9″ get +1 to Wound in melee on a round they charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Mordant Ghoul-Courts"
+       ],
+       "datasheet": "Ghoul-King of the Carrion Throne"
+      }
+     ]
+    },
+    {
+     "id": "07-det2-e2",
+     "name": "Chef's Cleaver",
+     "cost": 10,
+     "description": "**Carrion-Surgeon** only. Stitch the Courtiers returns D3+1.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Mordant Ghoul-Courts"
+       ],
+       "datasheet": "Carrion-Surgeon"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "07-det2-s1",
+     "name": "Second Helping",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit triggers Marrow-Feast",
+     "target": "",
+     "effect": "Trigger it again this round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "07-det2-s2",
+     "name": "Cry of the Court",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader gains a Deed",
+     "target": "",
+     "effect": "Gain 1 additional Deed.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "07-det2-s3",
+     "name": "Ravenous Rush",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 1 unit within Frenzy range declares a Charge",
+     "target": "",
+     "effect": "+2″ to the Charge roll.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "07-det3",
+   "name": "The Dragon Court",
+   "cost": 1,
+   "playstyle": "Delusion: a court of dragon-knights. Fewer models, more monsters, flying knights.",
+   "rules": [
+    {
+     "id": "07-det3-r1",
+     "name": "Dragon Lords",
+     "description": "Class 4 Mordant units have UNYIELDING 6+ and +1 CTRL; [FLY] units may Charge after making a full Move over terrain."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "07-det3-e1",
+     "name": "Royal Scales",
+     "cost": 35,
+     "description": "**Ghoul-King on Royal Corpse-Drake** only. UNYIELDING 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Mordant Ghoul-Courts"
+       ],
+       "datasheet": "Ghoul-King on Royal Corpse-Drake"
+      }
+     ]
+    },
+    {
+     "id": "07-det3-e2",
+     "name": "Dragon-Crested Helm",
+     "cost": 10,
+     "description": "**Crypt-Seneschal** only. +2″ MOV.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Mordant Ghoul-Courts"
+       ],
+       "datasheet": "Crypt-Seneschal"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "07-det3-s1",
+     "name": "Wings of the Court",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A [FLY] unit activates",
+     "target": "",
+     "effect": "+3″ MOV this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "07-det3-s2",
+     "name": "Plague-Breath Volley",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Corpse-Drake uses Noxious Breath",
+     "target": "",
+     "effect": "Use it twice this round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "07-det3-s3",
+     "name": "Guard the Lord",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader is targeted within 3″ of a Class 2 unit",
+     "target": "",
+     "effect": "That unit suffers the attacks instead on a 3+.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "07-ghoul-king-of-the-carrion-throne",
+   "name": "Ghoul-King of the Carrion Throne",
+   "role": "Leader",
+   "composition": "■ **1 Ghoul-King of the Carrion Throne**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Ghoul-King of the Carrion Throne"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Royal Decree",
+     "description": "The attached unit re-rolls melee Wound rolls of 1.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Summon the Court",
+     "description": "Once per battle (1 CP), return a destroyed Crypt-Scullions unit at half strength within 6″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone sceptre",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Ghoul-King of the Carrion Throne"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Ghoul-King of the Carrion Throne",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ghoul-King of the Carrion Throne",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Bone sceptre",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Crypt-Flayer Guard",
+      "Ghoul-Knights",
+      "Crypt-Horror Brutes",
+      "Court Champions",
+      "Bone-Slingers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "07-ghoul-king-on-royal-corpse-drake",
+   "name": "Ghoul-King on Royal Corpse-Drake",
+   "role": "Leader",
+   "composition": "■ **1 Ghoul-King on Royal Corpse-Drake**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Leader",
+    "FLY",
+    "HARDENED",
+    "Ghoul-King on Royal Corpse-Drake"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Royal Feeding Frenzy",
+     "description": "Feeding Frenzy range from this model is 12″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Noxious Breath",
+     "description": "Once per round, D3 Fatal Wounds on a 3+ to a unit within 9″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rending claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Ghoul-King on Royal Corpse-Drake"
+     ]
+    },
+    {
+     "name": "Rotting maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Ghoul-King on Royal Corpse-Drake"
+     ]
+    }
+   ],
+   "points": 155,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 155,
+     "models": [
+      {
+       "name": "Ghoul-King on Royal Corpse-Drake",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ghoul-King on Royal Corpse-Drake",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rending claws",
+       "count": 1
+      },
+      {
+       "item": "Rotting maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Royal Corpse-Drake",
+      "Mound-Giant of the Court"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "07-crypt-seneschal",
+   "name": "Crypt-Seneschal",
+   "role": "Leader",
+   "composition": "■ **1 Crypt-Seneschal**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "6+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Crypt-Seneschal"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Herald of the King",
+     "description": "The attached unit gets +1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Crypt-Seneschal"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Crypt-Seneschal",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crypt-Seneschal",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "6+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bone halberd",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Crypt-Scullions",
+      "Delusional Pike-Levy",
+      "Court Huntsmen",
+      "Carrion Bat-Swarm",
+      "Feast-Hounds"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "07-carrion-surgeon",
+   "name": "Carrion-Surgeon",
+   "role": "Leader",
+   "composition": "■ **1 Carrion-Surgeon**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "6+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Carrion-Surgeon"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Stitch the Courtiers",
+     "description": "Once per round, return D3 slain models to a friendly Class 1 unit within 3″ (max Starting Strength).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone shiv",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Carrion-Surgeon"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Carrion-Surgeon",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Carrion-Surgeon",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "6+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bone shiv",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Crypt-Scullions",
+      "Delusional Pike-Levy",
+      "Court Huntsmen",
+      "Carrion Bat-Swarm",
+      "Feast-Hounds"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "07-court-poisoner",
+   "name": "Court Poisoner",
+   "role": "Leader",
+   "composition": "■ **1 Court Poisoner**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "6+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "Court Poisoner"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Tainted Feast",
+     "description": "An enemy unit wounded by this model cannot be healed until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone darts",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "IMPALING HITS"
+     ],
+     "models": [
+      "Court Poisoner"
+     ]
+    },
+    {
+     "name": "Envenomed claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Court Poisoner"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Court Poisoner",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Court Poisoner",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "6+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bone darts",
+       "count": 1
+      },
+      {
+       "item": "Envenomed claw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Crypt-Scullions",
+      "Delusional Pike-Levy",
+      "Court Huntsmen",
+      "Carrion Bat-Swarm",
+      "Feast-Hounds"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "07-crypt-scullions",
+   "name": "Crypt-Scullions",
+   "role": "Battleline",
+   "composition": "■ **10–15 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Crypt-Scullions"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Deranged Endurance",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Filthy claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Crypt-Scullions"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Crypt-Scullions",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Crypt-Scullions",
+       "min": 11,
+       "max": 11
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Crypt-Scullions",
+       "min": 12,
+       "max": 12
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Crypt-Scullions",
+       "min": 13,
+       "max": 13
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Crypt-Scullions",
+       "min": 14,
+       "max": 14
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Crypt-Scullions",
+       "min": 15,
+       "max": 15
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crypt-Scullions",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Filthy claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Crypt-Seneschal",
+    "Carrion-Surgeon",
+    "Court Poisoner"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "07-delusional-pike-levy",
+   "name": "Delusional Pike-Levy",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Delusional Pike-Levy"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Hold the Gate!",
+     "description": "+1 CTRL per model while within 3″ of an objective.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Splintered pike",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Delusional Pike-Levy"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Delusional Pike-Levy",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Delusional Pike-Levy",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Delusional Pike-Levy",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Delusional Pike-Levy",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Delusional Pike-Levy",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Delusional Pike-Levy",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Delusional Pike-Levy",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Splintered pike",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Crypt-Seneschal",
+    "Carrion-Surgeon",
+    "Court Poisoner"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "07-crypt-flayer-guard",
+   "name": "Crypt-Flayer Guard",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Crypt-Flayer Guard"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Skreech",
+     "description": "Enemy units within 3″ at the end of this unit's Charge are Rattled on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Gnarled talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Crypt-Flayer Guard"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Crypt-Flayer Guard",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Crypt-Flayer Guard",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 155,
+     "models": [
+      {
+       "name": "Crypt-Flayer Guard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crypt-Flayer Guard",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Gnarled talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Ghoul-King of the Carrion Throne"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "07-ghoul-knights",
+   "name": "Ghoul-Knights",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "13\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Ghoul-Knights"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Thundering Lance",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Femur-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Ghoul-Knights"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Ghoul-Knights",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Ghoul-Knights",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Ghoul-Knights",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ghoul-Knights",
+     "M": "13\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "13\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Femur-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Ghoul-King of the Carrion Throne"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "07-crypt-horror-brutes",
+   "name": "Crypt-Horror Brutes",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Crypt-Horror Brutes"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Gorged Flesh",
+     "description": "UNYIELDING 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Gnarled talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Crypt-Horror Brutes"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Crypt-Horror Brutes",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Crypt-Horror Brutes",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Crypt-Horror Brutes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crypt-Horror Brutes",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Gnarled talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Ghoul-King of the Carrion Throne"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "07-court-champions",
+   "name": "Court Champions",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "4",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Court Champions"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Precision Duellists",
+     "description": "Melee [PRECISION]; +1 Damage against Leaders.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone greatsword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Court Champions"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Court Champions",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Court Champions",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Court Champions",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Court Champions",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Bone greatsword",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Ghoul-King of the Carrion Throne"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "07-court-huntsmen",
+   "name": "Court Huntsmen",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "Court Huntsmen"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Flush the Quarry",
+     "description": "An enemy unit hit by this unit loses Cover against the next friendly melee unit to charge it this round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone javelins",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Court Huntsmen"
+     ]
+    },
+    {
+     "name": "Bone shiv",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Court Huntsmen"
+     ]
+    }
+   ],
+   "points": 55,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 55,
+     "models": [
+      {
+       "name": "Court Huntsmen",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Court Huntsmen",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 65,
+     "models": [
+      {
+       "name": "Court Huntsmen",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Court Huntsmen",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bone javelins",
+       "count": 1
+      },
+      {
+       "item": "Bone shiv",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Crypt-Seneschal",
+    "Carrion-Surgeon",
+    "Court Poisoner"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "07-carrion-bat-swarm",
+   "name": "Carrion Bat-Swarm",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "Carrion Bat-Swarm"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Flock",
+     "description": "[STEALTH].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Filthy claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Carrion Bat-Swarm"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Carrion Bat-Swarm",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Carrion Bat-Swarm",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Carrion Bat-Swarm",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Carrion Bat-Swarm",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Carrion Bat-Swarm",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Carrion Bat-Swarm",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Carrion Bat-Swarm",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Filthy claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Crypt-Seneschal",
+    "Carrion-Surgeon",
+    "Court Poisoner"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "07-feast-hounds",
+   "name": "Feast-Hounds",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Feast-Hounds"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Hunt Ahead",
+     "description": "[SCOUTS 6″].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Filthy claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Feast-Hounds"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Feast-Hounds",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Feast-Hounds",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Feast-Hounds",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Feast-Hounds",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Feast-Hounds",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Feast-Hounds",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Feast-Hounds",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Filthy claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Crypt-Seneschal",
+    "Carrion-Surgeon",
+    "Court Poisoner"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "07-bone-slingers",
+   "name": "Bone-Slingers",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "5+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Bone-Slingers"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grisly Ammunition",
+     "description": "Units hit test Suppression.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Skull-catapult",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6",
+     "BS": "6+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Bone-Slingers"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bone-Slingers"
+     ]
+    }
+   ],
+   "points": 45,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 45,
+     "models": [
+      {
+       "name": "Bone-Slingers",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 50,
+     "models": [
+      {
+       "name": "Bone-Slingers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bone-Slingers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "5+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Skull-catapult",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Ghoul-King of the Carrion Throne"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "07-carrion-altar",
+   "name": "Carrion Altar",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Carrion Altar**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "6",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Carrion Altar"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Dread Banquet",
+     "description": "Friendly units within 9″ get +1 to Hit in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Royal Repast",
+     "description": "Marrow-Feast within 9″ returns D3+1 models.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Carrion Altar"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Carrion Altar",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Carrion Altar",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "07-courtly-horror-beast",
+   "name": "Courtly Horror-Beast",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Courtly Horror-Beast**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "8",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Courtly Horror-Beast"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ravenous",
+     "description": "+1 Attack in melee while damaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rending claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Courtly Horror-Beast"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Courtly Horror-Beast",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Courtly Horror-Beast",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "8",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rending claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "07-royal-corpse-drake",
+   "name": "Royal Corpse-Drake",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Royal Corpse-Drake**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Royal Corpse-Drake"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Noxious Breath",
+     "description": "Once per round, D3 Fatal Wounds on a 3+ to a unit within 9″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rending claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Royal Corpse-Drake"
+     ]
+    },
+    {
+     "name": "Rotting maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Royal Corpse-Drake"
+     ]
+    }
+   ],
+   "points": 165,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 165,
+     "models": [
+      {
+       "name": "Royal Corpse-Drake",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Royal Corpse-Drake",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rending claws",
+       "count": 1
+      },
+      {
+       "item": "Rotting maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Ghoul-King on Royal Corpse-Drake"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "07-mound-giant-of-the-court",
+   "name": "Mound-Giant of the Court",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Mound-Giant of the Court**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Mound-Giant of the Court"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rotting Bulk",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Tomb-stone club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Mound-Giant of the Court"
+     ]
+    },
+    {
+     "name": "Rotting maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Mound-Giant of the Court"
+     ]
+    }
+   ],
+   "points": 170,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 170,
+     "models": [
+      {
+       "name": "Mound-Giant of the Court",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Mound-Giant of the Court",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Tomb-stone club",
+       "count": 1
+      },
+      {
+       "item": "Rotting maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Ghoul-King on Royal Corpse-Drake"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "07-the-carrion-colossus",
+   "name": "The Carrion Colossus",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 The Carrion Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "11\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "The Carrion Colossus"
+   ],
+   "factionKeywords": [
+    "Mordant Ghoul-Courts"
+   ],
+   "abilities": [
+    {
+     "name": "Marrow-Feast & Feeding Frenzy",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grand Feast",
+     "description": "Marrow-Feast triggers for every friendly unit within 6″ when this model destroys an enemy unit.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "The Carrion Colossus"
+     ]
+    },
+    {
+     "name": "Rotting maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "The Carrion Colossus"
+     ]
+    }
+   ],
+   "points": 275,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 275,
+     "models": [
+      {
+       "name": "The Carrion Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "The Carrion Colossus",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "11\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Titan stomp",
+       "count": 1
+      },
+      {
+       "item": "Rotting maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

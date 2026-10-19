@@ -2,7 +2,8 @@
    active-game functions. Uses window.MISSION_TEXT (scraped from gdmissions.app, see
    scrape_mission_text.py / build_mission_text.py). */
 (function () {
-    const PRI_CAP = 50, SEC_CAP = 40, SEC_MISSION_CAP = 5, SAVE_KEY = 'gdm_current_game';
+    const PRI_CAP = 15, SEC_CAP = 12, SEC_MISSION_CAP = 3,   // 4192: primary max 15, Tactical cards max 12 per game, 3 per card
+          SAVE_KEY = 'gdm_current_game';
     const POOL = window.GDM_DATA && GDM_DATA.secondaryMissions ? GDM_DATA.secondaryMissions : [];
     const MT = () => window.MISSION_TEXT || { primary: {}, secondary: {} };
     const P = n => (Number(n) === 1 ? trackerState.p1 : trackerState.p2);
@@ -109,20 +110,20 @@
 
     window.changeGameRound = function (dir) {
         if (checkSpectator()) return;
-        trackerState.round = Math.max(1, Math.min(5, trackerState.round + dir)); touch('round');
+        trackerState.round = Math.max(1, Math.min(4, trackerState.round + dir));   // 4 battle rounds touch('round');
         if (window.LSYNC && typeof window.LSYNC.logAction === 'function') window.LSYNC.logAction(`Battle round changed to ${trackerState.round}`);
         renderGame();
     };
 
     window.updateActiveGameUI = renderGame;
 
-    const normFaction = f => String(f || '').replace(/’/g, "'").replace('Imperial Agents', 'Agents of the Imperium');
+    const normFaction = f => String(f || '').replace(/’/g, "'");
     function factionBanner(f) {
         const hit = (typeof FACTIONS !== 'undefined' ? FACTIONS : []).find(x => x.name === normFaction(f));
         if (hit) return hit.banner;
         const alias = {}[f];
         const al = alias && (typeof FACTIONS !== 'undefined' ? FACTIONS : []).find(x => x.name === alias);
-        return al ? al.banner : 'assets/banners/0.svg';
+        return al ? al.banner : 'assets/banners/0.jpg';
     }
 
     window.editPlayer = function(n) {
@@ -430,7 +431,7 @@
         const ts = tallyState; let vp = ts.manual || 0;
         if (ts.card) ts.card.sections.forEach((sec, si) => sec.items.forEach((it, ii) => { vp += it.vp * (ts.picked[`${si}_${ii}`] || 0); }));
         vp = Math.max(0, vp);
-        return ts.type === 'secondary' ? Math.min(SEC_MISSION_CAP, vp) : vp;   // a secondary can never score more than 5 VP
+        return ts.type === 'secondary' ? Math.min(SEC_MISSION_CAP, vp) : vp;   // a Tactical card can never score more than 3 VP
     }
 
     window.submitTallyScore = function () {
@@ -1186,7 +1187,7 @@
         q = String(q || '').toLowerCase();
         const row = (label, banner, arg) => `<div onclick="selectFaction('${arg}')" style="min-height:76px; margin:0 0 8px; border-radius:10px; border:1px solid #2a3546; cursor:pointer; display:flex; align-items:center; padding:0 18px; background-image:linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.1)), url('${banner}'); background-size:cover; background-position:center;">
             <span style="color:#fff; font-size:1.25rem; font-weight:800; ${OUTLINE}">${label}</span></div>`;
-        let html = '<div style="padding:10px 12px 4px;">' + row('NO FACTION', 'assets/banners/0.svg', 'NONE');
+        let html = '<div style="padding:10px 12px 4px;">' + row('NO FACTION', 'assets/banners/0.jpg', 'NONE');
         Object.keys(window.MFM_DATA || {}).sort().filter(f => f.toLowerCase().includes(q)).forEach(f => { html += row(f, factionBanner(f), f.replace(/'/g, "\\'")); });
         document.getElementById('modal-faction-list').innerHTML = html + '</div>';
     };
@@ -1228,7 +1229,7 @@
         if (!rs.length) { box.style.padding = '0 20px'; box.innerHTML = newBtn; return; }
         const pts = r => (r.units || []).reduce((s, u) => s + (+u.pts || 0), 0), show = box.dataset.all === '1' ? rs.length : Math.min(3, rs.length);
         const rows = rs.slice().reverse().slice(0, show).map(r => { const i = rs.indexOf(r), f = r.faction || {}; return `
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px; border:1px solid #2a3546; border-radius:10px; overflow:hidden; background-image:linear-gradient(90deg, rgba(11,15,22,.93) 35%, rgba(11,15,22,.55)), url('${f.banner || 'assets/banners/0.svg'}'); background-size:cover; background-position:center; padding:10px 12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px; border:1px solid #2a3546; border-radius:10px; overflow:hidden; background-image:linear-gradient(90deg, rgba(11,15,22,.93) 35%, rgba(11,15,22,.55)), url('${f.banner || 'assets/banners/0.jpg'}'); background-size:cover; background-position:center; padding:10px 12px;">
                 <div onclick="openHomeRoster(${i})" style="flex:1; min-width:0; cursor:pointer; min-height:44px; display:flex; flex-direction:column; justify-content:center;">
                     <b style="color:#fff; font-size:1rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; ${OUTLINE}">${esc(r.name)}</b>
                     <span style="color:#cfd8e3; font-size:0.75rem;">${esc(f.name || '')} · ${pts(r)}/${r.pointsLimit} pts · ${(r.units || []).length} unit${(r.units || []).length === 1 ? '' : 's'}${r.fromCloudSlot ? ' · ☁' : ''}</span></div>

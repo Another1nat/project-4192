@@ -1,0 +1,2977 @@
+{
+ "name": "Velvet-Scourge Syndicate",
+ "factionKeyword": "Velvet-Scourge Syndicate",
+ "verb": "TEMPT",
+ "identity": "Pain-addicted duelists, sonic cultists and rapture-engines. Fast and fragile; hurting them makes them better, and once per round they offer the opponent a Temptation where the opponent chooses which punishment to take.",
+ "sources": [
+  "Project 4192 — gametheory/factions/15_velvet_scourge_syndicate.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Ecstasy of Pain",
+   "description": "A Velvet-Scourge unit that is below Starting Strength (or damaged), or that destroyed an enemy model this round, gets +1 to Hit and +1″ MOV."
+  },
+  {
+   "name": "Gamble — Temptation",
+   "description": "Once per round, when a unit is selected to Shoot or Fight, offer the opponent a Temptation. The OPPONENT chooses: the target unit suffers D3 Fatal Wounds now, OR your unit's weapons gain [ONSLAUGHT 2] for this attack. (Risk: opponent's choice.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "15-det1",
+   "name": "Sonic Choir",
+   "cost": 1,
+   "playstyle": "Sonic gunline that strips cover and shuts down reactions.",
+   "rules": [
+    {
+     "id": "15-det1-r1",
+     "name": "Cacophony of Sonic Blasters",
+     "description": "Ranged weapons have [IGNORES COVER] and [ASSAULT]; units hit by them cannot make ranged Retaliation Strikes until the End of Round."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "15-det1-e1",
+     "name": "Siren's Throat",
+     "cost": 10,
+     "description": "**Siren-Choirmistress** only. Cacophony range 9″.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Velvet-Scourge Syndicate"
+       ],
+       "datasheet": "Siren-Choirmistress"
+      }
+     ]
+    },
+    {
+     "id": "15-det1-e2",
+     "name": "Doom-Siren",
+     "cost": 10,
+     "description": "**Cacophony Paladins** only. +1 PEN with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Velvet-Scourge Syndicate"
+       ],
+       "datasheet": "Cacophony Paladins"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "15-det1-s1",
+     "name": "Shattering Chord",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit Shoots",
+     "target": "",
+     "effect": "Its weapons gain [SHRAPNEL 1].",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "15-det1-s2",
+     "name": "Overwhelming Noise",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit within 12″ activates",
+     "target": "",
+     "effect": "It suffers −1 to Hit this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "15-det1-s3",
+     "name": "Encore",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit destroys an enemy unit by Shooting",
+     "target": "",
+     "effect": "It may make a 3″ move.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "15-det2",
+   "name": "Masque of Blades",
+   "cost": 1,
+   "playstyle": "Duelists and dancers that slip in and out of melee.",
+   "rules": [
+    {
+     "id": "15-det2-r1",
+     "name": "Quicksilver Grace",
+     "description": "All Velvet-Scourge units may Fall Back and still Shoot or Charge. Leaders have [STRIKE FIRST]."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "15-det2-e1",
+     "name": "Mask of Ten Faces",
+     "cost": 10,
+     "description": "**Silk-Veil Assassin** only. WARD 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Velvet-Scourge Syndicate"
+       ],
+       "datasheet": "Silk-Veil Assassin"
+      }
+     ]
+    },
+    {
+     "id": "15-det2-e2",
+     "name": "Duelist's Garter",
+     "cost": 15,
+     "description": "**Blade-Diva Champion** only. +1 Damage in melee on a round she charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Velvet-Scourge Syndicate"
+       ],
+       "datasheet": "Blade-Diva Champion"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "15-det2-s1",
+     "name": "Euphoric Kill-High",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit destroys an enemy unit in melee",
+     "target": "",
+     "effect": "It may consolidate 6″.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "15-det2-s2",
+     "name": "Feint",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is targeted by a Charge",
+     "target": "",
+     "effect": "It makes a 3″ move; if the Charge then fails, the charger is Rattled.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "15-det2-s3",
+     "name": "Exquisite Agony",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is selected to Fight",
+     "target": "",
+     "effect": "Count it as below Starting Strength.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "15-det3",
+   "name": "Carnival of Excess",
+   "cost": 1,
+   "playstyle": "Rapture-engines, chariots and beasts in a gaudy charge.",
+   "rules": [
+    {
+     "id": "15-det3-r1",
+     "name": "Grand Spectacle",
+     "description": "Class 3–5 units get +2″ MOV in Round 1 and +1 Attack in melee while below Starting Strength."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "15-det3-e1",
+     "name": "Gilded Engine-Heart",
+     "cost": 20,
+     "description": "**Rapture-Engine** only. UNYIELDING 6+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Velvet-Scourge Syndicate"
+       ],
+       "datasheet": "Rapture-Engine"
+      }
+     ]
+    },
+    {
+     "id": "15-det3-e2",
+     "name": "Ringmaster's Whip",
+     "cost": 20,
+     "description": "**Maestro of Excess** only. Friendly units within 6″ get +1 Attack on a round they charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Velvet-Scourge Syndicate"
+       ],
+       "datasheet": "Maestro of Excess"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "15-det3-s1",
+     "name": "Showstopper",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit charges",
+     "target": "",
+     "effect": "Crushing Impact for 0 CP.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "15-det3-s2",
+     "name": "Gaudy Distraction",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit targets a Class 1–2 unit within 6″ of a Class 3–5 unit",
+     "target": "",
+     "effect": "It must target the Class 3–5 unit if visible.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "15-det3-s3",
+     "name": "Rapture-Rush",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit is below half",
+     "target": "",
+     "effect": "+1 to Hit and +2″ MOV until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "15-maestro-of-excess",
+   "name": "Maestro of Excess",
+   "role": "Leader",
+   "composition": "■ **1 Maestro of Excess**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Maestro of Excess"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grand Temptation",
+     "description": "Temptation may be offered twice per round while this model lives.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Exquisite Swordplay",
+     "description": "The attached unit gets +1 Attack in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sonic pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Maestro of Excess"
+     ]
+    },
+    {
+     "name": "Whisper-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Maestro of Excess"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Maestro of Excess",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Maestro of Excess",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Sonic pistol",
+       "count": 1
+      },
+      {
+       "item": "Whisper-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Maestro Duelists",
+      "Cacophony Paladins",
+      "Swift-Steed Riders",
+      "Resonance Cannon Team"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "15-blade-diva-champion",
+   "name": "Blade-Diva Champion",
+   "role": "Leader",
+   "composition": "■ **1 Blade-Diva Champion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Blade-Diva Champion"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Quicksilver Grace",
+     "description": "[STRIKE FIRST].",
+     "type": "datasheet"
+    },
+    {
+     "name": "Perfect Duellist",
+     "description": "Melee [PRECISION].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Blade-Diva Champion"
+     ]
+    },
+    {
+     "name": "Twin rapture-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Blade-Diva Champion"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Blade-Diva Champion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blade-Diva Champion",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Twin rapture-blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Maestro Duelists",
+      "Cacophony Paladins",
+      "Swift-Steed Riders",
+      "Resonance Cannon Team"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "15-siren-choirmistress",
+   "name": "Siren-Choirmistress",
+   "role": "Leader",
+   "composition": "■ **1 Siren-Choirmistress**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Siren-Choirmistress"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Cacophony",
+     "description": "Friendly units within 6″ get +1 to Hit with sonic (ranged) weapons.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Deafening Note",
+     "description": "Enemy units within 6″ cannot make Retaliation Strikes with ranged weapons.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Siren-song",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Siren-Choirmistress"
+     ]
+    },
+    {
+     "name": "Rapture-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Siren-Choirmistress"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Siren-Choirmistress",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Siren-Choirmistress",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Siren-song",
+       "count": 1
+      },
+      {
+       "item": "Rapture-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Flayed-Silk Initiates",
+      "Sonic-Blaster Cultists",
+      "Rapture-Hounds",
+      "Dervish Blade-Dancers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "15-silk-veil-assassin",
+   "name": "Silk-Veil Assassin",
+   "role": "Leader",
+   "composition": "■ **1 Silk-Veil Assassin**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "5+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Silk-Veil Assassin"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Thrill-Seeker",
+     "description": "May Fall Back and still Shoot or Charge.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Silk-Veil Assassin"
+     ]
+    },
+    {
+     "name": "Envenomed silk",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Silk-Veil Assassin"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Silk-Veil Assassin",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Silk-Veil Assassin",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "5+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Envenomed silk",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Flayed-Silk Initiates",
+      "Sonic-Blaster Cultists",
+      "Rapture-Hounds",
+      "Dervish Blade-Dancers"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "15-flayed-silk-initiates",
+   "name": "Flayed-Silk Initiates",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Flayed-Silk Initiates"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Thrill-Seekers",
+     "description": "May Fall Back and still Shoot or Charge.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sonic pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Flayed-Silk Initiates"
+     ]
+    },
+    {
+     "name": "Rapture-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Flayed-Silk Initiates"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Flayed-Silk Initiates",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Flayed-Silk Initiates",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Flayed-Silk Initiates",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Flayed-Silk Initiates",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Flayed-Silk Initiates",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Flayed-Silk Initiates",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Flayed-Silk Initiates",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sonic pistol",
+       "count": 1
+      },
+      {
+       "item": "Rapture-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Siren-Choirmistress",
+    "Silk-Veil Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "15-sonic-blaster-cultists",
+   "name": "Sonic-Blaster Cultists",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Sonic-Blaster Cultists"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Discordant Volley",
+     "description": "Units hit cannot Fire Overwatch / Retaliate with ranged weapons until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sonic blaster",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Sonic-Blaster Cultists"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sonic-Blaster Cultists"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Sonic-Blaster Cultists",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Sonic-Blaster Cultists",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Sonic-Blaster Cultists",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Sonic-Blaster Cultists",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Sonic-Blaster Cultists",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Sonic-Blaster Cultists",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sonic-Blaster Cultists",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Sonic blaster",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Siren-Choirmistress",
+    "Silk-Veil Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "15-maestro-duelists",
+   "name": "Maestro Duelists",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Maestro Duelists"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Elegant Parry",
+     "description": "Enemies get −1 to Hit them in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Lightning Reflexes",
+     "description": "[STRIKE FIRST] on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Silken glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Maestro Duelists"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Maestro Duelists",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 180,
+     "models": [
+      {
+       "name": "Maestro Duelists",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Maestro Duelists",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Maestro Duelists",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Silken glaive",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Maestro of Excess",
+    "Blade-Diva Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "15-cacophony-paladins",
+   "name": "Cacophony Paladins",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Cacophony Paladins"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Wall of Sound",
+     "description": "Enemy units within 6″ suffer −1″ to Charge rolls.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blastmaster",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Cacophony Paladins"
+     ]
+    },
+    {
+     "name": "Great weapon / fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Cacophony Paladins"
+     ]
+    }
+   ],
+   "points": 160,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 160,
+     "models": [
+      {
+       "name": "Cacophony Paladins",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 200,
+     "models": [
+      {
+       "name": "Cacophony Paladins",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 240,
+     "models": [
+      {
+       "name": "Cacophony Paladins",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cacophony Paladins",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Blastmaster",
+       "count": 1
+      },
+      {
+       "item": "Great weapon / fist",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Maestro of Excess",
+    "Blade-Diva Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "15-swift-steed-riders",
+   "name": "Swift-Steed Riders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "14\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Swift-Steed Riders"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Thrill-Seekers",
+     "description": "May Fall Back and still Shoot or Charge.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sonic blaster",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Swift-Steed Riders"
+     ]
+    },
+    {
+     "name": "Barbed lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Swift-Steed Riders"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Swift-Steed Riders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Swift-Steed Riders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Swift-Steed Riders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Swift-Steed Riders",
+     "M": "14\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "14\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Sonic blaster",
+       "count": 1
+      },
+      {
+       "item": "Barbed lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Maestro of Excess",
+    "Blade-Diva Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "15-rapture-hounds",
+   "name": "Rapture-Hounds",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "7+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Rapture-Hounds"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Scent of Excess",
+     "description": "+2″ to Charge rolls against units below Starting Strength.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Lashing claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rapture-Hounds"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Rapture-Hounds",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Rapture-Hounds",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Rapture-Hounds",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Rapture-Hounds",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Rapture-Hounds",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Rapture-Hounds",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rapture-Hounds",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "7+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "7+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Lashing claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Siren-Choirmistress",
+    "Silk-Veil Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "15-dervish-blade-dancers",
+   "name": "Dervish Blade-Dancers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "9\"",
+    "MS": "2+",
+    "RS": "3+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Dervish Blade-Dancers"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Dervish",
+     "description": "Enemies get −1 to Hit them in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Euphoric Strike",
+     "description": "[STRIKE FIRST] on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Whirling blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Dervish Blade-Dancers"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Dervish Blade-Dancers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Dervish Blade-Dancers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Dervish Blade-Dancers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Dervish Blade-Dancers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Dervish Blade-Dancers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Dervish Blade-Dancers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Dervish Blade-Dancers",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "2+",
+     "RS": "3+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Whirling blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Siren-Choirmistress",
+    "Silk-Veil Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "15-resonance-cannon-team",
+   "name": "Resonance Cannon Team",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Resonance Cannon Team"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shatter",
+     "description": "Units hit lose Cover until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Resonance cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "IGNORES COVER",
+      "HEAVY"
+     ],
+     "models": [
+      "Resonance Cannon Team"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Resonance Cannon Team"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Resonance Cannon Team",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Resonance Cannon Team",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Resonance Cannon Team",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Resonance cannon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Maestro of Excess",
+    "Blade-Diva Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "15-velvet-strider",
+   "name": "Velvet-Strider",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Velvet-Strider**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "9\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Velvet-Strider"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Rapturous Pain",
+     "description": "+1 Attack while damaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Shrieker cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Velvet-Strider"
+     ]
+    },
+    {
+     "name": "Lash-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Velvet-Strider"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Velvet-Strider",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Velvet-Strider",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Shrieker cannon",
+       "count": 1
+      },
+      {
+       "item": "Lash-claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "15-silk-chariot-of-rapture",
+   "name": "Silk-Chariot of Rapture",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Silk-Chariot of Rapture**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "12\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "8",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Silk-Chariot of Rapture"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Fly-By Slashes",
+     "description": "When it moves over an enemy unit, roll a D6 per enemy model (max 6): each 5+ is 1 Fatal Wound.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bladed wheels & riders",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Silk-Chariot of Rapture"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Silk-Chariot of Rapture",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Silk-Chariot of Rapture",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "12\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "8",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Bladed wheels & riders",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "15-rapture-beast",
+   "name": "Rapture-Beast",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Rapture-Beast**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "8",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Rapture-Beast"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Hypnotic Musk",
+     "description": "Enemy units within 3″ suffer −1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Rapture-Beast"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Rapture-Beast",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rapture-Beast",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "8",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "15-sonic-organ-engine",
+   "name": "Sonic Organ-Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Sonic Organ-Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "12",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Sonic Organ-Engine"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Crescendo",
+     "description": "Units hit are Rattled on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pipe-organ shriek",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "IGNORES COVER",
+      "SUPPRESSIVE"
+     ],
+     "models": [
+      "Sonic Organ-Engine"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Sonic Organ-Engine"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Sonic Organ-Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Sonic Organ-Engine",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "12",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pipe-organ shriek",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "15-pleasure-barge",
+   "name": "Pleasure-Barge",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Pleasure-Barge**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "12\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Pleasure-Barge"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Grand Entrance",
+     "description": "Units that disembark get +1 to Hit in melee this round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Shrieker cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Pleasure-Barge"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Pleasure-Barge"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Pleasure-Barge",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pleasure-Barge",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "12\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Shrieker cannon",
+       "count": 1
+      },
+      {
+       "item": "Treads / hull ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "15-rapture-engine",
+   "name": "Rapture-Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Rapture-Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Rapture-Engine"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Ecstatic Overdrive",
+     "description": "+1 Attack while damaged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Shrieker array",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Rapture-Engine"
+     ]
+    },
+    {
+     "name": "Bladed limbs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Rapture-Engine"
+     ]
+    }
+   ],
+   "points": 170,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 170,
+     "models": [
+      {
+       "name": "Rapture-Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rapture-Engine",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Shrieker array",
+       "count": 1
+      },
+      {
+       "item": "Bladed limbs",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "15-exalted-rapture-fiend",
+   "name": "Exalted Rapture-Fiend",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Exalted Rapture-Fiend**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Exalted Rapture-Fiend"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Unnatural Speed",
+     "description": "[STRIKE FIRST].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rapture-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "8",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Exalted Rapture-Fiend"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Exalted Rapture-Fiend"
+     ]
+    }
+   ],
+   "points": 135,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 135,
+     "models": [
+      {
+       "name": "Exalted Rapture-Fiend",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Exalted Rapture-Fiend",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rapture-claws",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "15-cathedral-of-agony",
+   "name": "Cathedral of Agony",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Cathedral of Agony**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "12\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Cathedral of Agony"
+   ],
+   "factionKeywords": [
+    "Velvet-Scourge Syndicate"
+   ],
+   "abilities": [
+    {
+     "name": "Ecstasy of Pain",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Symphony of Pain",
+     "description": "Friendly units within 9″ count as below Starting Strength for Ecstasy of Pain.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Agony-organ",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "IGNORES COVER",
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Cathedral of Agony"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Cathedral of Agony"
+     ]
+    }
+   ],
+   "points": 395,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 395,
+     "models": [
+      {
+       "name": "Cathedral of Agony",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cathedral of Agony",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "12\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Agony-organ",
+       "count": 1
+      },
+      {
+       "item": "Titan stomp",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

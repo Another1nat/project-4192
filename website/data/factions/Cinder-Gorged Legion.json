@@ -1,0 +1,4015 @@
+{
+ "name": "Cinder-Gorged Legion",
+ "factionKeyword": "Cinder-Gorged Legion",
+ "verb": "BLOOD CLOCK",
+ "identity": "Brass blood-demons and berserkers who kill or die. No guns. The bloodier the battle, the scarier they get.",
+ "sources": [
+  "Project 4192 — gametheory/factions/11_cinder_gorged_legion.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Blood-Tithe",
+   "description": "Every model destroyed (either side) adds 1 Tithe. Permanent army-wide unlocks: 5 → +1″ Move · 10 → melee [ONSLAUGHT 1] · 15 → [UNYIELDING 5+] · 20 → +1 Damage. No ranged weapons. When shot, a unit may [SURGE D6″] toward the shooter. Burning Vessels: at the end of each round, each unit that is not engaged suffers 1 Fatal Wound (it adds to the Tithe)."
+  },
+  {
+   "name": "Gamble — Unleashed Cinder-Fury",
+   "description": "When a unit activates, it may suffer D3 Fatal Wounds (they add to the Tithe): +1 Attack in melee and its melee weapons gain [CRASHING] this activation. (Risk: durability (voluntary).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "11-det1",
+   "name": "Red Tide",
+   "cost": 1,
+   "playstyle": "Horde rush: zealots and daemons flood forward and feed the clock fast.",
+   "rules": [
+    {
+     "id": "11-det1-r1",
+     "name": "Tide of Bodies",
+     "description": "Trooper units may Charge after one Move (not after a Sprint)."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "11-det1-e1",
+     "name": "Gorefather's Collar",
+     "cost": 25,
+     "description": "**Skull-Cleaver Champion** only. The bearer has [UNYIELDING 5+].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cinder-Gorged Legion"
+       ],
+       "datasheet": "Skull-Cleaver Champion"
+      }
+     ]
+    },
+    {
+     "id": "11-det1-e2",
+     "name": "Banner of Rage",
+     "cost": 15,
+     "description": "**Skull-Cleaver Champion** only. The attached unit gets +2″ Move.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cinder-Gorged Legion"
+       ],
+       "datasheet": "Skull-Cleaver Champion"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "11-det1-s1",
+     "name": "Blood Frenzy",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is destroyed",
+     "target": "",
+     "effect": "Add 2 extra Tithe.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "11-det1-s2",
+     "name": "Unstoppable Momentum",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit fails a Charge",
+     "target": "",
+     "effect": "Re-roll the charge dice.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "11-det1-s3",
+     "name": "Trample the Weak",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit finishes a Charge",
+     "target": "",
+     "effect": "The target gains 1 Suppression token.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "11-det2",
+   "name": "Brass Host",
+   "cost": 1,
+   "playstyle": "Armoured berserkers, juggernauts and engines: fewer bodies, harder hits.",
+   "rules": [
+    {
+     "id": "11-det2-r1",
+     "name": "Brass Armour",
+     "description": "Elites and Behemoths ignore the Fatal Wounds from Unleashed Cinder-Fury on a 4+."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "11-det2-e1",
+     "name": "Brass Collar of Defiance",
+     "cost": 15,
+     "description": "**Herald of the Cinder** only. The bearer has [WARD 4+].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cinder-Gorged Legion"
+       ],
+       "datasheet": "Herald of the Cinder"
+      }
+     ]
+    },
+    {
+     "id": "11-det2-e2",
+     "name": "Hellsteed Harness",
+     "cost": 15,
+     "description": "**Brass Hellsteed Riders** only. +1 Damage on the charge.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cinder-Gorged Legion"
+       ],
+       "datasheet": "Brass Hellsteed Riders"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "11-det2-s1",
+     "name": "Crushing Charge",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 2+ unit finishes a Charge",
+     "target": "",
+     "effect": "Resolve Crushing Impact with no self-damage on 1s.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "11-det2-s2",
+     "name": "Hateful Endurance",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is targeted by a Shoot action",
+     "target": "",
+     "effect": "Incoming Damage −1 (min 1) for that attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "11-det2-s3",
+     "name": "Skulls for the Pyre",
+     "cost": "2",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader is destroyed by this unit",
+     "target": "",
+     "effect": "Add 5 Tithe.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "11-det3",
+   "name": "Exalted Slaughter",
+   "cost": 1,
+   "playstyle": "Hero-hammer: Champions and Heralds duel and snowball.",
+   "rules": [
+    {
+     "id": "11-det3-r1",
+     "name": "Champion's Due",
+     "description": "When a Leader destroys an enemy Leader or Brute, unlock the next Tithe tier immediately."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "11-det3-e1",
+     "name": "Axe of Ten Thousand Skulls",
+     "cost": 30,
+     "description": "**Skull-Cleaver Champion** only. The bearer's axe: +2 Attacks, +1 PEN.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cinder-Gorged Legion"
+       ],
+       "datasheet": "Skull-Cleaver Champion"
+      }
+     ]
+    },
+    {
+     "id": "11-det3-e2",
+     "name": "Deathmark Brand",
+     "cost": 10,
+     "description": "**Herald of the Cinder** only. The bearer's critical wounds trigger on 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Cinder-Gorged Legion"
+       ],
+       "datasheet": "Herald of the Cinder"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "11-det3-s1",
+     "name": "Challenge Accepted",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader fights",
+     "target": "",
+     "effect": "Its melee attacks gain [PRECISION] and +1 Damage against an enemy Leader this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "11-det3-s2",
+     "name": "Rage Unbound",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader activates",
+     "target": "",
+     "effect": "+2″ Move and +1 Attack this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "11-det3-s3",
+     "name": "Gore-Drenched",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader destroys a model",
+     "target": "",
+     "effect": "+1 to Hit for the rest of the round (healing belongs to the Sanguine Aristocracy).",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "11-ash-zealots",
+   "name": "Ash-Zealots",
+   "role": "Battleline",
+   "composition": "■ **10 Ash-Zealots**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "FRAIL",
+    "Ash-Zealots"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Blood Offering",
+     "description": "When this unit loses its last model, add 2 extra Tithe.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Jagged cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Ash-Zealots"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Ash-Zealots",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ash-Zealots",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Jagged cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Skull-Cleaver Champion",
+    "Skull-Hunter",
+    "Blood-Priest of the Tithe"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-cinder-berserkers",
+   "name": "Cinder-Berserkers",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "Battleline",
+    "Cinder-Berserkers"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blood Surge",
+     "description": "+1 Attack on the activation this unit charges.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Chain-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Cinder-Berserkers"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Cinder-Berserkers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 170,
+     "models": [
+      {
+       "name": "Cinder-Berserkers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 190,
+     "models": [
+      {
+       "name": "Cinder-Berserkers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Cinder-Berserkers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Cinder-Berserkers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 240,
+     "models": [
+      {
+       "name": "Cinder-Berserkers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cinder-Berserkers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Chain-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Skull-Cleaver Champion",
+    "Skull-Hunter",
+    "Blood-Priest of the Tithe"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-ember-blade-daemons",
+   "name": "Ember-Blade Daemons",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Ember-Blade Daemons"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hell-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Ember-Blade Daemons"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Ember-Blade Daemons",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Ember-Blade Daemons",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Ember-Blade Daemons",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Ember-Blade Daemons",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Ember-Blade Daemons",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Ember-Blade Daemons",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ember-Blade Daemons",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Hell-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Skull-Cleaver Champion",
+    "Skull-Hunter",
+    "Blood-Priest of the Tithe"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-blood-hounds",
+   "name": "Blood-Hounds",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "2",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "SCOUTS 6\"",
+    "Blood-Hounds"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Gore-fangs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blood-Hounds"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Blood-Hounds",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Blood-Hounds",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Blood-Hounds",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blood-Hounds",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Gore-fangs",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald of the Cinder",
+    "Gorethane the Unchained"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "11-skull-cleaver-champion",
+   "name": "Skull-Cleaver Champion",
+   "role": "Leader",
+   "composition": "■ **1 Skull-Cleaver Champion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Skull-Cleaver Champion"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lead the Slaughter",
+     "description": "Leader. The attached unit gets +1 to Wound in melee on the activation it charges.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Executioner axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Skull-Cleaver Champion"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Skull-Cleaver Champion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Skull-Cleaver Champion",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Executioner axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Ash-Zealots",
+      "Cinder-Berserkers",
+      "Ember-Blade Daemons",
+      "Blood-Leash Wardens",
+      "Rift-Spawn Butchers",
+      "Brass Harpies",
+      "Skull-Takers",
+      "Eviscerator Packs"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-herald-of-the-cinder",
+   "name": "Herald of the Cinder",
+   "role": "Leader",
+   "composition": "■ **1 Herald of the Cinder**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Herald of the Cinder"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Murderous Tide",
+     "description": "Leader (daemons). The attached unit's melee weapons gain [ONSLAUGHT 1].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blade of blood",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "SHREDDING WOUNDS"
+     ],
+     "models": [
+      "Herald of the Cinder"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Herald of the Cinder",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Herald of the Cinder",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Blade of blood",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Blood-Hounds",
+      "Brass Hellsteed Riders",
+      "Brass Exalted Guard",
+      "Ember Fiends of the Pit",
+      "Gore-Champion Coterie",
+      "Pyre-Knights"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "11-brass-hellsteed-riders",
+   "name": "Brass Hellsteed Riders",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Brass Hellsteed Riders"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hell-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Brass Hellsteed Riders"
+     ]
+    },
+    {
+     "name": "Brass hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "EXTRA ATTACKS"
+     ],
+     "models": [
+      "Brass Hellsteed Riders"
+     ]
+    }
+   ],
+   "points": 235,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 235,
+     "models": [
+      {
+       "name": "Brass Hellsteed Riders",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 275,
+     "models": [
+      {
+       "name": "Brass Hellsteed Riders",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 310,
+     "models": [
+      {
+       "name": "Brass Hellsteed Riders",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brass Hellsteed Riders",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Hell-axe",
+       "count": 1
+      },
+      {
+       "item": "Brass hooves",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald of the Cinder",
+    "Gorethane the Unchained"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "11-gore-beast-slaughterer",
+   "name": "Gore-Beast Slaughterer",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Gore-Beast Slaughterer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "10",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Gore-Beast Slaughterer"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Gorged",
+     "description": "+2 Attacks while the Tithe is 10 or more.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Gore-Beast Slaughterer"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Gore-Beast Slaughterer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gore-Beast Slaughterer",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Slaughter-Lord on Hellsteed"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "11-brass-crusher-engine",
+   "name": "Brass Crusher Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Brass Crusher Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Brass Crusher Engine"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Brass Crusher Engine"
+     ]
+    },
+    {
+     "name": "Crusher fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Brass Crusher Engine"
+     ]
+    }
+   ],
+   "points": 230,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 230,
+     "models": [
+      {
+       "name": "Brass Crusher Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brass Crusher Engine",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Crusher fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Cinder-Prince Ascendant"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "11-brass-hell-titan",
+   "name": "Brass Hell-Titan",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Brass Hell-Titan**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "26",
+    "CTRL": "6",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Brass Hell-Titan"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Brass Hell-Titan"
+     ]
+    },
+    {
+     "name": "Hell-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [],
+     "models": [
+      "Brass Hell-Titan"
+     ]
+    }
+   ],
+   "points": 390,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 390,
+     "models": [
+      {
+       "name": "Brass Hell-Titan",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brass Hell-Titan",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "26",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "26",
+     "CTRL": "6",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Titan stomp",
+       "count": 1
+      },
+      {
+       "item": "Hell-cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  },
+  {
+   "id": "11-slaughter-lord-on-hellsteed",
+   "name": "Slaughter-Lord on Hellsteed",
+   "role": "Leader",
+   "composition": "■ **1 Slaughter-Lord on Hellsteed**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "8",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Leader",
+    "Slaughter-Lord on Hellsteed"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lord of Slaughter",
+     "description": "⟳ One friendly unit within 6″ gets +1 Attack in melee this round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hell-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Slaughter-Lord on Hellsteed"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Slaughter-Lord on Hellsteed",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Slaughter-Lord on Hellsteed",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "8",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Hell-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Gore-Beast Slaughterer",
+      "Skull-Chariot of the Pyre",
+      "Cinder-Spawn"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "11-skull-hunter",
+   "name": "Skull-Hunter",
+   "role": "Leader",
+   "composition": "■ **1 Skull-Hunter**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "Skull-Hunter"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Head-taker blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "PRECISION"
+     ],
+     "models": [
+      "Skull-Hunter"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Skull-Hunter",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Skull-Hunter",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Head-taker blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Ash-Zealots",
+      "Cinder-Berserkers",
+      "Ember-Blade Daemons",
+      "Blood-Leash Wardens",
+      "Rift-Spawn Butchers",
+      "Brass Harpies",
+      "Skull-Takers",
+      "Eviscerator Packs"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-brass-exalted-guard",
+   "name": "Brass Exalted Guard",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Brass Exalted Guard"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Exalted great-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Brass Exalted Guard"
+     ]
+    }
+   ],
+   "points": 220,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 220,
+     "models": [
+      {
+       "name": "Brass Exalted Guard",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 265,
+     "models": [
+      {
+       "name": "Brass Exalted Guard",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 300,
+     "models": [
+      {
+       "name": "Brass Exalted Guard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brass Exalted Guard",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Exalted great-axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald of the Cinder",
+    "Gorethane the Unchained"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "11-ember-fiends-of-the-pit",
+   "name": "Ember Fiends of the Pit",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Ember Fiends of the Pit"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ember talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Ember Fiends of the Pit"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Ember Fiends of the Pit",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 175,
+     "models": [
+      {
+       "name": "Ember Fiends of the Pit",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Ember Fiends of the Pit",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ember Fiends of the Pit",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Ember talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald of the Cinder",
+    "Gorethane the Unchained"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "11-gore-champion-coterie",
+   "name": "Gore-Champion Coterie",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3 Gore-Champion Coterie**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Gore-Champion Coterie"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Duelling cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "PRECISION"
+     ],
+     "models": [
+      "Gore-Champion Coterie"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Gore-Champion Coterie",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gore-Champion Coterie",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Duelling cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald of the Cinder",
+    "Gorethane the Unchained"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "11-blood-leash-wardens",
+   "name": "Blood-Leash Wardens",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Blood-Leash Wardens"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Barbed whip",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Blood-Leash Wardens"
+     ]
+    }
+   ],
+   "points": 80,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 80,
+     "models": [
+      {
+       "name": "Blood-Leash Wardens",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Blood-Leash Wardens",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Blood-Leash Wardens",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Blood-Leash Wardens",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Blood-Leash Wardens",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 120,
+     "models": [
+      {
+       "name": "Blood-Leash Wardens",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blood-Leash Wardens",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Barbed whip",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Skull-Cleaver Champion",
+    "Skull-Hunter",
+    "Blood-Priest of the Tithe"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-rift-spawn-butchers",
+   "name": "Rift-Spawn Butchers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "2",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Elite",
+    "VANGUARD STRIKE",
+    "Rift-Spawn Butchers"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "VANGUARD STRIKE",
+     "description": "",
+     "type": "core"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rift-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Rift-Spawn Butchers"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Rift-Spawn Butchers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Rift-Spawn Butchers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Rift-Spawn Butchers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 200,
+     "models": [
+      {
+       "name": "Rift-Spawn Butchers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 215,
+     "models": [
+      {
+       "name": "Rift-Spawn Butchers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 235,
+     "models": [
+      {
+       "name": "Rift-Spawn Butchers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Rift-Spawn Butchers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Rift-cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Skull-Cleaver Champion",
+    "Skull-Hunter",
+    "Blood-Priest of the Tithe"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-brass-harpies",
+   "name": "Brass Harpies",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "Brass Harpies"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Brass talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Brass Harpies"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Brass Harpies",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Brass Harpies",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Brass Harpies",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Brass Harpies",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Brass Harpies",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Brass Harpies",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brass Harpies",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Brass talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Skull-Cleaver Champion",
+    "Skull-Hunter",
+    "Blood-Priest of the Tithe"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-skull-altar-engine",
+   "name": "Skull-Altar Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Skull-Altar Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Skull-Altar Engine"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Altar of Rage",
+     "description": "Friendly units within 6″ get +1 to Wound in melee on the activation they charge.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Crusher fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Skull-Altar Engine"
+     ]
+    }
+   ],
+   "points": 220,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 220,
+     "models": [
+      {
+       "name": "Skull-Altar Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Skull-Altar Engine",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Crusher fists",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Cinder-Prince Ascendant"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "11-furnace-fiend-behemoth",
+   "name": "Furnace-Fiend Behemoth",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Furnace-Fiend Behemoth**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "15",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Furnace-Fiend Behemoth"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Furnace-Fiend Behemoth"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Furnace-Fiend Behemoth"
+     ]
+    }
+   ],
+   "points": 205,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 205,
+     "models": [
+      {
+       "name": "Furnace-Fiend Behemoth",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Furnace-Fiend Behemoth",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "15",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "15",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Colossal jaws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Cinder-Prince Ascendant"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "11-cinder-prince-ascendant",
+   "name": "Cinder-Prince Ascendant",
+   "role": "Leader",
+   "composition": "■ **1 Cinder-Prince Ascendant**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "3",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Leader",
+    "FLY",
+    "HARDENED",
+    "Cinder-Prince Ascendant"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lord of Slaughter",
+     "description": "Friendly units within 9″ get +1 Attack on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Skull-Throne Favour",
+     "description": "Each enemy Leader it destroys adds 3 Tithe.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hellforged greataxe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Cinder-Prince Ascendant"
+     ]
+    },
+    {
+     "name": "Brass talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Cinder-Prince Ascendant"
+     ]
+    }
+   ],
+   "points": 290,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 290,
+     "models": [
+      {
+       "name": "Cinder-Prince Ascendant",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cinder-Prince Ascendant",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Hellforged greataxe",
+       "count": 1
+      },
+      {
+       "item": "Brass talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Brass Crusher Engine",
+      "Skull-Altar Engine",
+      "Furnace-Fiend Behemoth",
+      "Brass Gore-Carrier",
+      "Brass Gore-Wyrm"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "11-gorethane-the-unchained",
+   "name": "Gorethane the Unchained",
+   "role": "Leader",
+   "composition": "■ **1 Gorethane the Unchained**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Gorethane the Unchained"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Unstoppable",
+     "description": "[STRIKE FIRST] on a round he charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "The Betrayer's Rage",
+     "description": "The attached unit gets +1 Attack in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bone-splitter",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "7",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-3",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Gorethane the Unchained"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Gorethane the Unchained",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Gorethane the Unchained",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Bone-splitter",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Blood-Hounds",
+      "Brass Hellsteed Riders",
+      "Brass Exalted Guard",
+      "Ember Fiends of the Pit",
+      "Gore-Champion Coterie",
+      "Pyre-Knights"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "11-blood-priest-of-the-tithe",
+   "name": "Blood-Priest of the Tithe",
+   "role": "Leader",
+   "composition": "■ **1 Blood-Priest of the Tithe**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Blood-Priest of the Tithe"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Offer the Skulls",
+     "description": "When the attached unit destroys an enemy unit, +2 Tithe.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Blood-Chant",
+     "description": "The attached unit gets +1 to Wound on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sacrificial cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blood-Priest of the Tithe"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Blood-Priest of the Tithe",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blood-Priest of the Tithe",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Sacrificial cleaver",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Ash-Zealots",
+      "Cinder-Berserkers",
+      "Ember-Blade Daemons",
+      "Blood-Leash Wardens",
+      "Rift-Spawn Butchers",
+      "Brass Harpies",
+      "Skull-Takers",
+      "Eviscerator Packs"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-skull-takers",
+   "name": "Skull-Takers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "INFILTRATORS",
+    "SCOUTS 6\"",
+    "Skull-Takers"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Head-Hunters",
+     "description": "Melee [PRECISION].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Trophy-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Skull-Takers"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Skull-Takers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Skull-Takers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Skull-Takers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Skull-Takers",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Trophy-blades",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Skull-Cleaver Champion",
+    "Skull-Hunter",
+    "Blood-Priest of the Tithe"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-eviscerator-packs",
+   "name": "Eviscerator Packs",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "2",
+    "CTRL": "1",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Eviscerator Packs"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blood-Rush",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Eviscerator",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Eviscerator Packs"
+     ]
+    }
+   ],
+   "points": 170,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 170,
+     "models": [
+      {
+       "name": "Eviscerator Packs",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 195,
+     "models": [
+      {
+       "name": "Eviscerator Packs",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Eviscerator Packs",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Eviscerator Packs",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 240,
+     "models": [
+      {
+       "name": "Eviscerator Packs",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 245,
+     "models": [
+      {
+       "name": "Eviscerator Packs",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Eviscerator Packs",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Eviscerator",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Skull-Cleaver Champion",
+    "Skull-Hunter",
+    "Blood-Priest of the Tithe"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "11-pyre-knights",
+   "name": "Pyre-Knights",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "12\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Pyre-Knights"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Burning Charge",
+     "description": "Crushing Impact for 0 CP on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Pyre-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Pyre-Knights"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Pyre-Knights",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 215,
+     "models": [
+      {
+       "name": "Pyre-Knights",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 250,
+     "models": [
+      {
+       "name": "Pyre-Knights",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Pyre-Knights",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "12\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Pyre-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Herald of the Cinder",
+    "Gorethane the Unchained"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "11-skull-chariot-of-the-pyre",
+   "name": "Skull-Chariot of the Pyre",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Skull-Chariot of the Pyre**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "8",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Skull-Chariot of the Pyre"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Scythed Run",
+     "description": "When it moves over an enemy unit, roll a D6 per enemy model (max 6): each 5+ is 1 Fatal Wound.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blade-wheels & riders",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Skull-Chariot of the Pyre"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Skull-Chariot of the Pyre",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Skull-Chariot of the Pyre",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "8",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "8",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Blade-wheels & riders",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Slaughter-Lord on Hellsteed"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "11-cinder-spawn",
+   "name": "Cinder-Spawn",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Cinder-Spawn**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "8\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "5+",
+    "MIGHT": "7",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Cinder-Spawn"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Tithe-Born",
+     "description": "May be summoned for 6 Tithe (spent) within 6″ of a Leader, once per battle.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Mutant maws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Cinder-Spawn"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Cinder-Spawn",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Cinder-Spawn",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "5+",
+     "MIGHT": "7",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Mutant maws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Slaughter-Lord on Hellsteed"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "11-brass-gore-carrier",
+   "name": "Brass Gore-Carrier",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Brass Gore-Carrier**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "4+",
+    "RS": "6+",
+    "ARM": "3+",
+    "MIGHT": "12",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Brass Gore-Carrier"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Assault Ramp",
+     "description": "Units that disembark may declare a Charge this activation.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Gore-ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Brass Gore-Carrier"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Brass Gore-Carrier",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brass Gore-Carrier",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "12",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "10\"",
+     "MS": "4+",
+     "RS": "6+",
+     "ARM": "3+",
+     "MIGHT": "12",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Gore-ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Cinder-Prince Ascendant"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "11-brass-gore-wyrm",
+   "name": "Brass Gore-Wyrm",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Brass Gore-Wyrm**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "3+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "14",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Brass Gore-Wyrm"
+   ],
+   "factionKeywords": [
+    "Cinder-Gorged Legion"
+   ],
+   "abilities": [
+    {
+     "name": "Blood-Tithe",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Molten Hide",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Brass Gore-Wyrm"
+     ]
+    },
+    {
+     "name": "Furnace-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Brass Gore-Wyrm"
+     ]
+    }
+   ],
+   "points": 215,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 215,
+     "models": [
+      {
+       "name": "Brass Gore-Wyrm",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brass Gore-Wyrm",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "3+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "14",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Monster talons",
+       "count": 1
+      },
+      {
+       "item": "Furnace-maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Cinder-Prince Ascendant"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  }
+ ],
+ "faq": []
+}

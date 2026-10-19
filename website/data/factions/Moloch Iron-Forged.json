@@ -1,0 +1,2993 @@
+{
+ "name": "Moloch Iron-Forged",
+ "factionKeyword": "Moloch Iron-Forged",
+ "verb": "FUEL",
+ "identity": "Daemon-smith siege engineers, iron legionaries and soul-furnace war-engines. Thralls are fuel: shovel one into an engine to supercharge it. Bunker-busting guns ignore cover on objectives and in ruins.",
+ "sources": [
+  "Project 4192 — gametheory/factions/13_moloch_iron_forged.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "Feed the Furnace · Siege-Masters",
+   "description": "Feed the Furnace: when a Class 4–5 Moloch unit activates, you may remove 1 model from a friendly [EXPENDABLE] Class 1 unit within 3″: this activation its weapons gain [RELENTLESS] (re-roll Wound rolls) and [ONSLAUGHT 1]. Siege-Masters: Moloch ranged weapons gain [IGNORES COVER] against units within 3″ of an objective or in Dense terrain."
+  },
+  {
+   "name": "Gamble — Red-Line the Boilers",
+   "description": "When a Class 3–5 unit is selected to Shoot or Fight: its weapons get +2 Attacks; afterwards it suffers 1 Fatal Wound for each natural 1 rolled to Hit (max D3+1). (Risk: durability (dice).)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "13-det1",
+   "name": "Grand Siege",
+   "cost": 1,
+   "playstyle": "Artillery and heavy squads grind fortified positions.",
+   "rules": [
+    {
+     "id": "13-det1-r1",
+     "name": "Bunker-Busters",
+     "description": "Siege-Masters also applies to units in Light terrain; [INDIRECT FIRE] weapons do not suffer the −1 to Hit."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "13-det1-e1",
+     "name": "Siege-Lens",
+     "cost": 10,
+     "description": "**Iron-Smith Forgemaster** only. The attached unit gets +1 PEN with ranged weapons.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Moloch Iron-Forged"
+       ],
+       "datasheet": "Iron-Smith Forgemaster"
+      }
+     ]
+    },
+    {
+     "id": "13-det1-e2",
+     "name": "Daemon-Bound Shells",
+     "cost": 25,
+     "description": "**Infernal Bombard** only. +1 Damage against units in Cover.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Moloch Iron-Forged"
+       ],
+       "datasheet": "Infernal Bombard"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "13-det1-s1",
+     "name": "Shattering Bombardment",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A [SHRAPNEL] weapon hits a Class 1–2 unit",
+     "target": "",
+     "effect": "It suffers −2″ MOV until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "13-det1-s2",
+     "name": "Creeping Barrage",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An artillery unit Shoots",
+     "target": "",
+     "effect": "Re-roll Hit rolls against units within 3″ of an objective.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "13-det1-s3",
+     "name": "Entrench",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit did not Move",
+     "target": "",
+     "effect": "+1 ARM (to 3+ cap) until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "13-det2",
+   "name": "Daemon-Forge",
+   "cost": 1,
+   "playstyle": "Engines everywhere, smiths keeping them alive.",
+   "rules": [
+    {
+     "id": "13-det2-r1",
+     "name": "Anvil of the Daemon",
+     "description": "Class 3–5 units within 6″ of a friendly Leader heal 1 MIGHT at the End of Round."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "13-det2-e1",
+     "name": "Bound Daemon-Heart",
+     "cost": 60,
+     "description": "**Soul-Furnace Engine** only. UNYIELDING 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Moloch Iron-Forged"
+       ],
+       "datasheet": "Soul-Furnace Engine"
+      }
+     ]
+    },
+    {
+     "id": "13-det2-e2",
+     "name": "Hammer of Moloch",
+     "cost": 10,
+     "description": "**Daemon-Smith Overseer** only. Demonic Anvil Repair heals D3+1.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Moloch Iron-Forged"
+       ],
+       "datasheet": "Daemon-Smith Overseer"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "13-det2-s1",
+     "name": "Stoke the Fires",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 4–5 unit is fed to the Furnace",
+     "target": "",
+     "effect": "It also gets +2″ MOV this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "13-det2-s2",
+     "name": "Emergency Weld",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit is damaged",
+     "target": "",
+     "effect": "Heal 2 MIGHT.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "13-det2-s3",
+     "name": "Daemonic Fury",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 3–5 unit is selected to Fight",
+     "target": "",
+     "effect": "+1 Damage on its melee weapons.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "13-det3",
+   "name": "Iron Within",
+   "cost": 1,
+   "playstyle": "Iron legionaries and siege-guard holding the line.",
+   "rules": [
+    {
+     "id": "13-det3-r1",
+     "name": "Iron Within, Iron Without",
+     "description": "Once per round per unit, when targeted, incoming PEN −1 and re-roll ARM saves of 1 for that attack."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "13-det3-e1",
+     "name": "Bastion-Seal",
+     "cost": 10,
+     "description": "**Iron-Warden Champion** only. The attached unit has WARD 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Moloch Iron-Forged"
+       ],
+       "datasheet": "Iron-Warden Champion"
+      }
+     ]
+    },
+    {
+     "id": "13-det3-e2",
+     "name": "Ironclad Pauldrons",
+     "cost": 10,
+     "description": "**Iron-Forged Legionaries** only. +1 ARM (to 3+ cap) against PEN 0 and −1.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Moloch Iron-Forged"
+       ],
+       "datasheet": "Iron-Forged Legionaries"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "13-det3-s1",
+     "name": "Hold the Breach",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit is charged",
+     "target": "",
+     "effect": "Its Retaliation Strike gets +1 Attack.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "13-det3-s2",
+     "name": "No Retreat",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit would be Rattled",
+     "target": "",
+     "effect": "It is not.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "13-det3-s3",
+     "name": "Smog and Smoke",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "Command Phase",
+     "target": "",
+     "effect": "Friendly Class 1–2 units within 9″ of a Class 4–5 unit are [STEALTH] until the End of Round.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "13-iron-smith-forgemaster",
+   "name": "Iron-Smith Forgemaster",
+   "role": "Leader",
+   "composition": "■ **1 Iron-Smith Forgemaster**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Iron-Smith Forgemaster"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Siege Doctrine",
+     "description": "Friendly units within 9″ get +1 to Hit with ranged weapons against units in Cover.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Master of the Forge",
+     "description": "Once per round, heal D3 MIGHT on a friendly Class 3–5 unit within 3″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Forge-pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Iron-Smith Forgemaster"
+     ]
+    },
+    {
+     "name": "Daemon-forged axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Iron-Smith Forgemaster"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Iron-Smith Forgemaster",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Smith Forgemaster",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Forge-pistol",
+       "count": 1
+      },
+      {
+       "item": "Daemon-forged axe",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Breacher Battery",
+      "Iron-Clad Siege-Guard",
+      "Brass-Bull Centaurs"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "13-iron-warden-champion",
+   "name": "Iron-Warden Champion",
+   "role": "Leader",
+   "composition": "■ **1 Iron-Warden Champion**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Iron-Warden Champion"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Iron Discipline",
+     "description": "The attached unit re-rolls melee Wound rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Iron-Warden Champion"
+     ]
+    },
+    {
+     "name": "Siege-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Iron-Warden Champion"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Iron-Warden Champion",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Warden Champion",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Siege-hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Breacher Battery",
+      "Iron-Clad Siege-Guard",
+      "Brass-Bull Centaurs"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "13-daemon-smith-overseer",
+   "name": "Daemon-Smith Overseer",
+   "role": "Leader",
+   "composition": "■ **1 Daemon-Smith Overseer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Daemon-Smith Overseer"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Demonic Anvil Repair",
+     "description": "Once per round, heal D3 MIGHT on a friendly Class 3–5 unit within 3″; it gets +1 to Hit with ranged weapons until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Daemon-Smith Overseer"
+     ]
+    },
+    {
+     "name": "Daemon-anvil hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Daemon-Smith Overseer"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Daemon-Smith Overseer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Daemon-Smith Overseer",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Heavy pistol",
+       "count": 1
+      },
+      {
+       "item": "Daemon-anvil hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Ash-Dreg Thralls",
+      "Iron-Forged Legionaries",
+      "Ash-Guard Blunderbussiers",
+      "Hellsmith Sappers",
+      "Iron-Devourer Heavy Squad"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "13-hellfire-taskmaster",
+   "name": "Hellfire Taskmaster",
+   "role": "Leader",
+   "composition": "■ **1 Hellfire Taskmaster**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "3",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Hellfire Taskmaster"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Drive the Dregs",
+     "description": "The attached [EXPENDABLE] unit ignores Rattled and gets +1 to Hit in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Lash",
+     "description": "The attached unit gets +1 to Hit in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fire-whip",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Hellfire Taskmaster"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Hellfire Taskmaster"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Hellfire Taskmaster",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hellfire Taskmaster",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "3",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "3",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Fire-whip",
+       "count": 1
+      },
+      {
+       "item": "Chain-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Ash-Dreg Thralls",
+      "Iron-Forged Legionaries",
+      "Ash-Guard Blunderbussiers",
+      "Hellsmith Sappers",
+      "Iron-Devourer Heavy Squad"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "13-ash-dreg-thralls",
+   "name": "Ash-Dreg Thralls",
+   "role": "Battleline",
+   "composition": "■ **10 Ash-Dreg Thralls**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "EXPENDABLE",
+    "FRAIL",
+    "Ash-Dreg Thralls"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "FRAIL",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Fuel",
+     "description": "Models from this unit may be fed to the Furnace.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Scrap-musket",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "3+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Ash-Dreg Thralls"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Ash-Dreg Thralls"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Ash-Dreg Thralls",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ash-Dreg Thralls",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Scrap-musket",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Daemon-Smith Overseer",
+    "Hellfire Taskmaster"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "13-iron-forged-legionaries",
+   "name": "Iron-Forged Legionaries",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Battleline",
+    "Iron-Forged Legionaries"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Iron Within, Iron Without",
+     "description": "Incoming PEN −1 against attacks from more than 12″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hell-bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 1"
+     ],
+     "models": [
+      "Iron-Forged Legionaries"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Iron-Forged Legionaries"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Iron-Forged Legionaries",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Iron-Forged Legionaries",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Iron-Forged Legionaries",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Iron-Forged Legionaries",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Iron-Forged Legionaries",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 245,
+     "models": [
+      {
+       "name": "Iron-Forged Legionaries",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Forged Legionaries",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Hell-bolter",
+       "count": 1
+      },
+      {
+       "item": "Chain-blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Daemon-Smith Overseer",
+    "Hellfire Taskmaster"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "13-ash-guard-blunderbussiers",
+   "name": "Ash-Guard Blunderbussiers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "4+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Ash-Guard Blunderbussiers"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Volley Ranks",
+     "description": "Re-roll the number of attacks for blunderbusses.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fire-blunderbuss",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "SCORCH"
+     ],
+     "models": [
+      "Ash-Guard Blunderbussiers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Ash-Guard Blunderbussiers"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Ash-Guard Blunderbussiers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Ash-Guard Blunderbussiers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Ash-Guard Blunderbussiers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Ash-Guard Blunderbussiers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Ash-Guard Blunderbussiers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Ash-Guard Blunderbussiers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ash-Guard Blunderbussiers",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "4+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Fire-blunderbuss",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Daemon-Smith Overseer",
+    "Hellfire Taskmaster"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "13-breacher-battery",
+   "name": "Breacher Battery",
+   "role": "Class 2 · Elites",
+   "composition": "■ **2–3 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Trooper",
+    "Breacher Battery"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Dug-In Battery",
+     "description": "+1 to Hit if it did not Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Breaching cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Breacher Battery"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Breacher Battery"
+     ]
+    }
+   ],
+   "points": 65,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 65,
+     "models": [
+      {
+       "name": "Breacher Battery",
+       "min": 2,
+       "max": 2
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 80,
+     "models": [
+      {
+       "name": "Breacher Battery",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Breacher Battery",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Breaching cannon",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Iron-Smith Forgemaster",
+    "Iron-Warden Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "13-iron-clad-siege-guard",
+   "name": "Iron-Clad Siege-Guard",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "4\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Iron-Clad Siege-Guard"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Siege Plate",
+     "description": "+1 ARM (to 3+ cap) against PEN 0 and −1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Siege-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Iron-Clad Siege-Guard"
+     ]
+    },
+    {
+     "name": "Forge-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Iron-Clad Siege-Guard"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Iron-Clad Siege-Guard",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Iron-Clad Siege-Guard",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 270,
+     "models": [
+      {
+       "name": "Iron-Clad Siege-Guard",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Clad Siege-Guard",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Siege-flamer",
+       "count": 1
+      },
+      {
+       "item": "Forge-hammer",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Iron-Smith Forgemaster",
+    "Iron-Warden Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "13-brass-bull-centaurs",
+   "name": "Brass-Bull Centaurs",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "10\"",
+    "MS": "3+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Brass-Bull Centaurs"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Gore and Trample",
+     "description": "Crushing Impact for 0 CP on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ash-carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ASSAULT"
+     ],
+     "models": [
+      "Brass-Bull Centaurs"
+     ]
+    },
+    {
+     "name": "Bull-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Brass-Bull Centaurs"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Brass-Bull Centaurs",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Brass-Bull Centaurs",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 180,
+     "models": [
+      {
+       "name": "Brass-Bull Centaurs",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Brass-Bull Centaurs",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "3+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Ash-carbine",
+       "count": 1
+      },
+      {
+       "item": "Bull-glaive",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Iron-Smith Forgemaster",
+    "Iron-Warden Champion"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "13-hellsmith-sappers",
+   "name": "Hellsmith Sappers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "6\"",
+    "MS": "4+",
+    "RS": "2+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "SCOUTS 6\"",
+    "Hellsmith Sappers"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "SCOUTS 6\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Undermine",
+     "description": "Once per battle, an enemy unit in Dense terrain within 6″ loses Cover until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Demo-charges",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "D3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "ANTI-VEHICLE 4+"
+     ],
+     "models": [
+      "Hellsmith Sappers"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Hellsmith Sappers"
+     ]
+    }
+   ],
+   "points": 50,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 50,
+     "models": [
+      {
+       "name": "Hellsmith Sappers",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 55,
+     "models": [
+      {
+       "name": "Hellsmith Sappers",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 60,
+     "models": [
+      {
+       "name": "Hellsmith Sappers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Hellsmith Sappers",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "4+",
+     "RS": "2+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Demo-charges",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Daemon-Smith Overseer",
+    "Hellfire Taskmaster"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "13-iron-devourer-heavy-squad",
+   "name": "Iron-Devourer Heavy Squad",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5 Iron-Devourer Heavy Squad**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Iron-Devourer Heavy Squad"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Bunker Gunners",
+     "description": "Re-roll ranged Hit rolls of 1 if it did not Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Iron-Devourer Heavy Squad"
+     ]
+    },
+    {
+     "name": "Missile launcher",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "D6",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Iron-Devourer Heavy Squad"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Iron-Devourer Heavy Squad"
+     ]
+    }
+   ],
+   "points": 165,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 165,
+     "models": [
+      {
+       "name": "Iron-Devourer Heavy Squad",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Iron-Devourer Heavy Squad",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Autocannon",
+       "count": 1
+      },
+      {
+       "item": "Missile launcher",
+       "count": 1
+      },
+      {
+       "item": "Combat blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Daemon-Smith Overseer",
+    "Hellfire Taskmaster"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "13-moloch-crab-walker",
+   "name": "Moloch Crab-Walker",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Moloch Crab-Walker**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "10",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Moloch Crab-Walker"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Wall-Climber",
+     "description": "Ignores vertical distance when moving.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Moloch Crab-Walker"
+     ]
+    },
+    {
+     "name": "Siege-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Moloch Crab-Walker"
+     ]
+    }
+   ],
+   "points": 105,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 105,
+     "models": [
+      {
+       "name": "Moloch Crab-Walker",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Moloch Crab-Walker",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Heavy flamer",
+       "count": 1
+      },
+      {
+       "item": "Siege-claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "13-forge-hound",
+   "name": "Forge-Hound",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Forge-Hound**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "9",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Forge-Hound"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Hunting Engine",
+     "description": "+2″ to Charge rolls against units that shot this round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Brass jaws & claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Forge-Hound"
+     ]
+    }
+   ],
+   "points": 75,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 75,
+     "models": [
+      {
+       "name": "Forge-Hound",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Forge-Hound",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "9",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "9",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Brass jaws & claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "13-furnace-mortar-battery",
+   "name": "Furnace-Mortar Battery",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Furnace-Mortar Battery**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "4\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "7",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Furnace-Mortar Battery"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shattering Bombardment",
+     "description": "Once per round, a Class 1–2 unit hit suffers −2″ MOV until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hellfire mortar",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Furnace-Mortar Battery"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "5+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Furnace-Mortar Battery"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Furnace-Mortar Battery",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Furnace-Mortar Battery",
+     "M": "4\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "4\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "7",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Hellfire mortar",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "13-soul-furnace-engine",
+   "name": "Soul-Furnace Engine",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Soul-Furnace Engine**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "16",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Brute / Behemoth",
+    "HARDENED",
+    "Soul-Furnace Engine"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Daemonic Engine",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Soul-furnace cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-1",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 1"
+     ],
+     "models": [
+      "Soul-Furnace Engine"
+     ]
+    },
+    {
+     "name": "Furnace claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Soul-Furnace Engine"
+     ]
+    }
+   ],
+   "points": 220,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 220,
+     "models": [
+      {
+       "name": "Soul-Furnace Engine",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Soul-Furnace Engine",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "16",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "16",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Soul-furnace cannon",
+       "count": 1
+      },
+      {
+       "item": "Furnace claws",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "13-siege-crawler-ram",
+   "name": "Siege-Crawler Ram",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Siege-Crawler Ram**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "18",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Siege-Crawler Ram"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Breach!",
+     "description": "Crushing Impact for 0 CP on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hellfire vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "SCORCH",
+      "IGNORES COVER"
+     ],
+     "models": [
+      "Siege-Crawler Ram"
+     ]
+    },
+    {
+     "name": "Siege-ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Siege-Crawler Ram"
+     ]
+    }
+   ],
+   "points": 190,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 190,
+     "models": [
+      {
+       "name": "Siege-Crawler Ram",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Siege-Crawler Ram",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "18",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "18",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Hellfire vents",
+       "count": 1
+      },
+      {
+       "item": "Siege-ram",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "13-infernal-bombard",
+   "name": "Infernal Bombard",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Infernal Bombard**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "7\"",
+    "MS": "6+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Infernal Bombard"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Siege Calculations",
+     "description": "Re-roll ranged Hit rolls of 1.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Hellfire mortar",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "INDIRECT FIRE",
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Infernal Bombard"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Infernal Bombard"
+     ]
+    },
+    {
+     "name": "Iron hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "6+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Infernal Bombard"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Infernal Bombard",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Infernal Bombard",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "6+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Hellfire mortar",
+       "count": 1
+      },
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Iron hooves",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "13-ash-hauler",
+   "name": "Ash-Hauler",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Ash-Hauler**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "9\"",
+    "MS": "5+",
+    "RS": "3+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "TRANSPORT 10",
+    "HARDENED",
+    "Ash-Hauler"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 10",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Furnace Hopper",
+     "description": "Embarked [EXPENDABLE] models may be fed to a Class 4–5 unit within 6″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "3+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Ash-Hauler"
+     ]
+    },
+    {
+     "name": "Iron hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Ash-Hauler"
+     ]
+    }
+   ],
+   "points": 140,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 140,
+     "models": [
+      {
+       "name": "Ash-Hauler",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Ash-Hauler",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "9\"",
+     "MS": "5+",
+     "RS": "3+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy stubber",
+       "count": 1
+      },
+      {
+       "item": "Iron hooves",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "13-soul-furnace-colossus",
+   "name": "Soul-Furnace Colossus",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Soul-Furnace Colossus**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "9\"",
+    "MS": "5+",
+    "RS": "2+",
+    "ARM": "3+",
+    "MIGHT": "24",
+    "CTRL": "5"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "HARDENED",
+    "Soul-Furnace Colossus"
+   ],
+   "factionKeywords": [
+    "Moloch Iron-Forged"
+   ],
+   "abilities": [
+    {
+     "name": "Feed the Furnace · Siege-Masters",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Grand Furnace",
+     "description": "May be fed up to 2 models per activation (each gives +1 Attack to one weapon).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Magma colossus-cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [
+      "SHRAPNEL 2"
+     ],
+     "models": [
+      "Soul-Furnace Colossus"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6+1",
+     "keywords": [
+      "HEAVY"
+     ],
+     "models": [
+      "Soul-Furnace Colossus"
+     ]
+    },
+    {
+     "name": "Iron hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Soul-Furnace Colossus"
+     ]
+    }
+   ],
+   "points": 325,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 325,
+     "models": [
+      {
+       "name": "Soul-Furnace Colossus",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Soul-Furnace Colossus",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "24",
+     "Ld": "-",
+     "OC": "5",
+     "MOV": "9\"",
+     "MS": "5+",
+     "RS": "2+",
+     "ARM": "3+",
+     "MIGHT": "24",
+     "CTRL": "5",
+     "equipped": [
+      {
+       "item": "Magma colossus-cannon",
+       "count": 1
+      },
+      {
+       "item": "Las-lance",
+       "count": 1
+      },
+      {
+       "item": "Iron hooves",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}

@@ -92,8 +92,7 @@
         // Match faction in FACTIONS
         const facName = item.faction;
         const factionObj = (typeof FACTIONS !== 'undefined' ? FACTIONS : []).find(f => 
-            f.name.toLowerCase() === facName.toLowerCase() ||
-            (f.name === 'Agents of the Imperium' && (facName.includes('Agents') || facName.includes('Imperial Agents')))
+            f.name.toLowerCase() === facName.toLowerCase()
         ) || (typeof FACTIONS !== 'undefined' ? FACTIONS[0] : { name: facName });
 
         // Ensure faction data is preloaded

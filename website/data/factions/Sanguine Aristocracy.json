@@ -1,0 +1,3001 @@
+{
+ "name": "Sanguine Aristocracy",
+ "factionKeyword": "Sanguine Aristocracy",
+ "verb": "FEED",
+ "identity": "Vampire nobles, their deathless levies and blood-knights. Few, deadly duelists that heal by killing: if they are kept from fighting, they wither; if they reach the line, they top up and keep going.",
+ "sources": [
+  "Project 4192 — gametheory/factions/06_sanguine_aristocracy.json",
+  "Points: gametheory/scripts/unit_calculator.py"
+ ],
+ "rules": [
+  {
+   "name": "The Hunger",
+   "description": "At the end of a Fight action in which a Sanguine unit destroyed 1+ enemy models, it heals 2 MIGHT (3 if it destroyed the whole enemy unit). For a multi-model unit, healing goes to its most damaged model first, then returns 1 slain model per 2 points left (never above Starting Strength)."
+  },
+  {
+   "name": "Gamble — The Red Thirst",
+   "description": "When a unit activates: +1 Attack in melee and +2″ to Charge rolls this activation, but it must declare a Charge against the closest visible enemy unit if able, and its CTRL is 0 until it next activates. (Risk: objective / position.)"
+  }
+ ],
+ "detachments": [
+  {
+   "id": "06-det1",
+   "name": "Blood Court",
+   "cost": 1,
+   "playstyle": "Lords and duelists hunting the enemy's heroes.",
+   "rules": [
+    {
+     "id": "06-det1-r1",
+     "name": "Court of Duellists",
+     "description": "Sanguine Leaders gain [PRECISION] in melee; each enemy Leader destroyed by a Sanguine Leader heals that Leader fully."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "06-det1-e1",
+     "name": "Heart-Seeker Blade",
+     "cost": 10,
+     "description": "**Crimson Duelist-Countess** only. Melee critical wounds become Fatal Wounds.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sanguine Aristocracy"
+       ],
+       "datasheet": "Crimson Duelist-Countess"
+      }
+     ]
+    },
+    {
+     "id": "06-det1-e2",
+     "name": "Crimson Mantle",
+     "cost": 25,
+     "description": "**Count Palatine Blood-Lord** only. UNYIELDING 5+.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sanguine Aristocracy"
+       ],
+       "datasheet": "Count Palatine Blood-Lord"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "06-det1-s1",
+     "name": "Issue the Challenge",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader ends a Charge",
+     "target": "",
+     "effect": "Choose an enemy Leader within 3″: both must fight each other this activation.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "06-det1-s2",
+     "name": "Blood-Quickened",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader heals from The Hunger",
+     "target": "",
+     "effect": "It may make a 3″ move.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "06-det1-s3",
+     "name": "Noble Disdain",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Leader is targeted by a ranged attack",
+     "target": "",
+     "effect": "−1 to Wound against it for the attack.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "06-det2",
+   "name": "Grave Cavalcade",
+   "cost": 1,
+   "playstyle": "Grave-Knights and hounds running down the wounded.",
+   "rules": [
+    {
+     "id": "06-det2-r1",
+     "name": "Scent of Blood",
+     "description": "+2″ to Move and Charge toward an enemy unit below Starting Strength."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "06-det2-e1",
+     "name": "Night-Mare Steed",
+     "cost": 10,
+     "description": "**Count Palatine Blood-Lord** only. +2″ MOV.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sanguine Aristocracy"
+       ],
+       "datasheet": "Count Palatine Blood-Lord"
+      }
+     ]
+    },
+    {
+     "id": "06-det2-e2",
+     "name": "Banner of the Cavalcade",
+     "cost": 15,
+     "description": "**Blood-Sorcerer** only. Friendly units within 6″ get +1 to Hit in melee on a round they charged.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sanguine Aristocracy"
+       ],
+       "datasheet": "Blood-Sorcerer"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "06-det2-s1",
+     "name": "Ride Them Down",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 2 cavalry unit ends a Charge",
+     "target": "",
+     "effect": "Crushing Impact for 0 CP.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "06-det2-s2",
+     "name": "Hunt the Weak",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A unit targets a unit below Half-Strength",
+     "target": "",
+     "effect": "Re-roll Wound rolls.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "06-det2-s3",
+     "name": "Spectral Steeds",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A cavalry unit moves",
+     "target": "",
+     "effect": "It may move over terrain and models.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  },
+  {
+   "id": "06-det3",
+   "name": "Midnight Court",
+   "cost": 1,
+   "playstyle": "Mist, summoning and the deathless levy that will not stay down.",
+   "rules": [
+    {
+     "id": "06-det3-r1",
+     "name": "Endless Night",
+     "description": "Once per round, at the End of Round, one unengaged Sanguine unit more than 6″ from enemies may redeploy wholly within 6″ of a table edge, more than 8″ from enemies. Gravesite Summoning costs 1 CP instead of 2."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "06-det3-e1",
+     "name": "Grimoire of the Grave",
+     "cost": 10,
+     "description": "**Blood-Sorcerer** only. Raised Again returns D3+1 models.",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sanguine Aristocracy"
+       ],
+       "datasheet": "Blood-Sorcerer"
+      }
+     ]
+    },
+    {
+     "id": "06-det3-e2",
+     "name": "Shroud of Night",
+     "cost": 10,
+     "description": "**Night-Shade Assassin** only. [STEALTH].",
+     "lore": "",
+     "requires": [
+      {
+       "keywords": [],
+       "faction": [
+        "Sanguine Aristocracy"
+       ],
+       "datasheet": "Night-Shade Assassin"
+      }
+     ]
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "06-det3-s1",
+     "name": "Rise, Rise!",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Class 1 Deathless or Levy unit activates",
+     "target": "",
+     "effect": "Return D3 slain models.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "06-det3-s2",
+     "name": "Fog of the Crypt",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "An enemy unit targets a unit within 6″ of a table edge",
+     "target": "",
+     "effect": "−1 to Hit.",
+     "restriction": "",
+     "lore": ""
+    },
+    {
+     "id": "06-det3-s3",
+     "name": "Blood Tithe",
+     "cost": "1",
+     "category": null,
+     "when": "eitherPlayer",
+     "turn": "A Levy model is removed by Blood Cattle",
+     "target": "",
+     "effect": "Heal 2 MIGHT instead of 1.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "06-count-palatine-blood-lord",
+   "name": "Count Palatine Blood-Lord",
+   "role": "Leader",
+   "composition": "■ **1 Count Palatine Blood-Lord**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "4+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Count Palatine Blood-Lord"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Lord of the Night",
+     "description": "The attached unit gets +1 Attack in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Dominate",
+     "description": "Once per round, an enemy Class 1–2 unit within 6″ suffers −1 to Hit until the End of Round.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Duelling pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Count Palatine Blood-Lord"
+     ]
+    },
+    {
+     "name": "Blood-forged blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Count Palatine Blood-Lord"
+     ]
+    }
+   ],
+   "points": 125,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 125,
+     "models": [
+      {
+       "name": "Count Palatine Blood-Lord",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Count Palatine Blood-Lord",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "4+",
+     "equipped": [
+      {
+       "item": "Duelling pistol",
+       "count": 1
+      },
+      {
+       "item": "Blood-forged blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Crimson Guard Duelists",
+      "Grave-Knights",
+      "Night-Ghast Brutes",
+      "Grave-Ward Sentinels"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "06-crimson-duelist-countess",
+   "name": "Crimson Duelist-Countess",
+   "role": "Leader",
+   "composition": "■ **1 Crimson Duelist-Countess**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "6",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Leader",
+    "Crimson Duelist-Countess"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Aristocratic Duellist",
+     "description": "Melee [PRECISION]; +1 Attack and +1 Damage when fighting an enemy Leader.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Riposte",
+     "description": "Enemies get −1 to Hit her in melee.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Duelling pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Crimson Duelist-Countess"
+     ]
+    },
+    {
+     "name": "Twin sabres",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Crimson Duelist-Countess"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Crimson Duelist-Countess",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crimson Duelist-Countess",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "6",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "6",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Duelling pistol",
+       "count": 1
+      },
+      {
+       "item": "Twin sabres",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Crimson Guard Duelists",
+      "Grave-Knights",
+      "Night-Ghast Brutes",
+      "Grave-Ward Sentinels"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "06-blood-sorcerer",
+   "name": "Blood-Sorcerer",
+   "role": "Leader",
+   "composition": "■ **1 Blood-Sorcerer**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "Blood-Sorcerer"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Gravesite Summoning",
+     "description": "Once per battle (2 CP), return a destroyed Class 1 unit at half strength within 6″.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Unholy Vigour",
+     "description": "Friendly Class 1–2 units within 6″ have UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blood-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Blood-Sorcerer"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blood-Sorcerer"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Blood-Sorcerer",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blood-Sorcerer",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Blood-bolt",
+       "count": 1
+      },
+      {
+       "item": "Power weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Thrall-Levies",
+      "Deathless Levy",
+      "Blood-Sworn Courtiers",
+      "Bat-Swarm Hosts",
+      "Dire Blood-Hounds",
+      "Crypt Arbalests"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "06-night-shade-assassin",
+   "name": "Night-Shade Assassin",
+   "role": "Leader",
+   "composition": "■ **1 Night-Shade Assassin**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Leader",
+    "INFILTRATORS",
+    "UNSEEN 12\"",
+    "Night-Shade Assassin"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "INFILTRATORS",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "UNSEEN 12\"",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Strike from the Mist",
+     "description": "[STRIKE FIRST] on a round it charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Duelling pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Night-Shade Assassin"
+     ]
+    },
+    {
+     "name": "Blood-dagger",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Night-Shade Assassin"
+     ]
+    }
+   ],
+   "points": 90,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 90,
+     "models": [
+      {
+       "name": "Night-Shade Assassin",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Night-Shade Assassin",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Duelling pistol",
+       "count": 1
+      },
+      {
+       "item": "Blood-dagger",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Thrall-Levies",
+      "Deathless Levy",
+      "Blood-Sworn Courtiers",
+      "Bat-Swarm Hosts",
+      "Dire Blood-Hounds",
+      "Crypt Arbalests"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "06-thrall-levies",
+   "name": "Thrall-Levies",
+   "role": "Battleline",
+   "composition": "■ **10 Thrall-Levies**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "EXPENDABLE",
+    "Thrall-Levies"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "EXPENDABLE",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Blood Cattle",
+     "description": "A friendly Leader within 3″ may remove 1 Levy to heal 1 MIGHT (once per activation).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "3+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Thrall-Levies"
+     ]
+    }
+   ],
+   "points": 110,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 110,
+     "models": [
+      {
+       "name": "Thrall-Levies",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Thrall-Levies",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Sorcerer",
+    "Night-Shade Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "06-deathless-levy",
+   "name": "Deathless Levy",
+   "role": "Battleline",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "5\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "5+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Battleline",
+    "Deathless Levy"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Deathless",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Raised Again",
+     "description": "Once per round, a friendly Blood-Sorcerer within 9″ may return D3 slain models.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Grave-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Deathless Levy"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Deathless Levy",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Deathless Levy",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Deathless Levy",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Deathless Levy",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 100,
+     "models": [
+      {
+       "name": "Deathless Levy",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Deathless Levy",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Deathless Levy",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "5+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "5\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "5+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Grave-spear",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Sorcerer",
+    "Night-Shade Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "06-blood-sworn-courtiers",
+   "name": "Blood-Sworn Courtiers",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "2",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper / Elite",
+    "Blood-Sworn Courtiers"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Thirst for Glory",
+     "description": "+1 Attack in melee on a round they charged.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Courtly blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Blood-Sworn Courtiers"
+     ]
+    },
+    {
+     "name": "Courtly pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ],
+     "models": [
+      "Blood-Sworn Courtiers"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Blood-Sworn Courtiers",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 165,
+     "models": [
+      {
+       "name": "Blood-Sworn Courtiers",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Blood-Sworn Courtiers",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 205,
+     "models": [
+      {
+       "name": "Blood-Sworn Courtiers",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Blood-Sworn Courtiers",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 240,
+     "models": [
+      {
+       "name": "Blood-Sworn Courtiers",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blood-Sworn Courtiers",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "2",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Courtly blade",
+       "count": 1
+      },
+      {
+       "item": "Courtly pistol",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Sorcerer",
+    "Night-Shade Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "06-crimson-guard-duelists",
+   "name": "Crimson Guard Duelists",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "2",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Crimson Guard Duelists"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Courtly Fencing",
+     "description": "Enemies get −1 to Hit them in melee.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Sworn Guard",
+     "description": "An attached Leader's damage is taken by this unit on 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Crimson halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Crimson Guard Duelists"
+     ]
+    }
+   ],
+   "points": 215,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 215,
+     "models": [
+      {
+       "name": "Crimson Guard Duelists",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 270,
+     "models": [
+      {
+       "name": "Crimson Guard Duelists",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 315,
+     "models": [
+      {
+       "name": "Crimson Guard Duelists",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crimson Guard Duelists",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "2",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Crimson halberd",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Count Palatine Blood-Lord",
+    "Crimson Duelist-Countess"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "06-grave-knights",
+   "name": "Grave-Knights",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "13\"",
+    "MS": "2+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "4",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Grave-Knights"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Deathly Charge",
+     "description": "+1 Damage in melee on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Deathless Steeds",
+     "description": "UNYIELDING 6+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Grave-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "CRASHING"
+     ],
+     "models": [
+      "Grave-Knights"
+     ]
+    }
+   ],
+   "points": 175,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 175,
+     "models": [
+      {
+       "name": "Grave-Knights",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 210,
+     "models": [
+      {
+       "name": "Grave-Knights",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 245,
+     "models": [
+      {
+       "name": "Grave-Knights",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Grave-Knights",
+     "M": "13\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "4",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "13\"",
+     "MS": "2+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "4",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Grave-lance",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Count Palatine Blood-Lord",
+    "Crimson Duelist-Countess"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "06-bat-swarm-hosts",
+   "name": "Bat-Swarm Hosts",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "8\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "2",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "FLY",
+    "Bat-Swarm Hosts"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Cloud of Wings",
+     "description": "[STEALTH].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fangs & talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Bat-Swarm Hosts"
+     ]
+    }
+   ],
+   "points": 100,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 100,
+     "models": [
+      {
+       "name": "Bat-Swarm Hosts",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 110,
+     "models": [
+      {
+       "name": "Bat-Swarm Hosts",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 125,
+     "models": [
+      {
+       "name": "Bat-Swarm Hosts",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 135,
+     "models": [
+      {
+       "name": "Bat-Swarm Hosts",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Bat-Swarm Hosts",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 160,
+     "models": [
+      {
+       "name": "Bat-Swarm Hosts",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Bat-Swarm Hosts",
+     "M": "8\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "2",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "8\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "2",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Fangs & talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Sorcerer",
+    "Night-Shade Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "06-dire-blood-hounds",
+   "name": "Dire Blood-Hounds",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "6+",
+    "MIGHT": "1",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Dire Blood-Hounds"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Scent of Blood",
+     "description": "+2″ to Move and Charge toward an enemy unit below Starting Strength.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Fangs & talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Dire Blood-Hounds"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Dire Blood-Hounds",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 70,
+     "models": [
+      {
+       "name": "Dire Blood-Hounds",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 75,
+     "models": [
+      {
+       "name": "Dire Blood-Hounds",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 85,
+     "models": [
+      {
+       "name": "Dire Blood-Hounds",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 90,
+     "models": [
+      {
+       "name": "Dire Blood-Hounds",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 95,
+     "models": [
+      {
+       "name": "Dire Blood-Hounds",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Dire Blood-Hounds",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "6+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "6+",
+     "MIGHT": "1",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Fangs & talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Sorcerer",
+    "Night-Shade Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "06-night-ghast-brutes",
+   "name": "Night-Ghast Brutes",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "5",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "FLY",
+    "Night-Ghast Brutes"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blood-Frenzy",
+     "description": "+1 Attack in melee while below Starting Strength.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ghast talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Night-Ghast Brutes"
+     ]
+    }
+   ],
+   "points": 145,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 145,
+     "models": [
+      {
+       "name": "Night-Ghast Brutes",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 185,
+     "models": [
+      {
+       "name": "Night-Ghast Brutes",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 215,
+     "models": [
+      {
+       "name": "Night-Ghast Brutes",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Night-Ghast Brutes",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Ghast talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Count Palatine Blood-Lord",
+    "Crimson Duelist-Countess"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "06-crypt-arbalests",
+   "name": "Crypt Arbalests",
+   "role": "Class 1 · Infantry",
+   "composition": "■ **5–10 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "1",
+    "MOV": "7\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "4+",
+    "MIGHT": "1",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 1",
+    "Trooper",
+    "Crypt Arbalests"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Patient Aim",
+     "description": "Re-roll ranged Hit rolls of 1 if the unit did not Move.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy crossbow",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4+",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Crypt Arbalests"
+     ]
+    },
+    {
+     "name": "Rusted blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Crypt Arbalests"
+     ]
+    }
+   ],
+   "points": 95,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 95,
+     "models": [
+      {
+       "name": "Crypt Arbalests",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 105,
+     "models": [
+      {
+       "name": "Crypt Arbalests",
+       "min": 6,
+       "max": 6
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 115,
+     "models": [
+      {
+       "name": "Crypt Arbalests",
+       "min": 7,
+       "max": 7
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 130,
+     "models": [
+      {
+       "name": "Crypt Arbalests",
+       "min": 8,
+       "max": 8
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 140,
+     "models": [
+      {
+       "name": "Crypt Arbalests",
+       "min": 9,
+       "max": 9
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 150,
+     "models": [
+      {
+       "name": "Crypt Arbalests",
+       "min": 10,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crypt Arbalests",
+     "M": "7\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "7\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "4+",
+     "MIGHT": "1",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Heavy crossbow",
+       "count": 1
+      },
+      {
+       "item": "Rusted blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Sorcerer",
+    "Night-Shade Assassin"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 1
+  },
+  {
+   "id": "06-grave-ward-sentinels",
+   "name": "Grave-Ward Sentinels",
+   "role": "Class 2 · Elites",
+   "composition": "■ **3–5 models**",
+   "lore": "",
+   "stats": {
+    "CLASS": "2",
+    "MOV": "6\"",
+    "MS": "2+",
+    "RS": "4+",
+    "ARM": "3+",
+    "MIGHT": "5",
+    "CTRL": "1",
+    "WARD": "5+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 2",
+    "Elite",
+    "Grave-Ward Sentinels"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Cursed Edge",
+     "description": "Melee Hit rolls of 5+ are critical and auto-wound ([IMPALING HITS]).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Grave-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [],
+     "models": [
+      "Grave-Ward Sentinels"
+     ]
+    }
+   ],
+   "points": 180,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 180,
+     "models": [
+      {
+       "name": "Grave-Ward Sentinels",
+       "min": 3,
+       "max": 3
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 225,
+     "models": [
+      {
+       "name": "Grave-Ward Sentinels",
+       "min": 4,
+       "max": 4
+      }
+     ]
+    },
+    {
+     "default": false,
+     "points": 270,
+     "models": [
+      {
+       "name": "Grave-Ward Sentinels",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Grave-Ward Sentinels",
+     "M": "6\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "6\"",
+     "MS": "2+",
+     "RS": "4+",
+     "ARM": "3+",
+     "MIGHT": "5",
+     "CTRL": "1",
+     "WARD": "5+",
+     "equipped": [
+      {
+       "item": "Grave-glaive",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Count Palatine Blood-Lord",
+    "Crimson Duelist-Countess"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 2
+  },
+  {
+   "id": "06-night-ghast-horror",
+   "name": "Night-Ghast Horror",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Night-Ghast Horror**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "9\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "10",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "FLY",
+    "Night-Ghast Horror"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Shriek",
+     "description": "Once per round, an enemy unit within 6″ must test Suppression as if hit by [SUPPRESSIVE].",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rending talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Night-Ghast Horror"
+     ]
+    }
+   ],
+   "points": 120,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Night-Ghast Horror",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Night-Ghast Horror",
+     "M": "9\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "10",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "9\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "10",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rending talons",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "06-altar-of-ichor",
+   "name": "Altar of Ichor",
+   "role": "Class 3 · Heavy",
+   "composition": "■ **1 Altar of Ichor**",
+   "lore": "",
+   "stats": {
+    "CLASS": "3",
+    "MOV": "5\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "4+",
+    "MIGHT": "7",
+    "CTRL": "1"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 3",
+    "Brute",
+    "Altar of Ichor"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blood-Tide",
+     "description": "Friendly units within 9″ have UNYIELDING 6+.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Ichor Reservoir",
+     "description": "Once per round, heal D3 MIGHT on a friendly unit within 9″.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Ichor-lash",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "D6",
+     "BS": "5+",
+     "S": "3+",
+     "AP": "-1",
+     "D": "2",
+     "keywords": [
+      "PSYCHIC / ARCANE"
+     ],
+     "models": [
+      "Altar of Ichor"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "3+",
+     "S": "5+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Altar of Ichor"
+     ]
+    }
+   ],
+   "points": 85,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 85,
+     "models": [
+      {
+       "name": "Altar of Ichor",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Altar of Ichor",
+     "M": "5\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "7",
+     "Ld": "-",
+     "OC": "1",
+     "MOV": "5\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "4+",
+     "MIGHT": "7",
+     "CTRL": "1",
+     "equipped": [
+      {
+       "item": "Ichor-lash",
+       "count": 1
+      },
+      {
+       "item": "Bayonet / CCW",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 3
+  },
+  {
+   "id": "06-midnight-coach",
+   "name": "Midnight Coach",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Midnight Coach**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "12\"",
+    "MS": "3+",
+    "RS": "5+",
+    "ARM": "3+",
+    "MIGHT": "14",
+    "CTRL": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "FIRING DECK 2",
+    "FLY",
+    "TRANSPORT 6",
+    "HARDENED",
+    "Midnight Coach"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "FIRING DECK 2",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "TRANSPORT 6",
+     "description": "",
+     "type": "core"
+    },
+    {
+     "name": "Mist-Form Relocation",
+     "description": "Once per battle, at the End of Round, if more than 6″ from enemies, redeploy wholly within 6″ of a table edge (>8″ from enemies).",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Spectral lanterns",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "BS": "5+",
+     "S": "4+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [
+      "HAILFIRE 2"
+     ],
+     "models": [
+      "Midnight Coach"
+     ]
+    },
+    {
+     "name": "Trampling steeds",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "3+",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Midnight Coach"
+     ]
+    }
+   ],
+   "points": 150,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 150,
+     "models": [
+      {
+       "name": "Midnight Coach",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Midnight Coach",
+     "M": "12\"",
+     "T": "-",
+     "Sv": "3+",
+     "W": "14",
+     "Ld": "-",
+     "OC": "2",
+     "MOV": "12\"",
+     "MS": "3+",
+     "RS": "5+",
+     "ARM": "3+",
+     "MIGHT": "14",
+     "CTRL": "2",
+     "equipped": [
+      {
+       "item": "Spectral lanterns",
+       "count": 1
+      },
+      {
+       "item": "Trampling steeds",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Prince on Abyssal Drake"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "06-crimson-abomination",
+   "name": "Crimson Abomination",
+   "role": "Class 4 · Vehicles & Monsters",
+   "composition": "■ **1 Crimson Abomination**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "17",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Behemoth",
+    "HARDENED",
+    "Crimson Abomination"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Gorge",
+     "description": "When it destroys an enemy model, heal 1 MIGHT (max 3 per round), in addition to The Hunger.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Rending talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "2",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Crimson Abomination"
+     ]
+    },
+    {
+     "name": "Corpse-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Crimson Abomination"
+     ]
+    }
+   ],
+   "points": 215,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 215,
+     "models": [
+      {
+       "name": "Crimson Abomination",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Crimson Abomination",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "17",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "17",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Rending talons",
+       "count": 1
+      },
+      {
+       "item": "Corpse-maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [
+    "Blood-Prince on Abyssal Drake"
+   ],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "06-blood-prince-on-abyssal-drake",
+   "name": "Blood-Prince on Abyssal Drake",
+   "role": "Leader",
+   "composition": "■ **1 Blood-Prince on Abyssal Drake**",
+   "lore": "",
+   "stats": {
+    "CLASS": "4",
+    "MOV": "10\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "17",
+    "CTRL": "3"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 4",
+    "Leader",
+    "FLY",
+    "HARDENED",
+    "Blood-Prince on Abyssal Drake"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Terror of the Skies",
+     "description": "Friendly Class 1–2 units within 9″ get +1 Attack on a round they charged.",
+     "type": "datasheet"
+    },
+    {
+     "name": "Unholy Resilience",
+     "description": "WARD 5+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blood-forged lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "3+",
+     "AP": "-2",
+     "D": "3",
+     "keywords": [],
+     "models": [
+      "Blood-Prince on Abyssal Drake"
+     ]
+    },
+    {
+     "name": "Corpse-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Blood-Prince on Abyssal Drake"
+     ]
+    }
+   ],
+   "points": 195,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 195,
+     "models": [
+      {
+       "name": "Blood-Prince on Abyssal Drake",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Blood-Prince on Abyssal Drake",
+     "M": "10\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "17",
+     "Ld": "-",
+     "OC": "3",
+     "MOV": "10\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "17",
+     "CTRL": "3",
+     "equipped": [
+      {
+       "item": "Blood-forged lance",
+       "count": 1
+      },
+      {
+       "item": "Corpse-maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Midnight Coach",
+      "Crimson Abomination"
+     ]
+    }
+   ],
+   "rules": [],
+   "faq": [],
+   "class": 4
+  },
+  {
+   "id": "06-abyssal-blood-wyrm",
+   "name": "Abyssal Blood-Wyrm",
+   "role": "Class 5 · Colossal",
+   "composition": "■ **1 Abyssal Blood-Wyrm**",
+   "lore": "",
+   "stats": {
+    "CLASS": "5",
+    "MOV": "11\"",
+    "MS": "2+",
+    "RS": "6+",
+    "ARM": "4+",
+    "MIGHT": "22",
+    "CTRL": "6",
+    "UNY": "6+"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Class 5",
+    "Behemoth",
+    "FLY",
+    "HARDENED",
+    "Abyssal Blood-Wyrm"
+   ],
+   "factionKeywords": [
+    "Sanguine Aristocracy"
+   ],
+   "abilities": [
+    {
+     "name": "The Hunger",
+     "description": "Army rule — see the faction rules.",
+     "type": "faction"
+    },
+    {
+     "name": "Blood-Storm",
+     "description": "Once per round, each enemy unit within 6″ suffers 1 Fatal Wound on a 4+.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "3",
+     "keywords": [
+      "REAPING 1"
+     ],
+     "models": [
+      "Abyssal Blood-Wyrm"
+     ]
+    },
+    {
+     "name": "Corpse-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "BS": "2+",
+     "S": "2+",
+     "AP": "-3",
+     "D": "D6",
+     "keywords": [],
+     "models": [
+      "Abyssal Blood-Wyrm"
+     ]
+    }
+   ],
+   "points": 305,
+   "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
+   "compositions": [
+    {
+     "default": true,
+     "points": 305,
+     "models": [
+      {
+       "name": "Abyssal Blood-Wyrm",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Abyssal Blood-Wyrm",
+     "M": "11\"",
+     "T": "-",
+     "Sv": "4+",
+     "W": "22",
+     "Ld": "-",
+     "OC": "6",
+     "MOV": "11\"",
+     "MS": "2+",
+     "RS": "6+",
+     "ARM": "4+",
+     "MIGHT": "22",
+     "CTRL": "6",
+     "UNY": "6+",
+     "equipped": [
+      {
+       "item": "Titan stomp",
+       "count": 1
+      },
+      {
+       "item": "Corpse-maw",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "options": [],
+   "ledBy": [],
+   "leads": [],
+   "rules": [],
+   "faq": [],
+   "class": 5
+  }
+ ],
+ "faq": []
+}
