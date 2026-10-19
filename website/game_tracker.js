@@ -726,13 +726,13 @@
         save(); trackerState.step = 9; try { localStorage.removeItem(SAVE_KEY); } catch (e) {}
         showHub();
     };
-    window.exportHistory = function () { download('iron-and-wrath_history.json', JSON.stringify(hist(), null, 2), 'application/json'); };
+    window.exportHistory = function () { download('project-4192_history.json', JSON.stringify(hist(), null, 2), 'application/json'); };
     window.exportHistoryCSV = function () {
         const rows = [['date', 'p1', 'p1_faction', 'p1_primary', 'p1_pri', 'p1_sec', 'p1_total', 'p2', 'p2_faction', 'p2_primary', 'p2_pri', 'p2_sec', 'p2_total']];
         hist().forEach(m => rows.push([m.date, m.p1, m.p1faction, m.p1mission, m.p1pri, m.p1sec, m.p1score, m.p2, m.p2faction, m.p2mission, m.p2pri, m.p2sec, m.p2score]));
-        download('iron-and-wrath_history.csv', rows.map(r => r.map(c => `"${String(c == null ? '' : c).replace(/"/g, '""')}"`).join(',')).join('\n'), 'text/csv');
+        download('project-4192_history.csv', rows.map(r => r.map(c => `"${String(c == null ? '' : c).replace(/"/g, '""')}"`).join(',')).join('\n'), 'text/csv');
     };
-    window.exportCurrentGame = function () { download('iron-and-wrath_game.json', JSON.stringify(matchRecord(), null, 2), 'application/json'); };
+    window.exportCurrentGame = function () { download('project-4192_game.json', JSON.stringify(matchRecord(), null, 2), 'application/json'); };
 
     // ---------- roles: picking one side auto-selects the opposite ----------
     window.setRole = function (n, role) {
@@ -909,10 +909,10 @@
             link = location.origin + location.pathname + '?obs=' + window.LSYNC.getCode().replace('GDM-', '');
             prefix = '🔴 LIVE: ';
         }
-        const txt = `⚔️ ${prefix}Iron & Wrath · ${a.name} ${totalOf(a)} - ${totalOf(b)} ${b.name} (${S('Round', 'Ronda')} ${trackerState.round}/5)\n${trackerState.primaryMissionP1} / ${trackerState.primaryMissionP2}\n${link}`;
+        const txt = `⚔️ ${prefix}Project 4192 · ${a.name} ${totalOf(a)} - ${totalOf(b)} ${b.name} (${S('Round', 'Ronda')} ${trackerState.round}/5)\n${trackerState.primaryMissionP1} / ${trackerState.primaryMissionP2}\n${link}`;
         window.open('https://wa.me/?text=' + encodeURIComponent(txt), '_blank');
     };
-    window.nativeShare = function () { navigator.share({ title: 'Iron & Wrath game', text: `${trackerState.p1.name} vs ${trackerState.p2.name}`, url: shareLink() }).catch(() => {}); };
+    window.nativeShare = function () { navigator.share({ title: 'Project 4192 game', text: `${trackerState.p1.name} vs ${trackerState.p2.name}`, url: shareLink() }).catch(() => {}); };
     window.importGameFile = function () {
         const i = document.createElement('input'); i.type = 'file'; i.accept = '.json,application/json';
         i.onchange = () => { const f = i.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => {
@@ -1037,7 +1037,7 @@
         // winner / title strip
         const a = totalOf(P(1)), b = totalOf(P(2));
         x.textAlign = 'center'; x.fillStyle = 'rgba(8,11,16,.85)'; x.fillRect(0, 0, W, 54);
-        x.fillStyle = '#e5c15a'; x.font = `800 24px ${FONT}`; x.fillText('IRON & WRATH · 11TH EDITION', HALF, 36);
+        x.fillStyle = '#e5c15a'; x.font = `800 24px ${FONT}`; x.fillText('PROJECT 4192 · 11TH EDITION', HALF, 36);
         x.font = `800 26px ${FONT}`; const wt = a === b ? S('DRAW', 'EMPATE') : `🏆 ${(a > b ? P(1).name : P(2).name).toUpperCase()} ${S('WINS', 'GANA')}`, ww = x.measureText(wt).width + 44;
         x.fillStyle = '#10151c'; rr(HALF - ww / 2, 420, ww, 52, 26); x.fill(); x.strokeStyle = '#e5c15a'; x.lineWidth = 3; x.stroke();
         x.fillStyle = a === b ? '#cfd8e3' : '#e5c15a';
@@ -1069,7 +1069,7 @@
         });
         x.textAlign = 'center'; x.fillStyle = '#4b5666'; x.font = `500 18px ${FONT}`;
         x.fillText(`${new Date().toLocaleDateString()}  ·  P = ${S('primary', 'primaria')}, S = ${S('secondary', 'secundaria')}`, HALF, H - 40);
-        c.toBlob(bl => { const url = URL.createObjectURL(bl), el = document.createElement('a'); el.href = url; el.download = `iron-and-wrath_${(P(1).name || 'p1')}_vs_${(P(2).name || 'p2')}.png`.replace(/\s+/g, '_'); el.click(); URL.revokeObjectURL(url); });
+        c.toBlob(bl => { const url = URL.createObjectURL(bl), el = document.createElement('a'); el.href = url; el.download = `project-4192_${(P(1).name || 'p1')}_vs_${(P(2).name || 'p2')}.png`.replace(/\s+/g, '_'); el.click(); URL.revokeObjectURL(url); });
     };
 
     // keep the active game view in sync with the app's view switching (it lives outside the .view toggle)

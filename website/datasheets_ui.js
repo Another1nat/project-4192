@@ -22,7 +22,7 @@
     window.openDatasheetIndex = function () {
         switchView('datasheet-index'); renderIndex();
         try { history.replaceState({ view: 'datasheet-index' }, '', '#datasheets'); } catch (e) {}
-        document.title = S('Datasheets', 'Datasheets') + ' · Iron & Wrath';
+        document.title = S('Datasheets', 'Datasheets') + ' · Project 4192';
     };
     // Datasheets open straight away (loaded from the community database). "Save for offline" is optional and lives in this bar.
     function renderDsBar() {
@@ -44,7 +44,7 @@
         isBuilderMode = false; switchView('datasheets');
         preloadFactionData(f).then(renderDsBar); renderDsBar();
         try { history.replaceState({ view: 'datasheets', faction: slug(f.name) }, '', '#datasheets/' + slug(f.name)); } catch (e) {}
-        document.title = `${f.name} · Datasheets · Iron & Wrath`;
+        document.title = `${f.name} · Datasheets · Project 4192`;
     };
     function setup() {
         // breadcrumb on the faction page: "‹ Datasheets" instead of "FACTION"

@@ -1,4 +1,4 @@
-/* Iron & Wrath service worker: offline app shell + cached datasheets.
+/* Project 4192 service worker: offline app shell + cached datasheets.
    Bump VERSION on every release that changes cached files (index.html also changes ?v= on scripts, which is picked up automatically). */
 const VERSION = 'v90';
 // DATA_V changes when the upstream datasheets (data/factions/) change (tools/update_all.py bumps it) so phones re-download them

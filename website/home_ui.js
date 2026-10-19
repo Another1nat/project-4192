@@ -10,7 +10,7 @@
         const home = document.getElementById('view-home'); if (!home) return;
         const ov = home.querySelector('.home-header-overlay');
         if (ov && !ov.querySelector('.home-title')) {
-            const t = document.createElement('div'); t.innerHTML = `<h1 class="home-title">Iron <span>&amp; Wrath</span></h1><div class="home-sub">${S('Rosters · Games · League', 'Ejércitos · Partidas · Liga')}</div>`; ov.prepend(t);
+            const t = document.createElement('div'); t.innerHTML = `<h1 class="home-title">Project <span>4192</span></h1><div class="home-sub">${S('Rosters · Games · League', 'Ejércitos · Partidas · Liga')}</div>`; ov.prepend(t);
             ov.style.flexDirection = 'column'; ov.style.alignItems = 'center';
         }
         if (!document.getElementById('home-actions')) {
@@ -28,7 +28,7 @@
         }
         if (!document.getElementById('home-fan-footer')) {
             const f = document.createElement('div'); f.id = 'home-fan-footer'; f.style.cssText = 'text-align:center; color:#667; font-size:0.74rem; line-height:1.5; padding:18px 20px 30px;';
-            f.innerHTML = `${esc(S((window.FAN_NOTICE || {}).en || 'Iron & Wrath companion app.', (window.FAN_NOTICE || {}).es || 'App complementaria de Iron & Wrath.'))} <a href="#about" onclick="switchView('about'); return false;" style="color:var(--accent); text-decoration:underline;">${S('About', 'Acerca de')}</a>`;
+            f.innerHTML = `${esc(S((window.FAN_NOTICE || {}).en || 'Project 4192 companion app.', (window.FAN_NOTICE || {}).es || 'App complementaria de Project 4192.'))} <a href="#about" onclick="switchView('about'); return false;" style="color:var(--accent); text-decoration:underline;">${S('About', 'Acerca de')}</a>`;
             home.appendChild(f);
         }
         if (get() || !navigator.onLine) home.classList.add('factions-open');

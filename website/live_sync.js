@@ -130,7 +130,7 @@
         whatsapp: function (which) {
             const l = LSYNC.links(), st = ts(); if (!l) return;
             const head = st && st.p1 ? `${st.p1.name || 'P1'} vs ${st.p2.name || 'P2'}\n` : '';
-            const txt = which === 'play' ? `⚔️ Iron & Wrath\n${head}${S('Join as player', 'Únete como jugador')}: ${l.play}` : `⚔️ Iron & Wrath — 🔴 ${S('LIVE', 'EN VIVO')}\n${head}${S('Watch', 'Mira')}: ${l.watch}`;
+            const txt = which === 'play' ? `⚔️ Project 4192\n${head}${S('Join as player', 'Únete como jugador')}: ${l.play}` : `⚔️ Project 4192 — 🔴 ${S('LIVE', 'EN VIVO')}\n${head}${S('Watch', 'Mira')}: ${l.watch}`;
             window.open('https://wa.me/?text=' + encodeURIComponent(txt), '_blank');
         },
 

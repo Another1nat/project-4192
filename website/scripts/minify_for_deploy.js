@@ -4,7 +4,7 @@
 // If terser is not installed on the build machine the deploy goes ahead unminified (never blocks a deploy).
 //   node scripts/minify_for_deploy.js [dir]      (dir defaults to the repo root)
 const fs = require('fs'), path = require('path');
-const NOTICE = '/* Iron & Wrath (c) 2026 Victor C. All rights reserved. Unofficial fan tool. Source is not licensed for reuse. */\n';
+const NOTICE = '/* Project 4192 (c) 2026 Victor C. All rights reserved. Unofficial fan tool. Source is not licensed for reuse. */\n';
 
 async function main(dir) {
     // only on the deploy machine: run locally it would overwrite the readable source files (that happened once: 2 files got committed minified)

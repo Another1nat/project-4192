@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow, noai, noimageai">
-  <meta name="description" content="Iron &amp; Wrath terrain layouts as a 2D map, a 3D model and AR on your phone.">
+  <meta name="description" content="Project 4192 terrain layouts as a 2D map, a 3D model and AR on your phone.">
   <link rel="canonical" href="/ar">
   <meta name="theme-color" content="#0b0f14">
-  <title>Terrain Layouts — 2D, 3D &amp; AR | Iron &amp; Wrath</title>
+  <title>Terrain Layouts — 2D, 3D &amp; AR | Project 4192</title>
   <style>
     :root { --bg:#0b0f14; --card:#161d27; --line:#2a3546; --accent:#22c55e; --text:#e6edf8; --muted:#9aa7b8; }
     * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -64,7 +64,7 @@
         history.replaceState(null, '', '?layout=' + code);
         await ARVIEW.browse(document.getElementById('viewer'), code, { height: '62vh' }); if (my !== token) return;
       }
-      document.getElementById('foot').innerHTML = S('Iron & Wrath terrain layouts.', 'Disposiciones de terreno de Iron & Wrath.') + ' <a href="index.html#about">' + S('About & disclaimer', 'Acerca de y aviso legal') + '</a>';
+      document.getElementById('foot').innerHTML = S('Project 4192 terrain layouts.', 'Disposiciones de terreno de Project 4192.') + ' <a href="index.html#about">' + S('About & disclaimer', 'Acerca de y aviso legal') + '</a>';
       paint();
       // Back returns to the page you came from in the app (same tab); opened directly, it goes to the app's home
       document.getElementById('back').addEventListener('click', e => {

@@ -55,7 +55,7 @@
             <button class="br-go" onclick="RSHARE.accept()"><i class="fa-solid fa-file-import"></i> ${S('Add to my rosters', 'Agregar a mis listas')}</button>`);
     }
     async function fromText(t) {
-        t = String(t || '').trim(); const m = /[#&?]?r=([zp][A-Za-z0-9_-]+)/.exec(t) || /^([zp][A-Za-z0-9_-]{8,})$/.exec(t); if (!m) throw new Error(S('That does not look like a Iron & Wrath roster link.', 'Eso no parece un enlace de lista de Iron & Wrath.'));
+        t = String(t || '').trim(); const m = /[#&?]?r=([zp][A-Za-z0-9_-]+)/.exec(t) || /^([zp][A-Za-z0-9_-]{8,})$/.exec(t); if (!m) throw new Error(S('That does not look like a Project 4192 roster link.', 'Eso no parece un enlace de lista de Project 4192.'));
         return clean(await unpack(m[1]));
     }
     window.RSHARE = {
@@ -68,14 +68,14 @@
             SHAREMENU.openItems(anchor, [
                 { ic: 'fa-brands fa-whatsapp', t: 'WhatsApp', sub: S('Send the roster PDF', 'Enviar el PDF de la lista'), fn: b => RSHARE.pdf('whatsapp', b) },
                 { ic: 'fa-solid fa-share-nodes', t: S('More apps…', 'Más apps…'), sub: S('PDF to Mail, Drive, AirDrop…', 'PDF a Correo, Drive, AirDrop…'), fn: b => RSHARE.pdf('share', b) },
-                { ic: 'fa-solid fa-link', t: S('Copy link', 'Copiar enlace'), sub: S('Opens this roster in Iron & Wrath', 'Abre esta lista en Iron & Wrath'), fn: () => RSHARE.copyLink() }
+                { ic: 'fa-solid fa-link', t: S('Copy link', 'Copiar enlace'), sub: S('Opens this roster in Project 4192', 'Abre esta lista en Project 4192'), fn: () => RSHARE.copyLink() }
             ]);
         },
         async pdf(mode, btn) {
             const r = CUR(); if (!r || !window.PDFEXPORT) return; const old = btn && btn.innerHTML; if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; }
             try {
                 toast(S('Preparing PDF…', 'Preparando PDF…'));
-                const out = await PDFEXPORT.roster(r, { blob: true }), file = new File([out.blob], out.name, { type: 'application/pdf' }), title = r.name + ' · Iron & Wrath';
+                const out = await PDFEXPORT.roster(r, { blob: true }), file = new File([out.blob], out.name, { type: 'application/pdf' }), title = r.name + ' · Project 4192';
                 if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title, text: title }); return; } catch (e) { if (e && e.name === 'AbortError') return; } }
                 const a = document.createElement('a'); a.href = URL.createObjectURL(out.blob); a.download = out.name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000);   // no file sharing here (desktop): save it, then open WhatsApp
                 toast(S('PDF saved. Attach it in WhatsApp.', 'PDF guardado. Adjúntalo en WhatsApp.'));
@@ -88,7 +88,7 @@
         },
         openImport() {
             card(`<div class="br-top"><b>${S('Import a roster', 'Importar una lista')}</b><button class="br-x" onclick="RSHARE.close()" aria-label="Close">✕</button></div>
-                <div class="br-note" style="margin-top:0">${S('Paste a Iron & Wrath roster link someone sent you.', 'Pega un enlace de lista de Iron & Wrath que te hayan enviado.')}</div>
+                <div class="br-note" style="margin-top:0">${S('Paste a Project 4192 roster link someone sent you.', 'Pega un enlace de lista de Project 4192 que te hayan enviado.')}</div>
                 <input id="rs-in" class="br-in" style="margin-top:0" placeholder="https://…/#r=…" autocomplete="off" autocapitalize="off" spellcheck="false">
                 <div class="br-err" id="rs-err"></div><button class="br-go" onclick="RSHARE.readInput()">${S('Continue', 'Continuar')}</button>`);
             setTimeout(() => { const i = $('rs-in'); if (i) i.focus(); }, 100);

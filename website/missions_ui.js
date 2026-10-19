@@ -53,7 +53,7 @@
             const each = cards.length === 2 ? (availW - gap) / 2 : availW * 0.78; let cw = each, ch = cw * f.h / f.w; if (ch > availH) { ch = availH; cw = ch * f.w / f.h; }
             const totalW = cards.length * cw + (cards.length - 1) * gap; let x = (W - totalW) / 2;
             cards.forEach((c, i) => { doc.addImage(c.data, 'JPEG', x, top, cw, ch); doc.setDrawColor(190); doc.setLineWidth(0.2); doc.rect(x, top, cw, ch); doc.setFontSize(7); doc.setTextColor(140); doc.text(i ? 'Back' : 'Front', x + cw / 2, top + ch + 4, { align: 'center' }); x += cw + gap; });
-            doc.setFontSize(7); doc.setTextColor(150); doc.text('Iron & Wrath - printed at 100% scale the cards are ~' + Math.round(cw) + ' mm wide', W / 2, H - 5, { align: 'center' });
+            doc.setFontSize(7); doc.setTextColor(150); doc.text('Project 4192 - printed at 100% scale the cards are ~' + Math.round(cw) + ' mm wide', W / 2, H - 5, { align: 'center' });
         }
         if (first) throw new Error(S('No card images found.', 'No se encontraron imágenes de cartas.'));
         return doc.output('blob');
@@ -72,10 +72,10 @@
             doc.setTextColor(255); doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5);
             doc.text(clean(it.type === 'primary' ? S('PRIMARY MISSION', 'MISION PRIMARIA') : S('SECONDARY MISSION', 'MISION SECUNDARIA') + ' - ' + (it.role === 'attacker' ? S('ATTACKER', 'ATACANTE') : S('DEFENDER', 'DEFENSOR'))) + (it.group ? '  |  ' + clean(it.group).toUpperCase() : ''), M, 9);
             doc.setFontSize(18); doc.text(clean(it.name) + (cont ? ' ' + S('(cont.)', '(cont.)') : ''), M, 19);
-            doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.text('Iron & Wrath - 11e', W - M, 9, { align: 'right' });
+            doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.text('Project 4192 - 11e', W - M, 9, { align: 'right' });
             y = 34;
         };
-        const foot = () => { const p = doc.getNumberOfPages(); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(150); doc.text(clean(S('Iron & Wrath - ', 'Iron & Wrath - ') + it.name), M, H - 7); doc.text(String(p), W - M, H - 7, { align: 'right' }); };
+        const foot = () => { const p = doc.getNumberOfPages(); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(150); doc.text(clean(S('Project 4192 - ', 'Project 4192 - ') + it.name), M, H - 7); doc.text(String(p), W - M, H - 7, { align: 'right' }); };
         const need = h => { if (y + h > H - 16) { foot(); doc.addPage(); header(true); } };
         const para = (txt, size, color, style, indent, w) => {
             doc.setFont('helvetica', style || 'normal'); doc.setFontSize(size); doc.setTextColor(color[0], color[1], color[2]);
@@ -114,7 +114,7 @@
         if (first) throw new Error(S('No mission text found.', 'No se encontro texto de mision.'));
         return doc.output('blob');
     }
-    const fileName = s => 'iron-and-wrath-' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.pdf';
+    const fileName = s => 'project-4192-' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.pdf';
     function allOf(type, role) {
         if (type === 'primary') return Object.keys(GROUPS).flatMap(g => GROUPS[g].map(n => ({ type, name: n, group: g })));
         const names = (window.GDM_DATA && window.GDM_DATA.secondaryMissions ? window.GDM_DATA.secondaryMissions.slice().sort() : []);
@@ -127,7 +127,7 @@
             const blob = await (kind === 'cards' ? buildPdf : buildTextPdf)(list, title, (i, n) => { if (list.length > 1) busy(i + '/' + n); });
             const name = fileName(title + (kind === 'cards' ? '' : '-' + lang())), file = new File([blob], name, { type: 'application/pdf' });
             if (mode === 'share' || mode === 'whatsapp') {
-                if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title, text: title + ' - Iron & Wrath' }); return; } catch (e) { if (e && e.name === 'AbortError') return; } }
+                if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title, text: title + ' - Project 4192' }); return; } catch (e) { if (e && e.name === 'AbortError') return; } }
                 // no file-sharing support (desktop): save it, then open WhatsApp with a link
                 saveBlob(blob, name); if (window.toast) toast(S('PDF saved. Attach it in WhatsApp.', 'PDF guardado. Adjúntalo en WhatsApp.'));
                 if (mode === 'whatsapp') setTimeout(() => window.open('https://wa.me/?text=' + encodeURIComponent(title + ' - ' + location.origin), '_blank'), 600);

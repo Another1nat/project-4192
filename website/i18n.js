@@ -12,7 +12,7 @@
         'That enhancement is already taken.': 'Esa mejora ya está tomada.',
         'Add a CHARACTER first (Epic Heroes cannot take enhancements), or free up one that already has an enhancement.': 'Agrega primero un CHARACTER (los Epic Hero no pueden llevar mejoras) o libera uno que ya tenga una mejora.',
         'Pick a detachment first — enhancements come from your detachments.': 'Elige primero un destacamento: las mejoras vienen de tus destacamentos.',
-        'No enhancements left to take.': 'No quedan mejoras por tomar.', 'Heads up: this text comes from an older Faction Pack': 'Ojo: este texto viene de un Faction Pack anterior',
+        'No enhancements left to take.': 'No quedan mejoras por tomar.',
         'LEAGUE': 'LIGA', 'League': 'Liga', "Sign in to join your group's ranking.": 'Inicia sesión para unirte al ranking de tu grupo.',
         'Display name (for sign up)': 'Nombre para mostrar (al registrarte)', 'Email': 'Correo', 'Password (min 6)': 'Contraseña (mín. 6)',
         'SIGN IN': 'INICIAR SESIÓN', 'CREATE ACCOUNT': 'CREAR CUENTA', 'Sign out': 'Cerrar sesión', 'Loading…': 'Cargando…',

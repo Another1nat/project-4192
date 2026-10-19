@@ -1,7 +1,7 @@
 {
-  "name": "Iron & Wrath",
-  "short_name": "Iron & Wrath",
-  "description": "Iron & Wrath army builder, game tracker, rules and missions. Works offline.",
+  "name": "Project 4192",
+  "short_name": "Project 4192",
+  "description": "Project 4192 army builder, game tracker, rules and missions. Works offline.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

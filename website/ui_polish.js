@@ -5,7 +5,7 @@
 
     // ───── casing: ALL-CAPS labels → readable case ─────
     const KEEP = new Set(['PDF', 'CSV', 'JSON', 'PNG', 'ICS', 'VP', 'PTS', 'DP', 'OC', 'FNP', 'UI', 'OR', 'VS', 'BYE', 'PRI', 'SEC', 'BS', 'WS', 'AP', 'MFM', 'WTC', 'AI', 'IOS', 'NO', 'II', 'III', 'IV']);
-    const BRAND = { WHATSAPP: 'WhatsApp', 'IRON & WRATH': 'Iron & Wrath', ICS: '.ics' };
+    const BRAND = { WHATSAPP: 'WhatsApp', 'PROJECT 4192': 'Project 4192', ICS: '.ics' };
     const SMALL = new Set(['of', 'the', 'and', 'to', 'in', 'on', 'a', 'an', 'vs', 'for', 'or', 'de', 'la', 'el', 'y', 'en', 'del', 'los', 'las', 'con']);
     const isCaps = s => /[A-ZÁÉÍÓÚÑÜ]{3,}/.test(s) && !/[a-záéíóúñü]/.test(s);
     function convertWord(w, first, title) {
@@ -70,7 +70,7 @@
     // theme colour = faction of your latest roster; no rosters yet → a random faction colour per visit
     const GREYS = ['Deathwatch', 'Agents of the Imperium', 'Grey Knights', 'Black Templars'];
     function themeFaction() {
-        const F = (typeof FACTIONS !== 'undefined' ? FACTIONS : []); let rs = []; try { rs = JSON.parse(localStorage.getItem('battlelist_rosters') || '[]'); } catch (e) {}
+        const F = (typeof FACTIONS !== 'undefined' ? FACTIONS : []); let rs = []; try { rs = JSON.parse(localStorage.getItem('game_rosters') || '[]'); } catch (e) {}
         const names = rs.map(r => r.faction && r.faction.name).filter(Boolean); let n = null;
         try { n = localStorage.getItem('bl_last_faction'); } catch (e) {}
         if (!rs.length) n = null; else if (!n || !names.includes(n)) n = names[names.length - 1];
@@ -127,7 +127,7 @@
         const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
         if ((standalone || !sessionStorage.getItem('bl_splash')) && !window.__noSplash) {
             sessionStorage.setItem('bl_splash', '1'); const sp = document.createElement('div'); sp.id = 'splash'; sp.style.pointerEvents = 'none';
-            sp.innerHTML = '<img src="assets/icons/logo-mark-192.png" alt=""><div class="w">Iron <b>&amp; Wrath</b></div>'; document.body.appendChild(sp);
+            sp.innerHTML = '<img src="assets/icons/logo-mark-192.png" alt=""><div class="w">Project <b>4192</b></div>'; document.body.appendChild(sp);
             setTimeout(() => { sp.style.opacity = '0'; setTimeout(() => sp.remove(), 480); }, 650);
         }
     } catch (e) {}

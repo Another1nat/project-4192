@@ -9,7 +9,7 @@ const fail = m => fails.push(m), ok = m => notes.push(m);
 
 // 1. every JavaScript file the app can load must at least parse
 const jsFiles = fs.readdirSync('.').filter(f => f.endsWith('.js'));
-const minified = jsFiles.filter(f => fs.readFileSync(f, 'utf8').startsWith('/* Iron & Wrath (c) 2026'));   // a minified file in the repo = the readable source was lost
+const minified = jsFiles.filter(f => fs.readFileSync(f, 'utf8').startsWith('/* Project 4192 (c) 2026'));   // a minified file in the repo = the readable source was lost
 if (minified.length) fail(`committed in minified form (restore the readable source): ${minified.join(', ')}`);
 let bad = 0; for (const f of jsFiles) { try { new vm.Script(fs.readFileSync(f, 'utf8'), { filename: f }); } catch (e) { bad++; fail(`syntax error in ${f}: ${e.message}`); } }
 if (!bad) ok(`${jsFiles.length} JavaScript files parse`);

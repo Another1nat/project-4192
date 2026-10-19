@@ -33,7 +33,7 @@
             orphan.forEach(u => out.push({ lvl: 'err', t: S(`${u.enh.name}: its detachment is no longer selected.`, `${u.enh.name}: su destacamento ya no está seleccionado.`) }));
             enhs.filter(u => /EPIC/.test(roleOf(u)) || !/CHARACTER/.test(roleOf(u) || 'CHARACTER')).forEach(u => out.push({ lvl: 'err', t: S(`${u.name} cannot take an enhancement.`, `${u.name} no puede llevar una mejora.`) }));
         }
-        // hand-entered points (Munitorum Field Manual not updated yet)
+        // hand-entered points
         if (window.MFM_MANUAL && r.faction && r.faction.name === MFM_MANUAL.faction && units.some(u => { const o = window.getMFMOverride && getMFMOverride(u.name); return o && o.manual; })) out.push({ lvl: 'warn', t: MFM_MANUAL.note[lang() === 'es' ? 'es' : 'en'] });
         // warlord
         const hasChar = units.some(u => /CHARACTER|EPIC/.test(roleOf(u)));
@@ -51,7 +51,7 @@
         const res = check(r), bad = res.filter(x => x.lvl !== 'ok').length, ico = { ok: '✔', warn: '⚠', err: '✖' }, col = { ok: '#5be59a', warn: '#e5c15a', err: '#ff7b7b' };
         box.innerHTML = `<details id="roster-check-d" ${acOpen ? 'open' : ''} style="margin-top:12px; background:#10151c; border:1px solid ${bad ? '#6b5a2a' : '#2a3546'}; border-radius:10px; padding:10px 12px;"><summary style="cursor:pointer; font-weight:bold;">${bad ? '⚠ ' + S(`Army check — ${bad} to review`, `Revisión de lista — ${bad} por revisar`) : '✔ ' + S('Army check — all good', 'Revisión de lista — todo bien')}</summary>
             ${res.map(x => `<div style="color:${col[x.lvl]}; font-size:0.85rem; padding:4px 0;">${ico[x.lvl]} ${esc(x.t)}</div>`).join('')}
-            <div style="color:#667; font-size:0.7rem; margin-top:6px;">${S('Quick checks only — confirm against the current rules and Munitorum Field Manual.', 'Revisiones rápidas: confirma con las reglas vigentes y el Munitorum Field Manual.')}</div></details>`;
+            <div style="color:#667; font-size:0.7rem; margin-top:6px;">${S('Quick checks only — confirm against the current rules.', 'Revisiones rápidas: confirma con las reglas vigentes.')}</div></details>`;
     }
     const orig = window.renderRosterBuilder;
     window.renderRosterBuilder = function () { const r = orig.apply(this, arguments); try { paint(); } catch (e) {} return r; };

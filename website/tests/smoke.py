@@ -1,4 +1,4 @@
-"""Browser smoke tests for the Iron & Wrath site (Playwright, Chromium). Run from the repo root:
+"""Browser smoke tests for the Project 4192 site (Playwright, Chromium). Run from the repo root:
        python3 tests/smoke.py            # all tests
        python3 tests/smoke.py calc       # only tests whose name contains "calc"
    Exit code 1 if anything fails, so CI can block a bad change. It starts its own static server."""
@@ -70,6 +70,23 @@ def game_tracker_starts_a_game(b):
     assert 'ALPHA' in pg.inner_text('body') and 'BETA' in pg.inner_text('body')
     pg.evaluate("changeGameRound(1)")
     assert not errs, errs
+
+@test
+def streaming_and_spectator_pages_work_without_a_backend(b):
+    pg, errs = new_page(b)
+    pg.evaluate("""() => { localStorage.removeItem('gdm_games'); trackerState.p1.name = 'ALPHA'; trackerState.p2.name = 'BETA'; trackerState.firstTurn = 1; startGameTracker(); renderGame(); }""")
+    pg.wait_for_timeout(400)
+    pg.evaluate("openShare()"); pg.wait_for_timeout(500)
+    assert pg.evaluate("typeof BROADCAST === 'object' && typeof BROADCAST.openStudioModal === 'function'")
+    pg.evaluate("BROADCAST.openStudioModal()"); pg.wait_for_timeout(500)
+    assert pg.evaluate("typeof LSYNC === 'object'")
+    assert not errs, errs
+    for page in ['watch.html?room=TEST', 'overlay.html?room=TEST', 'ar.html']:
+        p2 = pg.context.new_page(); e2 = []
+        p2.on('pageerror', lambda e: e2.append(str(e)[:200]))
+        p2.goto(BASE + page); p2.wait_for_timeout(1500)
+        assert 'warpedia' not in p2.content().lower(), page
+        assert not e2, (page, e2)
 
 def main():
     pick = sys.argv[1].lower() if len(sys.argv) > 1 else ''

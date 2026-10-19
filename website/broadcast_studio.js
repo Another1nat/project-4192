@@ -1,4 +1,4 @@
-/* Iron & Wrath Streamer Studio: Mobile "Mini-OBS" broadcasting engine for tabletop games.
+/* Project 4192 Streamer Studio: Mobile "Mini-OBS" broadcasting engine for tabletop games.
    Streams 1080p rear camera, live VP & CP scores, and 3D terrain layouts to OBS Studio & private spectator links.
    Uses Supabase Realtime for zero-server WebRTC signaling & score telemetry. $0 bandwidth cost. */
 (function () {

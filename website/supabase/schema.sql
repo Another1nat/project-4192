@@ -1,4 +1,4 @@
--- Iron & Wrath league — Supabase schema (free tier). Paste into: Supabase Dashboard → SQL Editor → Run.
+-- Project 4192 league — Supabase schema (free tier). Paste into: Supabase Dashboard → SQL Editor → Run.
 -- Safe to re-run. ALL-IN-ONE: tables, RLS, RPCs, leaderboard, 60-day archive job, cloud rosters, league v2-v4
 -- (confirmations, calendar, live links, one league per user, disband), tournaments, and username login lookup.
 -- The other .sql files in this folder are the same pieces split up; you only need this one.
@@ -771,7 +771,7 @@ end $$;
 
 -- ───────────── admins (identified by confirmed e-mail; edit this table only in the SQL editor) ─────────────
 create table if not exists public.app_admins (email text primary key);
-insert into public.app_admins (email) values ('vicastellanosb@gmail.com') on conflict do nothing;
+insert into public.app_admins (email) values ('YOUR-EMAIL@example.com') on conflict do nothing;
 alter table public.app_admins enable row level security;            -- no policies: nobody can read it directly
 revoke all on public.app_admins from anon, authenticated;
 

@@ -4,7 +4,7 @@ Everything runs in the cloud: the database on Supabase, the 5-day keep-alive on 
 
 ## 1. Create the project (≈5 min)
 1. Go to <https://supabase.com> → **Start your project** → sign in with GitHub (no card asked on the free plan).
-2. **New project**: any name (e.g. `battlelist`), pick a region near you, set a database password (save it somewhere), plan **Free**.
+2. **New project**: any name (e.g. `project-4192`), pick a region near you, set a database password (save it somewhere), plan **Free**.
 3. **Authentication → Providers → Email**: turn **OFF "Confirm email"** (so friends can sign up with email + password without waiting for emails; the free email sender is heavily rate-limited).
 4. **SQL Editor → New query** → paste all of `supabase/schema.sql` → **Run**. (Safe to re-run later. It also schedules the daily 60-day cleanup.)
 5. **Project Settings → API**: copy the **Project URL** and the **anon public** key.
@@ -53,7 +53,7 @@ All are safe to re-run. `schema.sql` already contains all of them, so a brand-ne
 
 ## v6 — admin panel, blocked accounts, live games with linked players
 Run the whole `schema.sql` again (it is safe to re-run). It adds:
-- **Admin panel** (menu → Admin, only for the e-mail in the `app_admins` table — `vicastellanosb@gmail.com` by default; add another admin in the SQL editor with `insert into public.app_admins values ('x@y.com');`). The panel can list users (e-mail, last sign-in), send password-reset links, block/unblock or delete accounts, and see/delete leagues, games, live games, cloud rosters and tournaments. Every action is written to `admin_log`. Passwords cannot be read — Supabase only stores hashes.
+- **Admin panel** (menu → Admin, only for the e-mail in the `app_admins` table — `YOUR-EMAIL@example.com` by default; add another admin in the SQL editor with `insert into public.app_admins values ('x@y.com');`). The panel can list users (e-mail, last sign-in), send password-reset links, block/unblock or delete accounts, and see/delete leagues, games, live games, cloud rosters and tournaments. Every action is written to `admin_log`. Passwords cannot be read — Supabase only stores hashes.
 - **Blocked accounts**: a blocked account cannot sign in and cannot create/change games, rosters, memberships or events.
 - **Live games v2**: the host can invite a league member to play Player 2 on their own phone (they accept and pick an army list); each device writes only its own side; everyone else with the link or in the league is a spectator. Invitations last 24 h, a player can have 5 pending invitations and be in 3 live games, leaving the league ends the link.
 

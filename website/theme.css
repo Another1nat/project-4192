@@ -1,4 +1,4 @@
-/* Iron & Wrath — clean, minimal theme layer. Loaded last; only restyles (no logic). */
+/* Project 4192 — clean, minimal theme layer. Loaded last; only restyles (no logic). */
 @font-face { font-family: 'Barlow Semi Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url(assets/fonts/barlow-semicondensed-600.woff2) format('woff2'); }
 @font-face { font-family: 'Barlow Semi Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url(assets/fonts/barlow-semicondensed-700.woff2) format('woff2'); }
 :root {

@@ -182,7 +182,7 @@
         join: safe(async () => { homeCache = null; const c = val('lg-code').trim(); if (!c) throw new Error('Enter an invite code'); const id = await db.joinLeague(c); currentId = id; LS.set('lg_current', id); renderHome(); }),
         removeGame: safe(async id => { if (!confirm('Remove this game from the league?')) return; await db.deleteGame(id); renderHome(); }),
         copyInvite: () => { const m = memberships.find(x => x.league.id === currentId); if (!m) return; const l = location.origin + location.pathname + '?join=' + m.league.invite_code; (navigator.clipboard ? navigator.clipboard.writeText(l) : Promise.reject()).then(() => alert('Invite link copied'), () => prompt('Copy this link:', l)); },
-        inviteWA: () => { const m = memberships.find(x => x.league.id === currentId); if (!m) return; const l = location.origin + location.pathname + '?join=' + m.league.invite_code; window.open('https://wa.me/?text=' + encodeURIComponent(`Join my league "${m.league.name}" on Iron & Wrath: ${l}`), '_blank'); }
+        inviteWA: () => { const m = memberships.find(x => x.league.id === currentId); if (!m) return; const l = location.origin + location.pathname + '?join=' + m.league.invite_code; window.open('https://wa.me/?text=' + encodeURIComponent(`Join my league "${m.league.name}" on Project 4192: ${l}`), '_blank'); }
     };
 
     // ---- cloud rosters: max 3 per user, stored compactly as [datasheetId, name, pts, count] ----
@@ -277,7 +277,7 @@
         ics: id => {
             const e = (window.__events || []).find(x => x.id === id); if (!e) return;
             const s = new Date(e.starts_at), en = new Date(s.getTime() + 3 * 36e5), m = memberships.find(x => x.league.id === currentId);
-            const txt = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Iron & Wrath//League//EN', 'BEGIN:VEVENT', `UID:${e.id}@iron-and-wrath`, `DTSTAMP:${icsDate(new Date())}`, `DTSTART:${icsDate(s)}`, `DTEND:${icsDate(en)}`,
+            const txt = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Project 4192//League//EN', 'BEGIN:VEVENT', `UID:${e.id}@project-4192`, `DTSTAMP:${icsDate(new Date())}`, `DTSTART:${icsDate(s)}`, `DTEND:${icsDate(en)}`,
                 `SUMMARY:${(e.title || '').replace(/[,;\n]/g, ' ')}${m ? ' · ' + m.league.name.replace(/[,;\n]/g, ' ') : ''}`, `DESCRIPTION:${(e.notes || '').replace(/[,;\n]/g, ' ')}`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
             const url = URL.createObjectURL(new Blob([txt], { type: 'text/calendar' })), a = document.createElement('a'); a.href = url; a.download = 'league-event.ics'; a.click(); URL.revokeObjectURL(url);
         },
@@ -400,7 +400,7 @@
         onGameSaved: () => { if (!configured || typeof trackerState === 'undefined' || !trackerState.shareCode) return; clearTimeout(syncTimer); syncTimer = setTimeout(() => publishCurrent('in_progress').catch(() => {}), 3000); },
         onGameFinished: (rec, code) => { if (!configured || !code || !rec) return; rec.shareCode = code; db.publish(code, window.GDM.snapshotFromRecord(rec), 'finished', rec.leagueId).catch(() => {}); },
         _copyLive: () => { const v = document.getElementById('live-link-input').value; (navigator.clipboard ? navigator.clipboard.writeText(v) : Promise.reject()).then(() => alert('Link copied'), () => { document.getElementById('live-link-input').select(); document.execCommand('copy'); }); },
-        _waLive: () => { const v = document.getElementById('live-link-input').value; window.open('https://wa.me/?text=' + encodeURIComponent('Follow my game live on Iron & Wrath: ' + v), '_blank'); }
+        _waLive: () => { const v = document.getElementById('live-link-input').value; window.open('https://wa.me/?text=' + encodeURIComponent('Follow my game live on Project 4192: ' + v), '_blank'); }
     });
 
     // header pills: Log in / Sign up  ↔  Account

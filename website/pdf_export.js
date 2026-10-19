@@ -22,14 +22,14 @@
 
     function render(doc, factionName, units, state) {
         const W = 210, H = 297, M = 14, CW = W - 2 * M; let y = M;
-        const foot = () => { doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(120); doc.text(`Iron & Wrath · ${factionName}`, M, H - 7); doc.text(String(doc.internal.getNumberOfPages()), W - M, H - 7, { align: 'right' }); doc.setTextColor(0); };
+        const foot = () => { doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(120); doc.text(`Project 4192 · ${factionName}`, M, H - 7); doc.text(String(doc.internal.getNumberOfPages()), W - M, H - 7, { align: 'right' }); doc.setTextColor(0); };
         const newPage = () => { foot(); doc.addPage(); y = M; };
         const need = h => { if (y + h > H - 14) newPage(); };
         const lines = (t, w, size) => { doc.setFontSize(size); return doc.splitTextToSize(t, w); };
         // faction title
         if (state.first) state.first = false; else newPage();
         doc.setFont('helvetica', 'bold'); doc.setFontSize(20); doc.text(factionName, M, y + 6); y += 10;
-        doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(110); doc.text(`${units.length} datasheets · ${new Date().toLocaleDateString()} · points from the Munitorum Field Manual`, M, y); doc.setTextColor(0); y += 8;
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(110); doc.text(`${units.length} datasheets · ${new Date().toLocaleDateString()}`, M, y); doc.setTextColor(0); y += 8;
         units.forEach(u => {
             const stats = [['M', chr(u, 'M')], ['T', chr(u, 'T')], ['Sv', chr(u, 'Sv')], ['W', chr(u, 'W')], ['Ld', chr(u, 'LD') || chr(u, 'Ld')], ['OC', chr(u, 'OC')], ['Inv', chr(u, 'InSv')]].filter(x => x[1]);
             const rw = weaponsOf(u, false), mw = weaponsOf(u, true), ab = abilitiesOf(u);
@@ -80,8 +80,8 @@
         if (!done) throw new Error(S('No datasheets were available.', 'No había datasheets disponibles.'));
         try { const cs = await (await fetch('data/core_stratagems.json' + (window.BL_DATA_V ? '?v=' + window.BL_DATA_V : ''))).json(); if (cs.length) { doc.addPage(); doc.setFont('helvetica', 'bold'); doc.setFontSize(12); doc.text('CORE STRATAGEMS', 14, 20); let yy = 28; doc.setFontSize(8);
             cs.forEach(x => { const body = `${x.name} (${x.cost}CP)\nWHEN: ${x.turn}\nTARGET: ${x.target}\nEFFECT: ${x.effect}`; const tl = doc.splitTextToSize(clean(body), 180); if (yy + tl.length * 3.6 > 285) { doc.addPage(); yy = 20; } doc.setFont('helvetica', 'normal'); doc.text(tl, 14, yy); yy += tl.length * 3.6 + 3; }); } } catch (e) {}
-        const n = doc.internal.getNumberOfPages(); for (let i = 1; i <= n; i++) { doc.setPage(i); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(120); doc.text(`Iron & Wrath · ${names.length === 1 ? names[0] : 'Datasheets'} · ${new Date().toLocaleDateString()}`, 14, 290); doc.setFontSize(6.2); doc.text(clean((window.FAN_NOTICE || {}).en || 'Iron & Wrath'), 14, 293.5); doc.setFontSize(7.5); doc.text(`${i} / ${n}`, 196, 290, { align: 'right' }); }
-        doc.save(`iron-and-wrath-datasheets-${names.length === 1 ? names[0].toLowerCase().replace(/[^a-z0-9]+/g, '-') : 'all'}.pdf`); return n;
+        const n = doc.internal.getNumberOfPages(); for (let i = 1; i <= n; i++) { doc.setPage(i); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(120); doc.text(`Project 4192 · ${names.length === 1 ? names[0] : 'Datasheets'} · ${new Date().toLocaleDateString()}`, 14, 290); doc.setFontSize(6.2); doc.text(clean((window.FAN_NOTICE || {}).en || 'Project 4192'), 14, 293.5); doc.setFontSize(7.5); doc.text(`${i} / ${n}`, 196, 290, { align: 'right' }); }
+        doc.save(`project-4192-datasheets-${names.length === 1 ? names[0].toLowerCase().replace(/[^a-z0-9]+/g, '-') : 'all'}.pdf`); return n;
     }
     window.PDFEXPORT = { lib: loadLib, clean, exportFactions, prefetch: () => { try { fetch(JSPDF_URL).catch(() => {}); } catch (e) {} } };
 
@@ -201,7 +201,7 @@
             if (cs.length && !opts.noCore) { doc.addPage(); y = M; heading('CORE STRATAGEMS (available to every army)'); cs.forEach(stratBlock); } } catch (e) {}
         if (opts.partOf) return doc.internal.getNumberOfPages();
         const n = doc.internal.getNumberOfPages();
-        for (let i = 1; i <= n; i++) { doc.setPage(i); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(120); doc.text(`Iron & Wrath · ${clean(roster.name)} · ${new Date().toLocaleDateString()}`, M, H - 8); doc.setFontSize(6.2); doc.text(clean((window.FAN_NOTICE || {}).en || 'Iron & Wrath'), M, H - 4.6); doc.setFontSize(7.5); doc.text(`${i} / ${n}`, W - M, H - 8, { align: 'right' }); }
+        for (let i = 1; i <= n; i++) { doc.setPage(i); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(120); doc.text(`Project 4192 · ${clean(roster.name)} · ${new Date().toLocaleDateString()}`, M, H - 8); doc.setFontSize(6.2); doc.text(clean((window.FAN_NOTICE || {}).en || 'Project 4192'), M, H - 4.6); doc.setFontSize(7.5); doc.text(`${i} / ${n}`, W - M, H - 8, { align: 'right' }); }
         const fname = `roster-${clean(roster.name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'army'}.pdf`;
         if (opts && opts.blob) return { blob: doc.output('blob'), name: fname, pages: n };   // for sharing instead of saving
         doc.save(fname); return n;

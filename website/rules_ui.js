@@ -32,12 +32,12 @@
         await PDFEXPORT.lib(); const { jsPDF } = window.jspdf; const doc = new jsPDF({ unit: 'mm', format: 'a4' });
         const W = 210, H = 297, M = 15, CW = W - 2 * M; let y = M, page = 1;
         const clean = PDFEXPORT.clean, es = lang() === 'es';
-        const footer = () => { doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(140); doc.text('Iron & Wrath - ' + (es ? 'Reglas básicas (traducción no oficial)' : 'Core Rules'), M, H - 7); doc.text(String(page), W - M, H - 7, { align: 'right' }); doc.setTextColor(0); };
+        const footer = () => { doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(140); doc.text('Project 4192 - ' + (es ? 'Reglas básicas (traducción no oficial)' : 'Core Rules'), M, H - 7); doc.text(String(page), W - M, H - 7, { align: 'right' }); doc.setTextColor(0); };
         const need = h => { if (y + h > H - 14) { footer(); doc.addPage(); page++; y = M; } };
         // cover
         doc.setFont('helvetica', 'bold'); doc.setFontSize(26); doc.text(es ? 'Reglas básicas' : 'Core Rules', M, 50);
-        doc.setFontSize(12); doc.setFont('helvetica', 'normal'); doc.setTextColor(90); doc.text('Iron & Wrath', M, 60);
-        if (es) { const n = doc.splitTextToSize('Traducción de cortesía generada para Iron & Wrath. No es oficial; ante cualquier duda prevalece el texto en inglés. Los nombres de palabras clave y habilidades se mantienen en inglés para coincidir con las hojas de datos.', CW); doc.setFontSize(9.5); doc.text(n, M, 72); }
+        doc.setFontSize(12); doc.setFont('helvetica', 'normal'); doc.setTextColor(90); doc.text('Project 4192', M, 60);
+        if (es) { const n = doc.splitTextToSize('Traducción de cortesía generada para Project 4192. No es oficial; ante cualquier duda prevalece el texto en inglés. Los nombres de palabras clave y habilidades se mantienen en inglés para coincidir con las hojas de datos.', CW); doc.setFontSize(9.5); doc.text(n, M, 72); }
         doc.setTextColor(0); y = 100;
         const data = rulesData(); let n = 0;
         doc.setFont('helvetica', 'bold'); doc.setFontSize(11); doc.text(es ? 'Contenido' : 'Contents', M, y); y += 7; doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5);
@@ -67,7 +67,7 @@
         const old = btn ? btn.innerHTML : ''; const busy = t => { if (btn) { btn.disabled = true; btn.innerHTML = t; } };
         try {
             busy(S('Preparing…', 'Preparando…')); const blob = await build((i, n) => busy(i + '/' + n));
-            const name = lang() === 'es' ? 'iron-and-wrath-reglas-basicas-es.pdf' : 'iron-and-wrath-core-rules.pdf', file = new File([blob], name, { type: 'application/pdf' });
+            const name = lang() === 'es' ? 'project-4192-reglas-basicas-es.pdf' : 'project-4192-core-rules.pdf', file = new File([blob], name, { type: 'application/pdf' });
             if (mode === 'share' || mode === 'whatsapp') {
                 if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title: S('Core Rules', 'Reglas básicas') }); return; } catch (e) { if (e && e.name === 'AbortError') return; } }
                 saveBlob(blob, name); if (window.toast) toast(S('PDF saved. Attach it in WhatsApp.', 'PDF guardado. Adjúntalo en WhatsApp.'));

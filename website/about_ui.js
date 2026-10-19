@@ -6,9 +6,9 @@
     const CONTENT = {
         en: {
             title: 'About & credits',
-            lead: 'Iron & Wrath is the companion app for the Iron & Wrath tabletop game: build your army, track your games and read the rules.',
+            lead: 'Project 4192 is the companion app for the Project 4192 tabletop game: build your army, track your games and read the rules.',
             sections: [
-                ['Rules and data', ['All rules, factions, units, points and missions in this app belong to the Iron & Wrath game. Edit them in the data files described in README.md.']],
+                ['Rules and data', ['All rules, factions, units, points and missions in this app belong to the Project 4192 game. Edit them in the data files described in README.md.']],
                 ['Your data', ['Rosters and games are stored on this device (in your browser). Export backups from Data & Offline. If you create an account, only what you choose to save to the cloud, a league or a live game is sent to the server.']],
                 ['Feedback', ['Found a mistake or have an idea? Use "Report a bug / suggest" in the menu.']],
                 ['No warranty', ['The app is provided "as is", without warranty of any kind.']]
@@ -17,9 +17,9 @@
         },
         es: {
             title: 'Acerca de y créditos',
-            lead: 'Iron & Wrath es la app del juego de mesa Iron & Wrath: arma tu ejército, lleva tus partidas y consulta las reglas.',
+            lead: 'Project 4192 es la app del juego de mesa Project 4192: arma tu ejército, lleva tus partidas y consulta las reglas.',
             sections: [
-                ['Reglas y datos', ['Todas las reglas, facciones, unidades, puntos y misiones de esta app pertenecen al juego Iron & Wrath. Se editan en los archivos de datos descritos en README.md.']],
+                ['Reglas y datos', ['Todas las reglas, facciones, unidades, puntos y misiones de esta app pertenecen al juego Project 4192. Se editan en los archivos de datos descritos en README.md.']],
                 ['Tus datos', ['Los ejércitos y las partidas se guardan en este dispositivo (en tu navegador). Exporta copias de seguridad desde Datos y sin conexión. Si creas una cuenta, solo se envía al servidor lo que decidas guardar en la nube, en una liga o en una partida en vivo.']],
                 ['Comentarios', ['¿Encontraste un error o tienes una idea? Usa "Reportar error / sugerir" en el menú.']],
                 ['Sin garantía', ['La app se ofrece "tal cual", sin garantía de ningún tipo.']]
@@ -39,7 +39,7 @@
     }
     window.ABOUT = { render, text: lang => CONTENT[lang || 'en'] };
     // one-line notice used by the PDF footer and the datasheet / roster screens
-    window.FAN_NOTICE = { en: 'Iron & Wrath companion app.', es: 'App complementaria de Iron & Wrath.' };
+    window.FAN_NOTICE = { en: 'Project 4192 companion app.', es: 'App complementaria de Project 4192.' };
     const base = window.switchView;
     if (base) window.switchView = function (v, p) { const r = base.apply(this, arguments); if (v === 'about') render(); return r; };
     document.addEventListener('DOMContentLoaded', render);

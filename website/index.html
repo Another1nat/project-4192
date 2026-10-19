@@ -7,7 +7,6 @@
         if (l.protocol === 'http:' && l.hostname !== 'localhost' && l.hostname !== '127.0.0.1') {
             l.replace('https://' + l.host + l.pathname + l.search + l.hash);
         }
-        window.__MOVED = l.hash.indexOf('#move=') === 0 ? l.hash.slice(6) : '';
     } catch (e) {} })();</script>
     <script>/* ?embed=1: the full game tracker shown inside the spectator page (watch.html), without the app's menus */
     (function () { if (/[?&]embed=1\b/.test(location.search)) { document.documentElement.classList.add('wp-embed');
@@ -19,22 +18,21 @@
     <meta name="theme-color" content="#17223e">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Iron &amp; Wrath">
+    <meta name="apple-mobile-web-app-title" content="Project 4192">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png?v=2">
     <link rel="shortcut icon" href="assets/icons/favicon.ico?v=2">
-    <meta name="description" content="Iron &amp; Wrath companion: army builder with points, live game tracker with scoring, rules and missions. Works offline.">
+    <meta name="description" content="Project 4192 companion: army builder with points, live game tracker with scoring, rules and missions. Works offline.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Iron &amp; Wrath — army builder &amp; game tracker">
-    <meta property="og:description" content="Army builder, game tracker, rules and missions for Iron &amp; Wrath. Installable, works offline.">
+    <meta property="og:title" content="Project 4192 — army builder &amp; game tracker">
+    <meta property="og:description" content="Army builder, game tracker, rules and missions for Project 4192. Installable, works offline.">
     <meta property="og:image" content="assets/icons/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Iron & Wrath","applicationCategory":"GameApplication","operatingSystem":"Any (web, installable)","inLanguage":["en","es"],"offers":{"@type":"Offer","price":"0"}}</script>
-    <title>Iron &amp; Wrath — Army Builder &amp; Game Tracker</title>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Project 4192","applicationCategory":"GameApplication","operatingSystem":"Any (web, installable)","inLanguage":["en","es"],"offers":{"@type":"Offer","price":"0"}}</script>
+    <title>Project 4192 — Army Builder &amp; Game Tracker</title>
     <link rel="stylesheet" href="styles.css?v=1791661200">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -208,11 +206,11 @@
     <!-- TOP NAVIGATION BAR -->
     <nav class="top-navbar" style="display:flex; align-items:center; justify-content:space-between;">
         <div style="display:flex; align-items:center; gap:20px;">
-            <div class="logo" onclick="switchView('home')" style="cursor:pointer; flex-shrink:0; display:flex; align-items:center; gap:8px;"><img src="assets/icons/logo-mark-96.png" alt="" width="30" height="30" style="border-radius:0;"><span>Iron<span style="color:var(--accent);">&amp;Wrath</span></span></div>
+            <div class="logo" onclick="switchView('home')" style="cursor:pointer; flex-shrink:0; display:flex; align-items:center; gap:8px;"><img src="assets/icons/logo-mark-96.png" alt="" width="30" height="30" style="border-radius:0;"><span>Project<span style="color:var(--accent);">4192</span></span></div>
             
             <div class="desktop-nav-links">
                 <button onclick="switchView('tracker')"><i class="fa-solid fa-chess-board"></i> Game Tracker</button>
-                <a href="ar.html" style="text-decoration:none;"><button style="color:var(--accent);"><i class="fa-solid fa-map-location-dot"></i> Layouts · 2D &amp; AR</button></a>
+                <a href="terrain.html" style="text-decoration:none;"><button style="color:var(--accent);"><i class="fa-solid fa-map-location-dot"></i> Terrain layouts</button></a>
                 <button onclick="openDatasheetIndex()"><i class="fa-solid fa-book-open"></i> Datasheets</button>
             </div>
         </div>
@@ -246,9 +244,9 @@
         <button onclick="switchView('tracker'); toggleMenu()">
             <i class="fa-solid fa-chess-board"></i> Game Tracker
         </button>
-        <a href="ar.html" style="text-decoration:none;">
+        <a href="terrain.html" style="text-decoration:none;">
             <button style="color:var(--accent); width:100%; text-align:left;">
-                <i class="fa-solid fa-map-location-dot"></i> Terrain Layouts · 2D &amp; AR
+                <i class="fa-solid fa-map-location-dot"></i> Terrain Layouts
             </button>
         </a>
         <button onclick="switchView('league'); toggleMenu()">
@@ -882,7 +880,7 @@
                 <div style="background:#1e252f; border:1px solid var(--accent); border-radius:8px; padding:20px; margin-bottom:20px;">
                     <h3 style="color:#fff; margin-top:0; border-bottom:1px solid #333; padding-bottom:10px;">v0.1 - First version</h3>
                     <ul style="color:#cfd8e3; line-height:1.6; padding-left:20px;">
-                        <li>Army builder, game tracker, rules and missions pages ready for Iron &amp; Wrath data.</li>
+                        <li>Army builder, game tracker, rules and missions pages ready for Project 4192 data.</li>
                     </ul>
                 </div>
             </div>

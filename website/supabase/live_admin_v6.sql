@@ -24,7 +24,7 @@ end $$;
 
 -- ───────────── admins (identified by confirmed e-mail; edit this table only in the SQL editor) ─────────────
 create table if not exists public.app_admins (email text primary key);
-insert into public.app_admins (email) values ('vicastellanosb@gmail.com') on conflict do nothing;
+insert into public.app_admins (email) values ('YOUR-EMAIL@example.com') on conflict do nothing;
 alter table public.app_admins enable row level security;            -- no policies: nobody can read it directly
 revoke all on public.app_admins from anon, authenticated;
 

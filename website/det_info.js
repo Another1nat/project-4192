@@ -21,7 +21,7 @@
         o.s = (info.s || []).map((s, i) => { const x = t.s && t.s[i]; return x && x[4] === hs([s[3], s[4], s[5], s[6]].join(' ¦ ')) ? [s[0], s[1], s[2], x[0], x[1], x[2], x[3]] : s; });
         LC[ck] = { src: info, out: o }; return o;
     }
-    // 39k.pro (official 11e) detachment -> the same {r, e, s} shape the older tables use
+    // detachment from the faction file -> the same {r, e, s} shape the older tables use
     const CAT = { battleTactic: 'Battle Tactic', strategicPloy: 'Strategic Ploy', epicDeed: 'Epic Deed', wargear: 'Wargear' };
     function from39k(x) {
         if (!x || !(x.rules || []).length) return null;
@@ -65,7 +65,7 @@
     // the three parts of a detachment, for the roster's Rules / Enhancements / Stratagems sections
     function parts(d) {
         if (d && d.name) enrich(d); const i = d && d.info;
-        const warn = d && d.infoStale ? `<div class="dt-warn">${S('Heads up: this text comes from an older Faction Pack — the enhancements in the Munitorum Field Manual differ. Trust the MFM list and the official app.', 'Ojo: este texto viene de un Faction Pack anterior — las mejoras del Munitorum Field Manual son distintas. Fíate de la lista del MFM y de la app oficial.')}</div>` : '';
+        const warn = d && d.infoStale ? `<div class="dt-warn">${S('Heads up: this text is from an older version — the enhancements in the points table differ. Trust the MFM list and the official app.', 'Ojo: este texto viene de una versión anterior — las mejoras de la tabla de puntos son distintas. Fíate de la lista del MFM y de la app oficial.')}</div>` : '';
         const rules = i && (i.r || []).length ? warn + i.r.map(([n, t]) => `<div class="dt-rule"><div class="dt-rn">${esc(n)}</div>${fmt(t)}</div>`).join('')
             : (d && d.requirements ? `<div class="dt-rule"><div class="dt-rn">${S('Requirement (MFM)', 'Requisito (MFM)')}</div><p>${esc(d.requirements)}</p></div>` : '');
         const s = (i && i.s) || [];
@@ -78,18 +78,18 @@
     // collapsible "what this detachment does" (rule text, plus enhancements when asked)
     function detailsHtml(d, o) {
         o = o || {}; if (d && d.name) enrich(d); const i = d && d.info;   // re-enrich if the language changed
-        if (d && (!i || !(i.r || []).length)) {   // no rule text for this one: show what the Munitorum Field Manual does say, and be clear about the rest
+        if (d && (!i || !(i.r || []).length)) {   // no rule text for this one: show what the points table does say, and be clear about the rest
             const req = d.requirements ? `<div class="dt-rule"><div class="dt-rn">${S('Requirement (MFM)', 'Requisito (MFM)')}</div><p>${esc(d.requirements)}</p></div>` : '';
             const enh = o.enhancements && (d.enhancements || []).length ? `<details class="dt-strat"><summary>${S('Enhancements', 'Mejoras')} <span>${d.enhancements.length}</span></summary>` + d.enhancements.map(e => `<div class="dt-enh"><div class="dt-en"><b>${esc(e.name)}</b>${e.cost != null && e.cost !== '' ? `<span>${esc(e.cost)} pts</span>` : ''}</div></div>`).join('') + '</details>' : '';
             if (!req && !enh) return '';
-            return `<details class="dt-more"><summary>${S('Details', 'Detalles')}</summary><div class="dt-body">${req}${enh}<div class="dt-src">${S('The full rule text for this detachment is not included yet — only what the Munitorum Field Manual lists. Check the official app for how it works.', 'El texto completo de este destacamento aún no está incluido: solo lo que indica el Munitorum Field Manual. Consulta la app oficial para ver cómo funciona.')}</div></div></details>`;
+            return `<details class="dt-more"><summary>${S('Details', 'Detalles')}</summary><div class="dt-body">${req}${enh}<div class="dt-src">${S('The full rule text for this detachment is not included yet — only what the points table lists. Check the official app for how it works.', 'El texto completo de este destacamento aún no está incluido: solo lo que indica la tabla de puntos. Consulta la app oficial para ver cómo funciona.')}</div></div></details>`;
         }
         if (!i) return '';
-        const warn = d.infoStale ? `<div class="dt-warn">${S('Heads up: this text comes from an older Faction Pack — the enhancements in the Munitorum Field Manual differ. Trust the MFM list and the official app.', 'Ojo: este texto viene de un Faction Pack anterior; las mejoras del Munitorum Field Manual son distintas. Confía en la lista del MFM y en la app oficial.')}</div>` : '';
+        const warn = d.infoStale ? `<div class="dt-warn">${S('Heads up: this text is from an older version — the enhancements in the points table differ. Trust the MFM list and the official app.', 'Ojo: este texto viene de una versión anterior; las mejoras de la tabla de puntos son distintas. Confía en la lista del MFM y en la app oficial.')}</div>` : '';
         const rules = warn + i.r.map(([n, t]) => `<div class="dt-rule"><div class="dt-rn">${esc(n)}</div>${fmt(t)}</div>`).join('');
         const enh = o.enhancements && (d.enhancements || []).length ? `<details class="dt-strat"><summary>${S('Enhancements', 'Mejoras')} <span>${d.enhancements.length}</span></summary>` + (d.enhancements || []).map(e => `<div class="dt-enh"><div class="dt-en"><b>${esc(e.name)}</b>${e.cost != null && e.cost !== '' ? `<span>${esc(e.cost)} pts</span>` : ''}</div>${e.description ? `<div class="dt-et">${fmt(e.description)}</div>` : ''}</div>`).join('') + '</details>' : '';
         const strat = stratHtml(i.s);
-        return `<details class="dt-more"${o.open ? ' open' : ''}><summary>${S('Rules', 'Reglas')}</summary><div class="dt-body">${rules}${enh}${strat}<div class="dt-src">${S('Rules text from the Iron & Wrath faction data. The current rules manual is the authority if they differ.', 'Texto de reglas de los datos de facción de Iron & Wrath. Si hay diferencias, manda el manual de reglas vigente.')}</div></div></details>`;
+        return `<details class="dt-more"${o.open ? ' open' : ''}><summary>${S('Rules', 'Reglas')}</summary><div class="dt-body">${rules}${enh}${strat}<div class="dt-src">${S('Rules text from the Project 4192 faction data. The current rules manual is the authority if they differ.', 'Texto de reglas de los datos de facción de Project 4192. Si hay diferencias, manda el manual de reglas vigente.')}</div></div></details>`;
     }
     window.DETINFO = { from39k, stratHtml, stratItems, parts, norm, enorm, get, enrich, enhText, fmt, detailsHtml };
 })();

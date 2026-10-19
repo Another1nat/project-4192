@@ -152,21 +152,21 @@
     window.addEventListener('online', paintFactions); window.addEventListener('offline', paintFactions);
 
     // ---- backup ----
-    const KEYS = ['battlelist_rosters', 'gdm_history', 'gdm_games', 'gdm_lang'];
+    const KEYS = ['game_rosters', 'gdm_history', 'gdm_games', 'gdm_lang'];
     function exportAll() {
         LS.set('bl_last_backup', String(Date.now()));
         const data = {}; KEYS.forEach(k => { const v = LS.get(k); if (v != null) data[k] = v; });
-        const blob = new Blob([JSON.stringify({ app: 'iron-and-wrath', v: 1, exported: new Date().toISOString(), data }, null, 1)], { type: 'application/json' });
-        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `iron-and-wrath-backup-${new Date().toISOString().slice(0, 10)}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+        const blob = new Blob([JSON.stringify({ app: 'project-4192', v: 1, exported: new Date().toISOString(), data }, null, 1)], { type: 'application/json' });
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `project-4192-backup-${new Date().toISOString().slice(0, 10)}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     }
     // merge a backup ({ app, data }) into this device: existing items are kept, new ones added; returns what was added
     function importData(b) {
-        if (!['iron-and-wrath', 'battlelist'].includes(b.app) || !b.data) throw new Error('not a Iron & Wrath backup');
+        if (b.app !== 'project-4192' || !b.data) throw new Error('not a backup of this app');
         const parse = (k, d) => { try { return JSON.parse(b.data[k] || JSON.stringify(d)); } catch (e) { return d; } };
         const mine = (k, d) => { try { return JSON.parse(LS.get(k) || JSON.stringify(d)); } catch (e) { return d; } };
         const merge = (k, keyOf) => { const cur = mine(k, []), inc = parse(k, []), seen = new Set(cur.map(keyOf)); let add = 0; inc.forEach(x => { if (!seen.has(keyOf(x))) { cur.push(x); add++; } }); LS.set(k, JSON.stringify(cur)); return add; };
         const gm = mine('gdm_games', {}), gi = parse('gdm_games', {}); let ga = 0; Object.keys(gi).forEach(id => { if (!gm[id]) { gm[id] = gi[id]; ga++; } }); LS.set('gdm_games', JSON.stringify(gm));
-        const ra = merge('battlelist_rosters', x => x.id), ha = merge('gdm_history', x => `${x.started || x.date}|${x.p1}|${x.p2}`);
+        const ra = merge('game_rosters', x => x.id), ha = merge('gdm_history', x => `${x.started || x.date}|${x.p1}|${x.p2}`);
         return { ra, ha, ga };
     }
     function importFile() {
@@ -176,51 +176,11 @@
                 const { ra, ha, ga } = importData(JSON.parse(r.result));
                 alert(S(`Imported: ${ra} rosters, ${ha} finished games, ${ga} games in progress (existing items were kept). The page will reload.`, `Importado: ${ra} ejércitos, ${ha} partidas terminadas, ${ga} en curso (lo existente se conservó). Se recargará la página.`));
                 location.reload();
-            } catch (e) { alert(S('That file is not a valid Iron & Wrath backup.', 'Ese archivo no es un respaldo válido de Iron & Wrath.')); }
+            } catch (e) { alert(S('That file is not a valid Project 4192 backup.', 'Ese archivo no es un respaldo válido de Project 4192.')); }
         }; r.readAsText(f); };
         inp.click();
     }
 
-    // ---- moving from the old address (battlelist.…workers.dev) to this site ----
-    // Browsers keep each address's data apart, so the old address offers a one-tap move: the saved data travels, compressed, in the link.
-    const NEW_SITE = '';
-    const OLD_HOST = /\.workers\.dev$/.test(location.hostname);
-    const MOVED = window.__MOVED || '';             // captured by the first script in index.html, before the app switches the address to #home
-    const hasData = () => { try { return JSON.parse(LS.get('battlelist_rosters') || '[]').length + Object.keys(JSON.parse(LS.get('gdm_games') || '{}')).length + JSON.parse(LS.get('gdm_history') || '[]').length > 0; } catch (e) { return false; } };
-    async function moveToNewSite() {
-        const data = {}; KEYS.forEach(k => { const v = LS.get(k); if (v != null) data[k] = v; });
-        try {
-            const packed = await RSHARE.pack({ app: 'iron-and-wrath', v: 1, data });
-            if (packed.length < 1500000) { location.href = NEW_SITE + '/#move=' + packed; return; }
-        } catch (e) {}
-        exportAll();                                    // too big for a link: save a backup file to import there
-        alert(S('Your data was saved as a backup file. On this site open Menu → Data & Offline → Import backup.', 'Tus datos se guardaron en un archivo de respaldo. En this site abre Menú → Datos y sin conexión → Importar respaldo.'));
-        location.href = NEW_SITE;
-    }
-    function oldHostBanner() {
-        if (!OLD_HOST) return;
-        if (!hasData()) { location.replace(NEW_SITE + location.pathname + location.search + location.hash); return; }   // nothing saved here: just go
-        const b = document.createElement('div'); b.id = 'bl-moved';
-        b.style.cssText = 'position:fixed; left:12px; right:12px; top:max(12px, env(safe-area-inset-top)); z-index:100002; background:#0b1220; border:2px solid #22c55e; border-radius:14px; padding:14px; color:#e6edf8; font-size:.92rem; line-height:1.45; box-shadow:0 10px 30px rgba(0,0,0,.6);';
-        b.innerHTML = `<b style="color:#86efac">${S('Battlelist is now Iron & Wrath', 'Battlelist ahora es Iron & Wrath')}</b> — <b>this site</b><br>${S('Bring your rosters and games with you (one tap, nothing is deleted here).', 'Lleva tus listas y partidas contigo (un toque, aquí no se borra nada).')}
-            <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;"><button data-a="move" style="flex:1; min-height:44px; border:none; border-radius:10px; background:#22c55e; color:#04210f; font-weight:800;">${S('Move my data to this site', 'Mover mis datos a this site')}</button>
-            <button data-a="go" style="min-height:44px; padding:0 14px; border:1px solid #2a3546; border-radius:10px; background:#10161e; color:#e6edf8; font-weight:700;">${S('Just open it', 'Solo abrir')}</button></div>`;
-        b.querySelector('[data-a=move]').onclick = moveToNewSite;
-        b.querySelector('[data-a=go]').onclick = () => { location.href = NEW_SITE; };
-        document.body.appendChild(b);
-    }
-    async function receiveMove() {
-        if (!MOVED) return;
-        const packed = MOVED; if (location.hash.startsWith('#move=')) history.replaceState(null, '', location.pathname + location.search + '#home');
-        try {
-            const b = await RSHARE.unpack(packed);
-            if (!confirm(S('Import your rosters and games from the old Battlelist address? Anything already here is kept.', '¿Importar tus listas y partidas de la dirección anterior de Battlelist? Lo que ya hay aquí se conserva.'))) return;
-            const { ra, ha, ga } = importData(b);
-            alert(S(`Moved: ${ra} rosters, ${ha} finished games, ${ga} games in progress. Welcome to Iron & Wrath!`, `Movido: ${ra} listas, ${ha} partidas terminadas, ${ga} en curso. ¡Bienvenido a Iron & Wrath!`));
-            location.reload();
-        } catch (e) { alert(S('The data in that link could not be read. On the old address use Data & Offline → Export backup instead.', 'No se pudieron leer los datos del enlace. En la dirección anterior usa Datos y sin conexión → Exportar respaldo.')); }
-    }
-    // (Iron & Wrath's old-address migration banner is switched off in this copy)
 
     async function refreshEstimate() { try { const e = await navigator.storage.estimate(); estimate = `${(e.usage / 1048576).toFixed(1)} MB ${S('used on this device', 'usados en este dispositivo')}`; } catch (e) { estimate = ''; } if (root()) render(); }
     const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
@@ -235,7 +195,7 @@
         try { if (window.renderDsBar) renderDsBar(); } catch (e) {}
         const el = root(); if (!el) return; const d = done(), names = FACTIONS.map(f => f.name), cached = names.filter(n => d[n]).length;
         const last = Math.max(0, ...Object.values(d)), age = last ? Math.round((Date.now() - last) / 864e5) : null;
-        const ios = list([S('Open this page in <b>Safari</b> (or Chrome)', 'Abre esta página en <b>Safari</b> (o Chrome)'), S('Tap the <b>Share</b> button ⬆︎', 'Toca el botón <b>Compartir</b> ⬆︎'), S('Choose <b>Add to Home Screen</b>', 'Elige <b>Añadir a pantalla de inicio</b>'), S('Tap <b>Add</b> — a Iron & Wrath icon appears on your phone', 'Toca <b>Añadir</b>: aparece el icono de Iron & Wrath')]);
+        const ios = list([S('Open this page in <b>Safari</b> (or Chrome)', 'Abre esta página en <b>Safari</b> (o Chrome)'), S('Tap the <b>Share</b> button ⬆︎', 'Toca el botón <b>Compartir</b> ⬆︎'), S('Choose <b>Add to Home Screen</b>', 'Elige <b>Añadir a pantalla de inicio</b>'), S('Tap <b>Add</b> — a Project 4192 icon appears on your phone', 'Toca <b>Añadir</b>: aparece el icono de Project 4192')]);
         const andr = list([S('Open this page in <b>Chrome</b>', 'Abre esta página en <b>Chrome</b>'), S('Tap the <b>⋮</b> menu (top right)', 'Toca el menú <b>⋮</b> (arriba a la derecha)'), S('Choose <b>Install app</b> or <b>Add to Home screen</b>', 'Elige <b>Instalar app</b> o <b>Añadir a pantalla de inicio</b>'), S('Confirm — find the icon on your phone', 'Confirma y busca el icono en tu teléfono')]);
         const pcs = list([S('Use Chrome or Edge', 'Usa Chrome o Edge'), S('Click the <b>install icon</b> at the right end of the address bar', 'Haz clic en el <b>icono de instalar</b> al final de la barra de direcciones')]);
         const sec = (open, t, body) => `<details ${open ? 'open' : ''} style="margin-top:12px; background:#10151c; border:1px solid #2a3546; border-radius:12px; padding:12px 14px;"><summary style="cursor:pointer; font-weight:bold; font-size:1.02rem; min-height:36px;">${t}</summary>${body}</details>`;
@@ -248,7 +208,7 @@
                 <div id="off-ready-list" style="margin-top:10px; font-size:0.9rem; color:#9aa7b8;">…</div>
                 ${prog('cards')}${bigBtn('' + S('SAVE EVERYTHING FOR OFFLINE', 'GUARDAR TODO PARA USO SIN CONEXIÓN'), 'OFFLINE.everything()', null, busy || !navigator.onLine)}
             </div>
-            ${stepCard(1, '<i class="fa-solid fa-mobile-screen" style="color:var(--accent)"></i>', S('Put the app on your phone', 'Pon la app en tu teléfono'), `<div style="color:#cfd8e3; font-size:0.97rem; line-height:1.6;">${isStandalone() ? '✔ ' + S('Already installed — you are using the app.', 'Ya instalada: estás usando la app.') : S('Installed, Iron & Wrath opens full screen with its own icon and keeps your saved data safe.', 'Instalada, Iron & Wrath abre a pantalla completa con su icono y conserva tus datos guardados.')}</div>
+            ${stepCard(1, '<i class="fa-solid fa-mobile-screen" style="color:var(--accent)"></i>', S('Put the app on your phone', 'Pon la app en tu teléfono'), `<div style="color:#cfd8e3; font-size:0.97rem; line-height:1.6;">${isStandalone() ? '✔ ' + S('Already installed — you are using the app.', 'Ya instalada: estás usando la app.') : S('Installed, Project 4192 opens full screen with its own icon and keeps your saved data safe.', 'Instalada, Project 4192 abre a pantalla completa con su icono y conserva tus datos guardados.')}</div>
                 ${deferred ? bigBtn(S('INSTALL NOW', 'INSTALAR AHORA'), 'OFFLINE.install()') : ''}
                 ${isStandalone() ? '' : sec(isIOS, 'iPhone / iPad', ios) + sec(/android/i.test(navigator.userAgent), 'Android', andr) + sec(!isIOS && !/android/i.test(navigator.userAgent), '' + S('Computer', 'Computadora'), pcs)}`)}
             ${stepCard(2, '<i class="fa-solid fa-database" style="color:var(--accent)"></i>', S('Save the datasheets', 'Guarda los datasheets'), `<div style="color:#cfd8e3; font-size:0.97rem; line-height:1.6;">${S('Pick the factions you play. They will open without internet.', 'Elige las facciones que juegas. Abrirán sin internet.')}</div>
@@ -287,7 +247,7 @@
     // gentle reminder: rosters and games only live on this device
     function backupReminder() {
         try {
-            const n = (() => { try { return JSON.parse(LS.get('battlelist_rosters') || '[]').length + Object.keys(JSON.parse(LS.get('gdm_games') || '{}')).length + JSON.parse(LS.get('gdm_history') || '[]').length; } catch (e) { return 0; } })();
+            const n = (() => { try { return JSON.parse(LS.get('game_rosters') || '[]').length + Object.keys(JSON.parse(LS.get('gdm_games') || '{}')).length + JSON.parse(LS.get('gdm_history') || '[]').length; } catch (e) { return 0; } })();
             const last = +(LS.get('bl_last_backup') || 0), asked = +(LS.get('bl_backup_asked') || 0), DAY = 864e5;
             if (n < 2 || (last && Date.now() - last < 30 * DAY) || (asked && Date.now() - asked < 14 * DAY) || document.getElementById('bl-backup-bar')) return;
             const b = document.createElement('div'); b.id = 'bl-backup-bar';

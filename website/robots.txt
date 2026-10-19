@@ -1,4 +1,4 @@
-# Iron & Wrath — unofficial fan tool. Search engines welcome; AI training crawlers are not.
+# Project 4192 — unofficial fan tool. Search engines welcome; AI training crawlers are not.
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: OAI-SearchBot

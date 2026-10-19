@@ -30,7 +30,7 @@ window.formatBSText = function(str) {
 };
 // ESTADO
 const STATE = {
-    rosters: JSON.parse(localStorage.getItem('battlelist_rosters')) || [],
+    rosters: JSON.parse(localStorage.getItem('game_rosters')) || [],
     currentFactionData: []
 };
 
@@ -368,7 +368,7 @@ fetch('data/glossary.json' + (window.BL_DATA_V ? '?v=' + window.BL_DATA_V : ''))
 window.retryFactionLoad = function () { const f = window.__retryFaction; if (f) preloadFactionData(f, { force: true }); };
 
 
-function formatWahapediaText(text) {
+function formatRulesText(text) {
     if (!text) return '';
     let html = text.replace(/\n/g, '<br/>');
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -689,7 +689,7 @@ window.dsExtrasHtml = function (unit) {
             let prev = 0; extra += '<div class="dt-rn" style="margin-top:10px;">Price by number of copies in your army</div>' + o.thresholds.map(t => { const r = `Copies ${prev + 1}${t.maxCount >= 99 ? '+' : '–' + t.maxCount}`; prev = t.maxCount; return `<div>${r}: <b>${t.pts} pts</b>${(t.optPts || []).map((p, i) => ` · ${esc(((o.options || [])[i] || {}).comp || '')} <b>${p} pts</b>`).join('')}</div>`; }).join('');
         }
         if (o.wargear && o.wargear.length) extra += '<div class="dt-rn" style="margin-top:10px;">Optional wargear</div>' + o.wargear.map(w => `<div>${esc(w.name)}: <b>+${w.pts} pts</b></div>`).join('');
-        out += sec('Unit size & points <span>' + (o.manual ? 'manual' : 'MFM') + '</span>', `<table style="width:100%; border-collapse:collapse;">${rows}</table>${extra}${o.manual && window.MFM_MANUAL ? `<div class="dt-src" style="color:#e5c15a;">✎ ${MFM_MANUAL.note[(localStorage.getItem('gdm_lang') || 'en') === 'es' ? 'es' : 'en']}</div>` : '<div class="dt-src">Points from the Munitorum Field Manual. Pick the size and wargear in the roster builder; the total updates automatically.</div>'}`, true);
+        out += sec('Unit size & points', `<table style="width:100%; border-collapse:collapse;">${rows}</table>${extra}${o.manual && window.MFM_MANUAL ? `<div class="dt-src" style="color:#e5c15a;">✎ ${MFM_MANUAL.note[(localStorage.getItem('gdm_lang') || 'en') === 'es' ? 'es' : 'en']}</div>` : '<div class="dt-src">Points from the points table. Pick the size and wargear in the roster builder; the total updates automatically.</div>'}`, true);
     }
     const leadTxt = (unit.leads || []).map(g => { const names = [].concat(g.units || [], (g.keywords || []).map(k => k + ' units')); return `<div style="margin-bottom:6px;"><b>${g.type === 'support' ? 'Support' : 'Leader'}</b>${g.onlyIn ? ` <i>(only with ${esc(g.onlyIn)})</i>` : ''}${g.notIn ? ` <i>(not with ${esc(g.notIn)})</i>` : ''}: ${names.map(esc).join(', ')}</div>`; }).join('');
     const ledTxt = (unit.ledBy || []).length ? `<div><b>Can be led by:</b> ${unit.ledBy.map(esc).join(', ')}</div>` : '';
@@ -830,8 +830,8 @@ window.selectUnit = function(safeId) {
 
     // 4. Unit composition: what the models carry, count + points per size, wargear options
     let compHtml = '';
-    { const eq = unit.composition ? `<div style="font-size:0.85rem; color:#b0c4de; line-height:1.4;">${formatWahapediaText(String(unit.composition).replace(/■/g, '•'))}</div>` : '', lo = blLoadoutHtml(unit);
-      if (eq || lo) compHtml = `<div style="margin-bottom:20px; background:#141b25; border:1px solid #1a222d; border-radius:6px; padding:12px;"><h4 style="color:#888; text-transform:uppercase; font-size:0.75rem; margin:0 0 8px 0; border-bottom:1px solid #222; padding-bottom:5px;">UNIT COMPOSITION &amp; WARGEAR</h4>${eq}${lo ? `<div style="margin-top:12px;">${lo}</div>` : ''}<div class="dt-src" style="margin-top:8px;">Points: Munitorum Field Manual where it lists the size.</div></div>`; }
+    { const eq = unit.composition ? `<div style="font-size:0.85rem; color:#b0c4de; line-height:1.4;">${formatRulesText(String(unit.composition).replace(/■/g, '•'))}</div>` : '', lo = blLoadoutHtml(unit);
+      if (eq || lo) compHtml = `<div style="margin-bottom:20px; background:#141b25; border:1px solid #1a222d; border-radius:6px; padding:12px;"><h4 style="color:#888; text-transform:uppercase; font-size:0.75rem; margin:0 0 8px 0; border-bottom:1px solid #222; padding-bottom:5px;">UNIT COMPOSITION &amp; WARGEAR</h4>${eq}${lo ? `<div style="margin-top:12px;">${lo}</div>` : ''}<div class="dt-src" style="margin-top:8px;">Points: the points table where it lists the size.</div></div>`; }
 
     // 5. Keywords
     let kwHtml = '<div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:20px;">';
@@ -897,7 +897,7 @@ window.addToRoster = (unitName, points) => {
 };
 
 function saveRosters() {
-    localStorage.setItem('battlelist_rosters', JSON.stringify(STATE.rosters));
+    localStorage.setItem('game_rosters', JSON.stringify(STATE.rosters));
 }
 
 // ---------- roster builder helpers ----------
@@ -1155,7 +1155,7 @@ window.pickEnhancement = function (index) {
                             ${item.up ? `<span style="color:#9aa7b8; font-size:0.72rem;">up to ${ENH_UPGRADE_COPIES}×</span>` : ''}
                             ${item.isFull ? `<span style="color:#ff8a8a; font-size:0.72rem; font-weight:bold;">Already taken</span>` : ''}
                         </div>
-                        ${item.desc ? `<div style="font-size:0.8rem; color:#b9c4d6; line-height:1.45; margin-top:6px;">${formatWahapediaText(item.desc)}</div>` : ''}
+                        ${item.desc ? `<div style="font-size:0.8rem; color:#b9c4d6; line-height:1.45; margin-top:6px;">${formatRulesText(item.desc)}</div>` : ''}
                         ${!item.check.ok ? `<div style="font-size:0.75rem; color:#ff9b9b; margin-top:6px; font-weight:600;"><i class="fa-solid fa-triangle-exclamation"></i> ${item.check.why}</div>` : ''}
                     </div>
                     ${allowAdd && !item.isFull ? `<button onclick="setEnhancement(${index}, '${d.id}', '${safeName}', true)" style="background:var(--accent, #ff7a3d); color:var(--accent-fg,#140a05); border:none; border-radius:8px; padding:0 18px; min-height:42px; font-weight:800; font-size:0.88rem; cursor:pointer; flex-shrink:0; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">Add</button>` : (!item.isFull ? `<button onclick="if(confirm('${String(item.check.why).replace(/'/g, "\\'")}\\n\\nAdd it anyway?')) setEnhancement(${index}, '${d.id}', '${safeName}', true)" style="background:transparent; border:1px solid rgba(255,255,255,0.2); color:#cfd8e3; border-radius:8px; padding:0 12px; min-height:38px; font-size:0.75rem; cursor:pointer; flex-shrink:0;">Add anyway</button>` : '')}
@@ -1175,7 +1175,7 @@ window.pickEnhancement = function (index) {
                 </span>
             </summary>
             <div class="dt-body" style="padding:10px 12px 14px;">
-                ${d.desc ? `<div style="font-size:0.8rem; color:#9aa7b8; margin-bottom:12px; line-height:1.45; background:#070d17; padding:8px 10px; border-radius:6px; border-left:3px solid ${c};">${formatWahapediaText(d.desc)}</div>` : ''}
+                ${d.desc ? `<div style="font-size:0.8rem; color:#9aa7b8; margin-bottom:12px; line-height:1.45; background:#070d17; padding:8px 10px; border-radius:6px; border-left:3px solid ${c};">${formatRulesText(d.desc)}</div>` : ''}
                 ${eligibleHtml}
                 ${ineligibleHtml}
             </div>
@@ -1216,7 +1216,7 @@ function renderRosterBuilder() {
                     rules.forEach(r => {
                         if(r.characteristics) {
                             r.characteristics.forEach(c => {
-                                rulesHtml += `<div style="margin-bottom:10px;"><strong style="color:var(--accent);">${c.name || r.name}:</strong> <span style="color:#ccc; font-size:0.8rem;">${formatWahapediaText(c.$text)}</span></div>`;
+                                rulesHtml += `<div style="margin-bottom:10px;"><strong style="color:var(--accent);">${c.name || r.name}:</strong> <span style="color:#ccc; font-size:0.8rem;">${formatRulesText(c.$text)}</span></div>`;
                             });
                         }
                     });
@@ -1237,7 +1237,7 @@ function renderRosterBuilder() {
                                         <span style="color:#fff; background:rgba(255,255,255,.12); border-radius:6px; padding:1px 7px; font-size:0.72rem; font-weight:700;">${cost} pts</span>
                                         ${up ? ` <span style="color:#9aa7b8; font-size:0.72rem;">up to ${ENH_UPGRADE_COPIES}× · ${holders.length}/${ENH_UPGRADE_COPIES}</span>` : ''}
                                     </div>
-                                    ${e.description && !/coming soon/i.test(e.description) ? `<div style="color:#b9c4d6; font-size:0.8rem; margin:6px 0 8px; line-height:1.45;">${formatWahapediaText(e.description)}</div>` : ''}
+                                    ${e.description && !/coming soon/i.test(e.description) ? `<div style="color:#b9c4d6; font-size:0.8rem; margin:6px 0 8px; line-height:1.45;">${formatRulesText(e.description)}</div>` : ''}
                                 </div>
                                 ${isFull ? '' : `<button onclick="pickBearer('${d.id}', '${safeName}')" style="background:var(--accent); color:var(--accent-fg,#140a05); border:none; border-radius:8px; min-height:42px; padding:0 16px; font-weight:800; cursor:pointer; flex-shrink:0;">Add</button>`}
                             </div>
@@ -1310,7 +1310,7 @@ function renderRosterBuilder() {
     if (currentActiveRoster.units.length === 0) {
         html = '<div style="text-align:center; padding:40px; color:#6a7a8c; border: 1px dashed #2a3546; border-radius: 8px;">No units added yet.</div>';
     } else {
-        // points per unit from the Munitorum Field Manual: size option + price tier by number of copies
+        // points per unit from the points table: size option + price tier by number of copies
         let unitCounts = {};
         currentActiveRoster.units.forEach(u => {
             if (!u) return;
@@ -1351,7 +1351,7 @@ function renderRosterBuilder() {
                                         <span style="color:#fff; font-weight:700;">+${unit.enh.cost} pts</span>
                                         <button onclick="removeEnhancement(${index})" aria-label="remove enhancement" style="margin-left:auto; background:none; border:none; color:#ff7b7b; cursor:pointer; min-width:32px; min-height:32px; font-size:0.9rem;">✕</button>
                                     </div>
-                                    ${desc ? `<div style="color:#c7d3e3; font-size:0.75rem; line-height:1.4; margin-top:4px;">${formatWahapediaText(desc)}</div>` : ''}
+                                    ${desc ? `<div style="color:#c7d3e3; font-size:0.75rem; line-height:1.4; margin-top:4px;">${formatRulesText(desc)}</div>` : ''}
                                 </div>`;
                             })() : (canBearEnhancement(unit) ? `<button onclick="event.stopPropagation(); pickEnhancement(${index})" style="margin-top:8px; background:transparent; border:1px dashed rgba(255,255,255,.25); color:#cfd8e3; border-radius:10px; padding:0 12px; min-height:40px; font-size:0.8rem; cursor:pointer;">＋ Add enhancement</button>` : '')}
                         </div>
@@ -2902,7 +2902,7 @@ window.exportHistory = function() {
     let url = URL.createObjectURL(blob);
     let a = document.createElement('a');
     a.href = url;
-    a.download = "iron-and-wrath_history.json";
+    a.download = "project-4192_history.json";
     a.click();
     URL.revokeObjectURL(url);
 };

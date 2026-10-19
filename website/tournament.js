@@ -99,7 +99,7 @@
         const mine = me() && ((pa && pa.user_id === me()) || (pb && pb.user_id === me()));
         const canReport = st.t.status === 'running' && m.status !== 'bye' && (isOrg() || (mine && m.status === 'pending'));
         const res = m.status === 'reported';
-        let h = `<div class="mcard${mine ? ' mine' : ''}${res ? ' done' : ''}"><div style="color:#9aa7b8; font-size:0.7rem; font-weight:bold; letter-spacing:1px;">${S('TABLE', 'MESA')} ${m.table_no}${mine ? ' · ' + S('YOUR GAME', 'TU PARTIDA') : ''}</div>`;
+        let h = `<div class="mcard${mine ? ' mine' : ''}${res ? ' done' : ''}"><div style="color:#9aa7b8; font-size:0.7rem; font-weight:bold; letter-spacing:1px;">${S('TABLE', 'MESA')} ${m.table_no}${mine ? ' · ' + S('PROJECT 4192', 'TU PARTIDA') : ''}</div>`;
         if (!b) return h + `<div style="font-weight:bold; margin-top:4px;">${esc(a)} <span style="color:#5be59a;">— BYE (${S('win', 'victoria')})</span></div></div>`;
         const side = (n, p, vp) => `<div style="flex:1; min-width:0; text-align:${n === 1 ? 'left' : 'right'};"><div style="font-weight:800; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:${res && ((n === 1 && m.p1_vp > m.p2_vp) || (n === 2 && m.p2_vp > m.p1_vp)) ? '#5be59a' : '#fff'};">${esc(p.name)}</div><div style="color:#889; font-size:0.72rem;">${esc(p.faction || '')}</div>
             ${canReport ? `<input type="number" inputmode="numeric" min="0" max="200" id="vp-${m.id}-${n}" value="${vp == null ? '' : vp}" placeholder="VP" style="${inputCss} width:90px; text-align:center; ${n === 2 ? 'margin-left:auto; display:block;' : ''}">` : `<div class="mc-vp${res && ((n === 1 && m.p1_vp > m.p2_vp) || (n === 2 && m.p2_vp > m.p1_vp)) ? ' win' : ''}">${vp == null ? '–' : vp}</div>`}</div>`;

@@ -1,4 +1,4 @@
-/* Iron & Wrath "Sharp" design layer — loaded last.
+/* Project 4192 "Sharp" design layer — loaded last.
    Same layout and logic; only the look changes: neutral graphite surfaces, the faction colour as the one accent,
    6px corners, 1px hairlines instead of glows, flat navigation, tighter type.
    Many screens style themselves inline, so the common inline colours / radii are mapped onto the tokens here. */
@@ -242,7 +242,7 @@ button[onclick^="drawSecondary"]:hover { background: rgba(255,255,255,.03) !impo
 }
 
 @media (max-width: 345px) {
-  /* keep the full IRON & WRATH name on small phones */
+  /* keep the full PROJECT 4192 name on small phones */
   .top-navbar .logo span span { display: inline !important; }
   .top-navbar .logo { padding: 0 6px 0 2px !important; gap: 6px !important; }
   .top-navbar .logo > span { letter-spacing: .08em !important; }

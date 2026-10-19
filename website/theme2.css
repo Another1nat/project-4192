@@ -1,4 +1,4 @@
-/* Iron & Wrath design system v2 — modern, calm, layered. Pure presentation layer (no logic). */
+/* Project 4192 design system v2 — modern, calm, layered. Pure presentation layer (no logic). */
 :root {
     --s1: #090d14; --s2: #0d131d; --s3: #131b29; --s4: #1a2436;           /* surfaces, low → high */
     --line: rgba(255,255,255,.07); --line-strong: rgba(255,255,255,.14);

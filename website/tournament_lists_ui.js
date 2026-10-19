@@ -93,7 +93,6 @@
         const facName = item.faction;
         const factionObj = (typeof FACTIONS !== 'undefined' ? FACTIONS : []).find(f => 
             f.name.toLowerCase() === facName.toLowerCase() ||
-            (f.name === 'Space Marines' && facName.includes('Space Marines')) ||
             (f.name === 'Agents of the Imperium' && (facName.includes('Agents') || facName.includes('Imperial Agents')))
         ) || (typeof FACTIONS !== 'undefined' ? FACTIONS[0] : { name: facName });
 
@@ -239,7 +238,7 @@
                     </button>
                     <div class="tl-title-wrap">
                         <h1 class="tl-main-title"><i class="fa-solid fa-trophy" style="color:#e5c15a;"></i> ${S('Tournament Winning Lists', 'Listas Ganadoras de Torneo')}</h1>
-                        <p class="tl-subtitle">${S('Top-performing 2,000 pt lists from 2026 Grand Tournaments with full loadouts and 1-click import.', 'Listas de 2.000 pts destacadas de Grandes Torneos 2026 con equipamiento completo e importación directa.')}</p>
+                        <p class="tl-subtitle">${S('Winning lists from tournaments, with full loadouts and 1-click import.', 'Listas de 2.000 pts destacadas de Grandes Torneos 2026 con equipamiento completo e importación directa.')}</p>
                     </div>
                 </div>
 
@@ -287,7 +286,7 @@
                 <div class="tl-empty-state bl-card" style="padding: 50px 20px;">
                     <i class="fa-solid fa-trophy fa-bounce" style="font-size:2.5rem; color:#e5c15a; margin-bottom:14px;"></i>
                     <h3 style="margin:0 0 6px 0; color:#fff;">${S('Loading tournament lists...', 'Cargando listas de torneos...')}</h3>
-                    <p style="margin:0; color:#94a1b8; font-size:0.85rem;">${S('Retrieving 140 top-cut tournament lists from 2026 Grand Tournaments...', 'Cargando 140 listas destacadas de Grandes Torneos 2026...')}</p>
+                    <p style="margin:0; color:#94a1b8; font-size:0.85rem;">${S('Loading tournament lists...', 'Cargando 140 listas destacadas de Grandes Torneos 2026...')}</p>
                 </div>
             `;
         }
