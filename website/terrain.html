@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0f14">
-  <title>Terrain Layouts — Your Game</title>
+  <title>Terrain Layouts — Project 4192</title>
   <style>
     :root { --bg:#0b0f14; --card:#161d27; --line:#2a3546; --accent:#22c55e; --text:#e6edf8; --muted:#9aa7b8; }
     * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -39,6 +39,7 @@
   <header><a href="index.html#home">‹ <span id="t-back">Back</span></a><h1><span id="t-h1a">Terrain</span> <span id="t-h1b">Layouts</span></h1></header>
 
   <div class="card">
+    <div class="lbl" id="t-kit2">Terrain kit</div><div class="chips" id="kits"></div>
     <div class="lbl" id="t-map">Deployment map</div><div class="chips" id="maps"></div>
     <div class="lbl" id="t-var">Layout</div><div class="chips" id="vars"></div>
     <div id="title"></div><div id="sub"></div>
@@ -53,7 +54,8 @@
   <div class="card"><div class="lbl" id="t-setup">Setup: piece centres</div><div class="scroll" id="setup"></div>
     <div id="setup-note" style="color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.5"></div></div>
   <div class="card"><div class="lbl" id="t-checks">Checks</div><div class="checks" id="checks"></div></div>
-  <div class="card"><div class="lbl" id="t-kit">Terrain kit (12 pieces)</div><div class="scroll" id="kit"></div></div>
+  <div class="card"><div class="lbl" id="t-kit">Terrain kit</div><div class="scroll" id="kit"></div>
+    <div id="kit-note" style="color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.5"></div></div>
 
   <footer id="foot"></footer>
 
@@ -63,10 +65,15 @@
     const S = (en, es) => lang() === 'es' ? es : en;
     const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     const MAPS = [['FC', 'A · Frontline Clash', 'A · Choque Frontal'], ['BG', 'B · Broken Ground', 'B · Tierra Rota'], ['PI', 'C · Pincer', 'C · Tenaza']];
-    const FILL = { RL: '#3f4652', RS: '#4b5563', BL: '#9a8f7a', LW: '#8a94a3', CR: '#a77b52' };
+    const FILL = { RL: '#3f4652', RS: '#4b5563', BL: '#9a8f7a', LW: '#8a94a3', CR: '#a77b52',
+                   LR: '#3f4652', TL: '#374151', TR: '#374151', MR: '#4b5563', LL: '#2b3038', SL: '#9a8f7a' };
+    const KITS = [['standard', 'Standard footprints', 'Huellas estándar'], ['custom', 'Custom kit (v1)', 'Kit propio (v1)']];
+    const FILES = { standard: ['data/layouts_4192.json', 'assets/layouts_4192/'], custom: ['data/layouts_4192_custom.json', 'assets/layouts_4192/custom/'] };
+    const SYM = { point: ['rotated 180° around the centre', 'girada 180° sobre el centro'], mirror_y: ['mirrored across the long centre line', 'reflejada sobre la línea central larga'],
+                  mirror_x: ['mirrored across the short centre line', 'reflejada sobre la línea central corta'] };
     const TERRAIN = { dense: ['Dense: blocks line of sight', 'Densa: bloquea la línea de visión'], light: ['Light: cover', 'Ligera: cobertura'], exposed: ['Exposed: infantry cover inside', 'Expuesta: cobertura para infantería dentro'] };
     const q = new URLSearchParams(location.search); const m0 = (q.get('layout') || 'FC-1').split('-');
-    let st = { m: m0[0] || 'FC', v: m0[1] || '1' }, data = null, zoom = false;
+    let st = { k: q.get('kit') === 'custom' ? 'custom' : 'standard', m: m0[0] || 'FC', v: m0[1] || '1' }, data = {}, zoom = false;
 
     function chips(id, items, cur, on) {
       const el = document.getElementById(id); el.innerHTML = '';
@@ -83,20 +90,24 @@
       T('t-back', 'Back', 'Volver'); T('t-h1a', 'Terrain', 'Disposiciones'); T('t-h1b', 'Layouts', 'de terreno'); T('t-map', 'Deployment map', 'Mapa de despliegue');
       T('t-var', 'Layout', 'Disposición'); T('t-setup', 'Setup: piece centres', 'Montaje: centros de las piezas'); T('t-checks', 'Checks', 'Comprobaciones');
       T('t-kit', 'Terrain kit (12 pieces)', 'Kit de terreno (12 piezas)'); T('b-zoom', zoom ? S('Fit', 'Ajustar') : 'Zoom', zoom ? 'Ajustar' : 'Zoom'); T('b-print', 'Print', 'Imprimir');
+      T('t-kit2', 'Terrain kit', 'Kit de terreno');
+      chips('kits', KITS.map(([k, en, es]) => [k, S(en, es)]), st.k, k => { st.k = k; load(); });
       chips('maps', MAPS.map(([k, en, es]) => [k, S(en, es)]), st.m, k => { st.m = k; paint(); });
       chips('vars', ['1', '2', '3'].map(k => [k, k]), st.v, k => { st.v = k; paint(); });
-      const code = `${st.m}-${st.v}`, L = data && data[code];
-      history.replaceState(null, '', '?layout=' + code);
+      const code = `${st.m}-${st.v}`, L = data[st.k] && data[st.k][code];
+      history.replaceState(null, '', '?layout=' + code + (st.k === 'custom' ? '&kit=custom' : ''));
+      kit();
       if (!L) { document.getElementById('title').textContent = S('Layout not found', 'Disposición no encontrada'); return; }
       document.getElementById('title').textContent = S(L.title, L.title_es);
-      document.getElementById('sub').textContent = S('Table 44" × 30". Red = attacker, blue = defender. The layout is rotated 180° around the centre, so both sides get the same table. Dashed circles: 3" objective control.',
-        'Mesa de 44" × 30". Rojo = atacante, azul = defensor. La disposición gira 180° sobre el centro, así ambos lados tienen la misma mesa. Círculos discontinuos: control de objetivo de 3".');
+      const sym = SYM[L.symmetry || 'point'], nob = L.objectives.length;
+      document.getElementById('sub').textContent = S(`Table 44" × 30". Red = attacker, blue = defender. The layout is ${sym[0]}, so both sides get the same table. ${nob} objectives (dashed circles: 3" control)${nob === 3 ? ', no home objectives' : ''}.`,
+        `Mesa de 44" × 30". Rojo = atacante, azul = defensor. La disposición está ${sym[1]}, así ambos lados tienen la misma mesa. ${nob} objetivos (círculos discontinuos: control de 3")${nob === 3 ? ', sin objetivos de casa' : ''}.`);
       const map = document.getElementById('map'); map.className = 'map' + (zoom ? ' zoom' : '');
-      map.innerHTML = `<img alt="${esc(L.title)}" src="assets/layouts_4192/${esc(code)}.svg">`;
+      map.innerHTML = `<img alt="${esc(L.title)}" src="${FILES[st.k][1]}${esc(code)}.svg">`;
       // setup table
       const rows = L.pieces.map(p => `<tr><td><b>${esc(p.code)}</b></td><td><span class="sw" style="background:${FILL[p.type] || '#666'}"></span>${esc(S(p.kind, p.kind_es))}</td>
         <td class="n">${p.size_in[0]}" × ${p.size_in[1]}"</td><td class="n">${p.height_in}"</td><td class="n">${p.from_left_in}"</td><td class="n">${p.from_front_in}"</td>
-        <td class="n">${p.type === 'CR' ? '–' : p.rotation_deg + '°'}</td><td>${esc(S(...(TERRAIN[p.terrain] || ['', ''])))}</td></tr>`).join('');
+        <td class="n">${p.type === 'CR' ? '–' : p.rotation_deg + '°'}${p.type === 'TL' || p.type === 'TR' ? ' · ' + S('wide end', 'lado ancho') + ' ' + S(p.type === 'TL' ? 'right' : 'left', p.type === 'TL' ? 'derecha' : 'izquierda') : ''}</td><td>${esc(S(...(TERRAIN[p.terrain] || ['', ''])))}</td></tr>`).join('');
       document.getElementById('setup').innerHTML = `<table><tr><th>${S('Piece', 'Pieza')}</th><th>${S('Type', 'Tipo')}</th><th>${S('Size', 'Tamaño')}</th><th>${S('Height', 'Altura')}</th>
         <th>${S('From left', 'Desde izq.')}</th><th>${S('From front', 'Desde frente')}</th><th>${S('Rotation', 'Rotación')}</th><th>${S('Rules', 'Reglas')}</th></tr>${rows}</table>`;
       document.getElementById('setup-note').textContent = S('"From left" and "From front" give the centre of each piece in inches, measured from the left table edge and from the attacker\'s (red, bottom) edge. Rotation: degrees anticlockwise from the long table edge.',
@@ -119,19 +130,33 @@
     }
 
     function kit() {
-      const K = [['RL', 4, 'Large Ruin', 'Ruina grande', '8" × 6"', '5"', 'dense'], ['RS', 2, 'Small Ruin', 'Ruina pequeña', '6" × 4"', '4"', 'dense'],
-                 ['BL', 2, 'Barricade', 'Barricada', '6" × 1.5"', '1.5"', 'light'], ['LW', 2, 'Low Wall', 'Muro bajo', '5" × 2"', '2"', 'light'],
-                 ['CR', 2, 'Crater', 'Cráter', '4" ⌀', '–', 'exposed']];
+      const K = st.k === 'standard'
+        ? [['LR', '2 (of 4)', 'Large Ruin', 'Ruina grande', '11.5" × 7"', '5"', 'dense'], ['TL', '1 + 1', 'Large Wedge, left + right pair', 'Cuña grande, par izquierda + derecha', '11.5" × 8" (2" narrow end)', '5"', 'dense'],
+           ['MR', '2 (of 4)', 'Medium Ruin', 'Ruina mediana', '6" × 4"', '3"', 'dense'], ['LL', '2', 'Long Wall', 'Muro largo', '10" × 2.5"', '5"', 'dense'],
+           ['SL', '4', 'Short Wall', 'Muro corto', '6" × 2"', '3"', 'light']]
+        : [['RL', '4', 'Large Ruin', 'Ruina grande', '8" × 6"', '5"', 'dense'], ['RS', '2', 'Small Ruin', 'Ruina pequeña', '6" × 4"', '4"', 'dense'],
+           ['BL', '2', 'Barricade', 'Barricada', '6" × 1.5"', '1.5"', 'light'], ['LW', '2', 'Low Wall', 'Muro bajo', '5" × 2"', '2"', 'light'],
+           ['CR', '2', 'Crater', 'Cráter', '4" ⌀', '–', 'exposed']];
+      document.getElementById('t-kit').textContent = st.k === 'standard' ? S('Terrain kit: 12 of the 16 standard footprints', 'Kit de terreno: 12 de las 16 huellas estándar') : S('Terrain kit (12 pieces)', 'Kit de terreno (12 piezas)');
       document.getElementById('kit').innerHTML = `<table><tr><th>#</th><th>${S('Piece', 'Pieza')}</th><th>${S('Footprint', 'Huella')}</th><th>${S('Height', 'Altura')}</th><th>${S('Rules', 'Reglas')}</th></tr>` +
-        K.map(([t, n, en, es, size, h, ter]) => `<tr><td>${n}×</td><td><span class="sw" style="background:${FILL[t]}"></span>${esc(S(en, es))}</td><td>${size}</td><td>${h}</td><td>${esc(S(...TERRAIN[ter]))}</td></tr>`).join('') + '</table>';
+        K.map(([t, n, en, es, size, h, ter]) => `<tr><td>${n}</td><td><span class="sw" style="background:${FILL[t]}"></span>${esc(S(en, es))}</td><td>${size}</td><td>${h}</td><td>${esc(S(...TERRAIN[ter]))}</td></tr>`).join('') + '</table>';
+      document.getElementById('kit-note').textContent = st.k === 'standard'
+        ? S('These are the common tournament footprint sizes, so you can reuse footprints you already own. One layout uses 8–10 pieces; all 9 layouts together need these 12. Frontline and Pincer use the left/right wedge pair (their halves are mirror images); Broken Ground uses medium ruins and long walls instead.',
+            'Son los tamaños de huella habituales en torneos, así puedes reutilizar las huellas que ya tienes. Cada disposición usa 8–10 piezas; las 9 disposiciones juntas necesitan estas 12. Choque Frontal y Tenaza usan el par de cuñas izquierda/derecha (sus mitades son reflejo una de otra); Tierra Rota usa ruinas medianas y muros largos.')
+        : S('The first proposal: a dedicated 12-piece kit with home objectives (5 objectives per map).', 'La primera propuesta: un kit propio de 12 piezas con objetivos de casa (5 objetivos por mapa).');
+    }
+
+    function load() {
+      if (data[st.k]) { paint(); return; }
+      fetch(FILES[st.k][0]).then(r => r.json()).then(d => { data[st.k] = d; paint(); })
+        .catch(() => { document.getElementById('title').textContent = S('Could not load the layouts.', 'No se pudieron cargar las disposiciones.'); });
     }
 
     document.getElementById('b-zoom').onclick = () => { zoom = !zoom; paint(); };
     document.getElementById('b-print').onclick = () => window.print();
-    document.getElementById('foot').innerHTML = S('Your Game terrain layouts are original, generated by <code>gametheory/scripts/layout_gen.py</code> and checked for line of sight, movement and objective cover. Game content: CC BY-NC-SA 4.0.',
-      'Las disposiciones de Your Game son originales, generadas por <code>gametheory/scripts/layout_gen.py</code> y comprobadas en línea de visión, movimiento y cobertura de objetivos. Contenido del juego: CC BY-NC-SA 4.0.');
-    fetch('data/layouts_4192.json').then(r => r.json()).then(d => { data = d; kit(); paint(); })
-      .catch(() => { document.getElementById('title').textContent = S('Could not load the layouts.', 'No se pudieron cargar las disposiciones.'); });
+    document.getElementById('foot').innerHTML = S('Project 4192 terrain layouts are original, generated by <code>gametheory/scripts/layout_gen.py</code> and checked for line of sight, movement and objective cover. Game content: CC BY-NC-SA 4.0.',
+      'Las disposiciones de Project 4192 son originales, generadas por <code>gametheory/scripts/layout_gen.py</code> y comprobadas en línea de visión, movimiento y cobertura de objetivos. Contenido del juego: CC BY-NC-SA 4.0.');
+    load();
   })();
   </script>
 </body>

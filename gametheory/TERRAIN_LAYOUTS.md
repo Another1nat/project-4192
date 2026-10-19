@@ -1,112 +1,142 @@
 # Terrain Layouts — plan, kit and checks
 
-**Project Codex: 4192 AD** · v1.0 · 2026-10-19 · pairs with [CORE_RULES_MANUAL_4192.md](CORE_RULES_MANUAL_4192.md) §6 (terrain) and
+**Project Codex: 4192 AD** · v2.0 · 2026-10-19 · pairs with [CORE_RULES_MANUAL_4192.md](CORE_RULES_MANUAL_4192.md) §6 (terrain) and
 [MISSIONS_AND_TACTICAL_DECK.md](MISSIONS_AND_TACTICAL_DECK.md) §2 (maps).
 
 - **Tool:** `scripts/layout_gen.py`.
 - **Output:**
-  - data: `website/data/layouts_4192.json`;
-  - maps: `website/assets/layouts_4192/<CODE>.svg`;
+  - data: `website/data/layouts_4192.json` (standard kit) and `layouts_4192_custom.json` (v1 kit);
+  - maps: `website/assets/layouts_4192/`;
   - page: `website/terrain.html`.
 
+**What changed in v2**
+1. **Standard footprint sizes:** the layouts now use pieces from the common 16-piece tournament footprint set, so players can reuse footprints they already own.
+2. **Three objectives:** no home objectives.
+3. **Mirror symmetry on Frontline and Pincer:** it lets the left/right wedge pair be used fairly.
+
+The v1 custom kit is kept as an alternative (switch on the Terrain page).
+
 ---
 
-## 1. Design targets (where the numbers come from)
+## 1. Why a 44″ × 30″ table
 
-**Reference data.** We measured 45 published tournament layouts for a larger 60″ × 44″ game, using statistics only (no layout was copied):
-- 16 pieces per table;
-- **24 %** of the table covered by terrain;
-- **95 %** of deployment-zone-to-zone sightlines crossing tall terrain (range 83–100 %);
-- about 20 % of each deployment zone covered;
-- every objective inside or touching terrain.
-
-**Targets for our 44″ × 30″ table (half the area):**
-
-| Measure | Target | Why |
+| | Typical large sci-fi wargame (60″ × 44″) | 4192 AD (44″ × 30″) |
 | :-- | :-- | :-- |
-| Table covered | 19–28 % | Same density as the reference, so movement and cover feel familiar |
-| Sightlines zone → zone blocked by Dense terrain | 80–95 % (aim 88 %) | Gunlines cannot shoot everything from deployment, but a few lanes stay open for long guns |
-| Route for Class 4–5 (4″ wide) | to both zones and every objective | Big models must be able to play the objectives |
-| Terrain near each objective | 1.5–5″ away, never on the marker | Holders get cover; the 3″ control circle stays playable |
-| Safe deployment ground | 15–60 % of each zone | Somewhere to hide on Round 1, but not a fortress |
-| Centre objective | 30–70 % of lines from each zone blocked | The centre is contested, not hidden |
-| Fairness | 180° rotation about the centre | Both players get the identical table |
+| Units per army | ~12–18 | 6–15, about 8 on average (7,500 simulated 1,000-pt lists) |
+| Models per army | ~40–60 | ~23 on average |
+| Table area | 2,640 sq in | 1,320 sq in, exactly half a 60″ × 44″ mat |
+| Models per square inch | ~0.019 | ~0.017 |
+
+**Result:**
+- 40–50 % fewer units on half the area, so the **same crowding** and **faster games**.
+- Players can use half of the mat they already own.
 
 ---
 
-## 2. The kit (12 pieces, ~300 sq in)
+## 2. The standard kit
 
-| # | Piece | Footprint | Height | Rules (§6) |
-| :-: | :-- | :-- | :-- | :-- |
-| 4 | Large Ruin | 8″ × 6″ | 5″ | **Dense:** blocks line of sight through its footprint; Class 4–5 cannot cross walls |
-| 2 | Small Ruin | 6″ × 4″ | 4″ | **Dense** |
-| 2 | Barricade | 6″ × 1.5″ | 1.5″ | **Light:** cover (−1 to Hit) behind it, crossed freely |
-| 2 | Low Wall | 5″ × 2″ | 2″ | **Light** |
-| 2 | Crater | 4″ diameter | flat | **Exposed:** infantry wholly inside claim cover |
+**The source set:** 4 large rectangles, a left/right wedge pair, 4 medium rectangles, 2 long lines and 4 short lines.
+- On the larger table those 16 pieces cover **24 %**.
+- On ours that share means about 315 sq in, **8–10 pieces**.
 
-Build it from anything: card, foam, ruins you already own. Only the footprint size matters for the rules.
+| Piece | Footprint | Height | Rules (§6) | Used |
+| :-- | :-- | :-- | :-- | :-- |
+| Large Ruin | 11.5″ × 7″ | 5″ | **Dense:** blocks line of sight through its footprint; Class 4–5 cannot cross walls | 2 of 4 |
+| Large Wedge (left + right) | 11.5″ × 8″, 2″ narrow end | 5″ | **Dense** | the pair |
+| Medium Ruin | 6″ × 4″ | 3″ | **Dense** | 2 of 4 |
+| Long Wall | 10″ × 2.5″ | 5″ | **Dense** | 2 of 2 |
+| Short Wall | 6″ × 2″ | 3″ | **Light:** cover (−1 to Hit) behind it | 4 of 4 |
+
+**All 9 layouts together need 12 of the 16 pieces.** A single layout uses 8–10.
+
+### Which pieces each map uses (chosen by testing, not by hand)
+The generator tried 6 half-sets on the mirror maps and 4 on Broken Ground (about 3,000 layouts per map), then compared their best scores:
+
+| Map | Best half-set | Full layout | Why |
+| :-- | :-- | :-- | :-- |
+| A · Frontline Clash | Large Ruin + Wedge + 2 Short Walls | 2 LR, wedge pair, 4 SW = **8 pieces, 24 %** | Only 14″ of no-man's land: more Dense pieces leave no room to move. Medium ruins and long walls scored 3–4× worse. |
+| B · Broken Ground | Large Ruin + Medium Ruin + Long Wall (+ 1–2 Short Walls) | 2 LR, 2 MR, 2 LW, 2–4 SW = **8–10 pieces, 21–23 %** | The diagonal zones need several mid-sized blockers. Wedges can't be used here (see §3). |
+| C · Pincer | Large Ruin + Wedge + 2 Short Walls (one layout swaps a wall for a Medium Ruin) | **8 pieces, 24–26 %** | Same reason as Frontline, on the other axis. |
 
 ---
 
-## 3. How a layout is generated
+## 3. Symmetry and the wedge pair
 
-1. **Place half the kit at random** on one side:
-   - 2 Large Ruins, 1 Small Ruin, 1 Crater (inside your own deployment zone), 1 Barricade, 1 Low Wall;
-   - angles of 0°, 30°, 45°, 60° or 90°.
-2. **Add the twin** of every piece, rotated 180° around the table centre.
-3. **Hard rules** (otherwise the layout is rejected):
-   - pieces stay 0.5″ inside the table edge;
-   - gaps: 3″ around Dense pieces, 2.5″ between Light pieces;
-   - at least 2.3″ from every objective marker;
-   - **at most one Dense piece per side inside its deployment zone**, so the big ruins fill no-man's land.
-4. **Score** every valid candidate against the targets in §1 (2,500 tries per map).
-5. **Pick the 3 best layouts per map** that look different from each other. Each finalist is re-measured with 600 sightlines and must block at least 78 % and keep the big-model route.
+- **Frontline Clash** (zones on the long edges) is **mirrored across the long centre line**.
+- **Pincer** (zones on the short edges) is **mirrored across the short centre line**.
+  - A mirror turns a left wedge into a right wedge, so each map uses exactly the left/right pair.
+- **Broken Ground** (zones in opposite corners) can only be **rotated 180°**.
+  - A rotated left wedge is still a left wedge, so this map would need two left wedges.
+  - It uses Medium Ruins and Long Walls instead, still from the same 16-piece set.
+
+---
+
+## 4. Objectives: three, no home objectives
+
+| Map | Objectives (from the bottom-left corner) |
+| :-- | :-- |
+| A · Frontline Clash | Centre (22, 15) · Flanks (8, 15) and (36, 15) |
+| B · Broken Ground | Centre (22, 15) · Off-diagonal (10, 24) and (34, 6) |
+| C · Pincer | Centre (22, 15) · Wings (22, 5) and (22, 25) |
+
+**Why drop home objectives at 1,000 points:**
+1. **Units are spread thin otherwise.** With 6–15 units, 5 objectives ask for too much.
+2. **They reward sitting back.** A unit parked on its home objective scores without playing, which slows the game down.
+3. **Three is a good fit for the scoring tiers:** +1 for holding one, +2 for holding two, +2 for holding more than the opponent. Holding 2 of 3 is a clear majority.
+
+**Home objectives stay available:**
+- `layout_gen.py --homes` puts them back;
+- the v1 custom kit keeps 5 objectives;
+- a Grand game (1,500 pts) can add them.
+
+---
+
+## 5. Targets and checks (unchanged from v1)
+
+Measured on 45 published tournament layouts for the larger table (statistics only, nothing copied):
+- 24 % covered;
+- 95 % of zone-to-zone sightlines crossing tall terrain;
+- every objective in or touching terrain.
+
+| Check | Target |
+| :-- | :-- |
+| Sightlines zone → zone blocked by Dense terrain | 80–95 % (hard minimum 78 %) |
+| Table covered | 19–28 % |
+| 4″-wide route (Class 4–5) to both zones and every objective | required |
+| Nearest terrain to each objective | 1.5–5.5″ (required), never on the marker |
+| Safe deployment ground per zone | 15–60 % |
+| Lines from each zone to the centre objective blocked | 30–70 % |
+
+Hard placement rules:
+- pieces stay 0.5″ inside the table edge;
+- 3″ gap around Dense pieces, 2.5″ between Light pieces;
+- at least 2.3″ from objective markers;
+- a limit on Dense pieces mostly inside a deployment zone: 2 per side on Frontline (its no-man's land is only 14″), 1 elsewhere.
+
+---
+
+## 6. Current layouts (v2, standard kit)
+
+| Code | Pieces | Sightlines blocked | Covered | Route | Objective cover |
+| :-- | :-- | --: | --: | :-: | :-- |
+| FC-1 · FC-2 · FC-3 | 8 | 79–82 % | 24–25 % | ✅ | 2.4–4.9″ |
+| BG-1 · BG-2 · BG-3 | 8–10 | 78–85 % | 21–23 % | ✅ | 2.3–3.9″ |
+| PI-1 · PI-2 · PI-3 | 8 | 78–86 % | 24–26 % | ✅ | 2.5–5.5″ |
+
+The page shows each layout's own numbers and a setup table, giving every piece's centre in inches from the left and front edges plus its rotation. For wedges it also says which side the wide end points to.
 
 ```bash
 cd gametheory/scripts
-python3 layout_gen.py                        # 9 layouts (3 maps x 3), about 4 minutes
-python3 layout_gen.py --tries 6000 --seed 7  # more search, different layouts
-python3 layout_gen.py --variants 5           # 5 per map
+python3 layout_gen.py                          # standard kit, 3 objectives, 9 layouts (~4 min)
+python3 layout_gen.py --maps PI --tries 8000   # search one map harder; the others in the file are kept
+python3 layout_gen.py --homes                  # put the home objectives back
+python3 layout_gen.py --kit custom             # the v1 custom kit (5 objectives) -> layouts_4192_custom.json
 ```
 
 ---
 
-## 4. Current layouts (v1.0)
-
-| Code | Map | Sightlines blocked | Covered | Big-model route | Character |
-| :-- | :-- | --: | --: | :-: | :-- |
-| FC-1 / FC-2 / FC-3 | A · Frontline Clash | 79 % / 87 % / 80 % | 23 % | ✅ | The most open map: zones span both long edges 14″ apart. Gunlines are strongest here. |
-| BG-1 / BG-2 / BG-3 | B · Broken Ground | 85 % / 80 % / 82 % | 23 % | ✅ | Diagonal approach: flank objectives decide the game. |
-| PI-1 / PI-2 / PI-3 | C · Pincer | 82 % / 82 % / 82 % | 23 % | ✅ | Long approach across 24″; zones are well hidden, so melee armies arrive intact. |
-
-Each layout's own numbers (shelter, centre, objective cover) are on its page in `website/terrain.html` and in
-`website/data/layouts_4192.json → checks`.
-
----
-
-## 5. Data format (`layouts_4192.json`)
-
-```json
-{ "FC-1": { "code": "FC-1", "map": "FC", "variant": "1", "title": "...", "title_es": "...",
-   "table": {"width_in": 44, "depth_in": 30},
-   "deployment_zones": [{"role": "attacker", "points_in": [[x, y], ...]}, {"role": "defender", ...}],
-   "objectives": [{"n": 1, "type": "home|central|flank", "owner": "attacker|defender|", "x_in": 0, "y_in": -11, "control_radius_in": 3}],
-   "pieces": [{"code": "A", "type": "RL|RS|BL|LW|CR", "kind": "Large Ruin", "terrain": "dense|light|exposed", "blocks_los": true,
-               "size_in": [8, 6], "height_in": 5, "centre_in": [x, y], "from_left_in": 12.5, "from_front_in": 7.0,
-               "rotation_deg": 45, "corners_in": [[x, y], ...]}],
-   "checks": {"sightlines_blocked": 0.79, "coverage": 0.23, "shelter": [0.55, 0.53], "centre_blocked": [0.42, 0.43],
-              "big_model_route": true, "objective_cover_in": [2.5, ...], "score": 0.74} } }
-```
-- Coordinates are in inches from the table centre (x along the 44″ edge, y along the 30″ edge, +y towards the defender).
-- `from_left_in` / `from_front_in` are what players measure on the table.
-
----
-
-## 6. Next steps
-
-1. **3D and phone AR:** adapt the existing model builder (`tools/ar/build_ar_models.py`, written for 60″ × 44″ and
-   scraped art) to the 44″ × 30″ table and these simple footprints. That gives the same "View on my table (AR)" button as before.
-2. **Simulator from real layouts:** `battle_sim.py` still assumes 50 % of units in cover and 35 % hidden beyond 12″.
-   Measuring those two numbers on these 9 layouts and feeding them back would make the balance numbers table-accurate.
-3. **Skirmish (30″ × 22″) and Grand (44″ × 60″) sizes:** the same generator with a scaled kit (8 and 18 pieces).
-4. **Mission-specific layouts:** e.g. more open lanes for artillery missions, denser cities for close-quarters missions.
+## 7. Next steps
+1. **3D and phone AR:** adapt `tools/ar/build_ar_models.py` (built for the larger table) to 44″ × 30″ and these footprints.
+2. **Simulator:** `battle_sim.py` still scores a home objective per side and assumes 50 % cover / 35 % hidden. Switching it to these
+   3-objective maps and to cover/hidden rates measured on these layouts would make the balance numbers table-accurate.
+3. **Skirmish (30″ × 22″):** about 5 pieces (1 Large Ruin, the wedge pair, 2 Short Walls) and the same 3 objectives scaled by 0.7.

@@ -25,7 +25,7 @@ import os
 import random
 import statistics
 
-from shapely.affinity import rotate, translate
+from shapely.affinity import rotate, scale, translate
 from shapely.geometry import LineString, Point, Polygon, box
 from shapely.ops import unary_union
 
@@ -38,6 +38,14 @@ HW, HH = W / 2, H / 2
 # The 4192 terrain kit (12 pieces). Halves are placed by the generator, the other half is the 180° twin.
 # ---------------------------------------------------------------------------------------------------------------
 KIT = {   # matches CORE_RULES_MANUAL §6: Dense blocks line of sight through its footprint, Light gives cover, Exposed neither
+    # --- standard kit: the common tournament footprint sizes (a 16-piece set; a layout uses 8–10 of them) ---
+    'LR': dict(name='Large Ruin', name_es='Ruina grande', w=11.5, d=7.0, h=5.0, los=True, kind='dense', fill='#3f4652'),
+    'TL': dict(name='Large Wedge (left)', name_es='Cuña grande (izquierda)', w=11.5, d=8.0, h=5.0, los=True, kind='dense', fill='#374151', wedge='L', narrow=2.0),
+    'TR': dict(name='Large Wedge (right)', name_es='Cuña grande (derecha)', w=11.5, d=8.0, h=5.0, los=True, kind='dense', fill='#374151', wedge='R', narrow=2.0),
+    'MR': dict(name='Medium Ruin', name_es='Ruina mediana', w=6.0, d=4.0, h=3.0, los=True, kind='dense', fill='#4b5563'),
+    'LL': dict(name='Long Wall', name_es='Muro largo', w=10.0, d=2.5, h=5.0, los=True, kind='dense', fill='#2b3038'),
+    'SL': dict(name='Short Wall', name_es='Muro corto', w=6.0, d=2.0, h=3.0, los=False, kind='light', fill='#9a8f7a'),
+    # --- custom kit (v1) ---
     'RL': dict(name='Large Ruin', name_es='Ruina grande', w=8.0, d=6.0, h=5.0, los=True, kind='dense', count=4, fill='#3f4652'),
     'RS': dict(name='Small Ruin', name_es='Ruina pequeña', w=6.0, d=4.0, h=4.0, los=True, kind='dense', count=2, fill='#4b5563'),
     'BL': dict(name='Barricade', name_es='Barricada', w=6.0, d=1.5, h=1.5, los=False, kind='light', count=2, fill='#9a8f7a'),
@@ -55,31 +63,46 @@ def C(x, y):
 
 
 MAPS = {
-    'FC': dict(name='Frontline Clash', name_es='Choque Frontal', letter='A',
+    'FC': dict(name='Frontline Clash', name_es='Choque Frontal', letter='A', sym='mirror_y', zone_dense=2,   # only 14" of no-man's land
                zones=[[C(0, 0), C(44, 0), C(44, 8), C(0, 8)], [C(0, 22), C(44, 22), C(44, 30), C(0, 30)]],
                objectives=[('home', 'attacker', C(22, 4)), ('home', 'defender', C(22, 26)), ('central', '', C(22, 15)),
                            ('flank', '', C(8, 15)), ('flank', '', C(36, 15))]),
-    'BG': dict(name='Broken Ground', name_es='Tierra Rota', letter='B',
+    'BG': dict(name='Broken Ground', name_es='Tierra Rota', letter='B', sym='point',
                zones=[[C(0, 0), C(20, 0), C(0, 14)], [C(44, 30), C(24, 30), C(44, 16)]],
                objectives=[('home', 'attacker', C(6, 6)), ('home', 'defender', C(38, 24)), ('central', '', C(22, 15)),
                            ('flank', '', C(10, 24)), ('flank', '', C(34, 6))]),
-    'PI': dict(name='Pincer', name_es='Tenaza', letter='C',
+    'PI': dict(name='Pincer', name_es='Tenaza', letter='C', sym='mirror_x',
                zones=[[C(0, 0), C(10, 0), C(10, 30), C(0, 30)], [C(34, 0), C(44, 0), C(44, 30), C(34, 30)]],
                objectives=[('home', 'attacker', C(5, 15)), ('home', 'defender', C(39, 15)), ('central', '', C(22, 15)),
                            ('flank', '', C(22, 5)), ('flank', '', C(22, 25))]),
 }
+# Standard kit: which half-sets to try. Mirror maps can use the left/right wedge pair (each half gets one wedge, its
+# mirror twin is the other hand). Point-symmetric maps cannot (a rotated left wedge is still a left wedge).
+COMPOSITIONS = {
+    'mirror': [['LR', 'TL', 'MR', 'SL'], ['LR', 'TL', 'MR', 'LL', 'SL'], ['LR', 'MR', 'MR', 'LL', 'SL'], ['TL', 'MR', 'MR', 'LL', 'SL'],
+               ['LR', 'TL', 'LL', 'SL'], ['LR', 'TL', 'SL', 'SL']],
+    'point': [['LR', 'MR', 'MR', 'LL', 'SL'], ['LR', 'MR', 'MR', 'SL', 'SL'], ['LR', 'MR', 'LL', 'SL', 'SL'], ['LR', 'LL', 'MR', 'SL']],
+}
+CUSTOM_HALF = ['RL', 'RL', 'RS', 'CR', 'BL', 'LW']
 TARGETS = dict(blocked=(0.80, 0.95), coverage=(0.19, 0.28), shelter=(0.15, 0.60), centre=(0.30, 0.70))
 BIG_BASE = 4.0        # Class 4–5 footprint that must be able to move between objectives and zones
 GAP_MIN = 3.0         # minimum gap from a line-of-sight blocker to any other piece
 GAP_LIGHT = 2.5       # light cover and craters may sit a little closer (infantry still pass; big models use the 4" route check)
 OBJ_CLEAR, OBJ_COVER = 1.5, 5.0
+ZONE_SHARE = 0.3      # a piece counts as "in" a deployment zone when more than this share of it is inside
 
 
 def piece_poly(k, x, y, ang):
     s = KIT[k]
     if s.get('round'):
         return Point(x, y).buffer(s['w'] / 2, 24)
-    p = box(-s['w'] / 2, -s['d'] / 2, s['w'] / 2, s['d'] / 2)
+    w, d = s['w'] / 2, s['d'] / 2
+    if s.get('wedge') == 'L':      # right-angled wedge: full depth at one end, `narrow` at the other
+        p = Polygon([(-w, -d), (w, -d), (w, d), (-w, -d + s['narrow'])])
+    elif s.get('wedge') == 'R':
+        p = Polygon([(-w, -d), (w, -d), (w, -d + s['narrow']), (-w, d)])
+    else:
+        p = box(-w, -d, w, d)
     return translate(rotate(p, ang, origin=(0, 0)), x, y)
 
 
@@ -95,12 +118,26 @@ def rand_point(poly, rnd):
     return poly.representative_point()
 
 
-def candidate(mp, rnd):
-    """Place one half of the kit at random, add the 180° twins, return pieces or None if a hard rule fails."""
+def twin(k, x, y, ang, p, sym):
+    """The symmetric partner of a piece: 'point' = rotated 180° about the centre, 'mirror_y' = reflected across the
+    long centre line (y -> -y), 'mirror_x' = reflected across the short centre line (x -> -x). Reflection swaps wedge hands."""
+    flip = {'TL': 'TR', 'TR': 'TL'}
+    if sym == 'point':
+        return k, -x, -y, ang, rotate(p, 180, origin=(0, 0))
+    if sym == 'mirror_y':
+        return flip.get(k, k), x, -y, -ang, scale(p, 1, -1, origin=(0, 0))
+    return flip.get(k, k), -x, y, 180 - ang, scale(p, -1, 1, origin=(0, 0))
+
+
+def objectives_of(mp, homes):
+    return [o for o in mp['objectives'] if homes or o[0] != 'home']
+
+
+def candidate(mp, rnd, order, sym, homes):
+    """Place one half of the kit at random, add the symmetric twins, return pieces or None if a hard rule fails."""
     zones = [Polygon(z) for z in mp['zones']]
-    objs = [Point(*o[2]) for o in mp['objectives']]
+    objs = [Point(*o[2]) for o in objectives_of(mp, homes)]
     half = []
-    order = ['RL', 'RL', 'RS', 'CR', 'BL', 'LW']        # big pieces first, small cover fills the gaps
     for k in order:
         ok = False
         for _ in range(300):
@@ -111,38 +148,40 @@ def candidate(mp, rnd):
             else:
                 x, y = rnd.uniform(-HW + 2, HW - 2), rnd.uniform(-HH + 2, HH - 2)
             p = piece_poly(k, x, y, ang)
-            twin = rotate(p, 180, origin=(0, 0))
+            tk, tx, ty, ta, tp = twin(k, x, y, ang, p, sym)
             if not TABLE.buffer(-0.5).contains(p):
                 continue
-            if p.distance(twin) < GAP_MIN:
+            if p.distance(tp) < GAP_MIN:
                 continue
             if any(p.distance(o) < OBJ_CLEAR + 0.8 for o in objs):
                 continue
             gap = GAP_MIN if KIT[k]['los'] else GAP_LIGHT
-            if any(p.distance(q2) < gap or p.distance(t2) < gap for _, _, _, _, q2, t2 in half):
+            if any(p.distance(h[4]) < gap or p.distance(h[5][4]) < gap for h in half):
                 continue
             def in_zone(poly):     # a half-piece in either zone puts one Dense piece (it or its twin) in EACH zone
-                return any(poly.intersection(z).area > 0.3 * poly.area for z in zones)
-            if k in ('RL', 'RS') and in_zone(p):
-                if any(h[0] in ('RL', 'RS') and in_zone(h[4]) for h in half):
-                    continue  # at most one Dense piece per side sits in its deployment zone: the rest fills no-man's land
-            half.append((k, x, y, ang, p, twin))
+                return any(poly.intersection(z).area > ZONE_SHARE * poly.area for z in zones)
+            if KIT[k]['los'] and KIT[k]['w'] >= 6 and in_zone(p):
+                if sum(1 for h in half if KIT[h[0]]['los'] and KIT[h[0]]['w'] >= 6 and in_zone(h[4])) >= mp.get('zone_dense', 1):
+                    continue  # limit Dense pieces inside each deployment zone: the rest fills no-man's land
+            half.append((k, x, y, ang, p, (tk, tx, ty, ta, tp)))
             ok = True
             break
         if not ok:
             return None
     pieces = []
-    for k, x, y, ang, p, twin in half:
+    for k, x, y, ang, p, (tk, tx, ty, ta, tp) in half:
         pieces.append(dict(k=k, x=x, y=y, ang=ang, poly=p))
-        pieces.append(dict(k=k, x=-x, y=-y, ang=ang, poly=twin))
+        pieces.append(dict(k=tk, x=tx, y=ty, ang=ta, poly=tp))
     return pieces
 
 
-def metrics(mp, pieces, rnd, n=260):
+def metrics(mp, pieces, rnd, n=260, homes=True):
     zones = [Polygon(z) for z in mp['zones']]
     blockers = unary_union([p['poly'] for p in pieces if KIT[p['k']]['los']])
     allp = unary_union([p['poly'] for p in pieces])
-    objs = [Point(*o[2]) for o in mp['objectives']]
+    olist = objectives_of(mp, homes)
+    objs = [Point(*o[2]) for o in olist]
+    centre_obj = objs[[o[0] for o in olist].index('central')]
     # sightlines zone -> zone
     blocked = sum(LineString([rand_point(zones[0], rnd), rand_point(zones[1], rnd)]).intersects(blockers) for _ in range(n)) / n
     coverage = allp.area / (W * H)
@@ -155,7 +194,7 @@ def metrics(mp, pieces, rnd, n=260):
             bl = sum(LineString([p, rand_point(zones[b], rnd)]).intersects(blockers) for _ in range(20)) / 20
             hid += bl >= 0.7
         shelter.append(hid / 40)
-    centre = [sum(LineString([rand_point(z, rnd), objs[2]]).intersects(blockers) for _ in range(60)) / 60 for z in zones]
+    centre = [sum(LineString([rand_point(z, rnd), centre_obj]).intersects(blockers) for _ in range(60)) / 60 for z in zones]
     # movement for a 4" base: free space = table shrunk by 2" minus pieces grown by 2" (craters are passable)
     solid = unary_union([p['poly'] for p in pieces if p['k'] != 'CR'])
     free = TABLE.buffer(-BIG_BASE / 2).difference(solid.buffer(BIG_BASE / 2))
@@ -193,7 +232,7 @@ def score(m):
 
 
 def signature(pieces):
-    return [(p['k'], round(p['x'] / 4), round(p['y'] / 4)) for p in pieces if p['k'] in ('RL', 'RS')]
+    return [(p['k'], round(p['x'] / 4), round(p['y'] / 4)) for p in pieces if KIT[p['k']]['los']]
 
 
 def distance(a, b):
@@ -204,7 +243,7 @@ def distance(a, b):
 # ---------------------------------------------------------------------------------------------------------------
 # Output: data (same idea as the 40k ar_index.json: pieces with corners, objectives, zones) + SVG 2D maps
 # ---------------------------------------------------------------------------------------------------------------
-def to_record(code, mk, var, pieces, m):
+def to_record(code, mk, var, pieces, m, homes=True, sym='point', kit='standard'):
     mp = MAPS[mk]
     letters = 'ABCDEFGHIJKL'
     order = sorted(range(len(pieces)), key=lambda i: (-pieces[i]['y'], pieces[i]['x']))
@@ -217,13 +256,15 @@ def to_record(code, mk, var, pieces, m):
                     'blocks_los': s['los'], 'size_in': [s['w'], s['d']], 'height_in': s['h'],
                     'centre_in': [round(p['x'], 2), round(p['y'], 2)],
                     'from_left_in': round(p['x'] + HW, 1), 'from_front_in': round(p['y'] + HH, 1),
-                    'rotation_deg': p['ang'] % 180 if not s.get('round') else 0, 'corners_in': corners})
+                    'rotation_deg': (p['ang'] % 360 if s.get('wedge') else p['ang'] % 180) if not s.get('round') else 0,
+                    'corners_in': corners})
     return {'code': code, 'map': mk, 'variant': var, 'title': f"{mp['name']} — Layout {var}", 'title_es': f"{mp['name_es']} — Disposición {var}",
             'table': {'width_in': W, 'depth_in': H},
             'deployment_zones': [{'role': 'attacker', 'color': '#ef4444', 'points_in': [list(map(lambda v: round(v, 2), p)) for p in mp['zones'][0]]},
                                  {'role': 'defender', 'color': '#3b82f6', 'points_in': [list(map(lambda v: round(v, 2), p)) for p in mp['zones'][1]]}],
             'objectives': [{'n': i + 1, 'type': t, 'owner': o, 'x_in': round(x, 2), 'y_in': round(y, 2), 'control_radius_in': 3.0}
-                           for i, (t, o, (x, y)) in enumerate(mp['objectives'])],
+                           for i, (t, o, (x, y)) in enumerate(objectives_of(mp, homes))],
+            'kit': kit, 'symmetry': sym,
             'pieces': out,
             'checks': {'sightlines_blocked': round(m['blocked'], 3), 'coverage': round(m['coverage'], 3),
                        'shelter': [round(v, 2) for v in m['shelter']], 'centre_blocked': [round(v, 2) for v in m['centre']],
@@ -278,52 +319,81 @@ def svg(rec):
         o.append(f'<text x="{(X(cx) + X(ex)) / 2:.1f}" y="{Y(cy) - 4:.1f}" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">{dx:.1f}"</text>')
         o.append(f'<text x="{X(cx) + 4:.1f}" y="{(Y(cy) + Y(-HH)) / 2:.1f}" font-size="13" font-weight="700" fill="#1d4ed8">{cy + HH:.1f}"</text>')
     o.append(f'<text x="{pad}" y="{pad - 10}" font-size="15" font-weight="800" fill="#e6edf8">{rec["title"]}</text>')
-    o.append(f'<text x="{pad + W * S:.0f}" y="{pad - 10}" text-anchor="end" font-size="12" fill="#9aa7b8">44" × 30" · centres measured from the nearest side and the front edge · 180° symmetric</text>')
+    symtxt = {'point': '180° symmetric', 'mirror_y': 'mirrored across the long centre line', 'mirror_x': 'mirrored across the short centre line'}[rec.get('symmetry', 'point')]
+    o.append(f'<text x="{pad + W * S:.0f}" y="{pad - 10}" text-anchor="end" font-size="12" fill="#9aa7b8">44" × 30" · centres from the nearest side and the front edge · {symtxt}</text>')
     o.append('</svg>')
     return '\n'.join(o)
 
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument('--kit', choices=['standard', 'custom'], default='standard')
+    ap.add_argument('--homes', action='store_true', help='keep the two home objectives (standard kit drops them by default)')
     ap.add_argument('--tries', type=int, default=2500)
     ap.add_argument('--seed', type=int, default=4192)
     ap.add_argument('--variants', type=int, default=3)
+    ap.add_argument('--maps', default=None, help='only these maps, e.g. PI or FC,PI (other layouts in the file are kept)')
     args = ap.parse_args()
     rnd = random.Random(args.seed)
-    records = {}
-    os.makedirs(os.path.join(SITE, 'assets', 'layouts_4192'), exist_ok=True)
+    homes = args.homes or args.kit == 'custom'
+    global ZONE_SHARE
+    if args.kit == 'standard':
+        ZONE_SHARE = 0.5      # the standard pieces are big for a 30" table: only count pieces mostly inside a zone
+    sub = '' if args.kit == 'standard' else 'custom'
+    svg_dir = os.path.join(SITE, 'assets', 'layouts_4192', sub)
+    os.makedirs(svg_dir, exist_ok=True)
+    out = os.path.join(SITE, 'data', 'layouts_4192.json' if args.kit == 'standard' else 'layouts_4192_custom.json')
+    records, summary = {}, []
+    if args.maps and os.path.exists(out):
+        records = json.load(open(out, encoding='utf-8'))
     for mk, mp in MAPS.items():
-        pool = []
-        for _ in range(args.tries):
-            pcs = candidate(mp, rnd)
-            if not pcs:
-                continue
-            m = metrics(mp, pcs, rnd, n=120)
-            pool.append((score(m), pcs, m))
+        if args.maps and mk not in args.maps.split(','):
+            continue
+        sym = 'point' if args.kit == 'custom' else mp['sym']
+        comps = [CUSTOM_HALF] if args.kit == 'custom' else COMPOSITIONS['point' if sym == 'point' else 'mirror']
+        pool, valid = [], {}
+        per = max(1, args.tries // len(comps))
+        for comp in comps:
+            order = sorted(comp, key=lambda k: -KIT[k]['w'] * KIT[k]['d'])     # big pieces first
+            n_ok = 0
+            for _ in range(per):
+                pcs = candidate(mp, rnd, order, sym, homes)
+                if not pcs:
+                    continue
+                n_ok += 1
+                m = metrics(mp, pcs, rnd, n=120, homes=homes)
+                pool.append((score(m), pcs, m, '+'.join(comp)))
+            valid['+'.join(comp)] = n_ok
         pool.sort(key=lambda t: t[0])
+        # how well each half-set can do: median of its 10 best first-pass scores
+        for comp in valid:
+            best = [t[0] for t in pool if t[3] == comp][:10]
+            summary.append((mk, comp, valid[comp], statistics.median(best) if best else None))
         chosen = []
-        for sc, pcs, m in pool[:600]:
+        for sc, pcs, m, comp in pool[:800]:
             if all(distance(pcs, c[1]) >= 3 for c in chosen):
-                m = metrics(mp, pcs, random.Random(1), n=600)       # re-measure the finalists with more sightlines
-                if m['blocked'] < 0.78 or not m['connected']:
-                    continue                                        # failed on the precise measure: try the next one
-                chosen.append((score(m), pcs, m))
+                m = metrics(mp, pcs, random.Random(1), n=600, homes=homes)  # re-measure the finalists with more sightlines
+                if m['blocked'] < 0.78 or not m['connected'] or not all(OBJ_CLEAR <= d <= OBJ_COVER + 0.5 for d in m['obj_cover']):
+                    continue                                        # failed a hard check on the precise measure: try the next one
+                chosen.append((score(m), pcs, m, comp))
             if len(chosen) == args.variants:
                 break
-        for i, (sc, pcs, m) in enumerate(chosen):
+        for i, (sc, pcs, m, comp) in enumerate(chosen):
             var = str(i + 1)
             code = f'{mk}-{var}'
-            rec = to_record(code, mk, var, pcs, m)
+            rec = to_record(code, mk, var, pcs, m, homes=homes, sym=sym, kit=args.kit)
             rec['checks']['score'] = round(sc, 3)
+            rec['checks']['half_set'] = comp
             records[code] = rec
-            open(os.path.join(SITE, 'assets', 'layouts_4192', f'{code}.svg'), 'w', encoding='utf-8').write(svg(rec))
+            open(os.path.join(svg_dir, f'{code}.svg'), 'w', encoding='utf-8').write(svg(rec))
             c = rec['checks']
-            print(f"{code:<5} score {sc:5.2f} · sightlines blocked {100 * c['sightlines_blocked']:.0f}% · coverage {100 * c['coverage']:.0f}% · "
-                  f"shelter {c['shelter']} · centre {c['centre_blocked']} · big-model route {c['big_model_route']} · objective cover {c['objective_cover_in']}")
-        print(f'  {mk}: {len(pool)} valid candidates out of {args.tries}')
-    out = os.path.join(SITE, 'data', 'layouts_4192.json')
+            print(f"{code:<5} [{comp}] score {sc:5.2f} · blocked {100 * c['sightlines_blocked']:.0f}% · coverage {100 * c['coverage']:.0f}% · "
+                  f"shelter {c['shelter']} · centre {c['centre_blocked']} · route {c['big_model_route']} · objective cover {c['objective_cover_in']}")
+    print('\nHalf-set comparison (median of the 10 best scores; lower is better):')
+    for mk, comp, n_ok, med in summary:
+        print(f'  {mk} {comp:<22} valid {n_ok:5d}  median best score {med if med is None else round(med, 2)}')
     json.dump(records, open(out, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
-    print(f'[✓] {out} ({len(records)} layouts) and assets/layouts_4192/*.svg')
+    print(f'[✓] {out} ({len(records)} layouts) and {svg_dir}/*.svg')
 
 
 if __name__ == '__main__':

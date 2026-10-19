@@ -21,30 +21,36 @@
 
 ---
 
-## 2. Deployment maps (Standard 44″ × 30″, 5 objectives, 40mm markers)
+## 2. Deployment maps (Standard 44″ × 30″, 3 objectives, 40mm markers)
 
 Coordinates are (x along the 44″ edge, y along the 30″ edge), measured from the bottom-left corner.
 
 | Map | Deployment zones | Objectives | Plays like |
 | :-- | :-- | :-- | :-- |
-| **A. Frontline Clash** | Long edges, 8″ deep (14″ no-man's-land) | Home (22, 4) & (22, 26) · Centre (22, 15) · Flanks (8, 15) & (36, 15) | Straight fight for the middle; best for learning |
-| **B. Broken Ground** | Opposite corners: triangles from (0,0)–(20,0)–(0,14) and (44,30)–(24,30)–(44,16) | Homes (6, 6) & (38, 24) · Centre (22, 15) · Off-diagonal (10, 24) & (34, 6) | Armies arrive at angles, so flanking and the off-diagonal objectives matter |
-| **C. Pincer** | Short edges, 10″ deep (24″ gap) | Homes (5, 15) & (39, 15) · Centre (22, 15) · Wings (22, 5) & (22, 25) | Long approach: gunlines shine early, fast armies swing wings late |
+| **A. Frontline Clash** | Long edges, 8″ deep (14″ no-man's-land) | Centre (22, 15) · Flanks (8, 15) & (36, 15) | Straight fight for the middle; best for learning |
+| **B. Broken Ground** | Opposite corners: triangles from (0,0)–(20,0)–(0,14) and (44,30)–(24,30)–(44,16) | Centre (22, 15) · Off-diagonal (10, 24) & (34, 6) | Armies arrive at angles, so flanking and the off-diagonal objectives matter |
+| **C. Pincer** | Short edges, 10″ deep (24″ gap) | Centre (22, 15) · Wings (22, 5) & (22, 25) | Long approach: gunlines shine early, fast armies swing wings late |
 
-**Skirmish (30″ × 22″):** use maps A or C scaled by ×0.7, with 3 objectives (homes + centre).
-**Grand (44″ × 60″):** use map A with 7 objectives (add two at (11, 30) and (33, 30)).
+- **No home objectives at 1,000 pts (v2).** With 6–15 units, five objectives spread armies too thin, and a home objective scores for a unit that never moves. With three, holding two is a clear majority, which fits the scoring tiers in §1.
+  - Optional variant: add home objectives at (22, 4) & (22, 26) on map A, (6, 6) & (38, 24) on B, and (5, 15) & (39, 15) on C.
+- **Skirmish (30″ × 22″):** use maps A or C scaled by ×0.7, with the same 3 objectives.
+- **Grand (44″ × 60″):** use map A with 5 objectives: the 3 standard ones plus a home objective for each side.
 
 ### Terrain standard (every map)
-The 12-piece kit and 9 ready-made layouts (3 per map) are in [TERRAIN_LAYOUTS.md](TERRAIN_LAYOUTS.md) (page: `website/terrain.html`).
-- **6 Dense pieces:** 4 Large Ruins (8″ × 6″, 5″ tall) and 2 Small Ruins (6″ × 4″). At most one per side inside its deployment zone; the rest fill no-man's land.
-- **4 Light pieces:** 2 Barricades (6″ × 1.5″) and 2 Low Walls (5″ × 2″).
-- **2 Exposed pieces:** craters (4″), one in each deployment zone.
+Kit, generator and the 9 ready-made layouts: [TERRAIN_LAYOUTS.md](TERRAIN_LAYOUTS.md) (page: `website/terrain.html`).
+- **Pieces:** a layout uses 8–10 pieces in the common tournament footprint sizes. All 9 layouts together need 12 of the usual 16-piece set:
+  - 2 Large Ruins (11.5″ × 7″);
+  - the left/right Large Wedge pair (11.5″ × 8″);
+  - 2 Medium Ruins (6″ × 4″);
+  - 2 Long Walls (10″ × 2.5″);
+  - 4 Short Walls (6″ × 2″).
+- **Rules:** Ruins, Wedges and Long Walls are Dense (they block line of sight); Short Walls are Light (cover).
+- **Symmetry:** Frontline and Pincer are mirror-symmetric (they use the wedge pair); Broken Ground is rotated 180°.
 - **Checks every layout passes:**
-  - 80–95 % of zone-to-zone sightlines blocked (Frontline Clash is the most open map, about 80 %);
-  - 19–28 % of the table covered;
+  - 78–86 % of zone-to-zone sightlines blocked (a few lanes stay open for long guns);
+  - 21–26 % of the table covered;
   - a 4″-wide route for big models to every objective;
-  - cover 1.5–5″ from each objective;
-  - 180° symmetric.
+  - cover within 1.5–5.5″ of each objective.
 
 ---
 
