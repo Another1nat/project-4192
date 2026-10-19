@@ -1,0 +1,1166 @@
+{
+ "name": "The Eclipse Shadow-Fiends",
+ "verb": "HAUNT",
+ "identity": "The only phantom army: void-spectres, reaper-knights and wailing hosts. Their bodies ignore armour penetration (a WARD instead of ARM: 5+ for troops, 4+ for elites and Leaders), they terrify what they charge, and each round one unit vanishes into the umbra and reappears elsewhere.",
+ "number": "25",
+ "template": "B_melee_predator",
+ "status": "draft",
+ "learned_from": [
+  "AoS 4 ghost armies: 5+ ward on everything (research 2026-10) — kept at 5+ for troops; 4+ only on elite/Leader datasheets",
+  "Gemini #1 Ethereal (no army-wide 4+), #2 Wave of Terror, #3 Umbra redeploy (1 unit per round)"
+ ],
+ "risk_profile": "Exposure. Gamble = Phase-Walk: move through anything, lose the ward until next activation.",
+ "core_rule": {
+  "name": "Ethereal Phase-Form · Wave of Terror",
+  "text": "Ethereal: Eclipse units have no ARM save; instead they have the WARD shown on their datasheet (5+ troops, 4+ elites/Leaders, 5+ for Class 4–5), which no PEN can worsen, and they are [STEALTH] against attacks from more than 12″. Wave of Terror: when an Eclipse unit ends a Charge, pick 1 engaged enemy unit: it gets −1 to Hit in melee until the End of Round."
+ },
+ "gamble": {
+  "name": "Phase-Walk",
+  "text": "When a unit activates: it moves through models and terrain and gets +2″ to its Charge roll this activation, but it loses its WARD until it next activates.",
+  "risk_cost": "exposure"
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.5,
+   "mods": {
+    "incoming_hit_mod_ranged": -1
+   },
+   "name": "Ethereal: veil",
+   "text": "[STEALTH] beyond 12″."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.4,
+   "mods": {
+    "incoming_hit_mod_melee": -1
+   },
+   "name": "Wave of Terror",
+   "text": "−1 to Hit for the charged unit."
+  }
+ ],
+ "units": [
+  {
+   "class": 3,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 7,
+   "CTRL": 1,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Reaper-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    },
+    {
+     "name": "Spectral hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Phantasm Lord on Spectral Steed",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Lord of Dread",
+     "text": "Friendly units within 9″ get +1 to Hit in melee on a round they charged."
+    },
+    {
+     "flat": 6.0,
+     "name": "Umbral Command",
+     "text": "The Umbra redeploy can be used twice per round while he lives."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 4,
+   "CTRL": 0,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Sword of the Eclipse",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Knight-Phantasm",
+   "slot": 2,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "lethal": true
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Frightful Touch",
+     "text": "The attached unit's melee Hit rolls of 6 auto-wound."
+    },
+    {
+     "mods": {
+      "devastating": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Soul-Cleaver",
+     "text": "Melee critical wounds become Fatal Wounds."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 3,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Soul-lantern",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Soul-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 4,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Lantern-Warden",
+   "slot": 3,
+   "abilities": [
+    {
+     "flat": 7.0,
+     "name": "Soul-Tethered Summons",
+     "text": "Once per round, return D3 slain models (or heal 3 MIGHT) to a friendly unit within 9″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 3,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Keening wail",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[IGNORES COVER]",
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Soul-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 4,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Banshee Wailer-Queen",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Soul-Shriek",
+     "text": "Once per round, an enemy unit within 12″ is Rattled on a 3+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Void-Shades",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Phase",
+     "text": "Move through models and terrain."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Grave-scythe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Eclipse Reapers",
+   "slot": 6,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Reaping Charge",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 4,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Wailing Spirit-Host",
+   "slot": 7,
+   "abilities": [
+    {
+     "mods": {
+      "lethal": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Frightful Touch",
+     "text": "Melee Hit rolls of 6 auto-wound ([IMPALING HITS])."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 12,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 3,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Wraith-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "WARD": 4,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Grave-Riders",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "dmg_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Deathly Charge",
+     "text": "+1 Damage in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Gloom-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Gloom-Blade Guard",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "crit_hit_on": 5,
+      "lethal": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Executioner's Edge",
+     "text": "Melee Hit rolls of 5+ auto-wound."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "keywords": [
+    "[FLY]",
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Wail",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "name": "Banshee Choir",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Dirge",
+     "text": "Units hit cannot use Retaliation Strikes until the End of Round on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "name": "Shroud-Hounds",
+   "slot": 11,
+   "abilities": [
+    {
+     "utility": "SCOUTS",
+     "name": "Hunt from the Dark",
+     "text": "[SCOUTS 6″]."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Spectral crossbow",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Grave-Arbalest Shades",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Ghost-Bolts",
+     "text": "Ranged weapons ignore Cover."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Spectral claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "name": "Gheist-Flitters",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Flit",
+     "text": "May Fall Back and still Charge."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 2,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Lantern-beam",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Soul-Lantern Bearers",
+   "slot": 14,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Soul-Light",
+     "text": "Friendly units within 6″ have UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 8,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Possessed gauntlets",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "name": "Haunted Armour Colossus",
+   "slot": 15,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Bound Spirit",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 7,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Spectral talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Shadow-Stalker Abomination",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Umbral Hunter",
+     "text": "Can always be the unit chosen for the Umbra redeploy, in addition to another unit."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 11,
+   "CTRL": 1,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[FLY]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Spirit-wail",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Phantom steeds",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "name": "Shroud-Hearse",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Deathly Procession",
+     "text": "Units that disembark may Charge this activation."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 6,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 11,
+   "CTRL": 0,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Soul-storm",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Soul-Reliquary Engine",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Reliquary Pulse",
+     "text": "At the End of Round, friendly units within 9″ heal 1 MIGHT or return 1 slain Class 1 model."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 13,
+   "CTRL": 2,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Spectral talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Void-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Eclipse Void-Leviathan",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Swallow Souls",
+     "text": "When it destroys an enemy model, heal 1 MIGHT (max 3 per round)."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 20,
+   "CTRL": 5,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Void-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Umbral Titan-Wraith",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Eclipse",
+     "text": "Once per battle, Command Phase: all enemy units more than 12″ from it count as beyond 12″ for Ethereal (STEALTH) until the End of Round."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Midnight Procession",
+   "playstyle": "Disappear and reappear: the umbra army.",
+   "rule": "Vanishing into the Umbra: at the End of Round, pick 1 unengaged Eclipse unit: remove it and set it up anywhere more than 8″ from all enemies.",
+   "enhancements": [
+    {
+     "name": "Shroud of Midnight",
+     "bearer": "Phantasm Lord on Spectral Steed",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "incoming_hit_mod_ranged": -1
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Shroud of Midnight",
+      "text": "The attached unit is [STEALTH] at all ranges."
+     },
+     "text": "The attached unit is [STEALTH] at all ranges."
+    },
+    {
+     "name": "Void-Lantern",
+     "bearer": "Lantern-Warden",
+     "ability": {
+      "flat": 4.0,
+      "name": "Void-Lantern",
+      "text": "Units set up by the Umbra within 6″ of him heal D3 MIGHT."
+     },
+     "text": "Units set up by the Umbra within 6″ of him heal D3 MIGHT."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Fade from Sight",
+     "cp": 1,
+     "when": "A unit is targeted",
+     "effect": "It is [STEALTH] at all ranges for the attack."
+    },
+    {
+     "name": "Return from the Umbra",
+     "cp": 1,
+     "when": "A unit is set up by the Umbra",
+     "effect": "It may Charge in Round order as if it had moved."
+    },
+    {
+     "name": "Grasp of the Dead",
+     "cp": 1,
+     "when": "An enemy unit Falls Back from an Eclipse unit",
+     "effect": "It suffers D3 Fatal Wounds on a 4+."
+    }
+   ]
+  },
+  {
+   "name": "Soul-Reapers",
+   "playstyle": "Scythes and blades: kill fast before the WARD fails.",
+   "rule": "Frightful Touch: Eclipse melee Hit rolls of 6 auto-wound ([IMPALING HITS]).",
+   "enhancements": [
+    {
+     "name": "Harvester's Scythe",
+     "bearer": "Knight-Phantasm",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Harvester's Scythe",
+      "text": "+1 Damage on a round he charged."
+     },
+     "text": "+1 Damage on a round he charged."
+    },
+    {
+     "name": "Reaper's Mark",
+     "bearer": "Eclipse Reapers",
+     "ability": {
+      "mods": {
+       "crit_hit_on": 5,
+       "lethal": true
+      },
+      "scope": "melee",
+      "uptime": 1.0,
+      "name": "Reaper's Mark",
+      "text": "Melee Hit rolls of 5+ auto-wound."
+     },
+     "text": "Melee Hit rolls of 5+ auto-wound."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Reap",
+     "cp": 1,
+     "when": "A unit is selected to Fight",
+     "effect": "Its melee weapons gain [REAPING 1]."
+    },
+    {
+     "name": "Terror Incarnate",
+     "cp": 1,
+     "when": "A unit ends a Charge",
+     "effect": "Wave of Terror applies to every engaged enemy unit."
+    },
+    {
+     "name": "Spectral Fury",
+     "cp": 1,
+     "when": "A unit is below Starting Strength",
+     "effect": "+1 Attack in melee until the End of Round."
+    }
+   ]
+  },
+  {
+   "name": "Spectral Host",
+   "playstyle": "The dead keep coming: lanterns, choirs and endless shades.",
+   "rule": "Endless Dead: Soul-Tethered Summons can be used twice per round; Void-Shades return D3 slain models at the End of Round within 9″ of a Leader.",
+   "enhancements": [
+    {
+     "name": "Lantern of Endless Night",
+     "bearer": "Lantern-Warden",
+     "ability": {
+      "flat": 5.0,
+      "name": "Lantern of Endless Night",
+      "text": "Summons range 12″."
+     },
+     "text": "Summons range 12″."
+    },
+    {
+     "name": "Wailing Crown",
+     "bearer": "Banshee Wailer-Queen",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "incoming_hit_mod_ranged": -1
+      },
+      "scope": "defense",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Wailing Crown",
+      "text": "Friendly units within 6″ are [STEALTH] at all ranges."
+     },
+     "text": "Friendly units within 6″ are [STEALTH] at all ranges."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Rise Again",
+     "cp": 2,
+     "when": "Command Phase, once per battle",
+     "effect": "Return a destroyed Class 1 unit at half strength within 6″ of a Leader."
+    },
+    {
+     "name": "Chill of the Grave",
+     "cp": 1,
+     "when": "An enemy unit within 6″ of a Leader activates",
+     "effect": "−1″ to its moves this activation."
+    },
+    {
+     "name": "Wail of the Host",
+     "cp": 1,
+     "when": "A unit is charged",
+     "effect": "The charging unit suffers −1 to Hit until the End of Round."
+    }
+   ]
+  }
+ ]
+}

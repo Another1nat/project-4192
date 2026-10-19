@@ -1,0 +1,5107 @@
+{
+ "_readme": "Compact rosters for factions not yet drafted as full datasheets. Unit = [name, archetype id (catalogue/unit_archetypes.json), models (null = archetype range), overrides {stat: value, keywords, weapons}, key ability]. Faction 'dna' shifts every unit: MOV/CTRL are added; MS/RS/ARM are added (negative = better); MIGHT_inf adds to models with MIGHT ≤ 2; MIGHT_big multiplies larger models. Detachments: n = name, p = playstyle, r = rule, e = enhancements [name, bearer, text], s = stratagems [name, CP, 'When: effect'].",
+ "03": {
+  "name": "The Sun-Pyre Witch-Courts",
+  "dna": {
+   "MOV": 0,
+   "MS": -1,
+   "RS": -1,
+   "ARM": 0,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 1.0,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Penitent Flagellants",
+    "c1_assault",
+    [
+     5,
+     10
+    ],
+    {
+     "ARM": 7,
+     "keywords": [
+      "[FRAIL]"
+     ],
+     "weapons": [
+      "chain_blade"
+     ],
+     "MS": 3
+    },
+    "Martyr's Zeal: when destroyed, bank 1 Pyre Die."
+   ],
+   [
+    "Sisters of the Pyre",
+    "c1_battle_brothers",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      "heavy_rifle",
+      "flamer",
+      "combat_blade"
+     ],
+     "MS": 3,
+     "RS": 3
+    },
+    "Purging Flame: [SCORCH] hits generate Pyre Dice."
+   ],
+   [
+    "Pyre-Justiciars",
+    "c2_elite_guard",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": 5,
+     "weapons": [
+      "heavy_flamer",
+      "power_maul"
+     ]
+    },
+    "Holy Fire: re-roll Wound 1s with [SCORCH]."
+   ],
+   [
+    "Retribution Squad",
+    "c2_weapon_team",
+    [
+     3,
+     3
+    ],
+    {
+     "MS": 4,
+     "ARM": 3,
+     "weapons": [
+      "melta_gun",
+      "combat_blade"
+     ]
+    },
+    "Divine Guidance: a Pyre Die used here counts as a 6."
+   ],
+   [
+    "Grand Inquisitrix",
+    "c2_leader",
+    null,
+    {
+     "weapons": [
+      "heavy_pistol",
+      "relic_blade"
+     ]
+    },
+    "⟳ Act of Faith: spend 1 Pyre Die for the attached unit as if it were 2 dice."
+   ],
+   [
+    "Penance Engine",
+    "c3_walker",
+    null,
+    {
+     "ARM": 4,
+     "weapons": [
+      "heavy_flamer",
+      "brute_fists"
+     ],
+     "keywords": [
+      "[STRIKE FIRST]"
+     ]
+    },
+    "Driven by Pain: +1 Attack while damaged."
+   ],
+   [
+    "Pyre-Altar Crawler",
+    "c4_battle_tank",
+    null,
+    {
+     "weapons": [
+      "heavy_flamer",
+      "heavy_flamer",
+      "battle_cannon",
+      "treads"
+     ]
+    },
+    "Sanctified Ground: friendlies within 6″ bank dice on 5+ when they die."
+   ],
+   [
+    "Cathedral Colossus",
+    "c5_war_titan",
+    null,
+    {
+     "weapons": [
+      "titan_cannon",
+      "heavy_flamer",
+      "titan_stomp"
+     ]
+    },
+    "Choir of Wrath: generates 1 Pyre Die per round while alive."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Order of the Burning Rose",
+    "p": "Fire-and-faith midfield push.",
+    "r": "Pyre dice may also replace Charge and Damage rolls of [SCORCH] weapons.",
+    "e": [
+     [
+      "Censer of Saints",
+      "Grand Inquisitrix",
+      "Bank 1 extra die when the bearer's unit kills a unit."
+     ],
+     [
+      "Brazier Crown",
+      "Grand Inquisitrix",
+      "Bearer's unit gets +1 to Wound with flamers."
+     ]
+    ],
+    "s": [
+     [
+      "Divine Intervention",
+      2,
+      "Leader would be destroyed: roll D6, 4+ she survives with 1 MIGHT."
+     ],
+     [
+      "Fervent Purge",
+      1,
+      "Unit shoots: [SCORCH] weapons gain +1 PEN."
+     ],
+     [
+      "Martyrdom",
+      1,
+      "Unit is destroyed: bank 2 dice instead of 1."
+     ]
+    ]
+   },
+   {
+    "n": "Penitent Host",
+    "p": "Flagellant and Engine tide.",
+    "r": "Penitents may Charge after a Move.",
+    "e": [
+     [
+      "Scourge of Penance",
+      "Grand Inquisitrix",
+      "Attached Penitents get +1 Attack."
+     ],
+     [
+      "Litany of Pain",
+      "Grand Inquisitrix",
+      "Penitents within 6″ ignore Rattled."
+     ]
+    ],
+    "s": [
+     [
+      "Absolution in Blood",
+      1,
+      "Penitent unit destroyed: nearest enemy suffers D3 Fatal Wounds."
+     ],
+     [
+      "Frenzied Flagellation",
+      1,
+      "Penitent unit fights: [ONSLAUGHT 1]."
+     ],
+     [
+      "Burning Advance",
+      1,
+      "Penance Engine ends a Move: engaged enemies gain 1 Suppression token."
+     ]
+    ]
+   },
+   {
+    "n": "Hallowed Bastion",
+    "p": "heavy sisters and Altar hold the line.",
+    "r": "Units on objectives can spend a Pyre Die on a Save roll for free each round.",
+    "e": [
+     [
+      "Relic of the Last Saint",
+      "Grand Inquisitrix",
+      "Bearer has [WARD 4+]."
+     ],
+     [
+      "Mantle of Ophelia",
+      "Grand Inquisitrix",
+      "Bearer's unit gets +1 CTRL per model."
+     ]
+    ],
+    "s": [
+     [
+      "Shield of Faith",
+      1,
+      "Unit targeted: [WARD 5+] this attack."
+     ],
+     [
+      "Righteous Defiance",
+      1,
+      "Unit charged: Strike First."
+     ],
+     [
+      "Sacred Ground",
+      1,
+      "End of round: one objective becomes [SECURED]."
+     ]
+    ]
+   }
+  ]
+ },
+ "04": {
+  "name": "The Aegis Knight-Houses",
+  "dna": {
+   "MOV": 2,
+   "MS": -1,
+   "RS": 0,
+   "ARM": 0,
+   "MIGHT_inf": 1,
+   "MIGHT_big": 1.1,
+   "CTRL": 2
+  },
+  "units": [
+   [
+    "Feudal Squires",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      "carbine",
+      "combat_blade"
+     ]
+    },
+    "Bondsmen: +1 CTRL near a Knight."
+   ],
+   [
+    "Household Steam-Cavaliers",
+    "c2_cavalry",
+    [
+     3,
+     5
+    ],
+    {
+     "ARM": 3,
+     "weapons": [
+      "carbine",
+      "cavalry_lance"
+     ],
+     "MOV": 12
+    },
+    "Joust: Crushing Impact on charge (free)."
+   ],
+   [
+    "High Baron Lance-Master",
+    "c3_mounted_leader",
+    null,
+    {
+     "weapons": [
+      "heavy_pistol",
+      "cavalry_lance"
+     ]
+    },
+    "⟳ Code of Honour: attached Cavaliers re-roll charge rolls."
+   ],
+   [
+    "Squire-Walker Strider",
+    "c3_walker",
+    [
+     1,
+     2
+    ],
+    {
+     "MOV": 10,
+     "weapons": [
+      "autocannon",
+      "brute_fists"
+     ]
+    },
+    "Front-arc [WARD 4+] vs ranged."
+   ],
+   [
+    "Squire-Walker Thermal-Lancer",
+    "c3_walker",
+    [
+     1,
+     2
+    ],
+    {
+     "MOV": 10,
+     "weapons": [
+      "melta_gun",
+      "melta_gun",
+      "brute_fists"
+     ]
+    },
+    "Hunter: +1 to Wound vs Class 4–5."
+   ],
+   [
+    "Paladin-Class Knight",
+    "c5_war_titan",
+    null,
+    {
+     "weapons": [
+      "titan_cannon",
+      "heavy_stubber",
+      "titan_stomp"
+     ]
+    },
+    "Ion Shield front arc [WARD 4+]; rear attacks +1 to Wound."
+   ],
+   [
+    "Knight-Errant Melta-Lord",
+    "c5_war_titan",
+    null,
+    {
+     "weapons": [
+      "doom_lance",
+      "melta_gun",
+      "titan_stomp"
+     ]
+    },
+    "Thermal Cannon: [ERADICATE 2]."
+   ],
+   [
+    "Bastion-Class Siege-Lord",
+    "c5_super_heavy",
+    null,
+    {
+     "MS": 3,
+     "weapons": [
+      "titan_cannon",
+      "doom_lance",
+      "titan_stomp"
+     ]
+    },
+    "Bulwark: friendly Squires within 6″ count double CTRL."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Noble Lance",
+    "p": "Big Knights joust in the centre.",
+    "r": "Paladin-class Knights get +1 to Hit in melee when they charge.",
+    "e": [
+     [
+      "Sanctuary Shield",
+      "Paladin-Class Knight",
+      "Rear arc also has [WARD 5+]."
+     ],
+     [
+      "Mark of the Paragon",
+      "Paladin-Class Knight",
+      "+1 Attack on the titan stomp."
+     ]
+    ],
+    "s": [
+     [
+      "Shift the Aegis",
+      1,
+      "Knight targeted: change its front arc before the attack."
+     ],
+     [
+      "Earthquake Stride",
+      1,
+      "Knight fights a Class 1 unit: [REAPING 3]."
+     ],
+     [
+      "Trample",
+      1,
+      "Knight Moves: may move over Class 1–2 models; each suffers 1 Fatal Wound on 5+."
+     ]
+    ]
+   },
+   {
+    "n": "Squire-Walker Hunt",
+    "p": "Many small walkers hunting together.",
+    "r": "Two Squire-Walkers within 6″ of each other may activate as one activation.",
+    "e": [
+     [
+      "Hunter's Bond",
+      "Squire-Walker Strider",
+      "+1 to Hit against a target another Squire-Walker hit this round."
+     ],
+     [
+      "Bondsman Crest",
+      "Squire-Walker Strider",
+      "Re-roll Hit 1s while within 6″ of a Paladin-Class Knight."
+     ]
+    ],
+    "s": [
+     [
+      "Pack Tactics",
+      1,
+      "Squire-Walker targets a unit already damaged this round: +1 PEN."
+     ],
+     [
+      "Thermal Overdrive",
+      1,
+      "Thermal-Lancer shoots: +1 Damage."
+     ],
+     [
+      "Scramble Retreat",
+      1,
+      "Squire-Walker engaged: Move out without penalty."
+     ]
+    ]
+   },
+   {
+    "n": "Feudal Muster",
+    "p": "Squires and Cavaliers support a single Knight.",
+    "r": "Squire units within 6″ of a Knight have [SECURED].",
+    "e": [
+     [
+      "Banner of the House",
+      "High Baron Lance-Master",
+      "Squires within 6″ ignore Rattled."
+     ],
+     [
+      "Ancestral Lance",
+      "High Baron Lance-Master",
+      "Bearer's lance +1 Damage."
+     ]
+    ],
+    "s": [
+     [
+      "Rally to the Banner",
+      1,
+      "Squire unit Broken: clear it."
+     ],
+     [
+      "Glorious Charge",
+      1,
+      "Cavaliers charge: +2″ charge distance."
+     ],
+     [
+      "For the House!",
+      2,
+      "A Knight is destroyed: every friendly unit gets +1 to Hit next activation."
+     ]
+    ]
+   }
+  ]
+ },
+ "05": {
+  "name": "The Abyssal Bathys-Corps",
+  "dna": {
+   "MOV": -1,
+   "MS": -1,
+   "RS": 0,
+   "ARM": -1,
+   "MIGHT_inf": 1,
+   "MIGHT_big": 1.1,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Trench-Dredge Divers",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Rivet gun",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "2",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      },
+      "combat_blade"
+     ]
+    },
+    "Pressure Seal: ignore Fatal Wounds on 6+."
+   ],
+   [
+    "Hydraulic Harpooners",
+    "c2_weapon_team",
+    [
+     2,
+     3
+    ],
+    {
+     "ARM": 3,
+     "weapons": [
+      {
+       "name": "Harpoon ballista",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "1",
+       "wound": "2+",
+       "pen": "-2",
+       "D": "D3+1",
+       "traits": [
+        "[HARPOON]"
+       ]
+      },
+      "combat_blade"
+     ]
+    },
+    "[HARPOON]: drag the target 3″ toward the shooter."
+   ],
+   [
+    "Abyss-Angler Beasts",
+    "c2_brutes",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      "claws"
+     ],
+     "keywords": [
+      "[INFILTRATORS]"
+     ]
+    },
+    "Lure: enemies within 6″ get −1 to Hit against other targets."
+   ],
+   [
+    "Trench-Lord Commodore",
+    "c2_leader",
+    null,
+    {
+     "weapons": [
+      "heavy_pistol",
+      {
+       "name": "Crushing claw",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "4",
+       "wound": "2+",
+       "pen": "-3",
+       "D": "3",
+       "traits": []
+      }
+     ]
+    },
+    "⟳ Vent Brine-Fog: 6″ [STEALTH] field until next activation."
+   ],
+   [
+    "Bathys-Drill Brute",
+    "c3_walker",
+    [
+     1,
+     2
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Pneumatic drill",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "4",
+       "wound": "2+",
+       "pen": "-3",
+       "D": "3",
+       "traits": [
+        "[RELENTLESS]"
+       ]
+      },
+      "heavy_flamer"
+     ]
+    },
+    "Big-Daddy Rage: +1 Attack vs a unit that harpooned or hurt a friendly this round."
+   ],
+   [
+    "Pressure-Squid Horror",
+    "c4_behemoth_beast",
+    null,
+    {
+     "weapons": [
+      "monster_talons"
+     ]
+    },
+    "Ink Cloud: once per battle, [STEALTH] to all friendlies within 9″."
+   ],
+   [
+    "Diving-Bell Crawler",
+    "c4_transport",
+    null,
+    {
+     "weapons": [
+      "heavy_stubber",
+      {
+       "name": "Harpoon cannon",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "1",
+       "wound": "2+",
+       "pen": "-3",
+       "D": "D6",
+       "traits": [
+        "[HARPOON]"
+       ]
+      },
+      "treads"
+     ]
+    },
+    "Ballast: ignores difficult terrain; passengers disembark 6″."
+   ],
+   [
+    "Leviathan Diving-Bell Walker",
+    "c5_super_heavy",
+    null,
+    {
+     "MOV": 7,
+     "weapons": [
+      "titan_cannon",
+      {
+       "name": "Grapple-lines",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "3",
+       "wound": "3+",
+       "pen": "-2",
+       "D": "2",
+       "traits": [
+        "[HARPOON]"
+       ]
+      },
+      "titan_stomp"
+     ]
+    },
+    "Crushing Depths: units it pulls into engagement get −1 ARM."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Deep Trench Expedition",
+    "p": "Fog-and-drag control.",
+    "r": "Brine-Fog fields last until the end of the round and give Cover too.",
+    "e": [
+     [
+      "Pressure Regulator",
+      "Trench-Lord Commodore",
+      "Bearer vents fog without spending its ⟳."
+     ],
+     [
+      "Barnacled Helm",
+      "Trench-Lord Commodore",
+      "Bearer [WARD 5+]."
+     ]
+    ],
+    "s": [
+     [
+      "Reel Them In",
+      1,
+      "Harpoon hits: drag 6″ instead of 3″."
+     ],
+     [
+      "Emergency Vent",
+      1,
+      "Unit charged: charger −2″."
+     ],
+     [
+      "Crush Depth",
+      1,
+      "Enemy engaged with a Drill Brute: −1 ARM."
+     ]
+    ]
+   },
+   {
+    "n": "Leviathan Pod",
+    "p": "Abyssal beasts and the Leviathan.",
+    "r": "Beasts within 9″ of the Leviathan get +1 Attack.",
+    "e": [
+     [
+      "Lure-Light",
+      "Trench-Lord Commodore",
+      "Enemies within 9″ that shoot must target Beasts if visible."
+     ],
+     [
+      "Tamer's Prod",
+      "Trench-Lord Commodore",
+      "Attached Beasts re-roll Wound 1s."
+     ]
+    ],
+    "s": [
+     [
+      "Frenzy of the Deep",
+      1,
+      "Beast fights a Rattled target: +1 Damage."
+     ],
+     [
+      "From the Murk",
+      2,
+      "Beast unit not visible: redeploy it within 6″ of a fog field."
+     ],
+     [
+      "Tentacle Lash",
+      1,
+      "Leviathan fights: [REAPING 2]."
+     ]
+    ]
+   },
+   {
+    "n": "Salvage Corps",
+    "p": "Harpoon gunlines and crawlers.",
+    "r": "Units that did not Move get +1 to Hit with harpoons.",
+    "e": [
+     [
+      "Master Rigger",
+      "Trench-Lord Commodore",
+      "Harpoon drags may be toward any friendly unit."
+     ],
+     [
+      "Salvage Claim",
+      "Trench-Lord Commodore",
+      "Enemy vehicles pulled in suffer 1 Fatal Wound."
+     ]
+    ],
+    "s": [
+     [
+      "Anchor Chains",
+      1,
+      "Harpooned unit can't Move next activation."
+     ],
+     [
+      "Pressure Torpedo",
+      1,
+      "Crawler shoots: [SHRAPNEL 2]."
+     ],
+     [
+      "Seal the Hatches",
+      1,
+      "Transport targeted: −1 Damage."
+     ]
+    ]
+   }
+  ]
+ },
+ "06": {
+  "name": "The Sanguine Aristocracy",
+  "dna": {
+   "MOV": 1,
+   "MS": -2,
+   "RS": 1,
+   "ARM": 0,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 1.2,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Thrall-Levies",
+    "c1_conscripts",
+    [
+     10,
+     10
+    ],
+    {
+     "keywords": [
+      "[FRAIL]"
+     ],
+     "weapons": [
+      "bayonet"
+     ]
+    },
+    "Blood Cattle: a Lord within 3″ may heal 1 MIGHT by killing a Levy."
+   ],
+   [
+    "Crimson Guard Duelists",
+    "c1_battle_brothers",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      "power_weapon"
+     ]
+    },
+    "Swordmaster: [PRECISION] vs Leaders."
+   ],
+   [
+    "Grave-Knights",
+    "c2_cavalry",
+    [
+     3,
+     5
+    ],
+    {
+     "MOV": 10,
+     "ARM": 3,
+     "weapons": [
+      "cavalry_lance"
+     ]
+    },
+    "Deathly Charge: +1 Damage on the charge."
+   ],
+   [
+    "Count Palatine Blood-Lord",
+    "c3_mounted_leader",
+    null,
+    {
+     "MOV": 12,
+     "keywords": [
+      "[FLY]"
+     ],
+     "weapons": [
+      "relic_blade"
+     ]
+    },
+    "Crimson Hunger: heal 2 MIGHT per kill; free Epic Challenge."
+   ],
+   [
+    "Vampire Courtier",
+    "c1_leader",
+    null,
+    {
+     "weapons": [
+      "power_weapon"
+     ]
+    },
+    "⟳ Blood Kiss: attached unit heals 1 model's MIGHT on a kill."
+   ],
+   [
+    "Bat-Swarm Hosts",
+    "c1_swarm",
+    [
+     5,
+     10
+    ],
+    {
+     "MOV": 12,
+     "keywords": [
+      "[FLY]",
+      "[FRAIL]"
+     ],
+     "MS": 4
+    },
+    "Screech: an enemy unit within 6″ gets −1 to Hit."
+   ],
+   [
+    "Night-Ghast Horror",
+    "c3_monster",
+    null,
+    {
+     "MOV": 10,
+     "keywords": [
+      "[FLY]"
+     ]
+    },
+    "Feeding Lunge: heals D3 MIGHT when it destroys a model (Sanguine lifesteal)."
+   ],
+   [
+    "Midnight Coach",
+    "c4_behemoth_beast",
+    null,
+    {
+     "MOV": 12,
+     "keywords": [
+      "[FLY]"
+     ]
+    },
+    "Hearse of the Damned: [UNYIELDING 5+] to friendlies within 6″."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Blood Court",
+    "p": "Lords duel and snowball.",
+    "r": "Leaders heal 1 extra MIGHT per kill.",
+    "e": [
+     [
+      "Amulet of Night",
+      "Count Palatine Blood-Lord",
+      "Bearer [WARD 4+]."
+     ],
+     [
+      "Blade of the First Kiss",
+      "Count Palatine Blood-Lord",
+      "+2 Attacks and [PRECISION]."
+     ]
+    ],
+    "s": [
+     [
+      "Supernatural Reflexes",
+      1,
+      "Leader targeted in melee: −1 to Hit."
+     ],
+     [
+      "Exsanguinate",
+      1,
+      "Leader destroys a Leader: heal to full."
+     ],
+     [
+      "Crimson Feint",
+      1,
+      "Leader attacked: step 3″ away."
+     ]
+    ]
+   },
+   {
+    "n": "Grave Cavalcade",
+    "p": "Grave-Knight charges.",
+    "r": "Cavalry heal 1 MIGHT each time they charge.",
+    "e": [
+     [
+      "Banner of the Dead Hunt",
+      "Count Palatine Blood-Lord",
+      "Grave-Knights within 6″ +2″ charge."
+     ],
+     [
+      "Nightmare Steed",
+      "Count Palatine Blood-Lord",
+      "+2″ Move."
+     ]
+    ],
+    "s": [
+     [
+      "Ride Them Down",
+      1,
+      "Cavalry charge: Crushing Impact free."
+     ],
+     [
+      "Spectral Gallop",
+      1,
+      "Cavalry Move through models."
+     ],
+     [
+      "Lances of Ice",
+      1,
+      "Cavalry fight: +1 PEN."
+     ]
+    ]
+   },
+   {
+    "n": "Thrall Muster",
+    "p": "Masses of levies feeding the lords.",
+    "r": "Levies within 6″ of a Lord have [SECURED].",
+    "e": [
+     [
+      "Lash of Command",
+      "Vampire Courtier",
+      "Levies within 6″ ignore Rattled."
+     ],
+     [
+      "Sanguine Chalice",
+      "Vampire Courtier",
+      "Once per round heal 2 MIGHT on a Lord within 6″."
+     ]
+    ],
+    "s": [
+     [
+      "Feed on the Weak",
+      1,
+      "A Lord kills a Levy: heal 3 MIGHT."
+     ],
+     [
+      "Endless Thralls",
+      2,
+      "A Levy unit is destroyed: return 5 Levies at your edge."
+     ],
+     [
+      "Dread Majesty",
+      1,
+      "Enemies within 6″ of a Lord: −1 CTRL per model."
+     ]
+    ]
+   }
+  ]
+ },
+ "07": {
+  "name": "The Mordant Ghoul-Courts",
+  "dna": {
+   "MOV": 1,
+   "MS": 0,
+   "RS": 2,
+   "ARM": 2,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 1.0,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Crypt-Scullions",
+    "c1_swarm",
+    [
+     10,
+     15
+    ],
+    {
+     "UNYIELDING": 6,
+     "weapons": [
+      "claws"
+     ]
+    },
+    "The Court Grows: +1 model per enemy model they kill (max 150%)."
+   ],
+   [
+    "Royal Guard Flayers",
+    "c1_jump",
+    [
+     3,
+     5
+    ],
+    {
+     "UNYIELDING": 6,
+     "weapons": [
+      {
+       "name": "Flayer talons",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "4",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[IMPALING HITS]"
+       ]
+      }
+     ]
+    },
+    "Leaping Ambush: [VANGUARD STRIKE]."
+   ],
+   [
+    "Ghoul-Knights",
+    "c2_cavalry",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      "claws",
+      "cavalry_lance"
+     ],
+     "MOV": 12
+    },
+    "Delusion of Chivalry: +1 to Wound vs units larger than themselves."
+   ],
+   [
+    "Ghoul-King on Bone Throne",
+    "c2_leader",
+    null,
+    {
+     "weapons": [
+      "relic_blade"
+     ]
+    },
+    "Royal Decree: choose the army's Delusion each battle."
+   ],
+   [
+    "Courtier Herald",
+    "c1_leader",
+    null,
+    {
+     "weapons": [
+      "claws"
+     ]
+    },
+    "⟳ Summon the Court: add 2 models to the attached unit."
+   ],
+   [
+    "Crypt-Horror Brutes",
+    "c2_brutes",
+    [
+     3,
+     5
+    ],
+    {
+     "UNYIELDING": 5,
+     "weapons": [
+      "power_maul"
+     ]
+    },
+    "Gravestone Clubs: Crushing Impact on charge."
+   ],
+   [
+    "Royal Zombie Dragon",
+    "c5_colossal_monster",
+    null,
+    {
+     "keywords": [
+      "[FLY]"
+     ],
+     "weapons": [
+      "colossal_jaws",
+      "titan_stomp"
+     ]
+    },
+    "Pestilential Breath: [SCORCH] D6 Fatal Wounds 8″."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Royal Hunt",
+    "p": "Fast flayers and knights hunt isolated units.",
+    "r": "Units charging a unit with fewer models get +1 Attack.",
+    "e": [
+     [
+      "Hunting Horn",
+      "Ghoul-King on Bone Throne",
+      "Friendly Ghoul-Knights +2″ charge."
+     ],
+     [
+      "Crown of Delusion",
+      "Ghoul-King on Bone Throne",
+      "Pick 2 Delusions."
+     ]
+    ],
+    "s": [
+     [
+      "Quarry Spotted",
+      1,
+      "Mark an enemy Leader: +1 to Wound against it."
+     ],
+     [
+      "Leap of the Flayer",
+      1,
+      "Flayers Move through models."
+     ],
+     [
+      "Gorge",
+      1,
+      "After a kill: clear Broken."
+     ]
+    ]
+   },
+   {
+    "n": "Grand Feast",
+    "p": "Endless growing swarms.",
+    "r": "The Court Grows also triggers on kills within 6″ by any friendly unit.",
+    "e": [
+     [
+      "Banquet Bell",
+      "Courtier Herald",
+      "Summon adds 3 models."
+     ],
+     [
+      "Gnawed Sceptre",
+      "Ghoul-King on Bone Throne",
+      "Swarms within 6″ +1 CTRL."
+     ]
+    ],
+    "s": [
+     [
+      "Feast on the Slain",
+      1,
+      "After a kill: add 1 extra model and clear Broken."
+     ],
+     [
+      "Rabid Hunger",
+      1,
+      "Swarm fights: [ONSLAUGHT 1]."
+     ],
+     [
+      "Corpse Wall",
+      1,
+      "Swarm targeted: [UNYIELDING 5+] this attack."
+     ]
+    ]
+   },
+   {
+    "n": "Dragon Court",
+    "p": "The Zombie Dragon and the King lead.",
+    "r": "Monsters gain +1 Attack (max +3) for each round in which 5+ models died within 6″ of them.",
+    "e": [
+     [
+      "Wings of Night",
+      "Ghoul-King on Bone Throne",
+      "Bearer gains [FLY] and +4″."
+     ],
+     [
+      "Royal Diadem",
+      "Ghoul-King on Bone Throne",
+      "Bearer [WARD 5+]."
+     ]
+    ],
+    "s": [
+     [
+      "Terror-Roar",
+      1,
+      "Dragon charges: target gains 2 Suppression tokens."
+     ],
+     [
+      "Plague Breath",
+      1,
+      "Dragon shoots: +D3 Fatal Wounds."
+     ],
+     [
+      "Majesty of Rot",
+      1,
+      "Enemy Leaders within 6″: no ⟳ abilities."
+     ]
+    ]
+   }
+  ]
+ },
+ "08": {
+  "name": "The Prometheus Flesh-Guilds",
+  "dna": {
+   "MOV": -1,
+   "MS": 1,
+   "RS": -1,
+   "ARM": 0,
+   "MIGHT_inf": 1,
+   "MIGHT_big": 1.0,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Wire-Stitched Servitors",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "UNYIELDING": 6,
+     "weapons": [
+      {
+       "name": "Radium carbine",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "3",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[IMPALING HITS]"
+       ]
+      },
+      "bayonet"
+     ]
+    },
+    "Machine-Fodder: harvest 1 Graft Token when destroyed near a Chirurgeon."
+   ],
+   [
+    "Rust-Priest Chirurgeons",
+    "c2_elite_guard",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      "plasma_gun",
+      {
+       "name": "Bone-saw",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "4",
+       "wound": "3+",
+       "pen": "-2",
+       "D": "1",
+       "traits": [
+        "[RELENTLESS]"
+       ]
+      }
+     ]
+    },
+    "Field Surgery: spend 1 Graft Token to return a slain Servitor."
+   ],
+   [
+    "Arc-Lancer Skirmishers",
+    "c1_skirmishers",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Arc rifle",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "1",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "2",
+       "traits": [
+        "[ANTI-VEHICLE 4+]"
+       ]
+      },
+      "combat_blade"
+     ]
+    },
+    "Data-Tether: re-roll Hit 1s within 6″ of a Leader."
+   ],
+   [
+    "Arch-Chirurgeon Prime",
+    "c2_leader",
+    null,
+    {
+     "weapons": [
+      "plasma_gun",
+      "relic_blade"
+     ]
+    },
+    "⟳ Overclock: attached unit +1 to Hit; harvest range 9″."
+   ],
+   [
+    "Plasma-Welder Team",
+    "c2_weapon_team",
+    [
+     2,
+     3
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Plasma welder",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "D6",
+       "wound": "3+",
+       "pen": "-2",
+       "D": "1",
+       "traits": [
+        "[SCORCH]",
+        "[OVERLOAD]"
+       ]
+      },
+      "bayonet"
+     ]
+    },
+    "Weld: Overload Fatal Wounds may be ignored by spending a Graft Token."
+   ],
+   [
+    "Prometheus Flesh-Golem",
+    "c3_monster",
+    [
+     1,
+     2
+    ],
+    {
+     "ARM": 3,
+     "UNYIELDING": 5,
+     "weapons": [
+      "brute_fists"
+     ]
+    },
+    "Graft Socket: Graft upgrades cost 1 less for this unit."
+   ],
+   [
+    "Galvanic Strider",
+    "c3_walker",
+    [
+     1,
+     2
+    ],
+    {
+     "MOV": 9,
+     "weapons": [
+      "rotary_cannon",
+      "combat_blade"
+     ],
+     "keywords": [
+      "[SCOUTS 6\"]"
+     ]
+    },
+    "Galvanic Drive: +2″ Move after a Graft."
+   ],
+   [
+    "Iron-Flesh Excavator-Walker",
+    "c5_super_heavy",
+    null,
+    {
+     "MOV": 8,
+     "weapons": [
+      "doom_lance",
+      {
+       "name": "Excavator drills",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "6",
+       "wound": "2+",
+       "pen": "-3",
+       "D": "3",
+       "traits": [
+        "[RELENTLESS]"
+       ]
+      }
+     ]
+    },
+    "Vat-Tanks: harvest 1 Graft Token each round while alive."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Surgeon-Cult",
+    "p": "Graft economy: build a monster mid-game.",
+    "r": "Gain 1 Graft Token at the start of each round.",
+    "e": [
+     [
+      "Mechadendrite Array",
+      "Arch-Chirurgeon Prime",
+      "Bearer spends Graft Tokens on units within 6″."
+     ],
+     [
+      "Vivisector's Kit",
+      "Arch-Chirurgeon Prime",
+      "First graft each round costs 1 less."
+     ]
+    ],
+    "s": [
+     [
+      "Emergency Augment",
+      1,
+      "Unit damaged: apply a 1-token graft immediately."
+     ],
+     [
+      "Harvest the Fallen",
+      1,
+      "Enemy model dies within 9″: +1 Graft Token."
+     ],
+     [
+      "Galvanic Surge",
+      1,
+      "Unit activates: +1 to Wound in melee."
+     ]
+    ]
+   },
+   {
+    "n": "Forge-Legion",
+    "p": "techno-priest gunline: radium, arc and plasma.",
+    "r": "Infantry that did not Move get +1 PEN.",
+    "e": [
+     [
+      "Omni-Scanner",
+      "Arch-Chirurgeon Prime",
+      "Attached unit ignores Cover."
+     ],
+     [
+      "Radium Reactor",
+      "Arch-Chirurgeon Prime",
+      "Attached unit's weapons [IMPALING HITS]."
+     ]
+    ],
+    "s": [
+     [
+      "Binharic Volley",
+      1,
+      "Unit shoots: re-roll Wound 1s."
+     ],
+     [
+      "Overclocked Plasma",
+      1,
+      "Plasma shoots: +1 Damage, Overload on 1–3."
+     ],
+     [
+      "Machine-Spirit Ward",
+      1,
+      "Vehicle targeted: [WARD 5+]."
+     ]
+    ]
+   },
+   {
+    "n": "Golem Crusade",
+    "p": "Flesh-Golems and Striders brawl.",
+    "r": "Golems and Striders start with 1 free 1-token graft.",
+    "e": [
+     [
+      "Lightning Coil Heart",
+      "Arch-Chirurgeon Prime",
+      "Golems within 6″ +1 Attack."
+     ],
+     [
+      "Neural Leash",
+      "Arch-Chirurgeon Prime",
+      "Golems within 6″ ignore Suppression."
+     ]
+    ],
+    "s": [
+     [
+      "Berserk Override",
+      1,
+      "Golem charges: +2 Attacks."
+     ],
+     [
+      "Reanimate Tissue",
+      2,
+      "Golem destroyed: on 4+ it returns with 3 MIGHT (once)."
+     ],
+     [
+      "Discharge",
+      1,
+      "Golem fights: engaged enemies suffer D3 Fatal Wounds."
+     ]
+    ]
+   }
+  ]
+ },
+ "09": {
+  "name": "The Frost-Skaer Blood-Raiders",
+  "dna": {
+   "MOV": 1,
+   "MS": -1,
+   "RS": 1,
+   "ARM": 1,
+   "MIGHT_inf": 1,
+   "MIGHT_big": 1.1,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Blood-Skaer Raiders",
+    "c1_assault",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Throwing axes",
+       "type": "Ranged",
+       "range": "8″",
+       "A": "1",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      },
+      "chain_blade"
+     ],
+     "MS": 3
+    },
+    "Oath-Sworn: swear 1 Oath at deployment."
+   ],
+   [
+    "Hall-Guard Berserkers",
+    "c2_elite_guard",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": null,
+     "UNYIELDING": 6,
+     "weapons": [
+      "great_weapon"
+     ]
+    },
+    "Berserk: ignore Suppression while engaged."
+   ],
+   [
+    "Wolf-Kin Hunters",
+    "c2_cavalry",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      "claws",
+      "cavalry_lance"
+     ],
+     "keywords": [
+      "[SCOUTS 6\"]"
+     ],
+     "MOV": 12
+    },
+    "Pack Hunt: +1 to Hit vs a unit already engaged."
+   ],
+   [
+    "Runic Frost-Shaman",
+    "c1_leader",
+    null,
+    {
+     "weapons": [
+      {
+       "name": "Rune-bolt",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "1",
+       "wound": "2+",
+       "pen": "-2",
+       "D": "D3",
+       "traits": [
+        "[PSYCHIC / ARCANE]"
+       ]
+      },
+      "power_weapon"
+     ]
+    },
+    "⟳ Rune-Chant: +1 to Wound, heal 1 model, or +1 Save in melee."
+   ],
+   [
+    "Jarl Saga-Lord",
+    "c2_leader",
+    null,
+    {
+     "weapons": [
+      "relic_blade"
+     ]
+    },
+    "Saga Keeper: units within 6″ fulfil Oaths on 2 conditions instead of 1."
+   ],
+   [
+    "Frost-Bear Riders",
+    "c3_mounted_leader",
+    [
+     1,
+     3
+    ],
+    {
+     "weapons": [
+      "monster_talons"
+     ]
+    },
+    "Maul: Crushing Impact free."
+   ],
+   [
+    "Ice-Troll",
+    "c3_monster",
+    null,
+    {
+     "UNYIELDING": 5,
+     "weapons": [
+      "monster_talons"
+     ]
+    },
+    "Frost Hide: ranged attacks −1 Damage."
+   ],
+   [
+    "Armored War-Mammoth",
+    "c5_colossal_monster",
+    null,
+    {
+     "weapons": [
+      "titan_stomp",
+      {
+       "name": "Howdah bows",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "6",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      }
+     ]
+    },
+    "Stampede: [REAPING 3] on charge."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Saga of the Hunt",
+    "p": "Beasts and hunters chase prey.",
+    "r": "Units that fulfil 'Slay a Leader' gain +2″ Move permanently in addition.",
+    "e": [
+     [
+      "Fang of the Wolf-King",
+      "Jarl Saga-Lord",
+      "Bearer [PRECISION]."
+     ],
+     [
+      "Pelt of the Winter Wolf",
+      "Jarl Saga-Lord",
+      "Bearer [WARD 5+]."
+     ]
+    ],
+    "s": [
+     [
+      "Hunter's Howl",
+      1,
+      "Unit charges a damaged unit: re-roll charge."
+     ],
+     [
+      "Blood on the Snow",
+      1,
+      "Unit kills a model: +1 Attack next fight."
+     ],
+     [
+      "Encircle",
+      1,
+      "Cavalry Move: may end within 6″ of enemy rear."
+     ]
+    ]
+   },
+   {
+    "n": "Saga of the Iron Oath",
+    "p": "Hall-Guard shield wall on objectives.",
+    "r": "'Hold the Line' oaths complete after 1 round instead of 2.",
+    "e": [
+     [
+      "Runic Shield",
+      "Jarl Saga-Lord",
+      "Attached unit +1 Save in melee."
+     ],
+     [
+      "Horn of Ancestors",
+      "Jarl Saga-Lord",
+      "Units within 6″ ignore Rattled."
+     ]
+    ],
+    "s": [
+     [
+      "Shield Wall",
+      1,
+      "Unit on an objective targeted: incoming PEN −1."
+     ],
+     [
+      "Oath Unbroken",
+      1,
+      "Unit would become Broken: it doesn't."
+     ],
+     [
+      "Last Stand",
+      2,
+      "Unit destroyed on an objective: it fights once more first."
+     ]
+    ]
+   },
+   {
+    "n": "Saga of the Storm",
+    "p": "Shaman-led rune magic.",
+    "r": "Shamans cast 2 Rune-Chants per activation.",
+    "e": [
+     [
+      "Staff of Frost",
+      "Runic Frost-Shaman",
+      "Rune-bolt +1 Damage."
+     ],
+     [
+      "Rune of the Glacier",
+      "Runic Frost-Shaman",
+      "Bearer's unit [UNYIELDING 5+]."
+     ]
+    ],
+    "s": [
+     [
+      "Blizzard Call",
+      2,
+      "Enemy units within 9″ of a Shaman get −2″ Move."
+     ],
+     [
+      "Ice-Fang Rune",
+      1,
+      "Unit fights: [IMPALING HITS]."
+     ],
+     [
+      "Frozen Ground",
+      1,
+      "Enemy charge within 6″: −2″."
+     ]
+    ]
+   }
+  ]
+ },
+ "10": {
+  "name": "The Dread-Fleet Buccaneers",
+  "dna": {
+   "MOV": 0,
+   "MS": 0,
+   "RS": 0,
+   "ARM": 1,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 1.0,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Deck-Hand Swashbucklers",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      "pistol",
+      "chain_blade"
+     ]
+    },
+    "Plunder: steal 1 CP when taking an enemy objective."
+   ],
+   [
+    "Jet-Boot Boarders",
+    "c1_jump",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Blunderbuss",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "D3",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[SHRAPNEL 1]"
+       ]
+      },
+      "power_weapon"
+     ]
+    },
+    "Boarding Action: +1 to Wound vs vehicles."
+   ],
+   [
+    "Swivel-Gun Crew",
+    "c2_weapon_team",
+    [
+     2,
+     3
+    ],
+    {
+     "weapons": [
+      "heavy_stubber",
+      "bayonet"
+     ]
+    },
+    "heavy rail-suit: Move and Shoot in either order."
+   ],
+   [
+    "Dread-Commodore",
+    "c2_leader",
+    null,
+    {
+     "weapons": [
+      {
+       "name": "Twin flintlocks",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "4",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      },
+      "power_weapon"
+     ]
+    },
+    "⟳ Loot Call: steal 1 CP if the attached unit kills a unit."
+   ],
+   [
+    "Powder Monkeys",
+    "c1_conscripts",
+    [
+     5,
+     10
+    ],
+    {
+     "keywords": [
+      "[FRAIL]"
+     ],
+     "weapons": [
+      "pistol",
+      "bayonet"
+     ]
+    },
+    "Grenadoes: Shrapnel Grenades costs 0 CP once per round."
+   ],
+   [
+    "Corsair Gun-Skiff",
+    "c4_transport",
+    null,
+    {
+     "MOV": 14,
+     "keywords": [
+      "[FLY]",
+      "[TRANSPORT 6]",
+      "[FIRING DECK 6]"
+     ],
+     "weapons": [
+      "rotary_cannon"
+     ]
+    },
+    "Full Sail: Move and Shoot in either order."
+   ],
+   [
+    "Sky-Frigate",
+    "c5_gunship",
+    null,
+    {
+     "keywords": [
+      "[FLY]",
+      "[TRANSPORT 10]",
+      "[FIRING DECK 4]"
+     ],
+     "weapons": [
+      "battle_cannon",
+      "battle_cannon",
+      "heavy_stubber"
+     ]
+    },
+    "heavy rail-suit Volley: if both cannons hit the same target, [ONSLAUGHT 1]."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Sky-Raiders",
+    "p": "Skiffs and jet-boots strike everywhere.",
+    "r": "Units disembarking get +1 to Hit that activation.",
+    "e": [
+     [
+      "Captain's Telescope",
+      "Dread-Commodore",
+      "Attached unit ignores Cover."
+     ],
+     [
+      "Gilded Cutlass",
+      "Dread-Commodore",
+      "+2 Attacks."
+     ]
+    ],
+    "s": [
+     [
+      "Swing Aboard!",
+      1,
+      "Enemy vehicle ends a Move within 6″: a unit moves into engagement with it."
+     ],
+     [
+      "Cut and Run",
+      1,
+      "Unit fights: then Move 6″."
+     ],
+     [
+      "Hard to Port",
+      1,
+      "Skiff targeted: −1 to Hit."
+     ]
+    ]
+   },
+   {
+    "n": "Pirate Armada",
+    "p": "Frigate gunline.",
+    "r": "Vehicles that did not Move get +1 PEN.",
+    "e": [
+     [
+      "Master Gunner",
+      "Dread-Commodore",
+      "A vehicle within 6″ re-rolls Hit 1s."
+     ],
+     [
+      "Letter of Marque",
+      "Dread-Commodore",
+      "+1 CP at the start of the battle."
+     ]
+    ],
+    "s": [
+     [
+      "Chain-Shot",
+      1,
+      "Vehicle shoots a vehicle: target −2″ Move."
+     ],
+     [
+      "Grapeshot",
+      1,
+      "Vehicle shoots infantry: [SHRAPNEL 2]."
+     ],
+     [
+      "Repel Boarders",
+      1,
+      "Vehicle charged: its Firing Deck units fire at the charger."
+     ]
+    ]
+   },
+   {
+    "n": "Plunder Crews",
+    "p": "Objective thieves.",
+    "r": "Plunder steals on objectives held by the enemy last round, even if contested now.",
+    "e": [
+     [
+      "Treasure Map",
+      "Dread-Commodore",
+      "Pick 1 objective: you score it double this game."
+     ],
+     [
+      "Black Flag",
+      "Dread-Commodore",
+      "Enemies within 6″ −1 CTRL per model."
+     ]
+    ],
+    "s": [
+     [
+      "Loot the Dead",
+      1,
+      "Enemy Leader killed: gain 2 CP."
+     ],
+     [
+      "Parley",
+      1,
+      "Enemy charge declared: charger must pass 4+ or switch target."
+     ],
+     [
+      "Hidden Stash",
+      1,
+      "End of round: one objective becomes [SECURED]."
+     ]
+    ]
+   }
+  ]
+ },
+ "12": {
+  "name": "The Black-Bile Congregation",
+  "dna": {
+   "MOV": -2,
+   "MS": 0,
+   "RS": 0,
+   "ARM": -1,
+   "MIGHT_inf": 1,
+   "MIGHT_big": 1.15,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Pox-Carriers",
+    "c1_swarm",
+    [
+     10,
+     10
+    ],
+    {
+     "MOV": 5,
+     "UNYIELDING": 6,
+     "weapons": [
+      "claws"
+     ],
+     "MIGHT": 1
+    },
+    "Shamblers: give 1 Rot to engaged enemies at the end of the round."
+   ],
+   [
+    "Blight-Knights",
+    "c1_battle_brothers",
+    [
+     5,
+     10
+    ],
+    {
+     "UNYIELDING": 5,
+     "weapons": [
+      {
+       "name": "Plague bolter",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "2",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[IMPALING HITS]"
+       ]
+      },
+      "chain_blade"
+     ]
+    },
+    "Rot: damaging attacks give 1 Rot token."
+   ],
+   [
+    "Blight-Lord Plate-Knights",
+    "c2_heavy_infantry",
+    [
+     3,
+     5
+    ],
+    {
+     "UNYIELDING": 5,
+     "weapons": [
+      "rotary_cannon",
+      "great_weapon"
+     ]
+    },
+    "Aura of Rust: engaged enemies −1 ARM."
+   ],
+   [
+    "Plague-Spewer Squad",
+    "c2_weapon_team",
+    [
+     2,
+     3
+    ],
+    {
+     "ARM": 3,
+     "UNYIELDING": 5,
+     "weapons": [
+      {
+       "name": "Plague spewer",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "D6",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[SCORCH]"
+       ]
+      },
+      "bayonet"
+     ]
+    },
+    "Bile Spray: +1 Rot."
+   ],
+   [
+    "Lord of Black Bile",
+    "c2_leader",
+    null,
+    {
+     "UNYIELDING": 5,
+     "weapons": [
+      "relic_blade"
+     ]
+    },
+    "⟳ Bell of Decay: enemies within 6″ gain 1 Rot."
+   ],
+   [
+    "Blight-Hauler Engine",
+    "c3_walker",
+    [
+     1,
+     2
+    ],
+    {
+     "weapons": [
+      "missile_launcher",
+      "autocannon",
+      "brute_fists"
+     ]
+    },
+    "Daemon Engine: [UNYIELDING 6+]."
+   ],
+   [
+    "Necrotic Siege-Crawler",
+    "c4_artillery",
+    null,
+    {
+     "weapons": [
+      {
+       "name": "Bile mortar",
+       "type": "Ranged",
+       "range": "48″",
+       "A": "D6+2",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "2",
+       "traits": [
+        "[INDIRECT FIRE]"
+       ]
+      },
+      "heavy_stubber"
+     ]
+    },
+    "Contagion Shells: each unit hit gains 1 Rot."
+   ],
+   [
+    "Great Unclean Engine",
+    "c5_colossal_monster",
+    null,
+    {
+     "MOV": 7,
+     "weapons": [
+      "titan_stomp",
+      "colossal_jaws"
+     ]
+    },
+    "Miasma: enemies within 9″ gain 1 Rot each round."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Plague Brotherhood",
+    "p": "Blight-Knight walls.",
+    "r": "Units with 3 Rot also get −1 to Hit.",
+    "e": [
+     [
+      "Rust-Crown",
+      "Lord of Black Bile",
+      "Rot range 9″."
+     ],
+     [
+      "Bloated Plate",
+      "Lord of Black Bile",
+      "Bearer −1 incoming Damage."
+     ]
+    ],
+    "s": [
+     [
+      "Bloated Resilience",
+      1,
+      "Unit targeted: [UNYIELDING 4+] this attack."
+     ],
+     [
+      "Fly-Swarm Veil",
+      1,
+      "Shooter −1 to Hit, no re-rolls."
+     ],
+     [
+      "Virulent Blessing",
+      1,
+      "Unit fights: [SHREDDING WOUNDS] vs units with 2+ Rot."
+     ]
+    ]
+   },
+   {
+    "n": "Engine Procession",
+    "p": "Daemon engines and the Siege-Crawler.",
+    "r": "Engines get +1 Attack against units with 3 Rot.",
+    "e": [
+     [
+      "Fly-Blown Furnace",
+      "Lord of Black Bile",
+      "Engines within 6″ +1 Attack."
+     ],
+     [
+      "Grinding Gears",
+      "Lord of Black Bile",
+      "Engines ignore Suppression."
+     ]
+    ],
+    "s": [
+     [
+      "Blight Bomb",
+      1,
+      "Engine shoots: target gains 2 Rot."
+     ],
+     [
+      "Reek of Ruin",
+      1,
+      "Engine charges: target −1 ARM."
+     ],
+     [
+      "Rot-Engine Overdrive",
+      1,
+      "Engine +3″ Move."
+     ]
+    ]
+   },
+   {
+    "n": "Shambler Plague",
+    "p": "Swarming shamblers spread disease.",
+    "r": "Pox-Carriers grow +1 model whenever an enemy model with Rot dies within 6″.",
+    "e": [
+     [
+      "Censer of Rot",
+      "Lord of Black Bile",
+      "Pox-Carriers within 6″ give Rot on hit."
+     ],
+     [
+      "Shepherd's Crook",
+      "Lord of Black Bile",
+      "Pox-Carriers within 6″ +2″ Move."
+     ]
+    ],
+    "s": [
+     [
+      "Contagious Shambling",
+      1,
+      "Enemy model dies to Pox-Carriers: +1 model."
+     ],
+     [
+      "Shambling Horde",
+      1,
+      "Swarm charges after a Move."
+     ],
+     [
+      "Rotting Mass",
+      1,
+      "Swarm targeted: −1 Damage."
+     ]
+    ]
+   }
+  ]
+ },
+ "13": {
+  "name": "The Moloch Iron-Forged",
+  "dna": {
+   "MOV": -1,
+   "MS": 0,
+   "RS": -1,
+   "ARM": -1,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 1.15,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Trench-Thralls",
+    "c1_conscripts",
+    [
+     10,
+     10
+    ],
+    {
+     "keywords": [
+      "[FRAIL]"
+     ]
+    },
+    "Fuel: Engines may consume 2 models for Overdrive."
+   ],
+   [
+    "Siege-Breaker Marines",
+    "c1_battle_brothers",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      "heavy_rifle",
+      "chain_blade"
+     ]
+    },
+    "Siegecraft: ignore Cover vs units in terrain."
+   ],
+   [
+    "Breacher Battery",
+    "c2_weapon_team",
+    [
+     3,
+     3
+    ],
+    {
+     "MS": 4,
+     "ARM": 3,
+     "weapons": [
+      "autocannon",
+      "missile_launcher",
+      "bayonet"
+     ]
+    },
+    "Siege Doctrine: +1 to Wound vs units in terrain."
+   ],
+   [
+    "Iron-Smith Forgemaster",
+    "c2_leader",
+    null,
+    {
+     "weapons": [
+      "heavy_pistol",
+      "great_weapon"
+     ]
+    },
+    "⟳ Feed the Forge: consume 1 Thrall within 3″ to repair D3 MIGHT on an Engine (Consumption)."
+   ],
+   [
+    "Moloch Crab-Walker",
+    "c4_heavy_walker",
+    null,
+    {
+     "weapons": [
+      "rotary_cannon",
+      "rotary_cannon",
+      "brute_fists"
+     ]
+    },
+    "Furnace: Overdrive +1 Hit / [RELENTLESS] / repair 2."
+   ],
+   [
+    "Soul-Furnace Engine",
+    "c3_walker",
+    [
+     1,
+     2
+    ],
+    {
+     "weapons": [
+      "autocannon",
+      "autocannon",
+      "brute_fists"
+     ]
+    },
+    "Bound Daemon: [UNYIELDING 6+]."
+   ],
+   [
+    "Siege-Crawler Ram",
+    "c4_battle_tank",
+    null,
+    {
+     "weapons": [
+      "siege_howitzer",
+      "las_lance",
+      "treads"
+     ]
+    },
+    "Battering Ram: Crushing Impact free."
+   ],
+   [
+    "Soul-Furnace Colossus",
+    "c5_super_heavy",
+    null,
+    {
+     "weapons": [
+      "titan_cannon",
+      "doom_lance",
+      "treads"
+     ]
+    },
+    "Hunger of Iron: Overdrive from up to 4 models."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Grand Siege",
+    "p": "Artillery and Breachers break fortresses.",
+    "r": "Weapons get +1 PEN vs units in terrain.",
+    "e": [
+     [
+      "Siege-Master's Auspex",
+      "Iron-Smith Forgemaster",
+      "Attached unit ignores Cover."
+     ],
+     [
+      "Mechanical Servo-Rig",
+      "Iron-Smith Forgemaster",
+      "Repair heals 3."
+     ]
+    ],
+    "s": [
+     [
+      "Bombard",
+      1,
+      "Artillery shoots: [SUPPRESSIVE]."
+     ],
+     [
+      "Demolish",
+      1,
+      "Unit attacks a unit in terrain: +1 Damage."
+     ],
+     [
+      "Entrench",
+      1,
+      "Unit didn't Move: +1 ARM."
+     ]
+    ]
+   },
+   {
+    "n": "Daemon-Forge",
+    "p": "Many engines, lots of fuel.",
+    "r": "Overdrive grants 2 effects per model consumed.",
+    "e": [
+     [
+      "Hellforged Brand",
+      "Iron-Smith Forgemaster",
+      "Engines within 6″ [WARD 5+]."
+     ],
+     [
+      "Furnace Key",
+      "Iron-Smith Forgemaster",
+      "Consume 1 model per round without an Engine activation."
+     ]
+    ],
+    "s": [
+     [
+      "Feed the Machine",
+      1,
+      "Consume 1 extra model."
+     ],
+     [
+      "Daemonic Fury",
+      1,
+      "Engine fights: +2 Attacks."
+     ],
+     [
+      "Binding Runes",
+      1,
+      "Engine ignores Suppression."
+     ]
+    ]
+   },
+   {
+    "n": "Iron Without",
+    "p": "Siege-Breaker infantry advance behind shields.",
+    "r": "Infantry within 3″ of an Engine get +1 ARM vs ranged.",
+    "e": [
+     [
+      "Trench Shield",
+      "Iron-Smith Forgemaster",
+      "Attached unit −1 incoming Damage."
+     ],
+     [
+      "Iron Discipline",
+      "Iron-Smith Forgemaster",
+      "Attached unit ignores Rattled."
+     ]
+    ],
+    "s": [
+     [
+      "Iron Within",
+      1,
+      "Unit targeted: [UNYIELDING 5+]."
+     ],
+     [
+      "Methodical Advance",
+      1,
+      "Unit Moves and Shoots without −1 Heavy penalty."
+     ],
+     [
+      "Breach the Line",
+      1,
+      "Unit charges a unit in terrain: Strike First."
+     ]
+    ]
+   }
+  ]
+ },
+ "14": {
+  "name": "The Cabal of the Inverted Star",
+  "dna": {
+   "MOV": -1,
+   "MS": 1,
+   "RS": -1,
+   "ARM": -1,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 1.0,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Warp-Touched Thralls",
+    "c1_conscripts",
+    [
+     10,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Warp-flame pistols",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "1",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[PSYCHIC / ARCANE]"
+       ]
+      },
+      "bayonet"
+     ]
+    },
+    "Expendable Geometry: may be swapped with any friendly unit."
+   ],
+   [
+    "Inverted Automata",
+    "c1_battle_brothers",
+    [
+     5,
+     10
+    ],
+    {
+     "MOV": 5,
+     "WARD": 5,
+     "weapons": [
+      {
+       "name": "Inferno bolter",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "2",
+       "wound": "4+",
+       "pen": "-2",
+       "D": "1",
+       "traits": []
+      },
+      "combat_blade"
+     ]
+    },
+    "All is Dust: [UNYIELDING 6+] vs Damage 1."
+   ],
+   [
+    "Hex-Plated Automata",
+    "c2_heavy_infantry",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Soulreaper cannon",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "6",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      },
+      "great_weapon"
+     ]
+    },
+    "Teleport-Shunt: may arrive via Fate teleport."
+   ],
+   [
+    "Master of the Astral Geometry",
+    "c3_mounted_leader",
+    null,
+    {
+     "keywords": [
+      "[FLY]"
+     ],
+     "weapons": [
+      {
+       "name": "Ruin-bolt",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "D3",
+       "wound": "2+",
+       "pen": "-3",
+       "D": "2",
+       "traits": [
+        "[PSYCHIC / ARCANE]"
+       ]
+      },
+      "power_weapon"
+     ]
+    },
+    "Fate Weaver: +1 Fate per round."
+   ],
+   [
+    "Sorcerer-Adept",
+    "c1_leader",
+    null,
+    {
+     "weapons": [
+      {
+       "name": "Warp-flame",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "D6",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[SCORCH]",
+        "[PSYCHIC / ARCANE]"
+       ]
+      },
+      "power_weapon"
+     ]
+    },
+    "⟳ Twist Geometry: swap the attached unit with another within 12″."
+   ],
+   [
+    "Pyre-Wisps of the Star",
+    "c1_skirmishers",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": 5,
+     "keywords": [
+      "[FLY]"
+     ],
+     "weapons": [
+      "heavy_flamer"
+     ]
+    },
+    "Blue Fire: [SCORCH] ignores Cover."
+   ],
+   [
+    "Mutated Warp-Spawn",
+    "c3_monster",
+    null,
+    {
+     "UNYIELDING": 5,
+     "weapons": [
+      "monster_talons"
+     ]
+    },
+    "Shifting Form: random +1 Attack/MOV/ARM each round."
+   ],
+   [
+    "Cosmic mutant beast",
+    "c4_behemoth_beast",
+    null,
+    {
+     "weapons": [
+      "monster_talons"
+     ]
+    },
+    "Vortex: once per round teleport a friendly unit within 9″."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Grand Coven",
+    "p": "Sorcery and Fate-swaps.",
+    "r": "+1 Fate per round.",
+    "e": [
+     [
+      "Astral Grimoire",
+      "Sorcerer-Adept",
+      "Bearer's [PSYCHIC] weapons +1 Damage."
+     ],
+     [
+      "Prism of the Inverted Star",
+      "Master of the Astral Geometry",
+      "Swaps cost 0 Fate once per round."
+     ]
+    ],
+    "s": [
+     [
+      "Time-Fold",
+      1,
+      "Unit Moves 6″ out of sequence."
+     ],
+     [
+      "Fate-Knot",
+      1,
+      "Enemy unit's WARD is worse by 1 this round."
+     ],
+     [
+      "Bend Trajectory",
+      1,
+      "Retarget an enemy heavy shot."
+     ]
+    ]
+   },
+   {
+    "n": "Automaton Legion",
+    "p": "ash-automata walls marching.",
+    "r": "Automata re-roll Hit 1s within 6″ of a Sorcerer.",
+    "e": [
+     [
+      "Helm of the Silent",
+      "Sorcerer-Adept",
+      "Attached Automata [WARD 4+]."
+     ],
+     [
+      "Inferno Sigil",
+      "Sorcerer-Adept",
+      "Attached Automata +1 PEN."
+     ]
+    ],
+    "s": [
+     [
+      "Dust Wall",
+      1,
+      "Automata targeted: −1 Damage."
+     ],
+     [
+      "Relentless Advance",
+      1,
+      "Automata Move and Shoot without penalty."
+     ],
+     [
+      "Echoes of the ash-automata",
+      2,
+      "Automata unit destroyed: return 3 models (once)."
+     ]
+    ]
+   },
+   {
+    "n": "Mutant Rift",
+    "p": "Spawn and Pyre-Wisps pour through rifts.",
+    "r": "Fate teleports may also bring units in from reserves.",
+    "e": [
+     [
+      "Rift-Key",
+      "Master of the Astral Geometry",
+      "Teleport range 12″."
+     ],
+     [
+      "daemonic Crown",
+      "Master of the Astral Geometry",
+      "Spawn within 6″ choose their mutation."
+     ]
+    ],
+    "s": [
+     [
+      "Warp Breach",
+      1,
+      "Unit arrives: enemies within 6″ gain 1 Suppression."
+     ],
+     [
+      "Unstable Flesh",
+      1,
+      "Spawn fights: +2 Attacks."
+     ],
+     [
+      "Flickering Fire",
+      1,
+      "After shooting, Pyre-Wisps teleport 3″ (Cabal: space)."
+     ]
+    ]
+   }
+  ]
+ },
+ "15": {
+  "name": "The Velvet-Scourge Syndicate",
+  "dna": {
+   "MOV": 2,
+   "MS": -1,
+   "RS": -1,
+   "ARM": 1,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 1.0,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Flayed-Silk Initiates",
+    "c1_assault",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      "pistol",
+      "power_weapon"
+     ],
+     "MS": 3
+    },
+    "Ecstasy of Pain: +1 to Hit once damaged."
+   ],
+   [
+    "Sonic-Blaster Cultists",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Sonic blaster",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "3",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[IGNORES COVER]",
+        "[SUPPRESSIVE]"
+       ]
+      },
+      "combat_blade"
+     ]
+    },
+    "Deafening: hit units −1 to Hit next activation."
+   ],
+   [
+    "Maestro Duelists",
+    "c2_elite_guard",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": 5,
+     "keywords": [
+      "[STRIKE FIRST]"
+     ],
+     "weapons": [
+      "pistol",
+      "relic_blade"
+     ]
+    },
+    "Duelist: [STRIKE FIRST]."
+   ],
+   [
+    "Maestro of Excess",
+    "c2_leader",
+    null,
+    {
+     "keywords": [
+      "[STRIKE FIRST]"
+     ],
+     "weapons": [
+      "pistol",
+      "relic_blade"
+     ]
+    },
+    "⟳ Crescendo: attached unit counts as damaged (frenzy active)."
+   ],
+   [
+    "Swift-Steed Riders",
+    "c2_cavalry",
+    [
+     3,
+     5
+    ],
+    {
+     "MOV": 14,
+     "weapons": [
+      "claws",
+      "cavalry_lance"
+     ]
+    },
+    "Lithe: +2″ charge."
+   ],
+   [
+    "Cacophony Paladins",
+    "c2_heavy_infantry",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Sonic Thunderhorn",
+       "type": "Ranged",
+       "range": "36″",
+       "A": "3",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "2",
+       "traits": [
+        "[IGNORES COVER]",
+        "[SUPPRESSIVE]"
+       ]
+      },
+      "great_weapon"
+     ]
+    },
+    "Sonic Wall: enemies within 6″ −1 Move."
+   ],
+   [
+    "Velvet-Strider",
+    "c3_walker",
+    [
+     1,
+     2
+    ],
+    {
+     "MOV": 10,
+     "weapons": [
+      {
+       "name": "Sonic cannon",
+       "type": "Ranged",
+       "range": "36″",
+       "A": "D6+1",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "2",
+       "traits": [
+        "[SUPPRESSIVE]",
+        "[SHRAPNEL 1]"
+       ]
+      },
+      "brute_fists"
+     ]
+    },
+    "Elegant Stride: Move and Shoot in either order."
+   ],
+   [
+    "Cathedral of Agony",
+    "c5_super_heavy",
+    null,
+    {
+     "weapons": [
+      {
+       "name": "Horn arrays",
+       "type": "Ranged",
+       "range": "36″",
+       "A": "2D6",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "2",
+       "traits": [
+        "[IGNORES COVER]",
+        "[SUPPRESSIVE]"
+       ]
+      },
+      "treads"
+     ]
+    },
+    "Symphony: friendly units within 9″ count as damaged."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Carnival of Excess",
+    "p": "Fast frenzied melee.",
+    "r": "Damaged units also get +1″ Move.",
+    "e": [
+     [
+      "Rapture Blade",
+      "Maestro of Excess",
+      "+2 Attacks once damaged."
+     ],
+     [
+      "Scent of Excess",
+      "Maestro of Excess",
+      "Attached unit +2″ charge."
+     ]
+    ],
+    "s": [
+     [
+      "Exquisite Agony",
+      1,
+      "Unit takes damage: it immediately counts as damaged and makes a 3″ Move."
+     ],
+     [
+      "Perfect Strike",
+      1,
+      "Duelist fights: crits on 5+."
+     ],
+     [
+      "Sensory Overload",
+      1,
+      "Attacker within 12″: −1 to Hit."
+     ]
+    ]
+   },
+   {
+    "n": "Symphony of Ruin",
+    "p": "Noise gunlines and suppression.",
+    "r": "[SUPPRESSIVE] hits give 2 tokens to Class 1–2.",
+    "e": [
+     [
+      "Maestro's Baton",
+      "Maestro of Excess",
+      "Attached unit's sonic weapons +1 Attack."
+     ],
+     [
+      "Echo Chamber",
+      "Maestro of Excess",
+      "Rattled enemies within 12″ can't use ⟳."
+     ]
+    ],
+    "s": [
+     [
+      "Dissonance",
+      1,
+      "Target becomes Pinned on any unsaved wound."
+     ],
+     [
+      "Feedback Loop",
+      1,
+      "Unit shoots a Pinned unit: re-roll Wound."
+     ],
+     [
+      "Crescendo",
+      2,
+      "All sonic weapons +1 PEN this round."
+     ]
+    ]
+   },
+   {
+    "n": "Masque of Blades",
+    "p": "Duelists and riders.",
+    "r": "Leaders get [PRECISION] in melee.",
+    "e": [
+     [
+      "Mirror Mask",
+      "Maestro of Excess",
+      "Bearer −1 to be hit in melee."
+     ],
+     [
+      "Thousand Cuts",
+      "Maestro of Excess",
+      "Bearer's blade [IMPALING HITS]."
+     ]
+    ],
+    "s": [
+     [
+      "Riposte",
+      1,
+      "Duelist attacked in melee: strike first."
+     ],
+     [
+      "Flourish",
+      1,
+      "After fighting: Move 3″."
+     ],
+     [
+      "Masked Advance",
+      1,
+      "Unit not targetable >18″ this round."
+     ]
+    ]
+   }
+  ]
+ },
+ "17": {
+  "name": "The Sun-Scaled Temple-Host",
+  "dna": {
+   "MOV": 0,
+   "MS": -1,
+   "RS": 1,
+   "ARM": 0,
+   "MIGHT_inf": 1,
+   "MIGHT_big": 1.1,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Scaleling Javelin-Scouts",
+    "c1_skirmishers",
+    [
+     5,
+     10
+    ],
+    {
+     "MOV": 9,
+     "MIGHT": 1,
+     "weapons": [
+      {
+       "name": "Dart-pipes",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "2",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[IMPALING HITS]"
+       ]
+      },
+      "combat_blade"
+     ]
+    },
+    "Chameleon: [STEALTH] in terrain."
+   ],
+   [
+    "Saurian Spawn-Guard",
+    "c1_battle_brothers",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Macuahuitl",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "2",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      },
+      {
+       "name": "Jaws",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "1",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[EXTRA ATTACKS]",
+        "[IMPALING HITS]"
+       ]
+      }
+     ],
+     "MS": 3
+    },
+    "Predatory Instinct: crits on 5+ vs damaged/Broken units."
+   ],
+   [
+    "Temple-Guard Saurians",
+    "c2_elite_guard",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": 5,
+     "weapons": [
+      "glaive",
+      {
+       "name": "Jaws",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "1",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[EXTRA ATTACKS]",
+        "[IMPALING HITS]"
+       ]
+      }
+     ]
+    },
+    "Sworn Guardians: +1 Save within 3″ of a priest."
+   ],
+   [
+    "Raptor-Knights",
+    "c2_cavalry",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      "cavalry_lance",
+      "claws"
+     ]
+    },
+    "Blood Frenzy: +1 Attack vs damaged."
+   ],
+   [
+    "Sun-Priest Astromancer",
+    "c3_mounted_leader",
+    null,
+    {
+     "MOV": 8,
+     "keywords": [
+      "[FLY]"
+     ],
+     "weapons": [
+      {
+       "name": "Comet call",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "D3",
+       "wound": "2+",
+       "pen": "-2",
+       "D": "2",
+       "traits": [
+        "[INDIRECT FIRE]",
+        "[PSYCHIC / ARCANE]"
+       ]
+      },
+      "power_weapon"
+     ]
+    },
+    "⟳ Celestial Geometry: one unit +1 to Wound this round."
+   ],
+   [
+    "Horned Shell-Bastion",
+    "c4_behemoth_beast",
+    null,
+    {
+     "ARM": 3,
+     "weapons": [
+      {
+       "name": "Solar engine",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "D6+2",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[ERADICATE 1]"
+       ]
+      },
+      "monster_talons"
+     ]
+    },
+    "Living Fortress: −1 incoming Damage."
+   ],
+   [
+    "Apex Tyrant-Lizard",
+    "c5_colossal_monster",
+    null,
+    {
+     "weapons": [
+      "colossal_jaws",
+      "titan_stomp"
+     ]
+    },
+    "Bloodroar: units charged gain 2 Suppression tokens."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Sunclaw Hunt",
+    "p": "lizard warriors and Tyrant-Lizard predation.",
+    "r": "Predatory Instinct also triggers vs units with any Suppression token.",
+    "e": [
+     [
+      "Fang of the Ancients",
+      "Sun-Priest Astromancer",
+      "A Saurian unit within 6″ crits on 5+ always."
+     ],
+     [
+      "Sun-Stone Pendant",
+      "Sun-Priest Astromancer",
+      "Bearer [WARD 4+]."
+     ]
+    ],
+    "s": [
+     [
+      "Primal Roar",
+      1,
+      "Monster charges: target gains 1 Suppression."
+     ],
+     [
+      "Savage Jaws",
+      1,
+      "Unit fights: Jaws +1 Damage."
+     ],
+     [
+      "Cold-Blooded Defiance",
+      1,
+      "Unit ignores Broken this round."
+     ]
+    ]
+   },
+   {
+    "n": "Starborne Prophecy",
+    "p": "Priests and Scalelings; cosmic tricks.",
+    "r": "Priests may teleport 1 unit 9″ per round (once).",
+    "e": [
+     [
+      "Orrery of Fate",
+      "Sun-Priest Astromancer",
+      "+1 CP at the start of the battle."
+     ],
+     [
+      "Comet Crown",
+      "Sun-Priest Astromancer",
+      "Comet call +1 Damage."
+     ]
+    ],
+    "s": [
+     [
+      "Comet Strike",
+      2,
+      "D6 Fatal Wounds on a unit within 24″ (once)."
+     ],
+     [
+      "Starlight Mirage",
+      1,
+      "Unit targeted beyond 12″: −1 to Hit."
+     ],
+     [
+      "Prophecy Fulfilled",
+      1,
+      "End of round: score +1 VP if you hold the prophesied objective."
+     ]
+    ]
+   },
+   {
+    "n": "Bastion Host",
+    "p": "Temple-Guard and Shell-Bastions hold.",
+    "r": "Units on objectives get +1 Save in melee.",
+    "e": [
+     [
+      "Ancestral Shield",
+      "Sun-Priest Astromancer",
+      "Temple-Guard within 6″ [WARD 4+]."
+     ],
+     [
+      "Golden Sceptre",
+      "Sun-Priest Astromancer",
+      "Units within 6″ ignore Rattled."
+     ]
+    ],
+    "s": [
+     [
+      "Shield of Ages",
+      1,
+      "Unit charged: +1 Save."
+     ],
+     [
+      "Sun Engine Flare",
+      1,
+      "Shell-Bastion shoots: [SCORCH]."
+     ],
+     [
+      "Unyielding Scales",
+      1,
+      "Unit targeted: −1 Damage."
+     ]
+    ]
+   }
+  ]
+ },
+ "18": {
+  "name": "The Obsidian Forge-Tombs",
+  "dna": {
+   "MOV": -2,
+   "MS": -1,
+   "RS": 0,
+   "ARM": -1,
+   "MIGHT_inf": 1,
+   "MIGHT_big": 1.1,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Obsidian Hearth-Guard",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Rune-axe",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "2",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      },
+      {
+       "name": "Throwing hammers",
+       "type": "Ranged",
+       "range": "8″",
+       "A": "1",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": []
+      }
+     ]
+    },
+    "Grudge-Reanimation: slain models return on 4+ (max 2/round)."
+   ],
+   [
+    "Rune-Gunner Line",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Rune-gun",
+       "type": "Ranged",
+       "range": "30″",
+       "A": "2",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[HEAVY]"
+       ]
+      },
+      "combat_blade"
+     ]
+    },
+    "Grudge-Reanimation."
+   ],
+   [
+    "Magma-Rune Hammerers",
+    "c2_elite_guard",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": null,
+     "weapons": [
+      {
+       "name": "Magma hammer",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "3",
+       "wound": "2+",
+       "pen": "-2",
+       "D": "2",
+       "traits": [
+        "[CRASHING]"
+       ]
+      }
+     ]
+    },
+    "Grudge-Reanimation."
+   ],
+   [
+    "High Thane of the Gate",
+    "c2_leader",
+    null,
+    {
+     "weapons": [
+      "relic_blade"
+     ]
+    },
+    "⟳ Rune-Wall: attached unit −1 incoming Damage this round."
+   ],
+   [
+    "Tomb-Priest",
+    "c1_leader",
+    null,
+    {
+     "weapons": [
+      "power_weapon"
+     ]
+    },
+    "Rekindle: reanimation on 3+ for the attached unit."
+   ],
+   [
+    "Liquid-Gold Rune-Golem",
+    "c3_monster",
+    [
+     1,
+     2
+    ],
+    {
+     "ARM": 3,
+     "weapons": [
+      "brute_fists"
+     ]
+    },
+    "Obsidian Core: [UNYIELDING 5+]; reanimates like a dwarf (whole model)."
+   ],
+   [
+    "Magma-Cannon Battery",
+    "c3_weapon_platform",
+    null,
+    {
+     "weapons": [
+      {
+       "name": "Magma cannon",
+       "type": "Ranged",
+       "range": "36″",
+       "A": "D3",
+       "wound": "2+",
+       "pen": "-3",
+       "D": "D6",
+       "traits": [
+        "[HEAVY]"
+       ]
+      },
+      "bayonet"
+     ]
+    },
+    "Grudge-shot: re-roll Wound vs the unit that killed a dwarf."
+   ],
+   [
+    "Obsidian Tomb-Fortress",
+    "c5_super_heavy",
+    null,
+    {
+     "MOV": 6,
+     "keywords": [
+      "[TRANSPORT 10]"
+     ],
+     "weapons": [
+      "titan_cannon",
+      "doom_lance",
+      "treads"
+     ]
+    },
+    "Tomb-Gate: units reanimate on 3+ within 6″."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Undying Hold",
+    "p": "A wall that won't fall.",
+    "r": "Reanimation max 3 per unit per round.",
+    "e": [
+     [
+      "Ancestor Rune",
+      "High Thane of the Gate",
+      "Attached unit reanimates on 3+."
+     ],
+     [
+      "Shield of the Mountain",
+      "High Thane of the Gate",
+      "Bearer [WARD 4+]."
+     ]
+    ],
+    "s": [
+     [
+      "Stubborn as Stone",
+      1,
+      "Unit would become Broken: it doesn't."
+     ],
+     [
+      "Reforge",
+      1,
+      "End of round: one destroyed unit returns with 1 model on 5+."
+     ],
+     [
+      "Oath-Hold",
+      1,
+      "Unit on objective: +1 Save."
+     ]
+    ]
+   },
+   {
+    "n": "Grudge-Bearers",
+    "p": "Vengeance on marked foes.",
+    "r": "Settling the Grudge costs 0 CP once per round.",
+    "e": [
+     [
+      "Book of Grudges",
+      "High Thane of the Gate",
+      "Mark 1 enemy unit at deployment: +1 to Hit vs it."
+     ],
+     [
+      "Grudge-Axe",
+      "High Thane of the Gate",
+      "Bearer [SHREDDING WOUNDS] vs grudge targets."
+     ]
+    ],
+    "s": [
+     [
+      "Vengeful Strike",
+      1,
+      "Unit attacks a grudge target: re-roll Wound."
+     ],
+     [
+      "Settling the Grudge",
+      1,
+      "Enemy kills a dwarf: +1 to Wound vs it for the battle."
+     ],
+     [
+      "No Retreat",
+      1,
+      "Unit charged: Strike First."
+     ]
+    ]
+   },
+   {
+    "n": "Magma-Forge Brotherhood",
+    "p": "Golems and magma artillery.",
+    "r": "Golems and Batteries get +1 PEN.",
+    "e": [
+     [
+      "Forge-Heart",
+      "Tomb-Priest",
+      "Golems within 6″ heal 2 at round end."
+     ],
+     [
+      "Magma Runes",
+      "Tomb-Priest",
+      "Attached unit's weapons [SCORCH]-touched: +1 Damage at half range."
+     ]
+    ],
+    "s": [
+     [
+      "Molten Overflow",
+      1,
+      "Battery shoots: [SHRAPNEL 1]."
+     ],
+     [
+      "Golem Stride",
+      1,
+      "Golem +3″ Move."
+     ],
+     [
+      "Lava Wall",
+      1,
+      "Enemy charge into a Golem: −2″."
+     ]
+    ]
+   }
+  ]
+ },
+ "19": {
+  "name": "The Skitter-Kin & Rad-Scavengers",
+  "dna": {
+   "MOV": 1,
+   "MS": 1,
+   "RS": 1,
+   "ARM": 1,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 0.95,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Clan-Scavengers",
+    "c1_swarm",
+    [
+     10,
+     15
+    ],
+    {
+     "RS": 5,
+     "keywords": [
+      "[FRAIL]"
+     ],
+     "weapons": [
+      {
+       "name": "Scrap-gun",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "1",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": []
+      },
+      "claws"
+     ]
+    },
+    "Endless Swarm: return once at half strength."
+   ],
+   [
+    "Hazmat Mutant Crew",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Sludge hose",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "D6",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[SCORCH]"
+       ]
+      },
+      "combat_blade"
+     ]
+    },
+    "Rad-Hardened: ignore 1 Fatal Wound per round."
+   ],
+   [
+    "Rad-Plasma Welders",
+    "c2_weapon_team",
+    [
+     2,
+     3
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Plasma welder",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "D6",
+       "wound": "3+",
+       "pen": "-2",
+       "D": "1",
+       "traits": [
+        "[SCORCH]",
+        "[OVERLOAD]"
+       ]
+      },
+      "bayonet"
+     ]
+    },
+    "Overcharge: +1 Attack and [SHREDDING WOUNDS]; 1s hurt."
+   ],
+   [
+    "Gutter-Stalkers",
+    "c1_skirmishers",
+    [
+     5,
+     10
+    ],
+    {
+     "keywords": [
+      "[INFILTRATORS]"
+     ],
+     "weapons": [
+      "pistol",
+      "power_weapon"
+     ]
+    },
+    "Poisoned Blades: [IMPALING HITS]."
+   ],
+   [
+    "Under-Chief Warlock",
+    "c1_leader",
+    null,
+    {
+     "weapons": [
+      {
+       "name": "Warp-lightning",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "D6",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[OVERLOAD]",
+        "[PSYCHIC / ARCANE]"
+       ]
+      },
+      "power_weapon"
+     ]
+    },
+    "⟳ Warp-Surge: the attached unit may Overcharge without suffering Fatal Wounds this round."
+   ],
+   [
+    "Ratbrute Rad-Beasts",
+    "c2_brutes",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      "power_maul"
+     ]
+    },
+    "Packmaster's Whip: +1 Attack within 6″ of a Leader."
+   ],
+   [
+    "Rad-Wheel",
+    "c3_weapon_platform",
+    null,
+    {
+     "MOV": 9,
+     "weapons": [
+      {
+       "name": "Warp-bolts",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "D6+1",
+       "wound": "3+",
+       "pen": "-2",
+       "D": "1",
+       "traits": [
+        "[OVERLOAD]"
+       ]
+      },
+      "treads"
+     ]
+    },
+    "Erratic Roll: random +D6″ Move."
+   ],
+   [
+    "Subterranean Warp-Drill",
+    "c5_super_heavy",
+    null,
+    {
+     "keywords": [
+      "[VANGUARD STRIKE]",
+      "[TRANSPORT 15]"
+     ],
+     "weapons": [
+      "titan_cannon",
+      {
+       "name": "Drill-head",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "6",
+       "wound": "2+",
+       "pen": "-3",
+       "D": "3",
+       "traits": []
+      }
+     ]
+    },
+    "Tunnel: units embarked arrive with it."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Warp-Tech Clans",
+    "p": "Overcharge everything.",
+    "r": "Overcharge Fatal Wounds only on natural 1s that also fail to wound.",
+    "e": [
+     [
+      "Warp-Stone Amulet",
+      "Under-Chief Warlock",
+      "Bearer ignores Overload."
+     ],
+     [
+      "Doom-Rocket",
+      "Under-Chief Warlock",
+      "Once per battle: D6 Fatal Wounds within 24″."
+     ]
+    ],
+    "s": [
+     [
+      "More-More Power!",
+      1,
+      "Overcharge grants +2 Attacks instead of +1."
+     ],
+     [
+      "Warp Surge",
+      1,
+      "Weapon +1 Damage, Overload on 1–2."
+     ],
+     [
+      "Cower",
+      1,
+      "Unit targeted: −1 to Hit."
+     ]
+    ]
+   },
+   {
+    "n": "Endless Underhive",
+    "p": "Swarms recycle forever.",
+    "r": "Recycled units return at full strength.",
+    "e": [
+     [
+      "Tunnel Map",
+      "Under-Chief Warlock",
+      "Recycled units may arrive within 6″ of the bearer."
+     ],
+     [
+      "Bell of Scurry",
+      "Under-Chief Warlock",
+      "Swarms within 6″ +2″ Move."
+     ]
+    ],
+    "s": [
+     [
+      "Always Three Steps Ahead",
+      1,
+      "Unit not engaged: redeploy into reserves."
+     ],
+     [
+      "Swarm Tide",
+      1,
+      "Swarm charges after a Move."
+     ],
+     [
+      "Expendable",
+      1,
+      "Friendly swarm in front: shooter must target it."
+     ]
+    ]
+   },
+   {
+    "n": "Rad-Waste Nomads",
+    "p": "Mutant hazmat crews and welders.",
+    "r": "Hazmat units ignore Suppression.",
+    "e": [
+     [
+      "Lead-Lined Suit",
+      "Under-Chief Warlock",
+      "Bearer [WARD 5+]."
+     ],
+     [
+      "Rad-Battery",
+      "Under-Chief Warlock",
+      "Attached unit's [SCORCH] +1 PEN."
+     ]
+    ],
+    "s": [
+     [
+      "Toxic Cloud",
+      1,
+      "Enemy within 6″ of a hose unit: −1 Hit."
+     ],
+     [
+      "Mutagenic Burst",
+      1,
+      "Unit kills: +1 model (mutant)."
+     ],
+     [
+      "Scrap Barricade",
+      1,
+      "Unit didn't Move: Cover."
+     ]
+    ]
+   }
+  ]
+ },
+ "20": {
+  "name": "The Astral Shadow-Clans",
+  "dna": {
+   "MOV": 2,
+   "MS": -1,
+   "RS": -1,
+   "ARM": 1,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 0.9,
+   "CTRL": -1
+  },
+  "units": [
+   [
+    "Shadow-Kabar Raiders",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Splinter rifle",
+       "type": "Ranged",
+       "range": "24″",
+       "A": "1",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[IMPALING HITS]",
+        "[HAILFIRE 1]"
+       ]
+      },
+      "combat_blade"
+     ]
+    },
+    "Raid Strike: may Strike from the Dark."
+   ],
+   [
+    "Cyber-Ronin Duelists",
+    "c1_jump",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      "pistol",
+      {
+       "name": "Power-katana",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "3",
+       "wound": "3+",
+       "pen": "-2",
+       "D": "1",
+       "traits": [
+        "[PRECISION]"
+       ]
+      }
+     ]
+    },
+    "Blade Dance: +1 Attack on out-of-sequence activations."
+   ],
+   [
+    "Arena-Blade Cultists",
+    "c1_assault",
+    [
+     5,
+     10
+    ],
+    {
+     "WARD": 6,
+     "weapons": [
+      "pistol",
+      "power_weapon"
+     ],
+     "MS": 3
+    },
+    "Dodge: [WARD 6+]."
+   ],
+   [
+    "Master of the Astral Edge",
+    "c2_leader",
+    null,
+    {
+     "MOV": 9,
+     "weapons": [
+      "heavy_pistol",
+      {
+       "name": "Relic katana",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "6",
+       "wound": "3+",
+       "pen": "-3",
+       "D": "2",
+       "traits": [
+        "[PRECISION]"
+       ]
+      }
+     ]
+    },
+    "⟳ Perfect Timing: the attached unit may Strike from the Dark this round."
+   ],
+   [
+    "Bladed Sky-Skiff",
+    "c4_transport",
+    null,
+    {
+     "MOV": 14,
+     "MIGHT": 10,
+     "ARM": 4,
+     "keywords": [
+      "[FLY]",
+      "[TRANSPORT 10]",
+      "[FIRING DECK 10]"
+     ],
+     "weapons": [
+      {
+       "name": "Impaler cannon",
+       "type": "Ranged",
+       "range": "36″",
+       "A": "1",
+       "wound": "2+",
+       "pen": "-3",
+       "D": "D6+1",
+       "traits": []
+      }
+     ]
+    },
+    "Raider: units may disembark after it Moves and still charge."
+   ],
+   [
+    "Agony-Engine Construct",
+    "c3_monster",
+    [
+     1,
+     2
+    ],
+    {
+     "weapons": [
+      "monster_talons"
+     ]
+    },
+    "Pain-Fed: +1 Attack per Pain token held (max +3)."
+   ],
+   [
+    "Void-Portal Ravager",
+    "c4_battle_tank",
+    null,
+    {
+     "MOV": 14,
+     "ARM": 4,
+     "keywords": [
+      "[FLY]"
+     ],
+     "weapons": [
+      "las_lance",
+      "las_lance",
+      "las_lance"
+     ]
+    },
+    "Portal Shift: may activate out of sequence once per battle."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Clan of the Black Portal",
+    "p": "Gun-raiders on skiffs.",
+    "r": "Units that disembark this round get +1 to Hit.",
+    "e": [
+     [
+      "Shadow-Veil Field",
+      "Master of the Astral Edge",
+      "Bearer [WARD 3+] until it fails a save."
+     ],
+     [
+      "Seraph of Agony",
+      "Master of the Astral Edge",
+      "Gain 1 Pain when the attached unit kills a model."
+     ]
+    ],
+    "s": [
+     [
+      "Flicker Reflexes",
+      1,
+      "Unit targeted: −1 to Hit."
+     ],
+     [
+      "Strike and Fade",
+      1,
+      "After shooting: [UNSEEN 12″] until next activation."
+     ],
+     [
+      "Hold Activation",
+      1,
+      "Pass this turn even with more units (once per round)."
+     ]
+    ]
+   },
+   {
+    "n": "Cult of Blades",
+    "p": "Arena-blade and Ronin melee.",
+    "r": "Out-of-sequence activations get +1 to Wound in melee.",
+    "e": [
+     [
+      "Combat Drugs",
+      "Master of the Astral Edge",
+      "Attached unit +1 Attack."
+     ],
+     [
+      "Blood-Veil",
+      "Master of the Astral Edge",
+      "Attached unit [WARD 5+] in melee."
+     ]
+    ],
+    "s": [
+     [
+      "No Escape",
+      1,
+      "Engaged enemy tries to Move away: free strike."
+     ],
+     [
+      "Hyper-Stimm",
+      1,
+      "Unit +2″ Move and +1 Attack this activation."
+     ],
+     [
+      "Pain Feast",
+      1,
+      "Unit kills a Leader: gain 2 Pain."
+     ]
+    ]
+   },
+   {
+    "n": "Coven of the Flesh",
+    "p": "Agony-Engines engines and pain.",
+    "r": "Agony-Engines start with 1 Pain each.",
+    "e": [
+     [
+      "Flesh-Sculptor's Scalpel",
+      "Master of the Astral Edge",
+      "Bearer [IMPALING HITS]."
+     ],
+     [
+      "Pain-Amplifier",
+      "Master of the Astral Edge",
+      "Pain tokens may be spent twice per round."
+     ]
+    ],
+    "s": [
+     [
+      "Sculpted Flesh",
+      1,
+      "Agony-Engines targeted: −1 Damage."
+     ],
+     [
+      "Agony Engine",
+      1,
+      "Agony-Engines fights: [SHREDDING WOUNDS]."
+     ],
+     [
+      "Pain Harvest",
+      1,
+      "Enemy model dies within 6″: +1 Pain."
+     ]
+    ]
+   }
+  ]
+ },
+ "22": {
+  "name": "The Radiant Concordat",
+  "dna": {
+   "MOV": 1,
+   "MS": 2,
+   "RS": -1,
+   "ARM": -1,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 1.0,
+   "CTRL": 0
+  },
+  "units": [
+   [
+    "Porcelain Strike-Infantry",
+    "c1_line",
+    [
+     5,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Pulse rail-rifle",
+       "type": "Ranged",
+       "range": "30″",
+       "A": "1",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[HAILFIRE 1]"
+       ]
+      },
+      "bayonet"
+     ]
+    },
+    "Volley Discipline: +1 to Hit vs marked units."
+   ],
+   [
+    "Lotus Pathfinder-Priests",
+    "c1_skirmishers",
+    [
+     3,
+     5
+    ],
+    {
+     "keywords": [
+      "[SCOUTS 6\"]"
+     ],
+     "weapons": [
+      "carbine",
+      "combat_blade"
+     ]
+    },
+    "Blood-Mark: 1 Action to mark a visible enemy."
+   ],
+   [
+    "Crimson Stealth-Suits",
+    "c2_battlesuits",
+    [
+     3,
+     3
+    ],
+    {
+     "keywords": [
+      "[FLY]",
+      "[INFILTRATORS]"
+     ],
+     "weapons": [
+      {
+       "name": "Rail-carbine",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "3",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      }
+     ]
+    },
+    "Camouflage: −1 to be hit beyond 12″."
+   ],
+   [
+    "Vanguard Rail-Suits",
+    "c2_battlesuits",
+    [
+     3,
+     3
+    ],
+    {
+     "weapons": [
+      "rail_rifle",
+      "plasma_gun"
+     ]
+    },
+    "Offering Surge: spend Offerings for +1 Damage."
+   ],
+   [
+    "Blood-Lotus Caste Prior",
+    "c2_leader",
+    null,
+    {
+     "MS": 4,
+     "weapons": [
+      {
+       "name": "Lotus scepter",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "2",
+       "wound": "3+",
+       "pen": "-2",
+       "D": "2",
+       "traits": []
+      },
+      "combat_blade"
+     ]
+    },
+    "⟳ Consecrate: mark a target without spending an Action."
+   ],
+   [
+    "Gilded Gore-Brutes",
+    "c2_brutes",
+    [
+     3,
+     5
+    ],
+    {
+     "MS": 3,
+     "MIGHT": 5,
+     "weapons": [
+      "power_maul"
+     ]
+    },
+    "Bodyguard: intercept melee attacks on adjacent suits on 3+."
+   ],
+   [
+    "Bulwark Rail-Mech",
+    "c3_walker",
+    [
+     1,
+     2
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Heavy rail-cannon",
+       "type": "Ranged",
+       "range": "60″",
+       "A": "2",
+       "wound": "2+",
+       "pen": "-4",
+       "D": "D6+1",
+       "traits": [
+        "[HEAVY]"
+       ]
+      }
+     ]
+    },
+    "Stabilised: [HEAVY] bonus even after a 3″ Move."
+   ],
+   [
+    "Lotus Sky-Gunship",
+    "c4_battle_tank",
+    null,
+    {
+     "keywords": [
+      "[FLY]",
+      "[TRANSPORT 6]"
+     ],
+     "weapons": [
+      {
+       "name": "Rail-lance",
+       "type": "Ranged",
+       "range": "72″",
+       "A": "1",
+       "wound": "2+",
+       "pen": "-4",
+       "D": "D6+2",
+       "traits": [
+        "[HEAVY]"
+       ]
+      },
+      "heavy_stubber"
+     ]
+    },
+    "Ritual Strike: +1 to Hit vs marked units."
+   ],
+   [
+    "Lotus Colossus-Suit",
+    "c5_war_titan",
+    null,
+    {
+     "MS": 5,
+     "weapons": [
+      "titan_cannon",
+      "doom_lance"
+     ]
+    },
+    "Anchored: +1 to Hit if it didn't Move."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Hunter Choir of the Lotus",
+    "p": "Mark-and-delete gunline.",
+    "r": "Marked units also lose Cover.",
+    "e": [
+     [
+      "Ritual Blade",
+      "Blood-Lotus Caste Prior",
+      "Marks also give −1 ARM."
+     ],
+     [
+      "Sage-Tide Engram",
+      "Blood-Lotus Caste Prior",
+      "+1 CP at the start of the battle."
+     ]
+    ],
+    "s": [
+     [
+      "Coordinated Salvo",
+      1,
+      "Enemy moves into view: Snap Fire 5+ (4+ marked)."
+     ],
+     [
+      "Ritual Harvest",
+      1,
+      "Marked model dies: +2 Offerings."
+     ],
+     [
+      "Precision Mark",
+      1,
+      "Rail weapons [PRECISION] vs marked."
+     ]
+    ]
+   },
+   {
+    "n": "Gore-Brute Retinue",
+    "p": "Ogre walls with rail support.",
+    "r": "Gore-Brutes get +1 Attack within 6″ of a battlesuit.",
+    "e": [
+     [
+      "Serum Injector",
+      "Blood-Lotus Caste Prior",
+      "Brutes within 6″ [UNYIELDING 6+]."
+     ],
+     [
+      "Golden Mace",
+      "Blood-Lotus Caste Prior",
+      "Brutes within 6″ +1 Damage."
+     ]
+    ],
+    "s": [
+     [
+      "Meat Shield",
+      1,
+      "Suit targeted: Brutes within 3″ take the hits."
+     ],
+     [
+      "Stim Rage",
+      1,
+      "Brutes charge: +2″ and Crushing Impact."
+     ],
+     [
+      "Offering of Flesh",
+      1,
+      "Spend 1 Offering: heal 2 on a Brute."
+     ]
+    ]
+   },
+   {
+    "n": "Crimson Mantle",
+    "p": "Stealth-suit infiltration.",
+    "r": "Stealth-Suits may mark targets themselves.",
+    "e": [
+     [
+      "Shroud Generator",
+      "Blood-Lotus Caste Prior",
+      "Attached unit [UNSEEN 12″]."
+     ],
+     [
+      "Veiled Blade",
+      "Blood-Lotus Caste Prior",
+      "Attached unit +1 PEN vs marked."
+     ]
+    ],
+    "s": [
+     [
+      "Vanish",
+      1,
+      "After shooting: suit unit Moves 6″."
+     ],
+     [
+      "Hidden Altar",
+      1,
+      "End of round: an objective with a suit becomes [SECURED]."
+     ],
+     [
+      "Blood Moon",
+      2,
+      "All marked units −1 to Hit this round."
+     ]
+    ]
+   }
+  ]
+ },
+ "24": {
+  "name": "The Diesel-Skull War-Horde",
+  "dna": {
+   "MOV": 0,
+   "MS": 0,
+   "RS": 2,
+   "ARM": 1,
+   "MIGHT_inf": 1,
+   "MIGHT_big": 1.0,
+   "CTRL": 1
+  },
+  "units": [
+   [
+    "Scrap-Gunner Mob",
+    "c1_assault",
+    [
+     10,
+     10
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Slugga",
+       "type": "Ranged",
+       "range": "12″",
+       "A": "2",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[HAILFIRE 1]"
+       ]
+      },
+      "chain_blade"
+     ]
+    },
+    "Strength in Numbers: +1 Attack with 10+ models."
+   ],
+   [
+    "Scrap-Imp Crew",
+    "c1_conscripts",
+    [
+     10,
+     10
+    ],
+    {
+     "MS": 6,
+     "RS": 5,
+     "CTRL": 1,
+     "keywords": [
+      "[FRAIL]"
+     ],
+     "weapons": [
+      "pistol",
+      "bayonet"
+     ],
+     "MIGHT": 1
+    },
+    "Expendable Imps: cheap screens."
+   ],
+   [
+    "War-Biker Speed-Maniacs",
+    "c2_cavalry",
+    [
+     3,
+     5
+    ],
+    {
+     "weapons": [
+      {
+       "name": "Twin dakkaguns",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "4",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[HAILFIRE 2]"
+       ]
+      },
+      "chain_blade"
+     ]
+    },
+    "Full Throttle: [HAILFIRE] at full range after max Move."
+   ],
+   [
+    "Iron-Hide Krushas",
+    "c2_heavy_infantry",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": null,
+     "weapons": [
+      "rotary_cannon",
+      "great_weapon"
+     ]
+    },
+    "'Ard Case: −1 incoming Damage."
+   ],
+   [
+    "War-Boss Speed-King",
+    "c2_leader",
+    null,
+    {
+     "MOV": 10,
+     "weapons": [
+      {
+       "name": "Kustom shoota",
+       "type": "Ranged",
+       "range": "18″",
+       "A": "4",
+       "wound": "4+",
+       "pen": "-1",
+       "D": "1",
+       "traits": []
+      },
+      "great_weapon"
+     ]
+    },
+    "⟳ RAMPAGE! once per battle; attached unit +1 Attack."
+   ],
+   [
+    "Scrap-Walker Deff-Brute",
+    "c3_walker",
+    [
+     1,
+     3
+    ],
+    {
+     "weapons": [
+      "rotary_cannon",
+      "brute_fists"
+     ]
+    },
+    "Buzz-Saws: [REAPING 1]."
+   ],
+   [
+    "War-Rig Scrap-Hauler",
+    "c4_transport",
+    null,
+    {
+     "MOV": 12,
+     "keywords": [
+      "[TRANSPORT 12]"
+     ],
+     "weapons": [
+      "battle_cannon",
+      "treads"
+     ]
+    },
+    "Ram: free Crushing Impact after 8″+ Move."
+   ],
+   [
+    "Scrap-Titan Colossus",
+    "c5_war_titan",
+    null,
+    {
+     "WARD": null,
+     "MS": 4,
+     "RS": 5,
+     "weapons": [
+      "titan_cannon",
+      "rotary_cannon",
+      "titan_stomp"
+     ]
+    },
+    "Ramshackle: [UNYIELDING 6+]."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Speed-Cult",
+    "p": "Bikes, buggies and wagons.",
+    "r": "Vehicles and bikes get +2″ Move.",
+    "e": [
+     [
+      "Racing Stripes",
+      "War-Boss Speed-King",
+      "Bearer's unit +2″ more Move."
+     ],
+     [
+      "Nitro Tank",
+      "War-Boss Speed-King",
+      "Once per battle: Move twice and charge."
+     ]
+    ],
+    "s": [
+     [
+      "Ramming Speed!",
+      1,
+      "Vehicle charges after Moving 8″+: Crushing Impact on 4+."
+     ],
+     [
+      "Bullet Storm",
+      1,
+      "Unit shoots: re-roll Hit 1s."
+     ],
+     [
+      "Tinker Patch-Up",
+      1,
+      "Vehicle ignores the next hit that would destroy it on 4+."
+     ]
+    ]
+   },
+   {
+    "n": "Green Tide",
+    "p": "Mass mobs.",
+    "r": "Strength in Numbers needs only 5 models.",
+    "e": [
+     [
+      "The Crusher-Klaw",
+      "War-Boss Speed-King",
+      "+2 Attacks, +1 Damage."
+     ],
+     [
+      "Bosspole",
+      "War-Boss Speed-King",
+      "Attached unit ignores Broken."
+     ]
+    ],
+    "s": [
+     [
+      "charge rule!",
+      1,
+      "Unit charges after a Move."
+     ],
+     [
+      "Floor It!",
+      1,
+      "Re-roll charge."
+     ],
+     [
+      "More Bodies!",
+      2,
+      "greenskin mobs unit destroyed: 10 greenskin mobs arrive at the edge (once)."
+     ]
+    ]
+   },
+   {
+    "n": "Tinker-Workshop",
+    "p": "Walkers and kustom guns.",
+    "r": "Walkers get [UNYIELDING 6+].",
+    "e": [
+     [
+      "Kustom Force-Field",
+      "War-Boss Speed-King",
+      "Units within 6″ [WARD 6+]."
+     ],
+     [
+      "Shokk-Gun",
+      "War-Boss Speed-King",
+      "Bearer's gun +2 Damage, Overload."
+     ]
+    ],
+    "s": [
+     [
+      "Supercharged Gubbinz",
+      1,
+      "Walker shoots: +1 PEN."
+     ],
+     [
+      "Stompy Charge",
+      1,
+      "Walker charges: +2 Attacks."
+     ],
+     [
+      "Bodge Job",
+      1,
+      "Walker ignores Rattled and gets +2″ Move."
+     ]
+    ]
+   }
+  ]
+ },
+ "25": {
+  "name": "The Eclipse Shadow-Fiends",
+  "dna": {
+   "MOV": 0,
+   "MS": 0,
+   "RS": 2,
+   "ARM": 2,
+   "MIGHT_inf": 0,
+   "MIGHT_big": 0.9,
+   "CTRL": -1
+  },
+  "units": [
+   [
+    "Void-Shades",
+    "c1_swarm",
+    [
+     5,
+     10
+    ],
+    {
+     "WARD": 4,
+     "keywords": [
+      "[FLY]",
+      "[UNSEEN 12\"]"
+     ],
+     "weapons": [
+      "claws"
+     ]
+    },
+    "Phase: move through terrain and models."
+   ],
+   [
+    "Eclipse Reapers",
+    "c1_battle_brothers",
+    [
+     5,
+     10
+    ],
+    {
+     "WARD": 4,
+     "keywords": [
+      "[FLY]",
+      "[UNSEEN 12\"]"
+     ],
+     "weapons": [
+      {
+       "name": "Shadow-scythe",
+       "type": "Melee",
+       "range": "Melee",
+       "A": "2",
+       "wound": "3+",
+       "pen": "-1",
+       "D": "1",
+       "traits": [
+        "[SHREDDING WOUNDS]"
+       ]
+      }
+     ]
+    },
+    "Reap: [SHREDDING WOUNDS]."
+   ],
+   [
+    "Banshee Wailers",
+    "c1_skirmishers",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": 4,
+     "keywords": [
+      "[FLY]",
+      "[UNSEEN 12\"]"
+     ],
+     "weapons": [
+      {
+       "name": "Wail",
+       "type": "Ranged",
+       "range": "8″",
+       "A": "D6",
+       "wound": "4+",
+       "pen": "0",
+       "D": "1",
+       "traits": [
+        "[SHRAPNEL 1]",
+        "[SUPPRESSIVE]"
+       ]
+      }
+     ]
+    },
+    "Terror: enemies within 6″ −1 to Hit in melee."
+   ],
+   [
+    "Knight-Phantasm",
+    "c3_mounted_leader",
+    null,
+    {
+     "WARD": 4,
+     "keywords": [
+      "[FLY]",
+      "[UNSEEN 12\"]"
+     ],
+     "weapons": [
+      "cavalry_lance"
+     ]
+    },
+    "⟳ Spectral Host: attached unit +1 Attack."
+   ],
+   [
+    "Shadow-Stalker Abomination",
+    "c3_monster",
+    null,
+    {
+     "WARD": 4,
+     "keywords": [
+      "[FLY]",
+      "[UNSEEN 12\"]"
+     ],
+     "weapons": [
+      "monster_talons"
+     ]
+    },
+    "Drag into the Void: a model it kills can't be revived/returned."
+   ],
+   [
+    "Grave-Riders",
+    "c2_cavalry",
+    [
+     3,
+     5
+    ],
+    {
+     "WARD": 4,
+     "keywords": [
+      "[FLY]",
+      "[UNSEEN 12\"]"
+     ],
+     "weapons": [
+      "cavalry_lance"
+     ]
+    },
+    "Spectral Charge: charge through models."
+   ],
+   [
+    "Eclipse Void-Leviathan",
+    "c5_colossal_monster",
+    null,
+    {
+     "WARD": 4,
+     "keywords": [
+      "[FLY]"
+     ],
+     "weapons": [
+      "colossal_jaws",
+      "titan_stomp"
+     ]
+    },
+    "Light-Drinker: enemies within 12″ −1 to Hit at range."
+   ]
+  ],
+  "detachments": [
+   {
+    "n": "Midnight Procession",
+    "p": "Mass ghosts through walls.",
+    "r": "Units arriving through terrain get +1 to Hit that activation.",
+    "e": [
+     [
+      "Lantern of Lost Souls",
+      "Knight-Phantasm",
+      "Units within 6″ [WARD 3+] vs ranged."
+     ],
+     [
+      "Shroud of Night",
+      "Knight-Phantasm",
+      "Bearer −1 to be hit in melee."
+     ]
+    ],
+    "s": [
+     [
+      "Fade into the Dark",
+      1,
+      "Attacker beyond 6″: −2 to Hit, no crits."
+     ],
+     [
+      "Wave of Terror",
+      1,
+      "Unit charges: target gains 2 Suppression."
+     ],
+     [
+      "Possession",
+      2,
+      "Enemy unit within 3″: it activates last this round."
+     ]
+    ]
+   },
+   {
+    "n": "Reaper Host",
+    "p": "Scythe-heavy shredding.",
+    "r": "[SHREDDING WOUNDS] on 5+ vs Broken units.",
+    "e": [
+     [
+      "Death's Edge",
+      "Knight-Phantasm",
+      "Bearer [SHREDDING WOUNDS]."
+     ],
+     [
+      "Soul Harvest",
+      "Knight-Phantasm",
+      "Attached unit +1 Attack per Broken enemy within 6″."
+     ]
+    ],
+    "s": [
+     [
+      "Reaping Sweep",
+      1,
+      "Unit fights: [REAPING 1]."
+     ],
+     [
+      "Soul Siphon",
+      1,
+      "Kill a model: +1 Attack next fight."
+     ],
+     [
+      "Cold Hands",
+      1,
+      "Enemy engaged: −1 Attack."
+     ]
+    ]
+   },
+   {
+    "n": "Void Leviathan",
+    "p": "The great void-beast and its shades.",
+    "r": "Shades within 9″ of the Leviathan get +1 CTRL.",
+    "e": [
+     [
+      "Black Star Heart",
+      "Knight-Phantasm",
+      "Leviathan within 9″ [UNSEEN 12″]."
+     ],
+     [
+      "Event Horizon",
+      "Knight-Phantasm",
+      "Enemies within 6″ −2″ Move."
+     ]
+    ],
+    "s": [
+     [
+      "Swallow Light",
+      1,
+      "Leviathan targeted: −1 to Hit."
+     ],
+     [
+      "Gravity Well",
+      1,
+      "Enemy within 9″ can't Move away."
+     ],
+     [
+      "Collapse",
+      2,
+      "Leviathan destroyed: all units within 6″ suffer D3 Fatal Wounds."
+     ]
+    ]
+   }
+  ]
+ }
+}

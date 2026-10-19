@@ -1,0 +1,1246 @@
+{
+ "name": "The Obsidian Forge-Tombs",
+ "verb": "ENDURE",
+ "identity": "Undying tomb-dwarves of obsidian and liquid gold. Slow (MOV 4–5), heavily armoured, and they reanimate: a squad that is not wiped out comes back. One public Grudge, moved to whoever last killed an Obsidian unit, focuses their wrath.",
+ "number": "18",
+ "template": "A_combined_arms",
+ "status": "draft",
+ "learned_from": [
+  "40k space-dwarf: Judgement tokens on many enemies caused \"bad feelings\" and were replaced (research 2026-10) — so ONE grudge, no stacking, re-roll 1s only (Gemini #2 rejected as written)",
+  "40k undying machine armies reanimation (wipe the squad to stop it) — Gemini #1 capped to 1 model per unit per round"
+ ],
+ "risk_profile": "Low. Gamble = resource: burn a unit's Ancestor-Spark (no more reanimation) for one decisive attack.",
+ "core_rule": {
+  "name": "Grudge-Reanimation · The Grudge",
+  "text": "Reanimation: at the End of Round, each Obsidian unit that is still on the battlefield rolls a D6: on a 4+ it returns 1 slain model (Class 1–2) or heals D3 MIGHT (Class 3–5). The Grudge: before the battle name 1 enemy unit as the Grudge. Obsidian units re-roll Wound rolls of 1 against it. When the Grudge is destroyed, or an enemy unit destroys an Obsidian unit, move the Grudge to that enemy unit (only one Grudge at a time)."
+ },
+ "gamble": {
+  "name": "Burn the Ancestor-Spark",
+  "text": "When a unit is selected to Shoot or Fight: +1 Damage and [IMPALING HITS] on its weapons this activation; that unit can never reanimate again.",
+  "risk_cost": "resource (permanent)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.7,
+   "mods": {
+    "unyielding": 6
+   },
+   "name": "Grudge-Reanimation",
+   "text": "1 model / D3 MIGHT back on 4+ per round."
+  },
+  {
+   "scope": "all",
+   "uptime": 0.35,
+   "mods": {
+    "reroll_wound": "ones"
+   },
+   "name": "The Grudge",
+   "text": "Re-roll wound 1s vs one unit."
+  },
+  {
+   "scope": "all",
+   "uptime": 0.06,
+   "mods": {
+    "dmg_mod": 1,
+    "lethal": true
+   },
+   "name": "Ancestor-Spark",
+   "text": "Once per unit per battle."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Rune-pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Gate-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "High Thane of the Gate",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "reroll_wound": "ones"
+     },
+     "scope": "all",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Thane's Oath",
+     "text": "The attached unit re-rolls Wound rolls of 1 (all targets)."
+    },
+    {
+     "flat": 6.0,
+     "name": "Keeper of the Book",
+     "text": "Once per battle, move the Grudge to any visible enemy unit."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Grudge-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Grudge-Thane Champion",
+   "slot": 2,
+   "abilities": [
+    {
+     "scope": "melee",
+     "uptime": 0.35,
+     "mods": {
+      "attacks_mod": 1,
+      "dmg_mod": 1
+     },
+     "name": "Settle the Score",
+     "text": "+1 Attack and +1 Damage against the Grudge."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Ancestor-staff",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Tomb-Priest",
+   "slot": 3,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Rites of Return",
+     "text": "Units within 6″ reanimate on a 3+ instead of 4+."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Ancestral Ward",
+     "text": "The attached unit has UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rune-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rune-Seer",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Master-Rune",
+     "text": "Once per battle, Command Phase: strike one rune for the army until the End of Round — +1 Attack · +1 PEN · WARD 5+ · +3″ MOV."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 4,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Throwing hammers",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Obsidian Hearth-Guard",
+   "slot": 5,
+   "abilities": [
+    {
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "uptime": 0.5,
+     "name": "Shield-Wall",
+     "text": "+1 ARM (to 3+ cap) against melee attacks."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Rune-gun",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rune-Gunner Line",
+   "slot": 6,
+   "abilities": [
+    {
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Measured Volleys",
+     "text": "+1 to Hit if this unit did not Move."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Magma-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Magma-Rune Hammerers",
+   "slot": 7,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "King's Guard",
+     "text": "An attached Leader's damage is taken by this unit on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Drake-fire pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Gromhammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Tomb-Warden Ironbreakers",
+   "slot": 8,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Unbreakable",
+     "text": "Enemies cannot re-roll Wound rolls against this unit."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Rune-gun",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Ember-Gun Thunderers",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Drilled Crews",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rotor-gun",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Rotor blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Obsidian Gyro-Wardens",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Bomb-Bay",
+     "text": "Once per round, a unit it moved over suffers D3 Fatal Wounds on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Mining charges",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ANTI-VEHICLE 4+]"
+     ]
+    },
+    {
+     "name": "Pick-axes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Tomb-Delvers",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Up from the Deep",
+     "text": "May arrive within 6″ of any table edge from Round 2 (no tunnels, no portals)."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 4,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Magma cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D3",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6",
+     "traits": [
+      "[ERADICATE 2]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Magma-Cannon Battery",
+   "slot": 12,
+   "abilities": [
+    {
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Anchored",
+     "text": "+1 to Hit if it did not Move."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Molten-gold spray",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Gold-forged fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Liquid-Gold Rune-Golem",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Reform",
+     "text": "Reanimation heals 3 MIGHT (instead of D3) for this unit."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Basalt fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Basalt Tomb-Sentinel",
+   "slot": 14,
+   "abilities": [
+    {
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "uptime": 0.5,
+     "name": "Living Stone",
+     "text": "+1 ARM (to 3+ cap) against PEN 0 and −1."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rune-gatling",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Gold-forged fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Ancestor-Engine",
+   "slot": 15,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Ancestral Core",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 18,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Magma cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Magma-spout",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Obsidian treads",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Magma-Crawler",
+   "slot": 16,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Rune-Sighted",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 13,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Obsidian treads",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Tomb-Barge",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Ancestor Vault",
+     "text": "Embarked units reanimate on a 3+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 13,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Organ-gun",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "3D6",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Obsidian treads",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rune-Organ Battery",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Rolling Volley",
+     "text": "Re-roll the number of attacks."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Magma-breath",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Magma-Wyrm Construct",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Obsidian Coils",
+     "text": "Reanimation heals 3 MIGHT for this unit."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 24,
+   "CTRL": 5,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Magma-ordnance",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Obsidian treads",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[TRANSPORT 10]"
+   ],
+   "name": "Obsidian Tomb-Fortress",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Ancestor Shrine",
+     "text": "Friendly units within 9″ reanimate on a 3+."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Immortal Shield-Wall",
+   "playstyle": "Slow, unbreakable infantry blocks around objectives.",
+   "rule": "Gromril Shield-Wall: enemies cannot re-roll Wound rolls against Obsidian Class 1–2 units; units within 3″ of an objective reanimate on a 3+.",
+   "enhancements": [
+    {
+     "name": "Ancestor's Shield",
+     "bearer": "High Thane of the Gate",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "ward": 5
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Ancestor's Shield",
+      "text": "The attached unit has WARD 5+."
+     },
+     "text": "The attached unit has WARD 5+."
+    },
+    {
+     "name": "Oath-Stone",
+     "bearer": "Obsidian Hearth-Guard",
+     "ability": {
+      "flat": 4.0,
+      "name": "Oath-Stone",
+      "text": "+1 CTRL per model and cannot be moved by enemy abilities."
+     },
+     "text": "+1 CTRL per model and cannot be moved by enemy abilities."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Lock Shields",
+     "cp": 1,
+     "when": "A unit is targeted",
+     "effect": "Incoming PEN −1 for the attack."
+    },
+    {
+     "name": "Stand of the Ancients",
+     "cp": 1,
+     "when": "A unit is charged",
+     "effect": "It is not Rattled and gets +1 to Hit on its Retaliation Strike."
+    },
+    {
+     "name": "Magma-Tunnel Relocation",
+     "cp": 1,
+     "when": "Command Phase, once per round",
+     "effect": "An unengaged unit within 6″ of a table edge is placed within 6″ of another point on the same table edge, >8″ from enemies."
+    }
+   ]
+  },
+  {
+   "name": "Grudge-Hunters",
+   "playstyle": "Thunderers and hammerers marching on the Grudge.",
+   "rule": "Book of Grudges: against the Grudge, Obsidian units re-roll all Wound rolls (not just 1s) and get +2″ MOV toward it.",
+   "enhancements": [
+    {
+     "name": "Grudge-Rune",
+     "bearer": "Grudge-Thane Champion",
+     "ability": {
+      "mods": {
+       "reroll_wound": "all"
+      },
+      "scope": "melee",
+      "uptime": 1.0,
+      "name": "Grudge-Rune",
+      "text": "Re-roll all melee Wound rolls."
+     },
+     "text": "Re-roll all melee Wound rolls."
+    },
+    {
+     "name": "Marked in Gold",
+     "bearer": "Rune-Seer",
+     "ability": {
+      "flat": 4.0,
+      "name": "Marked in Gold",
+      "text": "The Grudge cannot gain Cover."
+     },
+     "text": "The Grudge cannot gain Cover."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Unforgiven",
+     "cp": 1,
+     "when": "The Grudge is destroyed",
+     "effect": "Gain 1 CP and heal D3 MIGHT on the unit that destroyed it."
+    },
+    {
+     "name": "Grudge Volley",
+     "cp": 1,
+     "when": "A unit Shoots the Grudge",
+     "effect": "Its weapons gain [HAILFIRE 1]."
+    },
+    {
+     "name": "Write It Down",
+     "cp": 1,
+     "when": "An Obsidian unit is destroyed",
+     "effect": "The killer becomes the Grudge AND is Rattled."
+    }
+   ]
+  },
+  {
+   "name": "Rune-Forge",
+   "playstyle": "Golems, engines and master-runes for one decisive round.",
+   "rule": "Forge-Runes: Class 3–5 Obsidian units reanimate on a 3+; the Master-Rune can be struck twice per battle (different runes).",
+   "enhancements": [
+    {
+     "name": "Anvil of Ages",
+     "bearer": "Tomb-Priest",
+     "ability": {
+      "flat": 5.0,
+      "name": "Anvil of Ages",
+      "text": "Once per round, heal D3 MIGHT on a Class 3–5 unit within 3″."
+     },
+     "text": "Once per round, heal D3 MIGHT on a Class 3–5 unit within 3″."
+    },
+    {
+     "name": "Rune of Fury",
+     "bearer": "Liquid-Gold Rune-Golem",
+     "ability": {
+      "mods": {
+       "attacks_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 1.0,
+      "name": "Rune of Fury",
+      "text": "+1 Attack in melee."
+     },
+     "text": "+1 Attack in melee."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Strike the Rune",
+     "cp": 1,
+     "when": "A unit activates",
+     "effect": "It gains one Master-Rune effect this activation."
+    },
+    {
+     "name": "Molten Flow",
+     "cp": 1,
+     "when": "A Class 3–5 unit is damaged",
+     "effect": "Heal 1 MIGHT."
+    },
+    {
+     "name": "Rune of Wrath",
+     "cp": 1,
+     "when": "A Class 3–5 unit is destroyed",
+     "effect": "Each enemy unit within 6″ suffers D3 Fatal Wounds on a 4+."
+    }
+   ]
+  }
+ ]
+}

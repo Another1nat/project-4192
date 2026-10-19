@@ -1,0 +1,42 @@
+{
+ "name": "Auric — Sunfall Spearhead (drop assault)",
+ "detachment": "Sunfall Spearhead",
+ "units": [
+  {
+   "unit": "Blade-Warden Champion",
+   "attached": true
+  },
+  {
+   "unit": "Sworn Lieutenant",
+   "attached": true
+  },
+  {
+   "unit": "Bastion Paladins",
+   "models": 3
+  },
+  {
+   "unit": "Sworn Vanguard",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Battle-Brothers",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Assault Brothers",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Marksmen",
+   "models": 2
+  },
+  {
+   "unit": "Eclipse Scouts",
+   "models": 3
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../factions/01_auric_solar_host.json"
+ ]
+}

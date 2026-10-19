@@ -1,0 +1,1354 @@
+{
+ "name": "The Aegis Knight-Houses",
+ "verb": "FACING",
+ "identity": "Feudal houses of steam-and-ion war-walkers with squire retainers. Few, huge models whose shields only face forward: the opponent wins by flanking, the knight player wins by turning to meet them and by the joust.",
+ "number": "04",
+ "template": "C_gunline_siege_arcane",
+ "status": "draft",
+ "learned_from": [
+  "40k knight-walker armies (big-model elite; Bondsman)",
+  "Gemini #1 Directional Ion-Shields, #3 Thunderous Joust, #4 Squire Bondsman",
+  "Front-arc only so counterplay is positioning, not dice"
+ ],
+ "risk_profile": "Medium. Gamble = durability dice: vent the reactor for stronger shields and attacks, risk D3 Fatal Wounds.",
+ "core_rule": {
+  "name": "Ion Bulwark & Thunderous Joust",
+  "text": "Class 3–5 units have WARD 5+ against ranged attacks from models whose bases are in their front 180° arc (mark the front of the base). Class 3–5 units that charged trigger Crushing Impact for 0 CP and their melee weapons gain [CRASHING] that activation."
+ },
+ "gamble": {
+  "name": "Vent the Reactor",
+  "text": "When a Class 3–5 unit activates: its front-arc WARD becomes 4+ and its weapons get +1 Attack until the End of Round. At the End of Round roll a D6: on 1–2 it suffers D3 Fatal Wounds.",
+  "risk_cost": "durability (dice)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.6,
+   "mods": {
+    "ward": 5
+   },
+   "classes": [
+    3,
+    4,
+    5
+   ],
+   "name": "Ion Bulwark",
+   "text": "WARD 5+ vs ranged, front arc only (~60% of shots)."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.5,
+   "mods": {
+    "wound_mod": 1
+   },
+   "classes": [
+    3,
+    4,
+    5
+   ],
+   "name": "Thunderous Joust",
+   "text": "[CRASHING] on the charge."
+  },
+  {
+   "scope": "all",
+   "uptime": 0.08,
+   "mods": {
+    "attacks_mod": 1
+   },
+   "classes": [
+    3,
+    4,
+    5
+   ],
+   "name": "Vent the Reactor",
+   "text": "Occasional +1 Attack."
+  }
+ ],
+ "units": [
+  {
+   "class": 4,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 5,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Thunder cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "High Baron in Exalted Knight",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Liege-Lord's Command",
+     "text": "Friendly units within 9″ get +1 to Hit with ranged weapons while targeting the unit this model shot this round."
+    },
+    {
+     "flat": 6.0,
+     "name": "Lord of the House",
+     "text": "+1 CP the first time this model destroys an enemy unit each battle."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 3,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Household greatsword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Herald-Seneschal",
+   "slot": 2,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "reroll_wound": "ones"
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Oath of the Household",
+     "text": "The attached unit re-rolls melee Wound rolls of 1."
+    },
+    {
+     "flat": 4.0,
+     "name": "Squire's Duty",
+     "text": "While within 6″ of a friendly Class 4–5 unit, the attached unit gets +1 CTRL per model."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Servo-wrench",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Sacristan Forge-Wright",
+   "slot": 3,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Field Repairs",
+     "text": "Once per round, heal D3 MIGHT on a friendly Class 3–5 unit within 3″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Squire carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Banner-Squire",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "House Standard",
+     "text": "Friendly Class 1–2 units within 6″ count +1 CTRL per unit when contesting objectives."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "all",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Rally to the Colours",
+     "text": "Friendly Class 1–2 units within 6″ re-roll Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Squire carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Feudal Squires",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Bondsmen",
+     "text": "+1 CTRL per model while within 6″ of a friendly Class 4–5 unit."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Battle rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Household Men-at-Arms",
+   "slot": 6,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 0.5,
+     "name": "Pike Wall",
+     "text": "Enemies get −1 to Hit this unit in melee on a round they charged."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 14,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Squire carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Steam-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Steam-Cavaliers",
+   "slot": 7,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Ride Down",
+     "text": "Triggers Crushing Impact for 0 CP when it charges."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Battle rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Bond-halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Bondsmen Halberdiers",
+   "slot": 8,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Intercept",
+     "text": "Once per round, when an enemy unit ends a Charge within 6″ of a friendly Class 4–5 unit, this unit may move 3″ to engage it."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Retainer Gun-Team",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Braced Tripods",
+     "text": "+1 to Hit if this unit did not Move this activation."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 3,
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sworn Huntsmen",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Mark the Quarry",
+     "text": "Once per round, a unit this unit hit loses Cover against the next friendly Class 4–5 attack."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 8,
+   "CTRL": 4,
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Chain-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Squire-Walker Strider",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Squire Bond",
+     "text": "While within 9″ of a friendly Class 4–5 Knight, +2″ MOV and +1 CTRL for both."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 8,
+   "CTRL": 4,
+   "weapons": [
+    {
+     "name": "Thermal lance",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6",
+     "traits": [
+      "[ERADICATE 2]"
+     ]
+    },
+    {
+     "name": "Strider claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Squire-Walker Thermal-Lancer",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Squire Bond",
+     "text": "While within 9″ of a friendly Class 4–5 Knight, +2″ MOV and +1 CTRL for both."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 8,
+   "CTRL": 4,
+   "weapons": [
+    {
+     "name": "Missile launcher",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Strider claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Squire-Walker Warden",
+   "slot": 13,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Sky-Hunter Optics",
+     "text": "Re-roll ranged Hit rolls of 1 (re-roll all against [FLY])."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 5,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Thunder cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Paladin-Class Knight",
+   "slot": 14,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Rapid Cycling",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 5,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Thunder-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "4",
+     "traits": []
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Gallant-Class Knight",
+   "slot": 15,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Glory Seeker",
+     "text": "+1 Attack in melee on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 5,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Thermal cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D3",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6",
+     "traits": [
+      "[ERADICATE 2]",
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Errant-Class Knight",
+   "slot": 16,
+   "abilities": [
+    {
+     "mods": {
+      "dmg_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Fusion Lance",
+     "text": "+1 Damage with the Thermal cannon within 12″."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 5,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Avenger rotary",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Gatling-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Reaper chain-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Warden-Class Knight",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Shield the Squires",
+     "text": "Friendly Class 1–2 units within 3″ claim Cover."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 13,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Siege howitzer",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Armoured stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Baronial Bombard",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "House Ordnance",
+     "text": "May target units visible to any friendly Class 3–5 Knight without −1 for [INDIRECT FIRE]."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 13,
+   "CTRL": 4,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Armoured stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Iron Destrier Carriage",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Squires Aboard",
+     "text": "Squires that disembark may still make a Charge this activation (no Move + Charge with the carriage itself)."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 24,
+   "CTRL": 6,
+   "HARDENED": true,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Volcano-ion cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Missile launcher",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Bastion-Class Siege-Lord",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Towering Bulwark",
+     "text": "Friendly Class 1–2 units within 3″ claim Cover; this model moves over Class 1–2 enemy models."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Noble Lance",
+   "playstyle": "Big knights, few retainers: win the duels and the joust.",
+   "rule": "Chivalric Code: before the battle pick 1 Oath (Slay the Warlord · Hold the Line · Lay Low the Tyrant [a Class 4–5 unit]). When it is fulfilled your army becomes Honoured: +1 CP each Command Phase and Class 4–5 units get UNYIELDING 6+.",
+   "enhancements": [
+    {
+     "name": "Mantle of the Liege",
+     "bearer": "High Baron in Exalted Knight",
+     "ability": {
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Mantle of the Liege",
+      "text": "The bearer has UNYIELDING 6+ from the start."
+     },
+     "text": "The bearer has UNYIELDING 6+ from the start."
+    },
+    {
+     "name": "Heirloom Lance",
+     "bearer": "Gallant-Class Knight",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Heirloom Lance",
+      "text": "+1 Damage in melee on a round it charged."
+     },
+     "text": "+1 Damage in melee on a round it charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Rotate Ion-Shields",
+     "cp": 1,
+     "when": "An enemy unit is selected to Shoot a Class 3–5 unit",
+     "effect": "Treat the attacker as in the front arc for this attack."
+    },
+    {
+     "name": "Trophy Kill",
+     "cp": 1,
+     "when": "A Class 4–5 unit destroys an enemy Leader",
+     "effect": "Fulfil any Oath that targets Leaders; heal D3 MIGHT."
+    },
+    {
+     "name": "Knightly Challenge",
+     "cp": 1,
+     "when": "A Class 4–5 unit is selected to Fight",
+     "effect": "Choose one enemy model: all its attacks target that model (precision)."
+    }
+   ]
+  },
+  {
+   "name": "Squire Hunt",
+   "playstyle": "Packs of squire-walkers bonded to a parent knight.",
+   "rule": "Bondsman Hunt: Squire-Walkers within 9″ of a Knight they are Bonded to (pick at deployment, up to 2 per Knight) get +1 to Hit against the last enemy unit that Knight attacked.",
+   "enhancements": [
+    {
+     "name": "Huntmaster's Horn",
+     "bearer": "Paladin-Class Knight",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "hit_mod": 1
+      },
+      "scope": "ranged",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Huntmaster's Horn",
+      "text": "Bonded Squire-Walkers within 9″ get +1 to Hit with ranged weapons."
+     },
+     "text": "Bonded Squire-Walkers within 9″ get +1 to Hit with ranged weapons."
+    },
+    {
+     "name": "Fleet-Footed Strider",
+     "bearer": "Squire-Walker Strider",
+     "ability": {
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Fleet-Footed Strider",
+      "text": "+2″ MOV."
+     },
+     "text": "+2″ MOV."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Pincer Strike",
+     "cp": 1,
+     "when": "Two Squire-Walkers attack the same target this round",
+     "effect": "The second gets +1 PEN."
+    },
+    {
+     "name": "Flushed from Cover",
+     "cp": 1,
+     "when": "A Squire-Walker hits an enemy unit in Cover",
+     "effect": "That unit loses Cover until the End of Round."
+    },
+    {
+     "name": "Covering Advance",
+     "cp": 1,
+     "when": "A Squire-Walker activates",
+     "effect": "It may make a 3″ move after shooting."
+    }
+   ]
+  },
+  {
+   "name": "Feudal Muster",
+   "playstyle": "The whole household marches: retainers screen the knights.",
+   "rule": "Towering Bulwark: friendly Class 1–2 units within 3″ of a Class 4–5 Knight claim Cover; Knights may move over Class 1–2 enemy models.",
+   "enhancements": [
+    {
+     "name": "Banner of the House",
+     "bearer": "Banner-Squire",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "save_mod": 1
+      },
+      "scope": "defense",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Banner of the House",
+      "text": "Friendly Class 1–2 units within 6″ get +1 ARM (to 3+ cap)."
+     },
+     "text": "Friendly Class 1–2 units within 6″ get +1 ARM (to 3+ cap)."
+    },
+    {
+     "name": "Veteran Sergeant-at-Arms",
+     "bearer": "Herald-Seneschal",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "hit_mod": 1
+      },
+      "scope": "ranged",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Veteran Sergeant-at-Arms",
+      "text": "The attached unit gets +1 to Hit with ranged weapons."
+     },
+     "text": "The attached unit gets +1 to Hit with ranged weapons."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Hold the Line, Squires!",
+     "cp": 1,
+     "when": "A Class 1–2 unit is charged",
+     "effect": "It is not Rattled and its Retaliation Strike gets +1 to Wound."
+    },
+    {
+     "name": "Close the Gap",
+     "cp": 1,
+     "when": "A Class 1–2 unit is destroyed within 6″ of a Knight",
+     "effect": "That Knight may make a 3″ move."
+    },
+    {
+     "name": "Muster Call",
+     "cp": 2,
+     "when": "Command Phase, once per battle",
+     "effect": "Return a destroyed Feudal Squires unit at half strength within 6″ of your table edge."
+    }
+   ]
+  }
+ ]
+}

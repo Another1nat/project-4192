@@ -1,0 +1,47 @@
+{
+ "name": "The Obsidian Forge-Tombs — verifier sample",
+ "detachment": "Immortal Shield-Wall",
+ "units": [
+  {
+   "unit": "High Thane of the Gate",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Obsidian Hearth-Guard",
+   "models": 5
+  },
+  {
+   "unit": "Rune-Gunner Line",
+   "models": 5
+  },
+  {
+   "unit": "Magma-Cannon Battery",
+   "models": 2
+  },
+  {
+   "unit": "Tomb-Delvers",
+   "models": 3
+  },
+  {
+   "unit": "Tomb-Barge",
+   "models": 1
+  },
+  {
+   "unit": "Liquid-Gold Rune-Golem",
+   "models": 1
+  },
+  {
+   "unit": "Obsidian Gyro-Wardens",
+   "models": 3
+  },
+  {
+   "unit": "Ember-Gun Thunderers",
+   "models": 5
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/18_obsidian_forge_tombs.json"
+ ]
+}

@@ -1,0 +1,1270 @@
+{
+ "name": "The Astral Shadow-Clans",
+ "verb": "AGONY",
+ "identity": "Dark-tech raider clans and cyber-ronin swordsmen on blade-skiffs. Glass cannons that grow stronger as the battle bleeds: every enemy unit they destroy adds Agony they spend to empower their next strike.",
+ "number": "20",
+ "template": "A_combined_arms",
+ "status": "draft",
+ "learned_from": [
+  "40k dark-raider elves pain tokens (loved: snowball through kills, tokens are yours, not on enemies) — renamed Agony Harvest",
+  "Gemini #1 pain, #2 venom weapons, #3 skiff strikes (re-embark removed: too slippery), #5 single-leader veil (renamed, enhancement only)",
+  "User: no portals — Gemini's portal strikes cut"
+ ],
+ "risk_profile": "Resource. Gamble = all-in: spend the whole Agony bank on one assassination.",
+ "core_rule": {
+  "name": "Agony Harvest",
+  "text": "Start the battle with 2 Agony (max 4). Gain 1 each time an enemy unit is destroyed. When a unit activates, spend 1 Agony to Empower it until the end of the activation: re-roll Hit rolls, +1 PEN in melee and +2″ to Charge rolls. Agony is your own resource; it is never placed on enemy units."
+ },
+ "gamble": {
+  "name": "All-In Assassination",
+  "text": "Once per battle, spend ALL Agony (minimum 2) when a unit activates: its weapons gain [PRECISION] and [SHREDDING WOUNDS] this activation; you cannot gain Agony again until the End of Round.",
+  "risk_cost": "resource"
+ },
+ "faction_abilities": [
+  {
+   "scope": "all",
+   "uptime": 0.2,
+   "mods": {
+    "reroll_hit": "all"
+   },
+   "name": "Agony: Empower",
+   "text": "About 1 activation in 5."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.2,
+   "mods": {
+    "pen_mod": 1
+   },
+   "name": "Agony: Edge",
+   "text": "+1 PEN melee when empowered."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Blast-pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-3",
+     "D": "2",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Void-katana",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Master of the Astral Edge",
+   "slot": 1,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Lord of Agony",
+     "text": "Gain 1 Agony when this model destroys an enemy model (max once per round)."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Blade-Masters",
+     "text": "The attached unit gets +1 Attack in melee."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 0,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Splinter pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Monomolecular nodachi",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Cyber-Ronin Sword-Saint",
+   "slot": 2,
+   "abilities": [
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Iaijutsu",
+     "text": "[STRIKE FIRST]."
+    },
+    {
+     "scope": "melee",
+     "uptime": 1.0,
+     "mods": {
+      "crit_hit_on": 5,
+      "lethal": true
+     },
+     "name": "Perfect Cut",
+     "text": "Melee [PRECISION]; crits on 5+ auto-wound."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Venom injector",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[IMPALING HITS]"
+     ]
+    },
+    {
+     "name": "Monomolecular katana",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Flesh-Sculptor",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 5
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Grafted Resilience",
+     "text": "The attached unit has UNYIELDING 5+."
+    },
+    {
+     "flat": 4.0,
+     "name": "Harvest",
+     "text": "When the attached unit destroys an enemy unit, gain 1 extra Agony (max 4)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Splinter pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Shadow-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ],
+   "name": "Void-Veil Assassin",
+   "slot": 4,
+   "abilities": [
+    {
+     "utility": "FALL BACK AND ACT",
+     "name": "Fade",
+     "text": "May Fall Back and still Shoot or Charge."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Splinter rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[IMPALING HITS]",
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Shadow-Kabar Raiders",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Raid Strike",
+     "text": "Units that disembarked this round get +1 to Wound."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Hydra-gauntlets",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Arena-Blade Cultists",
+   "slot": 6,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Arena Dodge",
+     "text": "Enemies get −1 to Hit them in melee."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Monomolecular katana",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Cyber-Ronin Duelists",
+   "slot": 7,
+   "abilities": [
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Blade Discipline",
+     "text": "[STRIKE FIRST] on a round they charged."
+    },
+    {
+     "mods": {
+      "crit_hit_on": 5,
+      "lethal": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Killing Edge",
+     "text": "Melee Hit rolls of 5+ auto-wound."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "keywords": [
+    "[INFILTRATORS]",
+    "[SCOUTS 6\"]",
+    "[UNSEEN 12\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Shadow-fire",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Monomolecular katana",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Umbral Stalkers",
+   "slot": 8,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Shadow-Step",
+     "text": "After it Fights, it may make a 3″ move."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 14,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Splinter pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Bladed vanes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Sky-Board Reavers",
+   "slot": 9,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Eviscerating Fly-By",
+     "text": "When it moves over an enemy unit, roll a D6 per Reaver: each 4+ is 1 Fatal Wound (max 1 unit per activation)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Void-Wing Scourges",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Strike and Soar",
+     "text": "After it Shoots, it may make a 3″ move."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 5,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Flesh-gauntlets",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Pain-Sculpted Brutes",
+   "slot": 11,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 5
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Sculpted Flesh",
+     "text": "UNYIELDING 5+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 0,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Splinter pistols",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Klaive-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Ronin Iron-Wardens",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Bodyguard Oath",
+     "text": "An attached Leader's damage is taken by this unit on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Void-Lance Team",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Grav-Platform",
+     "text": "May Shoot after a Move without penalty."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 14,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 5,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bladed hull",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]",
+    "[TRANSPORT 6]"
+   ],
+   "name": "Bladed Sky-Skiff",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Skysplinter Assault",
+     "text": "Units that disembark from it get +1 to Wound and [CRASHING] that round."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 7,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Agony-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Surgical blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Agony-Engine Construct",
+   "slot": 15,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Sculpted Engine",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 14,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 14,
+   "CTRL": 2,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Void-Ravager Gunship",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Hit and Fade",
+     "text": "After it Shoots, it may make a 3″ move."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 14,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 11,
+   "CTRL": 1,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 3]",
+    "[FLY]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Splinter-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Bladed keel",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Shadow-Barge",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Raider Deck",
+     "text": "Units may disembark after it moved and still Charge."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 13,
+   "CTRL": 2,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Flesh-scythes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "8",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Agony-Colossus",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Feeds on Pain",
+     "text": "Gain 1 Agony the first time it destroys an enemy unit each round."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 16,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 11,
+   "CTRL": 0,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Void-bombs",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Splinter-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Void-Bomber",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Bombing Run",
+     "text": "Its bombs target a unit it moved over this activation (range: the unit it passed)."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth (flyer)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 16,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 18,
+   "CTRL": 0,
+   "HARDENED": true,
+   "keywords": [
+    "[FLY]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Void-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Splinter-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Splinter-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    }
+   ],
+   "name": "Umbral Dread-Cruiser",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Pain-Amplifier",
+     "text": "While on the battlefield, Agony maximum is 5."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Skysplinter Raiders",
+   "playstyle": "Skiffs and barges deliver strike teams, then fly on.",
+   "rule": "Skysplinter Assault: units that disembarked this round get +1 to Wound and [CRASHING].",
+   "enhancements": [
+    {
+     "name": "Umbral Veil",
+     "bearer": "Master of the Astral Edge",
+     "ability": {
+      "mods": {
+       "ward": 3
+      },
+      "scope": "defense",
+      "uptime": 0.5,
+      "name": "Umbral Veil",
+      "text": "WARD 3+ until the first time a WARD roll of 1 is made, then no WARD."
+     },
+     "text": "WARD 3+ until the first time a WARD roll of 1 is made, then no WARD."
+    },
+    {
+     "name": "Agony-Tap",
+     "bearer": "Flesh-Sculptor",
+     "ability": {
+      "flat": 4.0,
+      "name": "Agony-Tap",
+      "text": "Start the battle with 3 Agony."
+     },
+     "text": "Start the battle with 3 Agony."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Lightning Raid",
+     "cp": 1,
+     "when": "A transport moves",
+     "effect": "Embarked units may disembark after its move and still Charge."
+    },
+    {
+     "name": "Splinter Storm",
+     "cp": 1,
+     "when": "A unit Shoots",
+     "effect": "Weapons gain [ANTI-INFANTRY 3+]."
+    },
+    {
+     "name": "Skiff Dive",
+     "cp": 1,
+     "when": "A [FLY] unit is targeted",
+     "effect": "−1 to Hit."
+    }
+   ]
+  },
+  {
+   "name": "Cyber-Ronin",
+   "playstyle": "Sword-saints and duelists in the open, no transports.",
+   "rule": "Way of the Blade: melee weapons gain [STRIKE FIRST] on a round the unit charged; units that spend Agony also gain [PRECISION].",
+   "enhancements": [
+    {
+     "name": "Ancestral Blade",
+     "bearer": "Cyber-Ronin Sword-Saint",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Ancestral Blade",
+      "text": "+1 Damage in melee on a round he charged."
+     },
+     "text": "+1 Damage in melee on a round he charged."
+    },
+    {
+     "name": "Duelist's Discipline",
+     "bearer": "Cyber-Ronin Duelists",
+     "ability": {
+      "mods": {
+       "incoming_hit_mod_melee": -1
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Duelist's Discipline",
+      "text": "Enemies get −1 to Hit them in melee."
+     },
+     "text": "Enemies get −1 to Hit them in melee."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Draw and Cut",
+     "cp": 1,
+     "when": "A unit is charged",
+     "effect": "Its Retaliation Strike resolves before the charger fights."
+    },
+    {
+     "name": "Kensei",
+     "cp": 1,
+     "when": "A unit destroys an enemy Leader",
+     "effect": "Gain 2 Agony."
+    },
+    {
+     "name": "Bladestorm",
+     "cp": 1,
+     "when": "A unit is selected to Fight",
+     "effect": "Its melee weapons gain [REAPING 1]."
+    }
+   ]
+  },
+  {
+   "name": "Venom Cabal",
+   "playstyle": "Poison gunlines and flesh-sculptors.",
+   "rule": "Venom: ranged weapons with [IMPALING HITS] also gain [ANTI-INFANTRY 4+]; Flesh-Sculptors heal D3 MIGHT on the attached unit at the End of Round.",
+   "enhancements": [
+    {
+     "name": "Elixir of Agony",
+     "bearer": "Flesh-Sculptor",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "wound_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.5,
+      "name": "Elixir of Agony",
+      "text": "Friendly units within 6″ get +1 to Wound in melee on a round they charged."
+     },
+     "text": "Friendly units within 6″ get +1 to Wound in melee on a round they charged."
+    },
+    {
+     "name": "Hex-Venom Rounds",
+     "bearer": "Shadow-Kabar Raiders",
+     "ability": {
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "ranged",
+      "uptime": 1.0,
+      "name": "Hex-Venom Rounds",
+      "text": "+1 PEN with ranged weapons."
+     },
+     "text": "+1 PEN with ranged weapons."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Toxin Cloud",
+     "cp": 1,
+     "when": "A unit Shoots",
+     "effect": "Units hit suffer −1″ MOV until the End of Round."
+    },
+    {
+     "name": "Pain-Fuelled",
+     "cp": 1,
+     "when": "An Agony is spent",
+     "effect": "Heal 1 MIGHT on the empowered unit."
+    },
+    {
+     "name": "Lethal Dose",
+     "cp": 1,
+     "when": "A unit targets a Class 1 unit",
+     "effect": "Re-roll Wound rolls."
+    }
+   ]
+  }
+ ]
+}

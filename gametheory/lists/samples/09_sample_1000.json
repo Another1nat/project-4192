@@ -1,0 +1,51 @@
+{
+ "name": "The Frost-Skaer Blood-Raiders — verifier sample",
+ "detachment": "Saga of the Hunt",
+ "units": [
+  {
+   "unit": "Jarl Saga-Lord",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Blood-Skaer Raiders",
+   "models": 5
+  },
+  {
+   "unit": "Shield-Wall Huscarls",
+   "models": 5
+  },
+  {
+   "unit": "Harpoon-Ballista Crew",
+   "models": 2
+  },
+  {
+   "unit": "Long-Bow Skirmishers",
+   "models": 3
+  },
+  {
+   "unit": "Longship Ice-Sled",
+   "models": 1
+  },
+  {
+   "unit": "Ice-Troll",
+   "models": 1
+  },
+  {
+   "unit": "Frost-Bear Riders",
+   "models": 3
+  },
+  {
+   "unit": "Raven-Winged Seers",
+   "models": 3
+  },
+  {
+   "unit": "Hearth-Wardens",
+   "models": 3
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/09_frost_skaer_blood_raiders.json"
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "name": "Rift-Stalker — Trench horde (chassis only)",
+ "size": "standard",
+ "sources": [
+  "../catalogue/unit_archetypes.json"
+ ],
+ "units": [
+  {
+   "unit": "c1_leader",
+   "attached": true
+  },
+  {
+   "unit": "c1_leader",
+   "attached": true
+  },
+  {
+   "unit": "c1_conscripts",
+   "models": 10
+  },
+  {
+   "unit": "c1_conscripts",
+   "models": 10
+  },
+  {
+   "unit": "c1_line",
+   "models": 5
+  },
+  {
+   "unit": "c1_line",
+   "models": 5
+  },
+  {
+   "unit": "c1_snipers",
+   "models": 2
+  },
+  {
+   "unit": "c2_weapon_team",
+   "models": 2
+  },
+  {
+   "unit": "c2_weapon_team",
+   "models": 2
+  },
+  {
+   "unit": "c3_weapon_platform"
+  },
+  {
+   "unit": "c4_battle_tank"
+  },
+  {
+   "unit": "c1_skirmishers",
+   "models": 3
+  }
+ ]
+}

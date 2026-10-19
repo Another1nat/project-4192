@@ -1,0 +1,1220 @@
+{
+ "name": "The Black-Bile Congregation",
+ "verb": "CORRODE",
+ "identity": "Bloated plague-knights, shambling pox-carriers and rot-engines. Slow and very hard to kill; an armour-rotting aura grows each round (3″ → 6″ → 9″), so the longer the battle goes, the worse it is to stand near them.",
+ "number": "12",
+ "template": "D_swarm_monster_speed",
+ "status": "draft",
+ "learned_from": [
+  "40k plague legions Contagion Range 3″→9″ and infected objectives (research 2026-10)",
+  "Gemini #1 Rust & Rot (no tokens), #2 resilience capped at UNYIELDING 5+ (army-wide cap), #4 Infected Ground"
+ ],
+ "risk_profile": "Low (aura). Gamble = permanent durability: rupture the blight-sacs and lose UNYIELDING for good.",
+ "core_rule": {
+  "name": "Aura of Rust & Rot · Bloated Resilience",
+  "text": "Enemy units within Contagion Range of any Black-Bile unit have −1 ARM (not cumulative). Contagion Range: 3″ in Round 1, 6″ in Round 2, 9″ from Round 3. Black-Bile units (except [EXPENDABLE] ones) have UNYIELDING 5+."
+ },
+ "gamble": {
+  "name": "Rupture the Blight-Sacs",
+  "text": "When a unit activates: each enemy unit within 3″ suffers D3 Fatal Wounds on a 4+. That Black-Bile unit loses UNYIELDING for the rest of the battle.",
+  "risk_cost": "durability (permanent)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "all",
+   "uptime": 0.4,
+   "mods": {
+    "pen_mod": 1
+   },
+   "name": "Aura of Rust & Rot",
+   "text": "Enemies nearby −1 ARM (≈ +1 PEN while in range)."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.95,
+   "mods": {
+    "unyielding": 5
+   },
+   "exclude": [
+    "Pox-Carriers",
+    "Pox-Mites"
+   ],
+   "name": "Bloated Resilience",
+   "text": "UNYIELDING 5+."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Manreaper scythe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Lord of Black Bile",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "reroll_wound": "ones"
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Lord of Decay",
+     "text": "The attached unit re-rolls melee Wound rolls of 1."
+    },
+    {
+     "flat": 6.0,
+     "name": "Spreading Rot",
+     "text": "Contagion Range from this model is +3″."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Rot-maul",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Rot-Herald Champion",
+   "slot": 2,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Herald of Pestilence",
+     "text": "The attached unit gets +1 to Hit in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Bone-saw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Pox-Physician",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Grotesque Surgery",
+     "text": "The attached unit ignores damage on 5+ instead of 6+ (UNYIELDING improves by 1, max 5+)."
+    },
+    {
+     "flat": 5.0,
+     "name": "Stitch the Bloat",
+     "text": "Once per round, heal D3 MIGHT on a friendly unit within 3″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Pox-curse",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Plague-knife",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Miasmic Hexer",
+   "slot": 4,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Miasma",
+     "text": "Friendly units within 6″ count as [STEALTH] against attacks from more than 12″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rotting hands",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]"
+   ],
+   "name": "Pox-Carriers",
+   "slot": 5,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Shamblers",
+     "text": "UNYIELDING 6+ (instead of Bloated Resilience)."
+    },
+    {
+     "flat": 3.0,
+     "name": "Join the Host",
+     "text": "Once per round, when an enemy Class 1 model is destroyed within 3″, return 1 slain model to this unit."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Blight-bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Rusted cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Blight-Knights",
+   "slot": 6,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Infected Ground",
+     "text": "Objectives this unit controls stay controlled ([SECURED])."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 4,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Blight-combi",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Bubotic axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Blight-Lord Plate-Knights",
+   "slot": 7,
+   "abilities": [
+    {
+     "mods": {
+      "crit_hit_on": 5,
+      "lethal": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Bubotic Weapons",
+     "text": "Melee Hit rolls of 5+ are critical and auto-wound ([IMPALING HITS])."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Bile-spewer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Rusted cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Blight-Spewer Squad",
+   "slot": 8,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Clouds of Filth",
+     "text": "Units hit by this unit are within Contagion Range until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rot-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Death-Blister Brethren",
+   "slot": 9,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Spreaders of Filth",
+     "text": "Each model of this unit destroyed in melee: the attacking unit suffers 1 Fatal Wound on a 5+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rotting hands",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]"
+   ],
+   "name": "Pox-Mites",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Underfoot",
+     "text": "Enemy units within 1″ of this unit cannot Fall Back unless they pass a D6 roll of 3+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bile-spitter",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Plague-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Bloat-Fly Riders",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Droning Swarm",
+     "text": "Enemy units within 6″ suffer −1″ to Charge rolls."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 4,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bloated fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Bile-Ogres",
+   "slot": 12,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Splitting Seams",
+     "text": "+1 Attack in melee while damaged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 4,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bile-mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Bile-Mortar Team",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Pestilent Shells",
+     "text": "Units hit are within Contagion Range until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Bile-cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Grinding jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Blight-Hauler Engine",
+   "slot": 14,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 0.3,
+     "name": "Rotting Engine",
+     "text": "UNYIELDING improves to 5+ while within 6″ of another Blight-Hauler."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 7,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Plaguespitters",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Foetid Bloat-Drone",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Foul Downdraft",
+     "text": "Units within 3″ of it at the end of its move suffer 1 Fatal Wound on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 18,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Battle cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Bile-spewer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Grinding tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Necrotic Siege-Crawler",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Rust-Fumes",
+     "text": "Contagion Range from this unit is +3″."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 6,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rot-mortar",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Grinding tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Blight-Furnace Bell-Tank",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 7.0,
+     "name": "Corrupting Smog",
+     "text": "Enemy units within 6″ suffer −1 to WARD and UNYIELDING rolls."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Grinding tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Bile-Hauler Transport",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Seeping Hull",
+     "text": "Embarked units count as within Contagion Range sources."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Bloated Rot-Behemoth",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Spew",
+     "text": "Once per round, D3 Fatal Wounds on a 3+ to a unit within 6″."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 20,
+   "CTRL": 6,
+   "HARDENED": true,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Pestilence cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Bile-geysers",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Great Unclean Engine",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Rot-Bells",
+     "text": "Contagion Range from this model is 9″ from Round 1."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Infected Ground",
+   "playstyle": "Take objectives, rot them, walk on.",
+   "rule": "Corrupted Objectives: objectives you control are [SECURED] and emit a 3″ Contagion aura (−1 ARM) until an enemy controls them.",
+   "enhancements": [
+    {
+     "name": "Censer of Rot",
+     "bearer": "Lord of Black Bile",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Censer of Rot",
+      "text": "The attached unit has UNYIELDING 5+ even if ruptured."
+     },
+     "text": "The attached unit has UNYIELDING 5+ even if ruptured."
+    },
+    {
+     "name": "Pox-Banner",
+     "bearer": "Blight-Knights",
+     "ability": {
+      "flat": 4.0,
+      "name": "Pox-Banner",
+      "text": "+1 CTRL per model."
+     },
+     "text": "+1 CTRL per model."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Fester",
+     "cp": 1,
+     "when": "End of Round",
+     "effect": "An enemy unit within 3″ of a corrupted objective suffers D3 Fatal Wounds on a 4+."
+    },
+    {
+     "name": "Rot from Within",
+     "cp": 1,
+     "when": "An enemy unit takes an objective you corrupted",
+     "effect": "It is Rattled."
+    },
+    {
+     "name": "Seep",
+     "cp": 1,
+     "when": "Command Phase",
+     "effect": "Contagion Range is +3″ this round (max 9″)."
+    }
+   ]
+  },
+  {
+   "name": "Death-Blister Brotherhood",
+   "playstyle": "Melee hordes that punish anything that fights them.",
+   "rule": "Spreaders of Filth: every Black-Bile model destroyed in melee inflicts 1 Fatal Wound on the attacking unit on a 5+.",
+   "enhancements": [
+    {
+     "name": "Blister-Mantle",
+     "bearer": "Rot-Herald Champion",
+     "ability": {
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Blister-Mantle",
+      "text": "UNYIELDING 5+."
+     },
+     "text": "UNYIELDING 5+."
+    },
+    {
+     "name": "Plague-Bell",
+     "bearer": "Pox-Physician",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "attacks_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Plague-Bell",
+      "text": "Friendly Class 1 units within 6″ get +1 Attack in melee on a round they charged."
+     },
+     "text": "Friendly Class 1 units within 6″ get +1 Attack in melee on a round they charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Burst Open",
+     "cp": 1,
+     "when": "A unit is destroyed in melee",
+     "effect": "Every enemy unit within 3″ suffers D3 Fatal Wounds on a 4+."
+    },
+    {
+     "name": "Shambling Tide",
+     "cp": 1,
+     "when": "A Class 1 unit declares a Charge",
+     "effect": "+2″ to the roll."
+    },
+    {
+     "name": "Endless Pox",
+     "cp": 2,
+     "when": "Command Phase, once per battle",
+     "effect": "Return a destroyed Pox-Carriers unit at half strength within 6″ of your table edge."
+    }
+   ]
+  },
+  {
+   "name": "Smog Engines",
+   "playstyle": "Daemon-engines and drones behind a curtain of filth.",
+   "rule": "Smog and Smoke: friendly Class 1–2 units within 9″ of a Black-Bile Class 3–5 unit are [STEALTH] against attacks from more than 12″.",
+   "enhancements": [
+    {
+     "name": "Daemon-Furnace",
+     "bearer": "Blight-Furnace Bell-Tank",
+     "ability": {
+      "flat": 5.0,
+      "name": "Daemon-Furnace",
+      "text": "Corrupting Smog range 9″."
+     },
+     "text": "Corrupting Smog range 9″."
+    },
+    {
+     "name": "Rot-Crew",
+     "bearer": "Necrotic Siege-Crawler",
+     "ability": {
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Rot-Crew",
+      "text": "UNYIELDING improves by 1 (5+)."
+     },
+     "text": "UNYIELDING improves by 1 (5+)."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Choking Clouds",
+     "cp": 1,
+     "when": "An enemy unit within 9″ of a Class 3–5 unit Shoots",
+     "effect": "−1 to Hit."
+    },
+    {
+     "name": "Grinding Advance",
+     "cp": 1,
+     "when": "A Class 3–5 unit activates",
+     "effect": "+2″ MOV."
+    },
+    {
+     "name": "Rusted Ram",
+     "cp": 1,
+     "when": "A Class 4 unit ends a Charge",
+     "effect": "Crushing Impact for 0 CP."
+    }
+   ]
+  }
+ ]
+}

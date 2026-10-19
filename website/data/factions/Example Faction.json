@@ -1,0 +1,271 @@
+{
+ "name": "Example Faction",
+ "factionKeyword": "Example Faction",
+ "sources": [
+  "Example data — replace with your own"
+ ],
+ "rules": [
+  {
+   "name": "Faction Rule",
+   "description": "Describe the faction's army rule here. **Bold words** become keywords."
+  }
+ ],
+ "detachments": [
+  {
+   "id": "ex-det-1",
+   "name": "Example Detachment",
+   "cost": 1,
+   "rules": [
+    {
+     "id": "ex-det-1-r1",
+     "name": "Detachment Rule",
+     "description": "What this detachment does."
+    }
+   ],
+   "enhancements": [
+    {
+     "id": "ex-enh-1",
+     "name": "Example Enhancement",
+     "cost": 15,
+     "description": "**CHARACTER** model only. What it does."
+    }
+   ],
+   "stratagems": [
+    {
+     "id": "ex-str-1",
+     "name": "Example Tactic",
+     "cost": "1",
+     "category": null,
+     "when": "yourTurn",
+     "turn": "Your Shooting phase.",
+     "target": "One unit from your army.",
+     "effect": "What happens.",
+     "restriction": "",
+     "lore": ""
+    }
+   ]
+  }
+ ],
+ "datasheets": [
+  {
+   "id": "ex-leader",
+   "name": "Example Commander",
+   "composition": "■ **1 Example Commander**",
+   "lore": "",
+   "stats": {
+    "M": "6\"",
+    "T": "4",
+    "Sv": "3+",
+    "W": "5",
+    "Ld": "6+",
+    "OC": "1"
+   },
+   "invuln": "4+",
+   "keywords": [
+    "Infantry",
+    "Character",
+    "Example Commander"
+   ],
+   "factionKeywords": [
+    "Example Faction"
+   ],
+   "abilities": [
+    {
+     "name": "Leader",
+     "description": "This model can be attached to an **Example Squad**.",
+     "type": "datasheet"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Sidearm",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "BS": "3+",
+     "S": "4",
+     "AP": "-1",
+     "D": "1",
+     "keywords": [
+      "Pistol"
+     ],
+     "models": [
+      "Example Commander"
+     ]
+    },
+    {
+     "name": "Blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "BS": "3+",
+     "S": "4",
+     "AP": "-2",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Example Commander"
+     ]
+    }
+   ],
+   "points": 70,
+   "pointsSource": "",
+   "role": "Character",
+   "ledBy": [],
+   "leads": [
+    {
+     "type": "leader",
+     "units": [
+      "Example Squad"
+     ]
+    }
+   ],
+   "models": [
+    {
+     "name": "Example Commander",
+     "M": "6\"",
+     "T": "4",
+     "Sv": "3+",
+     "W": "5",
+     "Ld": "6+",
+     "OC": "1",
+     "equipped": [
+      {
+       "item": "Sidearm",
+       "count": 1
+      },
+      {
+       "item": "Blade",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "compositions": [
+    {
+     "default": true,
+     "points": 70,
+     "models": [
+      {
+       "name": "Example Commander",
+       "min": 1,
+       "max": 1
+      }
+     ]
+    }
+   ],
+   "options": [],
+   "faq": []
+  },
+  {
+   "id": "ex-squad",
+   "name": "Example Squad",
+   "composition": "■ **5-10 Example Troopers**",
+   "lore": "",
+   "stats": {
+    "M": "6\"",
+    "T": "4",
+    "Sv": "4+",
+    "W": "1",
+    "Ld": "7+",
+    "OC": "2"
+   },
+   "invuln": "-",
+   "keywords": [
+    "Infantry",
+    "Battleline",
+    "Example Squad"
+   ],
+   "factionKeywords": [
+    "Example Faction"
+   ],
+   "abilities": [],
+   "weapons": [
+    {
+     "name": "Rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "BS": "4+",
+     "S": "4",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Example Trooper"
+     ]
+    },
+    {
+     "name": "Close combat weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "BS": "4+",
+     "S": "3",
+     "AP": "0",
+     "D": "1",
+     "keywords": [],
+     "models": [
+      "Example Trooper"
+     ]
+    }
+   ],
+   "points": 60,
+   "pointsSource": "",
+   "role": "Battleline",
+   "ledBy": [
+    "Example Commander"
+   ],
+   "models": [
+    {
+     "name": "Example Trooper",
+     "M": "6\"",
+     "T": "4",
+     "Sv": "4+",
+     "W": "1",
+     "Ld": "7+",
+     "OC": "2",
+     "equipped": [
+      {
+       "item": "Rifle",
+       "count": 1
+      },
+      {
+       "item": "Close combat weapon",
+       "count": 1
+      }
+     ],
+     "optional": []
+    }
+   ],
+   "compositions": [
+    {
+     "default": true,
+     "points": 60,
+     "models": [
+      {
+       "name": "Example Trooper",
+       "min": 5,
+       "max": 5
+      }
+     ]
+    },
+    {
+     "default": true,
+     "points": 120,
+     "models": [
+      {
+       "name": "Example Trooper",
+       "min": 6,
+       "max": 10
+      }
+     ]
+    }
+   ],
+   "options": [],
+   "faq": []
+  }
+ ],
+ "faq": []
+}

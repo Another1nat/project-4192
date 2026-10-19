@@ -1,0 +1,1404 @@
+{
+ "name": "The Sun-Pyre Witch-Courts",
+ "verb": "FAITH",
+ "identity": "Zealot witch-hunters, warrior-sisters and self-scourging penitents. Fragile bodies, burning weapons, and a bank of Pyre-Dice that turns one roll per activation into a miracle.",
+ "number": "03",
+ "template": "A_combined_arms",
+ "status": "draft",
+ "learned_from": [
+  "40k battle-sister armies Miracle Dice (loved; capped bank fixes the 2022 complaints)",
+  "Gemini idea #1 & #2 (Pyre-Dice, Blood of Martyrs)"
+ ],
+ "risk_profile": "Low by default (dice bank). Gamble = resource: empty the whole bank for one huge activation.",
+ "core_rule": {
+  "name": "Pyre-Dice",
+  "text": "Command Phase: roll 1 D6 and bank it as a Pyre-Die (keep the result). Also bank 1 when a friendly unit is destroyed. Maximum 3 banked. Once per activation, before rolling, you may replace ONE of your own Hit, Wound, ARM-save or Charge dice with a banked die. Pyre-Dice are never used on the opponent's rolls."
+ },
+ "gamble": {
+  "name": "Martyr's Pyre",
+  "text": "Once per battle, when a unit activates, spend ALL banked Pyre-Dice (minimum 2): its weapons gain [SHREDDING WOUNDS] and +1 Damage this activation. The bank is empty afterwards.",
+  "risk_cost": "resource"
+ },
+ "faction_abilities": [
+  {
+   "scope": "all",
+   "uptime": 0.1,
+   "mods": {
+    "hit_mod": 1
+   },
+   "name": "Pyre-Dice",
+   "text": "One replaced die per activation (~1 in 10 dice)."
+  },
+  {
+   "scope": "all",
+   "uptime": 0.04,
+   "mods": {
+    "dmg_mod": 1
+   },
+   "name": "Martyr's Pyre",
+   "text": "Once per battle on one unit."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Ember pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Relic blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Grand Inquisitrix",
+   "slot": 1,
+   "abilities": [
+    {
+     "scope": "all",
+     "uptime": 0.25,
+     "mods": {
+      "reroll_wound": "all"
+     },
+     "name": "Witch-Mark",
+     "text": "Before the battle mark 1 enemy Leader or [PSYCHIC / ARCANE] unit. This unit and its attached unit re-roll Wound rolls against it and their attacks gain [PRECISION] against it."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Lead the Purge",
+     "text": "The attached unit re-rolls ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Ember pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Brazier-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[SCORCH]"
+     ]
+    }
+   ],
+   "name": "Canoness of the Pyre",
+   "slot": 2,
+   "abilities": [
+    {
+     "mods": {
+      "devastating": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Blessed Edge",
+     "text": "Melee critical wounds become Fatal Wounds ([SHREDDING WOUNDS])."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Lead the Charge",
+     "text": "The attached unit gets +1 to Hit in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Ember pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Chain-scourge",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Confessor-Firebrand",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Fiery Sermon",
+     "text": "Friendly units within 6″ that charged this round get +1 Attack in melee."
+    },
+    {
+     "flat": 4.0,
+     "name": "Kindle Faith",
+     "text": "When this Leader activates, bank 1 Pyre-Die (max 3)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Ember pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Blessed blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Null-Maiden Warden",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Null Aura",
+     "text": "Enemy [PSYCHIC / ARCANE] attacks and spells targeting friendly units within 6″ suffer −1 to Hit."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Veil of Silence",
+     "text": "The attached unit counts as [STEALTH] (−1 to be Hit at range)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Sacred bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sisters of the Pyre",
+   "slot": 5,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "all",
+     "uptime": 0.4,
+     "name": "Sacred Rites",
+     "text": "Re-roll Hit rolls of 1 while within 3″ of an objective."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    10
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Pilgrim musket",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Pitchfork & flail",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]"
+   ],
+   "name": "Pilgrim Levy",
+   "slot": 6,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Fodder for the Pyre",
+     "text": "When this unit is destroyed, bank 1 Pyre-Die even if the bank was already used this round."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Chain-scourge",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FRAIL]"
+   ],
+   "name": "Penitent Flagellants",
+   "slot": 7,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 5
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Rapture of Pain",
+     "text": "UNYIELDING 5+."
+    },
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Frenzy of Contrition",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    3
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Great weapon / fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Reliquant Warsuits",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "uptime": 0.5,
+     "name": "Sanctified Plate",
+     "text": "+1 ARM (to 3+ cap) against attacks with PEN −1 or 0."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Sacred bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Justiciar halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Pyre-Justiciars",
+   "slot": 9,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Sworn Bodyguard",
+     "text": "While a Leader is attached, damage allocated to the Leader is taken by this unit on a 4+."
+    },
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Shield-Sisters",
+     "text": "Enemies get −1 to Hit this unit in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Hand-pyre",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Melta gun",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6",
+     "traits": [
+      "[ERADICATE 2]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Purgator Vanguard",
+   "slot": 10,
+   "abilities": [
+    {
+     "mods": {
+      "pen_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Purge at Arm's Length",
+     "text": "Ranged weapons get +1 PEN within 6″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Twin ember pistols",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Blessed blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Ascendant Seraphs",
+   "slot": 11,
+   "abilities": [
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Descend in Glory",
+     "text": "[STRIKE FIRST] on a round they arrived or charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 12,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Sacred bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Hand-pyre",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Chain-scourge",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Purifier Outriders",
+   "slot": 12,
+   "abilities": [
+    {
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Cleansing Pass",
+     "text": "+1 to Hit with ranged weapons against units within 12″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Missile launcher",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Vindicant Squad",
+   "slot": 13,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Steady Faith",
+     "text": "Re-roll ranged Hit rolls of 1 if this unit did not Move this activation."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]",
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Acolyte Cell",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Informants",
+     "text": "When deployed, choose 1 enemy unit: friendly units ignore Cover when targeting it in Round 1."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    2
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Hand-pyre",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Penance flails",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Mortification Engine",
+   "slot": 15,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 5
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Endless Contrition",
+     "text": "UNYIELDING 5+."
+    },
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Agony Drives Them",
+     "text": "+1 Attack while damaged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Hymn-stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Pyre-Altar Crawler",
+   "slot": 16,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Sacred Pyre",
+     "text": "Friendly Class 1–2 units within 6″ get UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Penance cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Pyre-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Scourging Tank",
+   "slot": 17,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Litany of Ruin",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Hymn-stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sanctum Carrier",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Mobile Shrine",
+     "text": "Units that disembark from this transport may re-roll 1 Charge die this round."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Hymn-organ missiles",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Hymn-stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Hymn-Organ Battery",
+   "slot": 19,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Psalm of Fire",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Sun-spear lance",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6+2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Pyre-mouths",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Cathedral Colossus",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 10.0,
+     "name": "Bells of Judgement",
+     "text": "Command Phase: bank 1 extra Pyre-Die while this model is on the battlefield (max 3)."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Burning Rose",
+   "playstyle": "Flamers forward: close the distance, burn the objectives.",
+   "rule": "Searing Purgation: [SCORCH] weapons gain +1 PEN. Once per round, one [SCORCH] attack against a unit on an objective also inflicts D3 Fatal Wounds on a 5+.",
+   "enhancements": [
+    {
+     "name": "Ember of the First Pyre",
+     "bearer": "Canoness of the Pyre",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Ember of the First Pyre",
+      "text": "+1 Damage to melee attacks on a round she charged."
+     },
+     "text": "+1 Damage to melee attacks on a round she charged."
+    },
+    {
+     "name": "Ash-Crown",
+     "bearer": "Grand Inquisitrix",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "ranged",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Ash-Crown",
+      "text": "The attached unit gets +1 PEN with ranged weapons."
+     },
+     "text": "The attached unit gets +1 PEN with ranged weapons."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Purging Flame",
+     "cp": 1,
+     "when": "A unit with [SCORCH] weapons is selected to Shoot",
+     "effect": "Re-roll its Wound rolls this activation."
+    },
+    {
+     "name": "Wall of Fire",
+     "cp": 1,
+     "when": "An enemy unit declares a Charge against a unit with [SCORCH] weapons",
+     "effect": "That unit's Retaliation Strike is made with one [SCORCH] weapon instead (hits automatically)."
+    },
+    {
+     "name": "Fan the Flames",
+     "cp": 1,
+     "when": "A friendly unit is destroyed",
+     "effect": "Bank 2 Pyre-Dice instead of 1 (max 3)."
+    }
+   ]
+  },
+  {
+   "name": "Penitent Host",
+   "playstyle": "Bleed for it: chipped squads get deadlier, so the opponent must finish what they start.",
+   "rule": "Blood of Martyrs: units below Starting Strength (or damaged, for single models) get +1 to Hit; below Half-Strength they also get +1 to Wound.",
+   "enhancements": [
+    {
+     "name": "Scourge of Contrition",
+     "bearer": "Confessor-Firebrand",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "wound_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.5,
+      "name": "Scourge of Contrition",
+      "text": "Friendly units within 6″ get +1 to Wound in melee on a round they charged."
+     },
+     "text": "Friendly units within 6″ get +1 to Wound in melee on a round they charged."
+    },
+    {
+     "name": "Martyr's Shroud",
+     "bearer": "Canoness of the Pyre",
+     "ability": {
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Martyr's Shroud",
+      "text": "The bearer has UNYIELDING 5+."
+     },
+     "text": "The bearer has UNYIELDING 5+."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Final Absolution",
+     "cp": 1,
+     "when": "A friendly Class 1–2 unit is destroyed in melee",
+     "effect": "Before removal, its surviving models fight once more."
+    },
+    {
+     "name": "Unbroken Faith",
+     "cp": 1,
+     "when": "A unit would become Rattled",
+     "effect": "It is not Rattled."
+    },
+    {
+     "name": "Rush to Martyrdom",
+     "cp": 1,
+     "when": "A unit below Starting Strength declares a Charge",
+     "effect": "+2″ to the Charge roll."
+    }
+   ]
+  },
+  {
+   "name": "Witch-Hunter Tribunal",
+   "playstyle": "Hunt the leaders and casters, ignore the rest.",
+   "rule": "Sentence of the Court: before the battle mark 2 enemy units (at least 1 must be a Leader or [PSYCHIC / ARCANE] unit if possible). Your attacks against Marked units re-roll Wound rolls of 1 and gain [PRECISION]. When a Marked unit is destroyed, bank 1 Pyre-Die.",
+   "enhancements": [
+    {
+     "name": "Seal of the Tribunal",
+     "bearer": "Grand Inquisitrix",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "reroll_wound": "ones"
+      },
+      "scope": "all",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Seal of the Tribunal",
+      "text": "The attached unit re-rolls Wound rolls of 1."
+     },
+     "text": "The attached unit re-rolls Wound rolls of 1."
+    },
+    {
+     "name": "Null-Lantern",
+     "bearer": "Null-Maiden Warden",
+     "ability": {
+      "flat": 6.0,
+      "name": "Null-Lantern",
+      "text": "Null Aura range becomes 9″ and also applies to Fatal Wounds from spells (ignored on 5+)."
+     },
+     "text": "Null Aura range becomes 9″ and also applies to Fatal Wounds from spells (ignored on 5+)."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Interrogate",
+     "cp": 1,
+     "when": "A unit ends a Fight action engaged with a Marked unit",
+     "effect": "Gain 1 CP (once per battle)."
+    },
+    {
+     "name": "Burn the Witch",
+     "cp": 1,
+     "when": "A unit targets a Marked [PSYCHIC / ARCANE] unit",
+     "effect": "Its weapons gain [SCORCH] and +1 Damage."
+    },
+    {
+     "name": "Sentence Passed",
+     "cp": 2,
+     "when": "Command Phase",
+     "effect": "Move one Mark to a new enemy unit."
+    }
+   ]
+  }
+ ]
+}

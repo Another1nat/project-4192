@@ -1,0 +1,51 @@
+{
+ "name": "The Moloch Iron-Forged — verifier sample",
+ "detachment": "Grand Siege",
+ "units": [
+  {
+   "unit": "Iron-Smith Forgemaster",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Ash-Dreg Thralls",
+   "models": 10
+  },
+  {
+   "unit": "Iron-Forged Legionaries",
+   "models": 5
+  },
+  {
+   "unit": "Breacher Battery",
+   "models": 2
+  },
+  {
+   "unit": "Hellsmith Sappers",
+   "models": 3
+  },
+  {
+   "unit": "Ash-Hauler",
+   "models": 1
+  },
+  {
+   "unit": "Forge-Hound",
+   "models": 1
+  },
+  {
+   "unit": "Brass-Bull Centaurs",
+   "models": 3
+  },
+  {
+   "unit": "Ash-Guard Blunderbussiers",
+   "models": 5
+  },
+  {
+   "unit": "Furnace-Mortar Battery",
+   "models": 1
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/13_moloch_iron_forged.json"
+ ]
+}

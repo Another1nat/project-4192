@@ -1,0 +1,1273 @@
+{
+ "name": "The Diesel-Skull War-Horde",
+ "verb": "RAMPAGE",
+ "identity": "Scrap-mech brutes, speed-maniac bikers and huge, inaccurate mobs. Buckets of bad dice that explode on 6s, and one battle-defining round of Scrap-Fury when the whole horde surges forward.",
+ "number": "24",
+ "template": "D_swarm_monster_speed",
+ "status": "draft",
+ "learned_from": [
+  "40k greenskins Rampage (loved timing decision) — renamed, capped (+1 Attack and +2″ Charge, no army WARD, no Move + Charge)",
+  "Gemini #2 Dakka (crit 6s), #3 ramming (Class 3–5 only), #5 wreck-run (signature stratagem)",
+  "Sim evidence: Move + Charge rules broke balance (Cinder 69%) → not used even for one round"
+ ],
+ "risk_profile": "Dice (Overcrank table) + one timing decision (Scrap-Fury).",
+ "core_rule": {
+  "name": "Dakka & Scrap-Fury",
+  "text": "Dakka: Diesel-Skull ranged weapons have [ASSAULT]; unmodified Hit rolls of 6 with them are critical and score 1 extra hit ([ONSLAUGHT 1]). Scrap-Fury (once per battle): declare in the Command Phase — until the End of Round, Diesel-Skull units get +1 Attack in melee and +2″ to Charge rolls."
+ },
+ "gamble": {
+  "name": "Overcrank the Engine",
+  "text": "When a Class 2–5 vehicle or bike unit activates, roll a D6: 1 the engine seizes (D3 Fatal Wounds, no Move this activation) · 2–3 +2″ MOV · 4–5 +4″ MOV · 6 +4″ MOV and +1 Attack in melee.",
+  "risk_cost": "durability (dice)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "ranged",
+   "uptime": 1.0,
+   "mods": {
+    "sustained": 1
+   },
+   "name": "Dakka",
+   "text": "Crit 6s = extra hit."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.25,
+   "mods": {
+    "attacks_mod": 1
+   },
+   "name": "Scrap-Fury",
+   "text": "One round per battle."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 7,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Kustom shoota",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Power-klaw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "War-Boss Speed-King",
+   "slot": 1,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Call the Scrap-Fury",
+     "text": "While he lives, Scrap-Fury also gives +1 to Wound in melee."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Biggest an' Meanest",
+     "text": "The attached unit gets +1 Attack in melee."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 7,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Smash-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Jaw Brute Boss",
+   "slot": 2,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Too Tough",
+     "text": "UNYIELDING 6+."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Head-Butt Discipline",
+     "text": "The attached unit gets +1 to Hit in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Slugger",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Saw-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Scrap-Surgeon",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Bolt It Back On",
+     "text": "The attached unit has UNYIELDING 6+."
+    },
+    {
+     "flat": 4.0,
+     "name": "Kustom Job",
+     "text": "Once per round, heal D3 MIGHT on a Class 2–4 unit within 3″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Head-bang zap",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "D3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Skull-Shaman",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Rampage Energy",
+     "text": "Once per round, a friendly unit within 12″ gets +2″ to its next Charge roll."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Slugger",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Choppa",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Scrap-Gunner Mob",
+   "slot": 5,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.6,
+     "name": "Strength in Numbers",
+     "text": "+1 Attack in melee while the unit has 10+ models."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Shoota",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Choppa",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Dakka-Gun Mob",
+   "slot": 6,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "More Dakka",
+     "text": "Re-roll Hit rolls of 1 against units within 12″."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    10
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Scrap-blasta",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]",
+    "[FRAIL]"
+   ],
+   "name": "Scrap-Imps",
+   "slot": 7,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Imp Shields",
+     "text": "A friendly vehicle within 3″ may allocate one attack per round to this unit instead."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Kustom rattler",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Power-klaw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Hide Krushas",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Scrap-Plate",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Power-klaw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Big-Brute Bullies",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Bully Charge",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 14,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Dakka-guns",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Spiked wheels",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "War-Biker Speed-Maniacs",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Speed Freaks",
+     "text": "+2″ MOV in Round 1."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Rocket launcha",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rocket-Scrap Crew",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Lucky Rockets",
+     "text": "Re-roll one Hit roll per activation."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "keywords": [
+    "[INFILTRATORS]",
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Slugger",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Choppa",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sneaky Scrap-Commandos",
+   "slot": 12,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Ambush",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Slugger",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Choppa",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Jump-Rocket Stormers",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Uncontrolled Landing",
+     "text": "May arrive 6″ from enemies (instead of 8″); roll a D6: on 1 suffer D3 Fatal Wounds."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 9,
+   "CTRL": 4,
+   "weapons": [
+    {
+     "name": "Big shoota",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Crusher-klaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Scrap-Walker Brute",
+   "slot": 14,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Unhinged",
+     "text": "+1 Attack in melee while damaged."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 14,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 6,
+   "CTRL": 4,
+   "weapons": [
+    {
+     "name": "Twin big shoota",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Spiked ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "War-Buggy",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Ramming Speed",
+     "text": "Crushing Impact for 0 CP on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 14,
+   "CTRL": 4,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Howdah shootas",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Tusk-Beast Hauler",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Stampede",
+     "text": "+2″ MOV while damaged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 12,
+   "CTRL": 3,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 3]",
+    "[TRANSPORT 12]"
+   ],
+   "weapons": [
+    {
+     "name": "Big shootas",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Spiked ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "War-Rig Scrap-Hauler",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Ramshackle",
+     "text": "The first time each round it would suffer damage of 3+, roll a D6: on 4+ the damage is 2."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 16,
+   "CTRL": 4,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Kannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Big shootas",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Spiked ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Gun-Wagon",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Ramming Speed",
+     "text": "Crushing Impact for 0 CP on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 6,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Scrap-lobbas",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Big shoota",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Spiked ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Scrap-Lobba Battery",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Imp Spotters",
+     "text": "May target units visible to any friendly Class 1 unit."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 24,
+   "CTRL": 7,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Supa-kannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Big shootas",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "10",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Scrap-Titan Colossus",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Wreck Run",
+     "text": "When destroyed, before removal it moves 6″ and then explodes: every unit within 6″ suffers D6 Fatal Wounds on a 4+."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Speed-Cult",
+   "playstyle": "Bikes, buggies and wagons: everything fast, everything ramming.",
+   "rule": "Ramming Speed: Class 2–5 vehicles and bikes get +2″ MOV and trigger Crushing Impact for 0 CP on the charge.",
+   "enhancements": [
+    {
+     "name": "Red-Hot Exhaust",
+     "bearer": "War-Boss Speed-King",
+     "ability": {
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Red-Hot Exhaust",
+      "text": "+2″ MOV."
+     },
+     "text": "+2″ MOV."
+    },
+    {
+     "name": "Nitro-Tank",
+     "bearer": "War-Buggy",
+     "ability": {
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Nitro-Tank",
+      "text": "+2″ MOV."
+     },
+     "text": "+2″ MOV."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Full Throttle",
+     "cp": 1,
+     "when": "A vehicle or bike unit activates",
+     "effect": "Overcrank without rolling a 1 (re-roll a result of 1)."
+    },
+    {
+     "name": "Wreck Run",
+     "cp": 1,
+     "when": "A vehicle is destroyed",
+     "effect": "Before removal it moves 6″ and explodes: D3 Fatal Wounds on a 4+ to every unit within 6″."
+    },
+    {
+     "name": "Drive-By",
+     "cp": 1,
+     "when": "A vehicle or bike unit Shoots",
+     "effect": "It may make a 3″ move after shooting."
+    }
+   ]
+  },
+  {
+   "name": "Bully Mobs",
+   "playstyle": "Big mobs and brutes in a single shouting wave.",
+   "rule": "Mob Rule: Class 1 units with 10+ models get +1 to Hit in melee and cannot be Rattled.",
+   "enhancements": [
+    {
+     "name": "Boss-Pole",
+     "bearer": "Iron-Jaw Brute Boss",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "hit_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Boss-Pole",
+      "text": "Friendly Class 1 units within 6″ get +1 to Hit in melee."
+     },
+     "text": "Friendly Class 1 units within 6″ get +1 to Hit in melee."
+    },
+    {
+     "name": "Big Choppa",
+     "bearer": "Scrap-Gunner Mob",
+     "ability": {
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 1.0,
+      "name": "Big Choppa",
+      "text": "+1 PEN in melee."
+     },
+     "text": "+1 PEN in melee."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Get In There!",
+     "cp": 1,
+     "when": "A Class 1 unit declares a Charge",
+     "effect": "Re-roll the Charge roll."
+    },
+    {
+     "name": "Stompy Feet",
+     "cp": 1,
+     "when": "A unit is charged",
+     "effect": "Its Retaliation Strike gets +1 Attack."
+    },
+    {
+     "name": "More Lads",
+     "cp": 2,
+     "when": "Command Phase, once per battle",
+     "effect": "Return D6 slain models to a Class 1 unit within 6″ of your table edge."
+    }
+   ]
+  },
+  {
+   "name": "Tinker-Workshop",
+   "playstyle": "Scrap-walkers, artillery and surgeons bolting things on.",
+   "rule": "Kustom Jobs: at deployment, give up to 3 Class 2–5 units one upgrade each: +1 Attack on one weapon · +1 PEN on one weapon · UNYIELDING 6+.",
+   "enhancements": [
+    {
+     "name": "Kustom Force-Field",
+     "bearer": "Scrap-Surgeon",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "save_mod": 1
+      },
+      "scope": "defense",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Kustom Force-Field",
+      "text": "Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks."
+     },
+     "text": "Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks."
+    },
+    {
+     "name": "Shokk-Barrel",
+     "bearer": "Scrap-Lobba Battery",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "ranged",
+      "uptime": 0.5,
+      "name": "Shokk-Barrel",
+      "text": "+1 Damage."
+     },
+     "text": "+1 Damage."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Bolt It On",
+     "cp": 1,
+     "when": "A Class 3–5 unit is damaged",
+     "effect": "Heal D3 MIGHT."
+    },
+    {
+     "name": "Overcharged Kannon",
+     "cp": 1,
+     "when": "A unit Shoots",
+     "effect": "+1 Damage; on a natural 1 to Hit it suffers 1 Fatal Wound."
+    },
+    {
+     "name": "Scrap-Shield",
+     "cp": 1,
+     "when": "A Class 3–5 unit is targeted",
+     "effect": "Incoming PEN −1."
+    }
+   ]
+  }
+ ]
+}

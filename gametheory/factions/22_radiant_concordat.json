@@ -1,0 +1,1378 @@
+{
+ "name": "The Radiant Concordat",
+ "verb": "SPOT",
+ "identity": "Porcelain rail-gun infantry and battlesuits, blood-lotus priests, and hulking gore-ogre auxiliaries. Poor in melee, deadly when spotted targets line up, and the ogres stand in front of the porcelain.",
+ "number": "22",
+ "template": "C_gunline_siege_arcane",
+ "status": "draft",
+ "learned_from": [
+  "A sci-fi wargame's railgun empire: observer/guided fire, and a patient vs killing-blow doctrine as a timing choice",
+  "Gemini #1 Spotters + Blood-Offering, #2 Ogre Bulwark (rewritten as a once-per-round intercept), #3 pacing → detachments"
+ ],
+ "risk_profile": "Medium. Gamble = durability: the Blood-Offering bleeds your own ogres to make a spotted volley lethal.",
+ "core_rule": {
+  "name": "Crimson-Lotus Spotters · Gilded Bulwark",
+  "text": "Spot: an unengaged Concordat unit may use 1 Action to Spot a visible enemy unit; the next friendly unit to Shoot that enemy this round gets +1 to Hit and [IGNORES COVER] (one Spot per enemy unit per round). Bulwark: once per round, when an enemy unit declares a Charge against a Concordat Class 1–2 unit within 3″ of Gore-Brutes or Gore-Ogres, those ogres may make a 3″ move to engage the charger before the Charge roll."
+ },
+ "gamble": {
+  "name": "Blood-Offering",
+  "text": "When a unit Spots within 6″ of a Blood-Lotus Prior, the Prior may inflict D3 Fatal Wounds on a friendly ogre unit within 3″: the spotted attack also gains [SHREDDING WOUNDS].",
+  "risk_cost": "durability (friendly)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "ranged",
+   "uptime": 0.4,
+   "mods": {
+    "hit_mod": 1
+   },
+   "name": "Spotted",
+   "text": "+1 to Hit ~ half the volleys."
+  },
+  {
+   "scope": "ranged",
+   "uptime": 0.06,
+   "mods": {
+    "devastating": true
+   },
+   "name": "Blood-Offering",
+   "text": "Occasional devastating volley."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Ion rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HAILFIRE 1]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Seeker missiles",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Concordat Strategos",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Coordinated Strike",
+     "text": "Friendly units within 9″ get +1 to Hit against a unit spotted this round (does not stack with Spot)."
+    },
+    {
+     "flat": 6.0,
+     "name": "Patient Hunter",
+     "text": "Once per battle, give one unit [ONSLAUGHT 1] on its ranged weapons for a round."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Lotus-pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Sacrificial knife",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Blood-Lotus Caste Prior",
+   "slot": 2,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Offering Rite",
+     "text": "Enables the Blood-Offering gamble within 6″."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Lotus Sacrament",
+     "text": "Friendly units within 6″ have UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 7,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Hand-cannon",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Gore-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Gore-Brute Chieftain",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Gut-Roar",
+     "text": "The attached ogre unit gets +1 Attack in melee."
+    },
+    {
+     "flat": 4.0,
+     "name": "Bulwark Captain",
+     "text": "The Bulwark intercept from his unit is 6″ instead of 3″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Pulse carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]",
+    "[SCOUTS 6\"]"
+   ],
+   "name": "Lotus Pathfinder-Priest",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Free Spot",
+     "text": "Once per round, Spot without spending an Action."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Pulse rail-rifle",
+     "type": "Ranged",
+     "range": "30\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Porcelain Strike-Infantry",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Volley Discipline",
+     "text": "If this unit Spots, it may still Shoot a different target with −1 to Hit."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Pulse blaster",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Porcelain Breacher Team",
+   "slot": 6,
+   "abilities": [
+    {
+     "mods": {
+      "pen_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Point-Blank",
+     "text": "+1 PEN within 6″."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 6,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]",
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Pulse carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Lotus Pathfinders",
+   "slot": 7,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Spotter Uplink",
+     "text": "Spotting by this unit gives +1 to Hit to the next TWO friendly units."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (ranged)",
+   "models": [
+    3,
+    3
+   ],
+   "MOV": 9,
+   "MS": 6,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "keywords": [
+    "[FLY]",
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Crimson Stealth-Suits",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Stealth Fields",
+     "text": "[STEALTH]."
+    },
+    {
+     "flat": 3.0,
+     "name": "Silent Spotters",
+     "text": "May Spot without being revealed (keeps [UNSEEN])."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (ranged)",
+   "models": [
+    3,
+    3
+   ],
+   "MOV": 9,
+   "MS": 6,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    {
+     "name": "Ion rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HAILFIRE 1]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Seeker missiles",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Vanguard Rail-Suits",
+   "slot": 9,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Jump-Jets",
+     "text": "(1 CP Tactic) After it Shoots, it may make a 5″ move, once per round army-wide."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy rail-rifle",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[ERADICATE 1]"
+     ]
+    },
+    {
+     "name": "Seeker missiles",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Siege Rail-Suits",
+   "slot": 10,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 0.6,
+     "name": "Locked Stance",
+     "text": "Re-roll ranged Hit rolls of 1 if it did not Move."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Gut-cannons",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Gore-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Gilded Gore-Brutes",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Bulwark",
+     "text": "May intercept Charges against Concordat Class 1–2 units within 3″ (core rule)."
+    },
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Combat-Nectar",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Hand-cannons",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Iron-gut halberds",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Gore-Ogre Bulwark Guard",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Bulwark",
+     "text": "May intercept Charges (core rule)."
+    },
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Wall of Gut",
+     "text": "Enemies get −1 to Hit them in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    4,
+    8
+   ],
+   "MOV": 10,
+   "MS": 6,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Drone pulse-guns",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Lotus Drone Flight",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Shield-Drones",
+     "text": "A friendly unit within 3″ may allocate one attack per round to this unit instead."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 7,
+   "MS": 6,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "weapons": [
+    {
+     "name": "Long rail-rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Lotus Marksmen",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Self-Spotting",
+     "text": "Counts as spotted against units it targets."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Heavy rail-cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[ERADICATE 1]"
+     ]
+    },
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Battlesuit fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Bulwark Rail-Mech",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Nova Charge",
+     "text": "Once per battle, +1 Attack on all ranged weapons this activation."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rail-cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Lotus Sky-Gunship",
+   "slot": 16,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Targeting Array",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[FLY]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Lotus Transport Skimmer",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Drop-Off",
+     "text": "Units may disembark after it moves and still Shoot."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Chain-harpoon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Gore-Mammoth Rider",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Bulwark Beast",
+     "text": "Counts as Gore-Brutes for the Bulwark rule (6″)."
+    },
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Thick Hide",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Seeker-missile rack",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]"
+     ]
+    },
+    {
+     "name": "Burst cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Lotus Rail-Battery",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Guided Fire",
+     "text": "Ignores the [INDIRECT FIRE] −1 against spotted units."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Pulse-driver cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Seeker missiles",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Lotus Colossus-Suit",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Command Uplink",
+     "text": "Once per round, Spot for free (no Action)."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Patient Hunter",
+   "playstyle": "Hold back, spot, and break them late.",
+   "rule": "Patient Hunter: in Rounds 3–4, ranged weapons gain [ONSLAUGHT 1] against spotted units. Units that did not Move get +1 ARM (to 3+ cap) against ranged attacks.",
+   "enhancements": [
+    {
+     "name": "Hunter's Patience",
+     "bearer": "Concordat Strategos",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "lethal": true
+      },
+      "scope": "ranged",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Hunter's Patience",
+      "text": "The attached unit's ranged weapons gain [IMPALING HITS]."
+     },
+     "text": "The attached unit's ranged weapons gain [IMPALING HITS]."
+    },
+    {
+     "name": "Recon Uplink",
+     "bearer": "Lotus Pathfinder-Priest",
+     "ability": {
+      "flat": 4.0,
+      "name": "Recon Uplink",
+      "text": "Free Spot twice per round."
+     },
+     "text": "Free Spot twice per round."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Ambush Volley",
+     "cp": 1,
+     "when": "A unit that did not Move Shoots",
+     "effect": "Re-roll Wound rolls of 1."
+    },
+    {
+     "name": "Spring the Trap",
+     "cp": 1,
+     "when": "An enemy unit ends a move within 12″ of two Concordat units",
+     "effect": "One of them Shoots it now (once per round)."
+    },
+    {
+     "name": "Fall Back to Cover",
+     "cp": 1,
+     "when": "A unit is charged",
+     "effect": "It may make a 3″ move before the Charge roll."
+    }
+   ]
+  },
+  {
+   "name": "Killing Blow",
+   "playstyle": "Go early: rapid advance and close-range volleys.",
+   "rule": "Killing Blow: in Rounds 1–2, ranged weapons gain [ASSAULT] and +1 PEN within 12″.",
+   "enhancements": [
+    {
+     "name": "Strike-Leader's Blade",
+     "bearer": "Concordat Strategos",
+     "ability": {
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Strike-Leader's Blade",
+      "text": "+2″ MOV."
+     },
+     "text": "+2″ MOV."
+    },
+    {
+     "name": "Breacher Shield-Drone",
+     "bearer": "Porcelain Breacher Team",
+     "ability": {
+      "mods": {
+       "save_mod": 1
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Breacher Shield-Drone",
+      "text": "+1 ARM (to 3+ cap)."
+     },
+     "text": "+1 ARM (to 3+ cap)."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Advance Volley",
+     "cp": 1,
+     "when": "A unit Moves and Shoots",
+     "effect": "Ignore the [HEAVY] penalty."
+    },
+    {
+     "name": "Close the Net",
+     "cp": 1,
+     "when": "Two units Shoot the same target",
+     "effect": "The second gets +1 to Wound."
+    },
+    {
+     "name": "Jump-Jet Strike",
+     "cp": 1,
+     "when": "A battlesuit unit Shoots",
+     "effect": "It may make a 5″ move afterward."
+    }
+   ]
+  },
+  {
+   "name": "Gore-Brute Retinue",
+   "playstyle": "Ogres in front, porcelain behind, blood-priests feeding both.",
+   "rule": "Gilded Bulwark: Gore units within 3″ of a Porcelain unit get +1 Attack in melee; Porcelain units within 3″ of a Gore unit are [STEALTH].",
+   "enhancements": [
+    {
+     "name": "Gut-Plate of the Retinue",
+     "bearer": "Gore-Brute Chieftain",
+     "ability": {
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Gut-Plate of the Retinue",
+      "text": "UNYIELDING 5+."
+     },
+     "text": "UNYIELDING 5+."
+    },
+    {
+     "name": "Nectar-Censer",
+     "bearer": "Blood-Lotus Caste Prior",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "attacks_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Nectar-Censer",
+      "text": "Friendly ogre units within 6″ get +1 Attack on a round they charged."
+     },
+     "text": "Friendly ogre units within 6″ get +1 Attack on a round they charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Meat-Shield",
+     "cp": 1,
+     "when": "A Porcelain unit within 3″ of ogres is targeted",
+     "effect": "The ogres take the attack instead."
+    },
+    {
+     "name": "Gore-Charge",
+     "cp": 1,
+     "when": "An ogre unit declares a Charge",
+     "effect": "+2″ to the roll and Crushing Impact for 0 CP."
+    },
+    {
+     "name": "Blood-Tithe",
+     "cp": 1,
+     "when": "An ogre unit suffers a Blood-Offering",
+     "effect": "It heals D3 MIGHT at the End of Round."
+    }
+   ]
+  }
+ ]
+}

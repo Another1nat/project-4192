@@ -1,0 +1,1358 @@
+{
+ "name": "The Cinder-Gorged Legion",
+ "verb": "BLOOD CLOCK",
+ "identity": "Brass blood-demons and berserkers who kill or die. No guns. The bloodier the battle, the scarier they get.",
+ "core_rule": {
+  "name": "Blood-Tithe",
+  "text": "Every model destroyed (either side) adds 1 Tithe. Permanent army-wide unlocks: 5 → +1″ Move · 10 → melee [ONSLAUGHT 1] · 15 → [UNYIELDING 5+] · 20 → +1 Damage. No ranged weapons. When shot, a unit may [SURGE D6″] toward the shooter. Burning Vessels: at the end of each round, each unit that is not engaged suffers 1 Fatal Wound (it adds to the Tithe)."
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.75,
+   "mods": {
+    "move_mod": 1
+   },
+   "name": "Tithe 5: Haste",
+   "text": "+1″ Move."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.5,
+   "mods": {
+    "sustained": 1
+   },
+   "name": "Tithe 10: Frenzy",
+   "text": "Melee [ONSLAUGHT 1]."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.3,
+   "mods": {
+    "unyielding": 5
+   },
+   "name": "Tithe 15: Unyielding",
+   "text": "UNYIELDING 5+."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.15,
+   "mods": {
+    "dmg_mod": 1
+   },
+   "name": "Tithe 20: Slaughter",
+   "text": "+1 Damage."
+  },
+  {
+   "utility": "SURGE",
+   "name": "Surge",
+   "text": "Surge D6″ when shot."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.12,
+   "mods": {
+    "attacks_mod": 1,
+    "wound_mod": 1
+   },
+   "name": "Unleashed Cinder-Fury",
+   "text": "Voluntary +1 Attack."
+  }
+ ],
+ "units": [
+  {
+   "name": "Ash-Zealots",
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Feed",
+   "models": [
+    10,
+    10
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[FRAIL]"
+   ],
+   "weapons": [
+    {
+     "name": "Jagged cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Blood Offering",
+     "text": "When this unit loses its last model, add 2 extra Tithe."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "name": "Cinder-Berserkers",
+   "class": 1,
+   "role": "Elite",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "UNYIELDING": 6,
+   "weapons": [
+    {
+     "name": "Chain-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Blood Surge",
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "text": "+1 Attack on the activation this unit charges."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "name": "Ember-Blade Daemons",
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Hell-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": [
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Blood-Hounds",
+   "class": 2,
+   "role": "Elite (fast)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "WARD": 5,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Gore-fangs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Skull-Cleaver Champion",
+   "class": 1,
+   "role": "Leader",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Executioner axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Lead the Slaughter",
+     "buff": true,
+     "mods": {
+      "wound_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1,
+     "uptime": 0.5,
+     "text": "Leader. The attached unit gets +1 to Wound in melee on the activation it charges."
+    }
+   ]
+  },
+  {
+   "name": "Herald of the Cinder",
+   "class": 2,
+   "role": "Leader",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Blade of blood",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Murderous Tide",
+     "buff": true,
+     "mods": {
+      "sustained": 1
+     },
+     "scope": "melee",
+     "n_eff": 1,
+     "text": "Leader (daemons). The attached unit's melee weapons gain [ONSLAUGHT 1]."
+    }
+   ]
+  },
+  {
+   "name": "Brass Hellsteed Riders",
+   "class": 2,
+   "role": "Elite (cavalry)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Hell-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    },
+    {
+     "name": "Brass hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[EXTRA ATTACKS]"
+     ]
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Gore-Beast Slaughterer",
+   "class": 3,
+   "role": "Brute",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "weapons": [
+    "monster_talons"
+   ],
+   "abilities": [
+    {
+     "name": "Gorged",
+     "mods": {
+      "attacks_mod": 2
+     },
+     "scope": "melee",
+     "uptime": 0.4,
+     "text": "+2 Attacks while the Tithe is 10 or more."
+    }
+   ]
+  },
+  {
+   "name": "Brass Crusher Engine",
+   "class": 4,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    "monster_talons",
+    "brute_fists"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Brass Hell-Titan",
+   "class": 5,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 26,
+   "CTRL": 6,
+   "HARDENED": true,
+   "WARD": 5,
+   "weapons": [
+    "titan_stomp",
+    {
+     "name": "Hell-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": []
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Slaughter-Lord on Hellsteed",
+   "slot": 1,
+   "class": 3,
+   "role": "Leader (Warlord)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 8,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Hell-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Lord of Slaughter",
+     "text": "⟳ One friendly unit within 6″ gets +1 Attack in melee this round.",
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1,
+     "uptime": 0.8
+    }
+   ],
+   "WARD": 5
+  },
+  {
+   "name": "Skull-Hunter",
+   "slot": 4,
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "ladder": "Exploit",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Head-taker blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[PRECISION]"
+     ]
+    }
+   ],
+   "abilities": [],
+   "keywords": [
+    "[INFILTRATORS]"
+   ]
+  },
+  {
+   "name": "Brass Exalted Guard",
+   "slot": 8,
+   "class": 2,
+   "role": "Elite",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Exalted great-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": [],
+   "WARD": 5
+  },
+  {
+   "name": "Ember Fiends of the Pit",
+   "slot": 9,
+   "class": 2,
+   "role": "Elite (blender)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Ember talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "abilities": [],
+   "WARD": 5
+  },
+  {
+   "name": "Gore-Champion Coterie",
+   "slot": 10,
+   "class": 2,
+   "role": "Elite (duelists)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    3
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Duelling cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[PRECISION]"
+     ]
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Blood-Leash Wardens",
+   "slot": 11,
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Barbed whip",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Rift-Spawn Butchers",
+   "slot": 12,
+   "class": 1,
+   "role": "Elite (ambush)",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rift-cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [],
+   "keywords": [
+    "[VANGUARD STRIKE]"
+   ],
+   "WARD": 5
+  },
+  {
+   "name": "Brass Harpies",
+   "slot": 14,
+   "class": 1,
+   "role": "Trooper (winged)",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Brass talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]"
+   ],
+   "WARD": 5
+  },
+  {
+   "name": "Skull-Altar Engine",
+   "slot": 18,
+   "class": 4,
+   "role": "Behemoth (shrine)",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "weapons": [
+    "brute_fists"
+   ],
+   "abilities": [
+    {
+     "name": "Altar of Rage",
+     "text": "Friendly units within 6″ get +1 to Wound in melee on the activation they charge.",
+     "buff": true,
+     "mods": {
+      "wound_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.4
+    }
+   ],
+   "HARDENED": true
+  },
+  {
+   "name": "Furnace-Fiend Behemoth",
+   "slot": 19,
+   "class": 4,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "weapons": [
+    "monster_talons",
+    "colossal_jaws"
+   ],
+   "abilities": [],
+   "HARDENED": true
+  },
+  {
+   "class": 4,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Hellforged greataxe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": []
+    },
+    {
+     "name": "Brass talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Cinder-Prince Ascendant",
+   "slot": 21,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Lord of Slaughter",
+     "text": "Friendly units within 9″ get +1 Attack on a round they charged."
+    },
+    {
+     "flat": 6.0,
+     "name": "Skull-Throne Favour",
+     "text": "Each enemy Leader it destroys adds 3 Tithe."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Epic Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Bone-splitter",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "7",
+     "wound": "3+",
+     "pen": "-3",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Gorethane the Unchained",
+   "slot": 22,
+   "abilities": [
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Unstoppable",
+     "text": "[STRIKE FIRST] on a round he charged."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "The Betrayer's Rage",
+     "text": "The attached unit gets +1 Attack in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Sacrificial cleaver",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "name": "Blood-Priest of the Tithe",
+   "slot": 23,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Offer the Skulls",
+     "text": "When the attached unit destroys an enemy unit, +2 Tithe."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "wound_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 0.5,
+     "name": "Blood-Chant",
+     "text": "The attached unit gets +1 to Wound on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]",
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Trophy-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Skull-Takers",
+   "slot": 24,
+   "abilities": [
+    {
+     "scope": "melee",
+     "uptime": 0.25,
+     "mods": {
+      "dmg_mod": 1
+     },
+     "name": "Head-Hunters",
+     "text": "Melee [PRECISION]."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Eviscerator",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "UNYIELDING": 6,
+   "name": "Eviscerator Packs",
+   "slot": 25,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Blood-Rush",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 12,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Pyre-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Pyre-Knights",
+   "slot": 26,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Burning Charge",
+     "text": "Crushing Impact for 0 CP on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 8,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Blade-wheels & riders",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Skull-Chariot of the Pyre",
+   "slot": 27,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Scythed Run",
+     "text": "When it moves over an enemy unit, roll a D6 per enemy model (max 6): each 5+ is 1 Fatal Wound."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 7,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Mutant maws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Cinder-Spawn",
+   "slot": 28,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Tithe-Born",
+     "text": "May be summoned for 6 Tithe (spent) within 6″ of a Leader, once per battle."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Gore-ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Brass Gore-Carrier",
+   "slot": 29,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Assault Ramp",
+     "text": "Units that disembark may declare a Charge this activation."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Furnace-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Brass Gore-Wyrm",
+   "slot": 30,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Molten Hide",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Red Tide",
+   "playstyle": "Horde rush: zealots and daemons flood forward and feed the clock fast.",
+   "rule": "Tide of Bodies: Trooper units may Charge after one Move (not after a Sprint).",
+   "enhancements": [
+    {
+     "name": "Gorefather's Collar",
+     "bearer": "Skull-Cleaver Champion",
+     "ability": {
+      "name": "Gorefather's Collar",
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense"
+     },
+     "text": "The bearer has [UNYIELDING 5+]."
+    },
+    {
+     "name": "Banner of Rage",
+     "bearer": "Skull-Cleaver Champion",
+     "ability": {
+      "name": "Banner of Rage",
+      "buff": true,
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "n_eff": 1
+     },
+     "text": "The attached unit gets +2″ Move."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Blood Frenzy",
+     "cp": 1,
+     "when": "A unit is destroyed",
+     "effect": "Add 2 extra Tithe."
+    },
+    {
+     "name": "Unstoppable Momentum",
+     "cp": 1,
+     "when": "A unit fails a Charge",
+     "effect": "Re-roll the charge dice."
+    },
+    {
+     "name": "Trample the Weak",
+     "cp": 1,
+     "when": "A unit finishes a Charge",
+     "effect": "The target gains 1 Suppression token."
+    }
+   ]
+  },
+  {
+   "name": "Brass Host",
+   "playstyle": "Armoured berserkers, juggernauts and engines: fewer bodies, harder hits.",
+   "rule": "Brass Armour: Elites and Behemoths ignore the Fatal Wounds from Unleashed Cinder-Fury on a 4+.",
+   "enhancements": [
+    {
+     "name": "Brass Collar of Defiance",
+     "bearer": "Herald of the Cinder",
+     "ability": {
+      "name": "Brass Collar",
+      "mods": {
+       "ward": 4
+      },
+      "scope": "defense"
+     },
+     "text": "The bearer has [WARD 4+]."
+    },
+    {
+     "name": "Hellsteed Harness",
+     "bearer": "Brass Hellsteed Riders",
+     "ability": {
+      "name": "Hellsteed Harness",
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5
+     },
+     "text": "+1 Damage on the charge."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Crushing Charge",
+     "cp": 1,
+     "when": "A Class 2+ unit finishes a Charge",
+     "effect": "Resolve Crushing Impact with no self-damage on 1s."
+    },
+    {
+     "name": "Hateful Endurance",
+     "cp": 1,
+     "when": "A unit is targeted by a Shoot action",
+     "effect": "Incoming Damage −1 (min 1) for that attack."
+    },
+    {
+     "name": "Skulls for the Pyre",
+     "cp": 2,
+     "when": "A Leader is destroyed by this unit",
+     "effect": "Add 5 Tithe."
+    }
+   ]
+  },
+  {
+   "name": "Exalted Slaughter",
+   "playstyle": "Hero-hammer: Champions and Heralds duel and snowball.",
+   "rule": "Champion's Due: when a Leader destroys an enemy Leader or Brute, unlock the next Tithe tier immediately.",
+   "enhancements": [
+    {
+     "name": "Axe of Ten Thousand Skulls",
+     "bearer": "Skull-Cleaver Champion",
+     "ability": {
+      "name": "Axe",
+      "mods": {
+       "attacks_mod": 2,
+       "pen_mod": 1
+      },
+      "scope": "melee"
+     },
+     "text": "The bearer's axe: +2 Attacks, +1 PEN."
+    },
+    {
+     "name": "Deathmark Brand",
+     "bearer": "Herald of the Cinder",
+     "ability": {
+      "name": "Deathmark",
+      "mods": {
+       "crit_wound_on": 5
+      },
+      "scope": "melee"
+     },
+     "text": "The bearer's critical wounds trigger on 5+."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Challenge Accepted",
+     "cp": 1,
+     "when": "A Leader fights",
+     "effect": "Its melee attacks gain [PRECISION] and +1 Damage against an enemy Leader this activation."
+    },
+    {
+     "name": "Rage Unbound",
+     "cp": 1,
+     "when": "A Leader activates",
+     "effect": "+2″ Move and +1 Attack this activation."
+    },
+    {
+     "name": "Gore-Drenched",
+     "cp": 1,
+     "when": "A Leader destroys a model",
+     "effect": "+1 to Hit for the rest of the round (healing belongs to the Sanguine Aristocracy)."
+    }
+   ]
+  }
+ ],
+ "gamble": {
+  "name": "Unleashed Cinder-Fury",
+  "text": "When a unit activates, it may suffer D3 Fatal Wounds (they add to the Tithe): +1 Attack in melee and its melee weapons gain [CRASHING] this activation.",
+  "risk_cost": "durability (voluntary)"
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "name": "Auric — Gene-Forged Host (Space-Marine-style)",
+ "detachment": "Gene-Forged Host",
+ "units": [
+  {
+   "unit": "Sworn Lieutenant",
+   "attached": true
+  },
+  {
+   "unit": "Sworn Battle-Brothers",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Battle-Brothers",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Assault Brothers",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Hellstorm Squad",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Vanguard",
+   "models": 3
+  },
+  {
+   "unit": "Aurum Dread-Bastion"
+  },
+  {
+   "unit": "Eclipse Scouts",
+   "models": 3
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../factions/01_auric_solar_host.json"
+ ]
+}

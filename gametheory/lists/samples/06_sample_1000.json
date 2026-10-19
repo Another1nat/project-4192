@@ -1,0 +1,43 @@
+{
+ "name": "The Sanguine Aristocracy — verifier sample",
+ "detachment": "Blood Court",
+ "units": [
+  {
+   "unit": "Count Palatine Blood-Lord",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Deathless Levy",
+   "models": 5
+  },
+  {
+   "unit": "Thrall-Levies",
+   "models": 10
+  },
+  {
+   "unit": "Night-Ghast Brutes",
+   "models": 3
+  },
+  {
+   "unit": "Dire Blood-Hounds",
+   "models": 5
+  },
+  {
+   "unit": "Midnight Coach",
+   "models": 1
+  },
+  {
+   "unit": "Altar of Ichor",
+   "models": 1
+  },
+  {
+   "unit": "Grave-Knights",
+   "models": 3
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/06_sanguine_aristocracy.json"
+ ]
+}

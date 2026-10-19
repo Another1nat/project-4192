@@ -1,0 +1,1092 @@
+{
+ "name": "The Mordant Ghoul-Courts",
+ "verb": "REPLENISH",
+ "identity": "Cannibal ghouls who believe they are a noble court of knights. Cheap, poorly armoured hordes that refill by feasting and hit harder near their deluded kings. Each detachment is a different shared delusion.",
+ "number": "07",
+ "template": "B_melee_predator",
+ "status": "draft",
+ "learned_from": [
+  "AoS cannibal ghoul courts (Noble Deeds, Feeding Frenzy +1 A within 12″, Muster Guard) — research 2026-10",
+  "Gemini #1 Noble Delusion (moved to detachments so the core is not another pick-1-of-3), #3 Marrow-Feast capped at 100%"
+ ],
+ "risk_profile": "Low (refill). Gamble = durability: a deluded king hurts himself for a glorious charge.",
+ "core_rule": {
+  "name": "Marrow-Feast & Feeding Frenzy",
+  "text": "Marrow-Feast: once per round, after a Mordant unit destroys 1+ enemy models in melee, it returns D3 slain models (Class 1) or heals D3 MIGHT (Class 2–5), never above Starting Strength. Feeding Frenzy: Class 1 Mordant units wholly within 9″ of a friendly Mordant Leader get +1 Attack in melee."
+ },
+ "gamble": {
+  "name": "Delusional Crusade",
+  "text": "When a Leader activates, it may suffer 2 Fatal Wounds (cannot be saved or ignored): +2 Attacks and [CRASHING] on its melee weapons this activation.",
+  "risk_cost": "durability (voluntary)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.4,
+   "mods": {
+    "unyielding": 6
+   },
+   "name": "Marrow-Feast",
+   "text": "Refill after kills."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.5,
+   "mods": {
+    "attacks_mod": 1
+   },
+   "classes": [
+    1
+   ],
+   "name": "Feeding Frenzy",
+   "text": "+1 A near a Leader."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Bone sceptre",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Ghoul-King of the Carrion Throne",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "reroll_wound": "ones"
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Royal Decree",
+     "text": "The attached unit re-rolls melee Wound rolls of 1."
+    },
+    {
+     "flat": 8.0,
+     "name": "Summon the Court",
+     "text": "Once per battle (1 CP), return a destroyed Crypt-Scullions unit at half strength within 6″."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rending claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Rotting maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Ghoul-King on Royal Corpse-Drake",
+   "slot": 2,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Royal Feeding Frenzy",
+     "text": "Feeding Frenzy range from this model is 12″."
+    },
+    {
+     "flat": 6.0,
+     "name": "Noxious Breath",
+     "text": "Once per round, D3 Fatal Wounds on a 3+ to a unit within 9″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 6,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bone halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Crypt-Seneschal",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Herald of the King",
+     "text": "The attached unit gets +1 to Hit in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 6,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bone shiv",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Carrion-Surgeon",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 7.0,
+     "name": "Stitch the Courtiers",
+     "text": "Once per round, return D3 slain models to a friendly Class 1 unit within 3″ (max Starting Strength)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Assassin)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 6,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bone darts",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[IMPALING HITS]"
+     ]
+    },
+    {
+     "name": "Envenomed claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "name": "Court Poisoner",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Tainted Feast",
+     "text": "An enemy unit wounded by this model cannot be healed until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Filthy claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Crypt-Scullions",
+   "slot": 6,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Deranged Endurance",
+     "text": "UNYIELDING 6+."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Splintered pike",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Delusional Pike-Levy",
+   "slot": 7,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Hold the Gate!",
+     "text": "+1 CTRL per model while within 3″ of an objective."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Gnarled talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Crypt-Flayer Guard",
+   "slot": 8,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Skreech",
+     "text": "Enemy units within 3″ at the end of this unit's Charge are Rattled on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 13,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Femur-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Ghoul-Knights",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Thundering Lance",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Gnarled talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Crypt-Horror Brutes",
+   "slot": 10,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 5
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Gorged Flesh",
+     "text": "UNYIELDING 5+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Bone greatsword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Court Champions",
+   "slot": 11,
+   "abilities": [
+    {
+     "scope": "melee",
+     "uptime": 0.3,
+     "mods": {
+      "dmg_mod": 1
+     },
+     "name": "Precision Duellists",
+     "text": "Melee [PRECISION]; +1 Damage against Leaders."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Bone javelins",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Bone shiv",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Court Huntsmen",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Flush the Quarry",
+     "text": "An enemy unit hit by this unit loses Cover against the next friendly melee unit to charge it this round."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Filthy claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Carrion Bat-Swarm",
+   "slot": 13,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Flock",
+     "text": "[STEALTH]."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Filthy claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Feast-Hounds",
+   "slot": 14,
+   "abilities": [
+    {
+     "utility": "SCOUTS",
+     "name": "Hunt Ahead",
+     "text": "[SCOUTS 6″]."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Skull-catapult",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Bone-Slingers",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Grisly Ammunition",
+     "text": "Units hit test Suppression."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Carrion Altar",
+   "slot": 16,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Dread Banquet",
+     "text": "Friendly units within 9″ get +1 to Hit in melee."
+    },
+    {
+     "flat": 5.0,
+     "name": "Royal Repast",
+     "text": "Marrow-Feast within 9″ returns D3+1 models."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 8,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Rending claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Courtly Horror-Beast",
+   "slot": 17,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Ravenous",
+     "text": "+1 Attack in melee while damaged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rending claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Rotting maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Royal Corpse-Drake",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Noxious Breath",
+     "text": "Once per round, D3 Fatal Wounds on a 3+ to a unit within 9″."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Tomb-stone club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    },
+    {
+     "name": "Rotting maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Mound-Giant of the Court",
+   "slot": 19,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Rotting Bulk",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "UNYIELDING": 6,
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Rotting maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "The Carrion Colossus",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Grand Feast",
+     "text": "Marrow-Feast triggers for every friendly unit within 6″ when this model destroys an enemy unit."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "The Royal Hunt",
+   "playstyle": "Delusion: the court is hunting a great beast. Monsters and knights chase big targets.",
+   "rule": "Royal Hunt: re-roll Wound rolls against Class 4–5 units. Class 2–4 Mordant units get +2″ MOV in Round 1.",
+   "enhancements": [
+    {
+     "name": "Huntmaster's Horn",
+     "bearer": "Ghoul-King on Royal Corpse-Drake",
+     "ability": {
+      "mods": {
+       "reroll_wound": "all"
+      },
+      "scope": "melee",
+      "uptime": 1.0,
+      "name": "Huntmaster's Horn",
+      "text": "Re-roll all melee Wound rolls."
+     },
+     "text": "Re-roll all melee Wound rolls."
+    },
+    {
+     "name": "Trophy of the Beast",
+     "bearer": "Crypt-Seneschal",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Trophy of the Beast",
+      "text": "+1 Damage on a round he charged."
+     },
+     "text": "+1 Damage on a round he charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Bring It Down!",
+     "cp": 1,
+     "when": "A Class 4–5 enemy is wounded",
+     "effect": "The next friendly unit to attack it gets +1 to Hit."
+    },
+    {
+     "name": "The Hunt Is On",
+     "cp": 1,
+     "when": "Command Phase",
+     "effect": "One Class 2–4 unit makes a free 3″ move."
+    },
+    {
+     "name": "Feast on the Kill",
+     "cp": 1,
+     "when": "A Class 4–5 enemy is destroyed",
+     "effect": "Every Mordant unit within 6″ triggers Marrow-Feast."
+    }
+   ]
+  },
+  {
+   "name": "The Grand Feast",
+   "playstyle": "Delusion: a royal banquet. Leaders earn Deeds and the hordes grow frenzied.",
+   "rule": "Noble Deeds: each Leader gains 1 Deed per enemy model it destroys. At 3 Deeds, Feeding Frenzy from that Leader also gives +1 to Wound; at 6 Deeds it returns 1 slain Class 2 model to a unit within 6″ (once per round).",
+   "enhancements": [
+    {
+     "name": "Gilded Goblet",
+     "bearer": "Ghoul-King of the Carrion Throne",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "wound_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.5,
+      "name": "Gilded Goblet",
+      "text": "Friendly units within 9″ get +1 to Wound in melee on a round they charged."
+     },
+     "text": "Friendly units within 9″ get +1 to Wound in melee on a round they charged."
+    },
+    {
+     "name": "Chef's Cleaver",
+     "bearer": "Carrion-Surgeon",
+     "ability": {
+      "flat": 4.0,
+      "name": "Chef's Cleaver",
+      "text": "Stitch the Courtiers returns D3+1."
+     },
+     "text": "Stitch the Courtiers returns D3+1."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Second Helping",
+     "cp": 1,
+     "when": "A unit triggers Marrow-Feast",
+     "effect": "Trigger it again this round."
+    },
+    {
+     "name": "Cry of the Court",
+     "cp": 1,
+     "when": "A Leader gains a Deed",
+     "effect": "Gain 1 additional Deed."
+    },
+    {
+     "name": "Ravenous Rush",
+     "cp": 1,
+     "when": "A Class 1 unit within Frenzy range declares a Charge",
+     "effect": "+2″ to the Charge roll."
+    }
+   ]
+  },
+  {
+   "name": "The Dragon Court",
+   "playstyle": "Delusion: a court of dragon-knights. Fewer models, more monsters, flying knights.",
+   "rule": "Dragon Lords: Class 4 Mordant units have UNYIELDING 6+ and +1 CTRL; [FLY] units may Charge after making a full Move over terrain.",
+   "enhancements": [
+    {
+     "name": "Royal Scales",
+     "bearer": "Ghoul-King on Royal Corpse-Drake",
+     "ability": {
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Royal Scales",
+      "text": "UNYIELDING 5+."
+     },
+     "text": "UNYIELDING 5+."
+    },
+    {
+     "name": "Dragon-Crested Helm",
+     "bearer": "Crypt-Seneschal",
+     "ability": {
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Dragon-Crested Helm",
+      "text": "+2″ MOV."
+     },
+     "text": "+2″ MOV."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Wings of the Court",
+     "cp": 1,
+     "when": "A [FLY] unit activates",
+     "effect": "+3″ MOV this activation."
+    },
+    {
+     "name": "Plague-Breath Volley",
+     "cp": 1,
+     "when": "A Corpse-Drake uses Noxious Breath",
+     "effect": "Use it twice this round."
+    },
+    {
+     "name": "Guard the Lord",
+     "cp": 1,
+     "when": "A Leader is targeted within 3″ of a Class 2 unit",
+     "effect": "That unit suffers the attacks instead on a 3+."
+    }
+   ]
+  }
+ ]
+}

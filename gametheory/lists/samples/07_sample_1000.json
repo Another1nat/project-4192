@@ -1,0 +1,60 @@
+{
+ "name": "The Mordant Ghoul-Courts — verifier sample",
+ "detachment": "The Royal Hunt",
+ "units": [
+  {
+   "unit": "Ghoul-King of the Carrion Throne",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Delusional Pike-Levy",
+   "models": 5
+  },
+  {
+   "unit": "Crypt-Scullions",
+   "models": 10
+  },
+  {
+   "unit": "Bone-Slingers",
+   "models": 2
+  },
+  {
+   "unit": "Court Huntsmen",
+   "models": 3
+  },
+  {
+   "unit": "Royal Corpse-Drake",
+   "models": 1
+  },
+  {
+   "unit": "Carrion Altar",
+   "models": 1
+  },
+  {
+   "unit": "Ghoul-Knights",
+   "models": 3
+  },
+  {
+   "unit": "Carrion Bat-Swarm",
+   "models": 5
+  },
+  {
+   "unit": "Crypt-Flayer Guard",
+   "models": 3
+  },
+  {
+   "unit": "Feast-Hounds",
+   "models": 5
+  },
+  {
+   "unit": "Carrion-Surgeon",
+   "models": 1,
+   "attached": true
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/07_mordant_ghoul_courts.json"
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "name": "The Prometheus Flesh-Guilds — verifier sample",
+ "detachment": "Surgeon-Cult",
+ "units": [
+  {
+   "unit": "Arch-Chirurgeon Prime",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Galvanic Phalanx",
+   "models": 5
+  },
+  {
+   "unit": "Wire-Stitched Servitors",
+   "models": 5
+  },
+  {
+   "unit": "Plasma-Welder Team",
+   "models": 2
+  },
+  {
+   "unit": "Scrap-Mite Swarm",
+   "models": 5
+  },
+  {
+   "unit": "Gurney-Crawler",
+   "models": 1
+  },
+  {
+   "unit": "Reclamation Engine",
+   "models": 1
+  },
+  {
+   "unit": "Stitched Brutes",
+   "models": 3
+  },
+  {
+   "unit": "Arc-Lancer Skirmishers",
+   "models": 3
+  },
+  {
+   "unit": "Galvanic Striders",
+   "models": 3
+  },
+  {
+   "unit": "Prometheus Flesh-Golem",
+   "models": 1
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/08_prometheus_flesh_guilds.json"
+ ]
+}

@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>/* Enforce HTTPS on production */
+  (function () { try { var l = location;
+    if (l.protocol === 'http:' && l.hostname !== 'localhost' && l.hostname !== '127.0.0.1') {
+      l.replace('https://' + l.host + l.pathname + l.search + l.hash);
+    }
+  } catch (e) {} })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Live Match — Iron &amp; Wrath TV</title>
+  <meta name="robots" content="noindex, nofollow, noai, noimageai">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #161d27;
+      --line: #2a3546;
+      --accent: #22c55e;
+      --amber: #f59e0b;
+      --p1-col: #38bdf8;
+      --p2-col: #f87171;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #e6edf8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: max(12px, env(safe-area-inset-top)) 16px 12px;
+      background: #101622;
+      border-bottom: 1px solid var(--line);
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+    .live-tag {
+      background: #ef4444;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+    .hdr-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hdr-share-btn {
+      background: #1e293b;
+      border: 1px solid var(--line);
+      color: #38bdf8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .hdr-share-btn:hover {
+      background: #27354a;
+      border-color: #475569;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Video Player Box */
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #94a3b8;
+      background: radial-gradient(#1e293b, #0b0f14);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* Scoreboard Card */
+    .score-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .p-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+    .p-box.p2 { text-align: right; }
+    .p-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .p1 .p-name { color: var(--p1-col); }
+    .p2 .p-name { color: var(--p2-col); }
+    .p-sub {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .p-score { font-size: 2.2rem; font-weight: 900; color: #fff; line-height: 1; }
+    .p-cp {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fde68a;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      width: fit-content;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+    .p2 .p-cp { margin-left: auto; }
+
+    .center-round {
+      text-align: center;
+      padding: 0 14px;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+    .rnd-lbl { font-size: 0.7rem; color: #94a3b8; font-weight: 800; letter-spacing: 0.08em; }
+    .rnd-num { font-size: 1.8rem; font-weight: 900; color: #fff; }
+
+    /* Action Bar (Audio Mute, Share) */
+    .action-bar {
+      display: flex;
+      gap: 10px;
+    }
+    .act-btn {
+      flex: 1;
+      min-height: 48px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .act-btn:hover { background: #1e293b; border-color: #475569; }
+
+    /* WTC Terrain Layout Card */
+    .layout-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .layout-card-hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .layout-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #cbd5e1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.04em;
+    }
+    .layout-badge {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #86efac;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+    .layout-btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 480px) {
+      .layout-btn-group { grid-template-columns: 1fr; }
+    }
+    .layout-btn {
+      min-height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #111827;
+      color: #e2e8f0;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .layout-btn:hover { background: #1f293d; border-color: #475569; }
+    .layout-btn.primary {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: rgba(34, 197, 94, 0.4);
+      color: #86efac;
+    }
+    .layout-btn.primary:hover {
+      background: rgba(34, 197, 94, 0.25);
+    }
+
+    /* Live Match Intel & Scorecard ("Live Share" style) */
+    .intel-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .intel-hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+    }
+    .intel-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 640px) {
+    }
+    .player-intel {
+      background: #0f1520;
+      border: 1px solid #243044;
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .intel-p-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .intel-p-name.p1 { color: var(--p1-col); }
+    .intel-p-name.p2 { color: var(--p2-col); }
+    .intel-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      border-bottom: 1px dashed #1e293b;
+      padding-bottom: 4px;
+    }
+    .intel-stat-val {
+      font-weight: 800;
+      color: #f1f5f9;
+    }
+
+    /* 3D Terrain Modal */
+    #terrain-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.88);
+      display: none;
+      flex-direction: column;
+      padding: max(14px, env(safe-area-inset-top)) 14px max(14px, env(safe-area-inset-bottom));
+    }
+    #terrain-modal-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #0b0f14;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .modal-hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #161d27;
+      border-bottom: 1px solid var(--line);
+    }
+    .modal-hdr b { color: var(--accent); font-size: 1rem; text-transform: uppercase; }
+    .modal-close {
+      min-width: 44px;
+      min-height: 44px;
+      border: none;
+      border-radius: 10px;
+      background: #dc2626;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    #terrain-mount { flex: 1; position: relative; }
+
+    /* 2D Layout Map Modal */
+    #layout-2d-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.88);
+      display: none;
+      flex-direction: column;
+      padding: max(14px, env(safe-area-inset-top)) 14px max(14px, env(safe-area-inset-bottom));
+    }
+    #layout-2d-modal-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #0b0f14;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    #layout-2d-mount {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #090d13;
+      overflow: auto;
+      padding: 16px;
+    }
+    #layout-2d-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Toast Notification */
+    #watch-toast {
+      position: fixed;
+      bottom: max(20px, env(safe-area-inset-bottom));
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      border: 1px solid #38bdf8;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      z-index: 2000;
+      pointer-events: none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #watch-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-badge">
+      <span>IRON & WRATH</span>
+      <span class="live-tag">LIVE</span>
+    </div>
+    <div class="hdr-right">
+      <div id="room-lbl" style="font-size: 0.82rem; color: #94a3b8; font-weight: 700;">ROOM: #...</div>
+      <button class="hdr-share-btn" onclick="shareMatch()"><i class="fa-solid fa-share-nodes"></i> Share</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1080p Table Camera -->
+    <div class="video-frame">
+      <div id="video-ph" class="video-placeholder">
+        <i class="fa-solid fa-satellite-dish fa-spin" style="font-size: 2rem; color: var(--accent);"></i>
+        <span>Connecting to live tabletop camera…</span>
+      </div>
+      <video id="live-video" autoplay playsinline webkit-playsinline></video>
+    </div>
+
+    <!-- Live Scoreboard -->
+    <div class="score-card">
+      <div class="p-box p1">
+        <div id="p1-name" class="p-name">PLAYER 1</div>
+        <div id="p1-sub" class="p-sub">—</div>
+        <div id="p1-score" class="p-score">0</div>
+        <div class="p-cp"><span id="p1-cp">1</span> CP</div>
+      </div>
+
+      <div class="center-round">
+        <div class="rnd-lbl">ROUND</div>
+        <div id="rnd-num" class="rnd-num">1</div>
+        <div id="mission-txt" style="font-size: 0.72rem; color: #94a3b8; font-weight: 700; text-transform: uppercase;">MISSION</div>
+      </div>
+
+      <div class="p-box p2">
+        <div id="p2-name" class="p-name">PLAYER 2</div>
+        <div id="p2-sub" class="p-sub">—</div>
+        <div id="p2-score" class="p-score">0</div>
+        <div class="p-cp"><span id="p2-cp">1</span> CP</div>
+      </div>
+    </div>
+
+    <!-- Quick Action Controls -->
+    <div class="action-bar">
+      <button id="btn-audio" class="act-btn" onclick="toggleAudio()"><i class="fa-solid fa-volume-xmark"></i> Unmute Table Audio</button>
+      <button id="btn-share" class="act-btn" onclick="shareMatch()"><i class="fa-solid fa-share-nodes"></i> Share Live Match</button>
+    </div>
+
+    <!-- WTC Terrain Layout Card ("The layout link so they can see it for themselves") -->
+    <div class="layout-card">
+      <div class="layout-card-hdr">
+        <div class="layout-title">
+          <i class="fa-solid fa-map-location-dot" style="color: var(--accent);"></i>
+          <span>WTC TERRAIN LAYOUT:</span>
+          <span id="layout-code" class="layout-badge">SELECTING…</span>
+        </div>
+        <a id="layout-ext-link" href="#" target="_blank" rel="noopener" style="font-size:0.75rem; color:#38bdf8; text-decoration:none; display:none; align-items:center; gap:4px;">
+          Open Vector Map <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7rem;"></i>
+        </a>
+      </div>
+      <div class="layout-btn-group">
+        <button id="btn-3d" class="layout-btn primary" onclick="open3dTerrain()">
+          <i class="fa-solid fa-cube"></i> Inspect 3D / AR Layout
+        </button>
+        <button id="btn-2d" class="layout-btn" onclick="open2dLayout()">
+          <i class="fa-solid fa-map"></i> View 2D Layout Map
+        </button>
+        <a id="btn-ar" class="layout-btn" href="#" target="_blank" rel="noopener" style="display:none; text-decoration:none; align-items:center; justify-content:center; gap:6px;">
+          <i class="fa-solid fa-vr-cardboard"></i> See it on your table (AR)
+        </a>
+      </div>
+    </div>
+
+    <!-- The full game, exactly as the players see it (read-only): points, primary and secondary missions and how they were scored, CP, activity log -->
+    <div class="intel-card" id="full-card" style="display:none;">
+      <div class="intel-hdr">
+        <div class="intel-title"><i class="fa-solid fa-list-check" style="color:#38bdf8;"></i> <span>FULL SCOREBOARD</span></div>
+        <a id="full-link" href="#" target="_blank" rel="noopener" style="font-size:0.78rem; color:#38bdf8; text-decoration:none;">Open on its own <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7rem;"></i></a>
+      </div>
+      <iframe id="full-frame" title="Full scoreboard" style="width:100%; height:900px; border:0; border-radius:12px; background:#0b0f14; display:block;"></iframe>
+    </div>
+  </main>
+
+  <!-- 3D Terrain Modal -->
+  <div id="terrain-modal">
+    <div id="terrain-modal-inner">
+      <div class="modal-hdr">
+        <b id="modal-title">3D WTC TERRAIN LAYOUT</b>
+        <button class="modal-close" onclick="close3dTerrain()">✕</button>
+      </div>
+      <div id="terrain-mount"></div>
+    </div>
+  </div>
+
+  <!-- 2D Layout Map Modal -->
+  <div id="layout-2d-modal">
+    <div id="layout-2d-modal-inner">
+      <div class="modal-hdr">
+        <b id="layout-2d-title">2D WTC MAP</b>
+        <button class="modal-close" onclick="close2dLayout()">✕</button>
+      </div>
+      <div id="layout-2d-mount">
+        <img id="layout-2d-img" src="" alt="2D Terrain Layout Map">
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="watch-toast">
+    <i class="fa-solid fa-circle-check" style="color:#38bdf8;"></i>
+    <span id="watch-toast-txt">Link copied to clipboard!</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="league_config.js?v=2"></script>
+  <script src="assets/vendor/model-viewer.min.js" type="module"></script>
+  <script src="ar_viewer.js?v=14"></script>
+  <script>
+    const q = new URLSearchParams(location.search);
+    const roomId = q.get('room') || q.get('c') || 'TEST';
+    document.getElementById('room-lbl').textContent = `ROOM: #${roomId}`;
+
+    const myPeerId = 'peer_' + Math.random().toString(36).substring(2, 9);
+    let pc = null, curLayout = null, isMuted = true, rtChannel = null, toastTimer = null;
+    let remoteSet = false, pendingIce = [], lastOfferAt = 0;
+    const v = document.getElementById('live-video');
+
+    function esc(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('watch-toast');
+      const txt = document.getElementById('watch-toast-txt');
+      if (!t || !txt) return;
+      txt.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    function shareMatch() {
+      const url = location.href;
+      if (navigator.share) {
+        navigator.share({
+          title: 'Iron & Wrath Live Match',
+          text: `Watch a live match (#${roomId}) on Iron & Wrath TV`,
+          url: url
+        }).catch(() => {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast('Spectator link copied to clipboard!');
+        }).catch(() => {
+          showToast('Match link: ' + url);
+        });
+      } else {
+        showToast('Match link: ' + url);
+      }
+    }
+
+    function toggleAudio() {
+      isMuted = !isMuted;
+      v.muted = isMuted;
+      const b = document.getElementById('btn-audio');
+      b.innerHTML = isMuted ? '<i class="fa-solid fa-volume-xmark"></i> Unmute Table Audio' : '<i class="fa-solid fa-volume-high" style="color: #4ade80;"></i> Mute Audio';
+    }
+
+    function renderScore(state) {
+      if (!state) return;
+      const p1 = state.p1 || {}, p2 = state.p2 || {};
+      document.getElementById('p1-name').textContent = p1.name || 'PLAYER 1';
+      document.getElementById('p2-name').textContent = p2.name || 'PLAYER 2';
+      document.getElementById('p1-sub').textContent = p1.faction || '—';
+      document.getElementById('p2-sub').textContent = p2.faction || '—';
+      document.getElementById('p1-score').textContent = (p1.pri || 0) + (p1.sec || 0) + (p1.paint ? 10 : 0);
+      document.getElementById('p2-score').textContent = (p2.pri || 0) + (p2.sec || 0) + (p2.paint ? 10 : 0);
+      document.getElementById('p1-cp').textContent = typeof p1.cp === 'number' ? p1.cp : 1;
+      document.getElementById('p2-cp').textContent = typeof p2.cp === 'number' ? p2.cp : 1;
+      document.getElementById('rnd-num').textContent = state.round || 1;
+      document.getElementById('mission-txt').textContent = state.m1 || state.m2 || 'PRIMARY';
+
+      // Layout Card & Link
+      if (state.layout) {
+        curLayout = state.layout;
+        const badge = document.getElementById('layout-code');
+        if (badge) badge.textContent = curLayout;
+        const ar = document.getElementById('btn-ar'); if (ar) { ar.href = `ar.html?layout=${encodeURIComponent(curLayout)}`; ar.style.display = 'inline-flex'; }
+        const ext = document.getElementById('layout-ext-link');
+        if (ext) {
+          ext.href = `assets/layouts_svg/${curLayout}.svg`;
+          ext.style.display = 'inline-flex';
+        }
+      }
+    }
+
+    // the full game tracker (read-only) for the shared game, sized to its content
+    let fullCode = '';
+    function showFull(code) {
+      if (!/^[A-Z0-9]{5}$/.test(code) || code === fullCode) return;
+      fullCode = code;
+      const url = `./?obs=${code}&embed=1`;
+      document.getElementById('full-frame').src = url;
+      document.getElementById('full-link').href = `./?obs=${code}`;
+      document.getElementById('full-card').style.display = 'block';
+    }
+    window.addEventListener('message', e => {
+      if (e.origin !== location.origin || !e.data || e.data.type !== 'wp-height') return;
+      const f = document.getElementById('full-frame'); if (f) f.style.height = Math.max(600, Math.min(6000, e.data.h + 4)) + 'px';
+    });
+
+    // Connect via Supabase Realtime channel
+    function connectRealtime() {
+      if (!window.LEAGUE_CONFIG || !window.supabase) return;
+      const client = supabase.createClient(window.LEAGUE_CONFIG.url, window.LEAGUE_CONFIG.anonKey);
+      rtChannel = client.channel('stream_' + roomId);
+      rtChannel
+        .on('broadcast', { event: 'telemetry' }, msg => {
+          if (msg.payload && msg.payload.state) renderScore(msg.payload.state);
+          if (msg.payload && msg.payload.live) showFull(msg.payload.live);
+        })
+        .on('broadcast', { event: 'offer' }, async msg => {
+          if (msg.payload && msg.payload.sdp && (msg.payload.target === myPeerId || !msg.payload.target)) {
+            try {
+              lastOfferAt = Date.now();
+              remoteSet = false;
+              pendingIce = [];
+              if (pc) {
+                try { pc.close(); } catch (e) {}
+              }
+              pc = new RTCPeerConnection({
+                iceServers: [
+                  { urls: 'stun:stun.cloudflare.com:3478' },
+                  { urls: 'stun:stun.l.google.com:19302' }
+                ]
+              });
+              pc.ontrack = e => {
+                const ph = document.getElementById('video-ph');
+                if (ph) ph.style.display = 'none';
+                v.srcObject = e.streams[0];
+                v.muted = isMuted;
+                v.play().catch(() => {});
+              };
+              pc.onconnectionstatechange = () => {
+                if (pc.connectionState === 'failed' || pc.connectionState === 'disconnected') {
+                  const ph = document.getElementById('video-ph');
+                  if (ph) {
+                    ph.style.display = 'flex';
+                    const s = ph.querySelector('span');
+                    if (s) s.textContent = 'Reconnecting to tabletop camera…';
+                  }
+                  if (rtChannel) {
+                    rtChannel.send({ type: 'broadcast', event: 'request_offer', payload: { peerId: myPeerId } }).catch(() => {});
+                  }
+                }
+              };
+              pc.onicecandidate = e => {
+                if (e.candidate && rtChannel) {
+                  rtChannel.send({
+                    type: 'broadcast',
+                    event: 'candidate',
+                    payload: { peerId: myPeerId, role: 'peer', candidate: e.candidate }
+                  }).catch(() => {});
+                }
+              };
+              await pc.setRemoteDescription(new RTCSessionDescription({ type: 'offer', sdp: msg.payload.sdp }));
+              remoteSet = true;
+              pendingIce.splice(0).forEach(c => pc.addIceCandidate(c).catch(() => {}));
+              const answer = await pc.createAnswer();
+              await pc.setLocalDescription(answer);
+              rtChannel.send({
+                type: 'broadcast',
+                event: 'answer',
+                payload: { peerId: myPeerId, sdp: answer.sdp }
+              }).catch(() => {});
+            } catch (err) {
+              console.error('WebRTC error setting offer:', err);
+            }
+          }
+        })
+        .on('broadcast', { event: 'candidate' }, msg => {
+          if (msg.payload && msg.payload.candidate && msg.payload.role === 'host' && (msg.payload.target === myPeerId || !msg.payload.target)) {
+            if (pc && remoteSet) pc.addIceCandidate(msg.payload.candidate).catch(() => {});
+            else pendingIce.push(msg.payload.candidate);
+          }
+        })
+        .on('broadcast', { event: 'host_ready' }, () => {
+          rtChannel.send({ type: 'broadcast', event: 'request_state', payload: {} }).catch(() => {});
+          rtChannel.send({ type: 'broadcast', event: 'request_offer', payload: { peerId: myPeerId } }).catch(() => {});
+        })
+        .subscribe(status => {
+          if (status === 'SUBSCRIBED') {
+            rtChannel.send({ type: 'broadcast', event: 'request_state', payload: {} }).catch(() => {});
+            rtChannel.send({ type: 'broadcast', event: 'request_offer', payload: { peerId: myPeerId } }).catch(() => {});
+          }
+        });
+    }
+
+    // the broadcast may start after this page opened: keep asking until the camera is connected
+    setInterval(() => {
+      if (!rtChannel) return;
+      const connected = pc && (pc.connectionState === 'connected' || pc.connectionState === 'connecting');
+      if (!connected && Date.now() - lastOfferAt > 8000) {
+        rtChannel.send({ type: 'broadcast', event: 'request_offer', payload: { peerId: myPeerId } }).catch(() => {});
+      }
+    }, 5000);
+
+    function open3dTerrain() {
+      if (!curLayout) {
+        showToast('Terrain layout not selected in match setup yet.');
+        return;
+      }
+      const m = document.getElementById('terrain-modal');
+      m.style.display = 'flex';
+      const mount = document.getElementById('terrain-mount');
+      mount.innerHTML = '';
+      if (window.ARVIEW) {
+        ARVIEW.mount(mount, curLayout, { height: '100%', compact: true });
+        document.getElementById('modal-title').textContent = `3D TERRAIN · ${curLayout}`;
+      }
+    }
+    function close3dTerrain() {
+      const m = document.getElementById('terrain-modal');
+      m.style.display = 'none';
+      if (window.ARVIEW) ARVIEW.dispose(document.getElementById('terrain-mount'));
+    }
+
+    function open2dLayout() {
+      if (!curLayout) {
+        showToast('Terrain layout not selected in match setup yet.');
+        return;
+      }
+      const m = document.getElementById('layout-2d-modal');
+      m.style.display = 'flex';
+      document.getElementById('layout-2d-title').textContent = `2D WTC MAP · ${curLayout}`;
+      document.getElementById('layout-2d-img').src = `assets/layouts_svg/${curLayout}.svg`;
+    }
+    function close2dLayout() {
+      const m = document.getElementById('layout-2d-modal');
+      m.style.display = 'none';
+    }
+
+    connectRealtime();
+  </script>
+</body>
+</html>

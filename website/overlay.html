@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>/* Enforce HTTPS on production */
+  (function () { try { var l = location;
+    if (l.protocol === 'http:' && l.hostname !== 'localhost' && l.hostname !== '127.0.0.1') {
+      l.replace('https://' + l.host + l.pathname + l.search + l.hash);
+    }
+  } catch (e) {} })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iron &amp; Wrath Broadcast Overlay</title>
+  <meta name="robots" content="noindex, nofollow, noai, noimageai">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <style>
+    :root {
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --bg-dark: rgba(11, 16, 24, 0.92);
+      --border-line: rgba(255, 255, 255, 0.16);
+      --p1-col: #38bdf8;
+      --p2-col: #f87171;
+      --accent: #22c55e;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: transparent !important;
+      color: #fff;
+      font-family: var(--font);
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* Table camera (WebRTC from the broadcasting phone), full frame behind the HUD */
+    #cam {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      background: #000;
+      display: none;
+    }
+    #cam.on { display: block; }
+    body.fit-cover #cam { object-fit: cover; }
+    /* Outside OBS (phone / desktop browser) the page is not see-through, so give it a dark backdrop */
+    body.preview { background: #05080d !important; }
+    #cam-wait {
+      position: fixed;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #64748b;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 24px;
+    }
+    body.preview.want-video #cam-wait { display: flex; }
+    body.preview.want-video.has-video #cam-wait { display: none; }
+    #cam-wait i { font-size: 1.8rem; color: #334155; }
+    #tap-audio {
+      position: fixed;
+      top: 10px;
+      right: 12px;
+      display: none;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border-radius: 6px;
+      padding: 4px 9px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 5;
+    }
+    body.preview.has-video #tap-audio { display: inline-flex; gap: 6px; align-items: center; }
+
+    /* Container for Lower Third */
+    #overlay-root {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Top Tray: Active Secondaries */
+    #secondaries-tray {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      opacity: 0.95;
+    }
+    .sec-col {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      max-width: 48%;
+    }
+    .sec-badge {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .sec-badge.scored {
+      background: rgba(34, 197, 94, 0.22);
+      border-color: #22c55e;
+      color: #86efac;
+    }
+
+    /* Lower-Third Bar */
+    .hud-bar {
+      display: flex;
+      align-items: stretch;
+      background: var(--bg-dark);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
+      min-height: 84px;
+    }
+
+    /* Player Halves */
+    .player-card {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 12px 18px;
+      position: relative;
+    }
+    .player-card.p1 {
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      border-left: 5px solid var(--p1-col);
+    }
+    .player-card.p2 {
+      flex-direction: row-reverse;
+      border-right: 5px solid var(--p2-col);
+    }
+
+    /* Names & Details */
+    .p-meta {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+    .player-card.p2 .p-meta { text-align: right; }
+
+    .p-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+    }
+    .player-card.p1 .p-name { color: var(--p1-col); }
+    .player-card.p2 .p-name { color: var(--p2-col); }
+
+    .p-sub {
+      font-size: 0.74rem;
+      color: #94a3b8;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .player-card.p2 .p-sub { justify-content: flex-end; }
+
+    .fd-pill {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      color: #e2e8f0;
+      text-transform: uppercase;
+    }
+
+    /* Score Badges */
+    .score-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 12px;
+    }
+    .player-card.p2 .score-group { flex-direction: row-reverse; }
+
+    .vp-total {
+      font-size: 2.7rem;
+      font-weight: 900;
+      line-height: 1;
+      min-width: 58px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .vp-pop { transform: scale(1.22); color: #86efac !important; }
+
+    .vp-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 0.72rem;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    .cp-badge {
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      border-radius: 8px;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #fde68a;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .cp-icon { color: var(--amber); font-size: 0.76rem; }
+
+    /* Center Match Emblem */
+    .center-hub {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      min-width: 140px;
+      text-align: center;
+    }
+    .round-lbl {
+      color: #94a3b8;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .round-num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .mission-name {
+      font-size: 0.72rem;
+      color: #cbd5e1;
+      font-weight: 700;
+      max-width: 130px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+    }
+
+    /* Corner Mini-Map Drawer (When enabled by Broadcaster) */
+    #minimap-widget {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      width: 280px;
+      height: 200px;
+      background: rgba(11, 16, 24, 0.9);
+      border: 1px solid var(--border-line);
+      border-radius: 14px;
+      overflow: hidden;
+      display: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+    #minimap-widget model-viewer { width: 100%; height: 100%; }
+
+    /* Offline / Connecting Notice */
+    #hud-status {
+      position: absolute;
+      top: 10px;
+      left: 24px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #94a3b8;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #eab308;
+    }
+    .status-dot.live { background: #22c55e; }
+    body.obs #hud-status.live { display: none; }
+
+    /* Narrow screens (a phone opening the OBS link): compact bar, both players always visible */
+    @media (max-width: 760px) {
+      #overlay-root { left: 8px; right: 8px; bottom: 12px; gap: 6px; }
+      .sec-col { max-width: 49%; gap: 4px; }
+      .sec-badge { font-size: 0.6rem; padding: 3px 6px; gap: 4px; }
+      .hud-bar { min-height: 60px; border-radius: 12px; }
+      .player-card { padding: 6px 8px; min-width: 0; flex-direction: column; align-items: stretch; gap: 4px; }
+      .player-card.p2 { flex-direction: column; }
+      .player-card.p2 .score-group { justify-content: flex-start; }
+      .player-card.p1 { border-left-width: 4px; }
+      .player-card.p2 { border-right-width: 4px; }
+      .p-name { font-size: 0.85rem; }
+      .p-sub { font-size: 0.62rem; }
+      .fd-pill, .vp-breakdown, .mission-name { display: none; }
+      .score-group { gap: 6px; margin: 0; justify-content: flex-end; }
+      .cp-badge { font-size: 0.7rem; padding: 2px 5px; border-radius: 6px; }
+      .vp-total { font-size: 1.7rem; min-width: 34px; }
+      .center-hub { min-width: 0; padding: 0 8px; }
+      .round-lbl { font-size: 0.5rem; letter-spacing: 0.04em; }
+      .round-num { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <video id="cam" autoplay playsinline webkit-playsinline muted></video>
+  <div id="cam-wait"><i class="fa-solid fa-video"></i><span id="cam-wait-txt">Waiting for the table camera…<br>The broadcasting phone must have "Start Table Broadcast" running.</span></div>
+  <button id="tap-audio" type="button"><i class="fa-solid fa-volume-xmark"></i> <span>Tap for sound</span></button>
+
+  <div id="hud-status"><div id="status-dot" class="status-dot"></div> <span id="status-txt">Connecting to match…</span></div>
+
+  <div id="minimap-widget"></div>
+
+  <div id="overlay-root">
+    <!-- Active Secondaries Bar -->
+    <div id="secondaries-tray">
+      <div id="p1-secs" class="sec-col"></div>
+      <div id="p2-secs" class="sec-col" style="justify-content: flex-end;"></div>
+    </div>
+
+    <!-- Main Score Bar -->
+    <div class="hud-bar">
+      <!-- Player 1 -->
+      <div class="player-card p1">
+        <div class="p-meta">
+          <div id="p1-name" class="p-name">PLAYER 1</div>
+          <div class="p-sub">
+            <span id="p1-faction">—</span>
+            <span id="p1-fd" class="fd-pill">PRIORITY</span>
+          </div>
+        </div>
+        <div class="score-group">
+          <div id="p1-cp-box" class="cp-badge">
+            <span id="p1-cp">1</span> CP
+          </div>
+          <div class="vp-breakdown">
+            <div>PRI <span id="p1-pri">0</span></div>
+            <div>SEC <span id="p1-sec">0</span></div>
+          </div>
+          <div id="p1-total" class="vp-total">0</div>
+        </div>
+      </div>
+
+      <!-- Center Round Emblem -->
+      <div class="center-hub">
+        <div class="round-lbl">BATTLE ROUND</div>
+        <div class="round-num"><span id="round-val">1</span><span style="font-size: 0.95rem; color: #64748b; font-weight: normal;">/5</span></div>
+        <div id="primary-name" class="mission-name">PRIMARY MISSION</div>
+      </div>
+
+      <!-- Player 2 -->
+      <div class="player-card p2">
+        <div class="p-meta">
+          <div id="p2-name" class="p-name">PLAYER 2</div>
+          <div class="p-sub">
+            <span id="p2-faction">—</span>
+            <span id="p2-fd" class="fd-pill">PRIORITY</span>
+          </div>
+        </div>
+        <div class="score-group">
+          <div id="p2-cp-box" class="cp-badge">
+            <span id="p2-cp">1</span> CP
+          </div>
+          <div class="vp-breakdown">
+            <div>PRI <span id="p2-pri">0</span></div>
+            <div>SEC <span id="p2-sec">0</span></div>
+          </div>
+          <div id="p2-total" class="vp-total">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="league_config.js?v=2"></script>
+  <script>
+    (function () {
+      const q = new URLSearchParams(location.search);
+      const roomId = q.get('room') || q.get('c') || 'TEST';
+      let rtChannel = null;
+
+      function esc(s) { return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+      function animateVal(id, newVal) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (el.textContent !== String(newVal)) {
+          el.textContent = newVal;
+          el.classList.add('vp-pop');
+          setTimeout(() => el.classList.remove('vp-pop'), 260);
+        }
+      }
+
+      function render(state, settings) {
+        if (!state) return;
+        settings = settings || {};
+        const p1 = state.p1 || {}, p2 = state.p2 || {};
+
+        document.getElementById('p1-name').textContent = p1.name || 'PLAYER 1';
+        document.getElementById('p2-name').textContent = p2.name || 'PLAYER 2';
+        document.getElementById('p1-faction').textContent = p1.faction || '—';
+        document.getElementById('p2-faction').textContent = p2.faction || '—';
+        document.getElementById('p1-fd').textContent = p1.forceDisp || 'PRIORITY';
+        document.getElementById('p2-fd').textContent = p2.forceDisp || 'PRIORITY';
+
+        animateVal('p1-total', (p1.pri || 0) + (p1.sec || 0) + (p1.paint ? 10 : 0));
+        animateVal('p2-total', (p2.pri || 0) + (p2.sec || 0) + (p2.paint ? 10 : 0));
+        document.getElementById('p1-pri').textContent = p1.pri || 0;
+        document.getElementById('p2-pri').textContent = p2.pri || 0;
+        document.getElementById('p1-sec').textContent = p1.sec || 0;
+        document.getElementById('p2-sec').textContent = p2.sec || 0;
+
+        document.getElementById('p1-cp').textContent = typeof p1.cp === 'number' ? p1.cp : 1;
+        document.getElementById('p2-cp').textContent = typeof p2.cp === 'number' ? p2.cp : 1;
+        if (settings.showCp === false) {
+          document.getElementById('p1-cp-box').style.display = 'none';
+          document.getElementById('p2-cp-box').style.display = 'none';
+        } else {
+          document.getElementById('p1-cp-box').style.display = 'flex';
+          document.getElementById('p2-cp-box').style.display = 'flex';
+        }
+
+        document.getElementById('round-val').textContent = state.round || 1;
+        document.getElementById('primary-name').textContent = state.m1 || state.m2 || 'MISSION';
+
+        // Secondaries tray
+        const renderSecs = (list, doneLog, elId) => {
+          const el = document.getElementById(elId);
+          if (!el) return;
+          if (settings.showSecondaries === false) { el.innerHTML = ''; return; }
+          const done = (doneLog || []).filter(e => e.type === 'secondary' && e.round === state.round && e.vp > 0);
+          let h = (list || []).map(s => `<div class="sec-badge"><i class="fa-solid fa-crosshairs"></i> ${esc(s.name)}</div>`).join('');
+          h += done.map(e => `<div class="sec-badge scored"><i class="fa-solid fa-check"></i> ${esc(e.mission)} (+${e.vp})</div>`).join('');
+          el.innerHTML = h;
+        };
+        renderSecs(p1.secondaries, p1.log, 'p1-secs');
+        renderSecs(p2.secondaries, p2.log, 'p2-secs');
+
+        // Status pill
+        document.getElementById('status-dot').className = 'status-dot live';
+        document.getElementById('status-txt').textContent = `LIVE · ROOM #${roomId}`;
+        document.getElementById('hud-status').classList.add('live');
+      }
+
+      // ---- Table camera (WebRTC). ?video=0 = scores only (use your own camera in OBS); ?fit=cover = fill the frame ----
+      const isObs = !!window.obsstudio;
+      const wantVideo = q.get('video') !== '0';
+      const v = document.getElementById('cam');
+      const myPeerId = 'obs_' + Math.random().toString(36).substring(2, 9);
+      let pc = null, remoteSet = false, pendingIce = [], lastOfferAt = 0;
+      document.body.classList.toggle('obs', isObs);
+      document.body.classList.toggle('preview', !isObs);
+      document.body.classList.toggle('want-video', wantVideo);
+      document.body.classList.toggle('fit-cover', q.get('fit') === 'cover');
+
+      // OBS lets the page play sound (route it with "Control audio via OBS"); a phone browser only plays muted until tapped
+      function playVideo() {
+        v.muted = !(isObs || q.get('audio') === '1') || v.dataset.userMuted === '1';
+        v.play().catch(() => { v.muted = true; v.play().catch(() => {}); });
+        syncAudioBtn();
+      }
+      function syncAudioBtn() {
+        const b = document.getElementById('tap-audio');
+        b.innerHTML = v.muted ? '<i class="fa-solid fa-volume-xmark"></i> <span>Tap for sound</span>' : '<i class="fa-solid fa-volume-high"></i> <span>Mute</span>';
+      }
+      document.getElementById('tap-audio').addEventListener('click', () => {
+        v.muted = !v.muted;
+        v.dataset.userMuted = v.muted ? '1' : '0';
+        v.play().catch(() => {});
+        syncAudioBtn();
+      });
+
+      function setVideoOn(on) {
+        v.classList.toggle('on', on);
+        document.body.classList.toggle('has-video', on);
+      }
+
+      function send(event, payload) {
+        if (rtChannel) rtChannel.send({ type: 'broadcast', event, payload }).catch(() => {});
+      }
+      function requestOffer() {
+        if (wantVideo) send('request_offer', { peerId: myPeerId });
+      }
+
+      async function handleOffer(sdp) {
+        lastOfferAt = Date.now();
+        if (pc) { try { pc.close(); } catch (e) {} }
+        remoteSet = false;
+        pendingIce = [];
+        const conn = pc = new RTCPeerConnection({
+          iceServers: [
+            { urls: 'stun:stun.cloudflare.com:3478' },
+            { urls: 'stun:stun.l.google.com:19302' }
+          ]
+        });
+        conn.ontrack = e => {
+          if (conn !== pc) return;
+          v.srcObject = e.streams[0] || new MediaStream([e.track]);
+          setVideoOn(true);
+          playVideo();
+        };
+        conn.onconnectionstatechange = () => {
+          if (conn !== pc) return;
+          const st = conn.connectionState;
+          if (st === 'failed' || st === 'disconnected' || st === 'closed') {
+            setVideoOn(false);
+            pc = null;
+            try { conn.close(); } catch (e) {}
+            setTimeout(requestOffer, 1000);
+          }
+        };
+        conn.onicecandidate = e => {
+          if (e.candidate) send('candidate', { peerId: myPeerId, role: 'peer', candidate: e.candidate });
+        };
+        try {
+          await conn.setRemoteDescription({ type: 'offer', sdp });
+          remoteSet = true;
+          // host candidates that arrived before the offer was applied
+          pendingIce.splice(0).forEach(c => conn.addIceCandidate(c).catch(() => {}));
+          const answer = await conn.createAnswer();
+          await conn.setLocalDescription(answer);
+          send('answer', { peerId: myPeerId, sdp: answer.sdp });
+        } catch (err) {
+          console.error('WebRTC offer error:', err);
+        }
+      }
+
+      // the broadcast may start after this page (or drop and come back): keep asking until the camera is connected
+      setInterval(() => {
+        if (!wantVideo || !rtChannel) return;
+        const connected = pc && (pc.connectionState === 'connected' || pc.connectionState === 'connecting');
+        if (!connected && Date.now() - lastOfferAt > 8000) requestOffer();
+      }, 5000);
+
+      // Connect via Supabase Realtime channel
+      function connectRealtime() {
+        if (!window.LEAGUE_CONFIG || !window.supabase) return;
+        const client = supabase.createClient(window.LEAGUE_CONFIG.url, window.LEAGUE_CONFIG.anonKey);
+        rtChannel = client.channel('stream_' + roomId);
+        rtChannel
+          .on('broadcast', { event: 'telemetry' }, msg => {
+            if (msg.payload && msg.payload.state) render(msg.payload.state, msg.payload.settings);
+          })
+          .on('broadcast', { event: 'host_ready' }, () => {
+            send('request_state', {});
+            requestOffer();
+          })
+          .on('broadcast', { event: 'offer' }, msg => {
+            const p = msg.payload || {};
+            if (wantVideo && p.sdp && p.target === myPeerId) handleOffer(p.sdp);
+          })
+          .on('broadcast', { event: 'candidate' }, msg => {
+            const p = msg.payload || {};
+            if (!p.candidate || p.role !== 'host' || p.target !== myPeerId) return;
+            if (pc && remoteSet) pc.addIceCandidate(p.candidate).catch(() => {});
+            else pendingIce.push(p.candidate);
+          })
+          .subscribe(status => {
+            if (status === 'SUBSCRIBED') {
+              send('request_state', {});
+              requestOffer();
+            }
+          });
+      }
+
+      connectRealtime();
+    })();
+  </script>
+</body>
+</html>

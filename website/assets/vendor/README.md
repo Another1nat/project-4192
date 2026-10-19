@@ -1,0 +1,1 @@
+`model-viewer.min.js` — Google's <model-viewer> web component v3.5.0 (https://modelviewer.dev), Apache License 2.0. It shows the 3D terrain models and opens the phone's own AR viewers (AR Quick Look on iPhone, Scene Viewer on Android). It already contains three.js (MIT). Loaded only on the AR page.

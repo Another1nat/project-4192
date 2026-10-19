@@ -1,0 +1,68 @@
+{
+ "name": "The Golgotha Trench-Legions — verifier sample",
+ "detachment": "Combined Arms Regiment",
+ "units": [
+  {
+   "unit": "Lord-Marshal of the Front",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Trench-Raider Squad",
+   "models": 5
+  },
+  {
+   "unit": "Trench-Raider Squad",
+   "models": 5
+  },
+  {
+   "unit": "Heavy Weapon Battery",
+   "models": 2
+  },
+  {
+   "unit": "Scout-Sniper Pair",
+   "models": 2
+  },
+  {
+   "unit": "Mole-Carrier APC",
+   "models": 1
+  },
+  {
+   "unit": "Heavy Mortar Battery",
+   "models": 1
+  },
+  {
+   "unit": "Mortar Pit",
+   "models": 2
+  },
+  {
+   "unit": "Cyber-Mastiff Pack",
+   "models": 5
+  },
+  {
+   "unit": "Behemoth Siege-Tank",
+   "models": 1
+  },
+  {
+   "unit": "Trench Cavalry",
+   "models": 3
+  },
+  {
+   "unit": "Engineer Sappers",
+   "models": 5
+  },
+  {
+   "unit": "Iron-Stalker Walker",
+   "models": 1
+  },
+  {
+   "unit": "Forward Observer",
+   "models": 1,
+   "attached": true
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/02_golgotha_trench_legions.json"
+ ]
+}

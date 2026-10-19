@@ -1,0 +1,1212 @@
+{
+ "name": "The Frost-Skaer Blood-Raiders",
+ "verb": "SAGA",
+ "identity": "Runic berserkers, shield-walls, frost-bear riders and war-mammoths. The army improves permanently by completing public Sagas mid-battle, so both players fight over whether the deed happens.",
+ "number": "09",
+ "template": "B_melee_predator",
+ "status": "draft",
+ "learned_from": [
+  "40k wolf-warrior armies Sagas (2022) — loved when public and achievable",
+  "Gemini #1 Sworn Sagas, #2 Blizzard, #3 Berserker Fury"
+ ],
+ "risk_profile": "Low (Sagas). Gamble = tempo: boast a deed for this round; fail and the boaster is Rattled.",
+ "core_rule": {
+  "name": "Sworn Sagas",
+  "text": "Three public Sagas; each unlocks a permanent army-wide rune the moment it is completed: Saga of the Warrior-Born (destroy an enemy Leader) → melee [STRIKE FIRST] on a round your unit charged; Saga of the Beast-Slayer (destroy a Class 4–5 unit) → melee weapons gain [IMPALING HITS]; Saga of the Bear (a unit below Half-Strength survives a round) → UNYIELDING 6+."
+ },
+ "gamble": {
+  "name": "Death-Saga Boast",
+  "text": "Command Phase: one Leader boasts a deed for this round (destroy a named enemy unit, or control a named objective). Success: +1 CP and that Leader gets +1 Attack for the rest of the battle. Failure: the Leader and its attached unit are Rattled.",
+  "risk_cost": "tempo"
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.2,
+   "mods": {
+    "incoming_hit_mod_melee": -1
+   },
+   "name": "Saga: Warrior-Born",
+   "text": "Strike first on the charge after a Leader kill."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.3,
+   "mods": {
+    "lethal": true
+   },
+   "name": "Saga: Beast-Slayer",
+   "text": "[IMPALING HITS] after a big kill."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.3,
+   "mods": {
+    "unyielding": 6
+   },
+   "name": "Saga: Bear",
+   "text": "UNYIELDING 6+ late."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Throwing axe",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Frost-forged axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Jarl Saga-Lord",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "reroll_wound": "ones"
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Lord of the Long Hall",
+     "text": "The attached unit re-rolls melee Wound rolls of 1."
+    },
+    {
+     "flat": 5.0,
+     "name": "Saga-Keeper",
+     "text": "Sagas completed within 12″ of this model also give +1 CP (once each)."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 9,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    },
+    {
+     "name": "Bear claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Jarl on Frost-Bear",
+   "slot": 2,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Bear-Rage",
+     "text": "+1 Attack in melee on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Frost-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Runic Frost-Shaman",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Howling Blizzard",
+     "text": "Friendly units within 6″ count as [STEALTH]; enemy Charges ending within 6″ suffer −1″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Bearded axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Skald of the Long Hall",
+   "slot": 4,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Battle-Chant",
+     "text": "Friendly Class 1 units within 6″ get +1 Attack on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Assassin)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rune-bow",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "name": "Wolf-Skin Huntress",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Mark the Prey",
+     "text": "Once per round, an enemy unit hit by her counts as \"named\" for Death-Saga Boasts."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Throwing axes",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Bearded axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Blood-Skaer Raiders",
+   "slot": 6,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Berserker Fury",
+     "text": "+1 Attack in melee while below Starting Strength."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Throwing spears",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Axe & shield",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Shield-Wall Huscarls",
+   "slot": 7,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Shield-Wall",
+     "text": "Enemies get −1 to Hit this unit in melee."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 6,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Great axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Hall-Guard Berserkers",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Trance of Fury",
+     "text": "UNYIELDING 6+."
+    },
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Berserker Fury",
+     "text": "+1 Attack while below Starting Strength."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Wolf-fangs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Wolf-Kin Pack",
+   "slot": 9,
+   "abilities": [
+    {
+     "utility": "SCOUTS",
+     "name": "Lead the Raid",
+     "text": "[SCOUTS 6″]."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Rune-crossbows",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Great axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Hearth-Wardens",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Oath-Bound Guard",
+     "text": "Damage to an attached Leader is taken by this unit on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bear claws & spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Frost-Bear Riders",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Bear Charge",
+     "text": "Crushing Impact for 0 CP on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 6,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Long-bow",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Long-Bow Skirmishers",
+   "slot": 12,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Hunters' Eyes",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Raven-curse",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Rune-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Raven-Winged Seers",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Omen",
+     "text": "Once per round, an enemy unit within 12″ loses Cover until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Whale-harpoon",
+     "type": "Ranged",
+     "range": "30\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Harpoon-Ballista Crew",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Haul In",
+     "text": "Its [HARPOON] drags 3″."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Javelins",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Scythed wheels & wolves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Frost-Wolf Chariot",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Scythed Wheels",
+     "text": "Crushing Impact for 0 CP on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Troll claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Ice-Troll",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Regeneration",
+     "text": "At the End of Round, heal D3 MIGHT."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Glacier club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    },
+    {
+     "name": "Tusks & trunk",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Frost-Giant",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Hurl Raider",
+     "text": "Once per round, place one friendly Class 1 unit within 6″ wholly within 9″ of its position (not within 3″ of enemies)."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Howdah archers",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Tusks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Tusks & trunk",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Armored War-Mammoth",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Glacial Trample",
+     "text": "After it charges, one engaged unit suffers D3 Fatal Wounds on a 2+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 13,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Rune-ballista",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Prow-ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Longship Ice-Sled",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Raid Landing",
+     "text": "Units that disembark may declare a Charge this activation."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "UNYIELDING": 6,
+   "weapons": [
+    {
+     "name": "Mammoth stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Tusks & trunk",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    },
+    {
+     "name": "War-tower archers",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    }
+   ],
+   "name": "Ancient Elder Mammoth",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Stampede",
+     "text": "After it charges, every enemy unit within 3″ suffers D3 Fatal Wounds on a 3+."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Saga of the Hunt",
+   "playstyle": "Fast packs and riders hunting leaders.",
+   "rule": "Berserker Fury: units below Starting Strength (or damaged) get +1 Attack in melee; Leaders get +2.",
+   "enhancements": [
+    {
+     "name": "Wolf-Pelt Cloak",
+     "bearer": "Wolf-Skin Huntress",
+     "ability": {
+      "mods": {
+       "incoming_hit_mod_ranged": -1
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Wolf-Pelt Cloak",
+      "text": "[STEALTH]."
+     },
+     "text": "[STEALTH]."
+    },
+    {
+     "name": "Hunter's Torc",
+     "bearer": "Jarl Saga-Lord",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "attacks_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Hunter's Torc",
+      "text": "The attached unit gets +1 Attack in melee."
+     },
+     "text": "The attached unit gets +1 Attack in melee."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Runic Brand of the Wolf",
+     "cp": 2,
+     "when": "A unit activates (once per battle)",
+     "effect": "It may Move and then Charge this activation."
+    },
+    {
+     "name": "Blood in the Snow",
+     "cp": 1,
+     "when": "An enemy unit is destroyed",
+     "effect": "One friendly unit within 6″ heals D3 MIGHT."
+    },
+    {
+     "name": "Saga-Seeker",
+     "cp": 1,
+     "when": "A Saga is completed",
+     "effect": "Gain 1 CP."
+    }
+   ]
+  },
+  {
+   "name": "Saga of the Storm",
+   "playstyle": "Shamans and shield-walls advancing under the blizzard.",
+   "rule": "Blizzard: Frost-Shaman Howling Blizzard range is 9″; enemy units more than 18″ away cannot target Frost-Skaer Class 1–2 units.",
+   "enhancements": [
+    {
+     "name": "Storm-Rune Staff",
+     "bearer": "Runic Frost-Shaman",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "ward": 5
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Storm-Rune Staff",
+      "text": "The attached unit has WARD 5+."
+     },
+     "text": "The attached unit has WARD 5+."
+    },
+    {
+     "name": "Ice-Rimed Shields",
+     "bearer": "Shield-Wall Huscarls",
+     "ability": {
+      "mods": {
+       "save_mod": 1
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Ice-Rimed Shields",
+      "text": "+1 ARM (to 3+ cap)."
+     },
+     "text": "+1 ARM (to 3+ cap)."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Whiteout",
+     "cp": 1,
+     "when": "Command Phase",
+     "effect": "Until the End of Round, enemy ranged attacks beyond 12″ suffer −1 to Hit."
+    },
+    {
+     "name": "Frozen Ground",
+     "cp": 1,
+     "when": "An enemy unit within 9″ of a Shaman declares a Charge",
+     "effect": "−2″ to the Charge roll."
+    },
+    {
+     "name": "Hail of Spears",
+     "cp": 1,
+     "when": "A unit shoots at a unit within 8″",
+     "effect": "Its weapons gain [HAILFIRE 1]."
+    }
+   ]
+  },
+  {
+   "name": "Mammoth Stampede",
+   "playstyle": "Giants, mammoths and chariots in a single crushing wave.",
+   "rule": "Stampede: Class 3–5 Frost-Skaer units get +1″ MOV and their Crushing Impact rolls get +1.",
+   "enhancements": [
+    {
+     "name": "Elder's Rune-Harness",
+     "bearer": "Armored War-Mammoth",
+     "ability": {
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Elder's Rune-Harness",
+      "text": "UNYIELDING 6+."
+     },
+     "text": "UNYIELDING 6+."
+    },
+    {
+     "name": "Beast-Caller's Horn",
+     "bearer": "Skald of the Long Hall",
+     "ability": {
+      "flat": 5.0,
+      "name": "Beast-Caller's Horn",
+      "text": "Friendly Class 3–5 units within 9″ get +2″ to Charge rolls."
+     },
+     "text": "Friendly Class 3–5 units within 9″ get +2″ to Charge rolls."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Trumpeting Charge",
+     "cp": 1,
+     "when": "A Class 4–5 unit declares a Charge",
+     "effect": "Re-roll the Charge roll."
+    },
+    {
+     "name": "Crushing Weight",
+     "cp": 1,
+     "when": "A Class 3–5 unit triggers Crushing Impact",
+     "effect": "Inflict +D3 Fatal Wounds."
+    },
+    {
+     "name": "Thick Hide",
+     "cp": 1,
+     "when": "A Class 4–5 unit is targeted",
+     "effect": "Incoming Damage −1 for the attack."
+    }
+   ]
+  }
+ ]
+}

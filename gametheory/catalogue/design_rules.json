@@ -1,0 +1,867 @@
+{
+ "_readme": "Guardrails for every datasheet (hand-made or LLM-generated). Checked by `unit_calculator.py validate <faction.json>`. Classes follow CORE_RULES_MANUAL_4192 §1.2 (base size): C1 25–32mm, C2 40–50mm/60x35 oval, C3 60–80mm/75x42 oval, C4 90–120mm/hull, C5 130mm+. Class is the physical base, NOT unit quality: 32mm power-armour elites are Class 1.",
+ "envelopes": {
+  "1": {
+   "MOV": [
+    4,
+    10
+   ],
+   "MS": [
+    2,
+    6
+   ],
+   "RS": [
+    2,
+    6
+   ],
+   "ARM": [
+    3,
+    7
+   ],
+   "MIGHT": [
+    1,
+    2
+   ],
+   "MIGHT_leader": [
+    2,
+    5
+   ],
+   "CTRL": [
+    0,
+    3
+   ],
+   "models": [
+    1,
+    15
+   ],
+   "WARD_best": 4,
+   "WARD_best_leader": 4
+  },
+  "2": {
+   "MOV": [
+    4,
+    14
+   ],
+   "MS": [
+    2,
+    6
+   ],
+   "RS": [
+    2,
+    6
+   ],
+   "ARM": [
+    3,
+    7
+   ],
+   "MIGHT": [
+    2,
+    7
+   ],
+   "MIGHT_leader": [
+    3,
+    8
+   ],
+   "CTRL": [
+    0,
+    3
+   ],
+   "models": [
+    1,
+    6
+   ],
+   "WARD_best": 4,
+   "WARD_best_leader": 4
+  },
+  "3": {
+   "MOV": [
+    4,
+    14
+   ],
+   "MS": [
+    2,
+    6
+   ],
+   "RS": [
+    2,
+    6
+   ],
+   "ARM": [
+    3,
+    7
+   ],
+   "MIGHT": [
+    5,
+    12
+   ],
+   "MIGHT_leader": [
+    5,
+    12
+   ],
+   "CTRL": [
+    0,
+    4
+   ],
+   "models": [
+    1,
+    3
+   ],
+   "WARD_best": 4,
+   "WARD_best_leader": 4
+  },
+  "4": {
+   "MOV": [
+    4,
+    16
+   ],
+   "MS": [
+    2,
+    6
+   ],
+   "RS": [
+    2,
+    6
+   ],
+   "ARM": [
+    3,
+    5
+   ],
+   "MIGHT": [
+    10,
+    18
+   ],
+   "MIGHT_leader": [
+    10,
+    18
+   ],
+   "CTRL": [
+    0,
+    5
+   ],
+   "models": [
+    1,
+    1
+   ],
+   "WARD_best": 5,
+   "WARD_best_leader": 4,
+   "HARDENED": true
+  },
+  "5": {
+   "MOV": [
+    5,
+    20
+   ],
+   "MS": [
+    2,
+    6
+   ],
+   "RS": [
+    2,
+    6
+   ],
+   "ARM": [
+    3,
+    5
+   ],
+   "MIGHT": [
+    18,
+    30
+   ],
+   "MIGHT_leader": [
+    18,
+    30
+   ],
+   "CTRL": [
+    0,
+    7
+   ],
+   "models": [
+    1,
+    1
+   ],
+   "WARD_best": 5,
+   "WARD_best_leader": 4,
+   "HARDENED": true
+  }
+ },
+ "weapon_limits": {
+  "max_pen": 4,
+  "max_avg_damage": 6.0,
+  "max_avg_attacks_per_model": {
+   "1": 6,
+   "2": 8,
+   "3": 10,
+   "4": 14,
+   "5": 16
+  }
+ },
+ "army_wide_limits": {
+  "ward_best": 5,
+  "unyielding_best": 5,
+  "note": "No army-wide WARD better than 5+ or UNYIELDING better than 5+ (Gemini review: army-wide 4+ ward = negative play experience). WARD 3+/4+ only on single Leaders or as an enhancement."
+ },
+ "keywords_unit": [
+  "[FLY]",
+  "[HOVER]",
+  "[HARDENED]",
+  "[FRAIL]",
+  "[EXPENDABLE]",
+  "[INFILTRATORS]",
+  "[SCOUTS 6\"]",
+  "[SCOUTS 9\"]",
+  "[SECURED]",
+  "[STEALTH]",
+  "[STRIKE FIRST]",
+  "[SUPER-HEAVY WALKER]",
+  "[SURGE D6\"]",
+  "[UNSEEN 12\"]",
+  "[VANGUARD STRIKE]",
+  "[DETONATE D3]",
+  "[DETONATE D6]",
+  "[SYNAPSE]",
+  "[TRANSPORT 6]",
+  "[TRANSPORT 10]",
+  "[TRANSPORT 12]",
+  "[TRANSPORT 15]",
+  "[FIRING DECK 2]",
+  "[FIRING DECK 3]",
+  "[FIRING DECK 4]",
+  "[FIRING DECK 6]",
+  "[FIRING DECK 10]"
+ ],
+ "keywords_weapon_prefixes": [
+  "[ANTI-",
+  "[ASSAULT]",
+  "[CLOSE-QUARTERS]",
+  "[CRASHING]",
+  "[ERADICATE",
+  "[EXTRA ATTACKS]",
+  "[HAILFIRE",
+  "[HEAVY]",
+  "[IGNORES COVER]",
+  "[IMPALING HITS]",
+  "[INDIRECT FIRE]",
+  "[ONE SHOT]",
+  "[ONSLAUGHT",
+  "[OVERLOAD]",
+  "[PRECISION]",
+  "[PSYCHIC / ARCANE]",
+  "[REAPING",
+  "[SHRAPNEL",
+  "[RELENTLESS]",
+  "[SCORCH]",
+  "[SHREDDING WOUNDS]",
+  "[SUPPRESSIVE]",
+  "[HARPOON]"
+ ],
+ "banned_terms": [],
+ "roster_templates": {
+  "_note": "20 slots per faction (Gemini's 'Iconic 20' + its 4-archetype fix). Each slot lists the universal archetypes it may be built from. Factions may leave up to 2 slots empty and repeat a role once if the theme demands it.",
+  "A_combined_arms": [
+   [
+    "Warlord",
+    [
+     "c2_leader",
+     "c3_mounted_leader"
+    ]
+   ],
+   [
+    "Champion (melee leader)",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Support leader (priest / tech / medic)",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Specialist (lone operative / spotter)",
+    [
+     "c1_leader",
+     "c1_snipers",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Line troops (objective holders)",
+    [
+     "c1_conscripts",
+     "c1_line",
+     "c1_battle_brothers"
+    ]
+   ],
+   [
+    "Ranged troops",
+    [
+     "c1_line",
+     "c1_battle_brothers"
+    ]
+   ],
+   [
+    "Assault troops",
+    [
+     "c1_assault",
+     "c1_battle_brothers"
+    ]
+   ],
+   [
+    "Heavy anvil elites",
+    [
+     "c2_heavy_infantry",
+     "c2_elite_guard"
+    ]
+   ],
+   [
+    "Melee elites",
+    [
+     "c2_elite_guard",
+     "c2_brutes"
+    ]
+   ],
+   [
+    "Close-range eradicators (flame/melta)",
+    [
+     "c1_battle_brothers",
+     "c2_weapon_team"
+    ]
+   ],
+   [
+    "Anti-armour team",
+    [
+     "c2_weapon_team",
+     "c2_battlesuits"
+    ]
+   ],
+   [
+    "Recon / snipers",
+    [
+     "c1_skirmishers",
+     "c1_snipers"
+    ]
+   ],
+   [
+    "Cavalry / bikes",
+    [
+     "c2_cavalry"
+    ]
+   ],
+   [
+    "Jump / drop vanguard",
+    [
+     "c1_jump",
+     "c2_battlesuits"
+    ]
+   ],
+   [
+    "Infiltrators / scouts",
+    [
+     "c1_skirmishers"
+    ]
+   ],
+   [
+    "Melee brute / walker",
+    [
+     "c3_walker",
+     "c3_monster"
+    ]
+   ],
+   [
+    "Ranged walker / platform",
+    [
+     "c3_walker",
+     "c3_weapon_platform",
+     "c4_heavy_walker"
+    ]
+   ],
+   [
+    "Transport",
+    [
+     "c4_transport"
+    ]
+   ],
+   [
+    "Main battle tank / artillery",
+    [
+     "c4_battle_tank",
+     "c4_artillery"
+    ]
+   ],
+   [
+    "Centrepiece",
+    [
+     "c5_super_heavy",
+     "c5_war_titan",
+     "c5_gunship"
+    ]
+   ]
+  ],
+  "B_melee_predator": [
+   [
+    "Warlord",
+    [
+     "c2_leader",
+     "c3_mounted_leader"
+    ]
+   ],
+   [
+    "Champion duelist",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Mystic / priest",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Assassin / hunter",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Core melee horde",
+    [
+     "c1_swarm",
+     "c1_assault"
+    ]
+   ],
+   [
+    "Core elite melee",
+    [
+     "c1_battle_brothers",
+     "c1_assault"
+    ]
+   ],
+   [
+    "Fast hunters (hounds)",
+    [
+     "c1_swarm",
+     "c2_cavalry"
+    ]
+   ],
+   [
+    "Heavy anvil",
+    [
+     "c2_heavy_infantry",
+     "c2_elite_guard"
+    ]
+   ],
+   [
+    "Blender elites",
+    [
+     "c2_elite_guard",
+     "c2_brutes"
+    ]
+   ],
+   [
+    "Precision duelists",
+    [
+     "c2_elite_guard"
+    ]
+   ],
+   [
+    "Short-range support (thrown / breath)",
+    [
+     "c1_skirmishers",
+     "c2_weapon_team"
+    ]
+   ],
+   [
+    "Ambushers",
+    [
+     "c1_jump",
+     "c1_skirmishers"
+    ]
+   ],
+   [
+    "Cavalry",
+    [
+     "c2_cavalry"
+    ]
+   ],
+   [
+    "Winged terrors",
+    [
+     "c1_jump",
+     "c3_monster"
+    ]
+   ],
+   [
+    "Beast pack",
+    [
+     "c2_brutes",
+     "c2_cavalry"
+    ]
+   ],
+   [
+    "Monster brute",
+    [
+     "c3_monster"
+    ]
+   ],
+   [
+    "Chariot / war-engine",
+    [
+     "c3_walker",
+     "c4_heavy_walker"
+    ]
+   ],
+   [
+    "Shrine / altar engine",
+    [
+     "c4_behemoth_beast",
+     "c4_heavy_walker"
+    ]
+   ],
+   [
+    "Behemoth monster",
+    [
+     "c4_behemoth_beast"
+    ]
+   ],
+   [
+    "Centrepiece",
+    [
+     "c5_colossal_monster",
+     "c5_war_titan"
+    ]
+   ]
+  ],
+  "C_gunline_siege_arcane": [
+   [
+    "Warlord",
+    [
+     "c2_leader",
+     "c3_mounted_leader"
+    ]
+   ],
+   [
+    "Spotter / marker leader",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Tech / caster leader",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Sniper / lone operative",
+    [
+     "c1_snipers",
+     "c1_leader"
+    ]
+   ],
+   [
+    "Line rifles",
+    [
+     "c1_line",
+     "c1_battle_brothers"
+    ]
+   ],
+   [
+    "Heavy-rifle elites",
+    [
+     "c1_battle_brothers",
+     "c2_battlesuits"
+    ]
+   ],
+   [
+    "Melee bodyguard auxiliaries",
+    [
+     "c2_brutes",
+     "c2_elite_guard"
+    ]
+   ],
+   [
+    "Battlesuits / heavy infantry",
+    [
+     "c2_battlesuits",
+     "c2_heavy_infantry"
+    ]
+   ],
+   [
+    "Anti-armour team",
+    [
+     "c2_weapon_team"
+    ]
+   ],
+   [
+    "Artillery team",
+    [
+     "c2_weapon_team",
+     "c3_weapon_platform"
+    ]
+   ],
+   [
+    "Recon / marker drones",
+    [
+     "c1_skirmishers"
+    ]
+   ],
+   [
+    "Close-defence flamers",
+    [
+     "c1_battle_brothers",
+     "c2_weapon_team"
+    ]
+   ],
+   [
+    "Fast gun-bikes",
+    [
+     "c2_cavalry"
+    ]
+   ],
+   [
+    "Jump / drop suits",
+    [
+     "c2_battlesuits",
+     "c1_jump"
+    ]
+   ],
+   [
+    "Infiltrators",
+    [
+     "c1_skirmishers"
+    ]
+   ],
+   [
+    "Walker gun-platform",
+    [
+     "c3_walker",
+     "c3_weapon_platform"
+    ]
+   ],
+   [
+    "Heavy walker / brute",
+    [
+     "c4_heavy_walker",
+     "c3_walker"
+    ]
+   ],
+   [
+    "Transport",
+    [
+     "c4_transport"
+    ]
+   ],
+   [
+    "Tank / artillery",
+    [
+     "c4_battle_tank",
+     "c4_artillery"
+    ]
+   ],
+   [
+    "Titan / colossal suit",
+    [
+     "c5_war_titan",
+     "c5_super_heavy"
+    ]
+   ]
+  ],
+  "D_swarm_monster_speed": [
+   [
+    "Warlord (boss / monster)",
+    [
+     "c2_leader",
+     "c3_mounted_leader",
+     "c4_behemoth_beast"
+    ]
+   ],
+   [
+    "Champion",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Shaman / synapse",
+    [
+     "c1_leader",
+     "c2_leader"
+    ]
+   ],
+   [
+    "Spawner / support",
+    [
+     "c1_leader",
+     "c2_weapon_team"
+    ]
+   ],
+   [
+    "Cheap swarm (FRAIL)",
+    [
+     "c1_swarm",
+     "c1_conscripts"
+    ]
+   ],
+   [
+    "Fast swarm",
+    [
+     "c1_swarm",
+     "c1_assault"
+    ]
+   ],
+   [
+    "Core infantry",
+    [
+     "c1_line",
+     "c1_battle_brothers",
+     "c1_assault"
+    ]
+   ],
+   [
+    "Heavy brutes",
+    [
+     "c2_brutes",
+     "c2_heavy_infantry"
+    ]
+   ],
+   [
+    "Weapon team / gun-beast",
+    [
+     "c2_weapon_team"
+    ]
+   ],
+   [
+    "Burrowers / ambushers",
+    [
+     "c1_jump",
+     "c2_brutes"
+    ]
+   ],
+   [
+    "Flyer swarm",
+    [
+     "c1_jump",
+     "c1_swarm"
+    ]
+   ],
+   [
+    "Skirmishers",
+    [
+     "c1_skirmishers"
+    ]
+   ],
+   [
+    "Cavalry / bikes / buggies",
+    [
+     "c2_cavalry"
+    ]
+   ],
+   [
+    "Fast vehicle",
+    [
+     "c4_transport",
+     "c3_walker"
+    ]
+   ],
+   [
+    "Mid monster",
+    [
+     "c3_monster"
+    ]
+   ],
+   [
+    "Brute walker / monster",
+    [
+     "c3_walker",
+     "c3_monster"
+    ]
+   ],
+   [
+    "Big monster",
+    [
+     "c4_behemoth_beast"
+    ]
+   ],
+   [
+    "Transport / carrier",
+    [
+     "c4_transport"
+    ]
+   ],
+   [
+    "Behemoth",
+    [
+     "c4_behemoth_beast",
+     "c4_battle_tank"
+    ]
+   ],
+   [
+    "Centrepiece",
+    [
+     "c5_colossal_monster",
+     "c5_war_titan",
+     "c5_super_heavy"
+    ]
+   ]
+  ]
+ },
+ "faction_templates": {
+  "01": "A_combined_arms",
+  "02": "A_combined_arms",
+  "03": "A_combined_arms",
+  "08": "A_combined_arms",
+  "10": "A_combined_arms",
+  "16": "A_combined_arms",
+  "18": "A_combined_arms",
+  "20": "A_combined_arms",
+  "21": "A_combined_arms",
+  "06": "B_melee_predator",
+  "07": "B_melee_predator",
+  "09": "B_melee_predator",
+  "11": "B_melee_predator",
+  "25": "B_melee_predator",
+  "04": "C_gunline_siege_arcane",
+  "05": "C_gunline_siege_arcane",
+  "13": "C_gunline_siege_arcane",
+  "14": "C_gunline_siege_arcane",
+  "22": "C_gunline_siege_arcane",
+  "12": "D_swarm_monster_speed",
+  "15": "D_swarm_monster_speed",
+  "17": "D_swarm_monster_speed",
+  "19": "D_swarm_monster_speed",
+  "23": "D_swarm_monster_speed",
+  "24": "D_swarm_monster_speed"
+ },
+ "rules_vocabulary": {
+  "_note": "4192 has NO 'turns'. Generated rules text must use: activation, round, Command Phase, End of Round. These words are flagged:",
+  "flag_words": [
+   "your turn",
+   "end of turn",
+   "opponent's turn",
+   "next turn",
+   "this turn",
+   "Shooting Phase",
+   "Fight phase",
+   "Movement phase",
+   "Hero Phase",
+   "mortal wound",
+   "Toughness",
+   "Strength characteristic",
+   "Leadership",
+   "battleshock",
+   "invulnerable save",
+   "Feel No Pain"
+  ]
+ },
+ "_banned_terms": "The list of protected names from other games is kept in catalogue/ip_blocklist.private.json (not published). The validator uses it when present."
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <meta name="description" content="Iron &amp; Wrath terrain layouts as a 2D map, a 3D model and AR on your phone.">
+  <link rel="canonical" href="/ar">
+  <meta name="theme-color" content="#0b0f14">
+  <title>Terrain Layouts — 2D, 3D &amp; AR | Iron &amp; Wrath</title>
+  <style>
+    :root { --bg:#0b0f14; --card:#161d27; --line:#2a3546; --accent:#22c55e; --text:#e6edf8; --muted:#9aa7b8; }
+    * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; padding:max(12px, env(safe-area-inset-top)) 14px max(24px, env(safe-area-inset-bottom)); max-width:820px; margin:0 auto; }
+    header { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    header a { color:#fff; text-decoration:none; min-height:44px; display:inline-flex; align-items:center; padding:0 14px; border:1px solid var(--line); border-radius:12px; background:var(--card); font-weight:700; }
+    h1 { font-size:1.3rem; margin:0; flex:1; }
+    h1 span { color:var(--accent); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin:12px 0; }
+    .lbl { color:var(--muted); font-size:.74rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin:2px 0 8px; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .chip { min-height:44px; padding:0 14px; border-radius:12px; border:1px solid var(--line); background:#10161e; color:var(--text); font-weight:700; cursor:pointer; font-size:.9rem; }
+    .chip.on { background:rgba(34,197,94,.16); border-color:var(--accent); color:#86efac; }
+    #title { font-weight:800; margin:2px 0 10px; }
+    footer { color:#667; font-size:.74rem; line-height:1.55; margin-top:22px; }
+    footer a { color:var(--accent); }
+    #picker summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:10px; min-height:44px; }
+    #picker summary::-webkit-details-marker { display:none; }
+    #picker summary #title { flex:1; margin:0; }
+    #picker summary .chg { flex:none; color:var(--accent); font-weight:700; font-size:.88rem; border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+    #picker[open] summary { margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <header><a href="index.html#home" id="back">‹ <span id="t-back">Back</span></a><h1 id="t-h1">Terrain <span>Layouts</span></h1></header>
+  <details class="card" id="picker" open>
+    <summary><div id="title"></div><span class="chg" id="t-chg">Change</span></summary>
+    <div class="lbl" id="t-att">Attacker's Force Disposition</div><div class="chips" id="att"></div>
+    <div class="lbl" id="t-def">Defender's Force Disposition</div><div class="chips" id="def"></div>
+    <div class="lbl" id="t-var">Layout</div><div class="chips" id="var"></div>
+  </details>
+  <div id="viewer"></div>
+  <footer id="foot"></footer>
+  <script src="ar_viewer.js?v=14"></script>
+  <script>
+    (function () {
+      const lang = () => { try { return localStorage.getItem('gdm_lang') === 'es' ? 'es' : 'en'; } catch (e) { return 'en'; } };
+      const S = (en, es) => lang() === 'es' ? es : en;
+      const q = new URLSearchParams(location.search); let st = { a: 'TH', d: 'TH', v: 'A' };
+      const m = (q.get('layout') || '').split('-'); if (m.length === 3) { st = { a: m[0], d: m[1], v: m[2] }; document.getElementById('picker').open = false; }   // a layout was asked for: show it first, choices folded away
+      const order = ['TH', 'PF', 'DI', 'RE', 'PA'];
+      function chips(id, items, cur, on) { const el = document.getElementById(id); el.innerHTML = ''; items.forEach(([k, label]) => { const b = document.createElement('button'); b.className = 'chip' + (k === cur ? ' on' : ''); b.textContent = label; b.onclick = () => on(k); el.appendChild(b); }); }
+      let token = 0;
+      async function paint() {
+        document.documentElement.lang = lang(); document.getElementById('t-back').textContent = S('Back', 'Volver');
+        document.getElementById('t-chg').textContent = S('Change', 'Cambiar');
+        document.getElementById('t-h1').innerHTML = S('Terrain <span>Layouts</span>', 'Disposiciones de <span>terreno</span>');
+        document.getElementById('t-att').textContent = S("Attacker's Force Disposition", 'Disposición de Fuerza del Atacante'); document.getElementById('t-def').textContent = S("Defender's Force Disposition", 'Disposición de Fuerza del Defensor'); document.getElementById('t-var').textContent = S('Layout', 'Disposición');
+        chips('att', order.map(k => [k, ARVIEW.fdName(k)]), st.a, k => { st.a = k; paint(); }); chips('def', order.map(k => [k, ARVIEW.fdName(k)]), st.d, k => { st.d = k; paint(); });
+        chips('var', ['A', 'B', 'C'].map(k => [k, k]), st.v, k => { st.v = k; paint(); });
+        const idx = await ARVIEW.loadIndex(), code = ARVIEW.resolve(idx, st.a, st.d, st.v); const my = ++token;
+        document.getElementById('title').textContent = code ? idx[code].title : S('No layout for that combination', 'No hay disposición para esa combinación');
+        if (!code) { document.getElementById('viewer').innerHTML = ''; return; }
+        history.replaceState(null, '', '?layout=' + code);
+        await ARVIEW.browse(document.getElementById('viewer'), code, { height: '62vh' }); if (my !== token) return;
+      }
+      document.getElementById('foot').innerHTML = S('Iron & Wrath terrain layouts.', 'Disposiciones de terreno de Iron & Wrath.') + ' <a href="index.html#about">' + S('About & disclaimer', 'Acerca de y aviso legal') + '</a>';
+      paint();
+      // Back returns to the page you came from in the app (same tab); opened directly, it goes to the app's home
+      document.getElementById('back').addEventListener('click', e => {
+        let fromApp = false; try { fromApp = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (x) {}
+        if (fromApp && history.length > 1) { e.preventDefault(); history.back(); }
+      });
+    })();
+  </script>
+</body>
+</html>

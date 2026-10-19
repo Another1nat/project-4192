@@ -1,0 +1,1614 @@
+{
+ "name": "The Auric Solar-Host",
+ "verb": "MARTIAL STANCES",
+ "flagship": true,
+ "template": "A_combined_arms",
+ "identity": "The portrait faction: a pure-elite host. Gilded demigods (golden guardians / storm-forged paladin, tier 3) lead oath-sworn power-armoured Battle-Brothers (power-armoured super-soldiers, tier 2). Melee-first with specialised shooting. No chaff: 23–26 models at 1,000 pts.",
+ "core_rule": {
+  "name": "Martial Stances & Solar Overdrive",
+  "text": "Command Phase: choose 1 Stance for the whole army this round: Aegis (incoming PEN −1) · Vanguard (ranged weapons gain [ASSAULT] and +1 to Hit within 12″) · Executioner (melee weapons gain [ONSLAUGHT 1]). HIGH RISK — Solar Overdrive (⟳ once per round, one unit, when it activates): +1 Attack on all weapons and [SHREDDING WOUNDS] this activation, but its ARM is 1 worse until it next activates."
+ },
+ "faction_abilities": [
+  {
+   "name": "Stance: Aegis",
+   "mods": {
+    "save_mod": 1
+   },
+   "scope": "defense",
+   "uptime": 0.33,
+   "text": "Incoming PEN −1 (chosen ~1/3 of rounds)."
+  },
+  {
+   "name": "Stance: Vanguard",
+   "mods": {
+    "hit_mod": 1
+   },
+   "scope": "ranged",
+   "uptime": 0.2,
+   "text": "+1 to Hit within 12″ (~1/3 of rounds, half the shots in range)."
+  },
+  {
+   "name": "Stance: Executioner",
+   "mods": {
+    "sustained": 1
+   },
+   "scope": "melee",
+   "uptime": 0.33,
+   "text": "Melee [ONSLAUGHT 1] (~1/3 of rounds)."
+  },
+  {
+   "name": "Solar Overdrive",
+   "mods": {
+    "attacks_mod": 1,
+    "devastating": true
+   },
+   "scope": "all",
+   "uptime": 0.15,
+   "text": "Once per round on one unit."
+  },
+  {
+   "name": "Overdrive cost",
+   "mods": {
+    "save_mod": -1
+   },
+   "scope": "defense",
+   "uptime": 0.15,
+   "text": "ARM 1 worse after Overdrive."
+  }
+ ],
+ "units": [
+  {
+   "name": "High Aurarch Praetor",
+   "slot": 1,
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 7,
+   "CTRL": 2,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Bastion glaive (ranged)",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[ASSAULT]",
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Bastion glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Golden Command",
+     "buff": true,
+     "mods": {
+      "reroll_wound": "ones"
+     },
+     "scope": "melee",
+     "n_eff": 1,
+     "text": "Leader (Class 2). The attached unit re-rolls melee Wound rolls of 1."
+    },
+    {
+     "name": "Master of Stances",
+     "flat": 6,
+     "text": "⟳ The attached unit may benefit from a second Martial Stance this round."
+    }
+   ]
+  },
+  {
+   "name": "Blade-Warden Champion",
+   "slot": 2,
+   "class": 2,
+   "role": "Leader (Champion)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Twin sun-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-3",
+     "D": "2",
+     "traits": [
+      "[PRECISION]"
+     ]
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Duelist's Edge",
+     "mods": {
+      "crit_hit_on": 5,
+      "devastating": true
+     },
+     "scope": "melee",
+     "text": "This model's melee Hit rolls of 5+ are Critical Hits, and its critical wounds become Fatal Wounds ([SHREDDING WOUNDS])."
+    },
+    {
+     "name": "Sworn to the Blade",
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1,
+     "uptime": 0.5,
+     "text": "Leader (Class 2). On the activation the attached unit charges, its melee attacks get +1 to Hit."
+    }
+   ]
+  },
+  {
+   "name": "Sworn Lieutenant",
+   "class": 1,
+   "role": "Leader (Support)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    "heavy_pistol",
+    "power_weapon"
+   ],
+   "abilities": [
+    {
+     "name": "Bolter Doctrine",
+     "buff": true,
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "n_eff": 1,
+     "text": "Leader (Class 1). The attached unit re-rolls ranged Hit rolls of 1 (stacks with Oath of the Sun only as one re-roll)."
+    }
+   ],
+   "slot": 3
+  },
+  {
+   "name": "Eclipse Hunter",
+   "slot": 4,
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "ladder": "Exploit",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "keywords": [
+    "[UNSEEN 12\"]",
+    "[INFILTRATORS]"
+   ],
+   "weapons": [
+    {
+     "name": "Longshot rail-rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Sworn Battle-Brothers",
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Sol-bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    "chain_blade"
+   ],
+   "abilities": [
+    {
+     "name": "Oath of the Sun",
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 0.6,
+     "text": "While within 6\" of an Auric Leader, re-roll Hit rolls of 1 for this unit's ranged attacks."
+    }
+   ],
+   "slot": 5,
+   "battleline": true
+  },
+  {
+   "name": "Sworn Hellstorm Squad",
+   "slot": 6,
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Storm-carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]",
+      "[SUPPRESSIVE]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Sworn Assault Brothers",
+   "slot": 7,
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "battleline": true,
+   "MOV": 7,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    "heavy_pistol",
+    {
+     "name": "Sun-chainsword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Shock Assault",
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "text": "+1 Attack on the activation this unit charges."
+    }
+   ]
+  },
+  {
+   "name": "Bastion Paladins",
+   "class": 2,
+   "role": "Elite",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 4,
+   "keywords": [
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Sun-repeater",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Solar hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Immovable",
+     "mods": {
+      "incoming_dmg_mod": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "text": "Each time an attack is allocated to this unit, subtract 1 from its Damage (minimum 1)."
+    }
+   ],
+   "slot": 8
+  },
+  {
+   "name": "Gilded Phalanx",
+   "class": 2,
+   "role": "Elite",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 2,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Sun-glaive (ranged)",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[ASSAULT]",
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Sun-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Shield-Wall",
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "text": "Melee attacks targeting this unit get -1 to Hit."
+    }
+   ],
+   "slot": 9,
+   "battleline": true
+  },
+  {
+   "name": "Sworn Pyre-Breachers",
+   "slot": 10,
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Breacher melta-carbine",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6",
+     "traits": [
+      "[ERADICATE 2]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Gilded Sagittarii",
+   "slot": 11,
+   "class": 2,
+   "role": "Elite (ranged)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Sagittarius rail-bow",
+     "type": "Ranged",
+     "range": "30\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[ANTI-VEHICLE 4+]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Sworn Marksmen",
+   "slot": 12,
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "ladder": "Exploit",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "weapons": [
+    "sniper_rifle",
+    "combat_blade"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Sun-Lancers",
+   "class": 3,
+   "role": "Elite (cavalry)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    3
+   ],
+   "MOV": 12,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 2,
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    {
+     "name": "Solar carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Sun-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "abilities": [],
+   "slot": 13
+  },
+  {
+   "name": "Sworn Vanguard",
+   "class": 1,
+   "role": "Elite (fast)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    "heavy_pistol",
+    "power_weapon"
+   ],
+   "abilities": [
+    {
+     "name": "Sunfall Descent",
+     "mods": {
+      "wound_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.25,
+     "text": "On the activation this unit arrives from Strategic Reserves, its melee attacks get +1 to Wound."
+    }
+   ],
+   "slot": 14
+  },
+  {
+   "name": "Eclipse Scouts",
+   "slot": 15,
+   "class": 1,
+   "role": "Trooper (recon)",
+   "ladder": "Feed",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]",
+    "[INFILTRATORS]"
+   ],
+   "weapons": [
+    "carbine",
+    "combat_blade"
+   ],
+   "abilities": [
+    {
+     "name": "Forward Observers",
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 1,
+     "uptime": 0.5,
+     "text": "After this unit Shoots, the next Auric unit to shoot the same target this round gets +1 to Hit."
+    }
+   ]
+  },
+  {
+   "name": "Reliquary-Sentry",
+   "class": 3,
+   "role": "Brute",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "WARD": 5,
+   "weapons": [
+    "autocannon",
+    "autocannon",
+    {
+     "name": "Reliquary fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Reliquary Fury",
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.33,
+     "text": "While the army is in Executioner Stance, this model's melee weapons get +1 Attack."
+    }
+   ],
+   "slot": 16
+  },
+  {
+   "name": "Aurum Dread-Bastion",
+   "slot": 17,
+   "class": 4,
+   "role": "Behemoth (walker)",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "WARD": 5,
+   "weapons": [
+    "rotary_cannon",
+    {
+     "name": "Macro sun-plasma",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D3",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "2",
+     "traits": [
+      "[OVERLOAD]"
+     ]
+    },
+    "brute_fists"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Rampart Carrier",
+   "slot": 18,
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[TRANSPORT 10]",
+    "[FIRING DECK 2]"
+   ],
+   "weapons": [
+    "heavy_stubber",
+    "treads"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Solar Grav-Tank",
+   "class": 4,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "WARD": 5,
+   "HARDENED": true,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    {
+     "name": "Solar lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Grav-repeaters",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    "treads"
+   ],
+   "abilities": [],
+   "slot": 19
+  },
+  {
+   "name": "Heliarch Grav-Cruiser",
+   "class": 5,
+   "role": "Behemoth (transport)",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 26,
+   "CTRL": 5,
+   "WARD": 5,
+   "HARDENED": true,
+   "keywords": [
+    "[FLY]",
+    "[TRANSPORT 10]",
+    "[FIRING DECK 2]"
+   ],
+   "weapons": [
+    "titan_cannon",
+    "las_lance",
+    "las_lance",
+    "treads"
+   ],
+   "abilities": [],
+   "slot": 20
+  },
+  {
+   "class": 2,
+   "role": "Leader (Epic Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 8,
+   "CTRL": 2,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Dawn-spear (ranged)",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Dawn-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-3",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "The Sun-Bound Exemplar",
+   "slot": 21,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "all",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Living Standard",
+     "text": "Friendly units within 6″ re-roll Hit rolls of 1."
+    },
+    {
+     "flat": 8.0,
+     "name": "Sun's Judgement",
+     "text": "Once per battle, when it fights, its melee Damage is 3."
+    },
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Unbowed",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Sun-chain blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sworn Apothecarion",
+   "slot": 22,
+   "abilities": [
+    {
+     "flat": 7.0,
+     "name": "Gene-Seed Recovery",
+     "text": "Once per round, return 1 slain model to the attached Class 1 unit (or heal D3 MIGHT on a Class 2 model within 3″)."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Combat Narthecium",
+     "text": "The attached unit has UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Warden halberd (ranged)",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Warden halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Gilded Wardens",
+   "slot": 23,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Vigil Unending",
+     "text": "UNYIELDING 6+."
+    },
+    {
+     "flat": 6.0,
+     "name": "Throne-Guard",
+     "text": "An attached Leader's damage is taken by this unit on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Sun-forged sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Sworn Shield-Veterans",
+   "slot": 24,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Storm Shields",
+     "text": "Enemies get −1 to Hit them in melee."
+    },
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Blade Discipline",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Lumen-plasma",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HAILFIRE 1]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sworn Lumen-Blasters",
+   "slot": 25,
+   "abilities": [
+    {
+     "scope": "ranged",
+     "uptime": 0.35,
+     "mods": {
+      "dmg_mod": 1
+     },
+     "name": "Overcharged Coils",
+     "text": "Ranged weapons get +1 Damage on a round they did not Move; each natural 1 to Hit is 1 Fatal Wound to this unit."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    3
+   ],
+   "MOV": 12,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Sol-carbine",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Sun-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Sworn Gryph-Knights",
+   "slot": 26,
+   "abilities": [
+    {
+     "mods": {
+      "dmg_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Diving Strike",
+     "text": "+1 Damage in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 10,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Heavy flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Siege-fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Sworn Siege-walker",
+   "slot": 27,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Entombed Hero",
+     "text": "UNYIELDING 6+."
+    },
+    {
+     "flat": 3.0,
+     "name": "Wall-Breaker",
+     "text": "Crushing Impact for 0 CP against units in Dense terrain."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 16,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 0,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Sun-lance cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Sol-bolter battery",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Sunhawk Interceptor",
+   "slot": 28,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Strafing Run",
+     "text": "May Shoot after its full Move and then make a 3″ move (aircraft only)."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 2,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Solar Lance-Tank",
+   "slot": 29,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Machine-Spirit",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Sun-fire cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Colossus fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "name": "Aurum Sentinel-Colossus",
+   "slot": 30,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Guardian of the Gate",
+     "text": "Friendly Class 1–2 units within 3″ get +1 CTRL per model."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Gilded Host",
+   "playstyle": "golden guardians-style: golden elites hold the centre; every model a hero.",
+   "rule": "Unbroken Phalanx: Gilded units within 3″ of an objective count +1 CTRL per model; in Aegis Stance they also gain [WARD 5+] against ranged attacks.",
+   "enhancements": [
+    {
+     "name": "Sunforged Aegis",
+     "bearer": "High Aurarch Praetor",
+     "ability": {
+      "name": "Sunforged Aegis",
+      "mods": {
+       "ward": 3
+      },
+      "scope": "defense"
+     },
+     "text": "The bearer has [WARD 3+] (the best ward in the game; single model only)."
+    },
+    {
+     "name": "Blade of the First Oath",
+     "bearer": "Blade-Warden Champion",
+     "ability": {
+      "name": "First Oath",
+      "mods": {
+       "attacks_mod": 2,
+       "dmg_mod": 1
+      },
+      "scope": "melee"
+     },
+     "text": "The bearer's blades: +2 Attacks, +1 Damage."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Alchemical Bloodline",
+     "cp": 1,
+     "when": "A Gilded unit is targeted",
+     "effect": "Incoming Damage −1 (min 1) for that attack."
+    },
+    {
+     "name": "Gilded Vigil",
+     "cp": 1,
+     "when": "A Gilded unit controls an objective at the End of Round",
+     "effect": "It keeps [SECURED] on that objective."
+    },
+    {
+     "name": "Golden Riposte",
+     "cp": 1,
+     "when": "A Gilded unit is declared as a Charge target",
+     "effect": "It gains [STRIKE FIRST] against that charger this round."
+    }
+   ]
+  },
+  {
+   "name": "Gene-Forged Host",
+   "playstyle": "Space-Marine-style: Sworn Battle-Brothers in numbers, Vanguard drops, tanks.",
+   "rule": "Oath-Doctrines: Rounds 1–2 Devastator (+1 PEN on ranged when not moving), Round 3 Tactical (re-roll Wound 1s), Round 4 Assault (+1 Attack in melee). Sworn units only.",
+   "enhancements": [
+    {
+     "name": "Artificer Plate",
+     "bearer": "Sworn Lieutenant",
+     "ability": {
+      "name": "Artificer Plate",
+      "mods": {
+       "ward": 4
+      },
+      "scope": "defense"
+     },
+     "text": "The bearer has [WARD 4+]."
+    },
+    {
+     "name": "Master-crafted Sol-bolter",
+     "bearer": "Sworn Lieutenant",
+     "ability": {
+      "name": "Master-crafted",
+      "mods": {
+       "attacks_mod": 2,
+       "pen_mod": 1
+      },
+      "scope": "ranged"
+     },
+     "text": "The bearer's pistol: +2 Attacks, +1 PEN."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Bolter Discipline",
+     "cp": 1,
+     "when": "A Sworn unit Shoots",
+     "effect": "Its [HAILFIRE] applies at full range."
+    },
+    {
+     "name": "Sunfall Assault",
+     "cp": 1,
+     "when": "Sworn Vanguard arrive from reserves",
+     "effect": "They may Charge this activation."
+    },
+    {
+     "name": "Contempt of Iron",
+     "cp": 1,
+     "when": "A Sworn unit is shot",
+     "effect": "Incoming PEN −1 for that attack."
+    }
+   ]
+  },
+  {
+   "name": "Sunfall Spearhead",
+   "playstyle": "Drop-assault: Vanguard, Paladins and Lancers strike from orbit.",
+   "rule": "Comet Descent: [VANGUARD STRIKE] units may arrive 7″ from enemies (not 8″) and get +1 to Wound on the activation they arrive.",
+   "enhancements": [
+    {
+     "name": "Comet Banner",
+     "bearer": "Sworn Lieutenant",
+     "ability": {
+      "name": "Comet Banner",
+      "utility": "VANGUARD STRIKE"
+     },
+     "text": "The bearer and its attached unit gain [VANGUARD STRIKE]."
+    },
+    {
+     "name": "Sunfall Brand",
+     "bearer": "Blade-Warden Champion",
+     "ability": {
+      "name": "Sunfall Brand",
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5
+     },
+     "text": "+1 Damage on the activation the bearer arrives or charges."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Orbital Lance",
+     "cp": 1,
+     "when": "A unit arrives from reserves",
+     "effect": "Pick an enemy unit within 12″ of it: D3 Fatal Wounds."
+    },
+    {
+     "name": "Thunderous Landing",
+     "cp": 1,
+     "when": "A unit arrives within 9″ of an enemy",
+     "effect": "That enemy gains 1 Suppression token."
+    },
+    {
+     "name": "Recall to Orbit",
+     "cp": 2,
+     "when": "End of Round",
+     "effect": "One unengaged [VANGUARD STRIKE] unit returns to Strategic Reserves."
+    }
+   ]
+  }
+ ],
+ "gamble": {
+  "name": "Solar Overdrive",
+  "text": "Once per round, one unit, when it activates: +1 Attack on all weapons and [SHREDDING WOUNDS] this activation, but its ARM is 1 worse until it next activates.",
+  "risk_cost": "exposure (durability)"
+ }
+}

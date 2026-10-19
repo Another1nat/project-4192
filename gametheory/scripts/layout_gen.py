@@ -1,0 +1,325 @@
+#!/usr/bin/env python3
+"""
+layout_gen.py — original terrain layouts for 4192 AD (44" x 30" table), generated and checked automatically.
+
+Design targets come from measuring 45 published 40k tournament layouts (60" x 44"): ~24 % of the table covered,
+~95 % of deployment-zone-to-zone sightlines crossing tall terrain, cover at every objective. They are only used as
+statistics; every layout here is generated from scratch on the 4192 kit and the 4192 deployment maps.
+
+Every layout is point-symmetric (rotated 180° about the centre), so both players get the same table.
+Checks per layout:
+  sightlines   share of deployment-zone -> deployment-zone lines blocked by Dense terrain (target 80–95 %, aim 88 %)
+  coverage     share of the table covered by terrain footprints (target 19–28 %)
+  movement     a 4"-wide route (Class 4–5 base) connects both deployment zones and every objective
+  objectives   no terrain on an objective; cover within 1.5–5" of each one
+  shelter      share of each deployment zone that is mostly hidden from the enemy zone (target 15–60 %)
+  centre       share of lines from each zone to the centre objective that are blocked (target 30–70 %)
+
+    python3 layout_gen.py                       # writes website/data/layouts_4192.json + website/assets/layouts_4192/<CODE>.svg
+    python3 layout_gen.py --tries 6000 --seed 7
+"""
+import argparse
+import json
+import math
+import os
+import random
+import statistics
+
+from shapely.affinity import rotate, translate
+from shapely.geometry import LineString, Point, Polygon, box
+from shapely.ops import unary_union
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SITE = os.path.abspath(os.path.join(HERE, '..', '..', 'website'))     # outputs go to the Iron & Wrath site (public repo)
+W, H = 44.0, 30.0                 # table, inches. x along the 44" side, y along the 30" side, origin = table centre
+HW, HH = W / 2, H / 2
+
+# ---------------------------------------------------------------------------------------------------------------
+# The 4192 terrain kit (12 pieces). Halves are placed by the generator, the other half is the 180° twin.
+# ---------------------------------------------------------------------------------------------------------------
+KIT = {   # matches CORE_RULES_MANUAL §6: Dense blocks line of sight through its footprint, Light gives cover, Exposed neither
+    'RL': dict(name='Large Ruin', name_es='Ruina grande', w=8.0, d=6.0, h=5.0, los=True, kind='dense', count=4, fill='#3f4652'),
+    'RS': dict(name='Small Ruin', name_es='Ruina pequeña', w=6.0, d=4.0, h=4.0, los=True, kind='dense', count=2, fill='#4b5563'),
+    'BL': dict(name='Barricade', name_es='Barricada', w=6.0, d=1.5, h=1.5, los=False, kind='light', count=2, fill='#9a8f7a'),
+    'LW': dict(name='Low Wall', name_es='Muro bajo', w=5.0, d=2.0, h=2.0, los=False, kind='light', count=2, fill='#8a94a3'),
+    'CR': dict(name='Crater', name_es='Cráter', w=4.0, d=4.0, h=0.5, los=False, kind='exposed', count=2, fill='#a77b52', round=True),
+}
+ANGLES = [0, 90, 30, -30, 45, -45, 60, -60]
+
+# ---------------------------------------------------------------------------------------------------------------
+# Deployment maps (MISSIONS_AND_TACTICAL_DECK.md §2), converted from corner coordinates to centre coordinates.
+# Attacker = red = bottom/left, defender = blue = top/right.
+# ---------------------------------------------------------------------------------------------------------------
+def C(x, y):
+    return (x - HW, y - HH)
+
+
+MAPS = {
+    'FC': dict(name='Frontline Clash', name_es='Choque Frontal', letter='A',
+               zones=[[C(0, 0), C(44, 0), C(44, 8), C(0, 8)], [C(0, 22), C(44, 22), C(44, 30), C(0, 30)]],
+               objectives=[('home', 'attacker', C(22, 4)), ('home', 'defender', C(22, 26)), ('central', '', C(22, 15)),
+                           ('flank', '', C(8, 15)), ('flank', '', C(36, 15))]),
+    'BG': dict(name='Broken Ground', name_es='Tierra Rota', letter='B',
+               zones=[[C(0, 0), C(20, 0), C(0, 14)], [C(44, 30), C(24, 30), C(44, 16)]],
+               objectives=[('home', 'attacker', C(6, 6)), ('home', 'defender', C(38, 24)), ('central', '', C(22, 15)),
+                           ('flank', '', C(10, 24)), ('flank', '', C(34, 6))]),
+    'PI': dict(name='Pincer', name_es='Tenaza', letter='C',
+               zones=[[C(0, 0), C(10, 0), C(10, 30), C(0, 30)], [C(34, 0), C(44, 0), C(44, 30), C(34, 30)]],
+               objectives=[('home', 'attacker', C(5, 15)), ('home', 'defender', C(39, 15)), ('central', '', C(22, 15)),
+                           ('flank', '', C(22, 5)), ('flank', '', C(22, 25))]),
+}
+TARGETS = dict(blocked=(0.80, 0.95), coverage=(0.19, 0.28), shelter=(0.15, 0.60), centre=(0.30, 0.70))
+BIG_BASE = 4.0        # Class 4–5 footprint that must be able to move between objectives and zones
+GAP_MIN = 3.0         # minimum gap from a line-of-sight blocker to any other piece
+GAP_LIGHT = 2.5       # light cover and craters may sit a little closer (infantry still pass; big models use the 4" route check)
+OBJ_CLEAR, OBJ_COVER = 1.5, 5.0
+
+
+def piece_poly(k, x, y, ang):
+    s = KIT[k]
+    if s.get('round'):
+        return Point(x, y).buffer(s['w'] / 2, 24)
+    p = box(-s['w'] / 2, -s['d'] / 2, s['w'] / 2, s['d'] / 2)
+    return translate(rotate(p, ang, origin=(0, 0)), x, y)
+
+
+TABLE = box(-HW, -HH, HW, HH)
+
+
+def rand_point(poly, rnd):
+    minx, miny, maxx, maxy = poly.bounds
+    for _ in range(200):
+        q = Point(rnd.uniform(minx, maxx), rnd.uniform(miny, maxy))
+        if poly.contains(q):
+            return q
+    return poly.representative_point()
+
+
+def candidate(mp, rnd):
+    """Place one half of the kit at random, add the 180° twins, return pieces or None if a hard rule fails."""
+    zones = [Polygon(z) for z in mp['zones']]
+    objs = [Point(*o[2]) for o in mp['objectives']]
+    half = []
+    order = ['RL', 'RL', 'RS', 'CR', 'BL', 'LW']        # big pieces first, small cover fills the gaps
+    for k in order:
+        ok = False
+        for _ in range(300):
+            ang = rnd.choice(ANGLES)
+            if k == 'CR':
+                q = rand_point(zones[0].buffer(-2.2), rnd)
+                x, y = q.x, q.y
+            else:
+                x, y = rnd.uniform(-HW + 2, HW - 2), rnd.uniform(-HH + 2, HH - 2)
+            p = piece_poly(k, x, y, ang)
+            twin = rotate(p, 180, origin=(0, 0))
+            if not TABLE.buffer(-0.5).contains(p):
+                continue
+            if p.distance(twin) < GAP_MIN:
+                continue
+            if any(p.distance(o) < OBJ_CLEAR + 0.8 for o in objs):
+                continue
+            gap = GAP_MIN if KIT[k]['los'] else GAP_LIGHT
+            if any(p.distance(q2) < gap or p.distance(t2) < gap for _, _, _, _, q2, t2 in half):
+                continue
+            if k != 'CR' and p.intersection(zones[0]).area > 0.6 * p.area and k == 'RL' and rnd.random() < 0.5:
+                continue      # keep most of the big ruins out of the zones, but allow one sometimes
+            half.append((k, x, y, ang, p, twin))
+            ok = True
+            break
+        if not ok:
+            return None
+    pieces = []
+    for k, x, y, ang, p, twin in half:
+        pieces.append(dict(k=k, x=x, y=y, ang=ang, poly=p))
+        pieces.append(dict(k=k, x=-x, y=-y, ang=ang, poly=twin))
+    return pieces
+
+
+def metrics(mp, pieces, rnd, n=260):
+    zones = [Polygon(z) for z in mp['zones']]
+    blockers = unary_union([p['poly'] for p in pieces if KIT[p['k']]['los']])
+    allp = unary_union([p['poly'] for p in pieces])
+    objs = [Point(*o[2]) for o in mp['objectives']]
+    # sightlines zone -> zone
+    blocked = sum(LineString([rand_point(zones[0], rnd), rand_point(zones[1], rnd)]).intersects(blockers) for _ in range(n)) / n
+    coverage = allp.area / (W * H)
+    # shelter: share of zone points that cannot see >= 70 % of the enemy zone
+    shelter = []
+    for a, b in ((0, 1), (1, 0)):
+        hid = 0
+        for _ in range(40):
+            p = rand_point(zones[a], rnd)
+            bl = sum(LineString([p, rand_point(zones[b], rnd)]).intersects(blockers) for _ in range(20)) / 20
+            hid += bl >= 0.7
+        shelter.append(hid / 40)
+    centre = [sum(LineString([rand_point(z, rnd), objs[2]]).intersects(blockers) for _ in range(60)) / 60 for z in zones]
+    # movement for a 4" base: free space = table shrunk by 2" minus pieces grown by 2" (craters are passable)
+    solid = unary_union([p['poly'] for p in pieces if p['k'] != 'CR'])
+    free = TABLE.buffer(-BIG_BASE / 2).difference(solid.buffer(BIG_BASE / 2))
+    parts = list(free.geoms) if hasattr(free, 'geoms') else [free]
+
+    def part_of(geom):
+        for i, g in enumerate(parts):
+            if g.intersects(geom):
+                return i
+        return None
+    zid = [part_of(z.buffer(-0.1)) for z in zones]
+    oid = [part_of(o.buffer(1.0)) for o in objs]
+    connected = zid[0] is not None and all(i == zid[0] for i in zid + oid)
+    obj_cover = [allp.distance(o) for o in objs]
+    return dict(blocked=blocked, coverage=coverage, shelter=shelter, centre=centre, connected=connected,
+                obj_cover=obj_cover, n_pieces=len(pieces))
+
+
+def score(m):
+    s = 0.0
+
+    def band(v, lo, hi, w=1.0):
+        return w * (0 if lo <= v <= hi else (lo - v if v < lo else v - hi) * 10)
+    s += band(m['blocked'], *TARGETS['blocked'], 4.0)
+    s += band(m['coverage'], *TARGETS['coverage'])
+    for v in m['shelter']:
+        s += band(v, *TARGETS['shelter'])
+    for v in m['centre']:
+        s += band(v, *TARGETS['centre'])
+    s += 0 if m['connected'] else 50
+    s += sum(3 for d in m['obj_cover'] if not OBJ_CLEAR <= d <= OBJ_COVER)
+    # prefer blocked near the middle of the band (some long lanes stay open for artillery)
+    s += abs(m['blocked'] - 0.88) * 3
+    return s
+
+
+def signature(pieces):
+    return [(p['k'], round(p['x'] / 4), round(p['y'] / 4)) for p in pieces if p['k'] in ('RL', 'RS')]
+
+
+def distance(a, b):
+    sa, sb = signature(a), signature(b)
+    return sum(1 for t in sa if t not in sb)
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Output: data (same idea as the 40k ar_index.json: pieces with corners, objectives, zones) + SVG 2D maps
+# ---------------------------------------------------------------------------------------------------------------
+def to_record(code, mk, var, pieces, m):
+    mp = MAPS[mk]
+    letters = 'ABCDEFGHIJKL'
+    order = sorted(range(len(pieces)), key=lambda i: (-pieces[i]['y'], pieces[i]['x']))
+    out = []
+    for li, i in enumerate(order):
+        p = pieces[i]
+        s = KIT[p['k']]
+        corners = [[round(x, 2), round(y, 2)] for x, y in list(p['poly'].exterior.coords)[:-1]] if not s.get('round') else []
+        out.append({'code': letters[li], 'type': p['k'], 'kind': s['name'], 'kind_es': s['name_es'], 'terrain': s['kind'],
+                    'blocks_los': s['los'], 'size_in': [s['w'], s['d']], 'height_in': s['h'],
+                    'centre_in': [round(p['x'], 2), round(p['y'], 2)],
+                    'from_left_in': round(p['x'] + HW, 1), 'from_front_in': round(p['y'] + HH, 1),
+                    'rotation_deg': p['ang'] % 180 if not s.get('round') else 0, 'corners_in': corners})
+    return {'code': code, 'map': mk, 'variant': var, 'title': f"{mp['name']} — Layout {var}", 'title_es': f"{mp['name_es']} — Disposición {var}",
+            'table': {'width_in': W, 'depth_in': H},
+            'deployment_zones': [{'role': 'attacker', 'color': '#ef4444', 'points_in': [list(map(lambda v: round(v, 2), p)) for p in mp['zones'][0]]},
+                                 {'role': 'defender', 'color': '#3b82f6', 'points_in': [list(map(lambda v: round(v, 2), p)) for p in mp['zones'][1]]}],
+            'objectives': [{'n': i + 1, 'type': t, 'owner': o, 'x_in': round(x, 2), 'y_in': round(y, 2), 'control_radius_in': 3.0}
+                           for i, (t, o, (x, y)) in enumerate(mp['objectives'])],
+            'pieces': out,
+            'checks': {'sightlines_blocked': round(m['blocked'], 3), 'coverage': round(m['coverage'], 3),
+                       'shelter': [round(v, 2) for v in m['shelter']], 'centre_blocked': [round(v, 2) for v in m['centre']],
+                       'big_model_route': m['connected'], 'objective_cover_in': [round(v, 1) for v in m['obj_cover']]}}
+
+
+def svg(rec):
+    S = 22.0                        # px per inch
+    pad = 34
+    Wp, Hp = W * S + 2 * pad, H * S + 2 * pad
+    X = lambda x: pad + (x + HW) * S
+    Y = lambda y: pad + (HH - y) * S          # y up = towards the defender (top of the image)
+    o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {Wp:.0f} {Hp:.0f}" role="img" aria-label="{rec["code"]}" '
+         f'font-family="-apple-system,Segoe UI,Roboto,sans-serif">',
+         f'<rect x="0" y="0" width="{Wp:.0f}" height="{Hp:.0f}" fill="#0b0f14"/>',
+         f'<rect x="{pad}" y="{pad}" width="{W * S:.0f}" height="{H * S:.0f}" fill="#f7f7f5" stroke="#cfcfcf" stroke-width="2"/>']
+    # 6" grid
+    for gx in range(6, int(W), 6):
+        o.append(f'<line x1="{X(gx - HW):.1f}" y1="{pad}" x2="{X(gx - HW):.1f}" y2="{pad + H * S:.0f}" stroke="#e3e3e0" stroke-width="1"/>')
+    for gy in range(6, int(H), 6):
+        o.append(f'<line x1="{pad}" y1="{Y(gy - HH):.1f}" x2="{pad + W * S:.0f}" y2="{Y(gy - HH):.1f}" stroke="#e3e3e0" stroke-width="1"/>')
+    for z, col in zip(rec['deployment_zones'], ('rgba(239,68,68,0.13)', 'rgba(59,130,246,0.13)')):
+        pts = ' '.join(f'{X(x):.1f},{Y(y):.1f}' for x, y in z['points_in'])
+        o.append(f'<polygon points="{pts}" fill="{col}" stroke="{z["color"]}" stroke-dasharray="6 4" stroke-width="1.5"/>')
+    o.append(f'<line x1="{X(-HW)}" y1="{Y(0)}" x2="{X(HW)}" y2="{Y(0)}" stroke="#555" stroke-dasharray="5 5" stroke-width="1"/>')
+    o.append(f'<line x1="{X(0)}" y1="{Y(-HH)}" x2="{X(0)}" y2="{Y(HH)}" stroke="#555" stroke-dasharray="5 5" stroke-width="1"/>')
+    for p in rec['pieces']:
+        s = KIT[p['type']]
+        cx, cy = p['centre_in']
+        if s.get('round'):
+            o.append(f'<circle cx="{X(cx):.1f}" cy="{Y(cy):.1f}" r="{s["w"] / 2 * S:.1f}" fill="{s["fill"]}" fill-opacity="0.55" stroke="#6b4a2c" stroke-width="2" stroke-dasharray="4 3"/>')
+        else:
+            pts = ' '.join(f'{X(x):.1f},{Y(y):.1f}' for x, y in p['corners_in'])
+            o.append(f'<polygon points="{pts}" fill="{s["fill"]}" stroke="#111" stroke-width="1.5"/>')
+        o.append(f'<text x="{X(cx):.1f}" y="{Y(cy) + 6:.1f}" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" '
+                 f'stroke="#000" stroke-width="3" paint-order="stroke">{p["code"]}</text>')
+    for ob in rec['objectives']:
+        x, y = X(ob['x_in']), Y(ob['y_in'])
+        col = {'attacker': '#ef4444', 'defender': '#3b82f6'}.get(ob['owner'], '#22c55e')
+        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{3 * S:.1f}" fill="none" stroke="{col}" stroke-width="1.5" stroke-dasharray="3 4"/>')
+        o.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="13" fill="#fff" stroke="{col}" stroke-width="4"/>')
+        o.append(f'<text x="{x:.1f}" y="{y + 5:.1f}" text-anchor="middle" font-size="14" font-weight="800" fill="{col}">{ob["n"]}</text>')
+    # dimension lines for the attacker half (the other half is the 180° twin): centre of each piece to the nearest side edges
+    for p in rec['pieces']:
+        cx, cy = p['centre_in']
+        if cy > 0:
+            continue
+        ex = -HW if cx < 0 else HW
+        o.append(f'<line x1="{X(cx):.1f}" y1="{Y(cy):.1f}" x2="{X(ex):.1f}" y2="{Y(cy):.1f}" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>')
+        o.append(f'<line x1="{X(cx):.1f}" y1="{Y(cy):.1f}" x2="{X(cx):.1f}" y2="{Y(-HH):.1f}" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>')
+        dx = abs(ex - cx)
+        o.append(f'<text x="{(X(cx) + X(ex)) / 2:.1f}" y="{Y(cy) - 4:.1f}" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">{dx:.1f}"</text>')
+        o.append(f'<text x="{X(cx) + 4:.1f}" y="{(Y(cy) + Y(-HH)) / 2:.1f}" font-size="13" font-weight="700" fill="#1d4ed8">{cy + HH:.1f}"</text>')
+    o.append(f'<text x="{pad}" y="{pad - 10}" font-size="15" font-weight="800" fill="#e6edf8">{rec["title"]}</text>')
+    o.append(f'<text x="{pad + W * S:.0f}" y="{pad - 10}" text-anchor="end" font-size="12" fill="#9aa7b8">44" × 30" · centres measured from the nearest side and the front edge · 180° symmetric</text>')
+    o.append('</svg>')
+    return '\n'.join(o)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--tries', type=int, default=2500)
+    ap.add_argument('--seed', type=int, default=4192)
+    ap.add_argument('--variants', type=int, default=3)
+    args = ap.parse_args()
+    rnd = random.Random(args.seed)
+    records = {}
+    os.makedirs(os.path.join(SITE, 'assets', 'layouts_4192'), exist_ok=True)
+    for mk, mp in MAPS.items():
+        pool = []
+        for _ in range(args.tries):
+            pcs = candidate(mp, rnd)
+            if not pcs:
+                continue
+            m = metrics(mp, pcs, rnd, n=120)
+            pool.append((score(m), pcs, m))
+        pool.sort(key=lambda t: t[0])
+        chosen = []
+        for sc, pcs, m in pool[:200]:
+            if all(distance(pcs, c[1]) >= 3 for c in chosen):
+                m = metrics(mp, pcs, random.Random(1), n=600)       # re-measure the finalists with more sightlines
+                chosen.append((score(m), pcs, m))
+            if len(chosen) == args.variants:
+                break
+        for i, (sc, pcs, m) in enumerate(chosen):
+            var = str(i + 1)
+            code = f'{mk}-{var}'
+            rec = to_record(code, mk, var, pcs, m)
+            rec['checks']['score'] = round(sc, 3)
+            records[code] = rec
+            open(os.path.join(SITE, 'assets', 'layouts_4192', f'{code}.svg'), 'w', encoding='utf-8').write(svg(rec))
+            c = rec['checks']
+            print(f"{code:<5} score {sc:5.2f} · sightlines blocked {100 * c['sightlines_blocked']:.0f}% · coverage {100 * c['coverage']:.0f}% · "
+                  f"shelter {c['shelter']} · centre {c['centre_blocked']} · big-model route {c['big_model_route']} · objective cover {c['objective_cover_in']}")
+        print(f'  {mk}: {len(pool)} valid candidates out of {args.tries}')
+    out = os.path.join(SITE, 'data', 'layouts_4192.json')
+    json.dump(records, open(out, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    print(f'[✓] {out} ({len(records)} layouts) and assets/layouts_4192/*.svg')
+
+
+if __name__ == '__main__':
+    main()

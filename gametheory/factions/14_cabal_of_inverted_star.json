@@ -1,0 +1,1236 @@
+{
+ "name": "The Cabal of the Inverted Star",
+ "verb": "CAST",
+ "identity": "Warp-geomancer sorcerers, hollow automata and mutating spawn. Every Sorcerer casts one spell per activation: cast safely on 2D6 or channel on 3D6 for a stronger effect and a backlash risk. Signature trick: swapping two of your units.",
+ "number": "14",
+ "template": "C_gunline_siege_arcane",
+ "status": "draft",
+ "learned_from": [
+  "Gemini #1 spell resource without a magic phase, #2 Inverted Geometry swap, #3 All Is Dust (renamed effect)",
+  "User: spells with buffs, debuffs and risk; GW spell names (a signature spell, a signature spell) avoided"
+ ],
+ "risk_profile": "Chosen per cast: 2D6 is safe, 3D6 channel adds power and backlash.",
+ "core_rule": {
+  "name": "The Inverted Rite (spells)",
+  "text": "Each Sorcerer (a Leader with a [PSYCHIC / ARCANE] weapon) may cast 1 spell per activation without spending an Action; each spell once per round for the army. Roll 2D6 (safe) or 3D6 (channel: the effect is doubled where marked ×2; if 2+ dice show a 1, the Sorcerer suffers D3 Fatal Wounds). Spells: Hex-Bolt (6+) D3 Fatal Wounds to an enemy unit within 18″ ×2 · Veil of Mirrors (6+) a friendly unit within 12″ is −1 to be Hit until the End of Round · Warp-Breach (7+) a friendly unit's weapons get +1 PEN this round · Withering Gaze (7+) an enemy unit within 18″ gets −1 to Hit until the End of Round · Chrono-Step (8+) a friendly unit within 12″ makes a 3″ move ×2 · Inverted Geometry (9+) swap two friendly unengaged units within 18″ of the Sorcerer (counts as their move)."
+ },
+ "gamble": {
+  "name": "Channel the Star",
+  "text": "Built into every cast: roll 3D6 instead of 2D6 — marked effects are doubled; if two or more dice show a 1, the Sorcerer suffers D3 Fatal Wounds.",
+  "risk_cost": "durability (dice)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "all",
+   "uptime": 0.12,
+   "mods": {
+    "incoming_hit_mod_ranged": -1,
+    "pen_mod": 1
+   },
+   "name": "Veil & Breach",
+   "text": "Spell support spread over the army."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Astral bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Force-stave",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Master of the Astral Geometry",
+   "slot": 1,
+   "abilities": [
+    {
+     "flat": 12.0,
+     "name": "Grand Sorcerer",
+     "text": "Casts 2 spells per activation; +1 to casting rolls."
+    },
+    {
+     "flat": 6.0,
+     "name": "Geometry Unbound",
+     "text": "Inverted Geometry can be cast for 1 CP instead of rolling."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Warp-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Force-stave",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sorcerer-Adept",
+   "slot": 2,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Sorcerer",
+     "text": "Casts 1 spell per activation."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "ward": 5
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Warded Robes",
+     "text": "The attached unit has WARD 5+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Warp-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Hex-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    }
+   ],
+   "name": "Hex-Blade Exalted",
+   "slot": 3,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Battle-Sorcerer",
+     "text": "Casts 1 spell per activation (Warp-Breach or Veil only)."
+    },
+    {
+     "mods": {
+      "devastating": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Unmaking Edge",
+     "text": "Melee critical wounds become Fatal Wounds."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Fate-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Seer of the Inverted Star",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Fate-Weaver",
+     "text": "Once per round, re-roll one casting roll made within 12″."
+    },
+    {
+     "flat": 4.0,
+     "name": "Sorcerer",
+     "text": "Casts 1 spell (Withering Gaze or Hex-Bolt only)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    10
+   ],
+   "MOV": 5,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Warp-flame pistols",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]"
+   ],
+   "name": "Warp-Touched Thralls",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Expendable Geometry",
+     "text": "May be one of the units swapped by Inverted Geometry even if engaged."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Inferno-bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]",
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Hollow Automata",
+   "slot": 6,
+   "abilities": [
+    {
+     "scope": "defense",
+     "uptime": 0.6,
+     "mods": {
+      "save_mod": 1
+     },
+     "name": "All Is Ash",
+     "text": "+1 ARM (to 3+ cap) against Damage 1 attacks."
+    },
+    {
+     "utility": "SUPPRESS IMMUNE",
+     "name": "Bound Spirits",
+     "text": "Hollow and fearless: cannot be Rattled."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 4,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Warp-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Hex-axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Hex-Plated Automata",
+   "slot": 7,
+   "abilities": [
+    {
+     "scope": "defense",
+     "uptime": 0.6,
+     "mods": {
+      "save_mod": 1
+     },
+     "name": "All Is Ash",
+     "text": "+1 ARM (to 3+ cap) against Damage 1 attacks."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Battle rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Star-Cult Acolytes",
+   "slot": 8,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Ritual Circle",
+     "text": "A Sorcerer within 3″ of this unit gets +1 to casting rolls."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bow",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Avian blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Plume-Kin Raiders",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Ambush Flock",
+     "text": "+1 Attack in melee on a round they charged."
+    },
+    {
+     "utility": "INFILTRATORS",
+     "name": "Hidden Paths",
+     "text": "[INFILTRATORS]."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 11,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Warp-glaives",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Disc-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Astral Disc-Riders",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Skim",
+     "text": "May Shoot after Falling Back."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Warp-fire",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Mutant limbs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Star-Wisps",
+   "slot": 11,
+   "abilities": [
+    {
+     "mods": {
+      "ward": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Unstable Form",
+     "text": "WARD 6+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Mutant limbs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "D6+1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Mutated Warp-Spawn",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Gift of Mutation",
+     "text": "When a friendly Leader is destroyed within 9″, place a Mutated Warp-Spawn unit of 3 where it died (once per battle)."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 4,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Hexfire cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Hexfire Battery",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Burning Hex",
+     "text": "An enemy unit hit cannot use WARD until the End of Round on a 5+."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Warp-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Hex-fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Rune-Plate Walker",
+   "slot": 14,
+   "abilities": [
+    {
+     "mods": {
+      "ward": 5
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Sigil-Wards",
+     "text": "WARD 5+."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 8,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Writhing tentacles",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Spawn-Horror",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Unpredictable",
+     "text": "At the start of its activation roll a D6: 1–2 +2″ MOV · 3–4 +1 Attack · 5–6 UNYIELDING 5+ until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Vortex-tentacles",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "8",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Cosmic Vortex-Beast",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Warp-Vortex",
+     "text": "Once per round, one enemy unit within 9″ suffers D3 Fatal Wounds on a 4+ and is Rattled."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Prism-beam",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Warp-Prism Engine",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Arcane Amplifier",
+     "text": "Sorcerers within 6″ add 3″ to spell ranges."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[FLY]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Spire-Barge",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Floating Spire",
+     "text": "Embarked Sorcerers may cast spells (measure from the hull)."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Star-fire",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Astral stave",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Winged Star-Paragon",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 12.0,
+     "name": "Greater Sorcerer",
+     "text": "Casts 2 spells per activation; +1 to casting rolls."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "ward": 5
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Astral Ward",
+     "text": "WARD 5+."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Star-lance",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6+2",
+     "traits": [
+      "[HEAVY]",
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Warp-flare",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Inverted Star Monolith",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 10.0,
+     "name": "Living Ritual",
+     "text": "Counts as a Sorcerer (1 spell per activation); friendly casting rolls within 12″ get +1."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Grand Coven",
+   "playstyle": "Three or four sorcerers, a wall of automata, spells every activation.",
+   "rule": "Coven: Sorcerers within 6″ of another friendly Sorcerer get +1 to casting rolls; Hex-Bolt can be cast twice per round.",
+   "enhancements": [
+    {
+     "name": "Grimoire of the Inverted Star",
+     "bearer": "Master of the Astral Geometry",
+     "ability": {
+      "flat": 6.0,
+      "name": "Grimoire of the Inverted Star",
+      "text": "Knows one extra spell: Unmaking (9+): an enemy unit within 18″ loses WARD until the End of Round."
+     },
+     "text": "Knows one extra spell: Unmaking (9+): an enemy unit within 18″ loses WARD until the End of Round."
+    },
+    {
+     "name": "Familiar",
+     "bearer": "Sorcerer-Adept",
+     "ability": {
+      "flat": 4.0,
+      "name": "Familiar",
+      "text": "Re-roll one casting die per round."
+     },
+     "text": "Re-roll one casting die per round."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Arcane Surge",
+     "cp": 1,
+     "when": "A spell is cast",
+     "effect": "+2 to the casting roll."
+    },
+    {
+     "name": "Dispel",
+     "cp": 1,
+     "when": "An enemy [PSYCHIC / ARCANE] effect targets a unit within 12″ of a Sorcerer",
+     "effect": "Roll 2D6: on 7+ it is cancelled."
+    },
+    {
+     "name": "Siphon the Warp",
+     "cp": 1,
+     "when": "A Sorcerer suffers backlash",
+     "effect": "Ignore it."
+    }
+   ]
+  },
+  {
+   "name": "Automaton Legion",
+   "playstyle": "Hollow automata advance under arcane fire.",
+   "rule": "All Is Ash: Hollow and Hex-Plated Automata have WARD 5+; their ranged weapons gain [SHREDDING WOUNDS] while within 6″ of a Sorcerer.",
+   "enhancements": [
+    {
+     "name": "Soul-Binding",
+     "bearer": "Hex-Blade Exalted",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Soul-Binding",
+      "text": "The attached unit has UNYIELDING 6+."
+     },
+     "text": "The attached unit has UNYIELDING 6+."
+    },
+    {
+     "name": "Inferno Rounds",
+     "bearer": "Hollow Automata",
+     "ability": {
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "ranged",
+      "uptime": 1.0,
+      "name": "Inferno Rounds",
+      "text": "+1 PEN with ranged weapons."
+     },
+     "text": "+1 PEN with ranged weapons."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Warp-Flame Volley",
+     "cp": 1,
+     "when": "An Automata unit Shoots",
+     "effect": "Weapons gain [IGNORES COVER]."
+    },
+    {
+     "name": "March of the Dead Souls",
+     "cp": 1,
+     "when": "An Automata unit activates",
+     "effect": "It may Move and Shoot without the [HEAVY] penalty."
+    },
+    {
+     "name": "Dust Reforms",
+     "cp": 2,
+     "when": "Command Phase",
+     "effect": "Return D3 slain models to an Automata unit within 6″ of a Sorcerer."
+    }
+   ]
+  },
+  {
+   "name": "Geometry Weavers",
+   "playstyle": "Board control: swap, step and confuse.",
+   "rule": "Inverted Geometry costs 1 CP instead of a cast (still once per round). Units that were swapped get [STEALTH] until the End of Round.",
+   "enhancements": [
+    {
+     "name": "Tesseract Key",
+     "bearer": "Seer of the Inverted Star",
+     "ability": {
+      "flat": 6.0,
+      "name": "Tesseract Key",
+      "text": "Inverted Geometry range is 24″."
+     },
+     "text": "Inverted Geometry range is 24″."
+    },
+    {
+     "name": "Mirror-Shard Robe",
+     "bearer": "Master of the Astral Geometry",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "incoming_hit_mod_ranged": -1
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Mirror-Shard Robe",
+      "text": "The attached unit is [STEALTH]."
+     },
+     "text": "The attached unit is [STEALTH]."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Fold Space",
+     "cp": 1,
+     "when": "A unit is targeted by a Charge",
+     "effect": "It makes a 3″ move before the roll."
+    },
+    {
+     "name": "Doubled Geometry",
+     "cp": 2,
+     "when": "Inverted Geometry is cast",
+     "effect": "Cast it a second time this round."
+    },
+    {
+     "name": "Lost in the Maze",
+     "cp": 1,
+     "when": "An enemy unit within 12″ of a Sorcerer activates",
+     "effect": "−2″ to its moves this activation."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "name": "The Skitter-Kin & Rad-Scavengers — verifier sample",
+ "detachment": "Rad-Tech Clans",
+ "units": [
+  {
+   "unit": "Under-Chief Warlock-Engineer",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Clan-Scavengers",
+   "models": 10
+  },
+  {
+   "unit": "Clan-Spearkin",
+   "models": 10
+  },
+  {
+   "unit": "Rad-Fire Thrower Team",
+   "models": 2
+  },
+  {
+   "unit": "Gas-Lobber Squad",
+   "models": 3
+  },
+  {
+   "unit": "Doom-Gong Engine",
+   "models": 1
+  },
+  {
+   "unit": "Rad-Brute Monstrosity",
+   "models": 1
+  },
+  {
+   "unit": "Rotary Scrap-Gun Team",
+   "models": 2
+  },
+  {
+   "unit": "Gutter-Stalkers",
+   "models": 3
+  },
+  {
+   "unit": "Rad-Colossus Engine",
+   "models": 1
+  },
+  {
+   "unit": "Rad-Brute Packs",
+   "models": 3
+  },
+  {
+   "unit": "Vermin Tide",
+   "models": 10
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/19_skitter_kin_rad_scavengers.json"
+ ]
+}

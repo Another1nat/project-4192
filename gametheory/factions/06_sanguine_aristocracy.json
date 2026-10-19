@@ -1,0 +1,1195 @@
+{
+ "name": "The Sanguine Aristocracy",
+ "verb": "FEED",
+ "identity": "Vampire nobles, their deathless levies and blood-knights. Few, deadly duelists that heal by killing: if they are kept from fighting, they wither; if they reach the line, they top up and keep going.",
+ "number": "06",
+ "template": "B_melee_predator",
+ "status": "draft",
+ "learned_from": [
+  "AoS vampire (Deathless Thralls, lords that heal) — healing is shared design space, user OK",
+  "Gemini #1 The Hunger, #2 Scent of Blood, #3 Duellists"
+ ],
+ "risk_profile": "Low (heal on kill). Gamble = objective/position: the Red Thirst forces a charge and drops CTRL to 0.",
+ "core_rule": {
+  "name": "The Hunger",
+  "text": "At the end of a Fight action in which a Sanguine unit destroyed 1+ enemy models, it heals 2 MIGHT (3 if it destroyed the whole enemy unit). For a multi-model unit, healing goes to its most damaged model first, then returns 1 slain model per 2 points left (never above Starting Strength)."
+ },
+ "gamble": {
+  "name": "The Red Thirst",
+  "text": "When a unit activates: +1 Attack in melee and +2″ to Charge rolls this activation, but it must declare a Charge against the closest visible enemy unit if able, and its CTRL is 0 until it next activates.",
+  "risk_cost": "objective / position"
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.5,
+   "mods": {
+    "unyielding": 6
+   },
+   "name": "The Hunger",
+   "text": "Heal on kill (≈UNYIELDING 6+ half the time)."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.08,
+   "mods": {
+    "attacks_mod": 1
+   },
+   "name": "The Red Thirst",
+   "text": "Occasional +1 Attack."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Duelling pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Blood-forged blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Count Palatine Blood-Lord",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Lord of the Night",
+     "text": "The attached unit gets +1 Attack in melee."
+    },
+    {
+     "flat": 6.0,
+     "name": "Dominate",
+     "text": "Once per round, an enemy Class 1–2 unit within 6″ suffers −1 to Hit until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Duelling pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Twin sabres",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Crimson Duelist-Countess",
+   "slot": 2,
+   "abilities": [
+    {
+     "scope": "melee",
+     "uptime": 0.3,
+     "mods": {
+      "attacks_mod": 1,
+      "dmg_mod": 1
+     },
+     "name": "Aristocratic Duellist",
+     "text": "Melee [PRECISION]; +1 Attack and +1 Damage when fighting an enemy Leader."
+    },
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Riposte",
+     "text": "Enemies get −1 to Hit her in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Blood-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Blood-Sorcerer",
+   "slot": 3,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Gravesite Summoning",
+     "text": "Once per battle (2 CP), return a destroyed Class 1 unit at half strength within 6″."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Unholy Vigour",
+     "text": "Friendly Class 1–2 units within 6″ have UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Assassin)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Duelling pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Blood-dagger",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ],
+   "name": "Night-Shade Assassin",
+   "slot": 4,
+   "abilities": [
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Strike from the Mist",
+     "text": "[STRIKE FIRST] on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]"
+   ],
+   "name": "Thrall-Levies",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Blood Cattle",
+     "text": "A friendly Leader within 3″ may remove 1 Levy to heal 1 MIGHT (once per activation)."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Grave-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Deathless Levy",
+   "slot": 6,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Deathless",
+     "text": "UNYIELDING 6+."
+    },
+    {
+     "flat": 3.0,
+     "name": "Raised Again",
+     "text": "Once per round, a friendly Blood-Sorcerer within 9″ may return D3 slain models."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Courtly blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Courtly pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    }
+   ],
+   "name": "Blood-Sworn Courtiers",
+   "slot": 7,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Thirst for Glory",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Crimson halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Crimson Guard Duelists",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Courtly Fencing",
+     "text": "Enemies get −1 to Hit them in melee."
+    },
+    {
+     "flat": 5.0,
+     "name": "Sworn Guard",
+     "text": "An attached Leader's damage is taken by this unit on 4+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 13,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Grave-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Grave-Knights",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "dmg_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Deathly Charge",
+     "text": "+1 Damage in melee on a round they charged."
+    },
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Deathless Steeds",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Fangs & talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Bat-Swarm Hosts",
+   "slot": 10,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Cloud of Wings",
+     "text": "[STEALTH]."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Fangs & talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Dire Blood-Hounds",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Scent of Blood",
+     "text": "+2″ to Move and Charge toward an enemy unit below Starting Strength."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Ghast talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Night-Ghast Brutes",
+   "slot": 12,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Blood-Frenzy",
+     "text": "+1 Attack in melee while below Starting Strength."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Heavy crossbow",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Rusted blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Crypt Arbalests",
+   "slot": 13,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Patient Aim",
+     "text": "Re-roll ranged Hit rolls of 1 if the unit did not Move."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Grave-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Grave-Ward Sentinels",
+   "slot": 14,
+   "abilities": [
+    {
+     "mods": {
+      "crit_hit_on": 5,
+      "lethal": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Cursed Edge",
+     "text": "Melee Hit rolls of 5+ are critical and auto-wound ([IMPALING HITS])."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Rending talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Night-Ghast Horror",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Shriek",
+     "text": "Once per round, an enemy unit within 6″ must test Suppression as if hit by [SUPPRESSIVE]."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 7,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Ichor-lash",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Altar of Ichor",
+   "slot": 16,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Blood-Tide",
+     "text": "Friendly units within 9″ have UNYIELDING 6+."
+    },
+    {
+     "flat": 5.0,
+     "name": "Ichor Reservoir",
+     "text": "Once per round, heal D3 MIGHT on a friendly unit within 9″."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[FLY]",
+    "[TRANSPORT 6]"
+   ],
+   "weapons": [
+    {
+     "name": "Spectral lanterns",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Trampling steeds",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Midnight Coach",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Mist-Form Relocation",
+     "text": "Once per battle, at the End of Round, if more than 6″ from enemies, redeploy wholly within 6″ of a table edge (>8″ from enemies)."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 17,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rending talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Corpse-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Crimson Abomination",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Gorge",
+     "text": "When it destroys an enemy model, heal 1 MIGHT (max 3 per round), in addition to The Hunger."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 17,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Blood-forged lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    },
+    {
+     "name": "Corpse-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Blood-Prince on Abyssal Drake",
+   "slot": 19,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Terror of the Skies",
+     "text": "Friendly Class 1–2 units within 9″ get +1 Attack on a round they charged."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "ward": 5
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Unholy Resilience",
+     "text": "WARD 5+."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "UNYIELDING": 6,
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Corpse-maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Abyssal Blood-Wyrm",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Blood-Storm",
+     "text": "Once per round, each enemy unit within 6″ suffers 1 Fatal Wound on a 4+."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Blood Court",
+   "playstyle": "Lords and duelists hunting the enemy's heroes.",
+   "rule": "Court of Duellists: Sanguine Leaders gain [PRECISION] in melee; each enemy Leader destroyed by a Sanguine Leader heals that Leader fully.",
+   "enhancements": [
+    {
+     "name": "Heart-Seeker Blade",
+     "bearer": "Crimson Duelist-Countess",
+     "ability": {
+      "mods": {
+       "devastating": true
+      },
+      "scope": "melee",
+      "uptime": 1.0,
+      "name": "Heart-Seeker Blade",
+      "text": "Melee critical wounds become Fatal Wounds."
+     },
+     "text": "Melee critical wounds become Fatal Wounds."
+    },
+    {
+     "name": "Crimson Mantle",
+     "bearer": "Count Palatine Blood-Lord",
+     "ability": {
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Crimson Mantle",
+      "text": "UNYIELDING 5+."
+     },
+     "text": "UNYIELDING 5+."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Issue the Challenge",
+     "cp": 1,
+     "when": "A Leader ends a Charge",
+     "effect": "Choose an enemy Leader within 3″: both must fight each other this activation."
+    },
+    {
+     "name": "Blood-Quickened",
+     "cp": 1,
+     "when": "A Leader heals from The Hunger",
+     "effect": "It may make a 3″ move."
+    },
+    {
+     "name": "Noble Disdain",
+     "cp": 1,
+     "when": "A Leader is targeted by a ranged attack",
+     "effect": "−1 to Wound against it for the attack."
+    }
+   ]
+  },
+  {
+   "name": "Grave Cavalcade",
+   "playstyle": "Grave-Knights and hounds running down the wounded.",
+   "rule": "Scent of Blood: +2″ to Move and Charge toward an enemy unit below Starting Strength.",
+   "enhancements": [
+    {
+     "name": "Night-Mare Steed",
+     "bearer": "Count Palatine Blood-Lord",
+     "ability": {
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Night-Mare Steed",
+      "text": "+2″ MOV."
+     },
+     "text": "+2″ MOV."
+    },
+    {
+     "name": "Banner of the Cavalcade",
+     "bearer": "Blood-Sorcerer",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "hit_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Banner of the Cavalcade",
+      "text": "Friendly units within 6″ get +1 to Hit in melee on a round they charged."
+     },
+     "text": "Friendly units within 6″ get +1 to Hit in melee on a round they charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Ride Them Down",
+     "cp": 1,
+     "when": "A Class 2 cavalry unit ends a Charge",
+     "effect": "Crushing Impact for 0 CP."
+    },
+    {
+     "name": "Hunt the Weak",
+     "cp": 1,
+     "when": "A unit targets a unit below Half-Strength",
+     "effect": "Re-roll Wound rolls."
+    },
+    {
+     "name": "Spectral Steeds",
+     "cp": 1,
+     "when": "A cavalry unit moves",
+     "effect": "It may move over terrain and models."
+    }
+   ]
+  },
+  {
+   "name": "Midnight Court",
+   "playstyle": "Mist, summoning and the deathless levy that will not stay down.",
+   "rule": "Endless Night: once per round, at the End of Round, one unengaged Sanguine unit more than 6″ from enemies may redeploy wholly within 6″ of a table edge, more than 8″ from enemies. Gravesite Summoning costs 1 CP instead of 2.",
+   "enhancements": [
+    {
+     "name": "Grimoire of the Grave",
+     "bearer": "Blood-Sorcerer",
+     "ability": {
+      "flat": 6.0,
+      "name": "Grimoire of the Grave",
+      "text": "Raised Again returns D3+1 models."
+     },
+     "text": "Raised Again returns D3+1 models."
+    },
+    {
+     "name": "Shroud of Night",
+     "bearer": "Night-Shade Assassin",
+     "ability": {
+      "mods": {
+       "incoming_hit_mod_ranged": -1
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Shroud of Night",
+      "text": "[STEALTH]."
+     },
+     "text": "[STEALTH]."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Rise, Rise!",
+     "cp": 1,
+     "when": "A Class 1 Deathless or Levy unit activates",
+     "effect": "Return D3 slain models."
+    },
+    {
+     "name": "Fog of the Crypt",
+     "cp": 1,
+     "when": "An enemy unit targets a unit within 6″ of a table edge",
+     "effect": "−1 to Hit."
+    },
+    {
+     "name": "Blood Tithe",
+     "cp": 1,
+     "when": "A Levy model is removed by Blood Cattle",
+     "effect": "Heal 2 MIGHT instead of 1."
+    }
+   ]
+  }
+ ]
+}

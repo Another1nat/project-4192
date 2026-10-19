@@ -1,0 +1,1275 @@
+{
+ "name": "The Skitter-Kin & Rad-Scavengers",
+ "verb": "SCURRY",
+ "identity": "Tunnelling rat-kin hordes with unstable rad-tech. Cheap, cowardly and slippery: once per round a unit scurries away after an enemy activation, and their weapon-teams roll the dice on overcharged guns that might explode.",
+ "number": "19",
+ "template": "D_swarm_monster_speed",
+ "status": "draft",
+ "learned_from": [
+  "AoS 4 rat-folk armies: Too Quick to Hit-Hit, up to 3 gnawholes, warpstone sparks (research 2026-10) — gnawholes NOT used (user: no portals)",
+  "Gemini #1 react-move (capped at 3″), #2 overcharge D6 table, #3 swarm refill (capped 100%, once per round), #4 hidden weapon teams"
+ ],
+ "risk_profile": "Dice gamble (Overcharge) on tech units; the rest is low-risk mobility.",
+ "core_rule": {
+  "name": "Scurry · Seething Swarm",
+  "text": "Scurry: once per round, after an enemy unit finishes an activation, one unengaged Skitter-Kin unit may make a free 3″ move (not toward the enemy that just activated). Skitter-Kin units may Fall Back without being Rattled. Seething Swarm: once per round, at the End of Round, one Class 1 [FRAIL] unit returns D3 slain models (never above Starting Strength)."
+ },
+ "gamble": {
+  "name": "More-More Rad-Power!",
+  "text": "When a unit with an [OVERLOAD] weapon is selected to Shoot, you may Overcharge: roll a D6 — 1 KABOOM: the unit suffers D3 Fatal Wounds and does not Shoot · 2–5: +1 to Wound and +1 Damage · 6: also +1 PEN and +2 Attacks.",
+  "risk_cost": "durability (dice)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.12,
+   "mods": {
+    "incoming_hit_mod_ranged": -1
+   },
+   "name": "Scurry",
+   "text": "3″ react-move once per round."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.5,
+   "mods": {
+    "move_mod": 1
+   },
+   "name": "Too Quick",
+   "text": "Fall Back without Rattled."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Rad-pistol",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HAILFIRE 1]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Rad-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Under-Chief Warlock-Engineer",
+   "slot": 1,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Skilled Manipulator",
+     "text": "While within 3″ of a friendly Class 1 unit, damage to this model is taken by that unit on a 4+."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Tinker-Tinker",
+     "text": "The attached unit re-rolls ranged Hit rolls of 1; its Overcharge KABOOM only happens on a 1 after re-rolling."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Warp-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Clan-Lord Clawmaster",
+   "slot": 2,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 2
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Cornered Rat",
+     "text": "+2 Attacks in melee while damaged."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Bullying Commands",
+     "text": "The attached unit gets +1 to Hit in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rad-bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rad-Prophet",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Pestilent Blessing",
+     "text": "Friendly Class 1 units within 6″ have UNYIELDING 6+."
+    },
+    {
+     "flat": 4.0,
+     "name": "Rad-Spark",
+     "text": "Once per round, one friendly unit within 12″ re-rolls its Overcharge die."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Assassin)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Poison darts",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PRECISION]"
+     ]
+    },
+    {
+     "name": "Rad-dagger",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ],
+   "name": "Gutter-Assassin",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Hidden in the Ranks",
+     "text": "May be set up hidden inside a friendly Class 1 unit and revealed when that unit is selected to Fight."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Scrap-gun",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Rusty blades & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FRAIL]"
+   ],
+   "name": "Clan-Scavengers",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Strength in Numbers",
+     "text": "+1 CTRL per 5 models."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 7,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Scrap-sling",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Rusty spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Clan-Spearkin",
+   "slot": 6,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Shieldwall of Bodies",
+     "text": "A friendly Leader within 3″ is [STEALTH]."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Heavy rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Serrated halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Tail Guard",
+   "slot": 7,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Chieftain's Guard",
+     "text": "An attached Leader's damage is taken by this unit on a 3+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]",
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Paired rad-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Gutter-Stalkers",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Ambush",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 6,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rad-fire thrower",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rad-Fire Thrower Team",
+   "slot": 9,
+   "abilities": [
+    {
+     "scope": "ranged",
+     "uptime": 0.35,
+     "mods": {
+      "wound_mod": 1,
+      "dmg_mod": 1
+     },
+     "name": "Overcharge",
+     "text": "More-More Rad-Power! (2–5: +1 Wound/+1 Damage)."
+    },
+    {
+     "flat": 3.0,
+     "name": "Hidden Weapon Team",
+     "text": "[UNSEEN 12″] while within 3″ of a friendly Class 1 unit."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 6,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rotary scrap-gun",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rotary Scrap-Gun Team",
+   "slot": 10,
+   "abilities": [
+    {
+     "scope": "ranged",
+     "uptime": 0.35,
+     "mods": {
+      "wound_mod": 1,
+      "dmg_mod": 1
+     },
+     "name": "Overcharge",
+     "text": "More-More Rad-Power!"
+    },
+    {
+     "flat": 3.0,
+     "name": "Hidden Weapon Team",
+     "text": "[UNSEEN 12″] while within 3″ of a friendly Class 1 unit."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rad-grafted claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Rad-Brute Packs",
+   "slot": 11,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Cornered Ferocity",
+     "text": "+1 Attack in melee while damaged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Choke-gas globes",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "D3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SHRAPNEL 1]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Gas-Lobber Squad",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Choking Cloud",
+     "text": "Units hit suffer −1 to Hit until the End of Round on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rusty blades & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]",
+    "[FRAIL]"
+   ],
+   "name": "Vermin Tide",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Endless Vermin",
+     "text": "Seething Swarm returns D3+1 models for this unit."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Rad-arcs",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Crushing wheel",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Rad-Wheel",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": -4,
+     "name": "Erratic Rolling",
+     "text": "At the start of its activation roll a D6: on a 1 it moves 2D6″ in a random direction first."
+    },
+    {
+     "scope": "ranged",
+     "uptime": 0.35,
+     "mods": {
+      "wound_mod": 1,
+      "dmg_mod": 1
+     },
+     "name": "Overcharge",
+     "text": "More-More Rad-Power!"
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 8,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Rad-cannon arms",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Mutant claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Rad-Brute Monstrosity",
+   "slot": 15,
+   "abilities": [
+    {
+     "scope": "ranged",
+     "uptime": 0.35,
+     "mods": {
+      "wound_mod": 1,
+      "dmg_mod": 1
+     },
+     "name": "Overcharge",
+     "text": "More-More Rad-Power!"
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 6,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 11,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Sonic gong-wave",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[SUPPRESSIVE]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Grinding wheels",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Doom-Gong Engine",
+   "slot": 16,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Peal of Doom",
+     "text": "Friendly Class 1 units within 9″ get +1 Attack on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 6,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 11,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Drill-vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Drill-head",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Subterranean Rad-Drill",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Burrow",
+     "text": "Arrives by [VANGUARD STRIKE] carrying its passengers (a unit, not a portal)."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 6,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rad-arc cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Grinding wheels",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rad-Arc Cannon Crawler",
+   "slot": 18,
+   "abilities": [
+    {
+     "scope": "ranged",
+     "uptime": 0.35,
+     "mods": {
+      "wound_mod": 1,
+      "dmg_mod": 1
+     },
+     "name": "Overcharge",
+     "text": "More-More Rad-Power!"
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 13,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Mutant claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Mutant Pit-Abomination",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Too Horrible to Die",
+     "text": "The first time it would be destroyed, roll a D6: on 4+ it stays with 3 MIGHT."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 11,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rad-storm cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 2]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Rad-Colossus Engine",
+   "slot": 20,
+   "abilities": [
+    {
+     "scope": "ranged",
+     "uptime": 0.35,
+     "mods": {
+      "wound_mod": 1,
+      "dmg_mod": 1
+     },
+     "name": "Overcharge",
+     "text": "More-More Rad-Power!"
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Rad-Tech Clans",
+   "playstyle": "Weapon-teams and engines overcharging every activation.",
+   "rule": "Tinker-Tinker: Overcharge rolls of 1 may be re-rolled once per round (army-wide); Weapon Teams within 3″ of a Class 1 unit are [UNSEEN 12″].",
+   "enhancements": [
+    {
+     "name": "Rad-Stone Amulet",
+     "bearer": "Under-Chief Warlock-Engineer",
+     "ability": {
+      "flat": 5.0,
+      "name": "Rad-Stone Amulet",
+      "text": "Units within 6″ ignore Overcharge KABOOM on a 4+."
+     },
+     "text": "Units within 6″ ignore Overcharge KABOOM on a 4+."
+    },
+    {
+     "name": "Overclocked Barrels",
+     "bearer": "Rotary Scrap-Gun Team",
+     "ability": {
+      "mods": {
+       "attacks_mod": 1
+      },
+      "scope": "ranged",
+      "uptime": 0.5,
+      "name": "Overclocked Barrels",
+      "text": "+1 Attack."
+     },
+     "text": "+1 Attack."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Rad-Surge",
+     "cp": 1,
+     "when": "A unit Overcharges",
+     "effect": "Roll two dice and pick one."
+    },
+    {
+     "name": "Duck Behind the Slaves",
+     "cp": 1,
+     "when": "A Weapon Team is targeted within 3″ of a Class 1 unit",
+     "effect": "The Class 1 unit takes the attack instead."
+    },
+    {
+     "name": "Burn-Out",
+     "cp": 1,
+     "when": "A unit suffers KABOOM",
+     "effect": "Each enemy unit within 3″ also suffers D3 Fatal Wounds."
+    }
+   ]
+  },
+  {
+   "name": "Burrowing Swarm",
+   "playstyle": "Hordes appearing from table edges and drills (no portals).",
+   "rule": "Underhive Ambush: up to 3 Class 1 units may start in Reserves and arrive from Round 2 wholly within 6″ of any table edge or within 3″ of a friendly Subterranean Rad-Drill, more than 8″ from enemies.",
+   "enhancements": [
+    {
+     "name": "Tunnel-Map",
+     "bearer": "Gutter-Assassin",
+     "ability": {
+      "flat": 4.0,
+      "name": "Tunnel-Map",
+      "text": "One unit arriving from Reserves may arrive 6″ from enemies instead of 8″."
+     },
+     "text": "One unit arriving from Reserves may arrive 6″ from enemies instead of 8″."
+    },
+    {
+     "name": "Swarm-Master's Whip",
+     "bearer": "Clan-Lord Clawmaster",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "hit_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Swarm-Master's Whip",
+      "text": "Friendly Class 1 units within 6″ get +1 to Hit in melee."
+     },
+     "text": "Friendly Class 1 units within 6″ get +1 to Hit in melee."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Endless Tide",
+     "cp": 2,
+     "when": "Command Phase, once per battle",
+     "effect": "Return a destroyed Class 1 [FRAIL] unit at half strength from a table edge."
+    },
+    {
+     "name": "Scurry Away",
+     "cp": 1,
+     "when": "An enemy unit finishes an activation",
+     "effect": "Scurry a second unit this round."
+    },
+    {
+     "name": "Overwhelm",
+     "cp": 1,
+     "when": "A unit with 10+ models declares a Charge",
+     "effect": "+2″ to the Charge roll."
+    }
+   ]
+  },
+  {
+   "name": "Skilled Manipulators",
+   "playstyle": "Leaders hide behind the horde while it soaks the damage.",
+   "rule": "Expendable Kin: Leaders within 3″ of a friendly Class 1 unit have WARD 4+ against ranged attacks; any saved damage is inflicted on that Class 1 unit instead (1 Fatal Wound per save).",
+   "enhancements": [
+    {
+     "name": "Cowardly Cunning",
+     "bearer": "Under-Chief Warlock-Engineer",
+     "ability": {
+      "mods": {
+       "incoming_hit_mod_ranged": -1
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Cowardly Cunning",
+      "text": "[STEALTH]."
+     },
+     "text": "[STEALTH]."
+    },
+    {
+     "name": "Crown of the Gutter-King",
+     "bearer": "Clan-Lord Clawmaster",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Crown of the Gutter-King",
+      "text": "The attached unit has UNYIELDING 6+."
+     },
+     "text": "The attached unit has UNYIELDING 6+."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Sacrifice the Slaves",
+     "cp": 1,
+     "when": "A Leader is targeted in melee within 3″ of a Class 1 unit",
+     "effect": "Remove D3 models from that unit: the Leader is −1 to be Hit."
+    },
+    {
+     "name": "Fleeing Fury",
+     "cp": 1,
+     "when": "A unit Falls Back",
+     "effect": "It may Shoot this activation."
+    },
+    {
+     "name": "Kin-Shield",
+     "cp": 1,
+     "when": "A Class 2–3 unit is targeted within 3″ of a Class 1 unit",
+     "effect": "It is [STEALTH] for the attack."
+    }
+   ]
+  }
+ ]
+}

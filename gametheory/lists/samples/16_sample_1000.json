@@ -1,0 +1,51 @@
+{
+ "name": "The Starfire High-Court — verifier sample",
+ "detachment": "Court of Blades",
+ "units": [
+  {
+   "unit": "High Star-Regent",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Sun-Crested Lancers",
+   "models": 5
+  },
+  {
+   "unit": "Sun-Spear Skirmishers",
+   "models": 5
+  },
+  {
+   "unit": "Star-Lance Platform",
+   "models": 2
+  },
+  {
+   "unit": "Moon-Eye Snipers",
+   "models": 2
+  },
+  {
+   "unit": "Dawn-Wing Gunship",
+   "models": 1
+  },
+  {
+   "unit": "Light-Weaver Battery",
+   "models": 1
+  },
+  {
+   "unit": "Sky-Lancer Riders",
+   "models": 3
+  },
+  {
+   "unit": "Veil-Walkers",
+   "models": 3
+  },
+  {
+   "unit": "Star-Barge Colossus",
+   "models": 1
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/16_starfire_high_court.json"
+ ]
+}

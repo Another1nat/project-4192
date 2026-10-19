@@ -1,0 +1,34 @@
+{
+ "name": "Auric — Gilded Host (golden guardians-style)",
+ "detachment": "Gilded Host",
+ "units": [
+  {
+   "unit": "High Aurarch Praetor",
+   "attached": true
+  },
+  {
+   "unit": "Gilded Phalanx",
+   "models": 3
+  },
+  {
+   "unit": "Gilded Phalanx",
+   "models": 3
+  },
+  {
+   "unit": "Sworn Battle-Brothers",
+   "models": 5
+  },
+  {
+   "unit": "Eclipse Scouts",
+   "models": 3
+  },
+  {
+   "unit": "Gilded Sagittarii",
+   "models": 3
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../factions/01_auric_solar_host.json"
+ ]
+}

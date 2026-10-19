@@ -1,0 +1,160 @@
+{
+  "assumptions": {
+    "EHP_MIX": {
+      "light": 0.4,
+      "medium": 0.4,
+      "heavy": 0.2
+    },
+    "DPA_MIX": {
+      "horde": 0.2,
+      "elite": 0.47,
+      "tank": 0.33
+    },
+    "HALF_RANGE_UPTIME": 0.5,
+    "STATIONARY_UPTIME": 0.5,
+    "CHARGE_UPTIME": 0.5,
+    "T_REF": 4,
+    "CLASS_SQUAD_CAP": {
+      "1": 10,
+      "2": 5,
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "GAME_SCALE_4192": 1.5
+  },
+  "sci-fi wargames": {
+    "coefs": {
+      "cp": 4.2958,
+      "ehp": 0.8513,
+      "dpa": 0.0,
+      "oc_total": 0.0,
+      "intercept": 29.5577
+    },
+    "accuracy": {
+      "n": 1218,
+      "r2": 0.804,
+      "mae": 26.5,
+      "mape_pct": 18.2,
+      "within_20pct": 64.5
+    }
+  },
+  "aos": {
+    "coefs": {
+      "cp": 4.5961,
+      "ehp": 3.386,
+      "dpa": 0.0,
+      "oc_total": 0.0,
+      "intercept": 49.1024
+    },
+    "accuracy": {
+      "n": 968,
+      "r2": 0.594,
+      "mae": 40.1,
+      "mape_pct": 22.2,
+      "within_20pct": 52.0
+    }
+  },
+  "4192": {
+    "coefs": {
+      "cp": 3.1392,
+      "ehp": 1.3173,
+      "dpa": 0.0,
+      "oc_total": 0.0,
+      "intercept": 24.4618
+    },
+    "accuracy": {
+      "n": 1218,
+      "r2": 0.7,
+      "mae": 31.7,
+      "mape_pct": 21.4,
+      "within_20pct": 59.3
+    }
+  },
+  "ability_residuals_40k": {
+    "aura": {
+      "n": 369,
+      "pct_effect": 1.4
+    },
+    "deadly_demise": {
+      "n": 457,
+      "pct_effect": -3.8
+    },
+    "deep_strike": {
+      "n": 299,
+      "pct_effect": 1.1
+    },
+    "devastating_ability": {
+      "n": 35,
+      "pct_effect": -2.0
+    },
+    "fall_back_shoot": {
+      "n": 2,
+      "pct_effect": -7.6
+    },
+    "fights_first": {
+      "n": 31,
+      "pct_effect": -0.8
+    },
+    "firing_deck": {
+      "n": 37,
+      "pct_effect": -14.9
+    },
+    "fnp_ability": {
+      "n": 66,
+      "pct_effect": 0.2
+    },
+    "infiltrators": {
+      "n": 64,
+      "pct_effect": 2.1
+    },
+    "leader": {
+      "n": 282,
+      "pct_effect": 11.9
+    },
+    "lethal_ability": {
+      "n": 55,
+      "pct_effect": 3.5
+    },
+    "lone_operative": {
+      "n": 45,
+      "pct_effect": 13.8
+    },
+    "minus_damage": {
+      "n": 14,
+      "pct_effect": 2.3
+    },
+    "minus_hit": {
+      "n": 268,
+      "pct_effect": 10.2
+    },
+    "once_per_battle": {
+      "n": 247,
+      "pct_effect": 0.1
+    },
+    "reroll_hit": {
+      "n": 98,
+      "pct_effect": -0.1
+    },
+    "reroll_wound": {
+      "n": 79,
+      "pct_effect": -0.4
+    },
+    "scouts": {
+      "n": 88,
+      "pct_effect": 4.5
+    },
+    "stealth": {
+      "n": 70,
+      "pct_effect": 7.8
+    },
+    "sustained_ability": {
+      "n": 68,
+      "pct_effect": 1.0
+    },
+    "transport": {
+      "n": 102,
+      "pct_effect": 2.7
+    }
+  }
+}

@@ -1,0 +1,1362 @@
+{
+ "name": "The Sun-Scaled Temple-Host",
+ "verb": "SAVAGE",
+ "identity": "Saurian temple-warriors, scaleling skirmishers and primeval thunder-lizards. Every saurian and beast bites as well as strikes, and they become crueller against anything already bleeding.",
+ "number": "17",
+ "template": "D_swarm_monster_speed",
+ "status": "draft",
+ "learned_from": [
+  "AoS 4 star-lizard armies: asterism chosen at deployment, a second in Round 3 (research 2026-10) → used as a DETACHMENT, not the core",
+  "Gemini #1 Predatory Jaws, #3 Scaly Skin, #4 Cold-Blooded crits on 5+, #5 Rampage"
+ ],
+ "risk_profile": "Low. Gamble = exposure: Apex Savagery trades armour for damage.",
+ "core_rule": {
+  "name": "Predatory Jaws · Cold-Blooded",
+  "text": "Saurian Class 1–2 units and every Class 3–5 beast carry Predatory jaws ([EXTRA ATTACKS], [SHREDDING WOUNDS]). Cold-Blooded: melee Hit rolls of 5+ are critical against enemy units that are below Starting Strength or damaged, and Sun-Scaled units ignore negative modifiers to their melee Hit rolls."
+ },
+ "gamble": {
+  "name": "Apex Savagery",
+  "text": "When a unit is selected to Fight: +1 Damage on its melee weapons this activation, but it has −1 ARM until it next activates.",
+  "risk_cost": "exposure (durability)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "melee",
+   "uptime": 0.35,
+   "mods": {
+    "crit_hit_on": 5,
+    "devastating": true
+   },
+   "name": "Cold-Blooded",
+   "text": "Crits on 5+ vs the wounded (jaws shred)."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.08,
+   "mods": {
+    "dmg_mod": 1
+   },
+   "name": "Apex Savagery",
+   "text": "Occasional +1 Damage."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.08,
+   "mods": {
+    "save_mod": -1
+   },
+   "name": "Savagery cost",
+   "text": "−1 ARM after a gamble."
+  }
+ ],
+ "units": [
+  {
+   "class": 3,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 9,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Star-light",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Palanquin guards",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Star-Sage Elder",
+   "slot": 1,
+   "abilities": [
+    {
+     "flat": 10.0,
+     "name": "The Great Plan",
+     "text": "Once per round, re-roll one Charge roll or one casting/Pyre-like roll for a friendly unit within 12″; +1 CP in Round 3."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Celestial Ward",
+     "text": "Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Sun-stone blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Scar-Veteran Old-Blood",
+   "slot": 2,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Primal Fury",
+     "text": "The attached unit gets +1 Attack in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Solar bolt",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sun-Priest Astromancer",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Shrouding Light",
+     "text": "Friendly units within 6″ are [STEALTH] against attacks from more than 12″."
+    },
+    {
+     "flat": 4.0,
+     "name": "Read the Stars",
+     "text": "Once per battle, change the Starborne asterism (any detachment)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Poison blowpipe",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[PRECISION]",
+      "[IMPALING HITS]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ],
+   "name": "Chameleon Stalker",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Vanish",
+     "text": "After it Shoots, it may make a 3″ move."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Javelins",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Obsidian club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Saurian Spawn-Warriors",
+   "slot": 5,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 0.4,
+     "name": "Shield-Phalanx",
+     "text": "Enemies get −1 to Hit them in melee while they are within 3″ of an objective."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Dart-pipes",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[IMPALING HITS]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Scaleling Javelin-Scouts",
+   "slot": 6,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Chameleon Skin",
+     "text": "[STEALTH] while in terrain."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Sickle claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Raptor Pack",
+   "slot": 7,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Pack Hunters",
+     "text": "+2″ to Charge rolls against units below Starting Strength."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Temple halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Temple-Guard Saurians",
+   "slot": 8,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Sworn Guardians",
+     "text": "An attached Leader's damage is taken by this unit on a 4+."
+    },
+    {
+     "utility": "SUPPRESS IMMUNE",
+     "name": "Unshakeable",
+     "text": "Cannot be Rattled."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 11,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Javelins",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Raptor-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Raptor-Knights",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Blood-Frenzied Mounts",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Star-darts",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Raking talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Wing-Lizard Riders",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Dropping Rocks",
+     "text": "Once per round, when it moves over an enemy unit, D3 Fatal Wounds on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Stone maul",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "3",
+     "traits": []
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Horned Brute-Saurians",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Sweeping Blows",
+     "text": "Melee weapons gain [REAPING 1] against Class 1 units."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Poison blowpipe",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Chameleon Snipers",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Ambush Position",
+     "text": "+1 to Hit in Round 1."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Fire-spitter beast",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Fire-Spitter Handlers",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Goad the Beast",
+     "text": "Re-roll the number of attacks."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Sun-breath",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]"
+     ]
+    },
+    {
+     "name": "Raking claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Feathered Sky-Serpent",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Sky-Strike",
+     "text": "May Charge after Falling Back."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Solar engine-beam",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Tail-club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Horned Shell-Bastion",
+   "slot": 15,
+   "abilities": [
+    {
+     "scope": "defense",
+     "uptime": 0.6,
+     "mods": {
+      "incoming_dmg_mod": -1
+     },
+     "name": "Scaly Carapace",
+     "text": "Incoming Damage −1 against Damage 2+ attacks."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Howdah dart-pipes",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Horns & stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Thunder-Lizard Howdah",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Unstoppable Stampede",
+     "text": "Crushing Impact for 0 CP on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 13,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Sun-engine",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Tail-club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Sun-Engine Shell-Beast",
+   "slot": 17,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Light of the Sun",
+     "text": "Friendly units within 6″ get +1 ARM (to 3+ cap)."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Sunbolt gauntlet & blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    },
+    {
+     "name": "Thunder-lizard maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Old-Blood on Tyrant-Lizard",
+   "slot": 18,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Blood-Roar",
+     "text": "Friendly units within 9″ get +1 Attack on a round they charged."
+    },
+    {
+     "flat": 5.0,
+     "name": "Monstrous Rampage",
+     "text": "At the end of its Fight, roll a D6 vs an engaged enemy: on 3+ D3 Fatal Wounds and −2 CTRL to it until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Raking claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Thunder-lizard maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    },
+    {
+     "name": "Predatory jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[EXTRA ATTACKS]",
+      "[SHREDDING WOUNDS]"
+     ]
+    }
+   ],
+   "name": "Wild Tyrant-Lizard",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Monstrous Rampage",
+     "text": "At the end of its Fight, roll a D6 vs an engaged enemy: on 3+ D3 Fatal Wounds and −2 CTRL until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "UNYIELDING": 6,
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Thunder-lizard maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    },
+    {
+     "name": "Howdah war-crew",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    }
+   ],
+   "name": "Elder Thunder-Titan",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Monstrous Rampage",
+     "text": "At the end of its Fight, every engaged enemy unit: on 3+ D3 Fatal Wounds and −2 CTRL until the End of Round."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Sunclaw Hunt",
+   "playstyle": "Beasts and raptors running down the wounded.",
+   "rule": "Rampage: Monstrous Rampage applies to all Class 4–5 Sun-Scaled units; Class 2–5 units get +1″ to Charge rolls against units below Starting Strength.",
+   "enhancements": [
+    {
+     "name": "Ancient Scar",
+     "bearer": "Old-Blood on Tyrant-Lizard",
+     "ability": {
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Ancient Scar",
+      "text": "UNYIELDING 6+."
+     },
+     "text": "UNYIELDING 6+."
+    },
+    {
+     "name": "Blood-Crest",
+     "bearer": "Scar-Veteran Old-Blood",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Blood-Crest",
+      "text": "+1 Damage on a round he charged."
+     },
+     "text": "+1 Damage on a round he charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Savage Bite",
+     "cp": 1,
+     "when": "A unit is selected to Fight",
+     "effect": "Its Predatory jaws get +1 Attack."
+    },
+    {
+     "name": "Scent of Prey",
+     "cp": 1,
+     "when": "An enemy unit is damaged",
+     "effect": "One friendly unit within 12″ makes a 3″ move toward it."
+    },
+    {
+     "name": "Primal Roar",
+     "cp": 1,
+     "when": "A Class 4–5 unit ends a Charge",
+     "effect": "Engaged enemy units are Rattled on a 4+."
+    }
+   ]
+  },
+  {
+   "name": "Starborne Prophecy",
+   "playstyle": "The plan of the elders: a cosmic asterism shapes the battle.",
+   "rule": "Asterisms: at deployment pick 1; in Round 3 pick a second (both active). Great Drake (+1 to Wound in melee on a round the unit charged) · Hunter's Steed (+2″ MOV) · Sage's Staff (+1 ARM to 3+ cap against ranged attacks).",
+   "enhancements": [
+    {
+     "name": "Starstone Cartouche",
+     "bearer": "Sun-Priest Astromancer",
+     "ability": {
+      "flat": 5.0,
+      "name": "Starstone Cartouche",
+      "text": "Pick the second asterism in Round 2."
+     },
+     "text": "Pick the second asterism in Round 2."
+    },
+    {
+     "name": "Comet-Fragment Blade",
+     "bearer": "Star-Sage Elder",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "ward": 5
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Comet-Fragment Blade",
+      "text": "The attached unit has WARD 5+."
+     },
+     "text": "The attached unit has WARD 5+."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Celestial Alignment",
+     "cp": 1,
+     "when": "Command Phase",
+     "effect": "One unit benefits from all three asterisms until the End of Round."
+    },
+    {
+     "name": "Predestined Strike",
+     "cp": 1,
+     "when": "A unit is selected to Shoot or Fight",
+     "effect": "Re-roll Hit rolls of 1."
+    },
+    {
+     "name": "Sky-Fire Comet",
+     "cp": 2,
+     "when": "Command Phase, once per battle",
+     "effect": "An enemy unit within 24″ of a Leader suffers D6 Fatal Wounds on a 3+."
+    }
+   ]
+  },
+  {
+   "name": "Coalesced Scales",
+   "playstyle": "Armoured saurians and shell-beasts holding the temple.",
+   "rule": "Scaly Skin: Saurian Class 2 units and Class 4–5 beasts reduce incoming PEN by 1 (min 0).",
+   "enhancements": [
+    {
+     "name": "Obsidian Scale-Plate",
+     "bearer": "Temple-Guard Saurians",
+     "ability": {
+      "mods": {
+       "save_mod": 1
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Obsidian Scale-Plate",
+      "text": "+1 ARM (to 3+ cap)."
+     },
+     "text": "+1 ARM (to 3+ cap)."
+    },
+    {
+     "name": "Thick-Scaled Hide",
+     "bearer": "Horned Shell-Bastion",
+     "ability": {
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Thick-Scaled Hide",
+      "text": "UNYIELDING 6+."
+     },
+     "text": "UNYIELDING 6+."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Cold Endurance",
+     "cp": 1,
+     "when": "A unit is targeted",
+     "effect": "Incoming Damage −1 (min 1) for the attack."
+    },
+    {
+     "name": "Unbreakable Line",
+     "cp": 1,
+     "when": "A unit within 3″ of an objective is charged",
+     "effect": "It is not Rattled; +1 to Wound on its Retaliation Strike."
+    },
+    {
+     "name": "Temple Stand",
+     "cp": 1,
+     "when": "Command Phase",
+     "effect": "One unit gets [SECURED] until the End of Round."
+    }
+   ]
+  }
+ ]
+}

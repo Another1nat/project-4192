@@ -1,0 +1,56 @@
+{
+ "name": "The Cabal of the Inverted Star — verifier sample",
+ "detachment": "Grand Coven",
+ "units": [
+  {
+   "unit": "Master of the Astral Geometry",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Warp-Touched Thralls",
+   "models": 10
+  },
+  {
+   "unit": "Hollow Automata",
+   "models": 5
+  },
+  {
+   "unit": "Hexfire Battery",
+   "models": 2
+  },
+  {
+   "unit": "Star-Wisps",
+   "models": 5
+  },
+  {
+   "unit": "Spire-Barge",
+   "models": 1
+  },
+  {
+   "unit": "Spawn-Horror",
+   "models": 1
+  },
+  {
+   "unit": "Astral Disc-Riders",
+   "models": 3
+  },
+  {
+   "unit": "Plume-Kin Raiders",
+   "models": 5
+  },
+  {
+   "unit": "Mutated Warp-Spawn",
+   "models": 3
+  },
+  {
+   "unit": "Seer of the Inverted Star",
+   "models": 1,
+   "attached": true
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/14_cabal_of_inverted_star.json"
+ ]
+}

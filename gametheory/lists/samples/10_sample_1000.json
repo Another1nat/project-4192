@@ -1,0 +1,68 @@
+{
+ "name": "The Dread-Fleet Buccaneers — verifier sample",
+ "detachment": "Sky-Raiders",
+ "units": [
+  {
+   "unit": "Dread-Commodore",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Deck-Hand Swashbucklers",
+   "models": 5
+  },
+  {
+   "unit": "Deck-Musketeers",
+   "models": 5
+  },
+  {
+   "unit": "Swivel-Gun Crew",
+   "models": 2
+  },
+  {
+   "unit": "Crow's Nest Sharpshooters",
+   "models": 2
+  },
+  {
+   "unit": "Mortar Ketch",
+   "models": 1
+  },
+  {
+   "unit": "Corsair Gun-Skiff",
+   "models": 1
+  },
+  {
+   "unit": "Sky-Cutter Riders",
+   "models": 3
+  },
+  {
+   "unit": "Grapnel Skyriggers",
+   "models": 3
+  },
+  {
+   "unit": "walker Sky-Galleon",
+   "models": 1
+  },
+  {
+   "unit": "Bosun Brawlers",
+   "models": 3
+  },
+  {
+   "unit": "Jet-Boot Boarders",
+   "models": 3
+  },
+  {
+   "unit": "Sky-Shark Mascot",
+   "models": 1
+  },
+  {
+   "unit": "Gunnery Master",
+   "models": 1,
+   "attached": true
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/10_dread_fleet_buccaneers.json"
+ ]
+}

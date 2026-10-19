@@ -1,0 +1,59 @@
+{
+ "name": "The Astral Shadow-Clans — verifier sample",
+ "detachment": "Skysplinter Raiders",
+ "units": [
+  {
+   "unit": "Master of the Astral Edge",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Arena-Blade Cultists",
+   "models": 5
+  },
+  {
+   "unit": "Shadow-Kabar Raiders",
+   "models": 5
+  },
+  {
+   "unit": "Sky-Board Reavers",
+   "models": 3
+  },
+  {
+   "unit": "Umbral Stalkers",
+   "models": 3
+  },
+  {
+   "unit": "Shadow-Barge",
+   "models": 1
+  },
+  {
+   "unit": "Bladed Sky-Skiff",
+   "models": 1
+  },
+  {
+   "unit": "Void-Lance Team",
+   "models": 2
+  },
+  {
+   "unit": "Void-Wing Scourges",
+   "models": 3
+  },
+  {
+   "unit": "Umbral Dread-Cruiser",
+   "models": 1
+  },
+  {
+   "unit": "Pain-Sculpted Brutes",
+   "models": 3
+  },
+  {
+   "unit": "Agony-Engine Construct",
+   "models": 1
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/20_astral_shadow_clans.json"
+ ]
+}

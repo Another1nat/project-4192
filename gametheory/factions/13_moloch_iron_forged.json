@@ -1,0 +1,1276 @@
+{
+ "name": "The Moloch Iron-Forged",
+ "verb": "FUEL",
+ "identity": "Daemon-smith siege engineers, iron legionaries and soul-furnace war-engines. Thralls are fuel: shovel one into an engine to supercharge it. Bunker-busting guns ignore cover on objectives and in ruins.",
+ "number": "13",
+ "template": "C_gunline_siege_arcane",
+ "status": "draft",
+ "learned_from": [
+  "AoS daemon-smith dwarves (Smog and Smoke: −1 to Hit infantry near war machines) — research 2026-10",
+  "Gemini #1 Feed the Furnace (sacrifice belongs here, not on an elite army), #2 Siege-Masters, #3 anvil repair"
+ ],
+ "risk_profile": "Medium. Gamble = durability (dice): red-line the boilers for more attacks, natural 1s hurt the engine.",
+ "core_rule": {
+  "name": "Feed the Furnace · Siege-Masters",
+  "text": "Feed the Furnace: when a Class 4–5 Moloch unit activates, you may remove 1 model from a friendly [EXPENDABLE] Class 1 unit within 3″: this activation its weapons gain [RELENTLESS] (re-roll Wound rolls) and [ONSLAUGHT 1]. Siege-Masters: Moloch ranged weapons gain [IGNORES COVER] against units within 3″ of an objective or in Dense terrain."
+ },
+ "gamble": {
+  "name": "Red-Line the Boilers",
+  "text": "When a Class 3–5 unit is selected to Shoot or Fight: its weapons get +2 Attacks; afterwards it suffers 1 Fatal Wound for each natural 1 rolled to Hit (max D3+1).",
+  "risk_cost": "durability (dice)"
+ },
+ "faction_abilities": [
+  {
+   "scope": "all",
+   "uptime": 0.4,
+   "mods": {
+    "reroll_wound": "all",
+    "sustained": 1
+   },
+   "classes": [
+    4,
+    5
+   ],
+   "name": "Feed the Furnace",
+   "text": "Re-roll wounds + crit hits for engines."
+  },
+  {
+   "scope": "ranged",
+   "uptime": 0.25,
+   "mods": {
+    "pen_mod": 1
+   },
+   "name": "Siege-Masters",
+   "text": "Ignore cover on objectives."
+  },
+  {
+   "scope": "all",
+   "uptime": 0.06,
+   "mods": {
+    "attacks_mod": 2
+   },
+   "classes": [
+    3,
+    4,
+    5
+   ],
+   "name": "Red-Line",
+   "text": "Occasional +2 Attacks."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Forge-pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Daemon-forged axe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Smith Forgemaster",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Siege Doctrine",
+     "text": "Friendly units within 9″ get +1 to Hit with ranged weapons against units in Cover."
+    },
+    {
+     "flat": 5.0,
+     "name": "Master of the Forge",
+     "text": "Once per round, heal D3 MIGHT on a friendly Class 3–5 unit within 3″."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Siege-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Warden Champion",
+   "slot": 2,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "reroll_wound": "ones"
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Iron Discipline",
+     "text": "The attached unit re-rolls melee Wound rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Daemon-anvil hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Daemon-Smith Overseer",
+   "slot": 3,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Demonic Anvil Repair",
+     "text": "Once per round, heal D3 MIGHT on a friendly Class 3–5 unit within 3″; it gets +1 to Hit with ranged weapons until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Fire-whip",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Hellfire Taskmaster",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Drive the Dregs",
+     "text": "The attached [EXPENDABLE] unit ignores Rattled and gets +1 to Hit in melee."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Lash",
+     "text": "The attached unit gets +1 to Hit in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    10
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Scrap-musket",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]",
+    "[FRAIL]"
+   ],
+   "name": "Ash-Dreg Thralls",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Fuel",
+     "text": "Models from this unit may be fed to the Furnace."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Hell-bolter",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Forged Legionaries",
+   "slot": 6,
+   "abilities": [
+    {
+     "scope": "defense",
+     "uptime": 0.4,
+     "mods": {
+      "save_mod": 1
+     },
+     "name": "Iron Within, Iron Without",
+     "text": "Incoming PEN −1 against attacks from more than 12″."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Fire-blunderbuss",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SCORCH]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Ash-Guard Blunderbussiers",
+   "slot": 7,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Volley Ranks",
+     "text": "Re-roll the number of attacks for blunderbusses."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 4,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Breaching cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Breacher Battery",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Dug-In Battery",
+     "text": "+1 to Hit if it did not Move."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 4,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Siege-flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Forge-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Clad Siege-Guard",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "uptime": 0.5,
+     "name": "Siege Plate",
+     "text": "+1 ARM (to 3+ cap) against PEN 0 and −1."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Ash-carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Bull-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Brass-Bull Centaurs",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Gore and Trample",
+     "text": "Crushing Impact for 0 CP on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Demo-charges",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "D3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ANTI-VEHICLE 4+]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Hellsmith Sappers",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Undermine",
+     "text": "Once per battle, an enemy unit in Dense terrain within 6″ loses Cover until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Missile launcher",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Devourer Heavy Squad",
+   "slot": 12,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Bunker Gunners",
+     "text": "Re-roll ranged Hit rolls of 1 if it did not Move."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Heavy flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Siege-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Moloch Crab-Walker",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Wall-Climber",
+     "text": "Ignores vertical distance when moving."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Brass jaws & claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Forge-Hound",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Hunting Engine",
+     "text": "+2″ to Charge rolls against units that shot this round."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 7,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Hellfire mortar",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Furnace-Mortar Battery",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Shattering Bombardment",
+     "text": "Once per round, a Class 1–2 unit hit suffers −2″ MOV until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Soul-furnace cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Furnace claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Soul-Furnace Engine",
+   "slot": 16,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Daemonic Engine",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 18,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Hellfire vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Siege-ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Siege-Crawler Ram",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Breach!",
+     "text": "Crushing Impact for 0 CP on a round it charged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Hellfire mortar",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Iron hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Infernal Bombard",
+   "slot": 18,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Siege Calculations",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Iron hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Ash-Hauler",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Furnace Hopper",
+     "text": "Embarked [EXPENDABLE] models may be fed to a Class 4–5 unit within 6″."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 24,
+   "CTRL": 5,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Magma colossus-cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Iron hooves",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Soul-Furnace Colossus",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Grand Furnace",
+     "text": "May be fed up to 2 models per activation (each gives +1 Attack to one weapon)."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Grand Siege",
+   "playstyle": "Artillery and heavy squads grind fortified positions.",
+   "rule": "Bunker-Busters: Siege-Masters also applies to units in Light terrain; [INDIRECT FIRE] weapons do not suffer the −1 to Hit.",
+   "enhancements": [
+    {
+     "name": "Siege-Lens",
+     "bearer": "Iron-Smith Forgemaster",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "ranged",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Siege-Lens",
+      "text": "The attached unit gets +1 PEN with ranged weapons."
+     },
+     "text": "The attached unit gets +1 PEN with ranged weapons."
+    },
+    {
+     "name": "Daemon-Bound Shells",
+     "bearer": "Infernal Bombard",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "ranged",
+      "uptime": 0.5,
+      "name": "Daemon-Bound Shells",
+      "text": "+1 Damage against units in Cover."
+     },
+     "text": "+1 Damage against units in Cover."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Shattering Bombardment",
+     "cp": 1,
+     "when": "A [SHRAPNEL] weapon hits a Class 1–2 unit",
+     "effect": "It suffers −2″ MOV until the End of Round."
+    },
+    {
+     "name": "Creeping Barrage",
+     "cp": 1,
+     "when": "An artillery unit Shoots",
+     "effect": "Re-roll Hit rolls against units within 3″ of an objective."
+    },
+    {
+     "name": "Entrench",
+     "cp": 1,
+     "when": "A unit did not Move",
+     "effect": "+1 ARM (to 3+ cap) until the End of Round."
+    }
+   ]
+  },
+  {
+   "name": "Daemon-Forge",
+   "playstyle": "Engines everywhere, smiths keeping them alive.",
+   "rule": "Anvil of the Daemon: Class 3–5 units within 6″ of a friendly Leader heal 1 MIGHT at the End of Round.",
+   "enhancements": [
+    {
+     "name": "Bound Daemon-Heart",
+     "bearer": "Soul-Furnace Engine",
+     "ability": {
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Bound Daemon-Heart",
+      "text": "UNYIELDING 5+."
+     },
+     "text": "UNYIELDING 5+."
+    },
+    {
+     "name": "Hammer of Moloch",
+     "bearer": "Daemon-Smith Overseer",
+     "ability": {
+      "flat": 5.0,
+      "name": "Hammer of Moloch",
+      "text": "Demonic Anvil Repair heals D3+1."
+     },
+     "text": "Demonic Anvil Repair heals D3+1."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Stoke the Fires",
+     "cp": 1,
+     "when": "A Class 4–5 unit is fed to the Furnace",
+     "effect": "It also gets +2″ MOV this activation."
+    },
+    {
+     "name": "Emergency Weld",
+     "cp": 1,
+     "when": "A Class 3–5 unit is damaged",
+     "effect": "Heal 2 MIGHT."
+    },
+    {
+     "name": "Daemonic Fury",
+     "cp": 1,
+     "when": "A Class 3–5 unit is selected to Fight",
+     "effect": "+1 Damage on its melee weapons."
+    }
+   ]
+  },
+  {
+   "name": "Iron Within",
+   "playstyle": "Iron legionaries and siege-guard holding the line.",
+   "rule": "Iron Within, Iron Without: once per round per unit, when targeted, incoming PEN −1 and re-roll ARM saves of 1 for that attack.",
+   "enhancements": [
+    {
+     "name": "Bastion-Seal",
+     "bearer": "Iron-Warden Champion",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "ward": 5
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Bastion-Seal",
+      "text": "The attached unit has WARD 5+."
+     },
+     "text": "The attached unit has WARD 5+."
+    },
+    {
+     "name": "Ironclad Pauldrons",
+     "bearer": "Iron-Forged Legionaries",
+     "ability": {
+      "mods": {
+       "save_mod": 1
+      },
+      "scope": "defense",
+      "uptime": 0.5,
+      "name": "Ironclad Pauldrons",
+      "text": "+1 ARM (to 3+ cap) against PEN 0 and −1."
+     },
+     "text": "+1 ARM (to 3+ cap) against PEN 0 and −1."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Hold the Breach",
+     "cp": 1,
+     "when": "A unit is charged",
+     "effect": "Its Retaliation Strike gets +1 Attack."
+    },
+    {
+     "name": "No Retreat",
+     "cp": 1,
+     "when": "A unit would be Rattled",
+     "effect": "It is not."
+    },
+    {
+     "name": "Smog and Smoke",
+     "cp": 1,
+     "when": "Command Phase",
+     "effect": "Friendly Class 1–2 units within 9″ of a Class 4–5 unit are [STEALTH] until the End of Round."
+    }
+   ]
+  }
+ ]
+}

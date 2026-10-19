@@ -1,0 +1,1414 @@
+{
+ "name": "The Golgotha Trench-Legions",
+ "verb": "ORDERS",
+ "identity": "Faceless millions in greatcoats and gas masks. Officers turn mediocre soldiers into a machine; artillery and objectives win the war.",
+ "core_rule": {
+  "name": "Chain of Command",
+  "text": "When an Officer activates it issues 1 Order (⟳) to a friendly unit within 12″ that has not activated: Take Aim! (+1 to Hit, cannot Move) · Forward! (may Shoot after its 2nd Move) · Dig In! (Cover and Braced) · Fire Mission! (an [INDIRECT FIRE] unit hits on 4+ against any enemy a Golgotha unit can see). Orders are priced on the Officers."
+ },
+ "faction_abilities": [
+  {
+   "scope": "ranged",
+   "uptime": 0.1,
+   "mods": {
+    "reroll_hit": "all"
+   },
+   "classes": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "name": "Danger-Close",
+   "text": "Artillery re-rolls hits near friendlies."
+  }
+ ],
+ "units": [
+  {
+   "name": "Trench-Troopers",
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Feed",
+   "models": [
+    10,
+    10
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "keywords": [
+    "[SECURED]"
+   ],
+   "weapons": [
+    "service_rifle",
+    "bayonet"
+   ],
+   "abilities": [
+    {
+     "name": "Special weapons",
+     "text": "Up to 2 models may take a flamer, grenade launcher, plasma gun or melta gun (+5 each)."
+    }
+   ]
+  },
+  {
+   "name": "Storm-Grenadiers",
+   "class": 1,
+   "role": "Elite",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Hot-shot carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": [
+    {
+     "name": "Breach and Clear",
+     "mods": {
+      "wound_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.35,
+     "text": "+1 to Wound with ranged attacks against units in or behind terrain."
+    }
+   ]
+  },
+  {
+   "name": "Heavy Weapon Battery",
+   "class": 2,
+   "role": "Trooper (support)",
+   "ladder": "Exploit",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    "autocannon",
+    "bayonet"
+   ],
+   "abilities": [
+    {
+     "name": "Dug-In",
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "uptime": 0.5,
+     "text": "+1 ARM (to the 3+ cap) if this unit did not Move this round. Any model may swap its autocannon for a las-lance."
+    }
+   ]
+  },
+  {
+   "name": "Mortar Pit",
+   "class": 2,
+   "role": "Trooper (support)",
+   "ladder": "Exploit",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Trench mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 1]",
+      "[SUPPRESSIVE]"
+     ]
+    },
+    "bayonet"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Trench-Marshal",
+   "class": 1,
+   "role": "Leader (Officer)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    "heavy_pistol",
+    "power_weapon"
+   ],
+   "abilities": [
+    {
+     "name": "Orders (Take Aim!)",
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 1,
+     "uptime": 0.9,
+     "text": "⟳ Issues 1 Order per round (Chain of Command). Priced as Take Aim! on one squad."
+    }
+   ]
+  },
+  {
+   "name": "Field Commissar",
+   "class": 1,
+   "role": "Leader",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    "pistol",
+    "power_weapon"
+   ],
+   "abilities": [
+    {
+     "name": "Summary Execution",
+     "utility": "SUPPRESS IMMUNE",
+     "text": "Leader. The attached unit ignores Rattled. ✦ Once per battle: when the unit would become Broken, remove 1 model instead."
+    }
+   ]
+  },
+  {
+   "name": "Trench Cavalry",
+   "class": 2,
+   "role": "Elite (fast)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    "pistol",
+    {
+     "name": "Explosive lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Iron-Stalker Walker",
+   "class": 3,
+   "role": "Brute",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    2
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 7,
+   "CTRL": 2,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    "autocannon",
+    "combat_blade"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Siege-Breaker Tank",
+   "class": 4,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    "battle_cannon",
+    {
+     "name": "Sponson stubbers",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SUPPRESSIVE]"
+     ]
+    },
+    "treads"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Quake-Cannon Battery",
+   "class": 4,
+   "role": "Behemoth (support)",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 6,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Quake cannon",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]",
+      "[SUPPRESSIVE]"
+     ]
+    },
+    "heavy_stubber"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Lord-Marshal of the Front",
+   "slot": 1,
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 2,
+   "weapons": [
+    "heavy_pistol",
+    "power_weapon"
+   ],
+   "abilities": [
+    {
+     "name": "Grand Battery Order",
+     "text": "⟳ Issues 2 Orders per round; priced as Take Aim! on a second squad.",
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 1,
+     "uptime": 0.9
+    }
+   ],
+   "WARD": 5
+  },
+  {
+   "name": "Field Chirurgeon-Priest",
+   "slot": 3,
+   "class": 1,
+   "role": "Leader (Support)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    "pistol",
+    "combat_blade"
+   ],
+   "abilities": [
+    {
+     "name": "Stitch and Pray",
+     "text": "Leader. The attached unit has [UNYIELDING 6+].",
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 1
+    }
+   ]
+  },
+  {
+   "name": "Forward Observer",
+   "slot": 4,
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    "pistol",
+    "combat_blade"
+   ],
+   "abilities": [
+    {
+     "name": "Call the Guns",
+     "text": "⟳ One [INDIRECT FIRE] unit shooting a target this model can see gets +1 to Hit.",
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 1,
+     "uptime": 0.7
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]"
+   ]
+  },
+  {
+   "name": "Trench-Raider Squad",
+   "slot": 7,
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Trench shotgun",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]",
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Trench club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Over the Parapet",
+     "text": "+1 Attack on the activation this unit charges.",
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "name": "Bulwark Brutes",
+   "slot": 8,
+   "class": 2,
+   "role": "Elite (brute)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Ripper gun",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "4",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Bulwark club",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Slab-Shield",
+     "text": "+1 ARM (to the 3+ cap).",
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense"
+    }
+   ]
+  },
+  {
+   "name": "Flame-Trooper Squad",
+   "slot": 10,
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Trench flamer",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    "bayonet"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Scout-Sniper Pair",
+   "slot": 12,
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "ladder": "Exploit",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    "sniper_rifle",
+    "combat_blade"
+   ],
+   "abilities": [
+    {
+     "name": "Camo-Cloaks",
+     "text": "Ranged attacks against this unit get −1 to Hit.",
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense"
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]"
+   ]
+  },
+  {
+   "name": "Drop-Chute Troopers",
+   "slot": 14,
+   "class": 1,
+   "role": "Elite (drop)",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Hot-shot carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[VANGUARD STRIKE]"
+   ]
+  },
+  {
+   "name": "Mole-Carrier APC",
+   "slot": 18,
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "weapons": [
+    "heavy_stubber",
+    "treads"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[TRANSPORT 10]",
+    "[FIRING DECK 2]"
+   ],
+   "HARDENED": true
+  },
+  {
+   "name": "Behemoth Siege-Tank",
+   "slot": 20,
+   "class": 5,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 26,
+   "CTRL": 5,
+   "weapons": [
+    "titan_cannon",
+    "heavy_stubber",
+    "heavy_stubber",
+    "treads"
+   ],
+   "abilities": [],
+   "HARDENED": true
+  },
+  {
+   "class": 2,
+   "role": "Leader (Epic Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Marshal-General of the Iron Line",
+   "slot": 21,
+   "abilities": [
+    {
+     "flat": 12.0,
+     "name": "Supreme Command",
+     "text": "Issues 2 Orders per activation; Order range 18″."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Grand Battery",
+     "text": "The attached unit gets +1 to Hit with ranged weapons."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Regimental Colour-Bearer",
+   "slot": 22,
+   "abilities": [
+    {
+     "utility": "SUPPRESS IMMUNE",
+     "name": "Hold the Colours",
+     "text": "The attached unit cannot be Rattled."
+    },
+    {
+     "flat": 4.0,
+     "name": "Rally Point",
+     "text": "+1 CTRL per model for the attached unit."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Long-las",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "name": "Veteran Marksman",
+   "slot": 23,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Ghillie Cloak",
+     "text": "[STEALTH]."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Demo-charges",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "D3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ANTI-VEHICLE 4+]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Engineer Sappers",
+   "slot": 24,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Dig the Line",
+     "text": "Once per battle, place a 6″ barricade (Light terrain) wholly within 6″ of this unit."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    10
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]"
+   ],
+   "name": "Penal Legion Breachers",
+   "slot": 25,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Last Chance",
+     "text": "+1 Attack in melee on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Steel jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Cyber-Mastiff Pack",
+   "slot": 26,
+   "abilities": [
+    {
+     "utility": "SCOUTS",
+     "name": "Run Ahead",
+     "text": "[SCOUTS 6″]."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]",
+      "[SUPPRESSIVE]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Heavy Mortar Battery",
+   "slot": 27,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Pre-Sighted",
+     "text": "Re-roll Hit rolls against units within 3″ of an objective."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 2,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Hunter las-cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Tank-Hunter Destroyer",
+   "slot": 28,
+   "abilities": [
+    {
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Ambush Position",
+     "text": "+1 to Hit if it did not Move."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 2,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Inferno cannon",
+     "type": "Ranged",
+     "range": "16\"",
+     "A": "2D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Inferno-Crawler",
+   "slot": 29,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Burn Them Out",
+     "text": "Units hit in Dense terrain are Rattled on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 16,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 0,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[FLY]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Multi-laser",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Hellstrike missiles",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Raptor Drop-Gunship",
+   "slot": 30,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Grav-Chute Drop",
+     "text": "Units may disembark after it moves (even after its full Move) and still act."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Combined Arms Regiment",
+   "playstyle": "The default: infantry hold, tanks and walkers punch.",
+   "rule": "Born Soldiers: Trooper units that issued no Order and received no Order this round get +1 to Hit with ranged weapons if they did not Move.",
+   "enhancements": [
+    {
+     "name": "Grand Strategist",
+     "bearer": "Trench-Marshal",
+     "ability": {
+      "name": "Grand Strategist",
+      "buff": true,
+      "mods": {
+       "hit_mod": 1
+      },
+      "scope": "ranged",
+      "n_eff": 1,
+      "uptime": 0.9
+     },
+     "text": "This Officer issues 2 Orders per round."
+    },
+    {
+     "name": "Relic Lasgun",
+     "bearer": "Trench-Marshal",
+     "ability": {
+      "name": "Relic Lasgun",
+      "mods": {
+       "pen_mod": 1,
+       "attacks_mod": 1
+      },
+      "scope": "ranged"
+     },
+     "text": "The bearer's ranged weapon gets +1 Attack and +1 PEN."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Volley Fire",
+     "cp": 1,
+     "when": "A Trooper unit is selected to Shoot",
+     "effect": "Its rifles gain [HAILFIRE] at full range this activation."
+    },
+    {
+     "name": "Armoured Fist",
+     "cp": 1,
+     "when": "A unit disembarks from a Transport",
+     "effect": "It may Shoot this activation even after Rapid Disembark."
+    },
+    {
+     "name": "Fix Bayonets",
+     "cp": 1,
+     "when": "A Trooper unit is charged",
+     "effect": "Its retaliation strike gets +1 to Wound."
+    }
+   ]
+  },
+  {
+   "name": "Siege Artillery Front",
+   "playstyle": "Static gunline: mortars, Quake-Cannons and spotters grind the enemy into the mud.",
+   "rule": "Pre-Registered Fire: [INDIRECT FIRE] weapons get +1 to Wound against units within 6″ of an objective. Fire Mission! may be issued at 24″.",
+   "enhancements": [
+    {
+     "name": "Master of Ordnance",
+     "bearer": "Trench-Marshal",
+     "ability": {
+      "name": "Master of Ordnance",
+      "buff": true,
+      "mods": {
+       "hit_mod": 1,
+       "reroll_wound": "ones"
+      },
+      "scope": "ranged",
+      "n_eff": 1.5,
+      "uptime": 0.7
+     },
+     "text": "Fire Mission! applies to 2 artillery units, and they re-roll Wound rolls of 1."
+    },
+    {
+     "name": "Vox-Relay Mast",
+     "bearer": "Trench-Marshal",
+     "ability": {
+      "name": "Vox-Relay Mast",
+      "flat": 6
+     },
+     "text": "The Order range is 24″."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Creeping Barrage",
+     "cp": 2,
+     "when": "Start of the round",
+     "effect": "Pick a 6″ zone. Enemy units ending a Move in it gain 1 Suppression token."
+    },
+    {
+     "name": "Danger Close",
+     "cp": 1,
+     "when": "An [INDIRECT FIRE] unit targets an enemy engaged with friendlies",
+     "effect": "Allowed; each natural 1 to hit hits the friendly unit instead."
+    },
+    {
+     "name": "Counter-Battery",
+     "cp": 1,
+     "when": "An enemy [INDIRECT FIRE] unit shoots",
+     "effect": "After it resolves, one friendly artillery unit may shoot it."
+    }
+   ]
+  },
+  {
+   "name": "Grinder Brigade",
+   "playstyle": "Horde: bodies on every objective, never give ground.",
+   "rule": "Endless Waves: once per round, when a Trench-Trooper unit is destroyed, set up a new 10-model unit of Trench-Troopers wholly within 6″ of your board edge (it counts as having activated). Max 2 per battle.",
+   "enhancements": [
+    {
+     "name": "Iron Discipline",
+     "bearer": "Field Commissar",
+     "ability": {
+      "name": "Iron Discipline",
+      "utility": "SUPPRESS IMMUNE"
+     },
+     "text": "Friendly Troopers within 6″ ignore Rattled."
+    },
+    {
+     "name": "Banner of the Unbroken",
+     "bearer": "Trench-Marshal",
+     "ability": {
+      "name": "Banner of the Unbroken",
+      "flat": 8
+     },
+     "text": "The attached unit counts double CTRL while it has 5+ models."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Hold the Line",
+     "cp": 1,
+     "when": "A Trooper unit on an objective is targeted",
+     "effect": "It cannot become Pinned this round."
+    },
+    {
+     "name": "Over the Top",
+     "cp": 1,
+     "when": "A Trooper unit activates",
+     "effect": "It may Charge after a Move this activation."
+    },
+    {
+     "name": "Meat Shield",
+     "cp": 1,
+     "when": "A friendly vehicle within 3″ of a Trooper unit is targeted",
+     "effect": "The shooter must target the Troopers instead if they are visible."
+    }
+   ]
+  }
+ ],
+ "gamble": {
+  "name": "Danger-Close",
+  "text": "When an [INDIRECT FIRE] unit targets an enemy unit within 6″ of a friendly Golgotha unit, it re-rolls Hit rolls; each unmodified Hit roll of 1 inflicts 1 Fatal Wound on the friendly Golgotha unit closest to the target.",
+  "risk_cost": "durability (friendly fire)"
+ }
+}

@@ -1,0 +1,1250 @@
+{
+ "name": "The Abyssal Bathys-Corps",
+ "verb": "DRAG",
+ "identity": "Deep-sea pressure-suit divers, harpoon crews and leviathans. Slow, tough, and they pull the enemy to them: winch harpoons drag targets 3″, and a public Tide schedule tells both players when the Corps will strike.",
+ "number": "05",
+ "template": "C_gunline_siege_arcane",
+ "status": "draft",
+ "learned_from": [
+  "Gemini #1 Winch-Harpoon Drag (unique), #3 Rising Tide (telegraphed), #2 pressure-fog capped at 15″",
+  "AoS sea-elf tides (loved because it is predictable)"
+ ],
+ "risk_profile": "Low/medium. Gamble = position: anchor a unit in place for stronger, longer drags.",
+ "core_rule": {
+  "name": "Winch-Harpoons & the Rising Tide",
+  "text": "Weapons with [HARPOON] that hit a Class 1–4 unit drag it 3″ straight toward the shooter (stop 1″ away; not out of engagement). The Tide is public: Round 1 Low Tide — units more than 15″ from the shooter cannot be targeted (the Hidden cap); Round 2 Flood — +2″ MOV and ranged weapons gain [ASSAULT]; Round 3 High Tide — [STRIKE FIRST]; Round 4 Ebb — units may Fall Back and still Shoot or Charge."
+ },
+ "gamble": {
+  "name": "Anchor-Lock",
+  "text": "When a unit with [HARPOON] activates: it cannot Move for the rest of the round, but its [HARPOON] weapons get +1 PEN and drag 6″ instead of 3″.",
+  "risk_cost": "position"
+ },
+ "faction_abilities": [
+  {
+   "scope": "defense",
+   "uptime": 0.25,
+   "mods": {
+    "incoming_hit_mod_ranged": -1
+   },
+   "name": "Low Tide",
+   "text": "Round 1 15″ cap."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.25,
+   "mods": {
+    "move_mod": 2
+   },
+   "name": "Flood",
+   "text": "Round 2 +2″ MOV."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.25,
+   "mods": {
+    "incoming_hit_mod_melee": -1
+   },
+   "name": "High Tide",
+   "text": "Round 3 strike first."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Harpoon pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Anchor-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Trench-Lord Commodore",
+   "slot": 1,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Tide-Reader",
+     "text": "Once per battle in the Command Phase, choose the Tide for this round instead of the schedule."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Coordinated Volleys",
+     "text": "The attached unit re-rolls ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Grand harpoon",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "2",
+     "traits": [
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Gaff-hook",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Abyssal Harpoon-Master",
+   "slot": 2,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Reel Them In",
+     "text": "This model's [HARPOON] drags 6″."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 0.6,
+     "name": "Gaff Drill",
+     "text": "The attached unit gets +1 to Hit in melee against dragged units."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Brine-bolt",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Tide-Caller Oracle",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "incoming_hit_mod_ranged": -1
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Pressure-Fog",
+     "text": "Friendly units within 6″ count as [STEALTH] against attacks from more than 12″."
+    },
+    {
+     "flat": 4.0,
+     "name": "Undertow",
+     "text": "Once per round, an enemy unit within 12″ suffers −2″ to its next Charge roll."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "name": "Sonar-Spotter",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Echo-Ping",
+     "text": "Once per round, mark an enemy unit within 18″: friendly [HARPOON] attacks against it get +1 to Hit."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Rivet gun",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Trench-Dredge Divers",
+   "slot": 5,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Pressure Seal",
+     "text": "Fatal Wounds are ignored on a 6+."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Harpoon rifle",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Drill-claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Hydraulic Harpooners",
+   "slot": 6,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Winch-Drag",
+     "text": "This unit's harpoons drag (core rule)."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rivet pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Breaching drill",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Hull-Breacher Divers",
+   "slot": 7,
+   "abilities": [
+    {
+     "mods": {
+      "wound_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Crack the Hull",
+     "text": "+1 to Wound in melee against Class 3–5 units."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 4,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Harpoon-gatling",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Hydraulic hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Leviathan-Plate Divers",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "uptime": 0.5,
+     "name": "Crushing Hull-Plating",
+     "text": "Incoming PEN −1 (min 0)."
+    },
+    {
+     "flat": 3.0,
+     "name": "Winch-Drag",
+     "text": "Harpoons drag."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Pressure-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Pressure-Hammer Brutes",
+   "slot": 9,
+   "abilities": [
+    {
+     "mods": {
+      "crit_hit_on": 5,
+      "lethal": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Implosion Strike",
+     "text": "Melee Hit rolls of 5+ are critical and auto-wound ([IMPALING HITS])."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Lamprey bites",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Lantern-Eel Swarm",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Lure-Light",
+     "text": "Enemy units within 6″ cannot claim Cover."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 4,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Depth-charge mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Depth-Charge Team",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Pressure Burst",
+     "text": "Units hit are Rattled on a 5+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 11,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Harpoon carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Cavalry lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Reef-Skimmer Outriders",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Running Drag",
+     "text": "May drag a target 3″ in any direction (not only toward this unit)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "weapons": [
+    {
+     "name": "Barbed long-harpoon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]",
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Snapper Snipers",
+   "slot": 13,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Pluck from the Ledge",
+     "text": "A model dragged by this unit off terrain loses Cover until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 10,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Steam-vent",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Abyssal drill",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Bathys-Drill Brute",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Tunnel Approach",
+     "text": "[VANGUARD STRIKE]."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Crushing tentacles",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Pressure-Squid Horror",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Tentacle Grab",
+     "text": "Once per Fight action, drag 1 enemy Class 1–3 unit within 6″ into engagement (3″)."
+    },
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Boneless",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 13,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Bolt-caster",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Crawler ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Diving-Bell Crawler",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Bell Drop",
+     "text": "Units may disembark after this model moves and still Shoot."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 18,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Torpedo tubes",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bolt-caster",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Crawler ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Torpedo-Ram Crawler",
+   "slot": 17,
+   "abilities": [
+    {
+     "mods": {
+      "dmg_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Pressure Warheads",
+     "text": "+1 Damage against Class 4–5 units."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Harpoon-battery",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HARPOON]"
+     ]
+    },
+    {
+     "name": "Crusher fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Leviathan Diving-Walker",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Winch-Drag",
+     "text": "Its harpoons drag 3″."
+    },
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Hull Redundancy",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Kraken arms",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "8",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Abyssal Kraken",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Drag to the Depths",
+     "text": "After it fights, one engaged Class 1–3 enemy unit suffers D3 Fatal Wounds on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "UNYIELDING": 6,
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    },
+    {
+     "name": "Bile-geyser",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[SHRAPNEL 2]"
+     ]
+    }
+   ],
+   "name": "Abyssal Mega-Leviathan",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Tidal Wave",
+     "text": "Once per battle, every enemy Class 1–2 unit within 9″ is dragged 3″ toward it."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Deep Trench",
+   "playstyle": "Advance under the fog and spring at High Tide.",
+   "rule": "Benthic Fog: the Low Tide 15″ targeting cap also applies in Round 2.",
+   "enhancements": [
+    {
+     "name": "Pressure-Lantern",
+     "bearer": "Tide-Caller Oracle",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "save_mod": 1
+      },
+      "scope": "defense",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Pressure-Lantern",
+      "text": "Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks."
+     },
+     "text": "Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks."
+    },
+    {
+     "name": "Abyssal Patience",
+     "bearer": "Trench-Lord Commodore",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "ward": 5
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Abyssal Patience",
+      "text": "The attached unit has WARD 5+."
+     },
+     "text": "The attached unit has WARD 5+."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Dive!",
+     "cp": 1,
+     "when": "An enemy unit targets a friendly Class 1–2 unit",
+     "effect": "That unit counts as [STEALTH] for the attack."
+    },
+    {
+     "name": "Rise from the Deep",
+     "cp": 1,
+     "when": "High Tide (Round 3)",
+     "effect": "One unit makes a free 3″ move before the first activation."
+    },
+    {
+     "name": "Silent Running",
+     "cp": 1,
+     "when": "A unit activates in Round 1–2",
+     "effect": "It is [UNSEEN 12″] until the End of Round if it does not Shoot."
+    }
+   ]
+  },
+  {
+   "name": "Leviathan Pod",
+   "playstyle": "Beasts and walkers anchor the line, divers fill the gaps.",
+   "rule": "Pod-Bond: Class 3–5 units within 6″ of each other get UNYIELDING 6+.",
+   "enhancements": [
+    {
+     "name": "Elder Leviathan",
+     "bearer": "Abyssal Kraken",
+     "ability": {
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Elder Leviathan",
+      "text": "UNYIELDING 5+."
+     },
+     "text": "UNYIELDING 5+."
+    },
+    {
+     "name": "Harpoon-Master's Claim",
+     "bearer": "Abyssal Harpoon-Master",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Harpoon-Master's Claim",
+      "text": "+1 Damage in melee on a round it charged."
+     },
+     "text": "+1 Damage in melee on a round it charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Feeding Frenzy",
+     "cp": 1,
+     "when": "A beast destroys an enemy unit",
+     "effect": "Heal D3 MIGHT."
+    },
+    {
+     "name": "Crushing Deep",
+     "cp": 1,
+     "when": "A Class 3–5 unit fights a dragged unit",
+     "effect": "+1 to Wound."
+    },
+    {
+     "name": "Ink Cloud",
+     "cp": 1,
+     "when": "A Class 3 unit is targeted",
+     "effect": "Attacks against it suffer −1 to Hit until the End of Round."
+    }
+   ]
+  },
+  {
+   "name": "Salvage Corps",
+   "playstyle": "Heavy suits and crawlers that take objectives and refuse to leave.",
+   "rule": "Hull-Plating: Class 1–2 units reduce incoming PEN by 1 while within 3″ of an objective.",
+   "enhancements": [
+    {
+     "name": "Salvage Rights",
+     "bearer": "Trench-Lord Commodore",
+     "ability": {
+      "flat": 6.0,
+      "name": "Salvage Rights",
+      "text": "Objectives this model controls stay controlled ([SECURED])."
+     },
+     "text": "Objectives this model controls stay controlled ([SECURED])."
+    },
+    {
+     "name": "Rivet-Master",
+     "bearer": "Hydraulic Harpooners",
+     "ability": {
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "ranged",
+      "uptime": 1.0,
+      "name": "Rivet-Master",
+      "text": "+1 PEN with ranged weapons."
+     },
+     "text": "+1 PEN with ranged weapons."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Weld the Breach",
+     "cp": 1,
+     "when": "A unit within 3″ of an objective activates",
+     "effect": "Heal 1 MIGHT on every model."
+    },
+    {
+     "name": "Claim the Wreck",
+     "cp": 1,
+     "when": "An enemy Class 4–5 unit is destroyed within 6″",
+     "effect": "Place an objective marker where it died (counts for Tactical cards only)."
+    },
+    {
+     "name": "Pressure Lock",
+     "cp": 1,
+     "when": "A unit is charged on an objective",
+     "effect": "It cannot be moved by enemy abilities until the End of Round."
+    }
+   ]
+  }
+ ]
+}

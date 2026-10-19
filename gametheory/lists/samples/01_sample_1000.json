@@ -1,0 +1,43 @@
+{
+ "name": "The Auric Solar-Host — verifier sample",
+ "detachment": "Gilded Host",
+ "units": [
+  {
+   "unit": "High Aurarch Praetor",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Sworn Assault Brothers",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Battle-Brothers",
+   "models": 5
+  },
+  {
+   "unit": "Sworn Shield-Veterans",
+   "models": 3
+  },
+  {
+   "unit": "Sworn Marksmen",
+   "models": 2
+  },
+  {
+   "unit": "Rampart Carrier",
+   "models": 1
+  },
+  {
+   "unit": "Reliquary-Sentry",
+   "models": 1
+  },
+  {
+   "unit": "Sworn Gryph-Knights",
+   "models": 3
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/01_auric_solar_host.json"
+ ]
+}

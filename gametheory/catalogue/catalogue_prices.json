@@ -1,0 +1,263 @@
+[
+ {
+  "id": "c1_conscripts",
+  "points_min": 65,
+  "per_model": 7.590983202623713,
+  "models": [
+   5,
+   10
+  ]
+ },
+ {
+  "id": "c1_line",
+  "points_min": 75,
+  "per_model": 10.680736461744226,
+  "models": [
+   5,
+   10
+  ]
+ },
+ {
+  "id": "c1_battle_brothers",
+  "points_min": 115,
+  "per_model": 19.57655925535986,
+  "models": [
+   5,
+   10
+  ]
+ },
+ {
+  "id": "c1_assault",
+  "points_min": 80,
+  "per_model": 12.106550981909681,
+  "models": [
+   5,
+   10
+  ]
+ },
+ {
+  "id": "c1_swarm",
+  "points_min": 60,
+  "per_model": 9.106534791038479,
+  "models": [
+   5,
+   15
+  ]
+ },
+ {
+  "id": "c1_skirmishers",
+  "points_min": 60,
+  "per_model": 9.209643384842677,
+  "models": [
+   3,
+   5
+  ]
+ },
+ {
+  "id": "c1_snipers",
+  "points_min": 55,
+  "per_model": 9.806748067081202,
+  "models": [
+   2,
+   3
+  ]
+ },
+ {
+  "id": "c1_jump",
+  "points_min": 85,
+  "per_model": 20.169577492823574,
+  "models": [
+   3,
+   5
+  ]
+ },
+ {
+  "id": "c1_leader",
+  "points_min": 50,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c2_elite_guard",
+  "points_min": 150,
+  "per_model": 43.65841254213382,
+  "models": [
+   3,
+   5
+  ]
+ },
+ {
+  "id": "c2_heavy_infantry",
+  "points_min": 135,
+  "per_model": 41.86994944586162,
+  "models": [
+   3,
+   5
+  ]
+ },
+ {
+  "id": "c2_weapon_team",
+  "points_min": 55,
+  "per_model": 13.32306941903392,
+  "models": [
+   2,
+   3
+  ]
+ },
+ {
+  "id": "c2_brutes",
+  "points_min": 80,
+  "per_model": 24.47774186267419,
+  "models": [
+   3,
+   5
+  ]
+ },
+ {
+  "id": "c2_cavalry",
+  "points_min": 100,
+  "per_model": 28.22516040579308,
+  "models": [
+   3,
+   5
+  ]
+ },
+ {
+  "id": "c2_battlesuits",
+  "points_min": 105,
+  "per_model": null,
+  "models": [
+   3,
+   3
+  ]
+ },
+ {
+  "id": "c2_leader",
+  "points_min": 75,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c3_walker",
+  "points_min": 100,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c3_monster",
+  "points_min": 65,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c3_weapon_platform",
+  "points_min": 60,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c3_mounted_leader",
+  "points_min": 80,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c4_battle_tank",
+  "points_min": 155,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c4_transport",
+  "points_min": 130,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c4_heavy_walker",
+  "points_min": 160,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c4_behemoth_beast",
+  "points_min": 120,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c4_artillery",
+  "points_min": 115,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c5_super_heavy",
+  "points_min": 295,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c5_war_titan",
+  "points_min": 320,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c5_colossal_monster",
+  "points_min": 235,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ },
+ {
+  "id": "c5_gunship",
+  "points_min": 200,
+  "per_model": null,
+  "models": [
+   1,
+   1
+  ]
+ }
+]

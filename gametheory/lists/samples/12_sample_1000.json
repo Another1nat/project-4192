@@ -1,0 +1,48 @@
+{
+ "name": "The Black-Bile Congregation — verifier sample",
+ "detachment": "Infected Ground",
+ "units": [
+  {
+   "unit": "Lord of Black Bile",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Pox-Carriers",
+   "models": 10
+  },
+  {
+   "unit": "Blight-Knights",
+   "models": 5
+  },
+  {
+   "unit": "Bile-Mortar Team",
+   "models": 2
+  },
+  {
+   "unit": "Pox-Mites",
+   "models": 5
+  },
+  {
+   "unit": "Bile-Hauler Transport",
+   "models": 1
+  },
+  {
+   "unit": "Foetid Bloat-Drone",
+   "models": 1
+  },
+  {
+   "unit": "Bloat-Fly Riders",
+   "models": 3
+  },
+  {
+   "unit": "Miasmic Hexer",
+   "models": 1,
+   "attached": true
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/12_black_bile_congregation.json"
+ ]
+}

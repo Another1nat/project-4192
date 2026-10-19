@@ -1,0 +1,55 @@
+{
+ "name": "The Aegis Knight-Houses — verifier sample",
+ "detachment": "Noble Lance",
+ "units": [
+  {
+   "unit": "Sacristan Forge-Wright",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Household Men-at-Arms",
+   "models": 5
+  },
+  {
+   "unit": "Feudal Squires",
+   "models": 5
+  },
+  {
+   "unit": "Retainer Gun-Team",
+   "models": 2
+  },
+  {
+   "unit": "Sworn Huntsmen",
+   "models": 2
+  },
+  {
+   "unit": "Iron Destrier Carriage",
+   "models": 1
+  },
+  {
+   "unit": "Squire-Walker Strider",
+   "models": 1
+  },
+  {
+   "unit": "Steam-Cavaliers",
+   "models": 3
+  },
+  {
+   "unit": "Bondsmen Halberdiers",
+   "models": 3
+  },
+  {
+   "unit": "Squire-Walker Warden",
+   "models": 1
+  },
+  {
+   "unit": "Squire-Walker Thermal-Lancer",
+   "models": 1
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/04_aegis_knight_houses.json"
+ ]
+}

@@ -1,0 +1,1233 @@
+{
+ "name": "The Prometheus Flesh-Guilds",
+ "verb": "GRAFT",
+ "identity": "Cyborg tech-surgeons and stitched brutes. They harvest scrap and organs from the dead around them and graft permanent upgrades onto their units mid-battle: a slow start that becomes a custom monster by Round 3.",
+ "number": "08",
+ "template": "A_combined_arms",
+ "status": "draft",
+ "learned_from": [
+  "Gemini #1 Grafting (highest uniqueness), #3 surgeon heals, #4 voluntary Lightning-Coil",
+  "REJECTED Gemini #5 Rad-Saturation (pre-movement damage = NPE, like 40k 2022 Rad-Cohort complaints)"
+ ],
+ "risk_profile": "Low (permanent grafts). Gamble = durability + resource: Over-Graft two at once, may burn out.",
+ "core_rule": {
+  "name": "Organ & Scrap Harvest",
+  "text": "When any unit (friend or foe) is destroyed within 6″ of a Prometheus unit, gain 1 Graft (max 3 banked). When a unit activates, spend 1 Graft to give it ONE permanent upgrade for the rest of the battle: +1 PEN on one weapon · +1 to Hit with one weapon · heal D3 MIGHT and +1 MIGHT maximum (once). Each unit can take each upgrade once."
+ },
+ "gamble": {
+  "name": "Over-Graft",
+  "text": "Spend 2 Grafts on one unit at once for two different upgrades, then roll a D6: on a 1 the unit suffers D3 Fatal Wounds and loses one of the new upgrades (your choice).",
+  "risk_cost": "durability + resource"
+ },
+ "faction_abilities": [
+  {
+   "scope": "all",
+   "uptime": 0.2,
+   "mods": {
+    "pen_mod": 1
+   },
+   "name": "Graft: Edge",
+   "text": "Some units gain +1 PEN mid-battle."
+  },
+  {
+   "scope": "all",
+   "uptime": 0.12,
+   "mods": {
+    "hit_mod": 1
+   },
+   "name": "Graft: Optics",
+   "text": "Some units gain +1 to Hit mid-battle."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Arc pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Surgeon's mechadendrites",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Arch-Chirurgeon Prime",
+   "slot": 1,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Master of Flesh-Grafting",
+     "text": "Once per round, heal 3 MIGHT on a friendly Class 3–5 unit within 6″."
+    },
+    {
+     "flat": 4.0,
+     "name": "Harvest Protocol",
+     "text": "Units destroyed within 9″ (not 6″) of this model give Grafts."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Arc pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Piston-hammer",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Graft-Knight Paragon",
+   "slot": 2,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "pen_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Perfected Form",
+     "text": "The attached unit gets +1 PEN in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Arc pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rust-Priest Chirurgeon",
+   "slot": 3,
+   "abilities": [
+    {
+     "flat": 7.0,
+     "name": "Field Surgery",
+     "text": "Once per round, heal D3 MIGHT on a friendly unit within 3″ or return 1 slain Class 1 model."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Stitch as They Fight",
+     "text": "The attached unit has UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "name": "Signal-Augur",
+   "slot": 4,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Target Uplink",
+     "text": "Friendly units within 9″ get +1 to Hit with ranged weapons against the last unit this model targeted."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Radium carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[IMPALING HITS]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Wire-Stitched Servitors",
+   "slot": 5,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Pain-Suppressed",
+     "text": "UNYIELDING 6+."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Galvanic rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Galvanic Phalanx",
+   "slot": 6,
+   "abilities": [
+    {
+     "scope": "all",
+     "uptime": 0.4,
+     "mods": {
+      "save_mod": 1,
+      "pen_mod": 1
+     },
+     "name": "Bionic Imperatives",
+     "text": "Command Phase: Protector (+1 ARM vs attacks from >12″) or Conqueror (+1 PEN within 9″)."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Arc-lance",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]",
+      "[IMPALING HITS]"
+     ]
+    },
+    {
+     "name": "Arc-goad",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Arc-Lancer Skirmishers",
+   "slot": 7,
+   "abilities": [
+    {
+     "scope": "all",
+     "uptime": 0.3,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "name": "Lightning-Coil Overload",
+     "text": "Before attacking, suffer 1 Fatal Wound to give weapons [IMPALING HITS] and +1 Attack."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Hydraulic fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Stitched Brutes",
+   "slot": 8,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 5
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Grafted Hide",
+     "text": "UNYIELDING 5+."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 4,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Plasma-welder",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HAILFIRE 1]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Piston-claw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Bionic Praetorians",
+   "slot": 9,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Graft-Ready",
+     "text": "Grafts spent on this unit may be the same upgrade twice (still max 2)."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 4,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Fusion-torch",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6",
+     "traits": [
+      "[ERADICATE 2]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Plasma-Welder Team",
+   "slot": 10,
+   "abilities": [
+    {
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "uptime": 0.5,
+     "name": "Calibrated",
+     "text": "+1 to Hit if it did not Move."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Galvanic carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Arc-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Galvanic Striders",
+   "slot": 11,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Spider-Gait",
+     "text": "Moves over terrain as if it had [FLY] (cannot end on top of impassable terrain)."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Claws & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Scrap-Mite Swarm",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Scavenge",
+     "text": "When this unit destroys an enemy model, gain 1 Graft (max 3)."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 8,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Stitched fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Prometheus Flesh-Golem",
+   "slot": 13,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 5
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Patchwork Flesh",
+     "text": "UNYIELDING 5+."
+    },
+    {
+     "flat": 4.0,
+     "name": "Galvanic Revival",
+     "text": "Once per battle, when destroyed, roll a D6: on a 4+ it returns with 3 MIGHT."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Arc-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Galvanic Strider-Walker",
+   "slot": 14,
+   "abilities": [
+    {
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "ranged",
+     "uptime": 1.0,
+     "name": "Targeting Cogitator",
+     "text": "Re-roll ranged Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 4,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rendering vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Reclamation Engine",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Salvage Crane",
+     "text": "Units destroyed within 12″ of this model give Grafts. Once per round, heal D3 MIGHT on a Class 3–5 unit within 3″."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Tesla discharge",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[IMPALING HITS]"
+     ]
+    },
+    {
+     "name": "Crushing tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Tesla Pylon-Crawler",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Arc-Chain",
+     "text": "Each unmodified 6 to Hit inflicts 1 Fatal Wound on a different enemy unit within 6″ of the target."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rendering vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Excavator drills",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Iron-Flesh Excavator-Walker",
+   "slot": 17,
+   "abilities": [
+    {
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Redundant Organs",
+     "text": "UNYIELDING 6+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Crushing tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Gurney-Crawler",
+   "slot": 18,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Mobile Surgery",
+     "text": "At the End of Round, heal 1 MIGHT on each model embarked or within 3″ (or return 1 slain Class 1 model to one unit)."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Battle cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Plasma-welder",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HAILFIRE 1]",
+      "[OVERLOAD]"
+     ]
+    },
+    {
+     "name": "Crushing tracks",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Bio-Forge Tank",
+   "slot": 19,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Graft Lattice",
+     "text": "This unit may hold 2 copies of each graft upgrade."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "UNYIELDING": 6,
+   "weapons": [
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Grafted maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    },
+    {
+     "name": "Rendering vents",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[SCORCH]",
+      "[IGNORES COVER]"
+     ]
+    }
+   ],
+   "name": "Patchwork Colossus",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Living Graft-Bank",
+     "text": "Spend Grafts on this model without them counting toward the bank limit; it starts with 1 free upgrade."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Surgeon-Cult",
+   "playstyle": "Heal, rebuild and out-last.",
+   "rule": "Bloodied Instruments: Field Surgery and Master of Flesh-Grafting heal +1. Grafts may also be gained when a friendly unit loses its last model within 6″ of a Leader.",
+   "enhancements": [
+    {
+     "name": "Bone-Saw of Prometheus",
+     "bearer": "Arch-Chirurgeon Prime",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "unyielding": 5
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Bone-Saw of Prometheus",
+      "text": "The attached unit has UNYIELDING 5+."
+     },
+     "text": "The attached unit has UNYIELDING 5+."
+    },
+    {
+     "name": "Reserve Organs",
+     "bearer": "Rust-Priest Chirurgeon",
+     "ability": {
+      "flat": 4.0,
+      "name": "Reserve Organs",
+      "text": "Field Surgery may be used twice per round."
+     },
+     "text": "Field Surgery may be used twice per round."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Emergency Graft",
+     "cp": 1,
+     "when": "A unit is destroyed",
+     "effect": "Gain 2 Grafts instead of 1 (max 3)."
+    },
+    {
+     "name": "Adrenal Shunt",
+     "cp": 1,
+     "when": "A unit is selected to Fight",
+     "effect": "+1 Attack; it suffers 1 Fatal Wound afterward."
+    },
+    {
+     "name": "Stitch Them Back",
+     "cp": 2,
+     "when": "End of Round",
+     "effect": "Return D3 slain models to a Class 1 unit within 6″ of a Leader."
+    }
+   ]
+  },
+  {
+   "name": "Forge-Legion",
+   "playstyle": "Cyborg infantry phalanxes that switch protocols each round.",
+   "rule": "Bionic Imperatives: Command Phase, choose for the army: Protector (+1 ARM against attacks from more than 12″; ranged weapons gain [HEAVY]) or Conqueror (ranged weapons gain [ASSAULT] and +1 PEN within 9″).",
+   "enhancements": [
+    {
+     "name": "Command Uplink",
+     "bearer": "Signal-Augur",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "reroll_hit": "ones"
+      },
+      "scope": "all",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Command Uplink",
+      "text": "Friendly units within 9″ re-roll Hit rolls of 1."
+     },
+     "text": "Friendly units within 9″ re-roll Hit rolls of 1."
+    },
+    {
+     "name": "Overclocked Servos",
+     "bearer": "Galvanic Phalanx",
+     "ability": {
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Overclocked Servos",
+      "text": "+2″ MOV."
+     },
+     "text": "+2″ MOV."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Override Protocol",
+     "cp": 1,
+     "when": "A unit activates",
+     "effect": "Use the other Imperative for this unit this activation."
+    },
+    {
+     "name": "Binharic Volley",
+     "cp": 1,
+     "when": "Two units target the same enemy",
+     "effect": "The second gets +1 to Wound."
+    },
+    {
+     "name": "Machine Resolve",
+     "cp": 1,
+     "when": "A unit would be Rattled",
+     "effect": "It is not."
+    }
+   ]
+  },
+  {
+   "name": "Galvanic Breach",
+   "playstyle": "Lightning-coils and arc weapons: trade your own MIGHT for damage.",
+   "rule": "Lightning-Coil Overload: when a unit is selected to Shoot or Fight, it may suffer 1 Fatal Wound: its weapons gain [IMPALING HITS] this activation.",
+   "enhancements": [
+    {
+     "name": "Capacitor Heart",
+     "bearer": "Graft-Knight Paragon",
+     "ability": {
+      "mods": {
+       "crit_hit_on": 5,
+       "lethal": true
+      },
+      "scope": "melee",
+      "uptime": 1.0,
+      "name": "Capacitor Heart",
+      "text": "Melee critical hits on 5+ (auto-wound)."
+     },
+     "text": "Melee critical hits on 5+ (auto-wound)."
+    },
+    {
+     "name": "Storm-Coil Mantle",
+     "bearer": "Arch-Chirurgeon Prime",
+     "ability": {
+      "flat": 5.0,
+      "name": "Storm-Coil Mantle",
+      "text": "Units within 6″ ignore the Fatal Wound from Overload on a 4+."
+     },
+     "text": "Units within 6″ ignore the Fatal Wound from Overload on a 4+."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Chain Lightning",
+     "cp": 1,
+     "when": "An Overloaded attack destroys a unit",
+     "effect": "Inflict D3 Fatal Wounds on another enemy unit within 6″."
+    },
+    {
+     "name": "Grounding Rods",
+     "cp": 1,
+     "when": "A unit is hit by an [PSYCHIC / ARCANE] attack",
+     "effect": "It gets WARD 5+ against that attack."
+    },
+    {
+     "name": "Discharge",
+     "cp": 1,
+     "when": "A unit is charged",
+     "effect": "The charging unit suffers D3 Fatal Wounds on a 4+."
+    }
+   ]
+  }
+ ]
+}

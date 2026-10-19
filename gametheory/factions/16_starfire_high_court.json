@@ -1,0 +1,1492 @@
+{
+ "name": "The Starfire High-Court",
+ "verb": "DISENGAGE",
+ "identity": "Angelic starlight elves: few, fast, precise. They strike, then glide out of reach.",
+ "core_rule": {
+  "name": "Solar Grace",
+  "text": "Every unit has [FLY]. After a unit finishes its Shoot or Fight action it may glide 3″, ending outside Engagement Range. This is the only post-action movement in the game."
+ },
+ "faction_abilities": [
+  {
+   "utility": "GLIDE",
+   "name": "Solar Grace",
+   "text": "Glide 3″ after acting (escape capped 1/round)."
+  },
+  {
+   "scope": "all",
+   "uptime": 0.1,
+   "mods": {
+    "hit_mod": 1,
+    "save_mod": 1
+   },
+   "name": "Dawnstone",
+   "text": "Once per unit per battle."
+  }
+ ],
+ "units": [
+  {
+   "name": "Starlight Archers",
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Feed",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    {
+     "name": "Star-bow",
+     "type": "Ranged",
+     "range": "30\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": [
+    {
+     "name": "Prism Focus",
+     "text": "When this unit Shoots, mark the target: the next Starfire unit to attack it re-rolls Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "name": "Solar Sentinels",
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "WARD": 6,
+   "keywords": [
+    "[FLY]",
+    "[STRIKE FIRST]"
+   ],
+   "weapons": [
+    "carbine",
+    {
+     "name": "Sun-glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Prism-Blade Dancers",
+   "class": 1,
+   "role": "Elite",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    "pistol",
+    {
+     "name": "Dancer blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Blade-Storm",
+     "mods": {
+      "crit_hit_on": 5,
+      "sustained": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "text": "On the activation it charges, melee Critical Hits on 5+ and [ONSLAUGHT 1]."
+    }
+   ]
+  },
+  {
+   "name": "Sky-Lancer Riders",
+   "class": 2,
+   "role": "Elite (fast)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 14,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    {
+     "name": "Twin star-carbines",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    "cavalry_lance"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Star-Seer",
+   "class": 1,
+   "role": "Leader (psyker)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "WARD": 4,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    {
+     "name": "Star-bolt",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Witch-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "D3",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Fortune",
+     "buff": true,
+     "mods": {
+      "ward": 5
+     },
+     "scope": "defense",
+     "n_eff": 1,
+     "text": "Leader. ⟳ The attached unit has [WARD 5+] this round."
+    }
+   ]
+  },
+  {
+   "name": "High Star-Regent",
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 4,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    {
+     "name": "Starfire pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    },
+    {
+     "name": "Star-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-3",
+     "D": "2",
+     "traits": [
+      "[PRECISION]"
+     ]
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Path of Command",
+     "buff": true,
+     "mods": {
+      "reroll_wound": "ones"
+     },
+     "scope": "all",
+     "n_eff": 1,
+     "text": "Leader. The attached unit re-rolls Wound rolls of 1."
+    }
+   ]
+  },
+  {
+   "name": "Astral Phoenix-Construct",
+   "class": 3,
+   "role": "Brute",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 8,
+   "CTRL": 3,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    "las_lance",
+    {
+     "name": "Wraith-talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Prism Grav-Skiff",
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 13,
+   "CTRL": 2,
+   "HARDENED": true,
+   "WARD": 5,
+   "keywords": [
+    "[FLY]",
+    "[TRANSPORT 6]"
+   ],
+   "weapons": [
+    {
+     "name": "Prism cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    "heavy_stubber"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Star-Barge Colossus",
+   "class": 5,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 22,
+   "CTRL": 5,
+   "HARDENED": true,
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "weapons": [
+    "doom_lance",
+    {
+     "name": "Solar scythe",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Blade-Master of the Dawn",
+   "slot": 2,
+   "class": 1,
+   "role": "Leader (Champion)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    "pistol",
+    {
+     "name": "Dawn-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[PRECISION]"
+     ]
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Perfect Strike",
+     "text": "Leader. The attached unit's melee Hit rolls of 5+ are Critical Hits and automatically wound ([IMPALING HITS]).",
+     "buff": true,
+     "mods": {
+      "crit_hit_on": 5,
+      "lethal": true
+     },
+     "scope": "melee",
+     "n_eff": 1
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "WARD": 5
+  },
+  {
+   "name": "Moon-Shadow Ranger",
+   "slot": 4,
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "ladder": "Exploit",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Moon long-rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]",
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ]
+  },
+  {
+   "name": "Sun-Spear Skirmishers",
+   "slot": 7,
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Light sun-spear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    "carbine"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]"
+   ],
+   "battleline": true
+  },
+  {
+   "name": "Prism Guardians",
+   "slot": 8,
+   "class": 2,
+   "role": "Elite",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Prism halberd",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]"
+   ],
+   "WARD": 4
+  },
+  {
+   "name": "Dawn Fusion-Lancers",
+   "slot": 10,
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Fusion lance",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-4",
+     "D": "D6",
+     "traits": [
+      "[ERADICATE 2]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]"
+   ]
+  },
+  {
+   "name": "Star-Lance Platform",
+   "slot": 11,
+   "class": 2,
+   "role": "Trooper (support)",
+   "ladder": "Exploit",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Star-lance",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    "bayonet"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]"
+   ]
+  },
+  {
+   "name": "Moon-Eye Snipers",
+   "slot": 12,
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "ladder": "Exploit",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 7,
+   "MS": 5,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    "sniper_rifle",
+    "combat_blade"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]",
+    "[INFILTRATORS]"
+   ]
+  },
+  {
+   "name": "Sun-Wing Skyblades",
+   "slot": 14,
+   "class": 1,
+   "role": "Elite (jump)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    "carbine",
+    {
+     "name": "Sky-grenades",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    }
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ]
+  },
+  {
+   "name": "Veil-Walkers",
+   "slot": 15,
+   "class": 1,
+   "role": "Trooper (recon)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    "carbine",
+    "combat_blade"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]",
+    "[INFILTRATORS]",
+    "[SCOUTS 6\"]"
+   ]
+  },
+  {
+   "name": "Prism Strider",
+   "slot": 17,
+   "class": 3,
+   "role": "Brute (walker)",
+   "ladder": "Exploit",
+   "models": [
+    1,
+    2
+   ],
+   "MOV": 8,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 6,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Strider prism-cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    "combat_blade"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]"
+   ]
+  },
+  {
+   "name": "Starfire Prism-Tank",
+   "slot": 19,
+   "class": 4,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 6,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 13,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Twin prism-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    "heavy_stubber"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]"
+   ],
+   "HARDENED": true,
+   "WARD": 5
+  },
+  {
+   "class": 3,
+   "role": "Leader (Epic Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 14,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 3,
+   "MIGHT": 8,
+   "CTRL": 2,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Sun-spear throw",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Dawnspear",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-3",
+     "D": "2",
+     "traits": []
+    },
+    {
+     "name": "Griffon talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Aelira Dawnspear, Sun-Herald",
+   "slot": 21,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Herald of Dawn",
+     "text": "Friendly units within 9″ get +1 to Hit in melee on a round they charged."
+    },
+    {
+     "flat": 6.0,
+     "name": "Second Dawn",
+     "text": "Once per battle, a unit within 12″ regains its shattered Dawnstone."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Prism-light",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Prism Herald",
+   "slot": 22,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Refracting Aegis",
+     "text": "Friendly units within 6″ get +1 ARM (to 3+ cap) against ranged attacks."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Mystic)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Sunburst",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[PSYCHIC / ARCANE]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 4,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Dawn Sorceress",
+   "slot": 23,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Blinding Flare",
+     "text": "Once per round, an enemy unit within 18″ suffers −1 to Hit until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Throwing spears",
+     "type": "Ranged",
+     "range": "8\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Sun-lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Sun-Crested Lancers",
+   "slot": 24,
+   "abilities": [
+    {
+     "scope": "defense",
+     "uptime": 0.5,
+     "mods": {
+      "incoming_hit_mod_ranged": -1,
+      "incoming_hit_mod_melee": -1
+     },
+     "name": "Shining Phalanx",
+     "text": "While every model is within 1″ of two others, attacks against this unit suffer −1 to Hit."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Greatblade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Dawnblade Swordmasters",
+   "slot": 25,
+   "abilities": [
+    {
+     "mods": {
+      "crit_hit_on": 5,
+      "lethal": true
+     },
+     "scope": "melee",
+     "uptime": 1.0,
+     "name": "Perfect Strikes",
+     "text": "Melee Hit rolls of 5+ auto-wound."
+    },
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Deflecting Blades",
+     "text": "Enemies get −1 to Hit them in melee."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Sun-repeater",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Great weapon / fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Sun-Forged Wardens",
+   "slot": 26,
+   "abilities": [
+    {
+     "mods": {
+      "save_mod": 1
+     },
+     "scope": "defense",
+     "uptime": 0.5,
+     "name": "Prism Plate",
+     "text": "+1 ARM (to 3+ cap) against PEN 0 and −1."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Light-weave array",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[IGNORES COVER]",
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Light-Weaver Battery",
+   "slot": 27,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Dazzle",
+     "text": "Units hit cannot claim Cover until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 8,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Cutting winds",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Zephyr Elemental",
+   "slot": 28,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Tailwind",
+     "text": "Once per round, a friendly unit within 9″ may glide an extra 3″."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 16,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 12,
+   "CTRL": 0,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Sunfire lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Star-repeaters",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "4",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[FLY]"
+   ],
+   "name": "Dawn-Wing Gunship",
+   "slot": 29,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Strafing Run",
+     "text": "May Shoot after a full Move."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Avalanche fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    },
+    {
+     "name": "Hurled boulders",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "D6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    }
+   ],
+   "WARD": 5,
+   "name": "Mountain-Spirit Colossus",
+   "slot": 30,
+   "abilities": [
+    {
+     "flat": 5.0,
+     "name": "Stone Ward",
+     "text": "Friendly Class 1–2 units within 3″ claim Cover."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Court of Blades",
+   "playstyle": "Melee aristocracy: Dancers and raid lord dive, kill and glide away.",
+   "rule": "Dance of Blades: units that glided last activation get +1 to Hit in melee this activation.",
+   "enhancements": [
+    {
+     "name": "Starsteel Edge",
+     "bearer": "High Star-Regent",
+     "ability": {
+      "name": "Starsteel",
+      "mods": {
+       "crit_wound_on": 5
+      },
+      "scope": "melee"
+     },
+     "text": "The bearer's melee critical wounds trigger on 5+."
+    },
+    {
+     "name": "Mantle of Dawn",
+     "bearer": "Star-Seer",
+     "ability": {
+      "name": "Mantle",
+      "mods": {
+       "incoming_hit_mod_melee": -1
+      },
+      "scope": "defense"
+     },
+     "text": "Melee attacks against the bearer get −1 to Hit."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Lightning Riposte",
+     "cp": 1,
+     "when": "A unit is charged",
+     "effect": "It gains [STRIKE FIRST] against that charger."
+    },
+    {
+     "name": "Starlight Sidestep",
+     "cp": 1,
+     "when": "A unit is declared as a Charge target",
+     "effect": "Glide 3″ backward; the charge may fail."
+    },
+    {
+     "name": "Perfect Form",
+     "cp": 1,
+     "when": "A Leader fights",
+     "effect": "Its attacks gain [PRECISION]."
+    }
+   ]
+  },
+  {
+   "name": "Prism Host",
+   "playstyle": "Ranged precision: Archers mark, the Phoenix and Skiffs delete.",
+   "rule": "Prismatic Link: if 2+ Starfire units shoot the same target in a round, the later ones get +1 PEN against it.",
+   "enhancements": [
+    {
+     "name": "Focusing Crystal",
+     "bearer": "Star-Seer",
+     "ability": {
+      "name": "Focusing Crystal",
+      "buff": true,
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "ranged",
+      "n_eff": 1
+     },
+     "text": "The attached unit gets +1 PEN with ranged weapons."
+    },
+    {
+     "name": "Eye of the Dawn",
+     "bearer": "High Star-Regent",
+     "ability": {
+      "name": "Eye of Dawn",
+      "mods": {
+       "reroll_hit": "all"
+      },
+      "scope": "ranged"
+     },
+     "text": "The bearer re-rolls ranged Hit rolls."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Overcharged Prisms",
+     "cp": 1,
+     "when": "A vehicle shoots",
+     "effect": "+1 Damage this attack."
+    },
+    {
+     "name": "Hunting Light",
+     "cp": 1,
+     "when": "A unit shoots a Rattled target",
+     "effect": "Re-roll Wound rolls."
+    },
+    {
+     "name": "Fade from Sight",
+     "cp": 1,
+     "when": "After a unit glides",
+     "effect": "It gains [UNSEEN 12″] until it next activates."
+    }
+   ]
+  },
+  {
+   "name": "Wind-Rider Host",
+   "playstyle": "Speed: jetbike swarms and skiffs grab objectives and never stay in reach.",
+   "rule": "Wind of Stars: Sky-Lancers and vehicles glide 6″ instead of 3″.",
+   "enhancements": [
+    {
+     "name": "Windrunner Sigil",
+     "bearer": "High Star-Regent",
+     "ability": {
+      "name": "Windrunner",
+      "mods": {
+       "move_mod": 4
+      },
+      "scope": "defense"
+     },
+     "text": "The bearer gets +4″ Move (can join jetbikes)."
+    },
+    {
+     "name": "Star-Map",
+     "bearer": "Star-Seer",
+     "ability": {
+      "name": "Star-Map",
+      "utility": "SCOUTS"
+     },
+     "text": "The attached unit gains [SCOUTS 6″]."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Lightning Raid",
+     "cp": 1,
+     "when": "A fast unit ends a Move on an objective",
+     "effect": "It counts double CTRL until the end of the round."
+    },
+    {
+     "name": "Hit and Fade",
+     "cp": 2,
+     "when": "A unit finishes its activation",
+     "effect": "It may glide 3″ again."
+    },
+    {
+     "name": "Contrails",
+     "cp": 1,
+     "when": "A unit is shot after Moving ≥10″",
+     "effect": "−1 to Hit against it for that attack."
+    }
+   ]
+  }
+ ],
+ "gamble": {
+  "name": "Overcharged Dawnstone",
+  "text": "Shatter a unit's gem for TWO effects at once; that unit can no longer glide for the rest of the battle.",
+  "risk_cost": "tempo / mobility"
+ }
+}

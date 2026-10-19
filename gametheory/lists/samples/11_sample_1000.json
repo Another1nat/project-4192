@@ -1,0 +1,47 @@
+{
+ "name": "The Cinder-Gorged Legion — verifier sample",
+ "detachment": "Red Tide",
+ "units": [
+  {
+   "unit": "Skull-Hunter",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Ash-Zealots",
+   "models": 10
+  },
+  {
+   "unit": "Cinder-Berserkers",
+   "models": 5
+  },
+  {
+   "unit": "Blood-Hounds",
+   "models": 3
+  },
+  {
+   "unit": "Skull-Takers",
+   "models": 3
+  },
+  {
+   "unit": "Brass Gore-Carrier",
+   "models": 1
+  },
+  {
+   "unit": "Cinder-Spawn",
+   "models": 1
+  },
+  {
+   "unit": "Gore-Champion Coterie",
+   "models": 3
+  },
+  {
+   "unit": "Blood-Leash Wardens",
+   "models": 5
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/11_cinder_gorged_legion.json"
+ ]
+}

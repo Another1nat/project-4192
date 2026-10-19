@@ -1,0 +1,63 @@
+{
+ "name": "The Apex Bio-Swarm — verifier sample",
+ "detachment": "Invasion Swarm",
+ "units": [
+  {
+   "unit": "Brood-Mother",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Slasher-Brood",
+   "models": 10
+  },
+  {
+   "unit": "Chitter-Swarm",
+   "models": 10
+  },
+  {
+   "unit": "Shade-Stalker",
+   "models": 1
+  },
+  {
+   "unit": "Pyro-Spore Swarm",
+   "models": 3
+  },
+  {
+   "unit": "Spore-Pod Carrier",
+   "models": 1
+  },
+  {
+   "unit": "Neuro-Shrieker",
+   "models": 1
+  },
+  {
+   "unit": "Spore-Mortar Brood",
+   "models": 2
+  },
+  {
+   "unit": "Rend-Lurkers",
+   "models": 5
+  },
+  {
+   "unit": "Bone-Runner Pack",
+   "models": 3
+  },
+  {
+   "unit": "Skyshrike Brood",
+   "models": 5
+  },
+  {
+   "unit": "Carno-Brute",
+   "models": 1
+  },
+  {
+   "unit": "Acid-Spitter Brood",
+   "models": 5
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/23_apex_bio_swarm.json"
+ ]
+}

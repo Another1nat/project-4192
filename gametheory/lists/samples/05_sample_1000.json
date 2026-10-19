@@ -1,0 +1,56 @@
+{
+ "name": "The Abyssal Bathys-Corps — verifier sample",
+ "detachment": "Deep Trench",
+ "units": [
+  {
+   "unit": "Trench-Lord Commodore",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Trench-Dredge Divers",
+   "models": 5
+  },
+  {
+   "unit": "Hydraulic Harpooners",
+   "models": 5
+  },
+  {
+   "unit": "Depth-Charge Team",
+   "models": 2
+  },
+  {
+   "unit": "Snapper Snipers",
+   "models": 2
+  },
+  {
+   "unit": "Diving-Bell Crawler",
+   "models": 1
+  },
+  {
+   "unit": "Pressure-Squid Horror",
+   "models": 1
+  },
+  {
+   "unit": "Reef-Skimmer Outriders",
+   "models": 3
+  },
+  {
+   "unit": "Lantern-Eel Swarm",
+   "models": 5
+  },
+  {
+   "unit": "Pressure-Hammer Brutes",
+   "models": 3
+  },
+  {
+   "unit": "Sonar-Spotter",
+   "models": 1,
+   "attached": true
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/05_abyssal_bathys_corps.json"
+ ]
+}

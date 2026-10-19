@@ -1,0 +1,47 @@
+{
+ "name": "The Sun-Scaled Temple-Host — verifier sample",
+ "detachment": "Sunclaw Hunt",
+ "units": [
+  {
+   "unit": "Chameleon Stalker",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Scaleling Javelin-Scouts",
+   "models": 5
+  },
+  {
+   "unit": "Saurian Spawn-Warriors",
+   "models": 5
+  },
+  {
+   "unit": "Fire-Spitter Handlers",
+   "models": 2
+  },
+  {
+   "unit": "Chameleon Snipers",
+   "models": 2
+  },
+  {
+   "unit": "Sun-Engine Shell-Beast",
+   "models": 1
+  },
+  {
+   "unit": "Feathered Sky-Serpent",
+   "models": 1
+  },
+  {
+   "unit": "Raptor-Knights",
+   "models": 3
+  },
+  {
+   "unit": "Wing-Lizard Riders",
+   "models": 3
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/17_sun_scaled_temple_host.json"
+ ]
+}

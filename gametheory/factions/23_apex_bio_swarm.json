@@ -1,0 +1,1435 @@
+{
+ "name": "The Apex Bio-Swarm",
+ "verb": "ADAPTATION",
+ "identity": "An evolving chitin hive: endless gaunts, warrior-broods and bio-titans that re-evolve every round to counter the enemy.",
+ "core_rule": {
+  "name": "Synapse & Evolution",
+  "text": "Command Phase: choose 1 Bio-Adaptation for the whole army this round: Scythes (+1 PEN in melee) · Chitin (+1 ARM to the 3+ cap) · Adrenal (+2″ Move). Units within 9″ of a [SYNAPSE] model ignore Suppression."
+ },
+ "faction_abilities": [
+  {
+   "scope": "melee",
+   "uptime": 0.4,
+   "mods": {
+    "pen_mod": 1
+   },
+   "name": "Adapt: Scythes",
+   "text": "+1 PEN in melee."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.35,
+   "mods": {
+    "save_mod": 1
+   },
+   "name": "Adapt: Chitin",
+   "text": "+1 ARM."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.25,
+   "mods": {
+    "move_mod": 2
+   },
+   "name": "Adapt: Adrenal",
+   "text": "+2″ Move."
+  },
+  {
+   "scope": "melee",
+   "uptime": 0.1,
+   "mods": {
+    "attacks_mod": 1
+   },
+   "name": "Metabolic Overdrive",
+   "text": "Occasional +1 Attack."
+  }
+ ],
+ "units": [
+  {
+   "name": "Chitter-Swarm",
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Feed",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "keywords": [
+    "[FRAIL]"
+   ],
+   "weapons": [
+    {
+     "name": "Flesh-borer",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Chitin claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Endless Swarm",
+     "text": "Synapse units within 9″ may return 1 slain Gaunt per round."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "name": "Slasher-Brood",
+   "class": 1,
+   "role": "Trooper",
+   "ladder": "Feed",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 9,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "keywords": [
+    "[FRAIL]"
+   ],
+   "weapons": [
+    {
+     "name": "Scything talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ONSLAUGHT 1]"
+     ]
+    }
+   ],
+   "abilities": [],
+   "battleline": true
+  },
+  {
+   "name": "Bio-Warrior Brood",
+   "class": 2,
+   "role": "Elite (synapse)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 2,
+   "keywords": [
+    "[SYNAPSE]"
+   ],
+   "weapons": [
+    {
+     "name": "Devourer",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Rending talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Synapse Node",
+     "utility": "SUPPRESS IMMUNE",
+     "text": "[SYNAPSE]: friendly units within 9″ ignore Suppression."
+    }
+   ]
+  },
+  {
+   "name": "Tunnel-Wyrm Brood",
+   "class": 2,
+   "role": "Elite (ambush)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "keywords": [
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Burrower claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Shade-Stalker",
+   "class": 2,
+   "role": "Elite (hunter)",
+   "ladder": "Exploit",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Grasping talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[PRECISION]"
+     ]
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Psy-Node Brood",
+   "class": 2,
+   "role": "Elite (synapse)",
+   "ladder": "Amplify",
+   "models": [
+    3,
+    3
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "WARD": 4,
+   "keywords": [
+    "[FLY]",
+    "[SYNAPSE]"
+   ],
+   "weapons": [
+    {
+     "name": "Warp lance",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Synapse Node",
+     "utility": "SUPPRESS IMMUNE",
+     "text": "[SYNAPSE]."
+    }
+   ]
+  },
+  {
+   "name": "Carno-Brute",
+   "class": 3,
+   "role": "Brute",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    2
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    "monster_talons",
+    {
+     "name": "Bio-plasma",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D3",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Hive-Sovereign Synapse-Alpha",
+   "class": 4,
+   "role": "Leader (Warlord)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "WARD": 5,
+   "keywords": [
+    "[SYNAPSE]"
+   ],
+   "weapons": [
+    "monster_talons",
+    {
+     "name": "Venom cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Will of the Hive",
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1,
+     "text": "⟳ Once per round, one friendly unit within 9″ gets +1 to Hit in melee this round. [SYNAPSE]."
+    },
+    {
+     "name": "Synapse Node",
+     "utility": "SUPPRESS IMMUNE",
+     "text": "[SYNAPSE]."
+    }
+   ]
+  },
+  {
+   "name": "Titanic Bio-Horror",
+   "class": 5,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 26,
+   "CTRL": 6,
+   "HARDENED": true,
+   "UNYIELDING": 6,
+   "keywords": [
+    "[SYNAPSE]"
+   ],
+   "weapons": [
+    "titan_stomp",
+    "colossal_jaws",
+    {
+     "name": "Acid-mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Brood-Prime",
+   "slot": 2,
+   "class": 2,
+   "role": "Leader (Champion)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Prime talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Alpha Instinct",
+     "text": "Leader. The attached unit gets +1 to Hit in melee.",
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1
+    }
+   ],
+   "keywords": [
+    "[SYNAPSE]"
+   ]
+  },
+  {
+   "name": "Brood-Mother",
+   "slot": 4,
+   "class": 2,
+   "role": "Leader (Spawner)",
+   "ladder": "Amplify",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 5,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Spawn-whips",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Spawn the Swarm",
+     "text": "⟳ Return 2 slain models to a Chitter-Swarm or Slasher-Brood within 9″ (never above starting size).",
+     "flat": 10
+    }
+   ]
+  },
+  {
+   "name": "Chitin-Guard Brutes",
+   "slot": 8,
+   "class": 2,
+   "role": "Elite (bodyguard)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Bone-crusher claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "abilities": [
+    {
+     "name": "Living Shield",
+     "text": "Leader bodyguard: −1 Damage against attacks on this unit.",
+     "mods": {
+      "incoming_dmg_mod": -1
+     },
+     "scope": "defense"
+    }
+   ]
+  },
+  {
+   "name": "Spore-Mortar Brood",
+   "slot": 9,
+   "class": 2,
+   "role": "Trooper (support)",
+   "ladder": "Exploit",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Spore mortar",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 1]"
+     ]
+    },
+    "bayonet"
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Skyshrike Brood",
+   "slot": 11,
+   "class": 1,
+   "role": "Trooper (winged)",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 10,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Flesh-dart",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    "claws"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]",
+    "[FRAIL]"
+   ]
+  },
+  {
+   "name": "Rend-Lurkers",
+   "slot": 12,
+   "class": 1,
+   "role": "Elite (skirmish)",
+   "ladder": "Exploit",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Rending claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-2",
+     "D": "1",
+     "traits": [
+      "[IMPALING HITS]"
+     ]
+    }
+   ],
+   "abilities": [],
+   "keywords": [
+    "[INFILTRATORS]"
+   ]
+  },
+  {
+   "name": "Bone-Runner Pack",
+   "slot": 13,
+   "class": 2,
+   "role": "Elite (fast)",
+   "ladder": "Exploit",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 12,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Runner talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "abilities": []
+  },
+  {
+   "name": "Horned Rampager",
+   "slot": 16,
+   "class": 3,
+   "role": "Brute",
+   "ladder": "Exploit",
+   "models": [
+    1,
+    2
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    "monster_talons"
+   ],
+   "abilities": [
+    {
+     "name": "Battering Horns",
+     "text": "+1 Damage on the activation it charges.",
+     "mods": {
+      "dmg_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5
+    }
+   ]
+  },
+  {
+   "name": "Siege-Maw Monstrosity",
+   "slot": 17,
+   "class": 4,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 15,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Acid siege-maw",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    "monster_talons"
+   ],
+   "abilities": [],
+   "HARDENED": true
+  },
+  {
+   "name": "Spore-Pod Carrier",
+   "slot": 18,
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 5,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Spore-spines",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "D6",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    "claws"
+   ],
+   "abilities": [],
+   "keywords": [
+    "[FLY]",
+    "[TRANSPORT 10]"
+   ],
+   "HARDENED": true
+  },
+  {
+   "name": "Crusher-Queen Behemoth",
+   "slot": 19,
+   "class": 4,
+   "role": "Behemoth",
+   "ladder": "Payoff",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 6,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "weapons": [
+    "monster_talons",
+    "colossal_jaws"
+   ],
+   "abilities": [],
+   "HARDENED": true
+  },
+  {
+   "class": 2,
+   "role": "Leader (Epic Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 6,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Bone-scythes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    },
+    {
+     "name": "Flesh-hooks",
+     "type": "Ranged",
+     "range": "6\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    }
+   ],
+   "keywords": [
+    "[SYNAPSE]"
+   ],
+   "name": "Devourer Prime",
+   "slot": 21,
+   "abilities": [
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Lightning Predator",
+     "text": "[STRIKE FIRST]."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Alpha Instinct",
+     "text": "The attached unit gets +1 Attack in melee."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 12,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Bio-cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Monstrous scythes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]",
+    "[SYNAPSE]"
+   ],
+   "name": "Winged Hive-Sovereign",
+   "slot": 22,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "wound_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 2.2,
+     "uptime": 0.5,
+     "name": "Will of the Swarm",
+     "text": "Friendly units within 9″ get +1 to Wound in melee on a round they charged."
+    },
+    {
+     "flat": 6.0,
+     "name": "Synaptic Overlord",
+     "text": "Synapse range from this model is 12″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Synapse)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Spine-fist",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Bone-sword",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[SYNAPSE]"
+   ],
+   "name": "Neuro-Node Lord",
+   "slot": 23,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "unyielding": 6
+     },
+     "scope": "defense",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Neural Shield",
+     "text": "The attached unit has UNYIELDING 6+."
+    },
+    {
+     "flat": 4.0,
+     "name": "Relay Node",
+     "text": "Counts as a [SYNAPSE] model for every friendly unit within 6″ of the attached unit."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Acid-spitter",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Chitin claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Acid-Spitter Brood",
+   "slot": 24,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Corrosive",
+     "text": "Units hit suffer −1 ARM until the End of Round on a 5+."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    10,
+    15
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Ripper-maws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]",
+    "[FRAIL]"
+   ],
+   "name": "Ripper-Maw Swarm",
+   "slot": 25,
+   "abilities": [
+    {
+     "flat": 2.0,
+     "name": "Living Carpet",
+     "text": "Enemy units within 1″ suffer −2″ MOV when they Fall Back."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    3,
+    6
+   ],
+   "MOV": 6,
+   "MS": 6,
+   "RS": 6,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 0,
+   "weapons": [
+    {
+     "name": "Drifting tendrils",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[DETONATE D3]",
+    "[EXPENDABLE]",
+    "[FLY]",
+    "[FRAIL]"
+   ],
+   "name": "Pyro-Spore Swarm",
+   "slot": 26,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Floating Mines",
+     "text": "When an enemy unit ends a move within 3″, one model detonates: D3 Fatal Wounds on a 3+ to that unit."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Venom-lashes",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[IMPALING HITS]"
+     ]
+    }
+   ],
+   "name": "Venom-Lash Brood",
+   "slot": 27,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Entangle",
+     "text": "Engaged enemy units cannot Fall Back on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 7,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Psychic shriek",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[PSYCHIC / ARCANE]"
+     ]
+    },
+    {
+     "name": "Claws & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "WARD": 5,
+   "keywords": [
+    "[FLY]",
+    "[SYNAPSE]"
+   ],
+   "name": "Neuro-Shrieker",
+   "slot": 28,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Shriek",
+     "text": "Units hit are Rattled on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 7,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 13,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Bio-plasma mortar",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[INDIRECT FIRE]",
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Bio-Artillery Beast",
+   "slot": 29,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Living Ammunition",
+     "text": "Re-roll Hit rolls of 1 against units within 9″ of a [SYNAPSE] model."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 12,
+   "CTRL": 1,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Grinding maw",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Deep-Burrow Worm",
+   "slot": 30,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Erupt",
+     "text": "Arrives by [VANGUARD STRIKE] carrying its passengers (a unit, not a portal)."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Invasion Swarm",
+   "playstyle": "Endless gaunts: drown objectives in bodies, recycle them through Synapse.",
+   "rule": "Hunger of the Hive: Trooper units within 9″ of Synapse get +1 Attack in melee if they outnumber their target.",
+   "enhancements": [
+    {
+     "name": "Adaptive Neural Lattice",
+     "bearer": "Hive-Sovereign Synapse-Alpha",
+     "ability": {
+      "name": "Neural Lattice",
+      "flat": 8
+     },
+     "text": "Synapse range is 12″."
+    },
+    {
+     "name": "Bio-Spawning Sac",
+     "bearer": "Bio-Warrior Brood",
+     "ability": {
+      "name": "Spawning Sac",
+      "flat": 10
+     },
+     "text": "Endless Swarm returns 2 Chitter-swarm models per round near this unit."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Overrun",
+     "cp": 1,
+     "when": "A Trooper unit destroys a unit",
+     "effect": "Consolidate 6″ instead of 3″."
+    },
+    {
+     "name": "Swarm Wave",
+     "cp": 2,
+     "when": "A Trooper unit is destroyed",
+     "effect": "Set up a new 10-model Chitter-Swarm at your board edge (once per battle)."
+    },
+    {
+     "name": "Chitin Wall",
+     "cp": 1,
+     "when": "A Trooper unit is shot",
+     "effect": "+1 ARM for that attack (stacks with the Chitin adaptation to the cap)."
+    }
+   ]
+  },
+  {
+   "name": "Synaptic Vanguard",
+   "playstyle": "Ambush hunters: Shade-Stalkers and Tunnel-Wyrms strike leaders from hiding.",
+   "rule": "Lurking Death: [VANGUARD STRIKE] and [INFILTRATORS] units get +1 to Wound on the activation they arrive or first attack.",
+   "enhancements": [
+    {
+     "name": "Chameleonic Mutation",
+     "bearer": "Shade-Stalker",
+     "ability": {
+      "name": "Chameleonic",
+      "mods": {
+       "incoming_hit_mod_ranged": -1
+      },
+      "scope": "defense"
+     },
+     "text": "Ranged attacks against the bearer get −1 to Hit."
+    },
+    {
+     "name": "Pheromone Trail",
+     "bearer": "Shade-Stalker",
+     "ability": {
+      "name": "Pheromone",
+      "flat": 6
+     },
+     "text": "Vanguard Strike units may arrive within 6″ of the bearer (still >8″ from enemies)."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Ambush Predators",
+     "cp": 1,
+     "when": "A unit arrives from reserves",
+     "effect": "It may Charge this activation."
+    },
+    {
+     "name": "Feeding Frenzy",
+     "cp": 1,
+     "when": "A unit attacks a Leader",
+     "effect": "Its attacks gain [PRECISION]."
+    },
+    {
+     "name": "Vanish into Burrows",
+     "cp": 2,
+     "when": "End of the round",
+     "effect": "One unit not engaged returns to Strategic Reserves."
+    }
+   ]
+  },
+  {
+   "name": "Bio-Titan Assault",
+   "playstyle": "Monster mash: Tyrant, Carno-Brutes and a Bio-Horror walk through the enemy.",
+   "rule": "Primal Evolution: Class 3+ units benefit from the round's Bio-Adaptation twice over (Scythes +2 PEN · Chitin +1 ARM and −1 Damage · Adrenal +4″ Move).",
+   "enhancements": [
+    {
+     "name": "Monstrous Musculature",
+     "bearer": "Carno-Brute",
+     "ability": {
+      "name": "Musculature",
+      "mods": {
+       "attacks_mod": 2
+      },
+      "scope": "melee"
+     },
+     "text": "+2 melee Attacks."
+    },
+    {
+     "name": "Regenerating Chitin",
+     "bearer": "Hive-Sovereign Synapse-Alpha",
+     "ability": {
+      "name": "Regen Chitin",
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense"
+     },
+     "text": "The bearer has [UNYIELDING 6+]."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Rapid Regrowth",
+     "cp": 1,
+     "when": "A Brute/Behemoth suffers damage",
+     "effect": "Ignore up to 3 MIGHT from that attack (mitigation, not healing)."
+    },
+    {
+     "name": "Rampaging Beast",
+     "cp": 1,
+     "when": "A Class 3+ unit charges",
+     "effect": "Crushing Impact with no self-damage."
+    },
+    {
+     "name": "Bio-Acid Spray",
+     "cp": 1,
+     "when": "A monster is engaged",
+     "effect": "Engaged enemies suffer D3 Fatal Wounds."
+    }
+   ]
+  }
+ ],
+ "gamble": {
+  "name": "Metabolic Overdrive",
+  "text": "When a unit activates: +2″ MOV and +1 Attack in melee this activation. At the End of Round, roll a D6: on 1–2 it suffers D3 Fatal Wounds (models die of exhaustion).",
+  "risk_cost": "durability (dice)"
+ }
+}

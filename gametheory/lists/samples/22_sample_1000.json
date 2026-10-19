@@ -1,0 +1,56 @@
+{
+ "name": "The Radiant Concordat — verifier sample",
+ "detachment": "Patient Hunter",
+ "units": [
+  {
+   "unit": "Concordat Strategos",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Porcelain Strike-Infantry",
+   "models": 5
+  },
+  {
+   "unit": "Porcelain Breacher Team",
+   "models": 5
+  },
+  {
+   "unit": "Crimson Stealth-Suits",
+   "models": 3
+  },
+  {
+   "unit": "Lotus Marksmen",
+   "models": 2
+  },
+  {
+   "unit": "Lotus Transport Skimmer",
+   "models": 1
+  },
+  {
+   "unit": "Bulwark Rail-Mech",
+   "models": 1
+  },
+  {
+   "unit": "Vanguard Rail-Suits",
+   "models": 3
+  },
+  {
+   "unit": "Lotus Drone Flight",
+   "models": 4
+  },
+  {
+   "unit": "Lotus Pathfinders",
+   "models": 3
+  },
+  {
+   "unit": "Lotus Pathfinder-Priest",
+   "models": 1,
+   "attached": true
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/22_radiant_concordat.json"
+ ]
+}

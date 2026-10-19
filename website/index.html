@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>/* Enforce HTTPS on production for camera permissions / SecureContext */
+    (function () { try { var l = location;
+        if (l.protocol === 'http:' && l.hostname !== 'localhost' && l.hostname !== '127.0.0.1') {
+            l.replace('https://' + l.host + l.pathname + l.search + l.hash);
+        }
+        window.__MOVED = l.hash.indexOf('#move=') === 0 ? l.hash.slice(6) : '';
+    } catch (e) {} })();</script>
+    <script>/* ?embed=1: the full game tracker shown inside the spectator page (watch.html), without the app's menus */
+    (function () { if (/[?&]embed=1\b/.test(location.search)) { document.documentElement.classList.add('wp-embed');
+        setInterval(function () { try { parent.postMessage({ type: 'wp-height', h: document.documentElement.scrollHeight }, location.origin); } catch (e) {} }, 800); } })();</script>
+    <style>@media (max-width: 560px) { .ag-sb-side { flex-wrap: wrap; align-items: flex-start !important; } .ag-sb-head { flex: 1 1 100% !important; margin: 0 !important; min-width: 0 !important; } .ag-sb-bars { order: 2; flex: 1 1 100% !important; margin: 8px 0 0 !important; } }</style>
+    <style>.wp-embed .top-navbar, .wp-embed #tabbar, .wp-embed #dropdown-menu, .wp-embed #dropdown-overlay, .wp-embed #bl-backup-bar, .wp-embed #btn-broadcast, .wp-embed #bcast-viewfinder-root { display: none !important; } .wp-embed body { padding-top: 0 !important; padding-bottom: 8px !important; } .wp-embed #app-container { padding-top: 4px !important; }</style>
+    <meta name="robots" content="index, follow, max-image-preview:large, noai, noimageai">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#17223e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Iron &amp; Wrath">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png?v=2">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico?v=2">
+    <meta name="description" content="Iron &amp; Wrath companion: army builder with points, live game tracker with scoring, rules and missions. Works offline.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Iron &amp; Wrath — army builder &amp; game tracker">
+    <meta property="og:description" content="Army builder, game tracker, rules and missions for Iron &amp; Wrath. Installable, works offline.">
+    <meta property="og:image" content="assets/icons/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Iron & Wrath","applicationCategory":"GameApplication","operatingSystem":"Any (web, installable)","inLanguage":["en","es"],"offers":{"@type":"Offer","price":"0"}}</script>
+    <title>Iron &amp; Wrath — Army Builder &amp; Game Tracker</title>
+    <link rel="stylesheet" href="styles.css?v=1791661200">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* WARMIND LAYOUT */
+.warmind-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px;
+    padding: 0 20px;
+    height: calc(100vh - 150px);
+    overflow: hidden;
+}
+
+.warmind-sidebar {
+    background: #0f141d;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sidebar-header {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sidebar-header .search-wrapper { margin-bottom: 0; flex: 1; }
+
+.close-sidebar-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+.datasheets-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 15px;
+}
+
+.warmind-main {
+    background: #0b0f16;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.mobile-sidebar-toggle {
+    display: none;
+}
+
+/* WARMIND UNIT CARDS */
+.unit-card {
+    background: #1a222d;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.unit-card:hover, .unit-card.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
+}
+.unit-card-info h4 { margin:0; font-size: 0.95rem; }
+.unit-card-info p { margin:0; font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+.unit-card-pts { font-weight: bold; color: var(--accent); font-size: 0.9rem; }
+
+/* ABILITIES SECTION */
+.abilities-container { margin-top: 20px; }
+.ability-block {
+    margin-bottom: 15px;
+}
+.ability-name {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.ability-desc {
+    font-size: 0.85rem;
+    color: #b0c4de;
+    line-height: 1.4;
+    background: #141b25;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 2px solid var(--accent);
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .warmind-layout {
+        display: block;
+        height: auto;
+        overflow: visible;
+        padding: 0;
+    }
+    
+    .mobile-sidebar-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent);
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        width: 90%;
+        margin: 15px auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        justify-content: center;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    
+    .warmind-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        bottom: 0;
+        width: 85%;
+        max-width: 350px;
+        z-index: 1000;
+        border-radius: 0;
+        border: none;
+        border-right: 1px solid var(--accent);
+        transition: left 0.3s ease;
+    }
+    
+    .warmind-sidebar.open {
+        left: 0;
+    }
+    
+    .close-sidebar-btn {
+        display: block;
+    }
+    
+    .warmind-main {
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid var(--border-light);
+        min-height: calc(100vh - 150px);
+    }
+}
+</style>
+
+    <link rel="stylesheet" href="theme.css?v=11">
+    <link rel="stylesheet" href="theme2.css?v=49">
+    <link rel="stylesheet" href="theme3.css?v=10">
+</head>
+<body>
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="top-navbar" style="display:flex; align-items:center; justify-content:space-between;">
+        <div style="display:flex; align-items:center; gap:20px;">
+            <div class="logo" onclick="switchView('home')" style="cursor:pointer; flex-shrink:0; display:flex; align-items:center; gap:8px;"><img src="assets/icons/logo-mark-96.png" alt="" width="30" height="30" style="border-radius:0;"><span>Iron<span style="color:var(--accent);">&amp;Wrath</span></span></div>
+            
+            <div class="desktop-nav-links">
+                <button onclick="switchView('tracker')"><i class="fa-solid fa-chess-board"></i> Game Tracker</button>
+                <a href="ar.html" style="text-decoration:none;"><button style="color:var(--accent);"><i class="fa-solid fa-map-location-dot"></i> Layouts · 2D &amp; AR</button></a>
+                <button onclick="openDatasheetIndex()"><i class="fa-solid fa-book-open"></i> Datasheets</button>
+            </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+            <div id="auth-pills" class="auth-pills" style="display:none;">
+                <button id="auth-login" class="auth-pill" onclick="LEAGUE.openAuth('login')"><i class="fa-solid fa-right-to-bracket"></i> Log in</button>
+                <button id="auth-signup" class="auth-pill auth-pill-accent" onclick="LEAGUE.openAuth('signup')">Create account</button>
+                <button id="auth-account" class="auth-pill" style="display:none;" onclick="LEAGUE.openAuth('account')"><i class="fa-solid fa-user"></i> <span id="auth-name">Account</span></button>
+            </div>
+            <button class="menu-toggle" id="menu-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- BURGER MENU OVERLAY -->
+    <div id="dropdown-overlay" onclick="toggleMenu()" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:998; touch-action:none; overscroll-behavior:none;"></div>
+
+    <!-- SIDE / DROPDOWN MENU -->
+    <div id="dropdown-menu" class="dropdown-menu">
+        <button onclick="switchView('home'); toggleMenu()">
+            <i class="fa-solid fa-users-rectangle"></i> All Factions
+        </button>
+        <button onclick="switchView('new-roster'); toggleMenu()">
+            <i class="fa-solid fa-plus"></i> Create New Roster
+        </button>
+        <button onclick="switchView('collection'); toggleMenu()">
+            <i class="fa-solid fa-boxes-packing"></i> Physical Army
+        </button>
+        <hr style="border-color: var(--border-light); margin: 5px 0;">
+        <button onclick="switchView('tracker'); toggleMenu()">
+            <i class="fa-solid fa-chess-board"></i> Game Tracker
+        </button>
+        <a href="ar.html" style="text-decoration:none;">
+            <button style="color:var(--accent); width:100%; text-align:left;">
+                <i class="fa-solid fa-map-location-dot"></i> Terrain Layouts · 2D &amp; AR
+            </button>
+        </a>
+        <button onclick="switchView('league'); toggleMenu()">
+            <i class="fa-solid fa-trophy"></i> League
+        </button>
+        <button id="menu-admin" style="display:none" onclick="ADMIN.open(); toggleMenu()">
+            <i class="fa-solid fa-user-shield"></i> Admin
+        </button>
+        <button onclick="openDatasheetIndex(); toggleMenu()">
+            <i class="fa-solid fa-book-open"></i> Datasheets
+        </button>
+        <button onclick="switchView('calc'); toggleMenu()">
+            <i class="fa-solid fa-calculator"></i> Unit Calculator
+        </button>
+        <button onclick="switchView('data'); toggleMenu()">
+            <i class="fa-solid fa-cloud-arrow-down"></i> Data &amp; Offline
+        </button>
+        <button onclick="BUG.open(); toggleMenu()">
+            <i class="fa-solid fa-bug"></i> Report a bug / suggest
+        </button>
+        <button onclick="switchView('help'); toggleMenu()">
+            <i class="fa-solid fa-circle-question"></i> How it works
+        </button>
+        <button onclick="switchView('rules'); toggleMenu()">
+            <i class="fa-solid fa-book"></i> Core Rules
+        </button>
+        <button onclick="switchView('primary-missions'); toggleMenu()">
+            <i class="fa-solid fa-flag"></i> Primary Missions
+        </button>
+        <button onclick="switchView('secondary-missions'); toggleMenu()">
+            <i class="fa-solid fa-bullseye"></i> Secondary Missions
+        </button>
+        <button onclick="switchView('patch-notes'); toggleMenu()">
+            <i class="fa-solid fa-clipboard-list"></i> Patch Notes
+        </button>
+        <button onclick="switchView('about'); toggleMenu()">
+            <i class="fa-solid fa-circle-info"></i> About
+        </button>
+    </div>
+
+    <!-- MAIN APP CONTAINER -->
+    <main id="app-container">
+        
+        <!-- PANTALLA 1: HOME (Facciones y Crear Roster) -->
+        <div id="view-home" class="view active">
+            <!-- Header Banner del Home Screen -->
+            <div class="home-header-card" style="background-image: url('assets/banners/0.jpg');">
+                <div class="home-header-overlay" style="justify-content: center; padding-bottom: 30px;">
+                    <button class="add-unit-big-btn" onclick="switchView('new-roster')" style="width: 80%; padding: 15px; background: rgba(var(--accent-rgb,255,122,61),0.2); border: 2px solid var(--accent); color: white; font-weight: 900; border-radius: 8px; cursor: pointer; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 6px rgba(0,0,0,0.8); box-shadow: 0px 4px 10px rgba(0,0,0,0.5);">
+                        <i class="fa-solid fa-plus"></i> CREATE NEW ROSTER
+                    </button>
+                </div>
+            </div>
+            
+            <div class="section-label" style="padding: 0 20px; margin-bottom: 15px; font-size: 0.8rem; color: #6a7a8c; letter-spacing: 2px; font-weight: 800;">
+                FACTION DATASHEETS &middot; 11E
+            </div>
+            
+            <div class="factions-grid" id="factions-list">
+                <!-- Se inyecta por JS -->
+            </div>
+        </div>
+
+        <!-- PANTALLA 1.5: FORMULARIO NEW ROSTER -->
+        <div id="view-new-roster" class="view">
+            <div class="home-header-card" style="background-image: url('assets/banners/0.jpg');">
+                <div class="home-header-overlay">
+                    <div class="action-bar" style="background: transparent; border: none; padding: 0; width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px; display: flex; align-items: center; gap: 15px;">
+                        <button class="back-btn" onclick="switchView('home')">
+                            ‹ Back
+                        </button>
+                        <h1 style="margin: 0; font-size: 1.8rem; font-weight: 900; color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 6px rgba(0,0,0,0.8);">NEW ROSTER</h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="roster-setup-container" style="padding: 0 20px;">
+                <div class="input-group">
+                    <label><span>|</span> ROSTER NAME</label>
+                    <input type="text" id="new-roster-name" placeholder="E.g. Strike Force Alpha">
+                </div>
+
+                <div class="input-group">
+                    <label><span>|</span> POINTS LIMIT</label>
+                    <div class="points-selector">
+                        <button class="pt-btn" onclick="selectPoints(this, 500)">500</button>
+                        <button class="pt-btn" onclick="selectPoints(this, 1000)">1000</button>
+                        <button class="pt-btn" onclick="selectPoints(this, 1500)">1500</button>
+                        <button class="pt-btn active" onclick="selectPoints(this, 2000)">2000</button>
+                        <button class="pt-btn" onclick="selectPoints(this, 3000)">3000</button>
+                    </div>
+                </div>
+
+                <div class="input-group" style="background: transparent; border: none; padding: 0; margin-top: 30px;">
+                    <label style="padding-left: 5px;"><span>|</span> SELECT FACTION</label>
+                    <div id="new-roster-faction-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 30px; max-height: 400px; overflow-y: auto; padding-right: 5px;">
+                        <!-- Factions injected via JS -->
+                    </div>
+                </div>
+
+                <button class="add-unit-big-btn" onclick="submitNewRoster()" id="btn-create-roster" style="width:100%; margin-top:30px; margin-bottom:40px; padding:15px; background:rgba(var(--accent-rgb,255,122,61),0.2); border:1px solid var(--accent); color:var(--accent); font-weight:800; border-radius:8px; cursor:pointer; opacity: 0.5; pointer-events: none;">
+                    CREATE MY ROSTER <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- PANTALLA 2: DATASHEETS (SPLIT SCREEN WARMIND STYLE) -->
+        <div id="view-detachments" class="view">
+            <div class="warmind-layout">
+                <button class="mobile-sidebar-toggle" onclick="toggleDetachmentSidebar()">
+                    <i class="fa-solid fa-list"></i> DETACHMENTS
+                </button>
+                <div class="warmind-sidebar" id="detachment-sidebar">
+                    <div class="sidebar-header">
+                        <h3 style="margin:0; font-size:1.1rem; color:var(--accent);">DETACHMENTS</h3>
+                        <button class="close-sidebar-btn" onclick="toggleDetachmentSidebar()">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="datasheets-list" id="detachments-list-container">
+                        <!-- JS injects detachments -->
+                    </div>
+                </div>
+                <div class="warmind-main" id="detachment-detail-container">
+                    <div class="empty-datasheet-state" style="text-align:center; padding-top:100px; color:#4a5b6c; cursor:pointer;" onclick="if(window.innerWidth <= 768) toggleDetachmentSidebar()">
+                        <i class="fa-solid fa-shield-halved" style="font-size:3rem; margin-bottom:15px; opacity:0.5;"></i>
+                        <h3>SELECT A DETACHMENT</h3>
+                        <p style="font-size:0.9rem;">Pick a detachment to view its rules and enhancements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                        <!-- VIEW: BATTLE TRACKER -->
+        <div id="view-tracker" class="view" style="max-width:800px; margin:0 auto; padding:20px 10px;">
+            <!-- STEP INDICATOR -->
+            <div id="tracker-step-indicator" style="display:flex; justify-content:center; align-items:center; margin-bottom:20px; font-family:monospace; color:#888;">
+                <div class="step-dot active" id="sdot-1" style="background:var(--accent); color:#000; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold;">1</div><div class="step-line" style="height:1px; background:#333; width:15px;"></div>
+                <div class="step-dot" id="sdot-2" style="border:1px solid #333; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;">2</div><div class="step-line" style="height:1px; background:#333; width:15px;"></div>
+                <div class="step-dot" id="sdot-3" style="border:1px solid #333; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;">3</div><div class="step-line" style="height:1px; background:#333; width:15px;"></div>
+                <div class="step-dot" id="sdot-4" style="border:1px solid #333; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;">4</div><div class="step-line" style="height:1px; background:#333; width:15px;"></div>
+                <div class="step-dot" id="sdot-5" style="border:1px solid #333; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;">5</div><div class="step-line" style="height:1px; background:#333; width:15px;"></div>
+                <div class="step-dot" id="sdot-6" style="border:1px solid #333; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;">6</div><div class="step-line" style="height:1px; background:#333; width:15px;"></div>
+                <div class="step-dot" id="sdot-7" style="border:1px solid #333; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;">7</div>
+            </div>
+            
+            <!-- STEP 1: PLAYERS -->
+            <div id="ts-1" class="tracker-step">
+                <h2 style="text-align:center; font-size:2rem; margin:0;">PLAYERS</h2>
+                <div style="text-align:center; color:#888; font-size:0.8rem; letter-spacing:2px; margin-bottom:20px;">STEP 1 OF 7</div>
+                <p style="text-align:center; color:#888; font-size:0.9rem; margin-bottom:30px;">Name the players and pick their faction. These are used throughout the tracker.</p>
+                <div style="margin-bottom:30px;">
+                    <div style="color:#4db8ff; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:5px;">PLAYER 1</div>
+                    <input type="text" id="ts-p1-name" value="PLAYER 1" style="width:100%; padding:15px; background:#1e252f; border:1px solid #4db8ff; border-radius:8px; color:#fff; font-size:1.2rem; font-weight:bold; margin-bottom:10px;">
+                    <button onclick="openFactionModal(1)" id="ts-p1-faction-btn" style="width:100%; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#888; font-size:1rem; text-align:left; margin-bottom:10px; cursor:pointer;">Faction (optional) <i class="fa-solid fa-chevron-down" style="float:right;"></i></button>
+                    <button onclick="togglePaintScore(1)" id="ts-p1-br-btn" style="width:100%; padding:15px; background:#2f6b4f; border:none; border-radius:8px; color:#fff; font-size:1rem; font-weight:bold; cursor:pointer; opacity:0.5;">BATTLE READY +10 VP</button>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <div style="color:#ff4d4d; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:5px;">PLAYER 2</div>
+                    <input type="text" id="ts-p2-name" value="PLAYER 2" style="width:100%; padding:15px; background:#1e252f; border:1px solid #ff4d4d; border-radius:8px; color:#fff; font-size:1.2rem; font-weight:bold; margin-bottom:10px;">
+                    <button onclick="openFactionModal(2)" id="ts-p2-faction-btn" style="width:100%; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#888; font-size:1rem; text-align:left; margin-bottom:10px; cursor:pointer;">Faction (optional) <i class="fa-solid fa-chevron-down" style="float:right;"></i></button>
+                    <button onclick="togglePaintScore(2)" id="ts-p2-br-btn" style="width:100%; padding:15px; background:#2f6b4f; border:none; border-radius:8px; color:#fff; font-size:1rem; font-weight:bold; cursor:pointer; opacity:0.5;">BATTLE READY +10 VP</button>
+                </div>
+            </div>
+
+            <!-- STEP 2: DETACHMENTS -->
+            <div id="ts-2" class="tracker-step" style="display:none;">
+                <h2 style="text-align:center; font-size:2rem; margin:0;">DETACHMENTS</h2>
+                <div style="text-align:center; color:#888; font-size:0.8rem; letter-spacing:2px; margin-bottom:20px;">STEP 2 OF 7</div>
+                <p style="text-align:center; color:#888; font-size:0.9rem; margin-bottom:30px;">Optional. Detachments only unlock which Force Dispositions you can pick. Skip this step and you'll choose your Force Disposition manually on the next screen.</p>
+                <div style="margin-bottom:30px;">
+                    <div style="color:#4db8ff; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; text-transform:uppercase;"><span id="ts-p1-det-name">PLAYER 1</span> &middot; <span id="ts-p1-det-fac">NONE</span></div>
+                    <div id="ts-p1-selected-det" style="display:flex; flex-direction:column; gap:10px; margin-bottom:10px;"></div>
+                    <button onclick="openTrackerDetachmentModal(1)" style="width:100%; padding:15px; background:transparent; border:1px solid #4db8ff; border-radius:8px; color:#fff; font-size:1rem; font-weight:bold; cursor:pointer;">+ EDIT DETACHMENTS &middot; <span id="ts-p1-dp">0</span>/3 DP</button>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <div style="color:#ff4d4d; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; text-transform:uppercase;"><span id="ts-p2-det-name">PLAYER 2</span> &middot; <span id="ts-p2-det-fac">NONE</span></div>
+                    <div id="ts-p2-selected-det" style="display:flex; flex-direction:column; gap:10px; margin-bottom:10px;"></div>
+                    <button onclick="openTrackerDetachmentModal(2)" style="width:100%; padding:15px; background:transparent; border:1px solid #ff4d4d; border-radius:8px; color:#fff; font-size:1rem; font-weight:bold; cursor:pointer;">+ EDIT DETACHMENTS &middot; <span id="ts-p2-dp">0</span>/3 DP</button>
+                </div>
+            </div>
+            
+            <!-- STEP 3: FORCE DISPOSITION -->
+            <div id="ts-3" class="tracker-step" style="display:none;">
+                <h2 style="text-align:center; font-size:2rem; margin:0;">FORCE DISPOSITION</h2>
+                <div style="text-align:center; color:#888; font-size:0.8rem; letter-spacing:2px; margin-bottom:20px;">STEP 3 OF 7</div>
+                <div id="ts-fd-tabs" class="fd-tabs"></div>
+                <div class="fd-cols">
+                    <div class="fd-col" data-p="1">
+                        <div id="ts-p1-fd-name" class="fd-name" style="color:#4db8ff;">PLAYER 1</div>
+                        <div style="display:flex; flex-direction:column; gap:10px;" id="ts-p1-fd"></div>
+                    </div>
+                    <div class="fd-col" data-p="2">
+                        <div id="ts-p2-fd-name" class="fd-name" style="color:#ff4d4d;">PLAYER 2</div>
+                        <div style="display:flex; flex-direction:column; gap:10px;" id="ts-p2-fd"></div>
+                    </div>
+                </div>
+                <div id="ts-primary-result-box" class="fd-prim" style="display:none;">
+                    <div class="fd-pc" style="--pc:#4db8ff;">
+                        <div class="fd-pl"><span id="ts-p1-prim-name">PLAYER 1</span> &middot; <span class="fd-pt">PRIMARY</span></div>
+                        <div id="ts-p1-primary-name" class="fd-pn">SABOTAGE</div>
+                        <button type="button" class="fd-view" onclick="TRK.viewPrimary(1)"><i class="fa-regular fa-eye"></i> <span class="fd-vt">View</span></button>
+                    </div>
+                    <div class="fd-pc" style="--pc:#ff4d4d;">
+                        <div class="fd-pl"><span id="ts-p2-prim-name">PLAYER 2</span> &middot; <span class="fd-pt">PRIMARY</span></div>
+                        <div id="ts-p2-primary-name" class="fd-pn">SABOTAGE</div>
+                        <button type="button" class="fd-view" onclick="TRK.viewPrimary(2)"><i class="fa-regular fa-eye"></i> <span class="fd-vt">View</span></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STEP 4: DEPLOYMENT & LAYOUT -->
+            <div id="ts-4" class="tracker-step" style="display:none;">
+                <h2 style="text-align:center; font-size:2rem; margin:0;">TERRAIN LAYOUT</h2>
+                <div style="text-align:center; color:#888; font-size:0.8rem; letter-spacing:2px; margin-bottom:20px;">STEP 4 OF 7</div>
+                <p style="text-align:center; color:#888; font-size:0.9rem; margin-bottom:20px;">Select the official terrain layout for this matchup.</p>
+                
+                <div id="ts-terrain-options" style="display:flex; flex-direction:column; gap:15px;">
+                    <!-- Cards will be injected here -->
+                </div>
+                <div style="text-align:center; margin-top:20px;">
+                    <button onclick="previewTerrainLayout()" id="btn-preview-terrain" style="padding:12px 24px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; cursor:pointer; display:none;">
+                        <i class="fa-solid fa-expand"></i> View Full Screen Layout
+                    </button>
+                </div>
+            </div>
+            
+            <!-- STEP 5: ATTACKER / DEFENDER -->
+            <div id="ts-5" class="tracker-step" style="display:none;">
+                <h2 style="text-align:center; font-size:2rem; margin:0;">ATTACKER / DEFENDER</h2>
+                <div style="text-align:center; color:#888; font-size:0.8rem; letter-spacing:2px; margin-bottom:20px;">STEP 5 OF 7</div>
+                <p style="text-align:center; color:var(--accent); font-size:0.9rem; font-weight:bold; letter-spacing:1px; margin-bottom:30px; text-transform:uppercase;">Both players roll a D6 &middot; Highest wins &middot; Re-roll ties</p>
+                
+                <div style="margin-bottom:20px;">
+                    <div style="color:#4db8ff; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; text-transform:uppercase;">PLAYER 1</div>
+                    <div style="display:flex; gap:10px;">
+                        <button onclick="setRole(1, 'ATTACKER')" id="btn-p1-attacker" style="flex:1; padding:20px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.2rem; cursor:pointer;">ATTACKER</button>
+                        <button onclick="setRole(1, 'DEFENDER')" id="btn-p1-defender" style="flex:1; padding:20px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.2rem; cursor:pointer;">DEFENDER</button>
+                    </div>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <div style="color:#ff4d4d; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; text-transform:uppercase;">PLAYER 2</div>
+                    <div style="display:flex; gap:10px;">
+                        <button onclick="setRole(2, 'ATTACKER')" id="btn-p2-attacker" style="flex:1; padding:20px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.2rem; cursor:pointer;">ATTACKER</button>
+                        <button onclick="setRole(2, 'DEFENDER')" id="btn-p2-defender" style="flex:1; padding:20px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.2rem; cursor:pointer;">DEFENDER</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 6: SECONDARY MISSION TYPE -->
+            <div id="ts-6" class="tracker-step" style="display:none;">
+                <h2 style="text-align:center; font-size:2rem; margin:0;">SECONDARY MISSION TYPE</h2>
+                <div style="text-align:center; color:#888; font-size:0.8rem; letter-spacing:2px; margin-bottom:20px;">STEP 6 OF 7</div>
+                
+                <div style="margin-bottom:20px;">
+                    <div style="color:#4db8ff; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; text-transform:uppercase;">PLAYER 1</div>
+                    <div style="display:flex; gap:10px;">
+                        <button onclick="setDeck(1, 'TACTICAL')" id="btn-p1-tactical" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.1rem; cursor:pointer; text-align:center;">TACTICAL<br><span style="font-size:0.7rem; font-weight:normal; color:#ddd; letter-spacing:1px; line-height:2;">DRAW RANDOM SECONDARIES</span></button>
+                        <button onclick="setDeck(1, 'FIXED')" id="btn-p1-fixed" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.1rem; cursor:pointer; text-align:center;">FIXED<br><span style="font-size:0.7rem; font-weight:normal; color:#ddd; letter-spacing:1px; line-height:2;">SELECT TWO FIXED SECONDARIES</span></button>
+                        <button onclick="setDeck(1, 'MANUAL')" id="btn-p1-manual" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.1rem; cursor:pointer; text-align:center;">MANUAL<br><span style="font-size:0.7rem; font-weight:normal; color:#ddd; letter-spacing:1px; line-height:2;">YOU SELECT TACTICAL SECONDARIES</span></button>
+                    </div>
+                </div>
+                <div style="margin-bottom:20px;">
+                    <div style="color:#ff4d4d; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:10px; text-transform:uppercase;">PLAYER 2</div>
+                    <div style="display:flex; gap:10px;">
+                        <button onclick="setDeck(2, 'TACTICAL')" id="btn-p2-tactical" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.1rem; cursor:pointer; text-align:center;">TACTICAL<br><span style="font-size:0.7rem; font-weight:normal; color:#ddd; letter-spacing:1px; line-height:2;">DRAW RANDOM SECONDARIES</span></button>
+                        <button onclick="setDeck(2, 'FIXED')" id="btn-p2-fixed" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.1rem; cursor:pointer; text-align:center;">FIXED<br><span style="font-size:0.7rem; font-weight:normal; color:#ddd; letter-spacing:1px; line-height:2;">SELECT TWO FIXED SECONDARIES</span></button>
+                        <button onclick="setDeck(2, 'MANUAL')" id="btn-p2-manual" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.1rem; cursor:pointer; text-align:center;">MANUAL<br><span style="font-size:0.7rem; font-weight:normal; color:#ddd; letter-spacing:1px; line-height:2;">YOU SELECT TACTICAL SECONDARIES</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 7: FIRST TURN -->
+            <div id="ts-7" class="tracker-step" style="display:none;">
+                <h2 style="text-align:center; font-size:2rem; margin:0;">FIRST TURN</h2>
+                <div style="text-align:center; color:#888; font-size:0.8rem; letter-spacing:2px; margin-bottom:20px;">STEP 7 OF 7</div>
+                <p style="text-align:center; color:var(--accent); font-size:0.9rem; font-weight:bold; letter-spacing:1px; margin-bottom:30px; text-transform:uppercase;">Both players roll a D6 &middot; Highest wins &middot; Re-roll ties</p>
+                
+                <div style="text-align:center; color:#888; font-size:0.8rem; letter-spacing:2px; margin-bottom:10px;">WHO WON THE ROLL-OFF?</div>
+                <div style="display:flex; gap:10px;">
+                    <button onclick="setFirstTurn(1)" id="btn-p1-first" style="flex:1; padding:20px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.2rem; cursor:pointer;">PLAYER 1</button>
+                    <button onclick="setFirstTurn(2)" id="btn-p2-first" style="flex:1; padding:20px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; font-size:1.2rem; cursor:pointer;">PLAYER 2</button>
+                </div>
+            </div>
+            <!-- BOTTOM NAV -->
+            <div id="ts-nav" style="display:flex; gap:10px; margin-top:30px; position:sticky; bottom:20px; background:#0b0f19; padding:10px 0; border-top:1px solid #333; z-index:100;">
+                <button id="btn-tracker-back" onclick="navTracker(-1)" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#888; font-weight:bold; cursor:pointer; display:none;"><i class="fa-solid fa-arrow-left"></i> BACK</button>
+                <button id="btn-tracker-next" onclick="navTracker(1)" style="flex:3; padding:15px; background:var(--accent); border:none; border-radius:8px; color:#000; font-weight:bold; cursor:pointer;">NEXT <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            
+            <!-- FACTION MODAL -->
+            <div id="modal-faction" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
+                <div style="background:#161d27; border:1px solid #3a4556; border-radius:12px; width:500px; max-width:90vw; max-height:80vh; display:flex; flex-direction:column;">
+                    <div style="padding:15px; border-bottom:1px solid #333; display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                            <div style="font-size:0.7rem; color:#4db8ff; letter-spacing:2px; font-weight:bold;" id="modal-faction-pname">PLAYER 1</div>
+                            <h3 style="margin:0; color:#fff; font-size:1.2rem;">FACTION</h3>
+                        </div>
+                        <button onclick="document.getElementById('modal-faction').style.display='none'" style="background:transparent; border:none; color:#888; font-size:0.9rem; font-weight:bold; cursor:pointer;"><i class="fa-solid fa-times"></i></button>
+                    </div>
+                    <div style="padding:15px; border-bottom:1px solid #333;">
+                        <input type="text" id="faction-search-input" onkeyup="filterFactions()" placeholder="Search factions..." style="width:100%; padding:10px; background:#0d1117; border:1px solid #3a4556; border-radius:6px; color:#fff; font-size:1rem;">
+                    </div>
+                    <div style="overflow-y:auto; padding:15px;" id="modal-faction-list"></div>
+                </div>
+            </div>
+            
+            <!-- DETACHMENT MODAL -->
+            <div id="modal-detachment" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
+                <div style="background:#161d27; border:1px solid #3a4556; border-radius:12px; width:500px; max-width:90vw; max-height:80vh; display:flex; flex-direction:column;">
+                    <div style="padding:15px; border-bottom:1px solid #333; display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                            <div style="font-size:0.7rem; color:#4db8ff; letter-spacing:2px; font-weight:bold;" id="modal-det-pname">PLAYER 1</div>
+                            <h3 style="margin:0; color:#fff; font-size:1.2rem;">DETACHMENTS</h3>
+                        </div>
+                        <button onclick="document.getElementById('modal-detachment').style.display='none'" style="background:transparent; border:none; color:#888; font-size:0.9rem; font-weight:bold; cursor:pointer;"><i class="fa-solid fa-times"></i></button>
+                    </div>
+                    <div style="padding:15px; border-bottom:1px solid #333; color:#888; font-size:0.9rem; font-weight:bold;">
+                        <span id="modal-det-dp">0</span> / 3 DP SPENT
+                    </div>
+                    <div style="overflow-y:auto; padding:15px; display:flex; flex-direction:column; gap:10px;" id="modal-det-list"></div>
+                    <div style="padding:15px; border-top:1px solid #333;">
+                        <button onclick="document.getElementById('modal-detachment').style.display='none'; renderDetachmentsUI();" style="width:100%; padding:15px; background:var(--accent); border:none; border-radius:8px; color:#000; font-weight:bold; cursor:pointer;">DONE</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRIMARY MISSION MODAL (Image Card) -->
+            <div id="modal-primary-card" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; cursor:pointer;" onclick="this.style.display='none'">
+                <img id="modal-primary-img" src="" style="max-width:95vw; max-height:95vh; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+            </div>
+
+            <!-- CARDS MODAL (Secondaries/Deployment) -->
+            <div id="tracker-modal-cards" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center; padding:20px;">
+                <div style="background:#161d27; border:1px solid var(--accent); border-radius:12px; max-width:90vw; max-height:90vh; width:800px; display:flex; flex-direction:column;">
+                    <div style="padding:15px; border-bottom:1px solid #333; display:flex; justify-content:space-between; align-items:center;">
+                        <h3 style="margin:0; color:#fff; font-size:0.9rem; font-weight:bold;"><i class="fa-solid fa-images"></i> MISSION MAP</h3>
+                        <button onclick="document.getElementById('tracker-modal-cards').style.display='none'" style="background:transparent; border:none; color:#888; font-size:0.9rem; font-weight:bold; cursor:pointer;"><i class="fa-solid fa-times"></i></button>
+                    </div>
+                    <div style="padding:20px; overflow-y:auto; display:flex; flex-direction:column; gap:20px; align-items:center;">
+                        <img id="img-modal-deployment" src="" style="max-width:100%; max-height:400px; border-radius:8px; border:1px solid #333;" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- MATCH HISTORY VIEW -->
+            <div id="ts-history" style="display:none;">
+                <h2 style="text-align:center; font-size:2rem; margin:0; color:var(--accent);"><i class="fa-solid fa-history"></i> GAME HISTORY</h2>
+                <div style="text-align:center; color:#888; font-size:0.9rem; margin-bottom:30px;">Matches saved to local storage</div>
+                <div id="history-list" style="display:flex; flex-direction:column; gap:15px;"></div>
+                <div style="display:flex; gap:10px; margin-top:20px;">
+                    <button onclick="startNewGame()" style="flex:1; padding:15px; background:var(--accent); border:none; border-radius:8px; color:#000; font-weight:bold; cursor:pointer;">NEW GAME</button>
+                    <button onclick="exportHistoryCSV()" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; cursor:pointer;">CSV</button>
+                    <button onclick="exportHistory()" style="flex:1; padding:15px; background:#1e252f; border:1px solid #3a4556; border-radius:8px; color:#fff; font-weight:bold; cursor:pointer;">EXPORT <i class="fa-solid fa-download"></i></button>
+                </div>
+            </div>
+        </div>
+<!-- VIEW: HELP -->
+        <div id="view-help" class="view" style="max-width:640px; margin:0 auto; padding:70px 12px 20px;"><div id="help-root"></div></div>
+<!-- VIEW: DATA & OFFLINE -->
+        <div id="view-data" class="view" style="max-width:560px; margin:0 auto; padding:70px 12px 20px;"><div id="offline-root"></div></div>
+<!-- VIEW: UNIT CALCULATOR -->
+        <div id="view-calc" class="view" style="max-width:640px; margin:0 auto; padding:70px 12px 20px;"><div id="calc-root"></div></div>
+<!-- VIEW: TOURNAMENT -->
+        <div id="view-tournament" class="view" style="max-width:600px; margin:0 auto; padding:70px 12px 30px;"><div id="tournament-root"></div></div>
+<!-- VIEW: LEAGUE -->
+        <div id="view-league" class="view" style="max-width:560px; margin:0 auto; padding:20px 12px;"><div id="league-root"></div></div>
+<!-- VIEW: CORE RULES -->
+        <div id="view-rules" class="view">
+            <div class="home-header-card" style="background-image: url('assets/banners/0.jpg'); height:150px;">
+                <div class="home-header-overlay" style="justify-content: center; align-items:center;">
+                    <h2 style="margin:0; font-size:2.2rem; color:var(--accent); text-transform:uppercase; letter-spacing:2px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 6px rgba(0,0,0,0.8);"><i class="fa-solid fa-book-open"></i> CORE RULES</h2>
+                    <p style="color:#fff; margin:5px 0 0 0; text-shadow: 0px 2px 4px rgba(0,0,0,0.9); font-weight:bold;">Rulebook and Tournament Companion</p>
+                </div>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; padding: 10px 20px;">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" id="rules-search" placeholder="Search rules..." style="width:100%; padding:15px; border-radius:8px; border:1px solid #1a222d; background:#0b0f16; color:#fff; font-size:1rem; outline:none; transition:border-color 0.3s;">
+                </div>
+                <div id="rules-container" style="display:flex; flex-direction:column; gap:15px;">
+                    <div style="text-align:center; color:#888; padding:20px;">Rules will be loaded from GDM Data.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: PRIMARY MISSIONS -->
+        <div id="view-primary-missions" class="view">
+            <div class="home-header-card" style="background-image: url('assets/banners/0.jpg'); height:150px;">
+                <div class="home-header-overlay" style="justify-content: center; align-items:center;">
+                    <h2 style="margin:0; font-size:2.2rem; color:var(--accent); text-transform:uppercase; letter-spacing:2px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 6px rgba(0,0,0,0.8);"><i class="fa-solid fa-flag"></i> PRIMARY MISSIONS</h2>
+                </div>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; padding: 10px 20px;">
+                <div id="primary-missions-container" style="display:flex; flex-direction:column; gap:14px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: SECONDARY MISSIONS -->
+        <div id="view-secondary-missions" class="view">
+            <div class="home-header-card" style="background-image: url('assets/banners/0.jpg'); height:150px;">
+                <div class="home-header-overlay" style="justify-content: center; align-items:center;">
+                    <h2 style="margin:0; font-size:2rem; color:var(--accent); text-transform:uppercase; letter-spacing:2px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 6px rgba(0,0,0,0.8);"><i class="fa-solid fa-bullseye"></i> SECONDARY MISSIONS</h2>
+                </div>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; padding: 10px 20px;">
+                <div id="secondary-missions-container" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:15px;">
+                </div>
+            </div>
+        </div>
+
+        <div id="view-tournament-lists" class="view" style="max-width:960px; margin:0 auto; padding:70px 14px 40px;">
+            <div id="tournament-lists-root"></div>
+        </div>
+
+        <div id="view-datasheet-index" class="view" style="max-width:900px; margin:0 auto; padding:70px 0 20px;">
+            <div style="padding:0 20px 6px;"><h2 style="margin:0 0 4px; font-size:1.7rem;">Datasheets</h2><div id="ds-index-sub" style="color:#8c99b0; font-size:0.9rem;"></div></div>
+            <div style="padding:10px 20px 14px;"><input id="ds-index-search" type="search" placeholder="Search factions…" autocomplete="off" style="width:100%; padding:12px 14px; min-height:46px; background:#0f1626; border:1px solid rgba(255,255,255,.1); border-radius:12px; color:#fff; font-size:1rem;"></div>
+            <div class="factions-grid" id="ds-index-grid"></div>
+        </div>
+
+        <div id="view-datasheets" class="view">
+            <!-- Header de la facción -->
+            <div class="faction-header-banner" id="faction-banner" style="background-image: url('assets/banners/0.jpg');">
+
+                <div class="faction-title-area">
+                    <span id="faction-subtitle">FACTION</span>
+                    <h2 id="faction-title">Faction</h2>
+                </div>
+            </div>
+            
+            <!-- CONTENEDOR UNICO (Sin Split) -->
+            <div class="warmind-layout">
+                <!-- BROWSE BUTTON (Only visible on mobile via CSS) -->
+                <button class="mobile-sidebar-toggle" id="mobile-browse-btn" onclick="toggleUnitSidebar()">
+                    <i class="fa-solid fa-list-ul"></i> BROWSE UNITS
+                </button>
+
+                <div class="warmind-sidebar" id="warmind-sidebar">
+                    <div class="sidebar-header side-head">
+                        <div class="side-row">
+                            <div class="search-wrapper">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="search-input" placeholder="Search name, keyword or ability...">
+                            </div>
+                            <button class="close-sidebar-btn" onclick="toggleUnitSidebar()" aria-label="Close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <button class="side-nav-btn side-roster" id="ds-myroster-btn" onclick="dsOpenMyRoster()" hidden><i class="fa-solid fa-list-check"></i><span>My roster</span></button>
+                        <button class="side-nav-btn side-rules faction-rules-btn" onclick="showFactionOverview()"><i class="fa-solid fa-book-skull"></i><span>Faction rules &amp; detachments</span></button>
+                        <button class="side-nav-btn side-lists faction-tourney-btn" onclick="openTournamentLists(STATE.currentFaction ? STATE.currentFaction.name : '')"><i class="fa-solid fa-trophy"></i><span>Winning lists</span></button>
+                    </div>
+                    <div class="datasheets-list" id="datasheets-container">
+                        <!-- JS injects -->
+                    </div>
+                </div>
+
+                <div class="warmind-main" id="datasheet-detail-container">
+                    <div class="empty-datasheet-state" style="text-align:center; padding-top:100px; color:#4a5b6c; cursor:pointer;" onclick="if(window.innerWidth <= 768) toggleUnitSidebar()">
+                        <i class="fa-solid fa-crosshairs" style="font-size:3rem; margin-bottom:15px; opacity:0.5;"></i>
+                        <h3>SELECT A UNIT</h3>
+                        <p style="font-size:0.9rem;">Pick a unit from the list to view its complete datasheet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANTALLA 3: ROSTER BUILDER (Detalles del Roster) -->
+        <div id="view-collection" class="view" style="max-width:800px; margin:0 auto; padding:70px 10px 20px;">
+            <div id="collection-root"></div>
+        </div>
+        
+        <div id="view-rosters" class="view">
+            <div class="warmind-layout">
+                
+                <!-- MOBILE BROWSE BUTTON -->
+                <button class="mobile-sidebar-toggle" onclick="window.openRosterSidebar()" style="margin-bottom: 10px;">
+                    <i class="fa-solid fa-list-ul"></i> Add units
+                </button>
+
+                <!-- LEFT SIDEBAR: UNIT POOL -->
+                <div class="warmind-sidebar desktop-sidebar" id="roster-pool-sidebar">
+                    <div class="sidebar-header side-head">
+                        <div class="side-row">
+                            <div class="search-wrapper">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="roster-search-input" placeholder="Search units to add..." oninput="window.handleRosterSearch(this.value)">
+                            </div>
+                            <button class="close-sidebar-btn" onclick="document.getElementById('roster-pool-sidebar').classList.remove('open')" aria-label="Close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <button class="side-nav-btn side-roster on" id="pool-done-top" onclick="rosterShowPane('roster', true)"><i class="fa-solid fa-list-check"></i><span>My roster</span><b class="side-pts"></b></button>
+                        <button class="side-nav-btn side-rules" id="rp-rules-btn" onclick="rosterShowPane('rules')"><i class="fa-solid fa-book-skull"></i><span>Faction rules &amp; detachments</span></button>
+                        <button class="side-nav-btn side-lists" onclick="openTournamentLists(currentActiveRoster && currentActiveRoster.faction ? currentActiveRoster.faction.name : '')"><i class="fa-solid fa-trophy"></i><span>Winning lists</span></button>
+                    </div>
+                    <div class="datasheets-list" id="roster-pool-container" style="flex:1; overflow-y:auto; padding:15px;">
+                        <!-- JS injects unit list here -->
+                    </div>
+                </div>
+
+                <!-- RIGHT MAIN: ROSTER DASHBOARD -->
+                <div class="warmind-main" style="flex:1; overflow-y:auto; background:#0b0f16;">
+                    <!-- Header Banner del Roster -->
+                    <div class="roster-header-card" id="roster-builder-banner">
+                        <div class="roster-header-overlay">
+                            <button class="back-btn" onclick="switchView('home')">
+                                ‹ Back
+                            </button>
+                            <div class="roster-title-block">
+                                <span id="rb-faction-name">ADEPTA SORORITAS</span>
+                                <h2 id="rb-roster-name">Adepta Sororitas 2000</h2>
+                            </div>
+                            <button class="edit-btn" onclick="editRoster()" aria-label="Edit roster name and points">
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="roster-faction-pane" hidden style="max-width:800px; margin:0 auto; padding:20px;"></div>
+                    <div id="roster-main-pane" style="max-width:800px; margin:0 auto; padding:20px;">
+                        <!-- Panel de puntos y destacamentos -->
+                        <div class="roster-dashboard">
+                            <div class="dashboard-actions" style="display:flex; justify-content:flex-end; gap:8px;">
+                                <button onclick="openTournamentLists(currentActiveRoster && currentActiveRoster.faction ? currentActiveRoster.faction.name : '')" style="background:#2a3546; color:#e5c15a; border:1px solid rgba(229,193,90,0.3); padding:5px 12px; border-radius:4px; font-weight:bold; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-trophy"></i> <span class="lbl-l">WINNING LISTS</span><span class="lbl-s">Lists</span></button>
+                                <button onclick="LEAGUE.saveCurrentRoster()" style="background:#2a3546; color:#fff; border:none; padding:5px 12px; border-radius:4px; font-weight:bold; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-cloud-arrow-up"></i> <span class="lbl-l">SAVE TO CLOUD</span><span class="lbl-s">Cloud</span></button>
+                                <button onclick="window.exportToPDF()" style="background:var(--accent); color:#fff; border:none; padding:5px 12px; border-radius:4px; font-weight:bold; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:5px;">
+                                    <i class="fa-solid fa-file-pdf"></i> <span class="lbl-l">CREATE PDF</span><span class="lbl-s">PDF</span>
+                                </button>
+                            </div>
+                            
+                            <div class="points-tracker">
+                                <span class="pts-current" id="rb-current-pts">0</span>
+                                <span class="pts-limit" id="rb-limit-pts" onclick="editRoster()" style="cursor:pointer;">/ 2000 pts <i class="fa-solid fa-pencil" style="font-size:0.7rem; color:#6a7a8c;"></i></span>
+                            </div>
+
+                            <div id="detachment-alert" style="display:none;"></div>
+                        </div>
+
+                        <!-- Panel de Destacamentos -->
+                        <div class="roster-dashboard" style="margin-top: 15px; border-color: #2a3546; padding: 15px;">
+                            <div class="section-header-row" style="border-bottom: 1px solid #2a3546; padding-bottom: 10px; margin-bottom: 15px;">
+                                <span style="font-weight: 800; letter-spacing: 1px; color: var(--accent);">| DETACHMENT RULES</span>
+                                <span id="roster-detachment-pts" class="dp-count" style="color: #6a7a8c;">0 / 0 DP</span>
+                            </div>
+
+                            <div class="detachment-list" id="roster-detachment-container">
+                                <!-- Detachments injected via JS -->
+                            </div>
+                        </div>
+
+                        <!-- UNIT LIST -->
+                        <div class="roster-dashboard" style="margin-top: 15px; border-color: #2a3546; padding: 15px;">
+                            <div class="section-header-row" style="margin-bottom: 15px; padding: 0 10px;">
+                                <span style="font-weight: 800; letter-spacing: 1px; color: #fff;">| ARMY ROSTER</span>
+                            </div>
+                            <div id="roster-list-container">
+                                <!-- JS injects roster units -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FLOATING ACTION BUTTON (FAB) TO ADD UNITS -->
+            <button id="roster-fab-add" class="roster-fab-btn" onclick="window.openRosterSidebar()" aria-label="Add unit to roster" title="Add unit to roster">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        
+        <!-- SCORING MODAL -->
+    <div id="scoring-modal-overlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center; padding:20px;">
+        <div id="scoring-modal" style="background:#f4ebd9; width:100%; max-width:400px; border-radius:12px; overflow:hidden; display:flex; flex-direction:column; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <!-- Modal Header -->
+            <div style="background:#8c2c2c; padding:20px; position:relative;">
+                <div style="font-size:0.7rem; color:rgba(255,255,255,0.7); letter-spacing:2px; font-weight:bold;">PRIMARY MISSION</div>
+                <h2 id="scoring-modal-title" style="margin:0; color:#fff; font-size:0.9rem; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">CONSECRATE</h2>
+                <button onclick="document.getElementById('scoring-modal-overlay').style.display='none'" style="position:absolute; top:15px; right:15px; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.4); color:#fff; width:36px; height:36px; border-radius:8px; cursor:pointer; display:flex; justify-content:center; align-items:center;">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body -->
+            <div style="padding:20px; color:#222; max-height: 60vh; overflow-y: auto;" id="scoring-modal-body">
+                <div style="font-size:0.7rem; color:#888; letter-spacing:2px; font-weight:bold; margin-bottom:15px;">TALLY WHAT YOU SCORED</div>
+                
+                <!-- This will be injected by JS based on mission -->
+            </div>
+            
+            <!-- Modal Footer -->
+            <div style="padding:20px; background:#e8dfcb; border-top:1px solid #d4cbb8; display:flex; gap:10px;">
+                <button id="scoring-modal-score-btn" style="flex:1; background:#2c3545; color:#fff; border:none; padding:15px; border-radius:8px; font-weight:bold; font-size:1rem; cursor:pointer; letter-spacing:1px; transition: background 0.3s;">SCORE 0 VP</button>
+                <button onclick="document.getElementById('scoring-modal-overlay').style.display='none'" style="background:transparent; border:1px solid #c4bbab; color:#555; padding:0 20px; border-radius:8px; font-weight:bold; cursor:pointer;">
+                    <i class="fa-solid fa-arrow-left"></i> BACK
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- DETACHMENT MODAL -->
+    <div id="detachment-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; justify-content:center; align-items:center; backdrop-filter: blur(4px);">
+        <div style="background:#0d1117; width:90%; max-width:500px; border-radius:12px; border:1px solid var(--accent); display:flex; flex-direction:column; max-height:80vh;">
+            <div style="padding:15px; border-bottom:1px solid #1a222d; display:flex; justify-content:space-between; align-items:center;">
+                <h3 style="margin:0; color:#fff;">SELECT DETACHMENT</h3>
+                <button onclick="document.getElementById('detachment-modal').style.display='none'" style="background:transparent; border:none; color:#888; font-size:1.2rem; cursor:pointer;"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div id="detachment-modal-list" style="padding:15px; overflow-y:auto; flex:1;">
+                <!-- Detachments injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERLAY PARA EL MENÚ -->
+    
+        <!-- PATCH NOTES VIEW -->
+        <div id="view-about" class="view"><div id="about-root"></div></div>
+
+        <div id="view-patch-notes" class="view">
+            <div class="home-header-card" style="background-color:#161d27; border-bottom:1px solid #3a4556; height:120px;">
+                <div class="home-header-overlay" style="justify-content: center; align-items:center;">
+                    <h2 style="margin:0; font-size:2rem; color:var(--accent); text-transform:uppercase; letter-spacing:2px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 6px rgba(0,0,0,0.8);"><i class="fa-solid fa-clipboard-list"></i> PATCH NOTES</h2>
+                </div>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+                <div style="background:#1e252f; border:1px solid var(--accent); border-radius:8px; padding:20px; margin-bottom:20px;">
+                    <h3 style="color:#fff; margin-top:0; border-bottom:1px solid #333; padding-bottom:10px;">v0.1 - First version</h3>
+                    <ul style="color:#cfd8e3; line-height:1.6; padding-left:20px;">
+                        <li>Army builder, game tracker, rules and missions pages ready for Iron &amp; Wrath data.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: ACTIVE GAME -->
+        <div id="view-active-game" class="view" style="max-width:800px; margin:0 auto; padding:10px; display:none;">
+            <!-- Top Compact Scoreboard (on phones the PRI/SEC bars go under the score, so names, 99 points and CP always fit) -->
+            <div class="ag-sb" style="display:flex; background:#161d27; border-radius:12px; border:1px solid #2a3546; margin-bottom:15px; overflow:hidden;">
+                <!-- P1 -->
+                <div class="ag-sb-side" style="flex:1; display:flex; align-items:center; padding:10px 12px; border-right:1px solid #2a3546; min-width:0;">
+                    <div class="ag-sb-head" style="margin-right:10px; flex-shrink:0;">
+                        <div id="ag-p1-name" onclick="editPlayer(1)" style="color:#4db8ff; font-weight:bold; font-size:0.75rem; letter-spacing:1px; margin-bottom:2px; cursor:pointer; display:flex; align-items:center; gap:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">PLAYER 1 <i class="fa-solid fa-pen" style="font-size:0.65rem;"></i></div>
+                        <div style="display:flex; align-items:baseline; gap:6px;">
+                            <div style="font-size:2rem; font-weight:bold; color:#fff; line-height:1;" id="ag-p1-total">10</div>
+                            <div class="ag-top-cp" id="ag-p1-top-cp" title="Command Points (+1)" onclick="event.stopPropagation(); changeCp(1, 1)" style="color:#f59e0b; font-size:0.75rem; font-weight:800; cursor:pointer; background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.3); padding:2px 6px; border-radius:6px; display:inline-flex; align-items:center;"><span id="ag-p1-top-cp-val">1</span> CP</div>
+                        </div>
+                    </div>
+                    <div class="ag-sb-bars" style="flex:1; min-width:0; display:flex; flex-direction:column; gap:4px;">
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <span style="color:#888; font-size:0.65rem; font-weight:bold; width:18px;">PRI</span>
+                            <div style="flex:1; height:4px; background:#2a3546; border-radius:2px; position:relative; min-width:15px;">
+                                <div id="ag-p1-pri-bar" style="position:absolute; left:0; top:0; height:100%; width:0%; background:#4db8ff; border-radius:2px;"></div>
+                            </div>
+                            <span style="color:#888; font-size:0.65rem; font-weight:bold; min-width:26px; text-align:right;" id="ag-p1-pri-txt">0/45</span>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <span style="color:#888; font-size:0.65rem; font-weight:bold; width:18px;">SEC</span>
+                            <div style="flex:1; height:4px; background:#2a3546; border-radius:2px; position:relative; min-width:15px;">
+                                <div id="ag-p1-sec-bar" style="position:absolute; left:0; top:0; height:100%; width:0%; background:#4db8ff; border-radius:2px;"></div>
+                            </div>
+                            <span style="color:#888; font-size:0.65rem; font-weight:bold; min-width:26px; text-align:right;" id="ag-p1-sec-txt">0/45</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- P2 -->
+                <div class="ag-sb-side" style="flex:1; display:flex; align-items:center; padding:10px 12px; min-width:0;">
+                    <div class="ag-sb-bars" style="flex:1; min-width:0; display:flex; flex-direction:column; gap:4px; margin-right:10px;">
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <span style="color:#888; font-size:0.65rem; font-weight:bold; min-width:26px;" id="ag-p2-pri-txt">0/45</span>
+                            <div style="flex:1; height:4px; background:#2a3546; border-radius:2px; position:relative; min-width:15px;">
+                                <div id="ag-p2-pri-bar" style="position:absolute; right:0; top:0; height:100%; width:0%; background:#ff4d4d; border-radius:2px;"></div>
+                            </div>
+                            <span style="color:#888; font-size:0.65rem; font-weight:bold; width:18px; text-align:right;">PRI</span>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <span style="color:#888; font-size:0.65rem; font-weight:bold; min-width:26px;" id="ag-p2-sec-txt">0/45</span>
+                            <div style="flex:1; height:4px; background:#2a3546; border-radius:2px; position:relative; min-width:15px;">
+                                <div id="ag-p2-sec-bar" style="position:absolute; right:0; top:0; height:100%; width:0%; background:#ff4d4d; border-radius:2px;"></div>
+                            </div>
+                            <span style="color:#888; font-size:0.65rem; font-weight:bold; width:18px; text-align:right;">SEC</span>
+                        </div>
+                    </div>
+                    <div class="ag-sb-head" style="text-align:right; flex-shrink:0;">
+                        <div id="ag-p2-name" onclick="editPlayer(2)" style="color:#ff4d4d; font-weight:bold; font-size:0.75rem; letter-spacing:1px; margin-bottom:2px; cursor:pointer; display:flex; align-items:center; gap:4px; justify-content:flex-end; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">PLAYER 2 <i class="fa-solid fa-pen" style="font-size:0.65rem;"></i></div>
+                        <div style="display:flex; align-items:baseline; gap:6px; justify-content:flex-end;">
+                            <div class="ag-top-cp" id="ag-p2-top-cp" title="Command Points (+1)" onclick="event.stopPropagation(); changeCp(2, 1)" style="color:#f59e0b; font-size:0.75rem; font-weight:800; cursor:pointer; background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.3); padding:2px 6px; border-radius:6px; display:inline-flex; align-items:center;"><span id="ag-p2-top-cp-val">1</span> CP</div>
+                            <div style="font-size:2rem; font-weight:bold; color:#fff; line-height:1;" id="ag-p2-total">10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Battle Round Header -->
+            <div style="display:flex; gap:10px; margin-bottom:15px; align-items:stretch;">
+                <div style="flex:1; background:#1e252f; border:1px solid #3a4556; border-radius:12px; display:flex; justify-content:space-between; align-items:center; padding:10px;">
+                    <button onclick="changeGameRound(-1)" style="background:transparent; border:none; color:#888; font-size:1.2rem; cursor:pointer; padding:10px;"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div style="text-align:center;">
+                        <div style="color:#888; font-size:0.7rem; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">BATTLE ROUND</div>
+                        <div style="color:#fff; font-size:2rem; font-weight:bold;"><span id="ag-round-display">1</span><span style="font-size:1.1rem; color:#888; font-weight:normal;">/5</span></div>
+                    </div>
+                    <button onclick="changeGameRound(1)" style="background:transparent; border:none; color:#fff; font-size:1.2rem; cursor:pointer; padding:10px;"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div style="display:flex; gap:6px; flex-shrink:0;">
+                    <div style="display:flex; flex-direction:column; gap:6px; width:88px;">
+                        <button onclick="openShare()" id="btn-lsync" data-keepcaps title="Share game" style="flex:1; background:#1e252f; border:1px solid #3a4556; border-radius:10px; color:#cfd8e3; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:7px; padding:6px; min-height:44px; font-weight:bold;"><i class="fa-solid fa-share-nodes" style="font-size:1.1rem;"></i><span id="lsync-btn-text" data-keepcaps style="font-size:0.72rem; letter-spacing:.03em;">Share</span></button>
+                        <button onclick="openSettings()" title="Settings" style="flex:1; background:#1e252f; border:1px solid #3a4556; border-radius:10px; color:#cfd8e3; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:7px; padding:6px; min-height:44px; font-weight:bold;"><i class="fa-solid fa-gear" style="font-size:1.1rem;"></i><span id="set-btn-text" style="font-size:0.72rem; letter-spacing:.03em;">Settings</span></button>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:6px; width:58px;">
+                    <button onclick="openLayoutMap()" id="btn-layout-map" title="Terrain map" style="flex:1; background:#1e252f; border:1px solid rgba(34,197,94,0.55); border-radius:10px; color:#4ade80; cursor:pointer; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:4px; min-height:44px; font-weight:bold;"><i class="fa-solid fa-map" style="font-size:1.05rem;"></i><span id="btn-layout-map-txt" style="font-size:0.62rem; color:#fff; text-transform:uppercase; letter-spacing:0.04em;">Map</span></button>
+                    <button onclick="window.BROADCAST && BROADCAST.openStudioModal()" id="btn-broadcast" title="Streamer Studio" style="flex:1; background:#1e252f; border:1px solid rgba(239,68,68,0.55); border-radius:10px; color:#ef4444; cursor:pointer; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:4px; min-height:44px; font-weight:bold;"><i class="fa-solid fa-tower-broadcast" style="font-size:1.05rem;"></i><span style="font-size:0.62rem; color:#fff; text-transform:uppercase; letter-spacing:0.04em;">Cast</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile player tabs -->
+            <div id="ag-tabs" style="gap:10px; margin-bottom:15px;">
+                <button id="ag-tab-1" onclick="showTab(1)" style="flex:1; min-height:48px; border:1px solid #3a4556; border-radius:12px; font-weight:bold; letter-spacing:1px; cursor:pointer; background:#4384ff; color:#fff;">PLAYER 1</button>
+                <button id="ag-tab-2" onclick="showTab(2)" style="flex:1; min-height:48px; border:1px solid #3a4556; border-radius:12px; font-weight:bold; letter-spacing:1px; cursor:pointer; background:transparent; color:#9aa7b8;">PLAYER 2</button>
+            </div>
+
+            <!-- Player Cards -->
+            <div style="display:flex; gap:15px; flex-wrap:wrap;">
+                
+                <!-- Player 1 Active Card -->
+                <div id="ag-card-1" class="ag-card" style="flex:1; min-width:300px; background:#1e252f; border:1px solid #3a4556; border-radius:12px; overflow:hidden;">
+                    <!-- Header -->
+                    <div style="padding:15px; border-bottom:1px solid #3a4556; display:flex; justify-content:space-between; align-items:center; gap:10px;">
+                        <div>
+                            <div id="ag-p1-card-name" style="color:#4db8ff; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:5px;">PLAYER 1</div>
+                            <div style="background:#a6843c; color:#fff; font-size:0.7rem; font-weight:bold; padding:3px 8px; border-radius:4px; display:inline-block;" id="ag-p1-badge">PRIORITY ASSETS</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <div class="ag-cp-control" title="Command Points">
+                                <button type="button" class="ag-cp-btn" onclick="event.stopPropagation(); changeCp(1, -1)" aria-label="Subtract CP">−</button>
+                                <div class="ag-cp-display">
+                                    <span id="ag-p1-card-cp" class="ag-cp-val">1</span>
+                                    <span class="ag-cp-lbl">CP</span>
+                                </div>
+                                <button type="button" class="ag-cp-btn" onclick="event.stopPropagation(); changeCp(1, 1)" aria-label="Add CP">+</button>
+                            </div>
+                            <div style="text-align:right; min-width:54px;">
+                                <div style="font-size:2rem; font-weight:bold; color:#fff; line-height:1;" id="ag-p1-card-total">10</div>
+                                <div style="color:#888; font-size:0.7rem; letter-spacing:1px; font-weight:bold;">TOTAL VP</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Primary -->
+                    <div style="padding:15px; border-bottom:1px solid #3a4556;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                            <div style="color:#888; font-size:0.7rem; font-weight:bold; letter-spacing:1px;">PRIMARY</div>
+                            <div style="color:#888; font-size:0.8rem; font-weight:bold;" id="ag-p1-pri-score">0/15</div>
+                        </div>
+                        <div id="ag-p1-pri-box" style="background:#161d27; border:1px solid #a6843c; border-radius:8px; padding:15px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div style="color:#fff; font-weight:bold; font-size:1.1rem; text-transform:uppercase;" id="ag-p1-pri-name">SABOTAGE</div>
+                            <button style="background:#a6843c; color:#fff; border:none; padding:5px 10px; border-radius:4px; font-weight:bold; font-size:0.8rem; cursor:pointer;" id="ag-p1-pri-btn">SCORE R1</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Secondaries -->
+                    <div style="padding:15px;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                            <div style="color:#888; font-size:0.7rem; font-weight:bold; letter-spacing:1px;">SECONDARIES &middot; <span id="ag-p1-deck-type">TACTICAL</span></div>
+                            <div style="color:#888; font-size:0.8rem; font-weight:bold;" id="ag-p1-sec-score">0/15</div>
+                        </div>
+                        
+                        <div id="ag-p1-secondaries-list" style="display:flex; flex-direction:column; gap:10px; margin-bottom:15px;">
+                            <div style="color:#888; font-size:0.9rem; text-align:center; padding:10px 0;">No active secondaries</div>
+                        </div>
+                        
+                        <button onclick="drawSecondary(1)" style="width:100%; padding:15px; background:#4384ff; border:none; border-radius:8px; color:#fff; font-weight:bold; font-size:1rem; cursor:pointer;">+ DRAW SECONDARY (<span id="ag-p1-deck-count">18</span>)</button>
+                    </div>
+                </div>
+                
+                <!-- Player 2 Active Card -->
+                <div id="ag-card-2" class="ag-card" style="flex:1; min-width:300px; background:#1e252f; border:1px solid #3a4556; border-radius:12px; overflow:hidden;">
+                    <!-- Header -->
+                    <div style="padding:15px; border-bottom:1px solid #3a4556; display:flex; justify-content:space-between; align-items:center; gap:10px;">
+                        <div>
+                            <div id="ag-p2-card-name" style="color:#ff4d4d; font-weight:bold; font-size:0.8rem; letter-spacing:1px; margin-bottom:5px;">PLAYER 2</div>
+                            <div style="background:#a6843c; color:#fff; font-size:0.7rem; font-weight:bold; padding:3px 8px; border-radius:4px; display:inline-block;" id="ag-p2-badge">PRIORITY ASSETS</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <div class="ag-cp-control" title="Command Points">
+                                <button type="button" class="ag-cp-btn" onclick="event.stopPropagation(); changeCp(2, -1)" aria-label="Subtract CP">−</button>
+                                <div class="ag-cp-display">
+                                    <span id="ag-p2-card-cp" class="ag-cp-val">1</span>
+                                    <span class="ag-cp-lbl">CP</span>
+                                </div>
+                                <button type="button" class="ag-cp-btn" onclick="event.stopPropagation(); changeCp(2, 1)" aria-label="Add CP">+</button>
+                            </div>
+                            <div style="text-align:right; min-width:54px;">
+                                <div style="font-size:2rem; font-weight:bold; color:#fff; line-height:1;" id="ag-p2-card-total">10</div>
+                                <div style="color:#888; font-size:0.7rem; letter-spacing:1px; font-weight:bold;">TOTAL VP</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Primary -->
+                    <div style="padding:15px; border-bottom:1px solid #3a4556;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                            <div style="color:#888; font-size:0.7rem; font-weight:bold; letter-spacing:1px;">PRIMARY</div>
+                            <div style="color:#888; font-size:0.8rem; font-weight:bold;" id="ag-p2-pri-score">0/15</div>
+                        </div>
+                        <div id="ag-p2-pri-box" style="background:#161d27; border:1px solid #a6843c; border-radius:8px; padding:15px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <div style="color:#fff; font-weight:bold; font-size:1.1rem; text-transform:uppercase;" id="ag-p2-pri-name">SABOTAGE</div>
+                            <button style="background:#a6843c; color:#fff; border:none; padding:5px 10px; border-radius:4px; font-weight:bold; font-size:0.8rem; cursor:pointer;" id="ag-p2-pri-btn">SCORE R1</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Secondaries -->
+                    <div style="padding:15px;">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                            <div style="color:#888; font-size:0.7rem; font-weight:bold; letter-spacing:1px;">SECONDARIES &middot; <span id="ag-p2-deck-type">TACTICAL</span></div>
+                            <div style="color:#888; font-size:0.8rem; font-weight:bold;" id="ag-p2-sec-score">0/15</div>
+                        </div>
+                        
+                        <div id="ag-p2-secondaries-list" style="display:flex; flex-direction:column; gap:10px; margin-bottom:15px;">
+                            <div style="color:#888; font-size:0.9rem; text-align:center; padding:10px 0;">No active secondaries</div>
+                        </div>
+                        
+                        <button onclick="drawSecondary(2)" style="width:100%; padding:15px; background:#f44336; border:none; border-radius:8px; color:#fff; font-weight:bold; font-size:1rem; cursor:pointer;">+ DRAW SECONDARY (<span id="ag-p2-deck-count">18</span>)</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+
+        <!-- MODAL: SCORING TALLY -->
+        <div id="modal-tally" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
+            <div style="background:#f4ebd8; border:1px solid #8c2a2a; border-radius:8px; width:450px; max-width:90vw; max-height:90vh; display:flex; flex-direction:column; overflow:hidden;" id="modal-tally-container">
+                
+                <!-- Tally Header -->
+                <div style="background:#8c2a2a; padding:15px 20px; display:flex; justify-content:space-between; align-items:flex-start;">
+                    <div>
+                        <div style="font-size:0.7rem; color:#fff; letter-spacing:2px; font-weight:bold; text-transform:uppercase;" id="modal-tally-type">SECONDARY MISSION</div>
+                        <h3 style="margin:0; color:#fff; font-size:2rem; text-transform:uppercase;" id="modal-tally-title">BEACON</h3>
+                    </div>
+                    <button onclick="document.getElementById('modal-tally').style.display='none'" style="background:transparent; border:1px solid rgba(255,255,255,0.3); color:#fff; width:35px; height:35px; border-radius:6px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i class="fa-solid fa-times"></i></button>
+                </div>
+                
+                <!-- Tally Body -->
+                <div id="modal-tally-body-content" style="padding:20px; overflow-y:auto; color:#1a232f;">
+                    <div style="font-size:0.8rem; font-weight:bold; letter-spacing:2px; margin-bottom:15px; color:#888;">TALLY WHAT YOU SCORED</div>
+                    
+                    <div style="background:#fff; border:1px solid #ccc; border-radius:8px; overflow:hidden; margin-bottom:20px;">
+                        <div style="background:#1a232f; color:#fff; padding:5px 15px; font-weight:bold; display:flex; justify-content:space-between; font-size:0.8rem;">
+                            <span>ANY BATTLE ROUND</span>
+                            <span style="background:#fff; color:#1a232f; padding:0 5px; border-radius:2px;">END OPP TURN &middot; R5</span>
+                        </div>
+                        
+                        <div style="padding:15px; border-bottom:1px solid #eee; display:flex; align-items:center; gap:15px; cursor:pointer;" onclick="toggleTallyCheck(1)">
+                            <div style="background:#8c2a2a; color:#fff; font-weight:bold; font-size:0.9rem; font-weight:bold; padding:10px; border-radius:8px; display:flex; align-items:baseline; justify-content:center; min-width:60px;">
+                                3<span style="font-size:0.8rem; margin-left:2px;">VP</span>
+                            </div>
+                            <div style="flex:1; font-size:0.9rem;" id="modal-tally-text-1">
+                                Your <b>beacon</b> unit is on the battlefield and not within your deployment zone.
+                            </div>
+                            <div style="width:30px; height:30px; border:2px solid #ccc; border-radius:50%; display:flex; align-items:center; justify-content:center;" id="modal-tally-check-1"></div>
+                        </div>
+                        
+                        <div style="text-align:center; position:relative; height:1px; background:#ddd; margin:15px 0;">
+                            <span style="position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:#fff; padding:0 10px; color:#aaa; font-size:0.8rem; font-weight:bold;">OR</span>
+                        </div>
+                        
+                        <div style="padding:15px; display:flex; align-items:center; gap:15px; cursor:pointer;" onclick="toggleTallyCheck(2)">
+                            <div style="background:#8c2a2a; color:#fff; font-weight:bold; font-size:0.9rem; font-weight:bold; padding:10px; border-radius:8px; display:flex; align-items:baseline; justify-content:center; min-width:60px;">
+                                5<span style="font-size:0.8rem; margin-left:2px;">VP</span>
+                            </div>
+                            <div style="flex:1; font-size:0.9rem;" id="modal-tally-text-2">
+                                Your <b>beacon</b> unit is on the battlefield and not within your territory.
+                            </div>
+                            <div style="width:30px; height:30px; border:2px solid #ccc; border-radius:50%; display:flex; align-items:center; justify-content:center;" id="modal-tally-check-2"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tally Footer -->
+                <div style="background:#e4dcc7; padding:20px; border-top:1px dashed #ccc;">
+                    <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:15px;">
+                        <button id="btn-tally-undo" onclick="undoTallyScore()" style="display:none; background:#8c2a2a; color:#fff; border:none; padding:8px 15px; border-radius:6px; font-weight:bold; font-size:0.9rem; cursor:pointer;"></button>
+                        <button id="btn-tally-deck" onclick="discardMission('deck')" style="background:#2a3546; color:#fff; border:none; padding:8px 15px; border-radius:6px; font-weight:bold; font-size:0.9rem; cursor:pointer;"><i class="fa-solid fa-undo"></i> TO DECK</button>
+                        <button id="btn-tally-full" onclick="toggleFullCard()" style="background:#2a3546; color:#fff; border:none; padding:8px 15px; border-radius:6px; font-weight:bold; font-size:0.9rem; cursor:pointer;"><i class="fa-solid fa-eye"></i> FULL CARD</button>
+                    </div>
+                    <div style="display:flex; gap:10px;">
+                        <button onclick="submitTallyScore()" id="btn-tally-score" style="flex:1; background:#2a3546; color:#fff; border:none; padding:15px; border-radius:8px; font-weight:bold; font-size:1.2rem; cursor:pointer;">SCORE 0 VP</button>
+                        <button id="btn-tally-trash" onclick="discardMission('trash')" style="width:55px; background:#e53935; color:#fff; border:none; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+    </main>
+
+    <div id="menu-overlay" onclick="toggleMenu()"></div>
+
+    <div id="sidebar-overlay" onclick="closeAllSidebars()" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:900;"></div>
+
+
+    <script src="missions.js?v=42"></script>
+    <script src="mfm_overrides.js?v=65"></script>
+    <script src="gdm_data.js?v=44"></script>
+    <script src="mfm_detachments.js?v=64"></script>
+    <script src="detachment_rules.js?v=2"></script>
+    <script src="detachment_manual.js?v=1"></script>
+    <script src="lang_loader.js?v=1"></script>
+    <script src="build_info.js"></script>
+    <script src="data_version.js"></script>
+    <script src="det_info.js?v=15"></script>
+    <script src="tracker_3d_viewer.js?v=14"></script>
+    <script src="app.js?v=15"></script>
+    <script src="mission_text.js?v=2"></script>
+    <script src="game_tracker.js?v=1791700001"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="league_config.js?v=2"></script>
+    <script src="league.js?v=17"></script>
+    <script src="calc.js?v=ms7"></script>
+    <script src="tournament.js?v=4"></script>
+    <script src="pdf_export.js?v=21"></script>
+    <script src="collection.js?v=3"></script>
+    <script src="offline.js?v=18"></script>
+    <script src="rules_engine.js?v=3"></script>
+    <script src="about_ui.js?v=2"></script>
+    <script src="army_check.js?v=99"></script>
+    <script src="bug_report.js?v=2"></script>
+    <script src="roster_share.js?v=8"></script>
+    <script src="i18n.js?v=7"></script>
+    <script src="help.js?v=8"></script>
+    <script src="datasheets_ui.js?v=5"></script>
+    <script src="home_ui.js?v=1791500000"></script>
+    <script src="tournament_lists_ui.js?v=2"></script>
+    <script src="ui_polish.js?v=17"></script>
+    <script src="ui_roster.js?v=9"></script>
+    <script src="missions_ui.js?v=8"></script>
+    <script src="data_manage.js?v=2"></script>
+    <script src="admin.js?v=1791500582"></script>
+    <script src="live.js?v=2"></script>
+    <script src="rules_ui.js?v=5"></script>
+    <script src="tracker_ui.js?v=1"></script>
+    <script src="tracker_rules.js?v=5"></script>
+    <script src="share_menu.js?v=9"></script>
+    <script src="tracker_army.js?v=2"></script>
+    <script src="live_sync.js?v=1791800002"></script>
+    <script src="broadcast_studio.js?v=6"></script>
+
+
+</body>
+</html>

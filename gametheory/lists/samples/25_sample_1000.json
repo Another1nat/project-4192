@@ -1,0 +1,51 @@
+{
+ "name": "The Eclipse Shadow-Fiends — verifier sample",
+ "detachment": "Midnight Procession",
+ "units": [
+  {
+   "unit": "Banshee Wailer-Queen",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Eclipse Reapers",
+   "models": 5
+  },
+  {
+   "unit": "Void-Shades",
+   "models": 10
+  },
+  {
+   "unit": "Soul-Lantern Bearers",
+   "models": 2
+  },
+  {
+   "unit": "Gheist-Flitters",
+   "models": 3
+  },
+  {
+   "unit": "Soul-Reliquary Engine",
+   "models": 1
+  },
+  {
+   "unit": "Shadow-Stalker Abomination",
+   "models": 1
+  },
+  {
+   "unit": "Wailing Spirit-Host",
+   "models": 3
+  },
+  {
+   "unit": "Banshee Choir",
+   "models": 3
+  },
+  {
+   "unit": "Umbral Titan-Wraith",
+   "models": 1
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/25_eclipse_shadow_fiends.json"
+ ]
+}

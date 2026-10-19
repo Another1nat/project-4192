@@ -1,0 +1,1185 @@
+{
+ "name": "The Velvet-Scourge Syndicate",
+ "verb": "TEMPT",
+ "identity": "Pain-addicted duelists, sonic cultists and rapture-engines. Fast and fragile; hurting them makes them better, and once per round they offer the opponent a Temptation where the opponent chooses which punishment to take.",
+ "number": "15",
+ "template": "D_swarm_monster_speed",
+ "status": "draft",
+ "learned_from": [
+  "A sci-fi wargame's excess legion: fall back or advance and still shoot and charge — research 2026-10",
+  "Gemini #1 Ecstasy of Pain, #2 Temptation (opponent picks = low toxicity), #3 sonic weapons"
+ ],
+ "risk_profile": "Opponent's choice (Temptation). Low otherwise.",
+ "core_rule": {
+  "name": "Ecstasy of Pain",
+  "text": "A Velvet-Scourge unit that is below Starting Strength (or damaged), or that destroyed an enemy model this round, gets +1 to Hit and +1″ MOV."
+ },
+ "gamble": {
+  "name": "Temptation",
+  "text": "Once per round, when a unit is selected to Shoot or Fight, offer the opponent a Temptation. The OPPONENT chooses: the target unit suffers D3 Fatal Wounds now, OR your unit's weapons gain [ONSLAUGHT 2] for this attack.",
+  "risk_cost": "opponent's choice"
+ },
+ "faction_abilities": [
+  {
+   "scope": "all",
+   "uptime": 0.4,
+   "mods": {
+    "hit_mod": 1
+   },
+   "name": "Ecstasy of Pain",
+   "text": "+1 to Hit when hurt or after a kill."
+  },
+  {
+   "scope": "defense",
+   "uptime": 0.4,
+   "mods": {
+    "move_mod": 1
+   },
+   "name": "Ecstasy: Quickened",
+   "text": "+1″ MOV when hurt or after a kill."
+  },
+  {
+   "scope": "all",
+   "uptime": 0.06,
+   "mods": {
+    "sustained": 2
+   },
+   "name": "Temptation",
+   "text": "Once per round."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Sonic pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Whisper-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Maestro of Excess",
+   "slot": 1,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Grand Temptation",
+     "text": "Temptation may be offered twice per round while this model lives."
+    },
+    {
+     "buff": true,
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Exquisite Swordplay",
+     "text": "The attached unit gets +1 Attack in melee."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Twin rapture-blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Blade-Diva Champion",
+   "slot": 2,
+   "abilities": [
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Quicksilver Grace",
+     "text": "[STRIKE FIRST]."
+    },
+    {
+     "scope": "melee",
+     "uptime": 0.25,
+     "mods": {
+      "dmg_mod": 1
+     },
+     "name": "Perfect Duellist",
+     "text": "Melee [PRECISION]."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Siren-song",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Rapture-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Siren-Choirmistress",
+   "slot": 3,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "ranged",
+     "n_eff": 2.2,
+     "uptime": 0.6,
+     "name": "Cacophony",
+     "text": "Friendly units within 6″ get +1 to Hit with sonic (ranged) weapons."
+    },
+    {
+     "flat": 4.0,
+     "name": "Deafening Note",
+     "text": "Enemy units within 6″ cannot make Retaliation Strikes with ranged weapons."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 5,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Envenomed silk",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]",
+    "[UNSEEN 12\"]"
+   ],
+   "name": "Silk-Veil Assassin",
+   "slot": 4,
+   "abilities": [
+    {
+     "utility": "FALL BACK AND ACT",
+     "name": "Thrill-Seeker",
+     "text": "May Fall Back and still Shoot or Charge."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Sonic pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Rapture-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Flayed-Silk Initiates",
+   "slot": 5,
+   "abilities": [
+    {
+     "utility": "FALL BACK AND ACT",
+     "name": "Thrill-Seekers",
+     "text": "May Fall Back and still Shoot or Charge."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Sonic blaster",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]",
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sonic-Blaster Cultists",
+   "slot": 6,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Discordant Volley",
+     "text": "Units hit cannot Fire Overwatch / Retaliate with ranged weapons until the End of Round."
+    }
+   ],
+   "battleline": true
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 8,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 2,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Silken glaive",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Maestro Duelists",
+   "slot": 7,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Elegant Parry",
+     "text": "Enemies get −1 to Hit them in melee."
+    },
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Lightning Reflexes",
+     "text": "[STRIKE FIRST] on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Blastmaster",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "4",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": [
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Great weapon / fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Cacophony Paladins",
+   "slot": 8,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Wall of Sound",
+     "text": "Enemy units within 6″ suffer −1″ to Charge rolls."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 14,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Sonic blaster",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Barbed lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Swift-Steed Riders",
+   "slot": 9,
+   "abilities": [
+    {
+     "utility": "FALL BACK AND ACT",
+     "name": "Thrill-Seekers",
+     "text": "May Fall Back and still Shoot or Charge."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 9,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 7,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Lashing claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Rapture-Hounds",
+   "slot": 10,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Scent of Excess",
+     "text": "+2″ to Charge rolls against units below Starting Strength."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 9,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Whirling blades",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Dervish Blade-Dancers",
+   "slot": 11,
+   "abilities": [
+    {
+     "mods": {
+      "incoming_hit_mod_melee": -1
+     },
+     "scope": "defense",
+     "uptime": 1.0,
+     "name": "Dervish",
+     "text": "Enemies get −1 to Hit them in melee."
+    },
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Euphoric Strike",
+     "text": "[STRIKE FIRST] on a round they charged."
+    }
+   ]
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Resonance cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[IGNORES COVER]",
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Resonance Cannon Team",
+   "slot": 12,
+   "abilities": [
+    {
+     "flat": 3.0,
+     "name": "Shatter",
+     "text": "Units hit lose Cover until the End of Round."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 9,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Shrieker cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Lash-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Velvet-Strider",
+   "slot": 13,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Rapturous Pain",
+     "text": "+1 Attack while damaged."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 8,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Bladed wheels & riders",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Silk-Chariot of Rapture",
+   "slot": 14,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Fly-By Slashes",
+     "text": "When it moves over an enemy unit, roll a D6 per enemy model (max 6): each 5+ is 1 Fatal Wound."
+    }
+   ]
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 8,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Rapture-Beast",
+   "slot": 15,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Hypnotic Musk",
+     "text": "Enemy units within 3″ suffer −1 to Hit in melee."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 12,
+   "CTRL": 1,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Pipe-organ shriek",
+     "type": "Ranged",
+     "range": "60\"",
+     "A": "D6+2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[IGNORES COVER]",
+      "[SUPPRESSIVE]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Sonic Organ-Engine",
+   "slot": 16,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Crescendo",
+     "text": "Units hit are Rattled on a 4+."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[FIRING DECK 2]",
+    "[TRANSPORT 10]"
+   ],
+   "weapons": [
+    {
+     "name": "Shrieker cannon",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Pleasure-Barge",
+   "slot": 17,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Grand Entrance",
+     "text": "Units that disembark get +1 to Hit in melee this round."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Brute / Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Shrieker array",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[IGNORES COVER]"
+     ]
+    },
+    {
+     "name": "Bladed limbs",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Rapture-Engine",
+   "slot": 18,
+   "abilities": [
+    {
+     "mods": {
+      "attacks_mod": 1
+     },
+     "scope": "melee",
+     "uptime": 0.5,
+     "name": "Ecstatic Overdrive",
+     "text": "+1 Attack while damaged."
+    }
+   ]
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 2,
+   "RS": 5,
+   "ARM": 5,
+   "MIGHT": 14,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Rapture-claws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "8",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    },
+    {
+     "name": "Colossal jaws",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6",
+     "traits": []
+    }
+   ],
+   "name": "Exalted Rapture-Fiend",
+   "slot": 19,
+   "abilities": [
+    {
+     "utility": "STRIKE FIRST",
+     "name": "Unnatural Speed",
+     "text": "[STRIKE FIRST]."
+    }
+   ]
+  },
+  {
+   "class": 5,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 12,
+   "MS": 2,
+   "RS": 2,
+   "ARM": 4,
+   "MIGHT": 22,
+   "CTRL": 6,
+   "HARDENED": true,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Agony-organ",
+     "type": "Ranged",
+     "range": "72\"",
+     "A": "2D6",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": [
+      "[IGNORES COVER]",
+      "[SHRAPNEL 2]"
+     ]
+    },
+    {
+     "name": "Titan stomp",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "3",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Cathedral of Agony",
+   "slot": 20,
+   "abilities": [
+    {
+     "flat": 8.0,
+     "name": "Symphony of Pain",
+     "text": "Friendly units within 9″ count as below Starting Strength for Ecstasy of Pain."
+    }
+   ]
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Sonic Choir",
+   "playstyle": "Sonic gunline that strips cover and shuts down reactions.",
+   "rule": "Cacophony of Sonic Blasters: ranged weapons have [IGNORES COVER] and [ASSAULT]; units hit by them cannot make ranged Retaliation Strikes until the End of Round.",
+   "enhancements": [
+    {
+     "name": "Siren's Throat",
+     "bearer": "Siren-Choirmistress",
+     "ability": {
+      "flat": 4.0,
+      "name": "Siren's Throat",
+      "text": "Cacophony range 9″."
+     },
+     "text": "Cacophony range 9″."
+    },
+    {
+     "name": "Doom-Siren",
+     "bearer": "Cacophony Paladins",
+     "ability": {
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "ranged",
+      "uptime": 1.0,
+      "name": "Doom-Siren",
+      "text": "+1 PEN with ranged weapons."
+     },
+     "text": "+1 PEN with ranged weapons."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Shattering Chord",
+     "cp": 1,
+     "when": "A unit Shoots",
+     "effect": "Its weapons gain [SHRAPNEL 1]."
+    },
+    {
+     "name": "Overwhelming Noise",
+     "cp": 1,
+     "when": "An enemy unit within 12″ activates",
+     "effect": "It suffers −1 to Hit this activation."
+    },
+    {
+     "name": "Encore",
+     "cp": 1,
+     "when": "A unit destroys an enemy unit by Shooting",
+     "effect": "It may make a 3″ move."
+    }
+   ]
+  },
+  {
+   "name": "Masque of Blades",
+   "playstyle": "Duelists and dancers that slip in and out of melee.",
+   "rule": "Quicksilver Grace: all Velvet-Scourge units may Fall Back and still Shoot or Charge. Leaders have [STRIKE FIRST].",
+   "enhancements": [
+    {
+     "name": "Mask of Ten Faces",
+     "bearer": "Silk-Veil Assassin",
+     "ability": {
+      "mods": {
+       "ward": 5
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Mask of Ten Faces",
+      "text": "WARD 5+."
+     },
+     "text": "WARD 5+."
+    },
+    {
+     "name": "Duelist's Garter",
+     "bearer": "Blade-Diva Champion",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Duelist's Garter",
+      "text": "+1 Damage in melee on a round she charged."
+     },
+     "text": "+1 Damage in melee on a round she charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Euphoric Kill-High",
+     "cp": 1,
+     "when": "A unit destroys an enemy unit in melee",
+     "effect": "It may consolidate 6″."
+    },
+    {
+     "name": "Feint",
+     "cp": 1,
+     "when": "A unit is targeted by a Charge",
+     "effect": "It makes a 3″ move; if the Charge then fails, the charger is Rattled."
+    },
+    {
+     "name": "Exquisite Agony",
+     "cp": 1,
+     "when": "A unit is selected to Fight",
+     "effect": "Count it as below Starting Strength."
+    }
+   ]
+  },
+  {
+   "name": "Carnival of Excess",
+   "playstyle": "Rapture-engines, chariots and beasts in a gaudy charge.",
+   "rule": "Grand Spectacle: Class 3–5 units get +2″ MOV in Round 1 and +1 Attack in melee while below Starting Strength.",
+   "enhancements": [
+    {
+     "name": "Gilded Engine-Heart",
+     "bearer": "Rapture-Engine",
+     "ability": {
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Gilded Engine-Heart",
+      "text": "UNYIELDING 6+."
+     },
+     "text": "UNYIELDING 6+."
+    },
+    {
+     "name": "Ringmaster's Whip",
+     "bearer": "Maestro of Excess",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "attacks_mod": 1
+      },
+      "scope": "melee",
+      "n_eff": 2.2,
+      "uptime": 0.6,
+      "name": "Ringmaster's Whip",
+      "text": "Friendly units within 6″ get +1 Attack on a round they charged."
+     },
+     "text": "Friendly units within 6″ get +1 Attack on a round they charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Showstopper",
+     "cp": 1,
+     "when": "A Class 3–5 unit charges",
+     "effect": "Crushing Impact for 0 CP."
+    },
+    {
+     "name": "Gaudy Distraction",
+     "cp": 1,
+     "when": "An enemy unit targets a Class 1–2 unit within 6″ of a Class 3–5 unit",
+     "effect": "It must target the Class 3–5 unit if visible."
+    },
+    {
+     "name": "Rapture-Rush",
+     "cp": 1,
+     "when": "A Class 3–5 unit is below half",
+     "effect": "+1 to Hit and +2″ MOV until the End of Round."
+    }
+   ]
+  }
+ ]
+}

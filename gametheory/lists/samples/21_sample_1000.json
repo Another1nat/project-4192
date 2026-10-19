@@ -1,0 +1,63 @@
+{
+ "name": "The Rift-Stalker Menagerie — verifier sample",
+ "detachment": "Free Company",
+ "units": [
+  {
+   "unit": "Wasteland Warboss",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Conscript Rabble",
+   "models": 5
+  },
+  {
+   "unit": "Line Mercenaries",
+   "models": 5
+  },
+  {
+   "unit": "Weapon Crew",
+   "models": 2
+  },
+  {
+   "unit": "Feral Pack",
+   "models": 5
+  },
+  {
+   "unit": "Armoured Hauler",
+   "models": 1
+  },
+  {
+   "unit": "Tamed Beast",
+   "models": 1
+  },
+  {
+   "unit": "Outriders",
+   "models": 3
+  },
+  {
+   "unit": "Long-Rifles",
+   "models": 2
+  },
+  {
+   "unit": "Brute Mercenaries",
+   "models": 3
+  },
+  {
+   "unit": "Pathfinders",
+   "models": 3
+  },
+  {
+   "unit": "Salvaged Walker",
+   "models": 1
+  },
+  {
+   "unit": "Scavenged Battle-Tank",
+   "models": 1
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/21_rift_stalker_menagerie.json"
+ ]
+}

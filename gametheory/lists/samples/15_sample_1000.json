@@ -1,0 +1,60 @@
+{
+ "name": "The Velvet-Scourge Syndicate — verifier sample",
+ "detachment": "Sonic Choir",
+ "units": [
+  {
+   "unit": "Maestro of Excess",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Flayed-Silk Initiates",
+   "models": 5
+  },
+  {
+   "unit": "Sonic-Blaster Cultists",
+   "models": 5
+  },
+  {
+   "unit": "Resonance Cannon Team",
+   "models": 2
+  },
+  {
+   "unit": "Rapture-Hounds",
+   "models": 5
+  },
+  {
+   "unit": "Pleasure-Barge",
+   "models": 1
+  },
+  {
+   "unit": "Silk-Chariot of Rapture",
+   "models": 1
+  },
+  {
+   "unit": "Swift-Steed Riders",
+   "models": 3
+  },
+  {
+   "unit": "Dervish Blade-Dancers",
+   "models": 5
+  },
+  {
+   "unit": "Maestro Duelists",
+   "models": 3
+  },
+  {
+   "unit": "Rapture-Beast",
+   "models": 1
+  },
+  {
+   "unit": "Siren-Choirmistress",
+   "models": 1,
+   "attached": true
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/15_velvet_scourge_syndicate.json"
+ ]
+}

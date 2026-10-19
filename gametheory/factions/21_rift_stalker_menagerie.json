@@ -1,0 +1,1066 @@
+{
+ "name": "The Rift-Stalker Menagerie",
+ "verb": "CONTRACT",
+ "identity": "The universal proxy faction: wasteland mercenaries, outcasts and tamed beasts. Any of the 29 universal archetypes is a legal Rift-Stalker datasheet; these 20 are the named core. Before the battle you sign 2 of 5 Mercenary Contracts.",
+ "number": "21",
+ "template": "A_combined_arms",
+ "status": "draft",
+ "learned_from": [
+  "User: faction 21 = random proxy faction where everything is valid",
+  "Gemini: all 5 contracts as a menu (CP contract capped to 2 rounds)"
+ ],
+ "risk_profile": "Low; the gamble is a pre-battle Objective Wager.",
+ "core_rule": {
+  "name": "Mercenary Contracts (pick 2 of 5)",
+  "text": "Bounty Hunters: mark 2 enemy units; re-roll Hit and Wound rolls of 1 against them; +1 CP when one is destroyed · Guerrilla Infiltrators: 2 units gain [INFILTRATORS] and [SCOUTS 6″]; your units count as in Cover against attacks from more than 15″ · Shock & Awe: melee weapons gain [CRASHING], ranged weapons gain [ASSAULT] · Scavenged Grit: UNYIELDING 6+; Class 4–5 units heal 1 MIGHT at the End of Round · Master Tacticians: +1 CP in the Command Phase of Rounds 1 and 3. Any universal archetype (catalogue/unit_archetypes.json) is a legal datasheet at its catalogue price."
+ },
+ "gamble": {
+  "name": "Objective Wager",
+  "text": "Before deployment, secretly note one no-man's-land objective. Reveal at the end of Round 4: if you control it, +3 VP; if your opponent does, they score +2 VP.",
+  "risk_cost": "objective"
+ },
+ "faction_abilities": [
+  {
+   "scope": "all",
+   "uptime": 0.15,
+   "mods": {
+    "reroll_hit": "ones",
+    "unyielding": 6,
+    "wound_mod": 1
+   },
+   "name": "Contracts (average of 2 of 5)",
+   "text": "Two contracts out of five ≈ 40% of each."
+  }
+ ],
+ "units": [
+  {
+   "class": 2,
+   "role": "Leader (Warlord)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 2,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 5,
+   "CTRL": 1,
+   "WARD": 5,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Relic blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Wasteland Warboss",
+   "slot": 1,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "reroll_hit": "ones"
+     },
+     "scope": "all",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Paid in Full",
+     "text": "The attached unit re-rolls Hit rolls of 1."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Champion)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Relic blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "5",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Hired Duelist",
+   "slot": 2,
+   "abilities": [
+    {
+     "buff": true,
+     "mods": {
+      "hit_mod": 1
+     },
+     "scope": "melee",
+     "n_eff": 1.0,
+     "uptime": 1.0,
+     "name": "Sword for Hire",
+     "text": "The attached unit gets +1 to Hit in melee."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Support)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Field Medic",
+   "slot": 3,
+   "abilities": [
+    {
+     "flat": 6.0,
+     "name": "Patch Up",
+     "text": "Once per round, heal D3 MIGHT or return 1 Class 1 model to a unit within 3″."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Leader (Specialist)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "name": "Bounty Hunter",
+   "slot": 4,
+   "abilities": [
+    {
+     "flat": 4.0,
+     "name": "Wanted Poster",
+     "text": "Counts as marked by Bounty Hunters even if that contract was not chosen."
+    }
+   ]
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Service rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "keywords": [
+    "[EXPENDABLE]"
+   ],
+   "name": "Conscript Rabble",
+   "slot": 5,
+   "abilities": [],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 4,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Battle rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Line Mercenaries",
+   "slot": 6,
+   "abilities": [],
+   "battleline": true
+  },
+  {
+   "class": 1,
+   "role": "Trooper / Elite",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 2,
+   "CTRL": 2,
+   "weapons": [
+    {
+     "name": "Heavy rifle",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 1]"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Veteran Free-Blades",
+   "slot": 7,
+   "abilities": []
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Chain-blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Shock Troopers",
+   "slot": 8,
+   "abilities": []
+  },
+  {
+   "class": 1,
+   "role": "Trooper",
+   "models": [
+    5,
+    10
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 6,
+   "ARM": 6,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Claws & teeth",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "4+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Feral Pack",
+   "slot": 9,
+   "abilities": []
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 7,
+   "MS": 4,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[SCOUTS 6\"]"
+   ],
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Pathfinders",
+   "slot": 10,
+   "abilities": []
+  },
+  {
+   "class": 1,
+   "role": "Trooper (specialist)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 6,
+   "MS": 5,
+   "RS": 3,
+   "ARM": 5,
+   "MIGHT": 1,
+   "CTRL": 1,
+   "keywords": [
+    "[INFILTRATORS]"
+   ],
+   "weapons": [
+    {
+     "name": "Sniper rifle",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[HEAVY]",
+      "[PRECISION]"
+     ]
+    },
+    {
+     "name": "Combat blade",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Long-Rifles",
+   "slot": 11,
+   "abilities": []
+  },
+  {
+   "class": 1,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 10,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "keywords": [
+    "[FLY]",
+    "[VANGUARD STRIKE]"
+   ],
+   "weapons": [
+    {
+     "name": "Heavy pistol",
+     "type": "Ranged",
+     "range": "12\"",
+     "A": "1",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": [
+      "[CLOSE-QUARTERS]"
+     ]
+    },
+    {
+     "name": "Power weapon",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Jump-Raiders",
+   "slot": 12,
+   "abilities": []
+  },
+  {
+   "class": 2,
+   "role": "Elite",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 5,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "WARD": 4,
+   "weapons": [
+    {
+     "name": "Rotary cannon",
+     "type": "Ranged",
+     "range": "24\"",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "1",
+     "traits": []
+    },
+    {
+     "name": "Great weapon / fist",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "2",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Heavy Exo-Suits",
+   "slot": 13,
+   "abilities": []
+  },
+  {
+   "class": 2,
+   "role": "Trooper (support)",
+   "models": [
+    2,
+    3
+   ],
+   "MOV": 5,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 2,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Bayonet / CCW",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "1",
+     "wound": "5+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Weapon Crew",
+   "slot": 14,
+   "abilities": []
+  },
+  {
+   "class": 2,
+   "role": "Elite (brute)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 5,
+   "ARM": 4,
+   "MIGHT": 4,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Power maul",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": []
+    }
+   ],
+   "name": "Brute Mercenaries",
+   "slot": 15,
+   "abilities": []
+  },
+  {
+   "class": 2,
+   "role": "Elite (fast)",
+   "models": [
+    3,
+    5
+   ],
+   "MOV": 12,
+   "MS": 3,
+   "RS": 4,
+   "ARM": 4,
+   "MIGHT": 3,
+   "CTRL": 1,
+   "weapons": [
+    {
+     "name": "Carbine",
+     "type": "Ranged",
+     "range": "18\"",
+     "A": "2",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[ASSAULT]"
+     ]
+    },
+    {
+     "name": "Cavalry lance",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "3",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[CRASHING]"
+     ]
+    }
+   ],
+   "name": "Outriders",
+   "slot": 16,
+   "abilities": []
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 6,
+   "MS": 3,
+   "RS": 3,
+   "ARM": 3,
+   "MIGHT": 9,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Autocannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "2",
+     "wound": "3+",
+     "pen": "-1",
+     "D": "2",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Crusher fists",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "2+",
+     "pen": "-2",
+     "D": "3",
+     "traits": []
+    }
+   ],
+   "name": "Salvaged Walker",
+   "slot": 17,
+   "abilities": []
+  },
+  {
+   "class": 3,
+   "role": "Brute",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 8,
+   "MS": 3,
+   "RS": 6,
+   "ARM": 4,
+   "MIGHT": 8,
+   "CTRL": 3,
+   "weapons": [
+    {
+     "name": "Monster talons",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "6",
+     "wound": "3+",
+     "pen": "-2",
+     "D": "2",
+     "traits": [
+      "[REAPING 1]"
+     ]
+    }
+   ],
+   "name": "Tamed Beast",
+   "slot": 18,
+   "abilities": []
+  },
+  {
+   "class": 4,
+   "role": "Behemoth",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 16,
+   "CTRL": 3,
+   "HARDENED": true,
+   "weapons": [
+    {
+     "name": "Battle cannon",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "D6",
+     "wound": "2+",
+     "pen": "-1",
+     "D": "3",
+     "traits": [
+      "[SHRAPNEL 1]"
+     ]
+    },
+    {
+     "name": "Las-lance",
+     "type": "Ranged",
+     "range": "48\"",
+     "A": "1",
+     "wound": "2+",
+     "pen": "-3",
+     "D": "D6+1",
+     "traits": [
+      "[HEAVY]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Scavenged Battle-Tank",
+   "slot": 19,
+   "abilities": []
+  },
+  {
+   "class": 4,
+   "role": "Behemoth (transport)",
+   "models": [
+    1,
+    1
+   ],
+   "MOV": 10,
+   "MS": 5,
+   "RS": 4,
+   "ARM": 3,
+   "MIGHT": 12,
+   "CTRL": 2,
+   "HARDENED": true,
+   "keywords": [
+    "[TRANSPORT 10]",
+    "[FIRING DECK 2]"
+   ],
+   "weapons": [
+    {
+     "name": "Heavy stubber",
+     "type": "Ranged",
+     "range": "36\"",
+     "A": "3",
+     "wound": "4+",
+     "pen": "0",
+     "D": "1",
+     "traits": [
+      "[HAILFIRE 2]"
+     ]
+    },
+    {
+     "name": "Treads / hull ram",
+     "type": "Melee",
+     "range": "Melee",
+     "A": "4",
+     "wound": "3+",
+     "pen": "0",
+     "D": "1",
+     "traits": []
+    }
+   ],
+   "name": "Armoured Hauler",
+   "slot": 20,
+   "abilities": []
+  }
+ ],
+ "detachments": [
+  {
+   "name": "Free Company",
+   "playstyle": "Balanced mercenaries: take the contracts that fit the mission.",
+   "rule": "Professional Soldiers: sign a third contract (3 of 5).",
+   "enhancements": [
+    {
+     "name": "Veteran's Contract",
+     "bearer": "Wasteland Warboss",
+     "ability": {
+      "buff": true,
+      "mods": {
+       "unyielding": 6
+      },
+      "scope": "defense",
+      "n_eff": 1.0,
+      "uptime": 1.0,
+      "name": "Veteran's Contract",
+      "text": "The attached unit has UNYIELDING 6+."
+     },
+     "text": "The attached unit has UNYIELDING 6+."
+    },
+    {
+     "name": "Hazard Pay",
+     "bearer": "Veteran Free-Blades",
+     "ability": {
+      "mods": {
+       "reroll_hit": "ones"
+      },
+      "scope": "all",
+      "uptime": 1.0,
+      "name": "Hazard Pay",
+      "text": "Re-roll Hit rolls of 1."
+     },
+     "text": "Re-roll Hit rolls of 1."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Renegotiate",
+     "cp": 1,
+     "when": "Command Phase, once per battle",
+     "effect": "Swap one contract for another."
+    },
+    {
+     "name": "Covering Fire",
+     "cp": 1,
+     "when": "A friendly unit within 6″ is charged",
+     "effect": "This unit makes a ranged Retaliation Strike against the charger."
+    },
+    {
+     "name": "Pay the Bonus",
+     "cp": 1,
+     "when": "A unit destroys an enemy unit",
+     "effect": "It may make a 3″ move."
+    }
+   ]
+  },
+  {
+   "name": "Outcast Scavengers",
+   "playstyle": "Salvage crews that strip wrecks and objectives.",
+   "rule": "Salvage: when a Class 3–5 unit (either side) is destroyed, place a Salvage marker; a unit that ends a move on it gains +1 PEN on one weapon for the rest of the battle (remove the marker).",
+   "enhancements": [
+    {
+     "name": "Scrap-Plate",
+     "bearer": "Line Mercenaries",
+     "ability": {
+      "mods": {
+       "save_mod": 1
+      },
+      "scope": "defense",
+      "uptime": 0.5,
+      "name": "Scrap-Plate",
+      "text": "+1 ARM (to 3+ cap) against PEN 0 and −1."
+     },
+     "text": "+1 ARM (to 3+ cap) against PEN 0 and −1."
+    },
+    {
+     "name": "Jury-Rigged Engine",
+     "bearer": "Armoured Hauler",
+     "ability": {
+      "mods": {
+       "move_mod": 2
+      },
+      "scope": "defense",
+      "uptime": 1.0,
+      "name": "Jury-Rigged Engine",
+      "text": "+2″ MOV."
+     },
+     "text": "+2″ MOV."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Strip It Bare",
+     "cp": 1,
+     "when": "A unit ends on a Salvage marker",
+     "effect": "Also heal D3 MIGHT."
+    },
+    {
+     "name": "Makeshift Barricade",
+     "cp": 1,
+     "when": "A unit did not Move",
+     "effect": "It claims Cover until the End of Round."
+    },
+    {
+     "name": "Scav-Rush",
+     "cp": 1,
+     "when": "A unit moves toward a Salvage marker",
+     "effect": "+2″ MOV."
+    }
+   ]
+  },
+  {
+   "name": "Monster Hunters",
+   "playstyle": "Specialists who bring down big things.",
+   "rule": "Big Game: re-roll Wound rolls of 1 against Class 3–5 units; Fell the Colossus Tactical card scores +1 VP.",
+   "enhancements": [
+    {
+     "name": "Harpoon-Gun",
+     "bearer": "Bounty Hunter",
+     "ability": {
+      "mods": {
+       "pen_mod": 1
+      },
+      "scope": "ranged",
+      "uptime": 1.0,
+      "name": "Harpoon-Gun",
+      "text": "+1 PEN with ranged weapons; [HARPOON]."
+     },
+     "text": "+1 PEN with ranged weapons; [HARPOON]."
+    },
+    {
+     "name": "Monster-Slayer Charm",
+     "bearer": "Hired Duelist",
+     "ability": {
+      "mods": {
+       "dmg_mod": 1
+      },
+      "scope": "melee",
+      "uptime": 0.5,
+      "name": "Monster-Slayer Charm",
+      "text": "+1 Damage on a round he charged."
+     },
+     "text": "+1 Damage on a round he charged."
+    }
+   ],
+   "stratagems": [
+    {
+     "name": "Bait the Beast",
+     "cp": 1,
+     "when": "An enemy Class 3–5 unit declares a Charge",
+     "effect": "The target may make a 3″ move first."
+    },
+    {
+     "name": "Hamstring",
+     "cp": 1,
+     "when": "A Class 3–5 enemy is wounded",
+     "effect": "It suffers −2″ MOV until the End of Round."
+    },
+    {
+     "name": "Trophy",
+     "cp": 1,
+     "when": "A Class 3–5 enemy is destroyed",
+     "effect": "Gain 1 CP."
+    }
+   ]
+  }
+ ]
+}

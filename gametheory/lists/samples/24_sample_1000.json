@@ -1,0 +1,55 @@
+{
+ "name": "The Diesel-Skull War-Horde — verifier sample",
+ "detachment": "Speed-Cult",
+ "units": [
+  {
+   "unit": "War-Boss Speed-King",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Dakka-Gun Mob",
+   "models": 10
+  },
+  {
+   "unit": "Scrap-Gunner Mob",
+   "models": 10
+  },
+  {
+   "unit": "Rocket-Scrap Crew",
+   "models": 2
+  },
+  {
+   "unit": "Jump-Rocket Stormers",
+   "models": 3
+  },
+  {
+   "unit": "Scrap-Lobba Battery",
+   "models": 1
+  },
+  {
+   "unit": "War-Buggy",
+   "models": 1
+  },
+  {
+   "unit": "War-Biker Speed-Maniacs",
+   "models": 3
+  },
+  {
+   "unit": "Sneaky Scrap-Commandos",
+   "models": 3
+  },
+  {
+   "unit": "Big-Brute Bullies",
+   "models": 3
+  },
+  {
+   "unit": "Scrap-Imps",
+   "models": 10
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/24_diesel_skull_war_horde.json"
+ ]
+}

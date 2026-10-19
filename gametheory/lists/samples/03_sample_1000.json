@@ -1,0 +1,51 @@
+{
+ "name": "The Sun-Pyre Witch-Courts — verifier sample",
+ "detachment": "Burning Rose",
+ "units": [
+  {
+   "unit": "Grand Inquisitrix",
+   "models": 1,
+   "attached": true
+  },
+  {
+   "unit": "Pilgrim Levy",
+   "models": 10
+  },
+  {
+   "unit": "Sisters of the Pyre",
+   "models": 5
+  },
+  {
+   "unit": "Purifier Outriders",
+   "models": 3
+  },
+  {
+   "unit": "Penitent Flagellants",
+   "models": 5
+  },
+  {
+   "unit": "Sanctum Carrier",
+   "models": 1
+  },
+  {
+   "unit": "Mortification Engine",
+   "models": 1
+  },
+  {
+   "unit": "Reliquant Warsuits",
+   "models": 3
+  },
+  {
+   "unit": "Acolyte Cell",
+   "models": 3
+  },
+  {
+   "unit": "Ascendant Seraphs",
+   "models": 3
+  }
+ ],
+ "size": "standard",
+ "sources": [
+  "../../factions/03_sun_pyre_witch_courts.json"
+ ]
+}

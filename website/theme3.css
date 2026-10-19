@@ -1,0 +1,249 @@
+/* Iron & Wrath "Sharp" design layer — loaded last.
+   Same layout and logic; only the look changes: neutral graphite surfaces, the faction colour as the one accent,
+   6px corners, 1px hairlines instead of glows, flat navigation, tighter type.
+   Many screens style themselves inline, so the common inline colours / radii are mapped onto the tokens here. */
+
+:root {
+  --s0: #08090b; --s1: #0b0c0f; --s2: #101216; --s3: #15181d; --s4: #1c2027; --s5: #252a32;
+  --line: rgba(255,255,255,.075); --line-strong: rgba(255,255,255,.13); --hairline: rgba(255,255,255,.09);
+  --r-xs: 3px; --r-sm: 5px; --r-md: 6px; --r-lg: 8px; --r-pill: 6px;
+  --glow: none;
+  --txt: #e8ebef; --txt-2: #a3abb6; --txt-3: #6f7885;
+  --acc-soft: color-mix(in srgb, var(--accent) 14%, transparent);
+  --acc-line: color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+/* ---------- canvas & type ---------- */
+html, body { background: var(--s0) !important; }
+body { color: var(--txt); letter-spacing: .005em; }
+body::before { height: 1px !important; background: var(--accent) !important; opacity: .9; }
+h1, h2, h3, h4 { letter-spacing: .01em; }
+::selection { background: var(--acc-soft); }
+
+/* ---------- inline palette → tokens (the app writes many colours inline) ---------- */
+[style*="background:#1e252f"], [style*="background: #1e252f"], [style*="background:#1e293b"], [style*="background:#232d3b"] { background-color: var(--s3) !important; }
+[style*="background:#161d27"], [style*="background: #161d27"], [style*="background:#141b25"], [style*="background:#1a232f"], [style*="background:#161e29"] { background-color: var(--s2) !important; }
+[style*="background:#0d1117"], [style*="background:#0b0f16"], [style*="background:#10151c"], [style*="background:#0f141b"], [style*="background:#10161e"], [style*="background:#11161d"], [style*="background:#121822"], [style*="background:#0f172a"], [style*="background:#0f1a30"], [style*="background:#0f1626"], [style*="background:#101726"], [style*="background:#101828"] { background-color: var(--s1) !important; }
+[style*="background:#1a222d"], [style*="background: #1a222d"] { background-color: var(--s3) !important; }
+[style*="background:#2a3546"], [style*="background: #2a3546"] { background-color: var(--s4) !important; }
+[style*="solid #3a4556"], [style*="solid #2a3546"], [style*="solid #1a222d"], [style*="solid #334155"], [style*="solid #2d3b50"], [style*="solid #3a4556"], [style*="solid #243044"], [style*="solid #1c232c"], [style*="solid #333"], [style*="solid #4a5568"], [style*="dashed #2a3546"], [style*="dashed #3a4556"] { border-color: var(--line-strong) !important; }
+
+/* ---------- corners: one family of radii ---------- */
+[style*="border-radius:8px"], [style*="border-radius: 8px"], [style*="border-radius:10px"], [style*="border-radius: 10px"],
+[style*="border-radius:12px"], [style*="border-radius: 12px"], [style*="border-radius:14px"], [style*="border-radius: 14px"],
+[style*="border-radius:16px"], [style*="border-radius: 16px"], [style*="border-radius:18px"], [style*="border-radius: 18px"],
+[style*="border-radius:20px"], [style*="border-radius: 20px"], [style*="border-radius:24px"] { border-radius: var(--r-md) !important; }
+[style*="border-radius:4px"], [style*="border-radius: 4px"], [style*="border-radius:6px"], [style*="border-radius: 6px"] { border-radius: var(--r-sm) !important; }
+
+/* ---------- no glows, no gradients on controls ---------- */
+button, .unit-card, .roster-unit-card, .ag-card, .detachment-item, .ms-card, .ms-pageexport, .home-header-card, .faction-card, .tile, .auth-pill, .logo, .menu-toggle { box-shadow: none !important; }
+button[style*="linear-gradient"], a[style*="linear-gradient"] { background-image: none !important; }
+
+/* ---------- top bar ---------- */
+.top-navbar { background: color-mix(in srgb, var(--s0) 88%, transparent) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line) !important; }
+.logo, .auth-pill, .menu-toggle { background: transparent !important; border: 1px solid var(--line-strong) !important; border-radius: var(--r-md) !important; }
+.top-navbar .logo { border-color: transparent !important; padding-left: 4px !important; }
+.top-navbar .logo>span { font-size: .86rem !important; letter-spacing: .14em !important; }
+.auth-pill.auth-pill-accent, #auth-signup { background: var(--accent) !important; color: var(--accent-fg, #0b0c0f) !important; border-color: var(--accent) !important; font-weight: 700 !important; }
+.menu-toggle { width: 42px !important; height: 42px !important; }
+
+/* ---------- bottom tab bar ---------- */
+@media (max-width: 1023px) {
+  #tabbar { background: color-mix(in srgb, var(--s0) 94%, transparent) !important; border-top: 1px solid var(--line) !important; box-shadow: none !important; }
+  #tabbar button { position: relative; font-size: .68rem !important; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; }
+  #tabbar button.active::before { content: ''; position: absolute; top: 0; left: 28%; right: 28%; height: 2px; background: var(--accent); }
+}
+
+/* ---------- cards & panels ---------- */
+.unit-card, .roster-unit-card, .ag-card, .ms-pageexport, .det-sec, .dt-more, .dt-strat {
+  background: var(--s2) !important; border: 1px solid var(--line) !important; border-radius: var(--r-md) !important;
+}
+.faction-card { background-color: var(--s2) !important; border-top: 1px solid var(--line) !important; border-right: 1px solid var(--line) !important; border-bottom: 1px solid var(--line) !important; border-radius: var(--r-md) !important; }
+.roster-unit-card { border-left: 2px solid var(--rc, var(--accent)) !important; }
+.unit-card:hover, .roster-unit-card:hover { border-color: var(--line-strong) !important; transform: none !important; }
+.det-sec > summary, .dt-more > summary, .dt-strat > summary { font-size: .72rem !important; letter-spacing: .14em !important; text-transform: uppercase; color: var(--txt-2) !important; }
+.ms-pe-t, .rl-t, .rl-ct { letter-spacing: .16em !important; color: var(--txt-3) !important; font-size: .7rem !important; }
+
+
+/* page header banners: keep the faction art, sharpen and quiet them */
+.home-header-card { border-radius: var(--r-md) !important; border: 1px solid var(--line) !important; overflow: hidden; }
+.home-header-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,9,11,.05), rgba(8,9,11,.55)); pointer-events: none; }
+.home-header-overlay { position: relative; z-index: 1; }
+
+/* ---------- buttons ---------- */
+button, .btn, a.btn { border-radius: var(--r-md) !important; letter-spacing: .02em; }
+button[style*="background:var(--accent)"], a[style*="background:var(--accent)"], button[style*="background: var(--accent)"] { color: var(--accent-fg, #0b0c0f) !important; font-weight: 700 !important; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 2px; }
+
+/* ---------- inputs ---------- */
+input:not([type=checkbox]):not([type=radio]), select, textarea {
+  background-color: var(--s1) !important; border: 1px solid var(--line-strong) !important; border-radius: var(--r-md) !important; color: var(--txt) !important;
+}
+input:not([type=checkbox]):not([type=radio]):focus, select:focus, textarea:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 2px var(--acc-soft) !important; }
+
+/* ---------- chips, badges, toasts ---------- */
+.pool-badge { border-radius: var(--r-xs) !important; letter-spacing: .04em; }
+#toasts > *, .toast { border-radius: var(--r-md) !important; background: var(--s4) !important; border: 1px solid var(--line-strong) !important; box-shadow: none !important; }
+#bl-saved, .saved-pill, [id*="saved"][class*="pill"] { border-radius: var(--r-md) !important; }
+
+/* ---------- overlays / sheets / modals ---------- */
+#ov-settings > div, #ov-share > div, #ov-score-history > div, #ov-pick-sec > div, #ov-summary > div,
+#modal-tally-container, #lsync-menu-modal > div, #add-unit-sheet > div, .warmind-sidebar { border-radius: var(--r-lg) !important; border-color: var(--line-strong) !important; box-shadow: none !important; }
+#add-unit-sheet > div { border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important; background: var(--s2) !important; }
+
+/* ---------- game tracker ---------- */
+#view-active-game .ag-cp-control { border-radius: var(--r-md) !important; }
+#ag-tabs button { border-radius: var(--r-md) !important; letter-spacing: .14em !important; }
+.ag-turn-chip { border-radius: var(--r-xs) !important; }
+
+/* ---------- scrollbars (desktop) ---------- */
+@media (hover: hover) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--s5); border-radius: 6px; border: 2px solid var(--s0); }
+  ::-webkit-scrollbar-track { background: transparent; }
+}
+
+/* ---------- class-styled components from the older layers: same graphite, hairline, flat ---------- */
+.bl-card, .roster-dashboard, .unit-row, .home-tile, #factions-toggle, .install-pill, .gcard, .mcard, .br-m, .lv-card, .dm-card, .ms-card, .tk-sheet {
+  background: var(--s2) !important; background-image: none !important; border: 1px solid var(--line) !important; border-radius: var(--r-md) !important; box-shadow: none !important;
+}
+.ms-top, .tk-head, .tk-top { background: var(--s3) !important; }
+.ms-seg, .br-seg, .tk-seg, .split-btn, .rbs-track { background: var(--s1) !important; border: 1px solid var(--line) !important; border-radius: var(--r-md) !important; }
+.ms-seg button.on, .ms-seg .on, .br-seg .on, .tk-seg .on { background: var(--accent) !important; color: var(--accent-fg, #0b0c0f) !important; border-radius: var(--r-sm) !important; }
+.split-btn > button:last-child { background: var(--s3) !important; }
+.ms-note, .ms-act, .ta-body, .ta-q, .tk-q, .tk-st, .tk-unit, .tk-cp, .ad-search, .br-in, #br-msg, .rbe-card input { background: var(--s1) !important; border-color: var(--line) !important; }
+.bl-primary { background-image: none !important; box-shadow: none !important; }
+.home-header-card .home-header-overlay { background: linear-gradient(90deg, rgba(8,9,11,.82), rgba(8,9,11,.25)) !important; }
+#splash { background: var(--s0) !important; }
+
+/* ===================== pass 2 ===================== */
+
+/* secondary actions: outlined, not shouting */
+button[onclick^="finishSavedGame"] { background: transparent !important; border: 1px solid rgba(74, 222, 128, .45) !important; color: #86efac !important; }
+button[onclick^="deleteSavedGame"] { background: transparent !important; border: 1px solid rgba(248, 113, 113, .45) !important; color: #fca5a5 !important; }
+button[onclick^="resumeGame"] { background: var(--accent) !important; background-image: none !important; color: var(--accent-fg, #0b0c0f) !important; box-shadow: none !important; }
+button[onclick^="drawSecondary(1)"] { background: transparent !important; border: 1px solid rgba(96, 155, 255, .6) !important; color: #8fb8ff !important; }
+button[onclick^="drawSecondary(2)"] { background: transparent !important; border: 1px solid rgba(248, 102, 88, .6) !important; color: #ff9a8f !important; }
+button[onclick^="drawSecondary"]:hover { background: rgba(255,255,255,.03) !important; }
+
+/* roster actions: wrap into a tidy grid on phones instead of running off the edge */
+.dashboard-actions { flex-wrap: wrap !important; gap: 6px !important; }
+.dashboard-actions > * { flex: 1 1 calc(50% - 6px) !important; min-width: 0 !important; }
+@media (min-width: 700px) { .dashboard-actions > * { flex: 0 1 auto !important; } }
+.dashboard-actions button, .dashboard-actions a { background: var(--s3) !important; border: 1px solid var(--line) !important; color: var(--txt) !important; min-height: 44px; }
+.dashboard-actions button:last-child, .dashboard-actions a:last-child { background: var(--accent) !important; border-color: var(--accent) !important; color: var(--accent-fg, #0b0c0f) !important; }
+
+/* numbers that change during play: fixed-width digits, no jumping */
+#rb-current-pts, #rbs-cur, [id$="-total"], [id$="-card-total"], .ag-cp-val, #ag-round-display, .vp-total { font-variant-numeric: tabular-nums; }
+
+/* desktop: content at a comfortable reading width */
+@media (min-width: 1100px) {
+  #view-home > *, #view-rules > div:not(.home-header-card) { width: 100%; max-width: 1080px; box-sizing: border-box; margin-left: auto !important; margin-right: auto !important; }
+}
+
+/* quieter dashed "add" affordances */
+[style*="border:2px dashed"], [style*="border: 2px dashed"] { border-width: 1px !important; border-color: var(--line-strong) !important; }
+
+/* list rows & group heads */
+.role-head { background: var(--s2) !important; border: 1px solid var(--line) !important; border-radius: var(--r-md) !important; }
+.role-head.open { border-color: var(--line-strong) !important; }
+
+/* toasts sit above the tab bar, compact */
+#toasts > *, .toast { font-size: .9rem !important; padding: 10px 14px !important; }
+
+/* roster: unit names a size up so they're easy to scan */
+@media screen {
+  #roster-list-container .roster-unit-card h4 { font-size: 1.18rem !important; line-height: 1.2; letter-spacing: .005em; }
+}
+
+/* ---------- unit sidebars: search, then My roster / Faction rules & detachments / Winning lists, then the unit groups ---------- */
+.side-head { display: flex !important; flex-direction: column; align-items: stretch !important; gap: 8px !important; padding: 14px !important; background: transparent !important; border-bottom: 1px solid var(--line) !important; }
+.side-head .side-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.side-head .search-wrapper { flex: 1 1 auto; min-width: 0; margin: 0 !important; }
+.side-head .search-wrapper input { width: 100%; box-sizing: border-box; }
+.side-head .close-sidebar-btn { flex: 0 0 44px; height: 44px; color: var(--txt); font-size: 1.05rem; cursor: pointer; }
+.side-nav-btn { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 46px; margin: 0; padding: 0 14px; box-sizing: border-box; border-radius: var(--r-md); border: 1px solid var(--line-strong); background: var(--s2); color: var(--txt); font-weight: 700; font-size: .9rem; text-align: left; cursor: pointer; }
+.side-nav-btn[hidden] { display: none !important; }
+.side-nav-btn > i { flex: 0 0 18px; text-align: center; color: var(--accent); }
+.side-nav-btn > span { flex: 1 1 auto; min-width: 0; line-height: 1.2; padding: 6px 0; }
+.side-nav-btn.side-lists > i { color: #e5c15a; }
+.side-nav-btn .side-pts { flex: 0 0 auto; font-size: .8rem; font-weight: 700; color: var(--txt-2); font-variant-numeric: tabular-nums; }
+.side-nav-btn:hover { border-color: rgba(var(--accent-rgb), .6); }
+.side-nav-btn.on { border-color: var(--accent); background: rgba(var(--accent-rgb), .14); }
+#pool-done-top.side-nav-btn { display: flex !important; width: 100%; margin: 0; min-height: 46px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: var(--r-md); background: var(--s2); color: var(--txt); font-size: .9rem; }
+#pool-done-top.side-nav-btn.on { border-color: var(--accent); background: rgba(var(--accent-rgb), .14); }
+.fo-back { width: auto !important; display: inline-flex !important; margin-bottom: 16px !important; }
+
+/* ---------- faction overview: army rules (army-wide rules) in the faction colour, bigger ---------- */
+.dt-more.fo-army { border: 1px solid rgba(var(--accent-rgb), .45) !important; border-left: 4px solid var(--accent) !important; background: linear-gradient(90deg, rgba(var(--accent-rgb), .18), rgba(var(--accent-rgb), .05)) !important; margin-top: 10px; }
+.dt-more.fo-army > summary { min-height: 58px; padding: 0 18px; font-size: .94rem !important; font-weight: 800; letter-spacing: .12em !important; color: var(--accent) !important; }
+.dt-more.fo-army > summary::after { border-color: var(--accent); }
+/* long keyword chains (DEATHLEAPER/LICTOR/NEUROLICTOR/…) wrap instead of running off small phones */
+#datasheet-detail-container, #roster-faction-pane, #roster-detachment-container, .dt-more, .dt-strat, .det-sec, .dt-rule { overflow-wrap: break-word; word-break: break-word; }
+
+/* =====================================================================
+   MOBILE POLISH (phones first: iPhone 390, Android 360, small 320)
+   ===================================================================== */
+.lbl-s { display: none; }
+#roster-fab-add { bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
+.roster-title-block h2, #rb-roster-name { overflow-wrap: break-word !important; word-break: normal !important; hyphens: none; }
+
+@media (max-width: 720px) {
+  /* the round + sits above the tab bar instead of half under it */
+  #roster-fab-add { bottom: calc(66px + env(safe-area-inset-bottom, 0px)) !important; right: 14px !important; width: 52px !important; height: 52px !important; font-size: 1.3rem !important; }
+  /* the main column never stretches to a full empty screen */
+  .warmind-main { min-height: 0 !important; }
+}
+
+@media (max-width: 600px) {
+  /* ---------- roster ---------- */
+  #view-rosters .mobile-sidebar-toggle { margin: 8px 8px 10px !important; min-height: 46px !important; width: calc(100% - 16px) !important; }
+  #view-rosters .roster-header-card { height: auto !important; min-height: 0 !important; }
+  #view-rosters .roster-header-overlay { position: relative !important; inset: auto !important; padding: 26px 10px 12px !important; gap: 8px !important; align-items: center !important; }
+  #view-rosters .roster-header-overlay .back-btn { min-height: 38px !important; padding: 0 10px !important; font-size: .82rem !important; flex: 0 0 auto; }
+  #view-rosters .roster-header-overlay .edit-btn { min-width: 38px !important; min-height: 38px !important; padding: 0 !important; flex: 0 0 auto; }
+  #view-rosters .roster-title-block { padding: 0 2px !important; }
+  #view-rosters .roster-title-block h2 { font-size: 1.28rem !important; line-height: 1.15 !important; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  #view-rosters .dashboard-actions { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px !important; padding: 2px 0 10px !important; }
+  #view-rosters .dashboard-actions > * { flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 4px !important; min-height: 54px !important; padding: 6px 2px !important; font-size: .72rem !important; letter-spacing: .02em !important; white-space: nowrap; border-radius: var(--r-md) !important; }
+  #view-rosters .dashboard-actions > * i { font-size: 1rem; margin: 0 !important; }
+  .lbl-l { display: none; } .lbl-s { display: inline; }
+  #view-rosters .points-tracker { padding: 8px 6px 10px !important; }
+  #roster-faction-pane { padding: 12px 10px 20px !important; }
+  #roster-faction-pane h2 { font-size: 1.45rem !important; }
+  .fo-back { min-height: 38px !important; padding: 0 12px !important; font-size: .85rem !important; margin-bottom: 10px !important; }
+
+  /* ---------- datasheets ---------- */
+  .faction-header-banner { padding: 46px 12px 10px !important; }
+  .faction-header-banner #faction-title { font-size: 1.5rem !important; }
+  #ds-save-bar { flex-wrap: nowrap !important; margin: 8px 8px 8px !important; padding: 8px 8px 8px 12px !important; gap: 8px !important; font-size: .76rem !important; }
+  #ds-save-bar .ds-no, #ds-save-bar .ds-ok { min-width: 0 !important; flex: 1 1 auto; line-height: 1.3; }
+  #ds-save-bar button { min-height: 38px !important; padding: 0 12px !important; font-size: .8rem !important; flex: 0 0 auto; }
+  #view-datasheets .mobile-sidebar-toggle { margin: 4px 8px 10px !important; min-height: 46px !important; width: calc(100% - 16px) !important; }
+  #datasheet-detail-container .empty-datasheet-state { padding: 18px 12px !important; }
+  #datasheet-detail-container .empty-datasheet-state i { font-size: 1.6rem !important; margin-bottom: 6px !important; }
+  #datasheet-detail-container .empty-datasheet-state h3 { margin: 0 0 4px; font-size: .95rem; }
+  #datasheet-detail-container .empty-datasheet-state p { margin: 0; }
+  /* M T SV W LD OC on one line */
+  .ds-stats-row { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(38px, 1fr)); gap: 5px !important; }
+  .ds-stats-row .ds-stat-box { min-width: 0 !important; padding: 8px 2px !important; }
+
+  /* ---------- page banners (Rules, Missions, Calculator…) ---------- */
+  .home-header-card { height: auto !important; min-height: 92px !important; margin-bottom: 12px !important; }
+  .home-header-card .home-header-overlay { position: relative !important; inset: auto !important; min-height: 92px; padding: 22px 14px 12px !important; }
+  .home-header-card h2 { font-size: clamp(1.35rem, 7vw, 1.8rem) !important; line-height: 1.05 !important; }
+  #view-home > .home-header-card { height: 104px !important; }
+}
+
+@media (max-width: 600px) {
+  /* Winning lists: the faction picker shrinks to the screen */
+  .tl-filter-group { flex: 1 1 100% !important; min-width: 0 !important; max-width: 100%; }
+  .tl-filter-group .tl-select, #tl-fac-sel { flex: 1 1 auto; min-width: 0 !important; width: auto !important; max-width: 100%; }
+}
+
+@media (max-width: 345px) {
+  /* keep the full IRON & WRATH name on small phones */
+  .top-navbar .logo span span { display: inline !important; }
+  .top-navbar .logo { padding: 0 6px 0 2px !important; gap: 6px !important; }
+  .top-navbar .logo > span { letter-spacing: .08em !important; }
+}
