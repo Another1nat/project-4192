@@ -80,6 +80,8 @@
       items.forEach(([k, label]) => { const b = document.createElement('button'); b.className = 'chip' + (k === cur ? ' on' : ''); b.textContent = label; b.onclick = () => on(k); el.appendChild(b); });
     }
     const pct = x => Math.round(100 * x) + '%';
+    const SIDE = { left: ['left', 'izq.'], right: ['right', 'der.'], front: ['front', 'frente'], back: ['back', 'fondo'] };
+    const gapTxt = g => `${g.side_in}" ${S(...SIDE[g.side])} · ${g.end_in}" ${S(...SIDE[g.end])}`;
     function chk(label, value, good, note) {
       return `<div class="chk"><b class="${good ? 'ok' : 'warn'}">${esc(value)}</b><span>${esc(label)}<br>${esc(note)}</span></div>`;
     }
@@ -93,23 +95,23 @@
       T('t-kit2', 'Terrain kit', 'Kit de terreno');
       chips('kits', KITS.map(([k, en, es]) => [k, S(en, es)]), st.k, k => { st.k = k; load(); });
       chips('maps', MAPS.map(([k, en, es]) => [k, S(en, es)]), st.m, k => { st.m = k; paint(); });
-      chips('vars', ['1', '2', '3'].map(k => [k, k]), st.v, k => { st.v = k; paint(); });
+      chips('vars', ['1', '2', '3'].map(k => { const R = data[st.k] && data[st.k][`${st.m}-${k}`]; return [k, R && R.style ? `${k} · ${S(R.style, R.style_es)}` : k]; }), st.v, k => { st.v = k; paint(); });
       const code = `${st.m}-${st.v}`, L = data[st.k] && data[st.k][code];
       history.replaceState(null, '', '?layout=' + code + (st.k === 'custom' ? '&kit=custom' : ''));
       kit();
       if (!L) { document.getElementById('title').textContent = S('Layout not found', 'Disposición no encontrada'); return; }
       document.getElementById('title').textContent = S(L.title, L.title_es);
       const sym = SYM[L.symmetry || 'point'], nob = L.objectives.length;
-      document.getElementById('sub').textContent = S(`Table 44" × 30". Red = attacker, blue = defender. The layout is ${sym[0]}, so both sides get the same table. ${nob} objectives (dashed circles: 3" control)${nob === 3 ? ', no home objectives' : ''}.`,
-        `Mesa de 44" × 30". Rojo = atacante, azul = defensor. La disposición está ${sym[1]}, así ambos lados tienen la misma mesa. ${nob} objetivos (círculos discontinuos: control de 3")${nob === 3 ? ', sin objetivos de casa' : ''}.`);
+      document.getElementById('sub').textContent = (L.about ? S(L.about, L.about_es) + ' ' : '') + S(`Table 44" × 30". Red = attacker, blue = defender. The layout is ${sym[0]}, so both sides get the same table. ${nob} objectives (dashed circles: 3" control)${nob === 3 ? ', no home objectives' : ''}. Tan lines inside each ruin show where its walls go.`,
+        `Mesa de 44" × 30". Rojo = atacante, azul = defensor. La disposición está ${sym[1]}, así ambos lados tienen la misma mesa. ${nob} objetivos (círculos discontinuos: control de 3")${nob === 3 ? ', sin objetivos de casa' : ''}. Las líneas claras dentro de cada ruina indican dónde van sus muros.`);
       const map = document.getElementById('map'); map.className = 'map' + (zoom ? ' zoom' : '');
       map.innerHTML = `<img alt="${esc(L.title)}" src="${FILES[st.k][1]}${esc(code)}.svg">`;
       // setup table
       const rows = L.pieces.map(p => `<tr><td><b>${esc(p.code)}</b></td><td><span class="sw" style="background:${FILL[p.type] || '#666'}"></span>${esc(S(p.kind, p.kind_es))}</td>
         <td class="n">${p.size_in[0]}" × ${p.size_in[1]}"</td><td class="n">${p.height_in}"</td><td class="n">${p.from_left_in}"</td><td class="n">${p.from_front_in}"</td>
-        <td class="n">${p.type === 'CR' ? '–' : p.rotation_deg + '°'}${p.type === 'TL' || p.type === 'TR' ? ' · ' + S('wide end', 'lado ancho') + ' ' + S(p.type === 'TL' ? 'right' : 'left', p.type === 'TL' ? 'derecha' : 'izquierda') : ''}</td><td>${esc(S(...(TERRAIN[p.terrain] || ['', ''])))}</td></tr>`).join('');
+        <td class="n">${p.type === 'CR' ? '–' : p.rotation_deg + '°'}${p.type === 'TL' || p.type === 'TR' ? ' · ' + S('wide end', 'lado ancho') + ' ' + S(p.type === 'TL' ? 'right' : 'left', p.type === 'TL' ? 'derecha' : 'izquierda') : ''}</td>${p.edge_gap ? `<td class="n">${esc(gapTxt(p.edge_gap))}</td>` : ''}<td>${esc(S(...(TERRAIN[p.terrain] || ['', ''])))}</td></tr>`).join('');
       document.getElementById('setup').innerHTML = `<table><tr><th>${S('Piece', 'Pieza')}</th><th>${S('Type', 'Tipo')}</th><th>${S('Size', 'Tamaño')}</th><th>${S('Height', 'Altura')}</th>
-        <th>${S('From left', 'Desde izq.')}</th><th>${S('From front', 'Desde frente')}</th><th>${S('Rotation', 'Rotación')}</th><th>${S('Rules', 'Reglas')}</th></tr>${rows}</table>`;
+        <th>${S('From left', 'Desde izq.')}</th><th>${S('From front', 'Desde frente')}</th><th>${S('Rotation', 'Rotación')}</th>${L.pieces[0].edge_gap ? `<th>${S('Gap to edges', 'Hueco a bordes')}</th>` : ''}<th>${S('Rules', 'Reglas')}</th></tr>${rows}</table>`;
       document.getElementById('setup-note').textContent = S('"From left" and "From front" give the centre of each piece in inches, measured from the left table edge and from the attacker\'s (red, bottom) edge. Rotation: degrees anticlockwise from the long table edge.',
         '"Desde izq." y "Desde frente" dan el centro de cada pieza en pulgadas, medido desde el borde izquierdo y desde el borde del atacante (rojo, abajo). Rotación: grados en sentido antihorario desde el borde largo de la mesa.');
       // checks
@@ -117,32 +119,35 @@
       document.getElementById('checks').innerHTML = [
         chk(S('Sightlines between deployment zones blocked by Dense terrain', 'Líneas de visión entre zonas bloqueadas por terreno denso'), pct(c.sightlines_blocked), c.sightlines_blocked >= 0.78,
             S('target 80–95%: a few open lanes stay for long guns', 'objetivo 80–95%: quedan algunos carriles para armas de largo alcance')),
-        chk(S('Table covered by terrain', 'Mesa cubierta por terreno'), pct(c.coverage), c.coverage >= 0.19 && c.coverage <= 0.28, S('target 19–28%', 'objetivo 19–28%')),
+        chk(S('Table covered by terrain', 'Mesa cubierta por terreno'), pct(c.coverage), c.coverage >= 0.19 && c.coverage <= 0.34, S('Open ~21%, Standard ~26%, Urban ~30%', 'Abierta ~21%, Estándar ~26%, Urbana ~30%')),
         chk(S('Route for big models (4" wide) to every objective', 'Ruta para modelos grandes (4" de ancho) a cada objetivo'), c.big_model_route ? S('Yes', 'Sí') : S('No', 'No'), c.big_model_route,
             S('Class 4–5 can reach both zones and all objectives', 'Clase 4–5 llega a ambas zonas y a todos los objetivos')),
         chk(S('Safe deployment ground (red / blue)', 'Terreno seguro para desplegar (rojo / azul)'), c.shelter.map(pct).join(' / '), true,
             S('share of each zone mostly hidden from the enemy zone', 'parte de cada zona casi oculta de la zona enemiga')),
         chk(S('Lines to the centre objective blocked (red / blue)', 'Líneas al objetivo central bloqueadas (rojo / azul)'), c.centre_blocked.map(pct).join(' / '), true,
             S('the centre is contested, not hidden', 'el centro se disputa, no queda oculto')),
-        chk(S('Nearest terrain to each objective', 'Terreno más cercano a cada objetivo'), c.objective_cover_in.map(x => x + '"').join(' · '), c.objective_cover_in.every(x => x >= 1.5 && x <= 5),
+        c.objective_terrain_in
+          ? chk(S('Objectives and ruins', 'Objetivos y ruinas'), c.objective_terrain_in.map(x => x === 0 ? S('inside', 'dentro') : x + '"').join(' · '), true,
+              S('distance from each objective to the nearest ruin ("inside" = the marker sits in a ruin footprint; never on a wall)', 'distancia de cada objetivo a la ruina más cercana ("dentro" = el marcador está en la huella de una ruina; nunca sobre un muro)'))
+          : chk(S('Nearest terrain to each objective', 'Terreno más cercano a cada objetivo'), c.objective_cover_in.map(x => x + '"').join(' · '), c.objective_cover_in.every(x => x >= 1.5 && x <= 5),
             S('cover within 1.5–5", never on the marker', 'cobertura a 1.5–5", nunca sobre el marcador')),
       ].join('');
     }
 
     function kit() {
       const K = st.k === 'standard'
-        ? [['LR', '2 (of 4)', 'Large Ruin', 'Ruina grande', '11.5" × 7"', '5"', 'dense'], ['TL', '1 + 1', 'Large Wedge, left + right pair', 'Cuña grande, par izquierda + derecha', '11.5" × 8" (2" narrow end)', '5"', 'dense'],
-           ['MR', '2 (of 4)', 'Medium Ruin', 'Ruina mediana', '6" × 4"', '3"', 'dense'], ['LL', '2', 'Long Wall', 'Muro largo', '10" × 2.5"', '5"', 'dense'],
-           ['SL', '4', 'Short Wall', 'Muro corto', '6" × 2"', '3"', 'light']]
+        ? [['LR', '3 (of 4)', 'Large Ruin', 'Ruina grande', '11.5" × 7"', '5"', 'dense'], ['TL', '1 + 1', 'Large Wedge, left + right pair', 'Cuña grande, par izquierda + derecha', '11.5" × 8" (2" narrow end)', '5"', 'dense'],
+           ['MR', '4', 'Medium Ruin', 'Ruina mediana', '6" × 4"', '3"', 'dense'], ['LL', '2', 'Long Wall', 'Muro largo', '10" × 2.5"', '5"', 'dense'],
+           ['SL', '2 (of 4)', 'Short Wall', 'Muro corto', '6" × 2"', '3"', 'light']]
         : [['RL', '4', 'Large Ruin', 'Ruina grande', '8" × 6"', '5"', 'dense'], ['RS', '2', 'Small Ruin', 'Ruina pequeña', '6" × 4"', '4"', 'dense'],
            ['BL', '2', 'Barricade', 'Barricada', '6" × 1.5"', '1.5"', 'light'], ['LW', '2', 'Low Wall', 'Muro bajo', '5" × 2"', '2"', 'light'],
            ['CR', '2', 'Crater', 'Cráter', '4" ⌀', '–', 'exposed']];
-      document.getElementById('t-kit').textContent = st.k === 'standard' ? S('Terrain kit: 12 of the 16 standard footprints', 'Kit de terreno: 12 de las 16 huellas estándar') : S('Terrain kit (12 pieces)', 'Kit de terreno (12 piezas)');
+      document.getElementById('t-kit').textContent = st.k === 'standard' ? S('Terrain kit: 13 of the 16 standard footprints', 'Kit de terreno: 13 de las 16 huellas estándar') : S('Terrain kit (12 pieces)', 'Kit de terreno (12 piezas)');
       document.getElementById('kit').innerHTML = `<table><tr><th>#</th><th>${S('Piece', 'Pieza')}</th><th>${S('Footprint', 'Huella')}</th><th>${S('Height', 'Altura')}</th><th>${S('Rules', 'Reglas')}</th></tr>` +
         K.map(([t, n, en, es, size, h, ter]) => `<tr><td>${n}</td><td><span class="sw" style="background:${FILL[t]}"></span>${esc(S(en, es))}</td><td>${size}</td><td>${h}</td><td>${esc(S(...TERRAIN[ter]))}</td></tr>`).join('') + '</table>';
       document.getElementById('kit-note').textContent = st.k === 'standard'
-        ? S('These are the common tournament footprint sizes, so you can reuse footprints you already own. One layout uses 8–10 pieces; all 9 layouts together need these 12. Frontline and Pincer use the left/right wedge pair (their halves are mirror images); Broken Ground uses medium ruins and long walls instead.',
-            'Son los tamaños de huella habituales en torneos, así puedes reutilizar las huellas que ya tienes. Cada disposición usa 8–10 piezas; las 9 disposiciones juntas necesitan estas 12. Choque Frontal y Tenaza usan el par de cuñas izquierda/derecha (sus mitades son reflejo una de otra); Tierra Rota usa ruinas medianas y muros largos.')
+        ? S('The common tournament footprint sizes, so you can reuse footprints you already own. Every ruin is a footprint you walk into: put its walls on the tan lines (an L on two sides) and leave the other sides open. Each map has three tables: 1 Open (7–8 pieces), 2 Standard (8–10), 3 Urban (9 pieces, objectives inside ruins). All 9 together need these 13 pieces.',
+            'Los tamaños de huella habituales en torneos, así puedes reutilizar las huellas que ya tienes. Cada ruina es una huella en la que se entra: pon sus muros sobre las líneas claras (una L en dos lados) y deja abiertos los demás. Cada mapa tiene tres mesas: 1 Abierta (7–8 piezas), 2 Estándar (8–10), 3 Urbana (9 piezas, objetivos dentro de ruinas). Las 9 juntas necesitan estas 13 piezas.')
         : S('The first proposal: a dedicated 12-piece kit with home objectives (5 objectives per map).', 'La primera propuesta: un kit propio de 12 piezas con objetivos de casa (5 objetivos por mapa).');
     }
 
@@ -154,8 +159,8 @@
 
     document.getElementById('b-zoom').onclick = () => { zoom = !zoom; paint(); };
     document.getElementById('b-print').onclick = () => window.print();
-    document.getElementById('foot').innerHTML = S('Project 4192 terrain layouts are original, generated by <code>gametheory/scripts/layout_gen.py</code> and checked for line of sight, movement and objective cover. Game content: CC BY-NC-SA 4.0.',
-      'Las disposiciones de Project 4192 son originales, generadas por <code>gametheory/scripts/layout_gen.py</code> y comprobadas en línea de visión, movimiento y cobertura de objetivos. Contenido del juego: CC BY-NC-SA 4.0.');
+    document.getElementById('foot').innerHTML = S('Project 4192 terrain layouts are original, designed in <code>gametheory/scripts/layout_design.py</code> and checked for line of sight, movement for big models and objective placement. Game content: CC BY-NC-SA 4.0.',
+      'Las disposiciones de Project 4192 son originales, diseñadas en <code>gametheory/scripts/layout_design.py</code> y comprobadas en línea de visión, movimiento de modelos grandes y colocación de objetivos. Contenido del juego: CC BY-NC-SA 4.0.');
     load();
   })();
   </script>

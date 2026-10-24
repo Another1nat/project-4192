@@ -3,12 +3,18 @@
   "code": "FC-1",
   "map": "FC",
   "variant": "1",
-  "title": "Frontline Clash — Layout 1",
-  "title_es": "Choque Frontal — Disposición 1",
+  "style": "Open",
+  "style_es": "Abierta",
+  "about": "Long fire lanes and objectives at the edge of cover. Simple to set up; good for learning and for gunlines.",
+  "about_es": "Carriles de fuego largos y objetivos al borde de la cobertura. Fácil de montar; buena para aprender y para ejércitos de disparo.",
+  "title": "Frontline Clash — 1 · Open",
+  "title_es": "Choque Frontal — 1 · Abierta",
   "table": {
    "width_in": 44.0,
    "depth_in": 30.0
   },
+  "kit": "standard",
+  "symmetry": "mirror_y",
   "deployment_zones": [
    {
     "role": "attacker",
@@ -81,49 +87,9 @@
     "control_radius_in": 3.0
    }
   ],
-  "kit": "standard",
-  "symmetry": "mirror_y",
   "pieces": [
    {
     "code": "A",
-    "type": "TL",
-    "kind": "Large Wedge (left)",
-    "kind_es": "Cuña grande (izquierda)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -3.55,
-     11.23
-    ],
-    "from_left_in": 18.4,
-    "from_front_in": 26.2,
-    "rotation_deg": 315,
-    "corners_in": [
-     [
-      -10.45,
-      12.46
-     ],
-     [
-      -2.32,
-      4.33
-     ],
-     [
-      3.34,
-      9.99
-     ],
-     [
-      -9.03,
-      13.88
-     ]
-    ]
-   },
-   {
-    "code": "B",
     "type": "LR",
     "kind": "Large Ruin",
     "kind_es": "Ruina grande",
@@ -135,68 +101,193 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     15.11,
-     10.97
+     -14.0,
+     11.0
     ],
-    "from_left_in": 37.1,
+    "from_left_in": 8.0,
     "from_front_in": 26.0,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.2,
+     "end": "back",
+     "end_in": 0.5
+    },
     "corners_in": [
      [
-      20.86,
-      14.47
+      -8.25,
+      14.5
      ],
      [
-      20.86,
-      7.47
+      -8.25,
+      7.5
      ],
      [
-      9.36,
-      7.47
+      -19.75,
+      7.5
      ],
      [
-      9.36,
-      14.47
+      -19.75,
+      14.5
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -19.4,
+       14.15
+      ],
+      [
+       -11.4,
+       14.15
+      ]
+     ],
+     [
+      [
+       -19.4,
+       14.15
+      ],
+      [
+       -19.4,
+       9.15
+      ]
+     ],
+     [
+      [
+       -11.6,
+       7.85
+      ],
+      [
+       -8.6,
+       7.85
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "B",
+    "type": "LL",
+    "kind": "Long Wall",
+    "kind_es": "Muro largo",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     10.0,
+     2.5
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     5.5,
+     9.0
+    ],
+    "from_left_in": 27.5,
+    "from_front_in": 24.0,
+    "rotation_deg": 30,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 11.5,
+     "end": "back",
+     "end_in": 2.4
+    },
+    "corners_in": [
+     [
+      9.21,
+      12.58
+     ],
+     [
+      10.46,
+      10.42
+     ],
+     [
+      1.79,
+      5.42
+     ],
+     [
+      0.54,
+      7.58
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       1.43,
+       6.65
+      ],
+      [
+       9.57,
+       11.35
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "C",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
     "size_in": [
      6.0,
-     2.0
+     4.0
     ],
     "height_in": 3.0,
     "centre_in": [
-     -17.49,
-     5.87
+     17.5,
+     7.0
     ],
-    "from_left_in": 4.5,
-    "from_front_in": 20.9,
-    "rotation_deg": 120,
+    "from_left_in": 39.5,
+    "from_front_in": 22.0,
+    "rotation_deg": 170,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 1.2,
+     "end": "back",
+     "end_in": 5.5
+    },
     "corners_in": [
      [
-      -15.12,
-      3.77
+      20.8,
+      8.45
      ],
      [
-      -16.85,
-      2.77
+      20.11,
+      4.51
      ],
      [
-      -19.85,
-      7.96
+      14.2,
+      5.55
      ],
      [
-      -18.12,
-      8.96
+      14.89,
+      9.49
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       20.4,
+       8.16
+      ],
+      [
+       16.46,
+       8.86
+      ]
+     ],
+     [
+      [
+       20.4,
+       8.16
+      ],
+      [
+       19.94,
+       5.6
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "D",
@@ -211,30 +302,49 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     15.87,
-     3.48
+     -15.0,
+     3.0
     ],
-    "from_left_in": 37.9,
-    "from_front_in": 18.5,
+    "from_left_in": 7.0,
+    "from_front_in": 18.0,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 4.0,
+     "end": "back",
+     "end_in": 11.0
+    },
     "corners_in": [
      [
-      18.87,
-      2.48
+      -12.0,
+      4.0
      ],
      [
-      18.87,
-      4.48
+      -12.0,
+      2.0
      ],
      [
-      12.87,
-      4.48
+      -18.0,
+      2.0
      ],
      [
-      12.87,
-      2.48
+      -18.0,
+      4.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -17.7,
+       3.0
+      ],
+      [
+       -12.3,
+       3.0
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "E",
@@ -249,71 +359,176 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     15.87,
-     -3.48
+     -15.0,
+     -3.0
     ],
-    "from_left_in": 37.9,
-    "from_front_in": 11.5,
+    "from_left_in": 7.0,
+    "from_front_in": 12.0,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 4.0,
+     "end": "front",
+     "end_in": 11.0
+    },
     "corners_in": [
      [
-      18.87,
-      -2.48
+      -12.0,
+      -4.0
      ],
      [
-      18.87,
-      -4.48
+      -12.0,
+      -2.0
      ],
      [
-      12.87,
-      -4.48
+      -18.0,
+      -2.0
      ],
      [
-      12.87,
-      -2.48
+      -18.0,
+      -4.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -17.7,
+       -3.0
+      ],
+      [
+       -12.3,
+       -3.0
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
     "code": "F",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
     "size_in": [
      6.0,
-     2.0
+     4.0
     ],
     "height_in": 3.0,
     "centre_in": [
-     -17.49,
-     -5.87
+     17.5,
+     -7.0
     ],
-    "from_left_in": 4.5,
-    "from_front_in": 9.1,
-    "rotation_deg": 60,
+    "from_left_in": 39.5,
+    "from_front_in": 8.0,
+    "rotation_deg": 10,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 1.2,
+     "end": "front",
+     "end_in": 5.5
+    },
     "corners_in": [
      [
-      -15.12,
-      -3.77
+      20.8,
+      -8.45
      ],
      [
-      -16.85,
-      -2.77
+      20.11,
+      -4.51
      ],
      [
-      -19.85,
-      -7.96
+      14.2,
+      -5.55
      ],
      [
-      -18.12,
-      -8.96
+      14.89,
+      -9.49
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       20.4,
+       -8.16
+      ],
+      [
+       16.46,
+       -8.86
+      ]
+     ],
+     [
+      [
+       20.4,
+       -8.16
+      ],
+      [
+       19.94,
+       -5.6
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
     "code": "G",
+    "type": "LL",
+    "kind": "Long Wall",
+    "kind_es": "Muro largo",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     10.0,
+     2.5
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     5.5,
+     -9.0
+    ],
+    "from_left_in": 27.5,
+    "from_front_in": 6.0,
+    "rotation_deg": 150,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 11.5,
+     "end": "front",
+     "end_in": 2.4
+    },
+    "corners_in": [
+     [
+      9.21,
+      -12.58
+     ],
+     [
+      10.46,
+      -10.42
+     ],
+     [
+      1.79,
+      -5.42
+     ],
+     [
+      0.54,
+      -7.58
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       1.43,
+       -6.65
+      ],
+      [
+       9.57,
+       -11.35
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "H",
     "type": "LR",
     "kind": "Large Ruin",
     "kind_es": "Ruina grande",
@@ -325,101 +540,147 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     15.11,
-     -10.97
+     -14.0,
+     -11.0
     ],
-    "from_left_in": 37.1,
+    "from_left_in": 8.0,
     "from_front_in": 4.0,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.2,
+     "end": "front",
+     "end_in": 0.5
+    },
     "corners_in": [
      [
-      20.86,
-      -14.47
+      -8.25,
+      -14.5
      ],
      [
-      20.86,
-      -7.47
+      -8.25,
+      -7.5
      ],
      [
-      9.36,
-      -7.47
+      -19.75,
+      -7.5
      ],
      [
-      9.36,
-      -14.47
+      -19.75,
+      -14.5
      ]
-    ]
-   },
-   {
-    "code": "H",
-    "type": "TR",
-    "kind": "Large Wedge (right)",
-    "kind_es": "Cuña grande (derecha)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
     ],
-    "height_in": 5.0,
-    "centre_in": [
-     -3.55,
-     -11.23
-    ],
-    "from_left_in": 18.4,
-    "from_front_in": 3.8,
-    "rotation_deg": 45,
-    "corners_in": [
+    "walls_in": [
      [
-      -10.45,
-      -12.46
+      [
+       -19.4,
+       -14.15
+      ],
+      [
+       -11.4,
+       -14.15
+      ]
      ],
      [
-      -2.32,
-      -4.33
+      [
+       -19.4,
+       -14.15
+      ],
+      [
+       -19.4,
+       -9.15
+      ]
      ],
      [
-      3.34,
-      -9.99
-     ],
-     [
-      -9.03,
-      -13.88
+      [
+       -11.6,
+       -7.85
+      ],
+      [
+       -8.6,
+       -7.85
+      ]
      ]
-    ]
+    ],
+    "measured": true
    }
   ],
   "checks": {
-   "sightlines_blocked": 0.82,
-   "coverage": 0.245,
+   "sightlines_blocked": 0.887,
+   "coverage": 0.214,
    "shelter": [
-    0.75,
-    0.68
+    0.82,
+    0.86
    ],
    "centre_blocked": [
-    0.48,
-    0.47
+    0.6,
+    0.55
    ],
    "big_model_route": true,
-   "objective_cover_in": [
-    4.9,
-    3.8,
-    2.5
+   "objective_terrain_in": [
+    5.7,
+    2.0,
+    5.5
    ],
-   "score": 2.43,
-   "half_set": "LR+TL+SL+SL"
-  }
+   "objective_cover_in": [
+    5.7,
+    2.0,
+    5.5
+   ],
+   "pieces": 8,
+   "score": 4.46
+  },
+  "design": [
+   [
+    "LR",
+    8.0,
+    4.0,
+    0,
+    0,
+    false
+   ],
+   [
+    "MR",
+    39.5,
+    8.0,
+    10,
+    1,
+    false
+   ],
+   [
+    "LL",
+    27.5,
+    6.0,
+    -30,
+    0,
+    false
+   ],
+   [
+    "SL",
+    7.0,
+    12.0,
+    0,
+    0,
+    false
+   ]
+  ]
  },
  "FC-2": {
   "code": "FC-2",
   "map": "FC",
   "variant": "2",
-  "title": "Frontline Clash — Layout 2",
-  "title_es": "Choque Frontal — Disposición 2",
+  "style": "Standard",
+  "style_es": "Estándar",
+  "about": "The default table: clusters of ruins, objectives inside cover, a few open lanes.",
+  "about_es": "La mesa por defecto: grupos de ruinas, objetivos dentro de cobertura y algunos carriles abiertos.",
+  "title": "Frontline Clash — 2 · Standard",
+  "title_es": "Choque Frontal — 2 · Estándar",
   "table": {
    "width_in": 44.0,
    "depth_in": 30.0
   },
+  "kit": "standard",
+  "symmetry": "mirror_y",
   "deployment_zones": [
    {
     "role": "attacker",
@@ -492,52 +753,12 @@
     "control_radius_in": 3.0
    }
   ],
-  "kit": "standard",
-  "symmetry": "mirror_y",
   "pieces": [
    {
     "code": "A",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -3.19,
-     10.37
-    ],
-    "from_left_in": 18.8,
-    "from_front_in": 25.4,
-    "rotation_deg": 150,
-    "corners_in": [
-     [
-      -0.09,
-      9.74
-     ],
-     [
-      -1.09,
-      8.01
-     ],
-     [
-      -6.29,
-      11.01
-     ],
-     [
-      -5.29,
-      12.74
-     ]
-    ]
-   },
-   {
-    "code": "B",
-    "type": "TL",
-    "kind": "Large Wedge (left)",
-    "kind_es": "Cuña grande (izquierda)",
+    "type": "TR",
+    "kind": "Large Wedge (right)",
+    "kind_es": "Cuña grande (derecha)",
     "terrain": "dense",
     "blocks_los": true,
     "size_in": [
@@ -546,30 +767,126 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     -14.02,
-     8.24
+     -14.0,
+     10.5
     ],
     "from_left_in": 8.0,
-    "from_front_in": 23.2,
-    "rotation_deg": 90,
+    "from_front_in": 25.5,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.2,
+     "end": "back",
+     "end_in": 0.5
+    },
     "corners_in": [
      [
-      -10.02,
-      2.49
+      -19.75,
+      14.5
      ],
      [
-      -10.02,
-      13.99
+      -8.25,
+      14.5
      ],
      [
-      -18.02,
-      13.99
+      -8.25,
+      6.5
      ],
      [
-      -12.02,
-      2.49
+      -19.75,
+      12.5
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -19.4,
+       14.15
+      ],
+      [
+       -8.6,
+       14.15
+      ]
+     ],
+     [
+      [
+       -8.6,
+       14.15
+      ],
+      [
+       -8.6,
+       6.85
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "B",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     2.5,
+     10.0
+    ],
+    "from_left_in": 24.5,
+    "from_front_in": 25.0,
+    "rotation_deg": 5,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 16.3,
+     "end": "back",
+     "end_in": 2.7
+    },
+    "corners_in": [
+     [
+      5.31,
+      12.25
+     ],
+     [
+      5.66,
+      8.27
+     ],
+     [
+      -0.31,
+      7.75
+     ],
+     [
+      -0.66,
+      11.73
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -0.28,
+       11.41
+      ],
+      [
+       3.7,
+       11.76
+      ]
+     ],
+     [
+      [
+       -0.28,
+       11.41
+      ],
+      [
+       -0.06,
+       8.82
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "C",
@@ -584,30 +901,69 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     13.05,
-     6.12
+     15.0,
+     9.5
     ],
-    "from_left_in": 35.0,
-    "from_front_in": 21.1,
+    "from_left_in": 37.0,
+    "from_front_in": 24.5,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 1.2,
+     "end": "back",
+     "end_in": 2.0
+    },
     "corners_in": [
      [
-      18.8,
-      2.62
+      20.75,
+      13.0
      ],
      [
-      18.8,
-      9.62
+      20.75,
+      6.0
      ],
      [
-      7.3,
-      9.62
+      9.25,
+      6.0
      ],
      [
-      7.3,
-      2.62
+      9.25,
+      13.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       20.4,
+       12.65
+      ],
+      [
+       12.4,
+       12.65
+      ]
+     ],
+     [
+      [
+       20.4,
+       12.65
+      ],
+      [
+       20.4,
+       7.65
+      ]
+     ],
+     [
+      [
+       12.6,
+       6.35
+      ],
+      [
+       9.6,
+       6.35
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "D",
@@ -622,33 +978,119 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     -0.57,
-     3.95
+     -16.5,
+     3.0
     ],
-    "from_left_in": 21.4,
-    "from_front_in": 18.9,
-    "rotation_deg": 0,
+    "from_left_in": 5.5,
+    "from_front_in": 18.0,
+    "rotation_deg": 160,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.3,
+     "end": "back",
+     "end_in": 10.0
+    },
     "corners_in": [
      [
-      2.43,
-      2.95
+      -13.34,
+      2.91
      ],
      [
-      2.43,
-      4.95
+      -14.02,
+      1.03
      ],
      [
-      -3.57,
-      4.95
+      -19.66,
+      3.09
      ],
      [
-      -3.57,
-      2.95
+      -18.98,
+      4.97
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -19.04,
+       3.92
+      ],
+      [
+       -13.96,
+       2.08
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "E",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     15.0,
+     0.0
+    ],
+    "from_left_in": 37.0,
+    "from_front_in": 15.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 5.0,
+     "end": "front",
+     "end_in": 12.0
+    },
+    "corners_in": [
+     [
+      17.0,
+      3.0
+     ],
+     [
+      13.0,
+      3.0
+     ],
+     [
+      13.0,
+      -3.0
+     ],
+     [
+      17.0,
+      -3.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       16.65,
+       2.65
+      ],
+      [
+       16.65,
+       -1.35
+      ]
+     ],
+     [
+      [
+       16.65,
+       2.65
+      ],
+      [
+       14.05,
+       2.65
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "F",
     "type": "SL",
     "kind": "Short Wall",
     "kind_es": "Muro corto",
@@ -660,33 +1102,52 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     -0.57,
-     -3.95
+     -16.5,
+     -3.0
     ],
-    "from_left_in": 21.4,
-    "from_front_in": 11.1,
-    "rotation_deg": 0,
+    "from_left_in": 5.5,
+    "from_front_in": 12.0,
+    "rotation_deg": 20,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.3,
+     "end": "front",
+     "end_in": 10.0
+    },
     "corners_in": [
      [
-      2.43,
-      -2.95
+      -13.34,
+      -2.91
      ],
      [
-      2.43,
-      -4.95
+      -14.02,
+      -1.03
      ],
      [
-      -3.57,
-      -4.95
+      -19.66,
+      -3.09
      ],
      [
-      -3.57,
-      -2.95
+      -18.98,
+      -4.97
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -19.04,
+       -3.92
+      ],
+      [
+       -13.96,
+       -2.08
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
-    "code": "F",
+    "code": "G",
     "type": "LR",
     "kind": "Large Ruin",
     "kind_es": "Ruina grande",
@@ -698,36 +1159,142 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     13.05,
-     -6.12
+     15.0,
+     -9.5
     ],
-    "from_left_in": 35.0,
-    "from_front_in": 8.9,
+    "from_left_in": 37.0,
+    "from_front_in": 5.5,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 1.2,
+     "end": "front",
+     "end_in": 2.0
+    },
     "corners_in": [
      [
-      18.8,
-      -2.62
+      20.75,
+      -13.0
      ],
      [
-      18.8,
-      -9.62
+      20.75,
+      -6.0
      ],
      [
-      7.3,
-      -9.62
+      9.25,
+      -6.0
      ],
      [
-      7.3,
-      -2.62
+      9.25,
+      -13.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       20.4,
+       -12.65
+      ],
+      [
+       12.4,
+       -12.65
+      ]
+     ],
+     [
+      [
+       20.4,
+       -12.65
+      ],
+      [
+       20.4,
+       -7.65
+      ]
+     ],
+     [
+      [
+       12.6,
+       -6.35
+      ],
+      [
+       9.6,
+       -6.35
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
-    "code": "G",
-    "type": "TR",
-    "kind": "Large Wedge (right)",
-    "kind_es": "Cuña grande (derecha)",
+    "code": "H",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     2.5,
+     -10.0
+    ],
+    "from_left_in": 24.5,
+    "from_front_in": 5.0,
+    "rotation_deg": 175,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 16.3,
+     "end": "front",
+     "end_in": 2.7
+    },
+    "corners_in": [
+     [
+      5.31,
+      -12.25
+     ],
+     [
+      5.66,
+      -8.27
+     ],
+     [
+      -0.31,
+      -7.75
+     ],
+     [
+      -0.66,
+      -11.73
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -0.28,
+       -11.41
+      ],
+      [
+       3.7,
+       -11.76
+      ]
+     ],
+     [
+      [
+       -0.28,
+       -11.41
+      ],
+      [
+       -0.06,
+       -8.82
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "I",
+    "type": "TL",
+    "kind": "Large Wedge (left)",
+    "kind_es": "Cuña grande (izquierda)",
     "terrain": "dense",
     "blocks_los": true,
     "size_in": [
@@ -736,101 +1303,145 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     -14.02,
-     -8.24
+     -14.0,
+     -10.5
     ],
     "from_left_in": 8.0,
-    "from_front_in": 6.8,
-    "rotation_deg": 270,
+    "from_front_in": 4.5,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.2,
+     "end": "front",
+     "end_in": 0.5
+    },
     "corners_in": [
      [
-      -10.02,
-      -2.49
+      -19.75,
+      -14.5
      ],
      [
-      -10.02,
-      -13.99
+      -8.25,
+      -14.5
      ],
      [
-      -18.02,
-      -13.99
+      -8.25,
+      -6.5
      ],
      [
-      -12.02,
-      -2.49
+      -19.75,
+      -12.5
      ]
-    ]
-   },
-   {
-    "code": "H",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
     ],
-    "height_in": 3.0,
-    "centre_in": [
-     -3.19,
-     -10.37
-    ],
-    "from_left_in": 18.8,
-    "from_front_in": 4.6,
-    "rotation_deg": 30,
-    "corners_in": [
+    "walls_in": [
      [
-      -0.09,
-      -9.74
+      [
+       -19.4,
+       -14.15
+      ],
+      [
+       -8.6,
+       -14.15
+      ]
      ],
      [
-      -1.09,
-      -8.01
-     ],
-     [
-      -6.29,
-      -11.01
-     ],
-     [
-      -5.29,
-      -12.74
+      [
+       -8.6,
+       -14.15
+      ],
+      [
+       -8.6,
+       -6.85
+      ]
      ]
-    ]
+    ],
+    "measured": true
    }
   ],
   "checks": {
-   "sightlines_blocked": 0.797,
-   "coverage": 0.245,
+   "sightlines_blocked": 0.896,
+   "coverage": 0.282,
    "shelter": [
-    0.68,
-    0.55
+    0.84,
+    0.84
    ],
    "centre_blocked": [
-    0.45,
-    0.48
+    0.61,
+    0.6
    ],
    "big_model_route": true,
-   "objective_cover_in": [
-    2.9,
-    3.2,
-    2.6
+   "objective_terrain_in": [
+    7.8,
+    1.0,
+    0.0
    ],
-   "score": 1.133,
-   "half_set": "LR+TL+SL+SL"
-  }
+   "objective_cover_in": [
+    7.8,
+    1.0,
+    0.0
+   ],
+   "pieces": 9,
+   "score": 4.05
+  },
+  "design": [
+   [
+    "TL",
+    8.0,
+    4.5,
+    0,
+    0,
+    false
+   ],
+   [
+    "LR",
+    37.0,
+    5.5,
+    0,
+    1,
+    false
+   ],
+   [
+    "MR",
+    24.5,
+    5.0,
+    -5,
+    0,
+    false
+   ],
+   [
+    "SL",
+    5.5,
+    12.0,
+    20,
+    0,
+    false
+   ],
+   [
+    "MR",
+    37.0,
+    15.0,
+    90,
+    1,
+    true
+   ]
+  ]
  },
  "FC-3": {
   "code": "FC-3",
   "map": "FC",
   "variant": "3",
-  "title": "Frontline Clash — Layout 3",
-  "title_es": "Choque Frontal — Disposición 3",
+  "style": "Urban",
+  "style_es": "Urbana",
+  "about": "Dense ruins and objectives deep inside them. Short sightlines; close-quarters and melee armies shine.",
+  "about_es": "Ruinas densas con los objetivos dentro. Líneas de visión cortas; brillan los ejércitos de combate cercano.",
+  "title": "Frontline Clash — 3 · Urban",
+  "title_es": "Choque Frontal — 3 · Urbana",
   "table": {
    "width_in": 44.0,
    "depth_in": 30.0
   },
+  "kit": "standard",
+  "symmetry": "mirror_y",
   "deployment_zones": [
    {
     "role": "attacker",
@@ -903,49 +1514,9 @@
     "control_radius_in": 3.0
    }
   ],
-  "kit": "standard",
-  "symmetry": "mirror_y",
   "pieces": [
    {
     "code": "A",
-    "type": "TL",
-    "kind": "Large Wedge (left)",
-    "kind_es": "Cuña grande (izquierda)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     9.85,
-     8.74
-    ],
-    "from_left_in": 31.8,
-    "from_front_in": 23.7,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      13.85,
-      2.99
-     ],
-     [
-      13.85,
-      14.49
-     ],
-     [
-      5.85,
-      14.49
-     ],
-     [
-      11.85,
-      2.99
-     ]
-    ]
-   },
-   {
-    "code": "B",
     "type": "LR",
     "kind": "Large Ruin",
     "kind_es": "Ruina grande",
@@ -957,30 +1528,136 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     -11.93,
-     8.15
+     15.0,
+     11.0
     ],
-    "from_left_in": 10.1,
-    "from_front_in": 23.2,
-    "rotation_deg": 90,
+    "from_left_in": 37.0,
+    "from_front_in": 26.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 1.2,
+     "end": "back",
+     "end_in": 0.5
+    },
     "corners_in": [
      [
-      -8.43,
-      13.9
+      20.75,
+      14.5
      ],
      [
-      -15.43,
-      13.9
+      20.75,
+      7.5
      ],
      [
-      -15.43,
-      2.4
+      9.25,
+      7.5
      ],
      [
-      -8.43,
-      2.4
+      9.25,
+      14.5
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       20.4,
+       14.15
+      ],
+      [
+       12.4,
+       14.15
+      ]
+     ],
+     [
+      [
+       20.4,
+       14.15
+      ],
+      [
+       20.4,
+       9.15
+      ]
+     ],
+     [
+      [
+       12.6,
+       7.85
+      ],
+      [
+       9.6,
+       7.85
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "B",
+    "type": "TR",
+    "kind": "Large Wedge (right)",
+    "kind_es": "Cuña grande (derecha)",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     8.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -15.5,
+     10.5
+    ],
+    "from_left_in": 6.5,
+    "from_front_in": 25.5,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 0.8,
+     "end": "back",
+     "end_in": 0.5
+    },
+    "corners_in": [
+     [
+      -21.25,
+      14.5
+     ],
+     [
+      -9.75,
+      14.5
+     ],
+     [
+      -9.75,
+      6.5
+     ],
+     [
+      -21.25,
+      12.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -20.9,
+       14.15
+      ],
+      [
+       -10.1,
+       14.15
+      ]
+     ],
+     [
+      [
+       -10.1,
+       14.15
+      ],
+      [
+       -10.1,
+       6.85
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "C",
@@ -995,147 +1672,119 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     3.55,
-     6.53
+     1.0,
+     9.0
     ],
-    "from_left_in": 25.6,
-    "from_front_in": 21.5,
-    "rotation_deg": 120,
+    "from_left_in": 23.0,
+    "from_front_in": 24.0,
+    "rotation_deg": 170,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 17.9,
+     "end": "back",
+     "end_in": 4.5
+    },
     "corners_in": [
      [
-      5.92,
-      4.43
+      4.13,
+      9.46
      ],
      [
-      4.19,
-      3.43
+      3.78,
+      7.49
      ],
      [
-      1.19,
-      8.63
+      -2.13,
+      8.54
      ],
      [
-      2.92,
-      9.63
+      -1.78,
+      10.51
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -1.66,
+       9.47
+      ],
+      [
+       3.66,
+       8.53
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "D",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
     "size_in": [
      6.0,
-     2.0
+     4.0
     ],
     "height_in": 3.0,
     "centre_in": [
-     -3.18,
-     4.6
+     -16.5,
+     0.0
     ],
-    "from_left_in": 18.8,
-    "from_front_in": 19.6,
+    "from_left_in": 5.5,
+    "from_front_in": 15.0,
     "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 3.5,
+     "end": "front",
+     "end_in": 12.0
+    },
     "corners_in": [
      [
-      -2.18,
-      7.6
+      -14.5,
+      3.0
      ],
      [
-      -4.18,
-      7.6
+      -18.5,
+      3.0
      ],
      [
-      -4.18,
-      1.6
+      -18.5,
+      -3.0
      ],
      [
-      -2.18,
-      1.6
+      -14.5,
+      -3.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -14.85,
+       -2.65
+      ],
+      [
+       -14.85,
+       1.35
+      ]
+     ],
+     [
+      [
+       -14.85,
+       -2.65
+      ],
+      [
+       -17.45,
+       -2.65
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
     "code": "E",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -3.18,
-     -4.6
-    ],
-    "from_left_in": 18.8,
-    "from_front_in": 10.4,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      -2.18,
-      -7.6
-     ],
-     [
-      -4.18,
-      -7.6
-     ],
-     [
-      -4.18,
-      -1.6
-     ],
-     [
-      -2.18,
-      -1.6
-     ]
-    ]
-   },
-   {
-    "code": "F",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     3.55,
-     -6.53
-    ],
-    "from_left_in": 25.6,
-    "from_front_in": 8.5,
-    "rotation_deg": 60,
-    "corners_in": [
-     [
-      5.92,
-      -4.43
-     ],
-     [
-      4.19,
-      -3.43
-     ],
-     [
-      1.19,
-      -8.63
-     ],
-     [
-      2.92,
-      -9.63
-     ]
-    ]
-   },
-   {
-    "code": "G",
     "type": "LR",
     "kind": "Large Ruin",
     "kind_es": "Ruina grande",
@@ -1147,36 +1796,199 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     -11.93,
-     -8.15
+     3.0,
+     0.0
     ],
-    "from_left_in": 10.1,
-    "from_front_in": 6.8,
-    "rotation_deg": 90,
+    "from_left_in": 25.0,
+    "from_front_in": 15.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 13.2,
+     "end": "front",
+     "end_in": 11.5
+    },
     "corners_in": [
      [
-      -8.43,
-      -13.9
+      8.75,
+      -3.5
      ],
      [
-      -15.43,
-      -13.9
+      8.75,
+      3.5
      ],
      [
-      -15.43,
-      -2.4
+      -2.75,
+      3.5
      ],
      [
-      -8.43,
-      -2.4
+      -2.75,
+      -3.5
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -2.4,
+       -3.15
+      ],
+      [
+       5.6,
+       -3.15
+      ]
+     ],
+     [
+      [
+       -2.4,
+       -3.15
+      ],
+      [
+       -2.4,
+       1.85
+      ]
+     ],
+     [
+      [
+       5.4,
+       3.15
+      ],
+      [
+       8.4,
+       3.15
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "F",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     14.0,
+     0.0
+    ],
+    "from_left_in": 36.0,
+    "from_front_in": 15.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 6.0,
+     "end": "front",
+     "end_in": 12.0
+    },
+    "corners_in": [
+     [
+      16.0,
+      3.0
+     ],
+     [
+      12.0,
+      3.0
+     ],
+     [
+      12.0,
+      -3.0
+     ],
+     [
+      16.0,
+      -3.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       12.35,
+       2.65
+      ],
+      [
+       12.35,
+       -1.35
+      ]
+     ],
+     [
+      [
+       12.35,
+       2.65
+      ],
+      [
+       14.95,
+       2.65
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "G",
+    "type": "SL",
+    "kind": "Short Wall",
+    "kind_es": "Muro corto",
+    "terrain": "light",
+    "blocks_los": false,
+    "size_in": [
+     6.0,
+     2.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     1.0,
+     -9.0
+    ],
+    "from_left_in": 23.0,
+    "from_front_in": 6.0,
+    "rotation_deg": 10,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 17.9,
+     "end": "front",
+     "end_in": 4.5
+    },
+    "corners_in": [
+     [
+      4.13,
+      -9.46
+     ],
+     [
+      3.78,
+      -7.49
+     ],
+     [
+      -2.13,
+      -8.54
+     ],
+     [
+      -1.78,
+      -10.51
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -1.66,
+       -9.47
+      ],
+      [
+       3.66,
+       -8.53
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
     "code": "H",
-    "type": "TR",
-    "kind": "Large Wedge (right)",
-    "kind_es": "Cuña grande (derecha)",
+    "type": "TL",
+    "kind": "Large Wedge (left)",
+    "kind_es": "Cuña grande (izquierda)",
     "terrain": "dense",
     "blocks_los": true,
     "size_in": [
@@ -1185,63 +1997,230 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     9.85,
-     -8.74
+     -15.5,
+     -10.5
     ],
-    "from_left_in": 31.8,
-    "from_front_in": 6.3,
-    "rotation_deg": 270,
+    "from_left_in": 6.5,
+    "from_front_in": 4.5,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 0.8,
+     "end": "front",
+     "end_in": 0.5
+    },
     "corners_in": [
      [
-      13.85,
-      -2.99
+      -21.25,
+      -14.5
      ],
      [
-      13.85,
-      -14.49
+      -9.75,
+      -14.5
      ],
      [
-      5.85,
-      -14.49
+      -9.75,
+      -6.5
      ],
      [
-      11.85,
-      -2.99
+      -21.25,
+      -12.5
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -20.9,
+       -14.15
+      ],
+      [
+       -10.1,
+       -14.15
+      ]
+     ],
+     [
+      [
+       -10.1,
+       -14.15
+      ],
+      [
+       -10.1,
+       -6.85
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "I",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     15.0,
+     -11.0
+    ],
+    "from_left_in": 37.0,
+    "from_front_in": 4.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 1.2,
+     "end": "front",
+     "end_in": 0.5
+    },
+    "corners_in": [
+     [
+      20.75,
+      -14.5
+     ],
+     [
+      20.75,
+      -7.5
+     ],
+     [
+      9.25,
+      -7.5
+     ],
+     [
+      9.25,
+      -14.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       20.4,
+       -14.15
+      ],
+      [
+       12.4,
+       -14.15
+      ]
+     ],
+     [
+      [
+       20.4,
+       -14.15
+      ],
+      [
+       20.4,
+       -9.15
+      ]
+     ],
+     [
+      [
+       12.6,
+       -7.85
+      ],
+      [
+       9.6,
+       -7.85
+      ]
+     ]
+    ],
+    "measured": true
    }
   ],
   "checks": {
-   "sightlines_blocked": 0.788,
-   "coverage": 0.245,
+   "sightlines_blocked": 0.919,
+   "coverage": 0.325,
    "shelter": [
-    0.72,
-    0.6
+    0.94,
+    0.96
    ],
    "centre_blocked": [
-    0.53,
-    0.55
+    0.4,
+    0.46
    ],
    "big_model_route": true,
-   "objective_cover_in": [
-    2.7,
-    2.4,
-    3.0
+   "objective_terrain_in": [
+    0.0,
+    0.5,
+    0.0
    ],
-   "score": 1.992,
-   "half_set": "LR+TL+SL+SL"
-  }
+   "objective_cover_in": [
+    0.0,
+    0.5,
+    0.0
+   ],
+   "pieces": 9,
+   "score": 2.33
+  },
+  "design": [
+   [
+    "LR",
+    25.0,
+    15.0,
+    0,
+    0,
+    true
+   ],
+   [
+    "MR",
+    5.5,
+    15.0,
+    90,
+    0,
+    true
+   ],
+   [
+    "MR",
+    36.0,
+    15.0,
+    90,
+    2,
+    true
+   ],
+   [
+    "TL",
+    6.5,
+    4.5,
+    0,
+    0,
+    false
+   ],
+   [
+    "LR",
+    37.0,
+    4.0,
+    0,
+    1,
+    false
+   ],
+   [
+    "SL",
+    23.0,
+    6.0,
+    10,
+    0,
+    false
+   ]
+  ]
  },
  "BG-1": {
   "code": "BG-1",
   "map": "BG",
   "variant": "1",
-  "title": "Broken Ground — Layout 1",
-  "title_es": "Tierra Rota — Disposición 1",
+  "style": "Open",
+  "style_es": "Abierta",
+  "about": "Long fire lanes and objectives at the edge of cover. Simple to set up; good for learning and for gunlines.",
+  "about_es": "Carriles de fuego largos y objetivos al borde de la cobertura. Fácil de montar; buena para aprender y para ejércitos de disparo.",
+  "title": "Broken Ground — 1 · Open",
+  "title_es": "Tierra Rota — 1 · Abierta",
   "table": {
    "width_in": 44.0,
    "depth_in": 30.0
   },
+  "kit": "standard",
+  "symmetry": "point",
   "deployment_zones": [
    {
     "role": "attacker",
@@ -1306,8 +2285,6 @@
     "control_radius_in": 3.0
    }
   ],
-  "kit": "standard",
-  "symmetry": "point",
   "pieces": [
    {
     "code": "A",
@@ -1322,30 +2299,49 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     10.23,
-     9.33
+     -3.5,
+     13.0
     ],
-    "from_left_in": 32.2,
-    "from_front_in": 24.3,
-    "rotation_deg": 30,
+    "from_left_in": 18.5,
+    "from_front_in": 28.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 13.5,
+     "end": "back",
+     "end_in": 0.8
+    },
     "corners_in": [
      [
-      15.19,
-      10.75
+      -8.5,
+      14.25
      ],
      [
-      13.94,
-      12.91
+      -8.5,
+      11.75
      ],
      [
-      5.28,
-      7.91
+      1.5,
+      11.75
      ],
      [
-      6.53,
-      5.75
+      1.5,
+      14.25
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       1.2,
+       13.0
+      ],
+      [
+       -8.2,
+       13.0
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "B",
@@ -1360,147 +2356,119 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     16.03,
-     6.3
+     -17.5,
+     8.0
     ],
-    "from_left_in": 38.0,
-    "from_front_in": 21.3,
-    "rotation_deg": 45,
+    "from_left_in": 4.5,
+    "from_front_in": 23.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 3.5,
+     "end": "back",
+     "end_in": 4.0
+    },
     "corners_in": [
      [
-      18.86,
-      7.72
+      -18.5,
+      5.0
      ],
      [
-      17.45,
-      9.13
+      -16.5,
+      5.0
      ],
      [
-      13.2,
-      4.89
+      -16.5,
+      11.0
      ],
      [
-      14.62,
-      3.47
+      -18.5,
+      11.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -17.5,
+       10.7
+      ],
+      [
+       -17.5,
+       5.3
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "C",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
     "terrain": "dense",
     "blocks_los": true,
     "size_in": [
-     11.5,
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     -11.0,
      7.0
     ],
-    "height_in": 5.0,
-    "centre_in": [
-     -5.28,
-     5.5
-    ],
-    "from_left_in": 16.7,
-    "from_front_in": 20.5,
-    "rotation_deg": 30,
+    "from_left_in": 11.0,
+    "from_front_in": 22.0,
+    "rotation_deg": 170,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 7.7,
+     "end": "back",
+     "end_in": 5.5
+    },
     "corners_in": [
      [
-      -12.01,
-      5.66
+      -13.61,
+      9.49
      ],
      [
-      -8.51,
-      -0.4
+      -14.3,
+      5.55
      ],
      [
-      1.45,
-      5.35
+      -8.39,
+      4.51
      ],
      [
-      -2.05,
-      11.41
+      -7.7,
+      8.45
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -13.32,
+       9.09
+      ],
+      [
+       -9.38,
+       8.39
+      ]
+     ],
+     [
+      [
+       -13.32,
+       9.09
+      ],
+      [
+       -13.77,
+       6.52
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "D",
-    "type": "MR",
-    "kind": "Medium Ruin",
-    "kind_es": "Ruina mediana",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     6.0,
-     4.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -19.24,
-     1.52
-    ],
-    "from_left_in": 2.8,
-    "from_front_in": 16.5,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      -17.24,
-      4.52
-     ],
-     [
-      -21.24,
-      4.52
-     ],
-     [
-      -21.24,
-      -1.48
-     ],
-     [
-      -17.24,
-      -1.48
-     ]
-    ]
-   },
-   {
-    "code": "E",
-    "type": "MR",
-    "kind": "Medium Ruin",
-    "kind_es": "Ruina mediana",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     6.0,
-     4.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     19.24,
-     -1.52
-    ],
-    "from_left_in": 41.2,
-    "from_front_in": 13.5,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      17.24,
-      -4.52
-     ],
-     [
-      21.24,
-      -4.52
-     ],
-     [
-      21.24,
-      1.48
-     ],
-     [
-      17.24,
-      1.48
-     ]
-    ]
-   },
-   {
-    "code": "F",
     "type": "LR",
     "kind": "Large Ruin",
     "kind_es": "Ruina grande",
@@ -1512,30 +2480,213 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     5.28,
-     -5.5
+     6.0,
+     5.0
     ],
-    "from_left_in": 27.3,
-    "from_front_in": 9.5,
-    "rotation_deg": 30,
+    "from_left_in": 28.0,
+    "from_front_in": 20.0,
+    "rotation_deg": 35,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 9.3,
+     "end": "back",
+     "end_in": 3.8
+    },
     "corners_in": [
      [
-      12.01,
-      -5.66
+      -0.72,
+      4.57
      ],
      [
-      8.51,
-      0.4
+      3.3,
+      -1.17
      ],
      [
-      -1.45,
-      -5.35
+      12.72,
+      5.43
      ],
      [
-      2.05,
-      -11.41
+      8.7,
+      11.17
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       8.62,
+       10.68
+      ],
+      [
+       2.06,
+       6.09
+      ]
+     ],
+     [
+      [
+       8.62,
+       10.68
+      ],
+      [
+       11.48,
+       6.58
+      ]
+     ],
+     [
+      [
+       5.84,
+       1.04
+      ],
+      [
+       3.38,
+       -0.68
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "E",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -6.0,
+     -5.0
+    ],
+    "from_left_in": 16.0,
+    "from_front_in": 10.0,
+    "rotation_deg": 35,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 9.3,
+     "end": "front",
+     "end_in": 3.8
+    },
+    "corners_in": [
+     [
+      0.72,
+      -4.57
+     ],
+     [
+      -3.3,
+      1.17
+     ],
+     [
+      -12.72,
+      -5.43
+     ],
+     [
+      -8.7,
+      -11.17
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -8.62,
+       -10.68
+      ],
+      [
+       -2.06,
+       -6.09
+      ]
+     ],
+     [
+      [
+       -8.62,
+       -10.68
+      ],
+      [
+       -11.48,
+       -6.58
+      ]
+     ],
+     [
+      [
+       -5.84,
+       -1.04
+      ],
+      [
+       -3.38,
+       0.68
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "F",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     11.0,
+     -7.0
+    ],
+    "from_left_in": 33.0,
+    "from_front_in": 8.0,
+    "rotation_deg": 170,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 7.7,
+     "end": "front",
+     "end_in": 5.5
+    },
+    "corners_in": [
+     [
+      13.61,
+      -9.49
+     ],
+     [
+      14.3,
+      -5.55
+     ],
+     [
+      8.39,
+      -4.51
+     ],
+     [
+      7.7,
+      -8.45
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       13.32,
+       -9.09
+      ],
+      [
+       9.38,
+       -8.39
+      ]
+     ],
+     [
+      [
+       13.32,
+       -9.09
+      ],
+      [
+       13.77,
+       -6.52
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
     "code": "G",
@@ -1550,30 +2701,49 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     -16.03,
-     -6.3
+     17.5,
+     -8.0
     ],
-    "from_left_in": 6.0,
-    "from_front_in": 8.7,
-    "rotation_deg": 45,
+    "from_left_in": 39.5,
+    "from_front_in": 7.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 3.5,
+     "end": "front",
+     "end_in": 4.0
+    },
     "corners_in": [
      [
-      -18.86,
-      -7.72
+      18.5,
+      -5.0
      ],
      [
-      -17.45,
-      -9.13
+      16.5,
+      -5.0
      ],
      [
-      -13.2,
-      -4.89
+      16.5,
+      -11.0
      ],
      [
-      -14.62,
-      -3.47
+      18.5,
+      -11.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       17.5,
+       -10.7
+      ],
+      [
+       17.5,
+       -5.3
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
     "code": "H",
@@ -1588,63 +2758,127 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     -10.23,
-     -9.33
+     3.5,
+     -13.0
     ],
-    "from_left_in": 11.8,
-    "from_front_in": 5.7,
-    "rotation_deg": 30,
+    "from_left_in": 25.5,
+    "from_front_in": 2.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 13.5,
+     "end": "front",
+     "end_in": 0.8
+    },
     "corners_in": [
      [
-      -15.19,
-      -10.75
+      8.5,
+      -14.25
      ],
      [
-      -13.94,
-      -12.91
+      8.5,
+      -11.75
      ],
      [
-      -5.28,
-      -7.91
+      -1.5,
+      -11.75
      ],
      [
-      -6.53,
-      -5.75
+      -1.5,
+      -14.25
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -1.2,
+       -13.0
+      ],
+      [
+       8.2,
+       -13.0
+      ]
+     ]
+    ],
+    "measured": true
    }
   ],
   "checks": {
-   "sightlines_blocked": 0.785,
+   "sightlines_blocked": 0.887,
    "coverage": 0.214,
    "shelter": [
-    0.6,
-    0.55
+    0.92,
+    0.82
    ],
    "centre_blocked": [
-    0.32,
-    0.37
+    0.95,
+    0.82
    ],
    "big_model_route": true,
-   "objective_cover_in": [
-    3.9,
-    2.9,
-    2.9
+   "objective_terrain_in": [
+    2.0,
+    0.0,
+    0.0
    ],
-   "score": 0.885,
-   "half_set": "LR+LL+MR+SL"
-  }
+   "objective_cover_in": [
+    2.0,
+    0.0,
+    0.0
+   ],
+   "pieces": 8,
+   "score": 3.35
+  },
+  "design": [
+   [
+    "LR",
+    16.0,
+    10.0,
+    35,
+    0,
+    false
+   ],
+   [
+    "MR",
+    33.0,
+    8.0,
+    -10,
+    1,
+    false
+   ],
+   [
+    "SL",
+    39.5,
+    7.0,
+    90,
+    0,
+    false
+   ],
+   [
+    "LL",
+    25.5,
+    2.0,
+    0,
+    0,
+    false
+   ]
+  ]
  },
  "BG-2": {
   "code": "BG-2",
   "map": "BG",
   "variant": "2",
-  "title": "Broken Ground — Layout 2",
-  "title_es": "Tierra Rota — Disposición 2",
+  "style": "Standard",
+  "style_es": "Estándar",
+  "about": "The default table: clusters of ruins, objectives inside cover, a few open lanes.",
+  "about_es": "La mesa por defecto: grupos de ruinas, objetivos dentro de cobertura y algunos carriles abiertos.",
+  "title": "Broken Ground — 2 · Standard",
+  "title_es": "Tierra Rota — 2 · Estándar",
   "table": {
    "width_in": 44.0,
    "depth_in": 30.0
   },
+  "kit": "standard",
+  "symmetry": "point",
   "deployment_zones": [
    {
     "role": "attacker",
@@ -1709,8 +2943,6 @@
     "control_radius_in": 3.0
    }
   ],
-  "kit": "standard",
-  "symmetry": "point",
   "pieces": [
    {
     "code": "A",
@@ -1725,299 +2957,129 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     5.24,
-     12.72
+     5.0,
+     12.0
     ],
-    "from_left_in": 27.2,
-    "from_front_in": 27.7,
+    "from_left_in": 27.0,
+    "from_front_in": 27.0,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 14.0,
+     "end": "back",
+     "end_in": 2.0
+    },
     "corners_in": [
      [
-      2.24,
-      13.72
+      2.0,
+      13.0
      ],
      [
-      2.24,
-      11.72
+      2.0,
+      11.0
      ],
      [
-      8.24,
-      11.72
+      8.0,
+      11.0
      ],
      [
-      8.24,
-      13.72
+      8.0,
+      13.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       7.7,
+       12.0
+      ],
+      [
+       2.3,
+       12.0
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "B",
-    "type": "MR",
-    "kind": "Medium Ruin",
-    "kind_es": "Ruina mediana",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
     "terrain": "dense",
     "blocks_los": true,
     "size_in": [
-     6.0,
-     4.0
+     11.5,
+     7.0
     ],
-    "height_in": 3.0,
+    "height_in": 5.0,
     "centre_in": [
-     -17.38,
-     9.98
+     -13.5,
+     10.0
     ],
-    "from_left_in": 4.6,
+    "from_left_in": 8.5,
     "from_front_in": 25.0,
-    "rotation_deg": 60,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.8,
+     "end": "back",
+     "end_in": 1.5
+    },
     "corners_in": [
      [
-      -14.15,
-      11.58
+      -19.25,
+      13.5
      ],
      [
-      -17.62,
-      13.58
+      -19.25,
+      6.5
      ],
      [
-      -20.62,
-      8.39
+      -7.75,
+      6.5
      ],
      [
-      -17.15,
-      6.39
+      -7.75,
+      13.5
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -18.9,
+       13.15
+      ],
+      [
+       -10.9,
+       13.15
+      ]
+     ],
+     [
+      [
+       -18.9,
+       13.15
+      ],
+      [
+       -18.9,
+       8.15
+      ]
+     ],
+     [
+      [
+       -11.1,
+       6.85
+      ],
+      [
+       -8.1,
+       6.85
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "C",
-    "type": "LL",
-    "kind": "Long Wall",
-    "kind_es": "Muro largo",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     10.0,
-     2.5
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -4.2,
-     9.23
-    ],
-    "from_left_in": 17.8,
-    "from_front_in": 24.2,
-    "rotation_deg": 135,
-    "corners_in": [
-     [
-      -1.55,
-      4.82
-     ],
-     [
-      0.22,
-      6.58
-     ],
-     [
-      -6.85,
-      13.65
-     ],
-     [
-      -8.62,
-      11.89
-     ]
-    ]
-   },
-   {
-    "code": "D",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     13.63,
-     4.1
-    ],
-    "from_left_in": 35.6,
-    "from_front_in": 19.1,
-    "rotation_deg": 45,
-    "corners_in": [
-     [
-      7.08,
-      2.5
-     ],
-     [
-      12.03,
-      -2.45
-     ],
-     [
-      20.17,
-      5.69
-     ],
-     [
-      15.22,
-      10.64
-     ]
-    ]
-   },
-   {
-    "code": "E",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -5.56,
-     3.28
-    ],
-    "from_left_in": 16.4,
-    "from_front_in": 18.3,
-    "rotation_deg": 135,
-    "corners_in": [
-     [
-      -6.98,
-      6.11
-     ],
-     [
-      -8.39,
-      4.69
-     ],
-     [
-      -4.15,
-      0.45
-     ],
-     [
-      -2.73,
-      1.87
-     ]
-    ]
-   },
-   {
-    "code": "F",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     5.56,
-     -3.28
-    ],
-    "from_left_in": 27.6,
-    "from_front_in": 11.7,
-    "rotation_deg": 135,
-    "corners_in": [
-     [
-      6.98,
-      -6.11
-     ],
-     [
-      8.39,
-      -4.69
-     ],
-     [
-      4.15,
-      -0.45
-     ],
-     [
-      2.73,
-      -1.87
-     ]
-    ]
-   },
-   {
-    "code": "G",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -13.63,
-     -4.1
-    ],
-    "from_left_in": 8.4,
-    "from_front_in": 10.9,
-    "rotation_deg": 45,
-    "corners_in": [
-     [
-      -7.08,
-      -2.5
-     ],
-     [
-      -12.03,
-      2.45
-     ],
-     [
-      -20.17,
-      -5.69
-     ],
-     [
-      -15.22,
-      -10.64
-     ]
-    ]
-   },
-   {
-    "code": "H",
-    "type": "LL",
-    "kind": "Long Wall",
-    "kind_es": "Muro largo",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     10.0,
-     2.5
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     4.2,
-     -9.23
-    ],
-    "from_left_in": 26.2,
-    "from_front_in": 5.8,
-    "rotation_deg": 135,
-    "corners_in": [
-     [
-      1.55,
-      -4.82
-     ],
-     [
-      -0.22,
-      -6.58
-     ],
-     [
-      6.85,
-      -13.65
-     ],
-     [
-      8.62,
-      -11.89
-     ]
-    ]
-   },
-   {
-    "code": "I",
     "type": "MR",
     "kind": "Medium Ruin",
     "kind_es": "Ruina mediana",
@@ -2029,30 +3091,451 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     17.38,
-     -9.98
+     -1.5,
+     7.0
     ],
-    "from_left_in": 39.4,
-    "from_front_in": 5.0,
-    "rotation_deg": 60,
+    "from_left_in": 20.5,
+    "from_front_in": 22.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 17.5,
+     "end": "back",
+     "end_in": 6.0
+    },
     "corners_in": [
      [
-      14.15,
-      -11.58
+      -4.5,
+      9.0
      ],
      [
-      17.62,
-      -13.58
+      -4.5,
+      5.0
      ],
      [
-      20.62,
-      -8.39
+      1.5,
+      5.0
      ],
      [
-      17.15,
-      -6.39
+      1.5,
+      9.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       1.15,
+       8.65
+      ],
+      [
+       -2.85,
+       8.65
+      ]
+     ],
+     [
+      [
+       1.15,
+       8.65
+      ],
+      [
+       1.15,
+       6.05
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "D",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     17.5,
+     6.0
+    ],
+    "from_left_in": 39.5,
+    "from_front_in": 21.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 2.5,
+     "end": "back",
+     "end_in": 6.0
+    },
+    "corners_in": [
+     [
+      19.5,
+      9.0
+     ],
+     [
+      15.5,
+      9.0
+     ],
+     [
+      15.5,
+      3.0
+     ],
+     [
+      19.5,
+      3.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       15.85,
+       8.65
+      ],
+      [
+       15.85,
+       4.65
+      ]
+     ],
+     [
+      [
+       15.85,
+       8.65
+      ],
+      [
+       18.45,
+       8.65
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "E",
+    "type": "LL",
+    "kind": "Long Wall",
+    "kind_es": "Muro largo",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     10.0,
+     2.5
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     11.0,
+     1.5
+    ],
+    "from_left_in": 33.0,
+    "from_front_in": 16.5,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 9.8,
+     "end": "back",
+     "end_in": 8.5
+    },
+    "corners_in": [
+     [
+      9.75,
+      -3.5
+     ],
+     [
+      12.25,
+      -3.5
+     ],
+     [
+      12.25,
+      6.5
+     ],
+     [
+      9.75,
+      6.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       11.0,
+       6.2
+      ],
+      [
+       11.0,
+       -3.2
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "F",
+    "type": "LL",
+    "kind": "Long Wall",
+    "kind_es": "Muro largo",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     10.0,
+     2.5
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -11.0,
+     -1.5
+    ],
+    "from_left_in": 11.0,
+    "from_front_in": 13.5,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 9.8,
+     "end": "front",
+     "end_in": 8.5
+    },
+    "corners_in": [
+     [
+      -9.75,
+      3.5
+     ],
+     [
+      -12.25,
+      3.5
+     ],
+     [
+      -12.25,
+      -6.5
+     ],
+     [
+      -9.75,
+      -6.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -11.0,
+       -6.2
+      ],
+      [
+       -11.0,
+       3.2
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "G",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     -17.5,
+     -6.0
+    ],
+    "from_left_in": 4.5,
+    "from_front_in": 9.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.5,
+     "end": "front",
+     "end_in": 6.0
+    },
+    "corners_in": [
+     [
+      -19.5,
+      -9.0
+     ],
+     [
+      -15.5,
+      -9.0
+     ],
+     [
+      -15.5,
+      -3.0
+     ],
+     [
+      -19.5,
+      -3.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -15.85,
+       -8.65
+      ],
+      [
+       -15.85,
+       -4.65
+      ]
+     ],
+     [
+      [
+       -15.85,
+       -8.65
+      ],
+      [
+       -18.45,
+       -8.65
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "H",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     1.5,
+     -7.0
+    ],
+    "from_left_in": 23.5,
+    "from_front_in": 8.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 17.5,
+     "end": "front",
+     "end_in": 6.0
+    },
+    "corners_in": [
+     [
+      4.5,
+      -9.0
+     ],
+     [
+      4.5,
+      -5.0
+     ],
+     [
+      -1.5,
+      -5.0
+     ],
+     [
+      -1.5,
+      -9.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -1.15,
+       -8.65
+      ],
+      [
+       2.85,
+       -8.65
+      ]
+     ],
+     [
+      [
+       -1.15,
+       -8.65
+      ],
+      [
+       -1.15,
+       -6.05
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "I",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     13.5,
+     -10.0
+    ],
+    "from_left_in": 35.5,
+    "from_front_in": 5.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 2.8,
+     "end": "front",
+     "end_in": 1.5
+    },
+    "corners_in": [
+     [
+      19.25,
+      -13.5
+     ],
+     [
+      19.25,
+      -6.5
+     ],
+     [
+      7.75,
+      -6.5
+     ],
+     [
+      7.75,
+      -13.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       18.9,
+       -13.15
+      ],
+      [
+       10.9,
+       -13.15
+      ]
+     ],
+     [
+      [
+       18.9,
+       -13.15
+      ],
+      [
+       18.9,
+       -8.15
+      ]
+     ],
+     [
+      [
+       11.1,
+       -6.85
+      ],
+      [
+       8.1,
+       -6.85
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
     "code": "J",
@@ -2067,63 +3550,135 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     -5.24,
-     -12.72
+     -5.0,
+     -12.0
     ],
-    "from_left_in": 16.8,
-    "from_front_in": 2.3,
+    "from_left_in": 17.0,
+    "from_front_in": 3.0,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 14.0,
+     "end": "front",
+     "end_in": 2.0
+    },
     "corners_in": [
      [
-      -2.24,
-      -13.72
+      -2.0,
+      -13.0
      ],
      [
-      -2.24,
-      -11.72
+      -2.0,
+      -11.0
      ],
      [
-      -8.24,
-      -11.72
+      -8.0,
+      -11.0
      ],
      [
-      -8.24,
-      -13.72
+      -8.0,
+      -13.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -7.7,
+       -12.0
+      ],
+      [
+       -2.3,
+       -12.0
+      ]
+     ]
+    ],
+    "measured": true
    }
   ],
   "checks": {
-   "sightlines_blocked": 0.785,
-   "coverage": 0.233,
+   "sightlines_blocked": 0.852,
+   "coverage": 0.251,
    "shelter": [
-    0.68,
-    0.57
+    0.86,
+    0.84
    ],
    "centre_blocked": [
-    0.6,
-    0.55
+    0.51,
+    0.5
    ],
    "big_model_route": true,
-   "objective_cover_in": [
-    3.3,
-    3.2,
-    3.2
+   "objective_terrain_in": [
+    5.0,
+    0.0,
+    0.0
    ],
-   "score": 1.635,
-   "half_set": "LR+MR+LL+SL+SL"
-  }
+   "objective_cover_in": [
+    5.0,
+    0.0,
+    0.0
+   ],
+   "pieces": 10,
+   "score": 4.23
+  },
+  "design": [
+   [
+    "LR",
+    35.5,
+    5.0,
+    0,
+    1,
+    false
+   ],
+   [
+    "MR",
+    23.5,
+    8.0,
+    0,
+    0,
+    false
+   ],
+   [
+    "LL",
+    11.0,
+    13.5,
+    90,
+    0,
+    false
+   ],
+   [
+    "MR",
+    39.5,
+    21.0,
+    90,
+    2,
+    false
+   ],
+   [
+    "SL",
+    17.0,
+    3.0,
+    0,
+    0,
+    false
+   ]
+  ]
  },
  "BG-3": {
   "code": "BG-3",
   "map": "BG",
   "variant": "3",
-  "title": "Broken Ground — Layout 3",
-  "title_es": "Tierra Rota — Disposición 3",
+  "style": "Urban",
+  "style_es": "Urbana",
+  "about": "Dense ruins and objectives deep inside them. Short sightlines; close-quarters and melee armies shine.",
+  "about_es": "Ruinas densas con los objetivos dentro. Líneas de visión cortas; brillan los ejércitos de combate cercano.",
+  "title": "Broken Ground — 3 · Urban",
+  "title_es": "Tierra Rota — 3 · Urbana",
   "table": {
    "width_in": 44.0,
    "depth_in": 30.0
   },
+  "kit": "standard",
+  "symmetry": "point",
   "deployment_zones": [
    {
     "role": "attacker",
@@ -2188,46 +3743,63 @@
     "control_radius_in": 3.0
    }
   ],
-  "kit": "standard",
-  "symmetry": "point",
   "pieces": [
    {
     "code": "A",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
+    "type": "LL",
+    "kind": "Long Wall",
+    "kind_es": "Muro largo",
     "terrain": "dense",
     "blocks_los": true,
     "size_in": [
-     11.5,
-     7.0
+     10.0,
+     2.5
     ],
     "height_in": 5.0,
     "centre_in": [
-     1.3,
-     10.56
+     -0.5,
+     12.5
     ],
-    "from_left_in": 23.3,
-    "from_front_in": 25.6,
+    "from_left_in": 21.5,
+    "from_front_in": 27.5,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 16.5,
+     "end": "back",
+     "end_in": 1.2
+    },
     "corners_in": [
      [
-      -4.45,
-      14.06
+      -5.5,
+      13.75
      ],
      [
-      -4.45,
-      7.06
+      -5.5,
+      11.25
      ],
      [
-      7.05,
-      7.06
+      4.5,
+      11.25
      ],
      [
-      7.05,
-      14.06
+      4.5,
+      13.75
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       4.2,
+       12.5
+      ],
+      [
+       -5.2,
+       12.5
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "B",
@@ -2242,33 +3814,494 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     -18.4,
-     9.89
+     -12.0,
+     9.0
     ],
-    "from_left_in": 3.6,
-    "from_front_in": 24.9,
-    "rotation_deg": 90,
+    "from_left_in": 10.0,
+    "from_front_in": 24.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 7.0,
+     "end": "back",
+     "end_in": 4.0
+    },
     "corners_in": [
      [
-      -16.4,
-      12.89
+      -15.0,
+      11.0
      ],
      [
-      -20.4,
-      12.89
+      -15.0,
+      7.0
      ],
      [
-      -20.4,
-      6.89
+      -9.0,
+      7.0
      ],
      [
-      -16.4,
-      6.89
+      -9.0,
+      11.0
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -14.65,
+       10.65
+      ],
+      [
+       -10.65,
+       10.65
+      ]
+     ],
+     [
+      [
+       -14.65,
+       10.65
+      ],
+      [
+       -14.65,
+       8.05
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "C",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     13.0,
+     8.0
+    ],
+    "from_left_in": 35.0,
+    "from_front_in": 23.0,
+    "rotation_deg": 35,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 2.3,
+     "end": "back",
+     "end_in": 0.8
+    },
+    "corners_in": [
+     [
+      6.28,
+      7.57
+     ],
+     [
+      10.3,
+      1.83
+     ],
+     [
+      19.72,
+      8.43
+     ],
+     [
+      15.7,
+      14.17
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       15.62,
+       13.68
+      ],
+      [
+       9.06,
+       9.09
+      ]
+     ],
+     [
+      [
+       15.62,
+       13.68
+      ],
+      [
+       18.48,
+       9.58
+      ]
+     ],
+     [
+      [
+       12.84,
+       4.04
+      ],
+      [
+       10.38,
+       2.32
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "D",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     -19.5,
+     2.0
+    ],
+    "from_left_in": 2.5,
+    "from_front_in": 17.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 0.5,
+     "end": "back",
+     "end_in": 10.0
+    },
+    "corners_in": [
+     [
+      -21.5,
+      -1.0
+     ],
+     [
+      -17.5,
+      -1.0
+     ],
+     [
+      -17.5,
+      5.0
+     ],
+     [
+      -21.5,
+      5.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -17.85,
+       -0.65
+      ],
+      [
+       -17.85,
+       3.35
+      ]
+     ],
+     [
+      [
+       -17.85,
+       -0.65
+      ],
+      [
+       -20.45,
+       -0.65
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "E",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     0.0,
+     0.0
+    ],
+    "from_left_in": 22.0,
+    "from_front_in": 15.0,
+    "rotation_deg": 145,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 15.3,
+     "end": "front",
+     "end_in": 8.8
+    },
+    "corners_in": [
+     [
+      2.7,
+      -6.17
+     ],
+     [
+      6.72,
+      -0.43
+     ],
+     [
+      -2.7,
+      6.17
+     ],
+     [
+      -6.72,
+      0.43
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -6.23,
+       0.52
+      ],
+      [
+       0.32,
+       -4.07
+      ]
+     ],
+     [
+      [
+       -6.23,
+       0.52
+      ],
+      [
+       -3.36,
+       4.61
+      ]
+     ],
+     [
+      [
+       3.77,
+       1.2
+      ],
+      [
+       6.23,
+       -0.52
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "F",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     19.5,
+     -2.0
+    ],
+    "from_left_in": 41.5,
+    "from_front_in": 13.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 0.5,
+     "end": "front",
+     "end_in": 10.0
+    },
+    "corners_in": [
+     [
+      21.5,
+      1.0
+     ],
+     [
+      17.5,
+      1.0
+     ],
+     [
+      17.5,
+      -5.0
+     ],
+     [
+      21.5,
+      -5.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       17.85,
+       0.65
+      ],
+      [
+       17.85,
+       -3.35
+      ]
+     ],
+     [
+      [
+       17.85,
+       0.65
+      ],
+      [
+       20.45,
+       0.65
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "G",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -13.0,
+     -8.0
+    ],
+    "from_left_in": 9.0,
+    "from_front_in": 7.0,
+    "rotation_deg": 35,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 2.3,
+     "end": "front",
+     "end_in": 0.8
+    },
+    "corners_in": [
+     [
+      -6.28,
+      -7.57
+     ],
+     [
+      -10.3,
+      -1.83
+     ],
+     [
+      -19.72,
+      -8.43
+     ],
+     [
+      -15.7,
+      -14.17
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -15.62,
+       -13.68
+      ],
+      [
+       -9.06,
+       -9.09
+      ]
+     ],
+     [
+      [
+       -15.62,
+       -13.68
+      ],
+      [
+       -18.48,
+       -9.58
+      ]
+     ],
+     [
+      [
+       -12.84,
+       -4.04
+      ],
+      [
+       -10.38,
+       -2.32
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "H",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     12.0,
+     -9.0
+    ],
+    "from_left_in": 34.0,
+    "from_front_in": 6.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 7.0,
+     "end": "front",
+     "end_in": 4.0
+    },
+    "corners_in": [
+     [
+      15.0,
+      -11.0
+     ],
+     [
+      15.0,
+      -7.0
+     ],
+     [
+      9.0,
+      -7.0
+     ],
+     [
+      9.0,
+      -11.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       14.65,
+       -10.65
+      ],
+      [
+       10.65,
+       -10.65
+      ]
+     ],
+     [
+      [
+       14.65,
+       -10.65
+      ],
+      [
+       14.65,
+       -8.05
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "I",
     "type": "LL",
     "kind": "Long Wall",
     "kind_es": "Muro largo",
@@ -2280,68 +4313,475 @@
     ],
     "height_in": 5.0,
     "centre_in": [
-     15.36,
-     4.93
+     0.5,
+     -12.5
     ],
-    "from_left_in": 37.4,
-    "from_front_in": 19.9,
-    "rotation_deg": 45,
+    "from_left_in": 22.5,
+    "from_front_in": 2.5,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 16.5,
+     "end": "front",
+     "end_in": 1.2
+    },
     "corners_in": [
      [
-      10.94,
-      2.28
+      5.5,
+      -13.75
      ],
      [
-      12.71,
-      0.51
+      5.5,
+      -11.25
      ],
      [
-      19.78,
-      7.58
+      -4.5,
+      -11.25
      ],
      [
-      18.01,
-      9.35
+      -4.5,
+      -13.75
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -4.2,
+       -12.5
+      ],
+      [
+       5.2,
+       -12.5
+      ]
+     ]
+    ],
+    "measured": true
+   }
+  ],
+  "checks": {
+   "sightlines_blocked": 0.996,
+   "coverage": 0.294,
+   "shelter": [
+    1.0,
+    1.0
+   ],
+   "centre_blocked": [
+    0.8,
+    0.86
+   ],
+   "big_model_route": true,
+   "objective_terrain_in": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "objective_cover_in": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "pieces": 9,
+   "score": 4.1
+  },
+  "design": [
+   [
+    "LR",
+    22.0,
+    15.0,
+    -35,
+    0,
+    true
+   ],
+   [
+    "MR",
+    34.0,
+    6.0,
+    0,
+    1,
+    false
+   ],
+   [
+    "LR",
+    9.0,
+    7.0,
+    35,
+    0,
+    false
+   ],
+   [
+    "LL",
+    22.5,
+    2.5,
+    0,
+    0,
+    false
+   ],
+   [
+    "MR",
+    41.5,
+    13.0,
+    90,
+    2,
+    false
+   ]
+  ]
+ },
+ "PI-1": {
+  "code": "PI-1",
+  "map": "PI",
+  "variant": "1",
+  "style": "Open",
+  "style_es": "Abierta",
+  "about": "Long fire lanes and objectives at the edge of cover. Simple to set up; good for learning and for gunlines.",
+  "about_es": "Carriles de fuego largos y objetivos al borde de la cobertura. Fácil de montar; buena para aprender y para ejércitos de disparo.",
+  "title": "Pincer — 1 · Open",
+  "title_es": "Tenaza — 1 · Abierta",
+  "table": {
+   "width_in": 44.0,
+   "depth_in": 30.0
+  },
+  "kit": "standard",
+  "symmetry": "mirror_x",
+  "deployment_zones": [
+   {
+    "role": "attacker",
+    "color": "#ef4444",
+    "points_in": [
+     [
+      -22.0,
+      -15.0
+     ],
+     [
+      -12.0,
+      -15.0
+     ],
+     [
+      -12.0,
+      15.0
+     ],
+     [
+      -22.0,
+      15.0
      ]
     ]
    },
    {
-    "code": "D",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -9.6,
-     4.03
-    ],
-    "from_left_in": 12.4,
-    "from_front_in": 19.0,
-    "rotation_deg": 120,
-    "corners_in": [
+    "role": "defender",
+    "color": "#3b82f6",
+    "points_in": [
      [
-      -10.23,
-      7.13
+      12.0,
+      -15.0
      ],
      [
-      -11.96,
-      6.13
+      22.0,
+      -15.0
      ],
      [
-      -8.96,
-      0.93
+      22.0,
+      15.0
      ],
      [
-      -7.23,
-      1.93
+      12.0,
+      15.0
      ]
     ]
+   }
+  ],
+  "objectives": [
+   {
+    "n": 1,
+    "type": "central",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": 0.0,
+    "control_radius_in": 3.0
+   },
+   {
+    "n": 2,
+    "type": "flank",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": -10.0,
+    "control_radius_in": 3.0
+   },
+   {
+    "n": 3,
+    "type": "flank",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": 10.0,
+    "control_radius_in": 3.0
+   }
+  ],
+  "pieces": [
+   {
+    "code": "A",
+    "type": "LL",
+    "kind": "Long Wall",
+    "kind_es": "Muro largo",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     10.0,
+     2.5
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -3.5,
+     8.5
+    ],
+    "from_left_in": 18.5,
+    "from_front_in": 23.5,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 17.2,
+     "end": "back",
+     "end_in": 1.5
+    },
+    "corners_in": [
+     [
+      -2.25,
+      13.5
+     ],
+     [
+      -4.75,
+      13.5
+     ],
+     [
+      -4.75,
+      3.5
+     ],
+     [
+      -2.25,
+      3.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -3.5,
+       3.8
+      ],
+      [
+       -3.5,
+       13.2
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "B",
+    "type": "LL",
+    "kind": "Long Wall",
+    "kind_es": "Muro largo",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     10.0,
+     2.5
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     3.5,
+     8.5
+    ],
+    "from_left_in": 25.5,
+    "from_front_in": 23.5,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 17.2,
+     "end": "back",
+     "end_in": 1.5
+    },
+    "corners_in": [
+     [
+      2.25,
+      13.5
+     ],
+     [
+      4.75,
+      13.5
+     ],
+     [
+      4.75,
+      3.5
+     ],
+     [
+      2.25,
+      3.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       3.5,
+       3.8
+      ],
+      [
+       3.5,
+       13.2
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "C",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -17.0,
+     2.0
+    ],
+    "from_left_in": 5.0,
+    "from_front_in": 17.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 1.5,
+     "end": "back",
+     "end_in": 7.2
+    },
+    "corners_in": [
+     [
+      -13.5,
+      7.75
+     ],
+     [
+      -20.5,
+      7.75
+     ],
+     [
+      -20.5,
+      -3.75
+     ],
+     [
+      -13.5,
+      -3.75
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -13.85,
+       -3.4
+      ],
+      [
+       -13.85,
+       4.6
+      ]
+     ],
+     [
+      [
+       -13.85,
+       -3.4
+      ],
+      [
+       -18.85,
+       -3.4
+      ]
+     ],
+     [
+      [
+       -20.15,
+       4.4
+      ],
+      [
+       -20.15,
+       7.4
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "D",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     17.0,
+     2.0
+    ],
+    "from_left_in": 39.0,
+    "from_front_in": 17.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 1.5,
+     "end": "back",
+     "end_in": 7.2
+    },
+    "corners_in": [
+     [
+      13.5,
+      7.75
+     ],
+     [
+      20.5,
+      7.75
+     ],
+     [
+      20.5,
+      -3.75
+     ],
+     [
+      13.5,
+      -3.75
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       13.85,
+       -3.4
+      ],
+      [
+       13.85,
+       4.6
+      ]
+     ],
+     [
+      [
+       13.85,
+       -3.4
+      ],
+      [
+       18.85,
+       -3.4
+      ]
+     ],
+     [
+      [
+       20.15,
+       4.4
+      ],
+      [
+       20.15,
+       7.4
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "E",
@@ -2356,30 +4796,1382 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     2.06,
-     3.32
+     0.0,
+     -2.5
     ],
-    "from_left_in": 24.1,
-    "from_front_in": 18.3,
+    "from_left_in": 22.0,
+    "from_front_in": 12.5,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 19.0,
+     "end": "front",
+     "end_in": 11.5
+    },
     "corners_in": [
      [
-      5.06,
-      2.32
+      3.0,
+      -3.5
      ],
      [
-      5.06,
-      4.32
+      3.0,
+      -1.5
      ],
      [
-      -0.94,
-      4.32
+      -3.0,
+      -1.5
      ],
      [
-      -0.94,
-      2.32
+      -3.0,
+      -3.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -2.7,
+       -2.5
+      ],
+      [
+       2.7,
+       -2.5
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "F",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     -4.5,
+     -12.0
+    ],
+    "from_left_in": 17.5,
+    "from_front_in": 3.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 14.5,
+     "end": "front",
+     "end_in": 1.0
+    },
+    "corners_in": [
+     [
+      -1.5,
+      -14.0
+     ],
+     [
+      -1.5,
+      -10.0
+     ],
+     [
+      -7.5,
+      -10.0
+     ],
+     [
+      -7.5,
+      -14.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -7.15,
+       -13.65
+      ],
+      [
+       -3.15,
+       -13.65
+      ]
+     ],
+     [
+      [
+       -7.15,
+       -13.65
+      ],
+      [
+       -7.15,
+       -11.05
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "G",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     4.5,
+     -12.0
+    ],
+    "from_left_in": 26.5,
+    "from_front_in": 3.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 14.5,
+     "end": "front",
+     "end_in": 1.0
+    },
+    "corners_in": [
+     [
+      1.5,
+      -14.0
+     ],
+     [
+      1.5,
+      -10.0
+     ],
+     [
+      7.5,
+      -10.0
+     ],
+     [
+      7.5,
+      -14.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       7.15,
+       -13.65
+      ],
+      [
+       3.15,
+       -13.65
+      ]
+     ],
+     [
+      [
+       7.15,
+       -13.65
+      ],
+      [
+       7.15,
+       -11.05
+      ]
+     ]
+    ],
+    "measured": false
+   }
+  ],
+  "checks": {
+   "sightlines_blocked": 0.87,
+   "coverage": 0.205,
+   "shelter": [
+    0.9,
+    0.76
+   ],
+   "centre_blocked": [
+    0.56,
+    0.49
+   ],
+   "big_model_route": true,
+   "objective_terrain_in": [
+    1.5,
+    1.5,
+    2.2
+   ],
+   "objective_cover_in": [
+    1.5,
+    1.5,
+    2.2
+   ],
+   "pieces": 7,
+   "score": 1.36
+  },
+  "design": [
+   [
+    "LR",
+    5.0,
+    17.0,
+    90,
+    0,
+    false
+   ],
+   [
+    "MR",
+    17.5,
+    3.0,
+    0,
+    0,
+    false
+   ],
+   [
+    "LL",
+    18.5,
+    23.5,
+    90,
+    0,
+    false
+   ],
+   [
+    "SL",
+    22.0,
+    12.5,
+    0,
+    0,
+    true
+   ]
+  ]
+ },
+ "PI-2": {
+  "code": "PI-2",
+  "map": "PI",
+  "variant": "2",
+  "style": "Standard",
+  "style_es": "Estándar",
+  "about": "The default table: clusters of ruins, objectives inside cover, a few open lanes.",
+  "about_es": "La mesa por defecto: grupos de ruinas, objetivos dentro de cobertura y algunos carriles abiertos.",
+  "title": "Pincer — 2 · Standard",
+  "title_es": "Tenaza — 2 · Estándar",
+  "table": {
+   "width_in": 44.0,
+   "depth_in": 30.0
+  },
+  "kit": "standard",
+  "symmetry": "mirror_x",
+  "deployment_zones": [
+   {
+    "role": "attacker",
+    "color": "#ef4444",
+    "points_in": [
+     [
+      -22.0,
+      -15.0
+     ],
+     [
+      -12.0,
+      -15.0
+     ],
+     [
+      -12.0,
+      15.0
+     ],
+     [
+      -22.0,
+      15.0
      ]
     ]
+   },
+   {
+    "role": "defender",
+    "color": "#3b82f6",
+    "points_in": [
+     [
+      12.0,
+      -15.0
+     ],
+     [
+      22.0,
+      -15.0
+     ],
+     [
+      22.0,
+      15.0
+     ],
+     [
+      12.0,
+      15.0
+     ]
+    ]
+   }
+  ],
+  "objectives": [
+   {
+    "n": 1,
+    "type": "central",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": 0.0,
+    "control_radius_in": 3.0
+   },
+   {
+    "n": 2,
+    "type": "flank",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": -10.0,
+    "control_radius_in": 3.0
+   },
+   {
+    "n": 3,
+    "type": "flank",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": 10.0,
+    "control_radius_in": 3.0
+   }
+  ],
+  "pieces": [
+   {
+    "code": "A",
+    "type": "LL",
+    "kind": "Long Wall",
+    "kind_es": "Muro largo",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     10.0,
+     2.5
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     0.0,
+     12.5
+    ],
+    "from_left_in": 22.0,
+    "from_front_in": 27.5,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 17.0,
+     "end": "back",
+     "end_in": 1.2
+    },
+    "corners_in": [
+     [
+      5.0,
+      11.25
+     ],
+     [
+      5.0,
+      13.75
+     ],
+     [
+      -5.0,
+      13.75
+     ],
+     [
+      -5.0,
+      11.25
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -4.7,
+       12.5
+      ],
+      [
+       4.7,
+       12.5
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "B",
+    "type": "TL",
+    "kind": "Large Wedge (left)",
+    "kind_es": "Cuña grande (izquierda)",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     8.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -17.5,
+     8.0
+    ],
+    "from_left_in": 4.5,
+    "from_front_in": 23.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 0.5,
+     "end": "back",
+     "end_in": 1.2
+    },
+    "corners_in": [
+     [
+      -13.5,
+      2.25
+     ],
+     [
+      -13.5,
+      13.75
+     ],
+     [
+      -21.5,
+      13.75
+     ],
+     [
+      -15.5,
+      2.25
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -13.85,
+       2.6
+      ],
+      [
+       -13.85,
+       13.4
+      ]
+     ],
+     [
+      [
+       -13.85,
+       13.4
+      ],
+      [
+       -21.15,
+       13.4
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "C",
+    "type": "TR",
+    "kind": "Large Wedge (right)",
+    "kind_es": "Cuña grande (derecha)",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     8.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     17.5,
+     8.0
+    ],
+    "from_left_in": 39.5,
+    "from_front_in": 23.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 0.5,
+     "end": "back",
+     "end_in": 1.2
+    },
+    "corners_in": [
+     [
+      13.5,
+      2.25
+     ],
+     [
+      13.5,
+      13.75
+     ],
+     [
+      21.5,
+      13.75
+     ],
+     [
+      15.5,
+      2.25
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       13.85,
+       2.6
+      ],
+      [
+       13.85,
+       13.4
+      ]
+     ],
+     [
+      [
+       13.85,
+       13.4
+      ],
+      [
+       21.15,
+       13.4
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "D",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     -8.0,
+     5.0
+    ],
+    "from_left_in": 14.0,
+    "from_front_in": 20.0,
+    "rotation_deg": 85,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 11.7,
+     "end": "back",
+     "end_in": 6.8
+    },
+    "corners_in": [
+     [
+      -5.75,
+      7.81
+     ],
+     [
+      -9.73,
+      8.16
+     ],
+     [
+      -10.25,
+      2.19
+     ],
+     [
+      -6.27,
+      1.84
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -6.59,
+       2.22
+      ],
+      [
+       -6.24,
+       6.2
+      ]
+     ],
+     [
+      [
+       -6.59,
+       2.22
+      ],
+      [
+       -9.18,
+       2.44
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "E",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     8.0,
+     5.0
+    ],
+    "from_left_in": 30.0,
+    "from_front_in": 20.0,
+    "rotation_deg": 95,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 11.7,
+     "end": "back",
+     "end_in": 6.8
+    },
+    "corners_in": [
+     [
+      5.75,
+      7.81
+     ],
+     [
+      9.73,
+      8.16
+     ],
+     [
+      10.25,
+      2.19
+     ],
+     [
+      6.27,
+      1.84
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       6.59,
+       2.22
+      ],
+      [
+       6.24,
+       6.2
+      ]
+     ],
+     [
+      [
+       6.59,
+       2.22
+      ],
+      [
+       9.18,
+       2.44
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "F",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -11.0,
+     -11.0
+    ],
+    "from_left_in": 11.0,
+    "from_front_in": 4.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 5.2,
+     "end": "front",
+     "end_in": 0.5
+    },
+    "corners_in": [
+     [
+      -5.25,
+      -14.5
+     ],
+     [
+      -5.25,
+      -7.5
+     ],
+     [
+      -16.75,
+      -7.5
+     ],
+     [
+      -16.75,
+      -14.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -5.6,
+       -14.15
+      ],
+      [
+       -13.6,
+       -14.15
+      ]
+     ],
+     [
+      [
+       -5.6,
+       -14.15
+      ],
+      [
+       -5.6,
+       -9.15
+      ]
+     ],
+     [
+      [
+       -13.4,
+       -7.85
+      ],
+      [
+       -16.4,
+       -7.85
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "G",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     11.0,
+     -11.0
+    ],
+    "from_left_in": 33.0,
+    "from_front_in": 4.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 5.2,
+     "end": "front",
+     "end_in": 0.5
+    },
+    "corners_in": [
+     [
+      5.25,
+      -14.5
+     ],
+     [
+      5.25,
+      -7.5
+     ],
+     [
+      16.75,
+      -7.5
+     ],
+     [
+      16.75,
+      -14.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       5.6,
+       -14.15
+      ],
+      [
+       13.6,
+       -14.15
+      ]
+     ],
+     [
+      [
+       5.6,
+       -14.15
+      ],
+      [
+       5.6,
+       -9.15
+      ]
+     ],
+     [
+      [
+       13.4,
+       -7.85
+      ],
+      [
+       16.4,
+       -7.85
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "H",
+    "type": "SL",
+    "kind": "Short Wall",
+    "kind_es": "Muro corto",
+    "terrain": "light",
+    "blocks_los": false,
+    "size_in": [
+     6.0,
+     2.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     0.0,
+     -12.0
+    ],
+    "from_left_in": 22.0,
+    "from_front_in": 3.0,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 19.0,
+     "end": "front",
+     "end_in": 2.0
+    },
+    "corners_in": [
+     [
+      3.0,
+      -13.0
+     ],
+     [
+      3.0,
+      -11.0
+     ],
+     [
+      -3.0,
+      -11.0
+     ],
+     [
+      -3.0,
+      -13.0
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -2.7,
+       -12.0
+      ],
+      [
+       2.7,
+       -12.0
+      ]
+     ]
+    ],
+    "measured": true
+   }
+  ],
+  "checks": {
+   "sightlines_blocked": 0.87,
+   "coverage": 0.273,
+   "shelter": [
+    0.74,
+    0.86
+   ],
+   "centre_blocked": [
+    0.69,
+    0.65
+   ],
+   "big_model_route": true,
+   "objective_terrain_in": [
+    6.5,
+    1.0,
+    1.2
+   ],
+   "objective_cover_in": [
+    6.5,
+    1.0,
+    1.2
+   ],
+   "pieces": 8,
+   "score": 8.73
+  },
+  "design": [
+   [
+    "TL",
+    4.5,
+    23.0,
+    90,
+    0,
+    false
+   ],
+   [
+    "LR",
+    11.0,
+    4.0,
+    0,
+    1,
+    false
+   ],
+   [
+    "MR",
+    14.0,
+    20.0,
+    85,
+    0,
+    false
+   ],
+   [
+    "LL",
+    22.0,
+    27.5,
+    0,
+    0,
+    true
+   ],
+   [
+    "SL",
+    22.0,
+    3.0,
+    0,
+    0,
+    true
+   ]
+  ]
+ },
+ "PI-3": {
+  "code": "PI-3",
+  "map": "PI",
+  "variant": "3",
+  "style": "Urban",
+  "style_es": "Urbana",
+  "about": "Dense ruins and objectives deep inside them. Short sightlines; close-quarters and melee armies shine.",
+  "about_es": "Ruinas densas con los objetivos dentro. Líneas de visión cortas; brillan los ejércitos de combate cercano.",
+  "title": "Pincer — 3 · Urban",
+  "title_es": "Tenaza — 3 · Urbana",
+  "table": {
+   "width_in": 44.0,
+   "depth_in": 30.0
+  },
+  "kit": "standard",
+  "symmetry": "mirror_x",
+  "deployment_zones": [
+   {
+    "role": "attacker",
+    "color": "#ef4444",
+    "points_in": [
+     [
+      -22.0,
+      -15.0
+     ],
+     [
+      -12.0,
+      -15.0
+     ],
+     [
+      -12.0,
+      15.0
+     ],
+     [
+      -22.0,
+      15.0
+     ]
+    ]
+   },
+   {
+    "role": "defender",
+    "color": "#3b82f6",
+    "points_in": [
+     [
+      12.0,
+      -15.0
+     ],
+     [
+      22.0,
+      -15.0
+     ],
+     [
+      22.0,
+      15.0
+     ],
+     [
+      12.0,
+      15.0
+     ]
+    ]
+   }
+  ],
+  "objectives": [
+   {
+    "n": 1,
+    "type": "central",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": 0.0,
+    "control_radius_in": 3.0
+   },
+   {
+    "n": 2,
+    "type": "flank",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": -10.0,
+    "control_radius_in": 3.0
+   },
+   {
+    "n": 3,
+    "type": "flank",
+    "owner": "",
+    "x_in": 0.0,
+    "y_in": 10.0,
+    "control_radius_in": 3.0
+   }
+  ],
+  "pieces": [
+   {
+    "code": "A",
+    "type": "MR",
+    "kind": "Medium Ruin",
+    "kind_es": "Ruina mediana",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     6.0,
+     4.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     0.0,
+     12.5
+    ],
+    "from_left_in": 22.0,
+    "from_front_in": 27.5,
+    "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 19.0,
+     "end": "back",
+     "end_in": 0.5
+    },
+    "corners_in": [
+     [
+      3.0,
+      10.5
+     ],
+     [
+      3.0,
+      14.5
+     ],
+     [
+      -3.0,
+      14.5
+     ],
+     [
+      -3.0,
+      10.5
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       2.65,
+       14.15
+      ],
+      [
+       -1.35,
+       14.15
+      ]
+     ],
+     [
+      [
+       2.65,
+       14.15
+      ],
+      [
+       2.65,
+       11.55
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "B",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     -16.5,
+     8.0
+    ],
+    "from_left_in": 5.5,
+    "from_front_in": 23.0,
+    "rotation_deg": 75,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 0.6,
+     "end": "back",
+     "end_in": 0.5
+    },
+    "corners_in": [
+     [
+      -21.37,
+      3.35
+     ],
+     [
+      -14.61,
+      1.54
+     ],
+     [
+      -11.63,
+      12.65
+     ],
+     [
+      -18.39,
+      14.46
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -20.94,
+       3.6
+      ],
+      [
+       -18.87,
+       11.33
+      ]
+     ],
+     [
+      [
+       -20.94,
+       3.6
+      ],
+      [
+       -16.11,
+       2.31
+      ]
+     ],
+     [
+      [
+       -12.84,
+       9.5
+      ],
+      [
+       -12.06,
+       12.4
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "C",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     16.5,
+     8.0
+    ],
+    "from_left_in": 38.5,
+    "from_front_in": 23.0,
+    "rotation_deg": 105,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 0.6,
+     "end": "back",
+     "end_in": 0.5
+    },
+    "corners_in": [
+     [
+      21.37,
+      3.35
+     ],
+     [
+      14.61,
+      1.54
+     ],
+     [
+      11.63,
+      12.65
+     ],
+     [
+      18.39,
+      14.46
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       20.94,
+       3.6
+      ],
+      [
+       18.87,
+       11.33
+      ]
+     ],
+     [
+      [
+       20.94,
+       3.6
+      ],
+      [
+       16.11,
+       2.31
+      ]
+     ],
+     [
+      [
+       12.84,
+       9.5
+      ],
+      [
+       12.06,
+       12.4
+      ]
+     ]
+    ],
+    "measured": false
+   },
+   {
+    "code": "D",
+    "type": "LR",
+    "kind": "Large Ruin",
+    "kind_es": "Ruina grande",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     7.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     0.0,
+     0.0
+    ],
+    "from_left_in": 22.0,
+    "from_front_in": 15.0,
+    "rotation_deg": 90,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 18.5,
+     "end": "front",
+     "end_in": 9.2
+    },
+    "corners_in": [
+     [
+      3.5,
+      5.75
+     ],
+     [
+      -3.5,
+      5.75
+     ],
+     [
+      -3.5,
+      -5.75
+     ],
+     [
+      3.5,
+      -5.75
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       3.15,
+       -5.4
+      ],
+      [
+       3.15,
+       2.6
+      ]
+     ],
+     [
+      [
+       3.15,
+       -5.4
+      ],
+      [
+       -1.85,
+       -5.4
+      ]
+     ],
+     [
+      [
+       -3.15,
+       2.4
+      ],
+      [
+       -3.15,
+       5.4
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "E",
+    "type": "SL",
+    "kind": "Short Wall",
+    "kind_es": "Muro corto",
+    "terrain": "light",
+    "blocks_los": false,
+    "size_in": [
+     6.0,
+     2.0
+    ],
+    "height_in": 3.0,
+    "centre_in": [
+     -9.5,
+     -3.0
+    ],
+    "from_left_in": 12.5,
+    "from_front_in": 12.0,
+    "rotation_deg": 100,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 11.0,
+     "end": "front",
+     "end_in": 8.9
+    },
+    "corners_in": [
+     [
+      -9.04,
+      0.13
+     ],
+     [
+      -11.01,
+      -0.22
+     ],
+     [
+      -9.96,
+      -6.13
+     ],
+     [
+      -7.99,
+      -5.78
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       -9.03,
+       -5.66
+      ],
+      [
+       -9.97,
+       -0.34
+      ]
+     ]
+    ],
+    "measured": true
    },
    {
     "code": "F",
@@ -2394,106 +6186,183 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     -2.06,
-     -3.32
+     9.5,
+     -3.0
     ],
-    "from_left_in": 19.9,
-    "from_front_in": 11.7,
-    "rotation_deg": 0,
+    "from_left_in": 31.5,
+    "from_front_in": 12.0,
+    "rotation_deg": 80,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 11.0,
+     "end": "front",
+     "end_in": 8.9
+    },
     "corners_in": [
      [
-      -5.06,
-      -2.32
+      9.04,
+      0.13
      ],
      [
-      -5.06,
-      -4.32
+      11.01,
+      -0.22
      ],
      [
-      0.94,
-      -4.32
-     ],
-     [
-      0.94,
-      -2.32
-     ]
-    ]
-   },
-   {
-    "code": "G",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     9.6,
-     -4.03
-    ],
-    "from_left_in": 31.6,
-    "from_front_in": 11.0,
-    "rotation_deg": 120,
-    "corners_in": [
-     [
-      10.23,
-      -7.13
-     ],
-     [
-      11.96,
+      9.96,
       -6.13
      ],
      [
-      8.96,
-      -0.93
-     ],
-     [
-      7.23,
-      -1.93
+      7.99,
+      -5.78
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       9.03,
+       -5.66
+      ],
+      [
+       9.97,
+       -0.34
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
-    "code": "H",
-    "type": "LL",
-    "kind": "Long Wall",
-    "kind_es": "Muro largo",
+    "code": "G",
+    "type": "TL",
+    "kind": "Large Wedge (left)",
+    "kind_es": "Cuña grande (izquierda)",
     "terrain": "dense",
     "blocks_los": true,
     "size_in": [
-     10.0,
-     2.5
+     11.5,
+     8.0
     ],
     "height_in": 5.0,
     "centre_in": [
-     -15.36,
-     -4.93
+     -18.0,
+     -7.5
     ],
-    "from_left_in": 6.6,
-    "from_front_in": 10.1,
-    "rotation_deg": 45,
+    "from_left_in": 4.0,
+    "from_front_in": 7.5,
+    "rotation_deg": 85,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 0.5,
+     "end": "front",
+     "end_in": 1.4
+    },
     "corners_in": [
      [
-      -10.94,
-      -2.28
+      -14.52,
+      -13.58
      ],
      [
-      -12.71,
-      -0.51
+      -13.51,
+      -2.12
      ],
      [
-      -19.78,
-      -7.58
+      -21.48,
+      -1.42
      ],
      [
-      -18.01,
-      -9.35
+      -16.51,
+      -13.4
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -14.83,
+       -13.2
+      ],
+      [
+       -13.89,
+       -2.44
+      ]
+     ],
+     [
+      [
+       -13.89,
+       -2.44
+      ],
+      [
+       -21.17,
+       -1.8
+      ]
+     ]
+    ],
+    "measured": true
+   },
+   {
+    "code": "H",
+    "type": "TR",
+    "kind": "Large Wedge (right)",
+    "kind_es": "Cuña grande (derecha)",
+    "terrain": "dense",
+    "blocks_los": true,
+    "size_in": [
+     11.5,
+     8.0
+    ],
+    "height_in": 5.0,
+    "centre_in": [
+     18.0,
+     -7.5
+    ],
+    "from_left_in": 40.0,
+    "from_front_in": 7.5,
+    "rotation_deg": 95,
+    "edge_gap": {
+     "side": "right",
+     "side_in": 0.5,
+     "end": "front",
+     "end_in": 1.4
+    },
+    "corners_in": [
+     [
+      14.52,
+      -13.58
+     ],
+     [
+      13.51,
+      -2.12
+     ],
+     [
+      21.48,
+      -1.42
+     ],
+     [
+      16.51,
+      -13.4
+     ]
+    ],
+    "walls_in": [
+     [
+      [
+       14.83,
+       -13.2
+      ],
+      [
+       13.89,
+       -2.44
+      ]
+     ],
+     [
+      [
+       13.89,
+       -2.44
+      ],
+      [
+       21.17,
+       -1.8
+      ]
+     ]
+    ],
+    "measured": false
    },
    {
     "code": "I",
@@ -2508,1322 +6377,135 @@
     ],
     "height_in": 3.0,
     "centre_in": [
-     18.4,
-     -9.89
+     0.0,
+     -12.5
     ],
-    "from_left_in": 40.4,
-    "from_front_in": 5.1,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      16.4,
-      -12.89
-     ],
-     [
-      20.4,
-      -12.89
-     ],
-     [
-      20.4,
-      -6.89
-     ],
-     [
-      16.4,
-      -6.89
-     ]
-    ]
-   },
-   {
-    "code": "J",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -1.3,
-     -10.56
-    ],
-    "from_left_in": 20.7,
-    "from_front_in": 4.4,
+    "from_left_in": 22.0,
+    "from_front_in": 2.5,
     "rotation_deg": 0,
+    "edge_gap": {
+     "side": "left",
+     "side_in": 19.0,
+     "end": "front",
+     "end_in": 0.5
+    },
     "corners_in": [
      [
-      4.45,
-      -14.06
+      3.0,
+      -14.5
      ],
      [
-      4.45,
-      -7.06
+      3.0,
+      -10.5
      ],
      [
-      -7.05,
-      -7.06
+      -3.0,
+      -10.5
      ],
      [
-      -7.05,
-      -14.06
+      -3.0,
+      -14.5
      ]
-    ]
+    ],
+    "walls_in": [
+     [
+      [
+       -2.65,
+       -14.15
+      ],
+      [
+       1.35,
+       -14.15
+      ]
+     ],
+     [
+      [
+       -2.65,
+       -14.15
+      ],
+      [
+       -2.65,
+       -11.55
+      ]
+     ]
+    ],
+    "measured": true
    }
   ],
   "checks": {
-   "sightlines_blocked": 0.848,
-   "coverage": 0.233,
+   "sightlines_blocked": 0.99,
+   "coverage": 0.325,
    "shelter": [
-    0.75,
-    0.62
+    1.0,
+    1.0
    ],
    "centre_blocked": [
-    0.52,
-    0.45
+    0.78,
+    0.71
    ],
    "big_model_route": true,
+   "objective_terrain_in": [
+    0.0,
+    0.5,
+    0.5
+   ],
    "objective_cover_in": [
-    2.3,
+    0.0,
+    0.5,
+    0.5
+   ],
+   "pieces": 9,
+   "score": 3.25
+  },
+  "design": [
+   [
+    "LR",
+    22.0,
+    15.0,
+    90,
+    0,
+    true
+   ],
+   [
+    "MR",
+    22.0,
     2.5,
-    2.5
+    0,
+    0,
+    true
    ],
-   "score": 1.845,
-   "half_set": "LR+MR+LL+SL+SL"
-  }
- },
- "PI-1": {
-  "code": "PI-1",
-  "map": "PI",
-  "variant": "1",
-  "title": "Pincer — Layout 1",
-  "title_es": "Tenaza — Disposición 1",
-  "table": {
-   "width_in": 44.0,
-   "depth_in": 30.0
-  },
-  "deployment_zones": [
-   {
-    "role": "attacker",
-    "color": "#ef4444",
-    "points_in": [
-     [
-      -22.0,
-      -15.0
-     ],
-     [
-      -12.0,
-      -15.0
-     ],
-     [
-      -12.0,
-      15.0
-     ],
-     [
-      -22.0,
-      15.0
-     ]
-    ]
-   },
-   {
-    "role": "defender",
-    "color": "#3b82f6",
-    "points_in": [
-     [
-      12.0,
-      -15.0
-     ],
-     [
-      22.0,
-      -15.0
-     ],
-     [
-      22.0,
-      15.0
-     ],
-     [
-      12.0,
-      15.0
-     ]
-    ]
-   }
-  ],
-  "objectives": [
-   {
-    "n": 1,
-    "type": "central",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": 0.0,
-    "control_radius_in": 3.0
-   },
-   {
-    "n": 2,
-    "type": "flank",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": -10.0,
-    "control_radius_in": 3.0
-   },
-   {
-    "n": 3,
-    "type": "flank",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": 10.0,
-    "control_radius_in": 3.0
-   }
-  ],
-  "kit": "standard",
-  "symmetry": "mirror_x",
-  "pieces": [
-   {
-    "code": "A",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -5.47,
-     11.46
-    ],
-    "from_left_in": 16.5,
-    "from_front_in": 26.5,
-    "rotation_deg": 150,
-    "corners_in": [
-     [
-      -8.57,
-      12.09
-     ],
-     [
-      -7.57,
-      13.83
-     ],
-     [
-      -2.37,
-      10.83
-     ],
-     [
-      -3.37,
-      9.09
-     ]
-    ]
-   },
-   {
-    "code": "B",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     5.47,
-     11.46
-    ],
-    "from_left_in": 27.5,
-    "from_front_in": 26.5,
-    "rotation_deg": 30,
-    "corners_in": [
-     [
-      8.57,
-      12.09
-     ],
-     [
-      7.57,
-      13.83
-     ],
-     [
-      2.37,
-      10.83
-     ],
-     [
-      3.37,
-      9.09
-     ]
-    ]
-   },
-   {
-    "code": "C",
-    "type": "TL",
-    "kind": "Large Wedge (left)",
-    "kind_es": "Cuña grande (izquierda)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -19.46,
-     7.39
-    ],
-    "from_left_in": 2.5,
-    "from_front_in": 22.4,
-    "rotation_deg": 60,
-    "corners_in": [
-     [
-      -18.87,
-      0.41
-     ],
-     [
-      -13.12,
-      10.37
-     ],
-     [
-      -20.05,
-      14.37
-     ],
-     [
-      -20.6,
-      1.41
-     ]
-    ]
-   },
-   {
-    "code": "D",
-    "type": "TR",
-    "kind": "Large Wedge (right)",
-    "kind_es": "Cuña grande (derecha)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     19.46,
-     7.39
-    ],
-    "from_left_in": 41.5,
-    "from_front_in": 22.4,
-    "rotation_deg": 120,
-    "corners_in": [
-     [
-      18.87,
-      0.41
-     ],
-     [
-      13.12,
-      10.37
-     ],
-     [
-      20.05,
-      14.37
-     ],
-     [
-      20.6,
-      1.41
-     ]
-    ]
-   },
-   {
-    "code": "E",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -6.48,
-     1.93
-    ],
-    "from_left_in": 15.5,
-    "from_front_in": 16.9,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      -7.48,
-      4.93
-     ],
-     [
-      -5.48,
-      4.93
-     ],
-     [
-      -5.48,
-      -1.07
-     ],
-     [
-      -7.48,
-      -1.07
-     ]
-    ]
-   },
-   {
-    "code": "F",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     6.48,
-     1.93
-    ],
-    "from_left_in": 28.5,
-    "from_front_in": 16.9,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      7.48,
-      4.93
-     ],
-     [
-      5.48,
-      4.93
-     ],
-     [
-      5.48,
-      -1.07
-     ],
-     [
-      7.48,
-      -1.07
-     ]
-    ]
-   },
-   {
-    "code": "G",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -8.78,
-     -9.32
-    ],
-    "from_left_in": 13.2,
-    "from_front_in": 5.7,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      -14.53,
-      -12.82
-     ],
-     [
-      -14.53,
-      -5.82
-     ],
-     [
-      -3.03,
-      -5.82
-     ],
-     [
-      -3.03,
-      -12.82
-     ]
-    ]
-   },
-   {
-    "code": "H",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     8.78,
-     -9.32
-    ],
-    "from_left_in": 30.8,
-    "from_front_in": 5.7,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      14.53,
-      -12.82
-     ],
-     [
-      14.53,
-      -5.82
-     ],
-     [
-      3.03,
-      -5.82
-     ],
-     [
-      3.03,
-      -12.82
-     ]
-    ]
-   }
-  ],
-  "checks": {
-   "sightlines_blocked": 0.785,
-   "coverage": 0.245,
-   "shelter": [
-    0.6,
-    0.6
+   [
+    "MR",
+    22.0,
+    27.5,
+    0,
+    2,
+    true
    ],
-   "centre_blocked": [
-    0.73,
-    0.57
+   [
+    "TL",
+    4.0,
+    7.5,
+    85,
+    0,
+    false
    ],
-   "big_model_route": true,
-   "objective_cover_in": [
+   [
+    "LR",
     5.5,
-    3.0,
-    2.5
+    23.0,
+    -105,
+    1,
+    false
    ],
-   "score": 4.218,
-   "half_set": "LR+TL+SL+SL"
-  }
- },
- "PI-2": {
-  "code": "PI-2",
-  "map": "PI",
-  "variant": "2",
-  "title": "Pincer — Layout 2",
-  "title_es": "Tenaza — Disposición 2",
-  "table": {
-   "width_in": 44.0,
-   "depth_in": 30.0
-  },
-  "deployment_zones": [
-   {
-    "role": "attacker",
-    "color": "#ef4444",
-    "points_in": [
-     [
-      -22.0,
-      -15.0
-     ],
-     [
-      -12.0,
-      -15.0
-     ],
-     [
-      -12.0,
-      15.0
-     ],
-     [
-      -22.0,
-      15.0
-     ]
-    ]
-   },
-   {
-    "role": "defender",
-    "color": "#3b82f6",
-    "points_in": [
-     [
-      12.0,
-      -15.0
-     ],
-     [
-      22.0,
-      -15.0
-     ],
-     [
-      22.0,
-      15.0
-     ],
-     [
-      12.0,
-      15.0
-     ]
-    ]
-   }
-  ],
-  "objectives": [
-   {
-    "n": 1,
-    "type": "central",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": 0.0,
-    "control_radius_in": 3.0
-   },
-   {
-    "n": 2,
-    "type": "flank",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": -10.0,
-    "control_radius_in": 3.0
-   },
-   {
-    "n": 3,
-    "type": "flank",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": 10.0,
-    "control_radius_in": 3.0
-   }
-  ],
-  "kit": "standard",
-  "symmetry": "mirror_x",
-  "pieces": [
-   {
-    "code": "A",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -7.6,
-     11.3
-    ],
-    "from_left_in": 14.4,
-    "from_front_in": 26.3,
-    "rotation_deg": 150,
-    "corners_in": [
-     [
-      -10.7,
-      11.94
-     ],
-     [
-      -9.7,
-      13.67
-     ],
-     [
-      -4.5,
-      10.67
-     ],
-     [
-      -5.5,
-      8.94
-     ]
-    ]
-   },
-   {
-    "code": "B",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     7.6,
-     11.3
-    ],
-    "from_left_in": 29.6,
-    "from_front_in": 26.3,
-    "rotation_deg": 30,
-    "corners_in": [
-     [
-      10.7,
-      11.94
-     ],
-     [
-      9.7,
-      13.67
-     ],
-     [
-      4.5,
-      10.67
-     ],
-     [
-      5.5,
-      8.94
-     ]
-    ]
-   },
-   {
-    "code": "C",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -19.1,
-     7.17
-    ],
-    "from_left_in": 2.9,
-    "from_front_in": 22.2,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      -18.1,
-      10.17
-     ],
-     [
-      -20.1,
-      10.17
-     ],
-     [
-      -20.1,
-      4.17
-     ],
-     [
-      -18.1,
-      4.17
-     ]
-    ]
-   },
-   {
-    "code": "D",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     19.1,
-     7.17
-    ],
-    "from_left_in": 41.1,
-    "from_front_in": 22.2,
-    "rotation_deg": 90,
-    "corners_in": [
-     [
-      18.1,
-      10.17
-     ],
-     [
-      20.1,
-      10.17
-     ],
-     [
-      20.1,
-      4.17
-     ],
-     [
-      18.1,
-      4.17
-     ]
-    ]
-   },
-   {
-    "code": "E",
-    "type": "TR",
-    "kind": "Large Wedge (right)",
-    "kind_es": "Cuña grande (derecha)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -9.38,
-     3.56
-    ],
-    "from_left_in": 12.6,
-    "from_front_in": 18.6,
-    "rotation_deg": 180,
-    "corners_in": [
-     [
-      -3.63,
-      -0.44
-     ],
-     [
-      -15.13,
-      -0.44
-     ],
-     [
-      -15.13,
-      7.56
-     ],
-     [
-      -3.63,
-      1.56
-     ]
-    ]
-   },
-   {
-    "code": "F",
-    "type": "TL",
-    "kind": "Large Wedge (left)",
-    "kind_es": "Cuña grande (izquierda)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     9.38,
-     3.56
-    ],
-    "from_left_in": 31.4,
-    "from_front_in": 18.6,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      3.63,
-      -0.44
-     ],
-     [
-      15.13,
-      -0.44
-     ],
-     [
-      15.13,
-      7.56
-     ],
-     [
-      3.63,
-      1.56
-     ]
-    ]
-   },
-   {
-    "code": "G",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -9.27,
-     -10.42
-    ],
-    "from_left_in": 12.7,
-    "from_front_in": 4.6,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      -3.52,
-      -13.92
-     ],
-     [
-      -3.52,
-      -6.92
-     ],
-     [
-      -15.02,
-      -6.92
-     ],
-     [
-      -15.02,
-      -13.92
-     ]
-    ]
-   },
-   {
-    "code": "H",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     9.27,
-     -10.42
-    ],
-    "from_left_in": 31.3,
-    "from_front_in": 4.6,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      3.52,
-      -13.92
-     ],
-     [
-      3.52,
-      -6.92
-     ],
-     [
-      15.02,
-      -6.92
-     ],
-     [
-      15.02,
-      -13.92
-     ]
-    ]
-   }
-  ],
-  "checks": {
-   "sightlines_blocked": 0.858,
-   "coverage": 0.245,
-   "shelter": [
-    0.8,
-    0.88
-   ],
-   "centre_blocked": [
-    0.58,
-    0.62
-   ],
-   "big_model_route": true,
-   "objective_cover_in": [
-    3.6,
-    3.5,
-    4.6
-   ],
-   "score": 4.815,
-   "half_set": "LR+TL+SL+SL"
-  }
- },
- "PI-3": {
-  "code": "PI-3",
-  "map": "PI",
-  "variant": "3",
-  "title": "Pincer — Layout 3",
-  "title_es": "Tenaza — Disposición 3",
-  "table": {
-   "width_in": 44.0,
-   "depth_in": 30.0
-  },
-  "deployment_zones": [
-   {
-    "role": "attacker",
-    "color": "#ef4444",
-    "points_in": [
-     [
-      -22.0,
-      -15.0
-     ],
-     [
-      -12.0,
-      -15.0
-     ],
-     [
-      -12.0,
-      15.0
-     ],
-     [
-      -22.0,
-      15.0
-     ]
-    ]
-   },
-   {
-    "role": "defender",
-    "color": "#3b82f6",
-    "points_in": [
-     [
-      12.0,
-      -15.0
-     ],
-     [
-      22.0,
-      -15.0
-     ],
-     [
-      22.0,
-      15.0
-     ],
-     [
-      12.0,
-      15.0
-     ]
-    ]
-   }
-  ],
-  "objectives": [
-   {
-    "n": 1,
-    "type": "central",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": 0.0,
-    "control_radius_in": 3.0
-   },
-   {
-    "n": 2,
-    "type": "flank",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": -10.0,
-    "control_radius_in": 3.0
-   },
-   {
-    "n": 3,
-    "type": "flank",
-    "owner": "",
-    "x_in": 0.0,
-    "y_in": 10.0,
-    "control_radius_in": 3.0
-   }
-  ],
-  "kit": "standard",
-  "symmetry": "mirror_x",
-  "pieces": [
-   {
-    "code": "A",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -10.33,
-     10.16
-    ],
-    "from_left_in": 11.7,
-    "from_front_in": 25.2,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      -16.08,
-      6.66
-     ],
-     [
-      -16.08,
-      13.66
-     ],
-     [
-      -4.58,
-      13.66
-     ],
-     [
-      -4.58,
-      6.66
-     ]
-    ]
-   },
-   {
-    "code": "B",
-    "type": "LR",
-    "kind": "Large Ruin",
-    "kind_es": "Ruina grande",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     7.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     10.33,
-     10.16
-    ],
-    "from_left_in": 32.3,
-    "from_front_in": 25.2,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      16.08,
-      6.66
-     ],
-     [
-      16.08,
-      13.66
-     ],
-     [
-      4.58,
-      13.66
-     ],
-     [
-      4.58,
-      6.66
-     ]
-    ]
-   },
-   {
-    "code": "C",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -5.72,
-     -0.5
-    ],
-    "from_left_in": 16.3,
-    "from_front_in": 14.5,
-    "rotation_deg": 150,
-    "corners_in": [
-     [
-      -8.81,
-      0.13
-     ],
-     [
-      -7.81,
-      1.86
-     ],
-     [
-      -2.62,
-      -1.14
-     ],
-     [
-      -3.62,
-      -2.87
-     ]
-    ]
-   },
-   {
-    "code": "D",
-    "type": "SL",
-    "kind": "Short Wall",
-    "kind_es": "Muro corto",
-    "terrain": "light",
-    "blocks_los": false,
-    "size_in": [
-     6.0,
-     2.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     5.72,
-     -0.5
-    ],
-    "from_left_in": 27.7,
-    "from_front_in": 14.5,
-    "rotation_deg": 30,
-    "corners_in": [
-     [
-      8.81,
-      0.13
-     ],
-     [
-      7.81,
-      1.86
-     ],
-     [
-      2.62,
-      -1.14
-     ],
-     [
-      3.62,
-      -2.87
-     ]
-    ]
-   },
-   {
-    "code": "E",
-    "type": "TR",
-    "kind": "Large Wedge (right)",
-    "kind_es": "Cuña grande (derecha)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     -15.13,
-     -0.7
-    ],
-    "from_left_in": 6.9,
-    "from_front_in": 14.3,
-    "rotation_deg": 180,
-    "corners_in": [
-     [
-      -9.38,
-      -4.7
-     ],
-     [
-      -20.88,
-      -4.7
-     ],
-     [
-      -20.88,
-      3.3
-     ],
-     [
-      -9.38,
-      -2.7
-     ]
-    ]
-   },
-   {
-    "code": "F",
-    "type": "TL",
-    "kind": "Large Wedge (left)",
-    "kind_es": "Cuña grande (izquierda)",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     11.5,
-     8.0
-    ],
-    "height_in": 5.0,
-    "centre_in": [
-     15.13,
-     -0.7
-    ],
-    "from_left_in": 37.1,
-    "from_front_in": 14.3,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      9.38,
-      -4.7
-     ],
-     [
-      20.88,
-      -4.7
-     ],
-     [
-      20.88,
-      3.3
-     ],
-     [
-      9.38,
-      -2.7
-     ]
-    ]
-   },
-   {
-    "code": "G",
-    "type": "MR",
-    "kind": "Medium Ruin",
-    "kind_es": "Ruina mediana",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     6.0,
-     4.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     -6.78,
-     -12.39
-    ],
-    "from_left_in": 15.2,
-    "from_front_in": 2.6,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      -3.78,
-      -14.39
-     ],
-     [
-      -3.78,
-      -10.39
-     ],
-     [
-      -9.78,
-      -10.39
-     ],
-     [
-      -9.78,
-      -14.39
-     ]
-    ]
-   },
-   {
-    "code": "H",
-    "type": "MR",
-    "kind": "Medium Ruin",
-    "kind_es": "Ruina mediana",
-    "terrain": "dense",
-    "blocks_los": true,
-    "size_in": [
-     6.0,
-     4.0
-    ],
-    "height_in": 3.0,
-    "centre_in": [
-     6.78,
-     -12.39
-    ],
-    "from_left_in": 28.8,
-    "from_front_in": 2.6,
-    "rotation_deg": 0,
-    "corners_in": [
-     [
-      3.78,
-      -14.39
-     ],
-     [
-      3.78,
-      -10.39
-     ],
-     [
-      9.78,
-      -10.39
-     ],
-     [
-      9.78,
-      -14.39
-     ]
-    ]
-   }
-  ],
-  "checks": {
-   "sightlines_blocked": 0.825,
-   "coverage": 0.264,
-   "shelter": [
-    0.8,
-    0.72
-   ],
-   "centre_blocked": [
-    0.47,
-    0.52
-   ],
-   "big_model_route": true,
-   "objective_cover_in": [
-    2.9,
-    3.8,
-    4.6
-   ],
-   "score": 3.415,
-   "half_set": "LR+TL+MR+SL"
-  }
+   [
+    "SL",
+    12.5,
+    12.0,
+    100,
+    0,
+    false
+   ]
+  ]
  }
 }

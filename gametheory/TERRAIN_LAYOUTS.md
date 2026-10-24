@@ -1,20 +1,52 @@
 # Terrain Layouts — plan, kit and checks
 
-**Project Codex: 4192 AD** · v2.0 · 2026-10-19 · pairs with [CORE_RULES_MANUAL_4192.md](CORE_RULES_MANUAL_4192.md) §6 (terrain) and
+**Project Codex: 4192 AD** · v3.0 · 2026-10-23 · pairs with [CORE_RULES_MANUAL_4192.md](CORE_RULES_MANUAL_4192.md) §6 (terrain) and
 [MISSIONS_AND_TACTICAL_DECK.md](MISSIONS_AND_TACTICAL_DECK.md) §2 (maps).
 
-- **Tool:** `scripts/layout_gen.py`.
+- **Tool:** `scripts/layout_design.py` (v3, hand-designed and checked). The v2 random generator `layout_gen.py` is kept for the custom kit.
 - **Output:**
-  - data: `website/data/layouts_4192.json` (standard kit) and `layouts_4192_custom.json` (v1 kit);
+  - data: `website/data/layouts_4192.json`;
   - maps: `website/assets/layouts_4192/`;
   - page: `website/terrain.html`.
 
-**What changed in v2**
-1. **Standard footprint sizes:** the layouts now use pieces from the common 16-piece tournament footprint set, so players can reuse footprints they already own.
-2. **Three objectives:** no home objectives.
-3. **Mirror symmetry on Frontline and Pincer:** it lets the left/right wedge pair be used fairly.
+**What changed in v3 (after comparing with 45 published tournament tables)**
 
-The v1 custom kit is kept as an alternative (switch on the Terrain page).
+v2 placed solid blocks at random and kept objectives away from terrain. The tables looked empty.
+v3 builds tables the way tournament tables are built:
+1. **Every ruin is a footprint you walk into.**
+   - Its walls stand on two sides (an L), drawn as tan lines on the maps.
+   - The other sides are open, so infantry and big models can enter.
+   - The whole Dense footprint still blocks line of sight (§6).
+2. **Objectives sit inside or against ruins.**
+   - All 249 objectives measured on the published tables are inside a ruin footprint.
+   - That is where the fighting happens.
+   - A marker is never placed on a wall.
+3. **Clusters, lanes and angled pieces.**
+   - A big ruin pairs with a medium ruin or a wall.
+   - Pieces sit at 10–60° angles.
+4. **Three tables per map, from simple to complex:**
+
+   | Table | Pieces | Covered | Plays like |
+   | :-- | :-: | :-: | :-- |
+   | 1 · Open | 7–8 | ~21 % | Long fire lanes and objectives at the edge of cover. Good for learning and for gunlines. |
+   | 2 · Standard | 8–10 | ~26 % | The default table: clusters, objectives inside cover, a few open lanes. |
+   | 3 · Urban | 9 | ~30 % | Objectives deep inside ruins and short sightlines. Close-quarters and melee armies shine. |
+
+5. **Design process:**
+   - Each table is placed by hand.
+   - A short local search nudges pieces (±1.5″, ±10°) until every hard rule and check passes:
+     - 3″ gaps between Dense pieces;
+     - 0.5″ table margin;
+     - kit counts;
+     - a 4″ route for Class 4–5 to both zones and to each objective (or the ruin it sits in).
+   - All 9 tables together use **13 of the 16** standard footprints:
+     - 3 Large Ruins;
+     - the wedge pair;
+     - 4 Medium Ruins;
+     - 2 Long Walls;
+     - 2 Short Walls.
+
+The sections below describe the kit, symmetry and checks. They are unchanged from v2 except where noted.
 
 ---
 

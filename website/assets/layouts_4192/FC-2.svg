@@ -1,62 +1,136 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1036 728" role="img" aria-label="FC-2" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
-<rect x="0" y="0" width="1036" height="728" fill="#0b0f14"/>
-<rect x="34" y="34" width="968" height="660" fill="#f7f7f5" stroke="#cfcfcf" stroke-width="2"/>
-<line x1="166.0" y1="34" x2="166.0" y2="694" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="298.0" y1="34" x2="298.0" y2="694" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="430.0" y1="34" x2="430.0" y2="694" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="562.0" y1="34" x2="562.0" y2="694" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="694.0" y1="34" x2="694.0" y2="694" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="826.0" y1="34" x2="826.0" y2="694" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="958.0" y1="34" x2="958.0" y2="694" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="34" y1="562.0" x2="1002" y2="562.0" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="34" y1="430.0" x2="1002" y2="430.0" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="34" y1="298.0" x2="1002" y2="298.0" stroke="#e3e3e0" stroke-width="1"/>
-<line x1="34" y1="166.0" x2="1002" y2="166.0" stroke="#e3e3e0" stroke-width="1"/>
-<polygon points="34.0,694.0 1002.0,694.0 1002.0,518.0 34.0,518.0" fill="rgba(239,68,68,0.13)" stroke="#ef4444" stroke-dasharray="6 4" stroke-width="1.5"/>
-<polygon points="34.0,210.0 1002.0,210.0 1002.0,34.0 34.0,34.0" fill="rgba(59,130,246,0.13)" stroke="#3b82f6" stroke-dasharray="6 4" stroke-width="1.5"/>
-<line x1="34.0" y1="364.0" x2="1002.0" y2="364.0" stroke="#555" stroke-dasharray="5 5" stroke-width="1"/>
-<line x1="518.0" y1="694.0" x2="518.0" y2="34.0" stroke="#555" stroke-dasharray="5 5" stroke-width="1"/>
-<polygon points="516.0,149.7 494.0,187.8 379.6,121.8 401.6,83.7" fill="#9a8f7a" stroke="#111" stroke-width="1.5"/>
-<text x="447.8" y="141.9" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">A</text>
-<polygon points="297.6,309.2 297.6,56.2 121.6,56.2 253.6,309.2" fill="#374151" stroke="#111" stroke-width="1.5"/>
-<text x="209.6" y="188.7" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">B</text>
-<polygon points="931.6,306.4 931.6,152.4 678.6,152.4 678.6,306.4" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
-<text x="805.1" y="235.4" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">C</text>
-<polygon points="571.5,299.1 571.5,255.1 439.5,255.1 439.5,299.1" fill="#9a8f7a" stroke="#111" stroke-width="1.5"/>
-<text x="505.5" y="283.1" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">D</text>
-<polygon points="571.5,428.9 571.5,472.9 439.5,472.9 439.5,428.9" fill="#9a8f7a" stroke="#111" stroke-width="1.5"/>
-<text x="505.5" y="456.9" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">E</text>
-<polygon points="931.6,421.6 931.6,575.6 678.6,575.6 678.6,421.6" fill="#3f4652" stroke="#111" stroke-width="1.5"/>
-<text x="805.1" y="504.6" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">F</text>
-<polygon points="297.6,418.8 297.6,671.8 121.6,671.8 253.6,418.8" fill="#374151" stroke="#111" stroke-width="1.5"/>
-<text x="209.6" y="551.3" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">G</text>
-<polygon points="516.0,578.3 494.0,540.2 379.6,606.2 401.6,644.3" fill="#9a8f7a" stroke="#111" stroke-width="1.5"/>
-<text x="447.8" y="598.1" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">H</text>
-<circle cx="518.0" cy="364.0" r="66.0" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 4"/>
-<circle cx="518.0" cy="364.0" r="13" fill="#fff" stroke="#22c55e" stroke-width="4"/>
-<text x="518.0" y="369.0" text-anchor="middle" font-size="14" font-weight="800" fill="#22c55e">1</text>
-<circle cx="210.0" cy="364.0" r="66.0" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 4"/>
-<circle cx="210.0" cy="364.0" r="13" fill="#fff" stroke="#22c55e" stroke-width="4"/>
-<text x="210.0" y="369.0" text-anchor="middle" font-size="14" font-weight="800" fill="#22c55e">2</text>
-<circle cx="826.0" cy="364.0" r="66.0" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 4"/>
-<circle cx="826.0" cy="364.0" r="13" fill="#fff" stroke="#22c55e" stroke-width="4"/>
-<text x="826.0" y="369.0" text-anchor="middle" font-size="14" font-weight="800" fill="#22c55e">3</text>
-<line x1="505.5" y1="450.9" x2="34.0" y2="450.9" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="505.5" y1="450.9" x2="505.5" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="269.7" y="446.9" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">21.4"</text>
-<text x="509.5" y="572.5" font-size="13" font-weight="700" fill="#1d4ed8">11.1"</text>
-<line x1="805.1" y1="498.6" x2="1002.0" y2="498.6" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="805.1" y1="498.6" x2="805.1" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="903.5" y="494.6" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">8.9"</text>
-<text x="809.1" y="596.3" font-size="13" font-weight="700" fill="#1d4ed8">8.9"</text>
-<line x1="209.6" y1="545.3" x2="34.0" y2="545.3" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="209.6" y1="545.3" x2="209.6" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="121.8" y="541.3" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">8.0"</text>
-<text x="213.6" y="619.6" font-size="13" font-weight="700" fill="#1d4ed8">6.8"</text>
-<line x1="447.8" y1="592.1" x2="34.0" y2="592.1" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<line x1="447.8" y1="592.1" x2="447.8" y2="694.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
-<text x="240.9" y="588.1" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">18.8"</text>
-<text x="451.8" y="643.1" font-size="13" font-weight="700" fill="#1d4ed8">4.6"</text>
-<text x="34" y="24" font-size="15" font-weight="800" fill="#e6edf8">Frontline Clash — Layout 2</text>
-<text x="1002" y="24" text-anchor="end" font-size="12" fill="#9aa7b8">44" × 30" · centres from the nearest side and the front edge · mirrored across the long centre line</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1028 736" role="img" aria-label="FC-2" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+<defs><pattern id="rub" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="8" height="8" fill="none"/><line x1="0" y1="0" x2="0" y2="8" stroke="#ffffff" stroke-opacity="0.07" stroke-width="3"/></pattern></defs>
+<rect width="1028" height="736" fill="#0b0f14"/>
+<rect x="30" y="46" width="968" height="660" fill="#f4f3ef" stroke="#cfcfcf" stroke-width="2"/>
+<line x1="74.0" y1="46" x2="74.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="118.0" y1="46" x2="118.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="162.0" y1="46" x2="162.0" y2="706" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="206.0" y1="46" x2="206.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="250.0" y1="46" x2="250.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="294.0" y1="46" x2="294.0" y2="706" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="338.0" y1="46" x2="338.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="382.0" y1="46" x2="382.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="426.0" y1="46" x2="426.0" y2="706" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="470.0" y1="46" x2="470.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="514.0" y1="46" x2="514.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="558.0" y1="46" x2="558.0" y2="706" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="602.0" y1="46" x2="602.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="646.0" y1="46" x2="646.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="690.0" y1="46" x2="690.0" y2="706" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="734.0" y1="46" x2="734.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="778.0" y1="46" x2="778.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="822.0" y1="46" x2="822.0" y2="706" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="866.0" y1="46" x2="866.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="910.0" y1="46" x2="910.0" y2="706" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="954.0" y1="46" x2="954.0" y2="706" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="30" y1="662.0" x2="998" y2="662.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="618.0" x2="998" y2="618.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="574.0" x2="998" y2="574.0" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="30" y1="530.0" x2="998" y2="530.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="486.0" x2="998" y2="486.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="442.0" x2="998" y2="442.0" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="30" y1="398.0" x2="998" y2="398.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="354.0" x2="998" y2="354.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="310.0" x2="998" y2="310.0" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="30" y1="266.0" x2="998" y2="266.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="222.0" x2="998" y2="222.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="178.0" x2="998" y2="178.0" stroke="#e7e6e1" stroke-width="1.2"/>
+<line x1="30" y1="134.0" x2="998" y2="134.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<line x1="30" y1="90.0" x2="998" y2="90.0" stroke="#e7e6e1" stroke-width="0.5"/>
+<polygon points="30.0,706.0 998.0,706.0 998.0,530.0 30.0,530.0" fill="rgba(239,68,68,0.12)" stroke="#ef4444" stroke-dasharray="6 4" stroke-width="1.5"/>
+<polygon points="30.0,222.0 998.0,222.0 998.0,46.0 30.0,46.0" fill="rgba(59,130,246,0.12)" stroke="#3b82f6" stroke-dasharray="6 4" stroke-width="1.5"/>
+<line x1="30.0" y1="376.0" x2="998.0" y2="376.0" stroke="#777" stroke-dasharray="5 5" stroke-width="1"/>
+<line x1="514.0" y1="706.0" x2="514.0" y2="46.0" stroke="#777" stroke-dasharray="5 5" stroke-width="1"/>
+<circle cx="514.0" cy="376.0" r="66.0" fill="rgba(34,197,94,0.07)" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3 4"/>
+<circle cx="206.0" cy="376.0" r="66.0" fill="rgba(34,197,94,0.07)" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3 4"/>
+<circle cx="822.0" cy="376.0" r="66.0" fill="rgba(34,197,94,0.07)" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3 4"/>
+<polygon points="79.5,57.0 332.5,57.0 332.5,233.0 79.5,101.0" fill="#454b55" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="79.5,57.0 332.5,57.0 332.5,233.0 79.5,101.0" fill="url(#rub)"/>
+<polyline points="87.2,64.7 324.8,64.7" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="87.2,64.7 324.8,64.7" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="324.8,64.7 324.8,225.3" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="324.8,64.7 324.8,225.3" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<text x="206.0" y="151.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">A</text>
+<polygon points="630.8,106.5 638.5,194.1 507.2,205.5 499.5,117.9" fill="#525862" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="630.8,106.5 638.5,194.1 507.2,205.5 499.5,117.9" fill="url(#rub)"/>
+<polyline points="507.8,125.0 595.4,117.3" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="507.8,125.0 595.4,117.3" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="507.8,125.0 512.7,182.0" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="507.8,125.0 512.7,182.0" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<text x="569.0" y="162.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">B</text>
+<polygon points="970.5,90.0 970.5,244.0 717.5,244.0 717.5,90.0" fill="#4a4f58" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="970.5,90.0 970.5,244.0 717.5,244.0 717.5,90.0" fill="url(#rub)"/>
+<polyline points="962.8,97.7 786.8,97.7" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="962.8,97.7 786.8,97.7" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="962.8,97.7 962.8,207.7" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="962.8,97.7 962.8,207.7" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="791.2,236.3 725.2,236.3" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="791.2,236.3 725.2,236.3" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<text x="844.0" y="173.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">C</text>
+<polygon points="220.5,312.0 205.6,353.3 81.5,308.0 96.4,266.7" fill="#a89a7c" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="95.1,289.8 206.9,330.2" fill="none" stroke="#2a2214" stroke-width="8" stroke-linecap="round"/>
+<polyline points="95.1,289.8 206.9,330.2" fill="none" stroke="#6b5d43" stroke-width="5" stroke-linecap="round"/>
+<text x="151.0" y="316.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">D</text>
+<polygon points="888.0,310.0 800.0,310.0 800.0,442.0 888.0,442.0" fill="#525862" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="888.0,310.0 800.0,310.0 800.0,442.0 888.0,442.0" fill="url(#rub)"/>
+<polyline points="880.3,317.7 880.3,405.7" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="880.3,317.7 880.3,405.7" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="880.3,317.7 823.1,317.7" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="880.3,317.7 823.1,317.7" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<text x="844.0" y="382.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">E</text>
+<polygon points="220.5,440.0 205.6,398.7 81.5,444.0 96.4,485.3" fill="#a89a7c" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="95.1,462.2 206.9,421.8" fill="none" stroke="#2a2214" stroke-width="8" stroke-linecap="round"/>
+<polyline points="95.1,462.2 206.9,421.8" fill="none" stroke="#6b5d43" stroke-width="5" stroke-linecap="round"/>
+<text x="151.0" y="448.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">F</text>
+<polygon points="970.5,662.0 970.5,508.0 717.5,508.0 717.5,662.0" fill="#4a4f58" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="970.5,662.0 970.5,508.0 717.5,508.0 717.5,662.0" fill="url(#rub)"/>
+<polyline points="962.8,654.3 786.8,654.3" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="962.8,654.3 786.8,654.3" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="962.8,654.3 962.8,544.3" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="962.8,654.3 962.8,544.3" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="791.2,515.7 725.2,515.7" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="791.2,515.7 725.2,515.7" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<text x="844.0" y="591.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">G</text>
+<polygon points="630.8,645.5 638.5,557.9 507.2,546.5 499.5,634.1" fill="#525862" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="630.8,645.5 638.5,557.9 507.2,546.5 499.5,634.1" fill="url(#rub)"/>
+<polyline points="507.8,627.0 595.4,634.7" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="507.8,627.0 595.4,634.7" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="507.8,627.0 512.7,570.0" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="507.8,627.0 512.7,570.0" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<text x="569.0" y="602.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">H</text>
+<polygon points="79.5,695.0 332.5,695.0 332.5,519.0 79.5,651.0" fill="#454b55" stroke="#1b1f24" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="79.5,695.0 332.5,695.0 332.5,519.0 79.5,651.0" fill="url(#rub)"/>
+<polyline points="87.2,687.3 324.8,687.3" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="87.2,687.3 324.8,687.3" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<polyline points="324.8,687.3 324.8,526.7" fill="none" stroke="#2a2214" stroke-width="9" stroke-linecap="round"/>
+<polyline points="324.8,687.3 324.8,526.7" fill="none" stroke="#d4b16a" stroke-width="6" stroke-linecap="round"/>
+<text x="206.0" y="613.0" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke">I</text>
+<circle cx="514.0" cy="376.0" r="14" fill="#16a34a" stroke="#fff" stroke-width="3"/>
+<text x="514.0" y="381.0" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">1</text>
+<circle cx="206.0" cy="376.0" r="14" fill="#16a34a" stroke="#fff" stroke-width="3"/>
+<text x="206.0" y="381.0" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">2</text>
+<circle cx="822.0" cy="376.0" r="14" fill="#16a34a" stroke="#fff" stroke-width="3"/>
+<text x="822.0" y="381.0" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">3</text>
+<line x1="888.0" y1="310.0" x2="998.0" y2="310.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="943.0" y="306.0" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">5.0"</text>
+<line x1="800.0" y1="442.0" x2="800.0" y2="706.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="800.0" y="570.0" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">12.0"</text>
+<line x1="81.5" y1="444.0" x2="30.0" y2="444.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="55.7" y="440.0" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">2.3"</text>
+<line x1="96.4" y1="485.3" x2="96.4" y2="706.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="96.4" y="591.7" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">10.0"</text>
+<line x1="970.5" y1="662.0" x2="998.0" y2="662.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="984.2" y="658.0" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">1.2"</text>
+<line x1="970.5" y1="662.0" x2="970.5" y2="706.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="970.5" y="680.0" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">2.0"</text>
+<line x1="638.5" y1="557.9" x2="998.0" y2="557.9" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="818.3" y="553.9" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">16.3"</text>
+<line x1="630.8" y1="645.5" x2="630.8" y2="706.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="630.8" y="671.8" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">2.7"</text>
+<line x1="79.5" y1="695.0" x2="30.0" y2="695.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="54.8" y="691.0" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">2.2"</text>
+<line x1="79.5" y1="695.0" x2="79.5" y2="706.0" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="79.5" y="696.5" text-anchor="middle" font-size="13" font-weight="800" fill="#1d4ed8" stroke="#f4f3ef" stroke-width="3" paint-order="stroke">0.5"</text>
+<text x="30" y="30" font-size="16" font-weight="800" fill="#e6edf8">Frontline Clash — 2 · Standard</text>
+<text x="998" y="30" text-anchor="end" font-size="12" fill="#9aa7b8">44" × 30" · 9 pieces · mirrored across the long centre line · blue: gap from the table edge</text>
 </svg>
