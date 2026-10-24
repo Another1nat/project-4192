@@ -6,34 +6,34 @@
 
 | Check | Result |
 | :-- | :-- |
-| A. Dice engine, exact cases (30) | mean error 4.02% · max 13.2% (Monte Carlo noise ≈ 4.5%) |
-| A. Dice engine, random Damage / UNYIELDING cases (30) | mean bias -0.0% · range -12% to +6% |
-| B. Metamorphic price tests (better stats never cheaper) | 16 failures |
+| A. Dice engine, exact cases (99) | mean error 1.40% · max 7.2% (Monte Carlo noise ≈ 2.6%) |
+| A. Dice engine, random Damage / UNYIELDING cases (100) | mean bias -0.3% · range -6% to +9% |
+| B. Metamorphic price tests (better stats never cheaper) | 17 failures |
 | C. Datasheets outside sanity bands | 0 |
-| C. Unit abilities priced ≈0 | 0 |
+| C. Unit abilities priced ≈0 | 2 |
 | C. Unit abilities > 40% of base price | 1 |
-| D. Enhancements priced | 150 (range 10–60 pts) |
+| D. Enhancements priced | 150 (range 10–65 pts) |
 | E/F. Errors (IP terms, vocabulary, CP, duplicates, missing bearers) | 0 |
 | F. Datasheet names shared across factions | 0 |
 | G. Sample 1,000-pt lists legal | 25 / 25 |
 
 ## A. Dice engine
 
-Each case rolls the same attack die by die (hit → re-rolls → crits → wound → save/ward cap 3+ → damage with no spill into a pool of models), 2000 times, and compares the MIGHT removed with the calculator's closed-form expectation.
+Each case rolls the same attack die by die (hit → re-rolls → crits → wound → save/ward cap 3+ → damage with no spill into a pool of models), 6000 times, and compares the MIGHT removed with the calculator's closed-form expectation.
 
 - **Exact cases** (fixed Damage, no UNYIELDING): the formula is the true expectation; differences are dice noise.
 - **Random Damage / UNYIELDING cases**: until v4.3 the calculator used `E[min(D, W)] × keep`, which this check showed was off by −33% to +27% (random-Damage weapons over-valued against multi-MIGHT models; UNYIELDING mis-valued against big hits). It now uses an exact renewal formula: MIGHT removed per wound = W ÷ E[wounds needed to kill one model], with UNYIELDING rolled per damage point. Remaining differences are dice noise; rare-event cases (<0.15 wounds per attack) carry ±10% noise.
 
 | Exact? | Weapon (A, skill, wound, PEN, D) | Target (ARM, MIGHT, WARD, UNY, hard) | Mods | Calculator | Brute force | Diff |
 | :-: | :-- | :-- | :-- | --: | --: | --: |
-| yes | A3 6+ W6+ PEN-0 D3 | 7+ M4 W4 U- H | {'reroll_hit': 'ones'} | 0.097 | 0.112 | -13% |
-| yes | A2 5+ W3+ PEN-1 D1 | 4+ M2 W5 U-  | {'wound_mod': 1} | 0.370 | 0.330 | +12% |
-| no | A2 6+ W5+ PEN-0 DD6+1 | 6+ M2 W- U-  | - | 0.185 | 0.211 | -12% |
-| yes | A2 6+ W6+ PEN-0 D3 | 6+ M1 W4 U-  | - | 0.028 | 0.032 | -12% |
-| yes | AD3 3+ W6+ PEN-2 D1 | 5+ M3 W4 U- H | {'reroll_hit': 'ones'} | 0.130 | 0.117 | +11% |
-| yes | A1 2+ W5+ PEN-2 D2 | 7+ M4 W4 U-  | {'hit_mod': 1} | 0.278 | 0.257 | +8% |
-| no | AD6 5+ W6+ PEN-1 D2 | 6+ M2 W4 U-  | {'reroll_wound': 'ones'} | 0.227 | 0.245 | -7% |
-| yes | AD3 3+ W3+ PEN-2 D2 | 3+ M1 W- U-  | {'lethal': True} | 0.667 | 0.715 | -7% |
+| no | A2 4+ W5+ PEN-4 DD6+1 | 3+ M4 W- U6 H | - | 0.445 | 0.409 | +9% |
+| yes | A2 5+ W6+ PEN-4 D1 | 6+ M3 W4 U-  | {'reroll_wound': 'ones'} | 0.065 | 0.070 | -7% |
+| no | A4 6+ W5+ PEN-4 DD6 | 6+ M6 W6 U5 H | {'pen_mod': 1} | 0.182 | 0.171 | +7% |
+| no | A3 4+ W6+ PEN-1 D2 | 5+ M1 W5 U5  | {'pen_mod': 1} | 0.148 | 0.158 | -6% |
+| no | A1 6+ W3+ PEN-3 DD6 | 7+ M10 W6 U5  | - | 0.194 | 0.207 | -6% |
+| no | AD3 6+ W6+ PEN-3 D2 | 4+ M2 W5 U5  | {'wound_mod': 1} | 0.088 | 0.093 | -6% |
+| yes | A4 6+ W4+ PEN-1 D3 | 3+ M10 W- U-  | {'dmg_mod': 1} | 0.556 | 0.585 | -5% |
+| yes | A1 2+ W5+ PEN-1 D3 | 5+ M1 W4 U-  | - | 0.139 | 0.133 | +4% |
 
 *(the 8 largest differences out of all cases)*
 
@@ -43,27 +43,27 @@ Each case rolls the same attack die by die (hit → re-rolls → crits → wound
 | :-: | :-- | --: | :-- | --: | --: | --: | --: | :-- |
 | 01 | Auric Solar-Host | 30 | 55–345 | 0 | 3 | 0 | 0 | ✅ 970 pts · 8 units · 21 models |
 | 02 | Golgotha Trench-Legions | 30 | 40–230 | 0 | 6 | 0 | 0 | ✅ 990 pts · 14 units · 35 models |
-| 03 | Sun-Pyre Witch-Courts | 20 | 50–335 | 0 | 3 | 0 | 0 | ✅ 955 pts · 10 units · 35 models |
+| 03 | Sun-Pyre Witch-Courts | 20 | 50–335 | 0 | 3 | 2 | 0 | ✅ 960 pts · 10 units · 35 models |
 | 04 | Aegis Knight-Houses | 20 | 45–410 | 0 | 4 | 0 | 0 | ✅ 985 pts · 11 units · 25 models |
-| 05 | Abyssal Bathys-Corps | 20 | 50–315 | 0 | 3 | 0 | 0 | ✅ 985 pts · 11 units · 29 models |
-| 06 | Sanguine Aristocracy | 20 | 60–305 | 0 | 4 | 0 | 0 | ✅ 920 pts · 8 units · 29 models |
-| 07 | Mordant Ghoul-Courts | 20 | 45–275 | 0 | 3 | 0 | 0 | ✅ 980 pts · 12 units · 40 models |
-| 08 | Prometheus Flesh-Guilds | 20 | 50–275 | 0 | 4 | 0 | 1 | ✅ 965 pts · 11 units · 30 models |
+| 05 | Abyssal Bathys-Corps | 20 | 50–315 | 0 | 3 | 0 | 0 | ✅ 990 pts · 11 units · 29 models |
+| 06 | Sanguine Aristocracy | 20 | 60–305 | 0 | 4 | 0 | 0 | ✅ 925 pts · 8 units · 29 models |
+| 07 | Mordant Ghoul-Courts | 20 | 45–275 | 0 | 3 | 0 | 0 | ✅ 990 pts · 12 units · 40 models |
+| 08 | Prometheus Flesh-Guilds | 20 | 50–275 | 0 | 4 | 0 | 1 | ✅ 970 pts · 11 units · 30 models |
 | 09 | Frost-Skaer Blood-Raiders | 20 | 50–265 | 0 | 4 | 0 | 1 | ✅ 975 pts · 10 units · 27 models |
 | 10 | Dread-Fleet Buccaneers | 20 | 35–215 | 0 | 4 | 0 | 0 | ✅ 995 pts · 14 units · 32 models |
-| 11 | Cinder-Gorged Legion | 30 | 70–390 | 0 | 1 | 0 | 0 | ✅ 945 pts · 9 units · 32 models |
+| 11 | Cinder-Gorged Legion | 30 | 70–395 | 0 | 1 | 0 | 1 | ✅ 945 pts · 9 units · 32 models |
 | 12 | Black-Bile Congregation | 20 | 75–420 | 0 | 2 | 0 | 0 | ✅ 995 pts · 9 units · 29 models |
-| 13 | Moloch Iron-Forged | 20 | 50–325 | 0 | 4 | 0 | 1 | ✅ 965 pts · 10 units · 32 models |
+| 13 | Moloch Iron-Forged | 20 | 50–325 | 0 | 5 | 0 | 1 | ✅ 965 pts · 10 units · 32 models |
 | 14 | Cabal of the Inverted Star | 20 | 65–285 | 0 | 4 | 0 | 0 | ✅ 995 pts · 11 units · 37 models |
 | 15 | Velvet-Scourge Syndicate | 20 | 60–395 | 0 | 3 | 0 | 6 | ✅ 1000 pts · 12 units · 33 models |
-| 16 | Starfire High-Court | 30 | 40–285 | 0 | 5 | 0 | 0 | ✅ 960 pts · 10 units · 24 models |
+| 16 | Starfire High-Court | 30 | 40–285 | 0 | 5 | 0 | 0 | ✅ 965 pts · 10 units · 24 models |
 | 17 | Sun-Scaled Temple-Host | 20 | 60–305 | 0 | 3 | 0 | 0 | ✅ 925 pts · 9 units · 23 models |
 | 18 | Obsidian Forge-Tombs | 20 | 60–265 | 0 | 5 | 0 | 0 | ✅ 940 pts · 9 units · 26 models |
-| 19 | Skitter-Kin & Rad-Scavengers | 20 | 45–225 | 0 | 4 | 0 | 2 | ✅ 955 pts · 12 units · 47 models |
+| 19 | Skitter-Kin & Rad-Scavengers | 20 | 45–220 | 0 | 4 | 0 | 2 | ✅ 950 pts · 12 units · 47 models |
 | 20 | Astral Shadow-Clans | 20 | 55–200 | 0 | 3 | 0 | 0 | ✅ 1000 pts · 12 units · 29 models |
 | 21 | Rift-Stalker Menagerie | 20 | 40–165 | 0 | 5 | 0 | 0 | ✅ 970 pts · 13 units · 33 models |
-| 22 | Radiant Concordat | 20 | 45–365 | 0 | 4 | 0 | 3 | ✅ 985 pts · 11 units · 29 models |
-| 23 | Apex Bio-Swarm | 30 | 30–380 | 0 | 3 | 0 | 0 | ✅ 995 pts · 13 units · 48 models |
+| 22 | Radiant Concordat | 20 | 45–360 | 0 | 4 | 0 | 3 | ✅ 990 pts · 11 units · 29 models |
+| 23 | Apex Bio-Swarm | 30 | 30–380 | 0 | 3 | 0 | 0 | ✅ 1000 pts · 13 units · 48 models |
 | 24 | Diesel-Skull War-Horde | 20 | 50–350 | 0 | 2 | 0 | 2 | ✅ 965 pts · 11 units · 47 models |
 | 25 | Eclipse Shadow-Fiends | 20 | 50–280 | 0 | 2 | 0 | 0 | ✅ 990 pts · 10 units · 30 models |
 
@@ -71,7 +71,7 @@ Each case rolls the same attack die by die (hit → re-rolls → crits → wound
 
 - none
 
-## Warnings (88)
+## Warnings (89)
 
 - **01** enhancement Artificer Plate sits on the 10-pt floor (measured value is lower on Sworn Lieutenant)
 - **01** enhancement Master-crafted Sol-bolter sits on the 10-pt floor (measured value is lower on Sworn Lieutenant)
@@ -115,6 +115,7 @@ Each case rolls the same attack die by die (hit → re-rolls → crits → wound
 - **12** enhancement Pox-Banner sits on the 10-pt floor (measured value is lower on Blight-Knights)
 - **12** enhancement Daemon-Furnace sits on the 10-pt floor (measured value is lower on Blight-Furnace Bell-Tank)
 - **13** enhancement Siege-Lens sits on the 10-pt floor (measured value is lower on Iron-Smith Forgemaster)
+- **13** enhancement Bound Daemon-Heart costs 65 pts
 - **13** enhancement Hammer of Moloch sits on the 10-pt floor (measured value is lower on Daemon-Smith Overseer)
 - **13** enhancement Bastion-Seal sits on the 10-pt floor (measured value is lower on Iron-Warden Champion)
 - **13** enhancement Ironclad Pauldrons sits on the 10-pt floor (measured value is lower on Iron-Forged Legionaries)
@@ -162,32 +163,34 @@ Each case rolls the same attack die by die (hit → re-rolls → crits → wound
 - **25** enhancement Void-Lantern sits on the 10-pt floor (measured value is lower on Lantern-Warden)
 - **25** enhancement Lantern of Endless Night sits on the 10-pt floor (measured value is lower on Lantern-Warden)
 
-## Abilities priced ≈0 (dead, capped, or effect already at the 2+/3+ cap) (0)
+## Abilities priced ≈0 (dead, capped, or effect already at the 2+/3+ cap) (2)
 
-- none
+- **03** Purgator Vanguard — Purge at Arm's Length
+- **03** Vindicant Squad — Steady Faith
 
 ## Abilities worth more than 40% of the unit base (1)
 
 - **20** Flesh-Sculptor — Grafted Resilience: +28 on base 59
 
-## Metamorphic failures (16)
+## Metamorphic failures (17)
 
-- **08** Plasma-Welder Team: RS better: 63.73 → 62.80
+- **08** Plasma-Welder Team: RS better: 65.21 → 64.36
 - **09** Hall-Guard Berserkers: MS better: 101.31 → 100.74
+- **11** Brass Hell-Titan: MS better: 263.57 → 263.47
 - **13** Breacher Battery: RS better: 52.14 → 51.70
 - **15** Sonic-Blaster Cultists: MS better: 67.89 → 67.36
 - **15** Sonic-Blaster Cultists: RS better: 67.89 → 67.51
 - **15** Rapture-Hounds: MS better: 66.20 → 65.69
 - **15** Resonance Cannon Team: RS better: 47.59 → 47.19
-- **15** Sonic Organ-Engine: RS better: 98.33 → 97.55
+- **15** Sonic Organ-Engine: RS better: 99.43 → 98.71
 - **15** Pleasure-Barge: RS better: 103.37 → 103.16
-- **19** Rad-Fire Thrower Team: MS better: 43.29 → 43.27
-- **19** Rotary Scrap-Gun Team: MS better: 40.45 → 40.36
+- **19** Rad-Fire Thrower Team: MS better: 43.98 → 43.97
+- **19** Rotary Scrap-Gun Team: MS better: 40.76 → 40.69
 - **22** Porcelain Strike-Infantry: RS better: 72.13 → 72.12
 - **22** Lotus Transport Skimmer: RS better: 107.93 → 107.87
-- **22** Lotus Rail-Battery: RS better: 106.49 → 106.08
+- **22** Lotus Rail-Battery: RS better: 107.77 → 107.43
 - **24** Scrap-Imps: RS better: 75.79 → 75.02
-- **24** Rocket-Scrap Crew: RS better: 52.90 → 52.68
+- **24** Rocket-Scrap Crew: RS better: 54.13 → 54.07
 
 ## Shared datasheet names across factions (0)
 
@@ -237,7 +240,7 @@ Each case rolls the same attack die by die (hit → re-rolls → crits → wound
 | 07 | The Royal Hunt | Trophy of the Beast | Crypt-Seneschal | 10 |
 | 07 | The Grand Feast | Gilded Goblet | Ghoul-King of the Carrion Throne | 15 |
 | 07 | The Grand Feast | Chef's Cleaver | Carrion-Surgeon | 10 |
-| 07 | The Dragon Court | Royal Scales | Ghoul-King on Royal Corpse-Drake | 35 |
+| 07 | The Dragon Court | Royal Scales | Ghoul-King on Royal Corpse-Drake | 40 |
 | 07 | The Dragon Court | Dragon-Crested Helm | Crypt-Seneschal | 10 |
 | 08 | Surgeon-Cult | Bone-Saw of Prometheus | Arch-Chirurgeon Prime | 30 |
 | 08 | Surgeon-Cult | Reserve Organs | Rust-Priest Chirurgeon | 10 |
@@ -271,7 +274,7 @@ Each case rolls the same attack die by die (hit → re-rolls → crits → wound
 | 12 | Smog Engines | Rot-Crew | Necrotic Siege-Crawler | 55 |
 | 13 | Grand Siege | Siege-Lens | Iron-Smith Forgemaster | 10 |
 | 13 | Grand Siege | Daemon-Bound Shells | Infernal Bombard | 25 |
-| 13 | Daemon-Forge | Bound Daemon-Heart | Soul-Furnace Engine | 60 |
+| 13 | Daemon-Forge | Bound Daemon-Heart | Soul-Furnace Engine | 65 |
 | 13 | Daemon-Forge | Hammer of Moloch | Daemon-Smith Overseer | 10 |
 | 13 | Iron Within | Bastion-Seal | Iron-Warden Champion | 10 |
 | 13 | Iron Within | Ironclad Pauldrons | Iron-Forged Legionaries | 10 |

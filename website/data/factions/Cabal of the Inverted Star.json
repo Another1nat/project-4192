@@ -332,7 +332,8 @@
      ],
      "models": [
       "Master of the Astral Geometry"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Force-stave",
@@ -346,7 +347,8 @@
      "keywords": [],
      "models": [
       "Master of the Astral Geometry"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -408,7 +410,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "14-sorcerer-adept",
@@ -466,7 +481,8 @@
      ],
      "models": [
       "Sorcerer-Adept"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Force-stave",
@@ -480,7 +496,8 @@
      "keywords": [],
      "models": [
       "Sorcerer-Adept"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -542,7 +559,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.8,
+     "elite": 0.7,
+     "heavy": 0.5,
+     "monster": 0.6,
+     "vehicle": 0.5
+    }
+   }
   },
   {
    "id": "14-hex-blade-exalted",
@@ -601,7 +631,8 @@
      ],
      "models": [
       "Hex-Blade Exalted"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hex-sword",
@@ -617,7 +648,8 @@
      ],
      "models": [
       "Hex-Blade Exalted"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -679,7 +711,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.3,
+     "heavy": 2.8,
+     "monster": 3.0,
+     "vehicle": 2.6
+    }
+   }
   },
   {
    "id": "14-seer-of-the-inverted-star",
@@ -737,7 +782,8 @@
      ],
      "models": [
       "Seer of the Inverted Star"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -751,7 +797,8 @@
      "keywords": [],
      "models": [
       "Seer of the Inverted Star"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -813,7 +860,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.6,
+     "line": 0.4,
+     "elite": 0.3,
+     "heavy": 0.3,
+     "monster": 0.3,
+     "vehicle": 0.2
+    }
+   }
   },
   {
    "id": "14-warp-touched-thralls",
@@ -849,7 +909,7 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
@@ -873,7 +933,8 @@
      ],
      "models": [
       "Warp-Touched Thralls"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -887,7 +948,8 @@
      "keywords": [],
      "models": [
       "Warp-Touched Thralls"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -941,7 +1003,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.8,
+     "line": 1.7,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.1,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "14-hollow-automata",
@@ -1001,7 +1076,8 @@
      ],
      "models": [
       "Hollow Automata"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Chain-blade",
@@ -1015,7 +1091,8 @@
      "keywords": [],
      "models": [
       "Hollow Automata"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 155,
@@ -1124,7 +1201,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.2,
+     "line": 3.5,
+     "elite": 2.6,
+     "heavy": 2.6,
+     "monster": 2.3,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "14-hex-plated-automata",
@@ -1168,7 +1258,7 @@
      "name": "Warp-flamer",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "2+",
      "S": "3+",
      "AP": "-1",
@@ -1179,7 +1269,8 @@
      ],
      "models": [
       "Hex-Plated Automata"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hex-axe",
@@ -1193,15 +1284,16 @@
      "keywords": [],
      "models": [
       "Hex-Plated Automata"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 150,
+   "points": 155,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 150,
+     "points": 155,
      "models": [
       {
        "name": "Hex-Plated Automata",
@@ -1223,7 +1315,7 @@
     },
     {
      "default": false,
-     "points": 225,
+     "points": 230,
      "models": [
       {
        "name": "Hex-Plated Automata",
@@ -1270,7 +1362,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.0,
+     "line": 5.3,
+     "elite": 4.0,
+     "heavy": 4.0,
+     "monster": 4.0,
+     "vehicle": 3.0
+    }
+   }
   },
   {
    "id": "14-star-cult-acolytes",
@@ -1321,7 +1426,8 @@
      "keywords": [],
      "models": [
       "Star-Cult Acolytes"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1335,7 +1441,8 @@
      "keywords": [],
      "models": [
       "Star-Cult Acolytes"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -1444,7 +1551,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.4,
+     "line": 1.5,
+     "elite": 1.0,
+     "heavy": 1.0,
+     "monster": 1.1,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "14-plume-kin-raiders",
@@ -1502,7 +1622,8 @@
      ],
      "models": [
       "Plume-Kin Raiders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Avian blades",
@@ -1516,7 +1637,8 @@
      "keywords": [],
      "models": [
       "Plume-Kin Raiders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -1625,7 +1747,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "14-astral-disc-riders",
@@ -1679,7 +1814,8 @@
      ],
      "models": [
       "Astral Disc-Riders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Disc-blades",
@@ -1695,7 +1831,8 @@
      ],
      "models": [
       "Astral Disc-Riders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -1771,7 +1908,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 3.4,
+     "line": 2.8,
+     "elite": 2.3,
+     "heavy": 1.7,
+     "monster": 2.2,
+     "vehicle": 1.8
+    }
+   }
   },
   {
    "id": "14-star-wisps",
@@ -1815,7 +1965,7 @@
      "name": "Warp-fire",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "4+",
      "AP": "0",
@@ -1826,7 +1976,8 @@
      ],
      "models": [
       "Star-Wisps"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Mutant limbs",
@@ -1840,7 +1991,8 @@
      "keywords": [],
      "models": [
       "Star-Wisps"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -1859,7 +2011,7 @@
     },
     {
      "default": false,
-     "points": 70,
+     "points": 75,
      "models": [
       {
        "name": "Star-Wisps",
@@ -1881,7 +2033,7 @@
     },
     {
      "default": false,
-     "points": 85,
+     "points": 90,
      "models": [
       {
        "name": "Star-Wisps",
@@ -1903,7 +2055,7 @@
     },
     {
      "default": false,
-     "points": 100,
+     "points": 105,
      "models": [
       {
        "name": "Star-Wisps",
@@ -1949,7 +2101,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.3,
+     "line": 5.0,
+     "elite": 3.3,
+     "heavy": 3.3,
+     "monster": 3.3,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "14-mutated-warp-spawn",
@@ -1992,7 +2157,7 @@
      "name": "Mutant limbs",
      "type": "Melee",
      "range": "Melee",
-     "A": "D6+1",
+     "A": "D3+3",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -2000,7 +2165,8 @@
      "keywords": [],
      "models": [
       "Mutated Warp-Spawn"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -2030,7 +2196,7 @@
     },
     {
      "default": false,
-     "points": 145,
+     "points": 150,
      "models": [
       {
        "name": "Mutated Warp-Spawn",
@@ -2072,7 +2238,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 5.0,
+     "heavy": 5.0,
+     "monster": 5.0,
+     "vehicle": 3.8
+    }
+   }
   },
   {
    "id": "14-hexfire-battery",
@@ -2126,7 +2305,8 @@
      ],
      "models": [
       "Hexfire Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2140,7 +2320,8 @@
      "keywords": [],
      "models": [
       "Hexfire Battery"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -2205,7 +2386,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.3,
+     "elite": 2.0,
+     "heavy": 2.0,
+     "monster": 2.0,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "14-rune-plate-walker",
@@ -2248,7 +2442,7 @@
      "name": "Warp-flamer",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "2+",
      "S": "3+",
      "AP": "-1",
@@ -2259,7 +2453,8 @@
      ],
      "models": [
       "Rune-Plate Walker"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hex-fists",
@@ -2273,7 +2468,8 @@
      "keywords": [],
      "models": [
       "Rune-Plate Walker"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -2324,7 +2520,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.7,
+     "line": 1.8,
+     "elite": 2.2,
+     "heavy": 1.7,
+     "monster": 3.1,
+     "vehicle": 2.4
+    }
+   }
   },
   {
    "id": "14-spawn-horror",
@@ -2377,7 +2586,8 @@
      ],
      "models": [
       "Spawn-Horror"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -2424,7 +2634,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.5,
+     "elite": 3.1,
+     "heavy": 2.3,
+     "monster": 2.5,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "14-cosmic-vortex-beast",
@@ -2478,7 +2701,8 @@
      ],
      "models": [
       "Cosmic Vortex-Beast"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -2488,19 +2712,20 @@
      "BS": "4+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Cosmic Vortex-Beast"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 140,
+   "points": 145,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 140,
+     "points": 145,
      "models": [
       {
        "name": "Cosmic Vortex-Beast",
@@ -2545,7 +2770,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.7,
+     "line": 3.1,
+     "elite": 4.0,
+     "heavy": 3.1,
+     "monster": 6.0,
+     "vehicle": 5.1
+    }
+   }
   },
   {
    "id": "14-warp-prism-engine",
@@ -2589,7 +2827,7 @@
      "name": "Prism-beam",
      "type": "Ranged",
      "range": "60\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -2600,7 +2838,8 @@
      ],
      "models": [
       "Warp-Prism Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2614,7 +2853,8 @@
      "keywords": [],
      "models": [
       "Warp-Prism Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 125,
@@ -2667,7 +2907,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.7,
+     "line": 1.8,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.7,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "14-spire-barge",
@@ -2705,12 +2958,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2734,7 +2987,8 @@
      ],
      "models": [
       "Spire-Barge"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2748,7 +3002,8 @@
      "keywords": [],
      "models": [
       "Spire-Barge"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2801,7 +3056,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.6,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.4,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "14-winged-star-paragon",
@@ -2861,7 +3129,8 @@
      ],
      "models": [
       "Winged Star-Paragon"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Astral stave",
@@ -2875,7 +3144,8 @@
      "keywords": [],
      "models": [
       "Winged Star-Paragon"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 175,
@@ -2935,7 +3205,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 2.2,
+     "heavy": 1.7,
+     "monster": 2.9,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "14-inverted-star-monolith",
@@ -2984,20 +3267,21 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-4",
-     "D": "D6+2",
+     "D": "D3+4",
      "keywords": [
       "HEAVY",
       "PSYCHIC / ARCANE"
      ],
      "models": [
       "Inverted Star Monolith"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Warp-flare",
      "type": "Ranged",
      "range": "12\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "2+",
      "S": "3+",
      "AP": "-1",
@@ -3008,7 +3292,8 @@
      ],
      "models": [
       "Inverted Star Monolith"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Titan stomp",
@@ -3024,7 +3309,8 @@
      ],
      "models": [
       "Inverted Star Monolith"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 285,
@@ -3080,7 +3366,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 5.7,
+     "line": 4.3,
+     "elite": 4.9,
+     "heavy": 4.9,
+     "monster": 7.6,
+     "vehicle": 7.5
+    }
+   }
   }
  ],
  "faq": []

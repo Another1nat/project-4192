@@ -812,7 +812,7 @@
      "name": "Battle cannon",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "wound": "2+",
      "pen": "-1",
      "D": "3",
@@ -827,7 +827,7 @@
      "A": "1",
      "wound": "2+",
      "pen": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "traits": [
       "[HEAVY]"
      ]

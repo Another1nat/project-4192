@@ -735,8 +735,10 @@ window.selectUnit = function(safeId) {
 
     // 1. Stats (one block per model type when the unit has more than one stat line)
     let statsHtml = '';
-    const statBlock = (st, title) => { let h = title ? `<div style="font-size:0.78rem; color:#8c99b0; margin:0 0 6px;">${title}</div>` : ''; h += '<div class="ds-stats-row" style="margin-bottom:14px; display:flex; gap:10px; flex-wrap:wrap;">';
-        for (const [key, val] of Object.entries(st)) h += `<div class="ds-stat-box" style="background:#1a222d; border:1px solid #2a3545; border-radius:6px; padding:10px; text-align:center; flex:1; min-width:50px;"><span style="display:block; font-size:0.75rem; color:#888; text-transform:uppercase;">${key}</span><strong style="display:block; font-size:1.1rem; margin-top:5px; color:#fff;">${val}</strong></div>`;
+    const statBlock = (st, title) => { let h = title ? `<div style="font-size:0.78rem; color:#8c99b0; margin:0 0 6px;">${title}</div>` : ''; h += '<div class="ds-stats-row" style="margin-bottom:14px; display:flex; gap:6px;">';
+        // CLASS and the base size are in the subtitle; WARD / UNY highlighted. Boxes shrink to fit one row on a phone.
+        for (const [key, val] of Object.entries(st)) { if (key === 'CLASS') continue; const hi = key === 'WARD' || key === 'UNY';
+            h += `<div class="ds-stat-box" style="background:#1a222d; border:1px solid ${hi ? 'var(--accent)' : '#2a3545'}; border-radius:6px; padding:8px 2px; text-align:center; flex:1 1 0; min-width:0;"><span style="display:block; font-size:0.62rem; color:${hi ? 'var(--accent)' : '#888'}; text-transform:uppercase; letter-spacing:0; white-space:nowrap;">${key}</span><strong style="display:block; font-size:1.05rem; margin-top:4px; color:#fff; white-space:nowrap;">${val}</strong></div>`; }
         return h + '</div>'; };
     if (unit.models && unit.models.length > 1 && unit.models.some(m => ['MOV', 'MS', 'RS', 'ARM', 'MIGHT', 'CTRL'].some(k => m[k] !== unit.models[0][k]))) statsHtml = unit.models.map(m => statBlock(Object.assign({ MOV: m.MOV, MS: m.MS, RS: m.RS, ARM: m.ARM, MIGHT: m.MIGHT, CTRL: m.CTRL }, m.invuln && m.invuln !== '-' ? { WARD: m.invuln } : {}), m.name)).join('');
     else if (unit.stats) statsHtml = statBlock(unit.stats, '');
@@ -752,44 +754,42 @@ window.selectUnit = function(safeId) {
     }
 
     
-    // Weapons
+    // Weapons: ranged and melee groups. 4192 has no per-weapon hit stat: every ranged weapon hits on the unit's RS,
+    // every melee weapon on its MS, so it is shown once in the group header ([SCORCH] weapons hit automatically).
     let weaponsHtml = '';
     if (unit.weapons && unit.weapons.length > 0) {
-        weaponsHtml = '<div style="margin-bottom:20px;"><h3 class="ds-section-title" style="color:var(--accent); border-bottom:1px solid #1a222d; padding-bottom:5px; margin-bottom:10px; font-size:0.95rem; text-transform:uppercase;"><i class="fa-solid fa-crosshairs"></i> WEAPONS</h3><div style="display:flex; flex-direction:column; gap:10px;">';
-        unit.weapons.forEach(w => {
-            let keywordBubbles = '';
-            if (w.keywords && w.keywords.length > 0) {
-                w.keywords.forEach(k => {
-                    keywordBubbles += `<span style="display:inline-block; border:1px solid var(--accent); color:var(--accent); background:rgba(0,0,0,0.2); padding:3px 8px; border-radius:4px; font-size:0.7rem; text-transform:uppercase; font-weight:bold; margin-right:5px; margin-top:8px;">${k}</span>`;
-                });
-            }
-            let isMelee = w.type === 'Melee' || w.range === 'Melee';
-            let bsName = 'Hit';   // 4192: hit roll = the unit's MS (melee) or RS (ranged)
-            
-            weaponsHtml += `
-                <div style="background:#141b25; border:1px solid #1a222d; border-radius:6px; padding:10px;">
-                    <div style="color:#fff; font-weight:bold; font-size:0.95rem; margin-bottom:8px;">➤ ${w.name}${w.optional ? ' <span style="font-size:0.62rem; color:#e5c15a; border:1px solid #6b5a2a; border-radius:4px; padding:1px 5px; margin-left:6px; vertical-align:middle;">OPTION</span>' : ''}</div>
-                    <div style="display:flex; justify-content:space-between; background:#0b0f16; padding:5px; border-radius:4px; text-transform:uppercase;">
-                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">Range</div>
-                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">A</div>
-                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">${bsName}</div>
-                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">Wound</div>
-                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">PEN</div>
-                        <div style="flex:1; text-align:center; font-size:0.7rem; color:#888;">D</div>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; padding:5px;">
-                        <div style="flex:1; text-align:center; font-size:0.9rem; font-weight:bold; color:#fff;">${w.range || '-'}</div>
-                        <div style="flex:1; text-align:center; font-size:0.9rem; font-weight:bold; color:#fff;">${w.A || '-'}</div>
-                        <div style="flex:1; text-align:center; font-size:0.9rem; font-weight:bold; color:#fff;">${w.BS || '-'}</div>
-                        <div style="flex:1; text-align:center; font-size:0.9rem; font-weight:bold; color:#fff;">${w.S || '-'}</div>
-                        <div style="flex:1; text-align:center; font-size:0.9rem; font-weight:bold; color:#fff;">${w.AP || '-'}</div>
-                        <div style="flex:1; text-align:center; font-size:0.9rem; font-weight:bold; color:#fff;">${w.D || '-'}</div>
-                    </div>
-                    ${keywordBubbles}
-                </div>
-            `;
-        });
-        weaponsHtml += '</div></div>';
+        const st = unit.stats || {}, isMelee = w => w.type === 'Melee' || w.range === 'Melee';
+        const cell = (v, head) => `<div style="flex:1; text-align:center; ${head ? 'font-size:0.68rem; color:#888;' : 'font-size:0.92rem; font-weight:bold; color:#fff;'}">${v}</div>`;
+        const group = (list, title, skill, statName) => {
+            if (!list.length) return '';
+            const cols = statName === 'RS' ? ['Range', 'A', 'Wound', 'PEN', 'D'] : ['A', 'Wound', 'PEN', 'D'];
+            let h = `<div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin:4px 0 6px;"><span style="font-size:0.8rem; font-weight:800; letter-spacing:.08em; color:#cfd8e3;">${title}</span><span style="font-size:0.8rem; color:#8c99b0;">hits on <b style="color:var(--accent); font-size:0.95rem;">${skill || '-'}</b> <span style="color:#667;">(${statName})</span></span></div>`;
+            list.forEach(w => {
+                const scorch = (w.keywords || []).some(k => /^SCORCH/i.test(k));
+                const kb = (w.keywords || []).map(k => `<span style="display:inline-block; border:1px solid var(--accent); color:var(--accent); background:rgba(0,0,0,0.2); padding:3px 8px; border-radius:4px; font-size:0.7rem; text-transform:uppercase; font-weight:bold; margin-right:5px; margin-top:8px;">${k}</span>`).join('');
+                const vals = statName === 'RS' ? [w.range || '-', w.A || '-', w.S || '-', w.AP || '0', w.D || '-'] : [w.A || '-', w.S || '-', w.AP || '0', w.D || '-'];
+                h += `<div style="background:#141b25; border:1px solid #1a222d; border-radius:6px; padding:10px; margin-bottom:8px;">
+                    <div style="color:#fff; font-weight:bold; font-size:0.95rem; margin-bottom:8px;">➤ ${w.name}${scorch ? ' <span style="font-size:0.62rem; color:#ffb36b; border:1px solid #7a4a1f; border-radius:4px; padding:1px 5px; margin-left:6px; vertical-align:middle;">AUTO-HIT</span>' : ''}${w.optional ? ' <span style="font-size:0.62rem; color:#e5c15a; border:1px solid #6b5a2a; border-radius:4px; padding:1px 5px; margin-left:6px; vertical-align:middle;">OPTION</span>' : ''}</div>
+                    <div style="display:flex; background:#0b0f16; padding:5px; border-radius:4px; text-transform:uppercase;">${cols.map(c => cell(c, true)).join('')}</div>
+                    <div style="display:flex; padding:5px;">${vals.map(v => cell(v, false)).join('')}</div>${kb}</div>`;
+            });
+            return h;
+        };
+        weaponsHtml = '<div style="margin-bottom:20px;"><h3 class="ds-section-title" style="color:var(--accent); border-bottom:1px solid #1a222d; padding-bottom:5px; margin-bottom:10px; font-size:0.95rem; text-transform:uppercase;"><i class="fa-solid fa-crosshairs"></i> WEAPONS</h3>'
+            + group(unit.weapons.filter(w => !isMelee(w)), 'RANGED', st.RS, 'RS') + group(unit.weapons.filter(isMelee), 'MELEE', st.MS, 'MS') + '</div>';
+    }
+
+    // Role and expected damage (from the points calculator: average MIGHT removed per activation, best of Shoot or Fight)
+    let profileHtml = '';
+    if (unit.profile && unit.profile.damage) {
+        const T = [['horde', 'Horde', '10× ARM 6+'], ['line', 'Line infantry', '10× ARM 4+'], ['elite', 'Elite infantry', '5× ARM 3+, 2 MIGHT'],
+                   ['heavy', 'Heavy infantry', '3× ARM 3+ WARD 4+, 4 MIGHT'], ['monster', 'Monster', '14 MIGHT, ARM 4+, HARDENED'], ['vehicle', 'Vehicle', '16 MIGHT, ARM 3+, HARDENED']];
+        const d = unit.profile.damage, mx = Math.max(...T.map(t => d[t[0]] || 0), 0.1);
+        profileHtml = `<details class="dt-more" style="margin-bottom:16px;"><summary>Role: <b style="color:var(--accent); margin-left:4px;">${unit.profile.role_name}</b></summary><div class="dt-body">
+            <div style="font-size:0.8rem; color:#8c99b0; margin-bottom:8px;">Average damage per activation (MIGHT removed; for 1-MIGHT targets that is models killed), best of Shoot or Fight, from the points calculator.</div>
+            ${T.map(([k, n, sub]) => `<div style="display:grid; grid-template-columns:minmax(110px,38%) 1fr 42px; align-items:center; gap:8px; margin:5px 0;"><div style="font-size:0.82rem; color:#cfd8e3;">${n}<div style="font-size:0.68rem; color:#667;">${sub}</div></div>
+              <div style="height:8px; background:#0b0f16; border-radius:4px; overflow:hidden;"><div style="height:100%; width:${Math.round(100 * (d[k] || 0) / mx)}%; background:var(--accent);"></div></div><b style="text-align:right; color:#fff;">${(d[k] || 0).toFixed(1)}</b></div>`).join('')}
+        </div></details>`;
     }
 
     // 3. Abilities
@@ -876,7 +876,7 @@ window.selectUnit = function(safeId) {
             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 20px;">
                 <div>
                     <h2 style="margin:0; font-size:1.8rem; color:#fff;">${unit.name}</h2>
-                    <p style="color:var(--text-muted); text-transform:uppercase; font-size:0.85rem; letter-spacing:1px; margin-top:5px;">${unit.role || 'Datasheet'}</p>
+                    <p style="color:var(--text-muted); text-transform:uppercase; font-size:0.85rem; letter-spacing:1px; margin-top:5px;">${unit.role || 'Datasheet'}${unit.class && !/class/i.test(unit.role || '') ? ' · Class ' + unit.class : ''}${unit.base ? ' · base ' + unit.base : ''}</p>
                 </div>
                 <div style="background:var(--accent); color:#000; font-weight:bold; padding:8px 15px; border-radius:20px; font-size:1.1rem; box-shadow:0 0 10px rgba(0,255,204,0.2);">
                     ${unit.points || 0} PTS
@@ -884,6 +884,7 @@ window.selectUnit = function(safeId) {
             </div>
             ${statsHtml}
             ${invulnHtml}
+            ${profileHtml}
             ${weaponsHtml}
             ${abilitiesHtml}
             ${window.dsExtrasHtml ? dsExtrasHtml(unit) : ''}
@@ -1011,7 +1012,7 @@ window.rosterSnap39k = function (u) {
     const weapons = (u.weapons || []).map(w => ({ t: (w.type === 'Melee' || w.range === 'Melee') ? 'm' : 'r', n: w.name + (w.optional ? ' (option)' : ''), k: (w.keywords || []).slice(), c: [w.range || '', w.A || '', w.BS || '', w.S || '', w.AP || '', w.D || ''] }));
     const seen = new Set(), gl = window.BL_GLOSSARY || {}, kr = [];
     weapons.forEach(w => w.k.forEach(k => { const g = glossKey(k); if (g && !seen.has(g)) { seen.add(g); kr.push({ n: g, d: plain(gl[g]) }); } }));
-    return { v: 4, src: '39k5', stats: statList, comp: u.composition ? plain(String(u.composition).replace(/■/g, '•')) : '', compositions: u.compositions || [], options: u.options || [], pname: u.name, models: (u.models || []).map(m => ({ name: m.name, equipped: m.equipped, optional: m.optional })), weapons, abilities: snapAbilities(u, plain), kw: (u.keywords || []).slice(), fk: (u.factionKeywords || []).slice(), kr };
+    return { v: 4, src: '39k5', hit: s.MS != null ? { r: s.RS, m: s.MS } : null, stats: statList, comp: u.composition ? plain(String(u.composition).replace(/■/g, '•')) : '', compositions: u.compositions || [], options: u.options || [], pname: u.name, models: (u.models || []).map(m => ({ name: m.name, equipped: m.equipped, optional: m.optional })), weapons, abilities: snapAbilities(u, plain), kw: (u.keywords || []).slice(), fk: (u.factionKeywords || []).slice(), kr };
 };
 window.rosterSnap = function (full) {
     if (full && !full.catalogue && !full.categoryLinks && full.stats && typeof full.stats === 'object' && !Array.isArray(full.stats)) return rosterSnap39k(full);
@@ -1035,9 +1036,13 @@ window.rosterDetailsHtml = function (index, s) {
     const statsHtml = st.map(x => `<div style="margin-bottom:10px;">${st.length > 1 && x.n ? `<div style="font-size:0.72rem; color:#8c99b0; margin-bottom:4px;">${x.n}${x.count > 1 ? ' ×' + x.count : ''}</div>` : ''}<div style="display:grid; grid-template-columns:repeat(${Math.min(7, x.c.length || 1)}, 1fr); gap:6px;">${x.c.map(([k, v]) => `<div style="background:#1a2540; border-radius:8px; padding:6px 2px; text-align:center;"><div style="font-size:0.6rem; color:#8c99b0; letter-spacing:.06em;">${String(k).toUpperCase()}</div><div style="font-weight:700; color:#fff;">${v}</div></div>`).join('')}</div></div>`).join('');
     const wpn = (t, title, skill) => {
         const list = group((s.weapons || []).filter(w => w.t === t), w => w.n + JSON.stringify(w.c) + w.k.join()); if (!list.length) return '';
-        return `<div style="margin-top:12px;"><div style="font-size:0.72rem; font-weight:700; letter-spacing:.1em; color:var(--accent); margin-bottom:6px;">${title}</div>${list.map(w => `<div style="background:#0f1a30; border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:8px 10px; margin-bottom:6px;">
+        // 4192 rosters: hit = the unit's RS / MS, shown once in the header; columns without the hit cell
+        const h4 = s.hit, idx = h4 ? (t === 'm' ? [1, 3, 4, 5] : [0, 1, 3, 4, 5]) : [0, 1, 2, 3, 4, 5];
+        const heads = h4 ? (t === 'm' ? ['A', 'Wound', 'PEN', 'D'] : ['Range', 'A', 'Wound', 'PEN', 'D']) : ['Range', 'A', 'Hit', 'Wound', 'PEN', 'D'];
+        const hitTxt = h4 ? ` · <span style="color:#8c99b0;">hits on</span> ${t === 'm' ? h4.m : h4.r}` : '';
+        return `<div style="margin-top:12px;"><div style="font-size:0.72rem; font-weight:700; letter-spacing:.1em; color:var(--accent); margin-bottom:6px;">${title}${hitTxt}</div>${list.map(w => `<div style="background:#0f1a30; border:1px solid rgba(255,255,255,.07); border-radius:10px; padding:8px 10px; margin-bottom:6px;">
             <div style="display:flex; align-items:baseline; gap:6px; flex-wrap:wrap;"><b style="color:#fff;">${w.n}</b>${w.count > 1 ? `<span style="color:#8c99b0; font-size:0.75rem;">×${w.count}</span>` : ''}${w.k.map(k => `<span style="background:rgba(255,255,255,.08); border-radius:6px; padding:1px 7px; font-size:0.65rem; font-weight:700; color:#cfd8e3;">${k}</span>`).join('')}</div>
-            <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:4px; margin-top:6px; text-align:center;">${['Range', 'A', 'Hit', 'Wound', 'PEN', 'D'].map((l, i) => `<div><div style="font-size:0.58rem; color:#8c99b0;">${l}</div><div style="font-weight:700; color:#fff; font-size:0.9rem;">${w.c[i] || '–'}</div></div>`).join('')}</div></div>`).join('')}</div>`;
+            <div style="display:grid; grid-template-columns:repeat(${heads.length}, 1fr); gap:4px; margin-top:6px; text-align:center;">${heads.map((l, j) => `<div><div style="font-size:0.58rem; color:#8c99b0;">${l}</div><div style="font-weight:700; color:#fff; font-size:0.9rem;">${w.c[idx[j]] || '–'}</div></div>`).join('')}</div></div>`).join('')}</div>`;
     };
     const ab = (s.abilities || []).map(x => {
         const isCore = x.g === 'Core' || /\bcore\b/i.test(x.n || '') || /^(leader|support|deadly demise|deep strike|infiltrators|scouts|stealth|feel no pain|lone operative|firing deck)/i.test(x.n || '');

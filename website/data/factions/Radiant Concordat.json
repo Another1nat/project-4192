@@ -334,7 +334,8 @@
      ],
      "models": [
       "Concordat Strategos"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Seeker missiles",
@@ -344,13 +345,14 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-2",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Concordat Strategos"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -364,7 +366,8 @@
      "keywords": [],
      "models": [
       "Concordat Strategos"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -431,7 +434,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.9,
+     "line": 1.6,
+     "elite": 2.5,
+     "heavy": 2.2,
+     "monster": 3.4,
+     "vehicle": 2.7
+    }
+   }
   },
   {
    "id": "22-blood-lotus-caste-prior",
@@ -489,7 +505,8 @@
      ],
      "models": [
       "Blood-Lotus Caste Prior"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sacrificial knife",
@@ -503,7 +520,8 @@
      "keywords": [],
      "models": [
       "Blood-Lotus Caste Prior"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -565,7 +583,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.6,
+     "elite": 0.4,
+     "heavy": 0.3,
+     "monster": 0.4,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "22-gore-brute-chieftain",
@@ -624,7 +655,8 @@
      ],
      "models": [
       "Gore-Brute Chieftain"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Gore-cleaver",
@@ -638,7 +670,8 @@
      "keywords": [],
      "models": [
       "Gore-Brute Chieftain"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -701,7 +734,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.1,
+     "line": 1.7,
+     "elite": 2.8,
+     "heavy": 2.1,
+     "monster": 3.9,
+     "vehicle": 3.0
+    }
+   }
   },
   {
    "id": "22-lotus-pathfinder-priest",
@@ -737,12 +783,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -766,7 +812,8 @@
      ],
      "models": [
       "Lotus Pathfinder-Priest"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -780,7 +827,8 @@
      "keywords": [],
      "models": [
       "Lotus Pathfinder-Priest"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -842,7 +890,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.6,
+     "line": 0.4,
+     "elite": 0.3,
+     "heavy": 0.3,
+     "monster": 0.3,
+     "vehicle": 0.2
+    }
+   }
   },
   {
    "id": "22-porcelain-strike-infantry",
@@ -896,7 +957,8 @@
      ],
      "models": [
       "Porcelain Strike-Infantry"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -910,7 +972,8 @@
      "keywords": [],
      "models": [
       "Porcelain Strike-Infantry"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 105,
@@ -1019,7 +1082,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.9,
+     "line": 1.9,
+     "elite": 1.5,
+     "heavy": 1.5,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "22-porcelain-breacher-team",
@@ -1073,7 +1149,8 @@
      ],
      "models": [
       "Porcelain Breacher Team"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1087,7 +1164,8 @@
      "keywords": [],
      "models": [
       "Porcelain Breacher Team"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -1196,7 +1274,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 4.9,
+     "line": 4.1,
+     "elite": 3.2,
+     "heavy": 2.4,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "22-lotus-pathfinders",
@@ -1232,12 +1323,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -1261,7 +1352,8 @@
      ],
      "models": [
       "Lotus Pathfinders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1275,7 +1367,8 @@
      "keywords": [],
      "models": [
       "Lotus Pathfinders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -1351,7 +1444,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.9,
+     "line": 1.1,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.8,
+     "vehicle": 0.6
+    }
+   }
   },
   {
    "id": "22-crimson-stealth-suits",
@@ -1388,12 +1494,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
@@ -1422,7 +1528,8 @@
      ],
      "models": [
       "Crimson Stealth-Suits"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1436,7 +1543,8 @@
      "keywords": [],
      "models": [
       "Crimson Stealth-Suits"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -1490,7 +1598,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.2,
+     "elite": 1.5,
+     "heavy": 1.5,
+     "monster": 1.7,
+     "vehicle": 1.1
+    }
+   }
   },
   {
    "id": "22-vanguard-rail-suits",
@@ -1545,7 +1666,8 @@
      ],
      "models": [
       "Vanguard Rail-Suits"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Seeker missiles",
@@ -1555,13 +1677,14 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-2",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Vanguard Rail-Suits"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1575,15 +1698,16 @@
      "keywords": [],
      "models": [
       "Vanguard Rail-Suits"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 140,
+   "points": 150,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 140,
+     "points": 150,
      "models": [
       {
        "name": "Vanguard Rail-Suits",
@@ -1633,7 +1757,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.2,
+     "line": 3.5,
+     "elite": 5.6,
+     "heavy": 5.2,
+     "monster": 8.1,
+     "vehicle": 6.6
+    }
+   }
   },
   {
    "id": "22-siege-rail-suits",
@@ -1687,7 +1824,8 @@
      ],
      "models": [
       "Siege Rail-Suits"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Seeker missiles",
@@ -1697,13 +1835,14 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-2",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Siege Rail-Suits"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1717,7 +1856,8 @@
      "keywords": [],
      "models": [
       "Siege Rail-Suits"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 160,
@@ -1797,7 +1937,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.9,
+     "line": 6.5,
+     "elite": 10,
+     "heavy": 8.1,
+     "monster": 14,
+     "vehicle": 12.3
+    }
+   }
   },
   {
    "id": "22-gilded-gore-brutes",
@@ -1855,7 +2008,8 @@
      ],
      "models": [
       "Gilded Gore-Brutes"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Gore-cleaver",
@@ -1869,7 +2023,8 @@
      "keywords": [],
      "models": [
       "Gilded Gore-Brutes"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -1945,7 +2100,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.3,
+     "elite": 2.0,
+     "heavy": 2.0,
+     "monster": 2.8,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "22-gore-ogre-bulwark-guard",
@@ -2003,7 +2171,8 @@
      ],
      "models": [
       "Gore-Ogre Bulwark Guard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Iron-gut halberds",
@@ -2017,7 +2186,8 @@
      "keywords": [],
      "models": [
       "Gore-Ogre Bulwark Guard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -2093,7 +2263,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.3,
+     "line": 4.4,
+     "elite": 7.1,
+     "heavy": 5.3,
+     "monster": 6.7,
+     "vehicle": 5.3
+    }
+   }
   },
   {
    "id": "22-lotus-drone-flight",
@@ -2147,7 +2330,8 @@
      ],
      "models": [
       "Lotus Drone Flight"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2161,7 +2345,8 @@
      "keywords": [],
      "models": [
       "Lotus Drone Flight"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -2259,7 +2444,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.4,
+     "line": 0.8,
+     "elite": 0.6,
+     "heavy": 0.6,
+     "monster": 0.7,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "22-lotus-marksmen",
@@ -2294,7 +2492,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
@@ -2319,7 +2517,8 @@
      ],
      "models": [
       "Lotus Marksmen"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -2333,7 +2532,8 @@
      "keywords": [],
      "models": [
       "Lotus Marksmen"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -2398,7 +2598,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 1.1,
+     "line": 0.9,
+     "elite": 1.4,
+     "heavy": 1.1,
+     "monster": 1.4,
+     "vehicle": 1.1
+    }
+   }
   },
   {
    "id": "22-bulwark-rail-mech",
@@ -2454,7 +2667,8 @@
      ],
      "models": [
       "Bulwark Rail-Mech"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Burst cannon",
@@ -2470,7 +2684,8 @@
      ],
      "models": [
       "Bulwark Rail-Mech"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Battlesuit fists",
@@ -2484,7 +2699,8 @@
      "keywords": [],
      "models": [
       "Bulwark Rail-Mech"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -2540,7 +2756,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.6,
+     "line": 2.1,
+     "elite": 2.7,
+     "heavy": 1.8,
+     "monster": 3.2,
+     "vehicle": 2.5
+    }
+   }
   },
   {
    "id": "22-lotus-sky-gunship",
@@ -2589,13 +2818,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+2",
+     "D": "D3+4",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Lotus Sky-Gunship"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Burst cannon",
@@ -2611,7 +2841,8 @@
      ],
      "models": [
       "Lotus Sky-Gunship"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2625,7 +2856,8 @@
      "keywords": [],
      "models": [
       "Lotus Sky-Gunship"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 165,
@@ -2680,7 +2912,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.8,
+     "line": 1.3,
+     "elite": 1.5,
+     "heavy": 1.8,
+     "monster": 3.3,
+     "vehicle": 2.9
+    }
+   }
   },
   {
    "id": "22-lotus-transport-skimmer",
@@ -2718,12 +2963,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2747,7 +2992,8 @@
      ],
      "models": [
       "Lotus Transport Skimmer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2761,7 +3007,8 @@
      "keywords": [],
      "models": [
       "Lotus Transport Skimmer"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -2812,7 +3059,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.6,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.4,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "22-gore-mammoth-rider",
@@ -2871,7 +3131,8 @@
      ],
      "models": [
       "Gore-Mammoth Rider"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Monster talons",
@@ -2887,7 +3148,8 @@
      ],
      "models": [
       "Gore-Mammoth Rider"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -2897,19 +3159,20 @@
      "BS": "5+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Gore-Mammoth Rider"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 135,
+   "points": 140,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 135,
+     "points": 140,
      "models": [
       {
        "name": "Gore-Mammoth Rider",
@@ -2956,7 +3219,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.7,
+     "elite": 2.3,
+     "heavy": 2.1,
+     "monster": 4.0,
+     "vehicle": 3.4
+    }
+   }
   },
   {
    "id": "22-lotus-rail-battery",
@@ -3001,7 +3277,7 @@
      "name": "Seeker-missile rack",
      "type": "Ranged",
      "range": "60\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -3011,7 +3287,8 @@
      ],
      "models": [
       "Lotus Rail-Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Burst cannon",
@@ -3027,7 +3304,8 @@
      ],
      "models": [
       "Lotus Rail-Battery"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 135,
@@ -3078,7 +3356,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.6,
+     "line": 2.4,
+     "elite": 3.1,
+     "heavy": 3.1,
+     "monster": 3.1,
+     "vehicle": 2.3
+    }
+   }
   },
   {
    "id": "22-lotus-colossus-suit",
@@ -3124,7 +3415,7 @@
      "name": "Pulse-driver cannon",
      "type": "Ranged",
      "range": "72\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "2+",
      "S": "2+",
      "AP": "-2",
@@ -3134,7 +3425,8 @@
      ],
      "models": [
       "Lotus Colossus-Suit"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Seeker missiles",
@@ -3144,13 +3436,14 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-2",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Lotus Colossus-Suit"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Titan stomp",
@@ -3166,15 +3459,16 @@
      ],
      "models": [
       "Lotus Colossus-Suit"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 365,
+   "points": 360,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 365,
+     "points": 360,
      "models": [
       {
        "name": "Lotus Colossus-Suit",
@@ -3222,7 +3516,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.6,
+     "line": 5.5,
+     "elite": 8.0,
+     "heavy": 6.3,
+     "monster": 10.1,
+     "vehicle": 7.8
+    }
+   }
   }
  ],
  "faq": []

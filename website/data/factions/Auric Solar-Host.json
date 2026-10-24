@@ -333,7 +333,8 @@
      ],
      "models": [
       "High Aurarch Praetor"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bastion glaive",
@@ -347,7 +348,8 @@
      "keywords": [],
      "models": [
       "High Aurarch Praetor"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 135,
@@ -411,7 +413,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.2,
+     "line": 3.5,
+     "elite": 5.6,
+     "heavy": 4.2,
+     "monster": 7.8,
+     "vehicle": 5.9
+    }
+   }
   },
   {
    "id": "01-blade-warden-champion",
@@ -470,7 +485,8 @@
      ],
      "models": [
       "Blade-Warden Champion"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -530,7 +546,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 3.3,
+     "elite": 5.8,
+     "heavy": 4.2,
+     "monster": 5.0,
+     "vehicle": 4.4
+    }
+   }
   },
   {
    "id": "01-sworn-lieutenant",
@@ -584,7 +613,8 @@
      ],
      "models": [
       "Sworn Lieutenant"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -598,7 +628,8 @@
      "keywords": [],
      "models": [
       "Sworn Lieutenant"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -664,7 +695,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "01-eclipse-hunter",
@@ -700,12 +744,12 @@
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     }
    ],
@@ -725,7 +769,8 @@
      ],
      "models": [
       "Eclipse Hunter"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -739,7 +784,8 @@
      "keywords": [],
      "models": [
       "Eclipse Hunter"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -804,7 +850,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.7,
+     "elite": 1.1,
+     "heavy": 0.7,
+     "monster": 1.6,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "01-sworn-battle-brothers",
@@ -858,7 +917,8 @@
      ],
      "models": [
       "Sworn Battle-Brothers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Chain-blade",
@@ -872,7 +932,8 @@
      "keywords": [],
      "models": [
       "Sworn Battle-Brothers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 150,
@@ -982,7 +1043,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "01-sworn-hellstorm-squad",
@@ -1031,7 +1105,8 @@
      ],
      "models": [
       "Sworn Hellstorm Squad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1045,7 +1120,8 @@
      "keywords": [],
      "models": [
       "Sworn Hellstorm Squad"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 140,
@@ -1155,7 +1231,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 4.4,
+     "line": 2.9,
+     "elite": 2.2,
+     "heavy": 2.2,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "01-sworn-assault-brothers",
@@ -1209,7 +1298,8 @@
      ],
      "models": [
       "Sworn Assault Brothers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sun-chainsword",
@@ -1223,7 +1313,8 @@
      "keywords": [],
      "models": [
       "Sworn Assault Brothers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 135,
@@ -1333,7 +1424,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.3,
+     "line": 5.6,
+     "elite": 4.2,
+     "heavy": 4.2,
+     "monster": 3.7,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "01-bastion-paladins",
@@ -1369,7 +1473,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -1393,7 +1497,8 @@
      ],
      "models": [
       "Bastion Paladins"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Solar hammer",
@@ -1407,7 +1512,8 @@
      "keywords": [],
      "models": [
       "Bastion Paladins"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 240,
@@ -1485,7 +1591,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.2,
+     "line": 5.2,
+     "elite": 8.3,
+     "heavy": 6.2,
+     "monster": 11.7,
+     "vehicle": 8.9
+    }
+   }
   },
   {
    "id": "01-gilded-phalanx",
@@ -1541,7 +1660,8 @@
      ],
      "models": [
       "Gilded Phalanx"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sun-glaive",
@@ -1555,7 +1675,8 @@
      "keywords": [],
      "models": [
       "Gilded Phalanx"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 215,
@@ -1633,7 +1754,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.7,
+     "line": 5.6,
+     "elite": 8.9,
+     "heavy": 6.7,
+     "monster": 8.3,
+     "vehicle": 6.7
+    }
+   }
   },
   {
    "id": "01-sworn-pyre-breachers",
@@ -1675,13 +1809,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-4",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "ERADICATE 2"
      ],
      "models": [
       "Sworn Pyre-Breachers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1695,15 +1830,16 @@
      "keywords": [],
      "models": [
       "Sworn Pyre-Breachers"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 155,
+   "points": 160,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 155,
+     "points": 160,
      "models": [
       {
        "name": "Sworn Pyre-Breachers",
@@ -1750,7 +1886,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.4,
+     "elite": 4.9,
+     "heavy": 4.3,
+     "monster": 9.4,
+     "vehicle": 9.9
+    }
+   }
   },
   {
    "id": "01-gilded-sagittarii",
@@ -1800,7 +1949,8 @@
      ],
      "models": [
       "Gilded Sagittarii"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1814,7 +1964,8 @@
      "keywords": [],
      "models": [
       "Gilded Sagittarii"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 200,
@@ -1892,7 +2043,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 5.3,
+     "heavy": 4.0,
+     "monster": 5.6,
+     "vehicle": 4.4
+    }
+   }
   },
   {
    "id": "01-sworn-marksmen",
@@ -1927,7 +2091,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     }
    ],
@@ -1947,7 +2111,8 @@
      ],
      "models": [
       "Sworn Marksmen"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1961,7 +2126,8 @@
      "keywords": [],
      "models": [
       "Sworn Marksmen"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -2027,7 +2193,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 1.1,
+     "line": 0.9,
+     "elite": 1.4,
+     "heavy": 1.1,
+     "monster": 1.4,
+     "vehicle": 1.1
+    }
+   }
   },
   {
    "id": "01-sun-lancers",
@@ -2077,7 +2256,8 @@
      ],
      "models": [
       "Sun-Lancers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sun-lance",
@@ -2093,7 +2273,8 @@
      ],
      "models": [
       "Sun-Lancers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 205,
@@ -2145,7 +2326,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 7.5,
+     "line": 6.3,
+     "elite": 10,
+     "heavy": 7.5,
+     "monster": 9.7,
+     "vehicle": 7.8
+    }
+   }
   },
   {
    "id": "01-sworn-vanguard",
@@ -2181,7 +2375,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -2205,7 +2399,8 @@
      ],
      "models": [
       "Sworn Vanguard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -2219,7 +2414,8 @@
      "keywords": [],
      "models": [
       "Sworn Vanguard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -2296,7 +2492,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 2.7,
+     "heavy": 2.0,
+     "monster": 2.5,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "01-eclipse-scouts",
@@ -2332,12 +2541,12 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
@@ -2361,7 +2570,8 @@
      ],
      "models": [
       "Eclipse Scouts"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -2375,7 +2585,8 @@
      "keywords": [],
      "models": [
       "Eclipse Scouts"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -2452,7 +2663,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.0,
+     "elite": 0.7,
+     "heavy": 0.7,
+     "monster": 0.7,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "01-reliquary-sentry",
@@ -2493,7 +2717,7 @@
    ],
    "weapons": [
     {
-     "name": "Autocannon",
+     "name": "2× Autocannon",
      "type": "Ranged",
      "range": "48\"",
      "A": "2",
@@ -2506,23 +2730,8 @@
      ],
      "models": [
       "Reliquary-Sentry"
-     ]
-    },
-    {
-     "name": "Autocannon",
-     "type": "Ranged",
-     "range": "48\"",
-     "A": "2",
-     "BS": "3+",
-     "S": "3+",
-     "AP": "-1",
-     "D": "2",
-     "keywords": [
-      "HEAVY"
      ],
-     "models": [
-      "Reliquary-Sentry"
-     ]
+     "count": 2
     },
     {
      "name": "Reliquary fist",
@@ -2536,7 +2745,8 @@
      "keywords": [],
      "models": [
       "Reliquary-Sentry"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -2573,11 +2783,7 @@
      "equipped": [
       {
        "item": "Autocannon",
-       "count": 1
-      },
-      {
-       "item": "Autocannon",
-       "count": 1
+       "count": 2
       },
       {
        "item": "Reliquary fist",
@@ -2592,7 +2798,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 4.1,
+     "vehicle": 3.2
+    }
+   }
   },
   {
    "id": "01-aurum-dread-bastion",
@@ -2640,7 +2859,8 @@
      "keywords": [],
      "models": [
       "Aurum Dread-Bastion"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Macro sun-plasma",
@@ -2656,7 +2876,8 @@
      ],
      "models": [
       "Aurum Dread-Bastion"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Crusher fists",
@@ -2670,7 +2891,8 @@
      "keywords": [],
      "models": [
       "Aurum Dread-Bastion"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 180,
@@ -2726,7 +2948,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.5,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 4.1,
+     "vehicle": 3.2
+    }
+   }
   },
   {
    "id": "01-rampart-carrier",
@@ -2763,12 +2998,12 @@
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     }
    ],
@@ -2787,7 +3022,8 @@
      ],
      "models": [
       "Rampart Carrier"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2801,7 +3037,8 @@
      "keywords": [],
      "models": [
       "Rampart Carrier"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 120,
@@ -2852,7 +3089,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.6,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.4,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "01-solar-grav-tank",
@@ -2897,13 +3147,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Solar Grav-Tank"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Grav-repeaters",
@@ -2917,7 +3168,8 @@
      "keywords": [],
      "models": [
       "Solar Grav-Tank"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2931,7 +3183,8 @@
      "keywords": [],
      "models": [
       "Solar Grav-Tank"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 175,
@@ -2987,7 +3240,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.3,
+     "line": 1.7,
+     "elite": 1.8,
+     "heavy": 2.0,
+     "monster": 3.1,
+     "vehicle": 2.5
+    }
+   }
   },
   {
    "id": "01-heliarch-grav-cruiser",
@@ -3026,12 +3292,12 @@
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     }
    ],
@@ -3040,7 +3306,7 @@
      "name": "Titan cannon",
      "type": "Ranged",
      "range": "72\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "3+",
      "S": "2+",
      "AP": "-2",
@@ -3050,39 +3316,25 @@
      ],
      "models": [
       "Heliarch Grav-Cruiser"
-     ]
+     ],
+     "count": 1
     },
     {
-     "name": "Las-lance",
+     "name": "2× Las-lance",
      "type": "Ranged",
      "range": "48\"",
      "A": "1",
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Heliarch Grav-Cruiser"
-     ]
-    },
-    {
-     "name": "Las-lance",
-     "type": "Ranged",
-     "range": "48\"",
-     "A": "1",
-     "BS": "3+",
-     "S": "2+",
-     "AP": "-3",
-     "D": "D6+1",
-     "keywords": [
-      "HEAVY"
      ],
-     "models": [
-      "Heliarch Grav-Cruiser"
-     ]
+     "count": 2
     },
     {
      "name": "Treads / hull ram",
@@ -3096,7 +3348,8 @@
      "keywords": [],
      "models": [
       "Heliarch Grav-Cruiser"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 345,
@@ -3137,11 +3390,7 @@
       },
       {
        "item": "Las-lance",
-       "count": 1
-      },
-      {
-       "item": "Las-lance",
-       "count": 1
+       "count": 2
       },
       {
        "item": "Treads / hull ram",
@@ -3156,7 +3405,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 5.7,
+     "line": 5.0,
+     "elite": 7.4,
+     "heavy": 6.4,
+     "monster": 11.2,
+     "vehicle": 8.8
+    }
+   }
   },
   {
    "id": "01-the-sun-bound-exemplar",
@@ -3220,7 +3482,8 @@
      ],
      "models": [
       "The Sun-Bound Exemplar"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Dawn-spear",
@@ -3234,7 +3497,8 @@
      "keywords": [],
      "models": [
       "The Sun-Bound Exemplar"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -3298,7 +3562,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 3.3,
+     "elite": 5.6,
+     "heavy": 3.3,
+     "monster": 5.0,
+     "vehicle": 4.2
+    }
+   }
   },
   {
    "id": "01-sworn-apothecarion",
@@ -3356,7 +3633,8 @@
      ],
      "models": [
       "Sworn Apothecarion"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sun-chain blade",
@@ -3370,7 +3648,8 @@
      "keywords": [],
      "models": [
       "Sworn Apothecarion"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -3435,7 +3714,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.7,
+     "elite": 0.5,
+     "heavy": 0.5,
+     "monster": 0.4,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "01-gilded-wardens",
@@ -3494,7 +3786,8 @@
      ],
      "models": [
       "Gilded Wardens"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Warden halberd",
@@ -3508,7 +3801,8 @@
      "keywords": [],
      "models": [
       "Gilded Wardens"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 185,
@@ -3586,7 +3880,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.7,
+     "line": 5.6,
+     "elite": 8.9,
+     "heavy": 6.7,
+     "monster": 8.3,
+     "vehicle": 6.7
+    }
+   }
   },
   {
    "id": "01-sworn-shield-veterans",
@@ -3645,7 +3952,8 @@
      ],
      "models": [
       "Sworn Shield-Veterans"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sun-forged sword",
@@ -3659,7 +3967,8 @@
      "keywords": [],
      "models": [
       "Sworn Shield-Veterans"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -3737,7 +4046,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 8.3,
+     "line": 6.9,
+     "elite": 10,
+     "heavy": 8.3,
+     "monster": 10.4,
+     "vehicle": 8.3
+    }
+   }
   },
   {
    "id": "01-sworn-lumen-blasters",
@@ -3791,7 +4113,8 @@
      ],
      "models": [
       "Sworn Lumen-Blasters"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -3805,7 +4128,8 @@
      "keywords": [],
      "models": [
       "Sworn Lumen-Blasters"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 125,
@@ -3915,7 +4239,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.9,
+     "line": 2.4,
+     "elite": 3.9,
+     "heavy": 2.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "01-sworn-gryph-knights",
@@ -3969,7 +4306,8 @@
      ],
      "models": [
       "Sworn Gryph-Knights"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sun-lance",
@@ -3985,7 +4323,8 @@
      ],
      "models": [
       "Sworn Gryph-Knights"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -4040,7 +4379,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 7.5,
+     "line": 6.3,
+     "elite": 10,
+     "heavy": 7.5,
+     "monster": 13.6,
+     "vehicle": 10.4
+    }
+   }
   },
   {
    "id": "01-sworn-siege-walker",
@@ -4088,7 +4440,7 @@
      "name": "Heavy flamer",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -4099,7 +4451,8 @@
      ],
      "models": [
       "Sworn Siege-walker"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Siege-fist",
@@ -4113,7 +4466,8 @@
      "keywords": [],
      "models": [
       "Sworn Siege-walker"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 125,
@@ -4164,7 +4518,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 5.2,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "01-sunhawk-interceptor",
@@ -4213,13 +4580,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Sunhawk Interceptor"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sol-bolter battery",
@@ -4235,7 +4603,8 @@
      ],
      "models": [
       "Sunhawk Interceptor"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -4286,7 +4655,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.5,
+     "elite": 1.7,
+     "heavy": 1.8,
+     "monster": 3.0,
+     "vehicle": 2.4
+    }
+   }
   },
   {
    "id": "01-solar-lance-tank",
@@ -4328,36 +4710,21 @@
    ],
    "weapons": [
     {
-     "name": "Las-lance",
+     "name": "2× Las-lance",
      "type": "Ranged",
      "range": "48\"",
      "A": "1",
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Solar Lance-Tank"
-     ]
-    },
-    {
-     "name": "Las-lance",
-     "type": "Ranged",
-     "range": "48\"",
-     "A": "1",
-     "BS": "3+",
-     "S": "2+",
-     "AP": "-3",
-     "D": "D6+1",
-     "keywords": [
-      "HEAVY"
      ],
-     "models": [
-      "Solar Lance-Tank"
-     ]
+     "count": 2
     },
     {
      "name": "Treads / hull ram",
@@ -4371,15 +4738,16 @@
      "keywords": [],
      "models": [
       "Solar Lance-Tank"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 185,
+   "points": 190,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 185,
+     "points": 190,
      "models": [
       {
        "name": "Solar Lance-Tank",
@@ -4407,11 +4775,7 @@
      "equipped": [
       {
        "item": "Las-lance",
-       "count": 1
-      },
-      {
-       "item": "Las-lance",
-       "count": 1
+       "count": 2
       },
       {
        "item": "Treads / hull ram",
@@ -4426,7 +4790,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.3,
+     "elite": 2.2,
+     "heavy": 2.6,
+     "monster": 5.2,
+     "vehicle": 4.3
+    }
+   }
   },
   {
    "id": "01-aurum-sentinel-colossus",
@@ -4479,7 +4856,8 @@
      "keywords": [],
      "models": [
       "Aurum Sentinel-Colossus"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossus fists",
@@ -4493,7 +4871,8 @@
      "keywords": [],
      "models": [
       "Aurum Sentinel-Colossus"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 200,
@@ -4545,7 +4924,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.5,
+     "line": 2.9,
+     "elite": 4.6,
+     "heavy": 3.5,
+     "monster": 6.5,
+     "vehicle": 4.9
+    }
+   }
   }
  ],
  "faq": []

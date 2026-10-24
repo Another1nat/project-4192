@@ -332,7 +332,8 @@
      ],
      "models": [
       "Count Palatine Blood-Lord"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Blood-forged blade",
@@ -346,15 +347,16 @@
      "keywords": [],
      "models": [
       "Count Palatine Blood-Lord"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 125,
+   "points": 120,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 125,
+     "points": 120,
      "models": [
       {
        "name": "Count Palatine Blood-Lord",
@@ -408,7 +410,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "06-crimson-duelist-countess",
@@ -467,7 +482,8 @@
      ],
      "models": [
       "Crimson Duelist-Countess"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Twin sabres",
@@ -481,15 +497,16 @@
      "keywords": [],
      "models": [
       "Crimson Duelist-Countess"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 120,
+   "points": 115,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 120,
+     "points": 115,
      "models": [
       {
        "name": "Crimson Duelist-Countess",
@@ -543,7 +560,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.8,
+     "elite": 4.4,
+     "heavy": 3.3,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "06-blood-sorcerer",
@@ -601,7 +631,8 @@
      ],
      "models": [
       "Blood-Sorcerer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -615,7 +646,8 @@
      "keywords": [],
      "models": [
       "Blood-Sorcerer"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -678,7 +710,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "06-night-shade-assassin",
@@ -714,12 +759,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
@@ -743,7 +788,8 @@
      ],
      "models": [
       "Night-Shade Assassin"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Blood-dagger",
@@ -757,7 +803,8 @@
      "keywords": [],
      "models": [
       "Night-Shade Assassin"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -820,7 +867,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 2.8,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "06-thrall-levies",
@@ -856,7 +916,7 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
@@ -878,7 +938,8 @@
      "keywords": [],
      "models": [
       "Thrall-Levies"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -928,7 +989,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.9,
+     "line": 1.1,
+     "elite": 0.7,
+     "heavy": 0.7,
+     "monster": 0.6,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "06-deathless-levy",
@@ -985,7 +1059,8 @@
      "keywords": [],
      "models": [
       "Deathless Levy"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -1026,7 +1101,7 @@
     },
     {
      "default": false,
-     "points": 95,
+     "points": 90,
      "models": [
       {
        "name": "Deathless Levy",
@@ -1048,7 +1123,7 @@
     },
     {
      "default": false,
-     "points": 110,
+     "points": 105,
      "models": [
       {
        "name": "Deathless Levy",
@@ -1090,7 +1165,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 4.2,
+     "line": 2.8,
+     "elite": 2.1,
+     "heavy": 2.1,
+     "monster": 1.9,
+     "vehicle": 1.4
+    }
+   }
   },
   {
    "id": "06-blood-sworn-courtiers",
@@ -1141,7 +1229,8 @@
      "keywords": [],
      "models": [
       "Blood-Sworn Courtiers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Courtly pistol",
@@ -1157,15 +1246,16 @@
      ],
      "models": [
       "Blood-Sworn Courtiers"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 145,
+   "points": 140,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 145,
+     "points": 140,
      "models": [
       {
        "name": "Blood-Sworn Courtiers",
@@ -1176,7 +1266,7 @@
     },
     {
      "default": false,
-     "points": 165,
+     "points": 160,
      "models": [
       {
        "name": "Blood-Sworn Courtiers",
@@ -1187,7 +1277,7 @@
     },
     {
      "default": false,
-     "points": 185,
+     "points": 180,
      "models": [
       {
        "name": "Blood-Sworn Courtiers",
@@ -1198,7 +1288,7 @@
     },
     {
      "default": false,
-     "points": 205,
+     "points": 200,
      "models": [
       {
        "name": "Blood-Sworn Courtiers",
@@ -1209,7 +1299,7 @@
     },
     {
      "default": false,
-     "points": 225,
+     "points": 220,
      "models": [
       {
        "name": "Blood-Sworn Courtiers",
@@ -1220,7 +1310,7 @@
     },
     {
      "default": false,
-     "points": 240,
+     "points": 235,
      "models": [
       {
        "name": "Blood-Sworn Courtiers",
@@ -1266,7 +1356,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.3,
+     "line": 5.6,
+     "elite": 4.2,
+     "heavy": 4.2,
+     "monster": 3.7,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "06-crimson-guard-duelists",
@@ -1323,15 +1426,16 @@
      "keywords": [],
      "models": [
       "Crimson Guard Duelists"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 215,
+   "points": 210,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 215,
+     "points": 210,
      "models": [
       {
        "name": "Crimson Guard Duelists",
@@ -1342,7 +1446,7 @@
     },
     {
      "default": false,
-     "points": 270,
+     "points": 265,
      "models": [
       {
        "name": "Crimson Guard Duelists",
@@ -1353,7 +1457,7 @@
     },
     {
      "default": false,
-     "points": 315,
+     "points": 310,
      "models": [
       {
        "name": "Crimson Guard Duelists",
@@ -1396,7 +1500,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.7,
+     "line": 5.6,
+     "elite": 8.9,
+     "heavy": 6.7,
+     "monster": 8.3,
+     "vehicle": 6.7
+    }
+   }
   },
   {
    "id": "06-grave-knights",
@@ -1454,15 +1571,16 @@
      ],
      "models": [
       "Grave-Knights"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 175,
+   "points": 170,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 175,
+     "points": 170,
      "models": [
       {
        "name": "Grave-Knights",
@@ -1473,7 +1591,7 @@
     },
     {
      "default": false,
-     "points": 210,
+     "points": 205,
      "models": [
       {
        "name": "Grave-Knights",
@@ -1484,7 +1602,7 @@
     },
     {
      "default": false,
-     "points": 245,
+     "points": 240,
      "models": [
       {
        "name": "Grave-Knights",
@@ -1526,7 +1644,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 5.6,
+     "line": 3.8,
+     "elite": 5.6,
+     "heavy": 5.6,
+     "monster": 8.2,
+     "vehicle": 5.8
+    }
+   }
   },
   {
    "id": "06-bat-swarm-hosts",
@@ -1578,15 +1709,16 @@
      "keywords": [],
      "models": [
       "Bat-Swarm Hosts"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 100,
+   "points": 95,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 100,
+     "points": 95,
      "models": [
       {
        "name": "Bat-Swarm Hosts",
@@ -1608,7 +1740,7 @@
     },
     {
      "default": false,
-     "points": 125,
+     "points": 120,
      "models": [
       {
        "name": "Bat-Swarm Hosts",
@@ -1630,7 +1762,7 @@
     },
     {
      "default": false,
-     "points": 150,
+     "points": 145,
      "models": [
       {
        "name": "Bat-Swarm Hosts",
@@ -1683,7 +1815,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.2,
+     "line": 4.2,
+     "elite": 3.1,
+     "heavy": 3.1,
+     "monster": 2.8,
+     "vehicle": 2.1
+    }
+   }
   },
   {
    "id": "06-dire-blood-hounds",
@@ -1734,7 +1879,8 @@
      "keywords": [],
      "models": [
       "Dire Blood-Hounds"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1753,7 +1899,7 @@
     },
     {
      "default": false,
-     "points": 70,
+     "points": 65,
      "models": [
       {
        "name": "Dire Blood-Hounds",
@@ -1775,7 +1921,7 @@
     },
     {
      "default": false,
-     "points": 85,
+     "points": 80,
      "models": [
       {
        "name": "Dire Blood-Hounds",
@@ -1839,7 +1985,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.2,
+     "line": 4.2,
+     "elite": 3.1,
+     "heavy": 3.1,
+     "monster": 2.8,
+     "vehicle": 2.1
+    }
+   }
   },
   {
    "id": "06-night-ghast-brutes",
@@ -1891,7 +2050,8 @@
      "keywords": [],
      "models": [
       "Night-Ghast Brutes"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -1910,7 +2070,7 @@
     },
     {
      "default": false,
-     "points": 185,
+     "points": 180,
      "models": [
       {
        "name": "Night-Ghast Brutes",
@@ -1921,7 +2081,7 @@
     },
     {
      "default": false,
-     "points": 215,
+     "points": 210,
      "models": [
       {
        "name": "Night-Ghast Brutes",
@@ -1963,7 +2123,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.3,
+     "line": 5.6,
+     "elite": 4.2,
+     "heavy": 4.2,
+     "monster": 4.2,
+     "vehicle": 3.1
+    }
+   }
   },
   {
    "id": "06-crypt-arbalests",
@@ -2014,7 +2187,8 @@
      "keywords": [],
      "models": [
       "Crypt Arbalests"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rusted blade",
@@ -2028,15 +2202,16 @@
      "keywords": [],
      "models": [
       "Crypt Arbalests"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 95,
+   "points": 90,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 95,
+     "points": 90,
      "models": [
       {
        "name": "Crypt Arbalests",
@@ -2069,7 +2244,7 @@
     },
     {
      "default": false,
-     "points": 130,
+     "points": 125,
      "models": [
       {
        "name": "Crypt Arbalests",
@@ -2080,7 +2255,7 @@
     },
     {
      "default": false,
-     "points": 140,
+     "points": 135,
      "models": [
       {
        "name": "Crypt Arbalests",
@@ -2137,7 +2312,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.5,
+     "line": 2.1,
+     "elite": 1.4,
+     "heavy": 1.4,
+     "monster": 1.4,
+     "vehicle": 0.9
+    }
+   }
   },
   {
    "id": "06-grave-ward-sentinels",
@@ -2189,15 +2377,16 @@
      "keywords": [],
      "models": [
       "Grave-Ward Sentinels"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 180,
+   "points": 175,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 180,
+     "points": 175,
      "models": [
       {
        "name": "Grave-Ward Sentinels",
@@ -2208,7 +2397,7 @@
     },
     {
      "default": false,
-     "points": 225,
+     "points": 220,
      "models": [
       {
        "name": "Grave-Ward Sentinels",
@@ -2219,7 +2408,7 @@
     },
     {
      "default": false,
-     "points": 270,
+     "points": 265,
      "models": [
       {
        "name": "Grave-Ward Sentinels",
@@ -2262,7 +2451,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.5,
+     "line": 3.8,
+     "elite": 6.0,
+     "heavy": 4.5,
+     "monster": 6.7,
+     "vehicle": 5.3
+    }
+   }
   },
   {
    "id": "06-night-ghast-horror",
@@ -2316,15 +2518,16 @@
      ],
      "models": [
       "Night-Ghast Horror"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 120,
+   "points": 115,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 120,
+     "points": 115,
      "models": [
       {
        "name": "Night-Ghast Horror",
@@ -2363,7 +2566,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "06-altar-of-ichor",
@@ -2411,7 +2627,7 @@
      "name": "Ichor-lash",
      "type": "Ranged",
      "range": "18\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -2421,7 +2637,8 @@
      ],
      "models": [
       "Altar of Ichor"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2435,7 +2652,8 @@
      "keywords": [],
      "models": [
       "Altar of Ichor"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -2486,7 +2704,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.9,
+     "line": 0.6,
+     "elite": 0.9,
+     "heavy": 0.9,
+     "monster": 0.9,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "06-midnight-coach",
@@ -2524,12 +2755,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 6",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2553,7 +2784,8 @@
      ],
      "models": [
       "Midnight Coach"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Trampling steeds",
@@ -2567,7 +2799,8 @@
      "keywords": [],
      "models": [
       "Midnight Coach"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 150,
@@ -2620,7 +2853,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.5,
+     "line": 0.9,
+     "elite": 0.6,
+     "heavy": 0.6,
+     "monster": 0.7,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "06-crimson-abomination",
@@ -2674,7 +2920,8 @@
      ],
      "models": [
       "Crimson Abomination"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Corpse-maw",
@@ -2684,19 +2931,20 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Crimson Abomination"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 215,
+   "points": 220,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 215,
+     "points": 220,
      "models": [
       {
        "name": "Crimson Abomination",
@@ -2741,7 +2989,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.8,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   },
   {
    "id": "06-blood-prince-on-abyssal-drake",
@@ -2799,7 +3060,8 @@
      "keywords": [],
      "models": [
       "Blood-Prince on Abyssal Drake"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Corpse-maw",
@@ -2809,19 +3071,20 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Blood-Prince on Abyssal Drake"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 195,
+   "points": 200,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 195,
+     "points": 200,
      "models": [
       {
        "name": "Blood-Prince on Abyssal Drake",
@@ -2872,7 +3135,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.5,
+     "line": 3.5,
+     "elite": 5.8,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   },
   {
    "id": "06-abyssal-blood-wyrm",
@@ -2928,7 +3204,8 @@
      ],
      "models": [
       "Abyssal Blood-Wyrm"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Corpse-maw",
@@ -2938,19 +3215,20 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Abyssal Blood-Wyrm"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 305,
+   "points": 300,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 305,
+     "points": 300,
      "models": [
       {
        "name": "Abyssal Blood-Wyrm",
@@ -2994,7 +3272,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.2,
+     "line": 6.2,
+     "elite": 8.1,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   }
  ],
  "faq": []

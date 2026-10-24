@@ -332,7 +332,8 @@
      ],
      "models": [
       "Grand Inquisitrix"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Relic blade",
@@ -346,7 +347,8 @@
      "keywords": [],
      "models": [
       "Grand Inquisitrix"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -407,7 +409,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "03-canoness-of-the-pyre",
@@ -466,7 +481,8 @@
      ],
      "models": [
       "Canoness of the Pyre"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Brazier-blade",
@@ -482,7 +498,8 @@
      ],
      "models": [
       "Canoness of the Pyre"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -543,7 +560,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.9,
+     "elite": 5.0,
+     "heavy": 4.2,
+     "monster": 4.4,
+     "vehicle": 3.9
+    }
+   }
   },
   {
    "id": "03-confessor-firebrand",
@@ -601,7 +631,8 @@
      ],
      "models": [
       "Confessor-Firebrand"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Chain-scourge",
@@ -615,7 +646,8 @@
      "keywords": [],
      "models": [
       "Confessor-Firebrand"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -679,7 +711,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.2,
+     "line": 0.8,
+     "elite": 0.6,
+     "heavy": 0.6,
+     "monster": 0.6,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "03-null-maiden-warden",
@@ -737,7 +782,8 @@
      ],
      "models": [
       "Null-Maiden Warden"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Blessed blade",
@@ -751,7 +797,8 @@
      "keywords": [],
      "models": [
       "Null-Maiden Warden"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -815,7 +862,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "03-sisters-of-the-pyre",
@@ -869,7 +929,8 @@
      ],
      "models": [
       "Sisters of the Pyre"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -883,7 +944,8 @@
      "keywords": [],
      "models": [
       "Sisters of the Pyre"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 125,
@@ -992,7 +1054,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 4.7,
+     "line": 3.1,
+     "elite": 2.3,
+     "heavy": 2.3,
+     "monster": 2.3,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "03-pilgrim-levy",
@@ -1028,7 +1103,7 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
@@ -1052,7 +1127,8 @@
      ],
      "models": [
       "Pilgrim Levy"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Pitchfork & flail",
@@ -1066,7 +1142,8 @@
      "keywords": [],
      "models": [
       "Pilgrim Levy"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -1120,7 +1197,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.4,
+     "line": 1.5,
+     "elite": 1.0,
+     "heavy": 1.0,
+     "monster": 0.8,
+     "vehicle": 0.6
+    }
+   }
   },
   {
    "id": "03-penitent-flagellants",
@@ -1155,7 +1245,7 @@
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     },
     {
@@ -1182,7 +1272,8 @@
      "keywords": [],
      "models": [
       "Penitent Flagellants"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -1287,7 +1378,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.7,
+     "line": 4.4,
+     "elite": 3.3,
+     "heavy": 3.3,
+     "monster": 3.0,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "03-reliquant-warsuits",
@@ -1330,7 +1434,7 @@
      "name": "Pyre-cannon",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "2+",
      "S": "3+",
      "AP": "-1",
@@ -1341,7 +1445,8 @@
      ],
      "models": [
       "Reliquant Warsuits"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Great weapon / fist",
@@ -1355,7 +1460,8 @@
      "keywords": [],
      "models": [
       "Reliquant Warsuits"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 135,
@@ -1409,7 +1515,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.0,
+     "line": 5.3,
+     "elite": 5.6,
+     "heavy": 4.2,
+     "monster": 5.6,
+     "vehicle": 4.4
+    }
+   }
   },
   {
    "id": "03-pyre-justiciars",
@@ -1468,7 +1587,8 @@
      ],
      "models": [
       "Pyre-Justiciars"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Justiciar halberd",
@@ -1482,7 +1602,8 @@
      "keywords": [],
      "models": [
       "Pyre-Justiciars"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 155,
@@ -1559,7 +1680,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.7,
+     "line": 5.6,
+     "elite": 8.9,
+     "heavy": 6.7,
+     "monster": 8.3,
+     "vehicle": 6.7
+    }
+   }
   },
   {
    "id": "03-purgator-vanguard",
@@ -1594,7 +1728,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -1608,7 +1742,7 @@
      "name": "Hand-pyre",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "2+",
      "S": "4+",
      "AP": "0",
@@ -1619,7 +1753,8 @@
      ],
      "models": [
       "Purgator Vanguard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Melta gun",
@@ -1629,13 +1764,14 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-4",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "ERADICATE 2"
      ],
      "models": [
       "Purgator Vanguard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1649,7 +1785,8 @@
      "keywords": [],
      "models": [
       "Purgator Vanguard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 120,
@@ -1707,7 +1844,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 10,
+     "line": 9.8,
+     "elite": 10,
+     "heavy": 10.5,
+     "monster": 14,
+     "vehicle": 15.7
+    }
+   }
   },
   {
    "id": "03-ascendant-seraphs",
@@ -1743,7 +1893,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -1767,7 +1917,8 @@
      ],
      "models": [
       "Ascendant Seraphs"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Blessed blade",
@@ -1781,7 +1932,8 @@
      "keywords": [],
      "models": [
       "Ascendant Seraphs"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -1857,7 +2009,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 3.3,
+     "heavy": 2.5,
+     "monster": 3.1,
+     "vehicle": 2.5
+    }
+   }
   },
   {
    "id": "03-purifier-outriders",
@@ -1910,13 +2075,14 @@
      ],
      "models": [
       "Purifier Outriders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hand-pyre",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "4+",
      "AP": "0",
@@ -1927,7 +2093,8 @@
      ],
      "models": [
       "Purifier Outriders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Chain-scourge",
@@ -1941,15 +2108,16 @@
      "keywords": [],
      "models": [
       "Purifier Outriders"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 105,
+   "points": 110,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 105,
+     "points": 110,
      "models": [
       {
        "name": "Purifier Outriders",
@@ -1960,7 +2128,7 @@
     },
     {
      "default": false,
-     "points": 130,
+     "points": 135,
      "models": [
       {
        "name": "Purifier Outriders",
@@ -1971,7 +2139,7 @@
     },
     {
      "default": false,
-     "points": 155,
+     "points": 160,
      "models": [
       {
        "name": "Purifier Outriders",
@@ -2021,7 +2189,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 7.8,
+     "line": 4.9,
+     "elite": 3.4,
+     "heavy": 3.4,
+     "monster": 3.4,
+     "vehicle": 2.4
+    }
+   }
   },
   {
    "id": "03-vindicant-squad",
@@ -2064,7 +2245,7 @@
      "name": "Pyre-cannon",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "2+",
      "S": "3+",
      "AP": "-1",
@@ -2075,7 +2256,8 @@
      ],
      "models": [
       "Vindicant Squad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Missile launcher",
@@ -2085,13 +2267,14 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-2",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Vindicant Squad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -2105,7 +2288,8 @@
      "keywords": [],
      "models": [
       "Vindicant Squad"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 150,
@@ -2163,7 +2347,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 10,
+     "line": 10,
+     "elite": 10,
+     "heavy": 12,
+     "monster": 14,
+     "vehicle": 12.9
+    }
+   }
   },
   {
    "id": "03-acolyte-cell",
@@ -2199,12 +2396,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -2228,7 +2425,8 @@
      ],
      "models": [
       "Acolyte Cell"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -2242,7 +2440,8 @@
      "keywords": [],
      "models": [
       "Acolyte Cell"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -2318,7 +2517,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.9,
+     "line": 1.1,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.8,
+     "vehicle": 0.6
+    }
+   }
   },
   {
    "id": "03-mortification-engine",
@@ -2366,7 +2578,7 @@
      "name": "Hand-pyre",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "4+",
      "AP": "0",
@@ -2377,7 +2589,8 @@
      ],
      "models": [
       "Mortification Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Penance flails",
@@ -2391,7 +2604,8 @@
      "keywords": [],
      "models": [
       "Mortification Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 105,
@@ -2453,7 +2667,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.8,
+     "elite": 4.4,
+     "heavy": 3.3,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "03-pyre-altar-crawler",
@@ -2494,10 +2721,10 @@
    ],
    "weapons": [
     {
-     "name": "Pyre-cannon",
+     "name": "2× Pyre-cannon",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -2508,24 +2735,8 @@
      ],
      "models": [
       "Pyre-Altar Crawler"
-     ]
-    },
-    {
-     "name": "Pyre-cannon",
-     "type": "Ranged",
-     "range": "12\"",
-     "A": "D6",
-     "BS": "3+",
-     "S": "3+",
-     "AP": "-1",
-     "D": "1",
-     "keywords": [
-      "SCORCH",
-      "IGNORES COVER"
      ],
-     "models": [
-      "Pyre-Altar Crawler"
-     ]
+     "count": 2
     },
     {
      "name": "Hymn-stubber",
@@ -2541,7 +2752,8 @@
      ],
      "models": [
       "Pyre-Altar Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hull ram",
@@ -2555,15 +2767,16 @@
      "keywords": [],
      "models": [
       "Pyre-Altar Crawler"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 175,
+   "points": 180,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 175,
+     "points": 180,
      "models": [
       {
        "name": "Pyre-Altar Crawler",
@@ -2591,11 +2804,7 @@
      "equipped": [
       {
        "item": "Pyre-cannon",
-       "count": 1
-      },
-      {
-       "item": "Pyre-cannon",
-       "count": 1
+       "count": 2
       },
       {
        "item": "Hymn-stubber",
@@ -2614,7 +2823,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.3,
+     "line": 4.1,
+     "elite": 3.1,
+     "heavy": 3.1,
+     "monster": 3.1,
+     "vehicle": 2.3
+    }
+   }
   },
   {
    "id": "03-scourging-tank",
@@ -2658,7 +2880,7 @@
      "name": "Penance cannon",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "2+",
      "AP": "-1",
@@ -2668,13 +2890,14 @@
      ],
      "models": [
       "Scourging Tank"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Pyre-cannon",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -2685,7 +2908,8 @@
      ],
      "models": [
       "Scourging Tank"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hull ram",
@@ -2699,15 +2923,16 @@
      "keywords": [],
      "models": [
       "Scourging Tank"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 180,
+   "points": 185,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 180,
+     "points": 185,
      "models": [
       {
        "name": "Scourging Tank",
@@ -2754,7 +2979,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.6,
+     "line": 4.4,
+     "elite": 4.2,
+     "heavy": 4.2,
+     "monster": 5.2,
+     "vehicle": 3.8
+    }
+   }
   },
   {
    "id": "03-sanctum-carrier",
@@ -2791,12 +3029,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2820,7 +3058,8 @@
      ],
      "models": [
       "Sanctum Carrier"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hull ram",
@@ -2834,7 +3073,8 @@
      "keywords": [],
      "models": [
       "Sanctum Carrier"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -2885,7 +3125,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.1,
+     "line": 0.7,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.5,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "03-hymn-organ-battery",
@@ -2929,7 +3182,7 @@
      "name": "Hymn-organ missiles",
      "type": "Ranged",
      "range": "60\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -2940,7 +3193,8 @@
      ],
      "models": [
       "Hymn-Organ Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hymn-stubber",
@@ -2956,7 +3210,8 @@
      ],
      "models": [
       "Hymn-Organ Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hull ram",
@@ -2970,15 +3225,16 @@
      "keywords": [],
      "models": [
       "Hymn-Organ Battery"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 140,
+   "points": 145,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 140,
+     "points": 145,
      "models": [
       {
        "name": "Hymn-Organ Battery",
@@ -3025,7 +3281,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.8,
+     "line": 3.8,
+     "elite": 4.6,
+     "heavy": 4.6,
+     "monster": 3.6,
+     "vehicle": 2.7
+    }
+   }
   },
   {
    "id": "03-cathedral-colossus",
@@ -3074,19 +3343,20 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-4",
-     "D": "D6+2",
+     "D": "D3+4",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Cathedral Colossus"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Pyre-mouths",
      "type": "Ranged",
      "range": "12\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "2+",
      "S": "3+",
      "AP": "-1",
@@ -3097,7 +3367,8 @@
      ],
      "models": [
       "Cathedral Colossus"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Titan stomp",
@@ -3113,7 +3384,8 @@
      ],
      "models": [
       "Cathedral Colossus"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 335,
@@ -3169,7 +3441,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.2,
+     "line": 6.2,
+     "elite": 8.1,
+     "heavy": 4.9,
+     "monster": 9.3,
+     "vehicle": 7.5
+    }
+   }
   }
  ],
  "faq": []

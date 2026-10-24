@@ -308,7 +308,7 @@
     },
     {
      "name": "SECURED",
-     "description": "",
+     "description": "If this unit controls an Objective at the end of its activation or at the End of Round, it remains under friendly control even after this unit leaves, until an enemy out-controls it.",
      "type": "core"
     },
     {
@@ -332,7 +332,8 @@
      ],
      "models": [
       "Trench-Troopers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -346,7 +347,8 @@
      "keywords": [],
      "models": [
       "Trench-Troopers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -404,7 +406,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.0,
+     "elite": 0.7,
+     "heavy": 0.7,
+     "monster": 0.6,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "02-storm-grenadiers",
@@ -457,7 +472,8 @@
      ],
      "models": [
       "Storm-Grenadiers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -471,7 +487,8 @@
      "keywords": [],
      "models": [
       "Storm-Grenadiers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -584,7 +601,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.6,
+     "line": 2.4,
+     "elite": 1.8,
+     "heavy": 1.8,
+     "monster": 1.9,
+     "vehicle": 1.4
+    }
+   }
   },
   {
    "id": "02-heavy-weapon-battery",
@@ -637,7 +667,8 @@
      ],
      "models": [
       "Heavy Weapon Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -651,7 +682,8 @@
      "keywords": [],
      "models": [
       "Heavy Weapon Battery"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -716,7 +748,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 1.3,
+     "line": 0.9,
+     "elite": 1.3,
+     "heavy": 1.3,
+     "monster": 1.6,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "02-mortar-pit",
@@ -754,7 +799,7 @@
      "name": "Trench mortar",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "4+",
      "AP": "0",
@@ -766,7 +811,8 @@
      ],
      "models": [
       "Mortar Pit"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -780,7 +826,8 @@
      "keywords": [],
      "models": [
       "Mortar Pit"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -799,7 +846,7 @@
     },
     {
      "default": false,
-     "points": 55,
+     "points": 60,
      "models": [
       {
        "name": "Mortar Pit",
@@ -845,7 +892,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.9,
+     "line": 1.8,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.7,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "02-trench-marshal",
@@ -898,7 +958,8 @@
      ],
      "models": [
       "Trench-Marshal"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -912,7 +973,8 @@
      "keywords": [],
      "models": [
       "Trench-Marshal"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -978,7 +1040,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.8,
+     "elite": 0.7,
+     "heavy": 0.5,
+     "monster": 0.6,
+     "vehicle": 0.5
+    }
+   }
   },
   {
    "id": "02-field-commissar",
@@ -1031,7 +1106,8 @@
      ],
      "models": [
       "Field Commissar"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -1045,7 +1121,8 @@
      "keywords": [],
      "models": [
       "Field Commissar"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -1111,7 +1188,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "02-trench-cavalry",
@@ -1159,7 +1249,8 @@
      ],
      "models": [
       "Trench Cavalry"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Explosive lance",
@@ -1175,7 +1266,8 @@
      ],
      "models": [
       "Trench Cavalry"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -1251,7 +1343,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 2.9,
+     "vehicle": 2.3
+    }
+   }
   },
   {
    "id": "02-iron-stalker-walker",
@@ -1286,7 +1391,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     }
    ],
@@ -1305,7 +1410,8 @@
      ],
      "models": [
       "Iron-Stalker Walker"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1319,7 +1425,8 @@
      "keywords": [],
      "models": [
       "Iron-Stalker Walker"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1381,7 +1488,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.4,
+     "elite": 0.7,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.6
+    }
+   }
   },
   {
    "id": "02-siege-breaker-tank",
@@ -1420,7 +1540,7 @@
      "name": "Battle cannon",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "2+",
      "AP": "-1",
@@ -1430,7 +1550,8 @@
      ],
      "models": [
       "Siege-Breaker Tank"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Sponson stubbers",
@@ -1446,7 +1567,8 @@
      ],
      "models": [
       "Siege-Breaker Tank"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -1460,7 +1582,8 @@
      "keywords": [],
      "models": [
       "Siege-Breaker Tank"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 150,
@@ -1515,7 +1638,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.5,
+     "line": 2.2,
+     "elite": 2.2,
+     "heavy": 2.2,
+     "monster": 3.0,
+     "vehicle": 2.1
+    }
+   }
   },
   {
    "id": "02-quake-cannon-battery",
@@ -1554,7 +1690,7 @@
      "name": "Quake cannon",
      "type": "Ranged",
      "range": "72\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -1566,7 +1702,8 @@
      ],
      "models": [
       "Quake-Cannon Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Heavy stubber",
@@ -1582,7 +1719,8 @@
      ],
      "models": [
       "Quake-Cannon Battery"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -1633,7 +1771,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.7,
+     "line": 2.4,
+     "elite": 2.9,
+     "heavy": 2.9,
+     "monster": 2.3,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "02-lord-marshal-of-the-front",
@@ -1687,7 +1838,8 @@
      ],
      "models": [
       "Lord-Marshal of the Front"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -1701,7 +1853,8 @@
      "keywords": [],
      "models": [
       "Lord-Marshal of the Front"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1763,7 +1916,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "02-field-chirurgeon-priest",
@@ -1816,7 +1982,8 @@
      ],
      "models": [
       "Field Chirurgeon-Priest"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1830,7 +1997,8 @@
      "keywords": [],
      "models": [
       "Field Chirurgeon-Priest"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -1896,7 +2064,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.4,
+     "line": 0.2,
+     "elite": 0.2,
+     "heavy": 0.2,
+     "monster": 0.2,
+     "vehicle": 0.1
+    }
+   }
   },
   {
    "id": "02-forward-observer",
@@ -1931,7 +2112,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
@@ -1955,7 +2136,8 @@
      ],
      "models": [
       "Forward Observer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1969,7 +2151,8 @@
      "keywords": [],
      "models": [
       "Forward Observer"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 40,
@@ -2035,7 +2218,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.4,
+     "line": 0.2,
+     "elite": 0.2,
+     "heavy": 0.2,
+     "monster": 0.2,
+     "vehicle": 0.1
+    }
+   }
   },
   {
    "id": "02-trench-raider-squad",
@@ -2090,7 +2286,8 @@
      ],
      "models": [
       "Trench-Raider Squad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Trench club",
@@ -2104,7 +2301,8 @@
      "keywords": [],
      "models": [
       "Trench-Raider Squad"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -2217,7 +2415,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "02-bulwark-brutes",
@@ -2268,7 +2479,8 @@
      "keywords": [],
      "models": [
       "Bulwark Brutes"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bulwark club",
@@ -2282,7 +2494,8 @@
      "keywords": [],
      "models": [
       "Bulwark Brutes"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -2358,7 +2571,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.0,
+     "line": 2.7,
+     "elite": 4.0,
+     "heavy": 4.0,
+     "monster": 4.0,
+     "vehicle": 3.0
+    }
+   }
   },
   {
    "id": "02-flame-trooper-squad",
@@ -2396,7 +2622,7 @@
      "name": "Trench flamer",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "4+",
      "AP": "0",
@@ -2407,7 +2633,8 @@
      ],
      "models": [
       "Flame-Trooper Squad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2421,15 +2648,16 @@
      "keywords": [],
      "models": [
       "Flame-Trooper Squad"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 85,
+   "points": 90,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 85,
+     "points": 90,
      "models": [
       {
        "name": "Flame-Trooper Squad",
@@ -2479,7 +2707,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.3,
+     "line": 5.0,
+     "elite": 3.3,
+     "heavy": 3.3,
+     "monster": 3.3,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "02-scout-sniper-pair",
@@ -2514,7 +2755,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
@@ -2539,7 +2780,8 @@
      ],
      "models": [
       "Scout-Sniper Pair"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -2553,7 +2795,8 @@
      "keywords": [],
      "models": [
       "Scout-Sniper Pair"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 40,
@@ -2622,7 +2865,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 0.9,
+     "line": 0.7,
+     "elite": 1.2,
+     "heavy": 0.9,
+     "monster": 1.2,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "02-drop-chute-troopers",
@@ -2657,7 +2913,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     }
    ],
@@ -2676,7 +2932,8 @@
      ],
      "models": [
       "Drop-Chute Troopers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -2690,7 +2947,8 @@
      "keywords": [],
      "models": [
       "Drop-Chute Troopers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -2803,7 +3061,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.6,
+     "line": 2.4,
+     "elite": 1.8,
+     "heavy": 1.8,
+     "monster": 1.9,
+     "vehicle": 1.4
+    }
+   }
   },
   {
    "id": "02-mole-carrier-apc",
@@ -2840,12 +3111,12 @@
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     }
    ],
@@ -2864,7 +3135,8 @@
      ],
      "models": [
       "Mole-Carrier APC"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2878,7 +3150,8 @@
      "keywords": [],
      "models": [
       "Mole-Carrier APC"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2929,7 +3202,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.4,
+     "elite": 0.3,
+     "heavy": 0.3,
+     "monster": 0.3,
+     "vehicle": 0.2
+    }
+   }
   },
   {
    "id": "02-behemoth-siege-tank",
@@ -2968,7 +3254,7 @@
      "name": "Titan cannon",
      "type": "Ranged",
      "range": "72\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "4+",
      "S": "2+",
      "AP": "-2",
@@ -2978,10 +3264,11 @@
      ],
      "models": [
       "Behemoth Siege-Tank"
-     ]
+     ],
+     "count": 1
     },
     {
-     "name": "Heavy stubber",
+     "name": "2× Heavy stubber",
      "type": "Ranged",
      "range": "36\"",
      "A": "3",
@@ -2994,23 +3281,8 @@
      ],
      "models": [
       "Behemoth Siege-Tank"
-     ]
-    },
-    {
-     "name": "Heavy stubber",
-     "type": "Ranged",
-     "range": "36\"",
-     "A": "3",
-     "BS": "4+",
-     "S": "4+",
-     "AP": "0",
-     "D": "1",
-     "keywords": [
-      "HAILFIRE 2"
      ],
-     "models": [
-      "Behemoth Siege-Tank"
-     ]
+     "count": 2
     },
     {
      "name": "Treads / hull ram",
@@ -3024,7 +3296,8 @@
      "keywords": [],
      "models": [
       "Behemoth Siege-Tank"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 230,
@@ -3064,11 +3337,7 @@
       },
       {
        "item": "Heavy stubber",
-       "count": 1
-      },
-      {
-       "item": "Heavy stubber",
-       "count": 1
+       "count": 2
       },
       {
        "item": "Treads / hull ram",
@@ -3083,7 +3352,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.7,
+     "line": 3.6,
+     "elite": 4.5,
+     "heavy": 3.5,
+     "monster": 5.7,
+     "vehicle": 4.3
+    }
+   }
   },
   {
    "id": "02-marshal-general-of-the-iron-line",
@@ -3142,7 +3424,8 @@
      ],
      "models": [
       "Marshal-General of the Iron Line"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -3156,7 +3439,8 @@
      "keywords": [],
      "models": [
       "Marshal-General of the Iron Line"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -3218,7 +3502,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.8,
+     "elite": 0.7,
+     "heavy": 0.5,
+     "monster": 0.6,
+     "vehicle": 0.5
+    }
+   }
   },
   {
    "id": "02-regimental-colour-bearer",
@@ -3276,7 +3573,8 @@
      ],
      "models": [
       "Regimental Colour-Bearer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -3290,7 +3588,8 @@
      "keywords": [],
      "models": [
       "Regimental Colour-Bearer"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -3356,7 +3655,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.4,
+     "line": 0.2,
+     "elite": 0.2,
+     "heavy": 0.2,
+     "monster": 0.2,
+     "vehicle": 0.1
+    }
+   }
   },
   {
    "id": "02-veteran-marksman",
@@ -3391,7 +3703,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
@@ -3416,7 +3728,8 @@
      ],
      "models": [
       "Veteran Marksman"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -3430,7 +3743,8 @@
      "keywords": [],
      "models": [
       "Veteran Marksman"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -3496,7 +3810,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 0.5,
+     "line": 0.4,
+     "elite": 0.7,
+     "heavy": 0.5,
+     "monster": 1.0,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "02-engineer-sappers",
@@ -3531,7 +3858,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -3555,7 +3882,8 @@
      ],
      "models": [
       "Engineer Sappers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -3569,7 +3897,8 @@
      "keywords": [],
      "models": [
       "Engineer Sappers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -3627,7 +3956,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.1,
+     "line": 1.2,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.8,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "02-penal-legion-breachers",
@@ -3662,7 +4004,7 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
@@ -3686,7 +4028,8 @@
      ],
      "models": [
       "Penal Legion Breachers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Chain-blade",
@@ -3700,7 +4043,8 @@
      "keywords": [],
      "models": [
       "Penal Legion Breachers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -3758,7 +4102,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 10.0,
+     "line": 6.7,
+     "elite": 5.0,
+     "heavy": 5.0,
+     "monster": 4.4,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "02-cyber-mastiff-pack",
@@ -3809,7 +4166,8 @@
      "keywords": [],
      "models": [
       "Cyber-Mastiff Pack"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -3918,7 +4276,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "02-heavy-mortar-battery",
@@ -3961,7 +4332,7 @@
      "name": "Heavy mortar",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -3973,7 +4344,8 @@
      ],
      "models": [
       "Heavy Mortar Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -3987,7 +4359,8 @@
      "keywords": [],
      "models": [
       "Heavy Mortar Battery"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -4038,7 +4411,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.0,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.0,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "02-tank-hunter-destroyer",
@@ -4086,13 +4472,14 @@
      "BS": "4+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Tank-Hunter Destroyer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Heavy stubber",
@@ -4108,7 +4495,8 @@
      ],
      "models": [
       "Tank-Hunter Destroyer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -4122,15 +4510,16 @@
      "keywords": [],
      "models": [
       "Tank-Hunter Destroyer"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 140,
+   "points": 145,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 140,
+     "points": 145,
      "models": [
       {
        "name": "Tank-Hunter Destroyer",
@@ -4177,7 +4566,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.6,
+     "elite": 2.1,
+     "heavy": 2.5,
+     "monster": 4.4,
+     "vehicle": 3.6
+    }
+   }
   },
   {
    "id": "02-inferno-crawler",
@@ -4221,7 +4623,7 @@
      "name": "Inferno cannon",
      "type": "Ranged",
      "range": "16\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -4232,7 +4634,8 @@
      ],
      "models": [
       "Inferno-Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Heavy stubber",
@@ -4248,7 +4651,8 @@
      ],
      "models": [
       "Inferno-Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -4262,15 +4666,16 @@
      "keywords": [],
      "models": [
       "Inferno-Crawler"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 135,
+   "points": 130,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 135,
+     "points": 130,
      "models": [
       {
        "name": "Inferno-Crawler",
@@ -4317,7 +4722,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.4,
+     "heavy": 2.4,
+     "monster": 2.5,
+     "vehicle": 1.8
+    }
+   }
   },
   {
    "id": "02-raptor-drop-gunship",
@@ -4355,12 +4773,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -4382,7 +4800,8 @@
      "keywords": [],
      "models": [
       "Raptor Drop-Gunship"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hellstrike missiles",
@@ -4392,13 +4811,14 @@
      "BS": "4+",
      "S": "2+",
      "AP": "-2",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Raptor Drop-Gunship"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -4412,7 +4832,8 @@
      "keywords": [],
      "models": [
       "Raptor Drop-Gunship"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -4467,7 +4888,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.8,
+     "line": 1.2,
+     "elite": 1.5,
+     "heavy": 1.6,
+     "monster": 2.8,
+     "vehicle": 2.2
+    }
+   }
   }
  ],
  "faq": []

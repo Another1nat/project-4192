@@ -332,7 +332,8 @@
      ],
      "models": [
       "Lord of Black Bile"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Manreaper scythe",
@@ -346,7 +347,8 @@
      "keywords": [],
      "models": [
       "Lord of Black Bile"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -408,7 +410,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "12-rot-herald-champion",
@@ -462,7 +477,8 @@
      ],
      "models": [
       "Rot-Herald Champion"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rot-maul",
@@ -476,7 +492,8 @@
      "keywords": [],
      "models": [
       "Rot-Herald Champion"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -538,7 +555,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.7,
+     "vehicle": 3.0
+    }
+   }
   },
   {
    "id": "12-pox-physician",
@@ -596,7 +626,8 @@
      ],
      "models": [
       "Pox-Physician"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bone-saw",
@@ -610,7 +641,8 @@
      "keywords": [],
      "models": [
       "Pox-Physician"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -672,7 +704,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "12-miasmic-hexer",
@@ -725,7 +770,8 @@
      ],
      "models": [
       "Miasmic Hexer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Plague-knife",
@@ -739,7 +785,8 @@
      "keywords": [],
      "models": [
       "Miasmic Hexer"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -801,7 +848,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "12-pox-carriers",
@@ -837,7 +897,7 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
@@ -864,7 +924,8 @@
      "keywords": [],
      "models": [
       "Pox-Carriers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 140,
@@ -969,7 +1030,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 7.5,
+     "line": 5.0,
+     "elite": 3.8,
+     "heavy": 3.8,
+     "monster": 3.3,
+     "vehicle": 2.5
+    }
+   }
   },
   {
    "id": "12-blight-knights",
@@ -1023,7 +1097,8 @@
      ],
      "models": [
       "Blight-Knights"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rusted cleaver",
@@ -1037,7 +1112,8 @@
      "keywords": [],
      "models": [
       "Blight-Knights"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -1146,7 +1222,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "12-blight-lord-plate-knights",
@@ -1200,7 +1289,8 @@
      ],
      "models": [
       "Blight-Lord Plate-Knights"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bubotic axe",
@@ -1214,7 +1304,8 @@
      "keywords": [],
      "models": [
       "Blight-Lord Plate-Knights"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 185,
@@ -1291,7 +1382,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.7,
+     "line": 3.1,
+     "elite": 4.9,
+     "heavy": 3.7,
+     "monster": 5.6,
+     "vehicle": 4.4
+    }
+   }
   },
   {
    "id": "12-blight-spewer-squad",
@@ -1334,7 +1438,7 @@
      "name": "Bile-spewer",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -1345,7 +1449,8 @@
      ],
      "models": [
       "Blight-Spewer Squad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rusted cleaver",
@@ -1359,7 +1464,8 @@
      "keywords": [],
      "models": [
       "Blight-Spewer Squad"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 200,
@@ -1413,7 +1519,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 10,
+     "line": 8.9,
+     "elite": 6.7,
+     "heavy": 6.7,
+     "monster": 6.7,
+     "vehicle": 5.0
+    }
+   }
   },
   {
    "id": "12-death-blister-brethren",
@@ -1464,7 +1583,8 @@
      "keywords": [],
      "models": [
       "Death-Blister Brethren"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -1569,7 +1689,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "12-pox-mites",
@@ -1604,7 +1737,7 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
@@ -1626,7 +1759,8 @@
      "keywords": [],
      "models": [
       "Pox-Mites"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -1731,7 +1865,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "12-bloat-fly-riders",
@@ -1785,7 +1932,8 @@
      ],
      "models": [
       "Bloat-Fly Riders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Plague-lance",
@@ -1801,7 +1949,8 @@
      ],
      "models": [
       "Bloat-Fly Riders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -1877,7 +2026,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.5,
+     "line": 3.0,
+     "elite": 4.5,
+     "heavy": 4.5,
+     "monster": 4.7,
+     "vehicle": 3.5
+    }
+   }
   },
   {
    "id": "12-bile-ogres",
@@ -1928,7 +2090,8 @@
      "keywords": [],
      "models": [
       "Bile-Ogres"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 170,
@@ -2000,7 +2163,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.3,
+     "line": 3.6,
+     "elite": 5.3,
+     "heavy": 5.3,
+     "monster": 5.3,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "12-bile-mortar-team",
@@ -2043,7 +2219,7 @@
      "name": "Bile-mortar",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "4+",
      "AP": "0",
@@ -2054,7 +2230,8 @@
      ],
      "models": [
       "Bile-Mortar Team"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2068,7 +2245,8 @@
      "keywords": [],
      "models": [
       "Bile-Mortar Team"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -2087,7 +2265,7 @@
     },
     {
      "default": false,
-     "points": 95,
+     "points": 100,
      "models": [
       {
        "name": "Bile-Mortar Team",
@@ -2133,7 +2311,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.9,
+     "line": 1.8,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.7,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "12-blight-hauler-engine",
@@ -2186,7 +2377,8 @@
      ],
      "models": [
       "Blight-Hauler Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Grinding jaws",
@@ -2200,7 +2392,8 @@
      "keywords": [],
      "models": [
       "Blight-Hauler Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 125,
@@ -2251,7 +2444,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 2.2,
+     "heavy": 1.7,
+     "monster": 3.1,
+     "vehicle": 2.4
+    }
+   }
   },
   {
    "id": "12-foetid-bloat-drone",
@@ -2295,7 +2501,7 @@
      "name": "Plaguespitters",
      "type": "Ranged",
      "range": "12\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -2306,7 +2512,8 @@
      ],
      "models": [
       "Foetid Bloat-Drone"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2320,7 +2527,8 @@
      "keywords": [],
      "models": [
       "Foetid Bloat-Drone"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -2371,7 +2579,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 4.3,
+     "line": 2.9,
+     "elite": 2.2,
+     "heavy": 2.2,
+     "monster": 2.2,
+     "vehicle": 1.6
+    }
+   }
   },
   {
    "id": "12-necrotic-siege-crawler",
@@ -2415,7 +2636,7 @@
      "name": "Battle cannon",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "2+",
      "AP": "-1",
@@ -2425,13 +2646,14 @@
      ],
      "models": [
       "Necrotic Siege-Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bile-spewer",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -2442,7 +2664,8 @@
      ],
      "models": [
       "Necrotic Siege-Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Grinding tracks",
@@ -2456,15 +2679,16 @@
      "keywords": [],
      "models": [
       "Necrotic Siege-Crawler"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 220,
+   "points": 225,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 220,
+     "points": 225,
      "models": [
       {
        "name": "Necrotic Siege-Crawler",
@@ -2511,7 +2735,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.1,
+     "line": 3.4,
+     "elite": 3.1,
+     "heavy": 3.1,
+     "monster": 3.8,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "12-blight-furnace-bell-tank",
@@ -2555,7 +2792,7 @@
      "name": "Rot-mortar",
      "type": "Ranged",
      "range": "60\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -2566,7 +2803,8 @@
      ],
      "models": [
       "Blight-Furnace Bell-Tank"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Grinding tracks",
@@ -2580,7 +2818,8 @@
      "keywords": [],
      "models": [
       "Blight-Furnace Bell-Tank"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 175,
@@ -2631,7 +2870,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.0,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.0,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "12-bile-hauler-transport",
@@ -2668,12 +2920,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2697,7 +2949,8 @@
      ],
      "models": [
       "Bile-Hauler Transport"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Grinding tracks",
@@ -2711,7 +2964,8 @@
      "keywords": [],
      "models": [
       "Bile-Hauler Transport"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 135,
@@ -2762,7 +3016,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.4,
+     "elite": 0.3,
+     "heavy": 0.3,
+     "monster": 0.3,
+     "vehicle": 0.2
+    }
+   }
   },
   {
    "id": "12-bloated-rot-behemoth",
@@ -2816,7 +3083,8 @@
      ],
      "models": [
       "Bloated Rot-Behemoth"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -2826,19 +3094,20 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Bloated Rot-Behemoth"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 190,
+   "points": 200,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 190,
+     "points": 200,
      "models": [
       {
        "name": "Bloated Rot-Behemoth",
@@ -2881,7 +3150,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 4.6,
+     "heavy": 4.2,
+     "monster": 7.9,
+     "vehicle": 6.8
+    }
+   }
   },
   {
    "id": "12-great-unclean-engine",
@@ -2926,7 +3208,7 @@
      "name": "Pestilence cannon",
      "type": "Ranged",
      "range": "48\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "3+",
      "S": "2+",
      "AP": "-2",
@@ -2936,13 +3218,14 @@
      ],
      "models": [
       "Great Unclean Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bile-geysers",
      "type": "Ranged",
      "range": "12\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -2953,7 +3236,8 @@
      ],
      "models": [
       "Great Unclean Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Titan stomp",
@@ -2969,7 +3253,8 @@
      ],
      "models": [
       "Great Unclean Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 420,
@@ -3025,7 +3310,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 9.0,
+     "line": 6.7,
+     "elite": 7.7,
+     "heavy": 6.3,
+     "monster": 8.9,
+     "vehicle": 6.8
+    }
+   }
   }
  ],
  "faq": []

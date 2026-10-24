@@ -204,7 +204,7 @@
     {
      "id": "07-det3-e1",
      "name": "Royal Scales",
-     "cost": 35,
+     "cost": 40,
      "description": "**Ghoul-King on Royal Corpse-Drake** only. UNYIELDING 5+.",
      "lore": "",
      "requires": [
@@ -330,7 +330,8 @@
      "keywords": [],
      "models": [
       "Ghoul-King of the Carrion Throne"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -389,7 +390,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "07-ghoul-king-on-royal-corpse-drake",
@@ -449,7 +463,8 @@
      ],
      "models": [
       "Ghoul-King on Royal Corpse-Drake"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rotting maw",
@@ -459,19 +474,20 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Ghoul-King on Royal Corpse-Drake"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 155,
+   "points": 160,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 155,
+     "points": 160,
      "models": [
       {
        "name": "Ghoul-King on Royal Corpse-Drake",
@@ -522,7 +538,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 4.6,
+     "heavy": 4.2,
+     "monster": 7.9,
+     "vehicle": 6.8
+    }
+   }
   },
   {
    "id": "07-crypt-seneschal",
@@ -573,7 +602,8 @@
      "keywords": [],
      "models": [
       "Crypt-Seneschal"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -631,7 +661,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 1.5,
+     "heavy": 1.1,
+     "monster": 1.4,
+     "vehicle": 1.1
+    }
+   }
   },
   {
    "id": "07-carrion-surgeon",
@@ -682,7 +725,8 @@
      "keywords": [],
      "models": [
       "Carrion-Surgeon"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -740,7 +784,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 0.8,
+     "line": 0.5,
+     "elite": 0.3,
+     "heavy": 0.3,
+     "monster": 0.3,
+     "vehicle": 0.2
+    }
+   }
   },
   {
    "id": "07-court-poisoner",
@@ -775,7 +832,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
@@ -799,7 +856,8 @@
      ],
      "models": [
       "Court Poisoner"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Envenomed claw",
@@ -813,7 +871,8 @@
      "keywords": [],
      "models": [
       "Court Poisoner"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -875,7 +934,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 1.8,
+     "line": 1.5,
+     "elite": 2.4,
+     "heavy": 1.8,
+     "monster": 2.2,
+     "vehicle": 1.8
+    }
+   }
   },
   {
    "id": "07-crypt-scullions",
@@ -927,7 +999,8 @@
      "keywords": [],
      "models": [
       "Crypt-Scullions"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -1033,7 +1106,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 10.0,
+     "line": 6.7,
+     "elite": 5.0,
+     "heavy": 5.0,
+     "monster": 4.4,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "07-delusional-pike-levy",
@@ -1085,7 +1171,8 @@
      "keywords": [],
      "models": [
       "Delusional Pike-Levy"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -1191,7 +1278,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "07-crypt-flayer-guard",
@@ -1243,7 +1343,8 @@
      "keywords": [],
      "models": [
       "Crypt-Flayer Guard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -1314,7 +1415,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.3,
+     "line": 3.6,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.7,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "07-ghoul-knights",
@@ -1367,7 +1481,8 @@
      ],
      "models": [
       "Ghoul-Knights"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -1438,7 +1553,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.0,
+     "line": 4.0,
+     "elite": 6.0,
+     "heavy": 6.0,
+     "monster": 6.2,
+     "vehicle": 4.7
+    }
+   }
   },
   {
    "id": "07-crypt-horror-brutes",
@@ -1489,7 +1617,8 @@
      "keywords": [],
      "models": [
       "Crypt-Horror Brutes"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 135,
@@ -1560,7 +1689,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.0,
+     "line": 2.7,
+     "elite": 4.0,
+     "heavy": 4.0,
+     "monster": 4.0,
+     "vehicle": 3.0
+    }
+   }
   },
   {
    "id": "07-court-champions",
@@ -1611,7 +1753,8 @@
      "keywords": [],
      "models": [
       "Court Champions"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 135,
@@ -1682,7 +1825,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.7,
+     "line": 5.6,
+     "elite": 8.9,
+     "heavy": 6.7,
+     "monster": 8.3,
+     "vehicle": 6.7
+    }
+   }
   },
   {
    "id": "07-court-huntsmen",
@@ -1717,7 +1873,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -1741,7 +1897,8 @@
      ],
      "models": [
       "Court Huntsmen"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bone shiv",
@@ -1755,7 +1912,8 @@
      "keywords": [],
      "models": [
       "Court Huntsmen"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -1832,7 +1990,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.9,
+     "line": 1.1,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.8,
+     "vehicle": 0.5
+    }
+   }
   },
   {
    "id": "07-carrion-bat-swarm",
@@ -1884,7 +2055,8 @@
      "keywords": [],
      "models": [
       "Carrion Bat-Swarm"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -1990,7 +2162,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "07-feast-hounds",
@@ -2041,7 +2226,8 @@
      "keywords": [],
      "models": [
       "Feast-Hounds"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -2147,7 +2333,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "07-bone-slingers",
@@ -2190,7 +2389,7 @@
      "name": "Skull-catapult",
      "type": "Ranged",
      "range": "36\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "6+",
      "S": "4+",
      "AP": "0",
@@ -2201,7 +2400,8 @@
      ],
      "models": [
       "Bone-Slingers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2215,7 +2415,8 @@
      "keywords": [],
      "models": [
       "Bone-Slingers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -2279,7 +2480,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.6,
+     "elite": 0.3,
+     "heavy": 0.3,
+     "monster": 0.2,
+     "vehicle": 0.1
+    }
+   }
   },
   {
    "id": "07-carrion-altar",
@@ -2335,7 +2549,8 @@
      "keywords": [],
      "models": [
       "Carrion Altar"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -2382,7 +2597,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.1,
+     "line": 0.1,
+     "elite": 0.0,
+     "heavy": 0.0,
+     "monster": 0.0,
+     "vehicle": 0.0
+    }
+   }
   },
   {
    "id": "07-courtly-horror-beast",
@@ -2435,7 +2663,8 @@
      ],
      "models": [
       "Courtly Horror-Beast"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -2482,7 +2711,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.4,
+     "line": 3.7,
+     "elite": 4.7,
+     "heavy": 3.6,
+     "monster": 3.9,
+     "vehicle": 3.1
+    }
+   }
   },
   {
    "id": "07-royal-corpse-drake",
@@ -2537,7 +2779,8 @@
      ],
      "models": [
       "Royal Corpse-Drake"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rotting maw",
@@ -2547,19 +2790,20 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Royal Corpse-Drake"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 165,
+   "points": 175,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 165,
+     "points": 175,
      "models": [
       {
        "name": "Royal Corpse-Drake",
@@ -2604,7 +2848,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 4.6,
+     "heavy": 4.2,
+     "monster": 7.9,
+     "vehicle": 6.8
+    }
+   }
   },
   {
    "id": "07-mound-giant-of-the-court",
@@ -2656,7 +2913,8 @@
      "keywords": [],
      "models": [
       "Mound-Giant of the Court"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rotting maw",
@@ -2666,19 +2924,20 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Mound-Giant of the Court"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 170,
+   "points": 175,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 170,
+     "points": 175,
      "models": [
       {
        "name": "Mound-Giant of the Court",
@@ -2723,7 +2982,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.8,
+     "elite": 4.6,
+     "heavy": 4.2,
+     "monster": 7.9,
+     "vehicle": 6.8
+    }
+   }
   },
   {
    "id": "07-the-carrion-colossus",
@@ -2778,7 +3050,8 @@
      ],
      "models": [
       "The Carrion Colossus"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rotting maw",
@@ -2788,11 +3061,12 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "The Carrion Colossus"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 275,
@@ -2844,7 +3118,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.2,
+     "line": 6.2,
+     "elite": 8.1,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   }
  ],
  "faq": []

@@ -309,7 +309,7 @@
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     },
     {
@@ -331,7 +331,8 @@
      "keywords": [],
      "models": [
       "Chitter-Swarm"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Chitin claws",
@@ -345,7 +346,8 @@
      "keywords": [],
      "models": [
       "Chitter-Swarm"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -453,7 +455,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.0,
+     "elite": 0.7,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.6
+    }
+   }
   },
   {
    "id": "23-slasher-brood",
@@ -489,7 +504,7 @@
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     }
    ],
@@ -508,7 +523,8 @@
      ],
      "models": [
       "Slasher-Brood"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -612,7 +628,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.6,
+     "line": 3.3,
+     "elite": 2.2,
+     "heavy": 2.2,
+     "monster": 2.2,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "23-bio-warrior-brood",
@@ -647,7 +676,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     },
     {
@@ -669,7 +698,8 @@
      "keywords": [],
      "models": [
       "Bio-Warrior Brood"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rending talons",
@@ -683,7 +713,8 @@
      "keywords": [],
      "models": [
       "Bio-Warrior Brood"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -760,7 +791,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 2.7,
+     "heavy": 2.0,
+     "monster": 2.2,
+     "vehicle": 1.8
+    }
+   }
   },
   {
    "id": "23-tunnel-wyrm-brood",
@@ -795,7 +839,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     }
    ],
@@ -812,7 +856,8 @@
      "keywords": [],
      "models": [
       "Tunnel-Wyrm Brood"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -885,7 +930,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "23-shade-stalker",
@@ -921,12 +979,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     }
    ],
@@ -945,7 +1003,8 @@
      ],
      "models": [
       "Shade-Stalker"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -996,7 +1055,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.8,
+     "elite": 4.4,
+     "heavy": 3.3,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "23-psy-node-brood",
@@ -1033,7 +1105,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     },
     {
@@ -1051,21 +1123,22 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "PSYCHIC / ARCANE"
      ],
      "models": [
       "Psy-Node Brood"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 125,
+   "points": 130,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 125,
+     "points": 130,
      "models": [
       {
        "name": "Psy-Node Brood",
@@ -1109,7 +1182,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.7,
+     "elite": 2.8,
+     "heavy": 2.5,
+     "monster": 4.8,
+     "vehicle": 4.1
+    }
+   }
   },
   {
    "id": "23-carno-brute",
@@ -1157,7 +1243,8 @@
      ],
      "models": [
       "Carno-Brute"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bio-plasma",
@@ -1171,7 +1258,8 @@
      "keywords": [],
      "models": [
       "Carno-Brute"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -1233,7 +1321,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 4.1,
+     "heavy": 3.1,
+     "monster": 3.3,
+     "vehicle": 2.7
+    }
+   }
   },
   {
    "id": "23-hive-sovereign-synapse-alpha",
@@ -1270,7 +1371,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     },
     {
@@ -1299,7 +1400,8 @@
      ],
      "models": [
       "Hive-Sovereign Synapse-Alpha"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Venom cannon",
@@ -1313,7 +1415,8 @@
      "keywords": [],
      "models": [
       "Hive-Sovereign Synapse-Alpha"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 205,
@@ -1376,7 +1479,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "23-titanic-bio-horror",
@@ -1413,7 +1529,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     }
    ],
@@ -1432,7 +1548,8 @@
      ],
      "models": [
       "Titanic Bio-Horror"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -1442,17 +1559,18 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Titanic Bio-Horror"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Acid-mortar",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "3+",
      "S": "3+",
      "AP": "-2",
@@ -1462,7 +1580,8 @@
      ],
      "models": [
       "Titanic Bio-Horror"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 380,
@@ -1518,7 +1637,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.2,
+     "line": 6.2,
+     "elite": 8.1,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   },
   {
    "id": "23-brood-prime",
@@ -1553,7 +1685,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     },
     {
@@ -1575,7 +1707,8 @@
      "keywords": [],
      "models": [
       "Brood-Prime"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -1636,7 +1769,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "23-brood-mother",
@@ -1687,7 +1833,8 @@
      "keywords": [],
      "models": [
       "Brood-Mother"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -1748,7 +1895,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.8,
+     "line": 0.5,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.3,
+     "vehicle": 0.2
+    }
+   }
   },
   {
    "id": "23-chitin-guard-brutes",
@@ -1799,7 +1959,8 @@
      "keywords": [],
      "models": [
       "Chitin-Guard Brutes"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 155,
@@ -1872,7 +2033,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 5.3,
+     "heavy": 4.0,
+     "monster": 5.0,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "23-spore-mortar-brood",
@@ -1910,7 +2084,7 @@
      "name": "Spore mortar",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "4+",
      "AP": "0",
@@ -1921,7 +2095,8 @@
      ],
      "models": [
       "Spore-Mortar Brood"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1935,15 +2110,16 @@
      "keywords": [],
      "models": [
       "Spore-Mortar Brood"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 65,
+   "points": 70,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 65,
+     "points": 70,
      "models": [
       {
        "name": "Spore-Mortar Brood",
@@ -2001,7 +2177,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.9,
+     "line": 1.8,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.7,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "23-skyshrike-brood",
@@ -2037,7 +2226,7 @@
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     }
    ],
@@ -2054,7 +2243,8 @@
      "keywords": [],
      "models": [
       "Skyshrike Brood"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Claws & teeth",
@@ -2068,7 +2258,8 @@
      "keywords": [],
      "models": [
       "Skyshrike Brood"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -2176,7 +2367,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "23-rend-lurkers",
@@ -2211,7 +2415,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     }
    ],
@@ -2230,7 +2434,8 @@
      ],
      "models": [
       "Rend-Lurkers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -2334,7 +2539,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 6.2,
+     "line": 5.2,
+     "elite": 4.2,
+     "heavy": 3.1,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "23-bone-runner-pack",
@@ -2382,7 +2600,8 @@
      ],
      "models": [
       "Bone-Runner Pack"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -2455,7 +2674,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 4.7,
+     "line": 3.1,
+     "elite": 2.3,
+     "heavy": 2.3,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "23-horned-rampager",
@@ -2508,7 +2740,8 @@
      ],
      "models": [
       "Horned Rampager"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 130,
@@ -2566,7 +2799,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 4.1,
+     "heavy": 3.1,
+     "monster": 4.7,
+     "vehicle": 3.6
+    }
+   }
   },
   {
    "id": "23-siege-maw-monstrosity",
@@ -2605,7 +2851,7 @@
      "name": "Acid siege-maw",
      "type": "Ranged",
      "range": "36\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "2+",
      "AP": "-2",
@@ -2615,7 +2861,8 @@
      ],
      "models": [
       "Siege-Maw Monstrosity"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Monster talons",
@@ -2631,7 +2878,8 @@
      ],
      "models": [
       "Siege-Maw Monstrosity"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 180,
@@ -2685,7 +2933,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.4,
+     "line": 2.8,
+     "elite": 3.2,
+     "heavy": 2.4,
+     "monster": 3.0,
+     "vehicle": 2.4
+    }
+   }
   },
   {
    "id": "23-spore-pod-carrier",
@@ -2722,7 +2983,7 @@
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     }
    ],
@@ -2731,7 +2992,7 @@
      "name": "Spore-spines",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "4+",
      "AP": "0",
@@ -2739,7 +3000,8 @@
      "keywords": [],
      "models": [
       "Spore-Pod Carrier"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Claws & teeth",
@@ -2753,7 +3015,8 @@
      "keywords": [],
      "models": [
       "Spore-Pod Carrier"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2807,7 +3070,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 0.5,
+     "line": 0.3,
+     "elite": 0.2,
+     "heavy": 0.2,
+     "monster": 0.2,
+     "vehicle": 0.2
+    }
+   }
   },
   {
    "id": "23-crusher-queen-behemoth",
@@ -2856,7 +3132,8 @@
      ],
      "models": [
       "Crusher-Queen Behemoth"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -2866,19 +3143,20 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Crusher-Queen Behemoth"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 205,
+   "points": 210,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 205,
+     "points": 210,
      "models": [
       {
        "name": "Crusher-Queen Behemoth",
@@ -2924,7 +3202,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.8,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   },
   {
    "id": "23-devourer-prime",
@@ -2960,7 +3251,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     },
     {
@@ -2987,7 +3278,8 @@
      "keywords": [],
      "models": [
       "Devourer Prime"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Flesh-hooks",
@@ -3003,7 +3295,8 @@
      ],
      "models": [
       "Devourer Prime"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -3069,7 +3362,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.8,
+     "elite": 4.4,
+     "heavy": 3.3,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "23-winged-hive-sovereign",
@@ -3107,7 +3413,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     },
     {
@@ -3136,7 +3442,8 @@
      ],
      "models": [
       "Winged Hive-Sovereign"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Monstrous scythes",
@@ -3152,7 +3459,8 @@
      ],
      "models": [
       "Winged Hive-Sovereign"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 195,
@@ -3215,7 +3523,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "23-neuro-node-lord",
@@ -3250,7 +3571,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     },
     {
@@ -3279,7 +3600,8 @@
      ],
      "models": [
       "Neuro-Node Lord"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bone-sword",
@@ -3293,7 +3615,8 @@
      "keywords": [],
      "models": [
       "Neuro-Node Lord"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -3357,7 +3680,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "23-acid-spitter-brood",
@@ -3410,7 +3746,8 @@
      ],
      "models": [
       "Acid-Spitter Brood"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Chitin claws",
@@ -3424,7 +3761,8 @@
      "keywords": [],
      "models": [
       "Acid-Spitter Brood"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -3532,7 +3870,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.5,
+     "line": 1.7,
+     "elite": 1.2,
+     "heavy": 1.2,
+     "monster": 1.1,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "23-ripper-maw-swarm",
@@ -3568,12 +3919,12 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     },
     {
@@ -3595,7 +3946,8 @@
      "keywords": [],
      "models": [
       "Ripper-Maw Swarm"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -3699,7 +4051,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.8,
+     "line": 1.7,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.1,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "23-pyro-spore-swarm",
@@ -3737,17 +4102,17 @@
     },
     {
      "name": "DETONATE D3",
-     "description": "",
+     "description": "When destroyed, roll 1D6 before removing the model: on a 6, every unit within 6\" suffers X Fatal Wounds.",
      "type": "core"
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     },
     {
@@ -3769,7 +4134,8 @@
      "keywords": [],
      "models": [
       "Pyro-Spore Swarm"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 30,
@@ -3851,7 +4217,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.2,
+     "line": 0.2,
+     "elite": 0.1,
+     "heavy": 0.1,
+     "monster": 0.1,
+     "vehicle": 0.1
+    }
+   }
   },
   {
    "id": "23-venom-lash-brood",
@@ -3904,7 +4283,8 @@
      ],
      "models": [
       "Venom-Lash Brood"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 130,
@@ -3977,7 +4357,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.0,
+     "line": 4.0,
+     "elite": 6.0,
+     "heavy": 6.0,
+     "monster": 6.7,
+     "vehicle": 5.0
+    }
+   }
   },
   {
    "id": "23-neuro-shrieker",
@@ -4014,7 +4407,7 @@
     },
     {
      "name": "SYNAPSE",
-     "description": "",
+     "description": "Friendly units of the same faction within 9\" of this model ignore Suppression.",
      "type": "core"
     },
     {
@@ -4032,13 +4425,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "PSYCHIC / ARCANE"
      ],
      "models": [
       "Neuro-Shrieker"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Claws & teeth",
@@ -4052,7 +4446,8 @@
      "keywords": [],
      "models": [
       "Neuro-Shrieker"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -4104,7 +4499,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 0.6,
+     "line": 0.6,
+     "elite": 0.9,
+     "heavy": 1.1,
+     "monster": 2.0,
+     "vehicle": 1.6
+    }
+   }
   },
   {
    "id": "23-bio-artillery-beast",
@@ -4148,7 +4556,7 @@
      "name": "Bio-plasma mortar",
      "type": "Ranged",
      "range": "60\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -4159,7 +4567,8 @@
      ],
      "models": [
       "Bio-Artillery Beast"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Monster talons",
@@ -4175,7 +4584,8 @@
      ],
      "models": [
       "Bio-Artillery Beast"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 140,
@@ -4229,7 +4639,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.0,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.0,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "23-deep-burrow-worm",
@@ -4267,17 +4690,17 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -4295,19 +4718,20 @@
      "BS": "4+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Deep-Burrow Worm"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 140,
+   "points": 145,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 140,
+     "points": 145,
      "models": [
       {
        "name": "Deep-Burrow Worm",
@@ -4349,7 +4773,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.7,
+     "elite": 2.8,
+     "heavy": 2.5,
+     "monster": 4.8,
+     "vehicle": 4.1
+    }
+   }
   }
  ],
  "faq": []

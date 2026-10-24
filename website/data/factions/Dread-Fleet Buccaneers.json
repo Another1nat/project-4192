@@ -332,7 +332,8 @@
      ],
      "models": [
       "Dread-Commodore"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Captain's sabre",
@@ -346,7 +347,8 @@
      "keywords": [],
      "models": [
       "Dread-Commodore"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -407,7 +409,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "10-cutlass-captain",
@@ -460,7 +475,8 @@
      ],
      "models": [
       "Cutlass Captain"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Duelling cutlass",
@@ -474,7 +490,8 @@
      "keywords": [],
      "models": [
       "Cutlass Captain"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -537,7 +554,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.8,
+     "line": 1.5,
+     "elite": 1.2,
+     "heavy": 0.9,
+     "monster": 1.1,
+     "vehicle": 0.9
+    }
+   }
   },
   {
    "id": "10-ship-s-sawbones",
@@ -590,7 +620,8 @@
      ],
      "models": [
       "Ship's Sawbones"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -604,7 +635,8 @@
      "keywords": [],
      "models": [
       "Ship's Sawbones"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -667,7 +699,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.6,
+     "line": 0.3,
+     "elite": 0.2,
+     "heavy": 0.2,
+     "monster": 0.2,
+     "vehicle": 0.1
+    }
+   }
   },
   {
    "id": "10-gunnery-master",
@@ -718,7 +763,8 @@
      "keywords": [],
      "models": [
       "Gunnery Master"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -732,7 +778,8 @@
      "keywords": [],
      "models": [
       "Gunnery Master"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -795,7 +842,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.6,
+     "line": 0.3,
+     "elite": 0.2,
+     "heavy": 0.2,
+     "monster": 0.2,
+     "vehicle": 0.1
+    }
+   }
   },
   {
    "id": "10-deck-hand-swashbucklers",
@@ -849,7 +909,8 @@
      ],
      "models": [
       "Deck-Hand Swashbucklers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Cutlass",
@@ -863,7 +924,8 @@
      "keywords": [],
      "models": [
       "Deck-Hand Swashbucklers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -973,7 +1035,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "10-deck-musketeers",
@@ -1025,7 +1100,8 @@
      "keywords": [],
      "models": [
       "Deck-Musketeers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1039,7 +1115,8 @@
      "keywords": [],
      "models": [
       "Deck-Musketeers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1149,7 +1226,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.1,
+     "line": 1.2,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.8,
+     "vehicle": 0.6
+    }
+   }
   },
   {
    "id": "10-jet-boot-boarders",
@@ -1185,7 +1275,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -1209,7 +1299,8 @@
      ],
      "models": [
       "Jet-Boot Boarders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Cutlass",
@@ -1223,7 +1314,8 @@
      "keywords": [],
      "models": [
       "Jet-Boot Boarders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -1300,7 +1392,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.0,
+     "elite": 1.5,
+     "heavy": 1.5,
+     "monster": 1.3,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "10-powder-monkeys",
@@ -1335,7 +1440,7 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
@@ -1359,7 +1464,8 @@
      ],
      "models": [
       "Powder Monkeys"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1373,7 +1479,8 @@
      "keywords": [],
      "models": [
       "Powder Monkeys"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -1483,7 +1590,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 4.3,
+     "line": 2.6,
+     "elite": 1.0,
+     "heavy": 1.0,
+     "monster": 0.8,
+     "vehicle": 0.6
+    }
+   }
   },
   {
    "id": "10-swivel-gun-crew",
@@ -1536,7 +1656,8 @@
      ],
      "models": [
       "Swivel-Gun Crew"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1550,7 +1671,8 @@
      "keywords": [],
      "models": [
       "Swivel-Gun Crew"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -1614,7 +1736,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 1.4,
+     "line": 0.8,
+     "elite": 0.6,
+     "heavy": 0.6,
+     "monster": 0.7,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "10-grapnel-skyriggers",
@@ -1650,7 +1785,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -1674,7 +1809,8 @@
      ],
      "models": [
       "Grapnel Skyriggers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Cutlass",
@@ -1688,7 +1824,8 @@
      "keywords": [],
      "models": [
       "Grapnel Skyriggers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -1765,7 +1902,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.5,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "10-bosun-brawlers",
@@ -1816,7 +1966,8 @@
      "keywords": [],
      "models": [
       "Bosun Brawlers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -1887,7 +2038,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.0,
+     "line": 2.7,
+     "elite": 4.0,
+     "heavy": 4.0,
+     "monster": 4.0,
+     "vehicle": 3.0
+    }
+   }
   },
   {
    "id": "10-sky-cutter-riders",
@@ -1941,7 +2105,8 @@
      ],
      "models": [
       "Sky-Cutter Riders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Boarding pike",
@@ -1957,7 +2122,8 @@
      ],
      "models": [
       "Sky-Cutter Riders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -2032,7 +2198,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.5,
+     "line": 3.0,
+     "elite": 4.5,
+     "heavy": 4.5,
+     "monster": 4.7,
+     "vehicle": 3.5
+    }
+   }
   },
   {
    "id": "10-crow-s-nest-sharpshooters",
@@ -2067,7 +2246,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
@@ -2092,7 +2271,8 @@
      ],
      "models": [
       "Crow's Nest Sharpshooters"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -2106,7 +2286,8 @@
      "keywords": [],
      "models": [
       "Crow's Nest Sharpshooters"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 35,
@@ -2172,7 +2353,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 0.9,
+     "line": 0.7,
+     "elite": 1.2,
+     "heavy": 0.9,
+     "monster": 1.2,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "10-corsair-gun-skiff",
@@ -2208,7 +2402,7 @@
     },
     {
      "name": "TRANSPORT 6",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2232,7 +2426,8 @@
      ],
      "models": [
       "Corsair Gun-Skiff"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Chaser-cannon",
@@ -2248,7 +2443,8 @@
      ],
      "models": [
       "Corsair Gun-Skiff"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2262,7 +2458,8 @@
      "keywords": [],
      "models": [
       "Corsair Gun-Skiff"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -2317,7 +2514,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.4,
+     "line": 0.9,
+     "elite": 0.9,
+     "heavy": 0.9,
+     "monster": 1.1,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "10-clockwork-bosun",
@@ -2370,7 +2580,8 @@
      ],
      "models": [
       "Clockwork Bosun"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Anchor-fists",
@@ -2384,7 +2595,8 @@
      "keywords": [],
      "models": [
       "Clockwork Bosun"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -2435,7 +2647,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 4.1,
+     "vehicle": 3.2
+    }
+   }
   },
   {
    "id": "10-sky-shark-mascot",
@@ -2489,7 +2714,8 @@
      ],
      "models": [
       "Sky-Shark Mascot"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -2536,7 +2762,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.6,
+     "line": 3.0,
+     "elite": 3.6,
+     "heavy": 2.7,
+     "monster": 2.8,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "10-sky-frigate",
@@ -2574,12 +2813,12 @@
     },
     {
      "name": "FIRING DECK 3",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2603,7 +2842,8 @@
      ],
      "models": [
       "Sky-Frigate"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Swivel-gun",
@@ -2619,7 +2859,8 @@
      ],
      "models": [
       "Sky-Frigate"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Ram-prow",
@@ -2633,7 +2874,8 @@
      "keywords": [],
      "models": [
       "Sky-Frigate"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2688,7 +2930,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 2.4,
+     "line": 1.6,
+     "elite": 1.3,
+     "heavy": 1.3,
+     "monster": 1.6,
+     "vehicle": 1.1
+    }
+   }
   },
   {
    "id": "10-cannonade-ironclad",
@@ -2733,7 +2988,7 @@
      "name": "Cannonade cannons",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "2+",
      "AP": "-1",
@@ -2743,7 +2998,8 @@
      ],
      "models": [
       "Cannonade Ironclad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Swivel-gun",
@@ -2759,7 +3015,8 @@
      ],
      "models": [
       "Cannonade Ironclad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Ram-prow",
@@ -2773,15 +3030,16 @@
      "keywords": [],
      "models": [
       "Cannonade Ironclad"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 120,
+   "points": 125,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 120,
+     "points": 125,
      "models": [
       {
        "name": "Cannonade Ironclad",
@@ -2828,7 +3086,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.6,
+     "line": 2.4,
+     "elite": 2.3,
+     "heavy": 2.3,
+     "monster": 3.3,
+     "vehicle": 2.3
+    }
+   }
   },
   {
    "id": "10-mortar-ketch",
@@ -2873,7 +3144,7 @@
      "name": "Ketch-mortars",
      "type": "Ranged",
      "range": "60\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -2884,7 +3155,8 @@
      ],
      "models": [
       "Mortar Ketch"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Ram-prow",
@@ -2898,7 +3170,8 @@
      "keywords": [],
      "models": [
       "Mortar Ketch"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2949,7 +3222,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.0,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.0,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "10-walker-sky-galleon",
@@ -2987,12 +3273,12 @@
     },
     {
      "name": "FIRING DECK 4",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -3006,7 +3292,7 @@
      "name": "Grand cannonade",
      "type": "Ranged",
      "range": "72\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "3+",
      "S": "2+",
      "AP": "-2",
@@ -3016,10 +3302,11 @@
      ],
      "models": [
       "walker Sky-Galleon"
-     ]
+     ],
+     "count": 1
     },
     {
-     "name": "Swivel-gun",
+     "name": "2× Swivel-gun",
      "type": "Ranged",
      "range": "36\"",
      "A": "3",
@@ -3032,23 +3319,8 @@
      ],
      "models": [
       "walker Sky-Galleon"
-     ]
-    },
-    {
-     "name": "Swivel-gun",
-     "type": "Ranged",
-     "range": "36\"",
-     "A": "3",
-     "BS": "3+",
-     "S": "4+",
-     "AP": "0",
-     "D": "1",
-     "keywords": [
-      "HAILFIRE 2"
      ],
-     "models": [
-      "walker Sky-Galleon"
-     ]
+     "count": 2
     }
    ],
    "points": 215,
@@ -3088,11 +3360,7 @@
       },
       {
        "item": "Swivel-gun",
-       "count": 1
-      },
-      {
-       "item": "Swivel-gun",
-       "count": 1
+       "count": 2
       }
      ],
      "optional": []
@@ -3103,7 +3371,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 6.6,
+     "line": 5.0,
+     "elite": 6.3,
+     "heavy": 4.9,
+     "monster": 7.6,
+     "vehicle": 5.7
+    }
+   }
   }
  ],
  "faq": []

@@ -331,7 +331,8 @@
      ],
      "models": [
       "Master of the Astral Edge"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Void-katana",
@@ -345,7 +346,8 @@
      "keywords": [],
      "models": [
       "Master of the Astral Edge"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -407,7 +409,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "20-cyber-ronin-sword-saint",
@@ -466,7 +481,8 @@
      ],
      "models": [
       "Cyber-Ronin Sword-Saint"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Monomolecular nodachi",
@@ -480,7 +496,8 @@
      "keywords": [],
      "models": [
       "Cyber-Ronin Sword-Saint"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -543,7 +560,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 5.3,
+     "heavy": 4.0,
+     "monster": 5.8,
+     "vehicle": 4.7
+    }
+   }
   },
   {
    "id": "20-flesh-sculptor",
@@ -601,7 +631,8 @@
      ],
      "models": [
       "Flesh-Sculptor"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Monomolecular katana",
@@ -615,7 +646,8 @@
      "keywords": [],
      "models": [
       "Flesh-Sculptor"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -676,7 +708,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "20-void-veil-assassin",
@@ -712,12 +757,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
@@ -741,7 +786,8 @@
      ],
      "models": [
       "Void-Veil Assassin"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Shadow-blades",
@@ -755,7 +801,8 @@
      "keywords": [],
      "models": [
       "Void-Veil Assassin"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -816,7 +863,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 2.8,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "20-shadow-kabar-raiders",
@@ -871,7 +931,8 @@
      ],
      "models": [
       "Shadow-Kabar Raiders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -885,7 +946,8 @@
      "keywords": [],
      "models": [
       "Shadow-Kabar Raiders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -994,7 +1056,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.8,
+     "line": 1.7,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.2,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "20-arena-blade-cultists",
@@ -1048,7 +1123,8 @@
      ],
      "models": [
       "Arena-Blade Cultists"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hydra-gauntlets",
@@ -1062,7 +1138,8 @@
      "keywords": [],
      "models": [
       "Arena-Blade Cultists"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1171,7 +1248,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "20-cyber-ronin-duelists",
@@ -1227,7 +1317,8 @@
      "keywords": [],
      "models": [
       "Cyber-Ronin Duelists"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 120,
@@ -1299,7 +1390,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.0,
+     "line": 5.0,
+     "elite": 8.0,
+     "heavy": 6.0,
+     "monster": 8.8,
+     "vehicle": 7.0
+    }
+   }
   },
   {
    "id": "20-umbral-stalkers",
@@ -1336,17 +1440,17 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
@@ -1370,7 +1474,8 @@
      ],
      "models": [
       "Umbral Stalkers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Monomolecular katana",
@@ -1384,7 +1489,8 @@
      "keywords": [],
      "models": [
       "Umbral Stalkers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -1460,7 +1566,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 2.7,
+     "heavy": 2.0,
+     "monster": 2.5,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "20-sky-board-reavers",
@@ -1514,7 +1633,8 @@
      ],
      "models": [
       "Sky-Board Reavers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bladed vanes",
@@ -1530,7 +1650,8 @@
      ],
      "models": [
       "Sky-Board Reavers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -1606,7 +1727,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.9,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "20-void-wing-scourges",
@@ -1642,7 +1776,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -1660,13 +1794,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Void-Wing Scourges"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1680,7 +1815,8 @@
      "keywords": [],
      "models": [
       "Void-Wing Scourges"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -1710,7 +1846,7 @@
     },
     {
      "default": false,
-     "points": 90,
+     "points": 95,
      "models": [
       {
        "name": "Void-Wing Scourges",
@@ -1756,7 +1892,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.1,
+     "line": 1.7,
+     "elite": 2.8,
+     "heavy": 3.3,
+     "monster": 6.7,
+     "vehicle": 5.5
+    }
+   }
   },
   {
    "id": "20-pain-sculpted-brutes",
@@ -1807,7 +1956,8 @@
      "keywords": [],
      "models": [
       "Pain-Sculpted Brutes"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 105,
@@ -1879,7 +2029,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.7,
+     "line": 4.4,
+     "elite": 6.7,
+     "heavy": 6.7,
+     "monster": 6.7,
+     "vehicle": 5.0
+    }
+   }
   },
   {
    "id": "20-ronin-iron-wardens",
@@ -1933,7 +2096,8 @@
      ],
      "models": [
       "Ronin Iron-Wardens"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Klaive-glaive",
@@ -1947,7 +2111,8 @@
      "keywords": [],
      "models": [
       "Ronin Iron-Wardens"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 120,
@@ -2024,7 +2189,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.2,
+     "line": 6.2,
+     "elite": 10,
+     "heavy": 6.2,
+     "monster": 10.0,
+     "vehicle": 8.3
+    }
+   }
   },
   {
    "id": "20-void-lance-team",
@@ -2071,13 +2249,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Void-Lance Team"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2091,7 +2270,8 @@
      "keywords": [],
      "models": [
       "Void-Lance Team"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -2156,7 +2336,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.1,
+     "line": 1.1,
+     "elite": 1.9,
+     "heavy": 2.2,
+     "monster": 4.4,
+     "vehicle": 3.7
+    }
+   }
   },
   {
    "id": "20-bladed-sky-skiff",
@@ -2192,7 +2385,7 @@
     },
     {
      "name": "TRANSPORT 6",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2210,13 +2403,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Bladed Sky-Skiff"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bladed hull",
@@ -2230,7 +2424,8 @@
      "keywords": [],
      "models": [
       "Bladed Sky-Skiff"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -2281,7 +2476,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 0.8,
+     "line": 0.6,
+     "elite": 0.9,
+     "heavy": 1.1,
+     "monster": 2.2,
+     "vehicle": 1.8
+    }
+   }
   },
   {
    "id": "20-agony-engine-construct",
@@ -2324,7 +2532,7 @@
      "name": "Agony-flamer",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -2335,7 +2543,8 @@
      ],
      "models": [
       "Agony-Engine Construct"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Surgical blades",
@@ -2351,7 +2560,8 @@
      ],
      "models": [
       "Agony-Engine Construct"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -2402,7 +2612,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "20-void-ravager-gunship",
@@ -2444,36 +2667,21 @@
    ],
    "weapons": [
     {
-     "name": "Void-lance",
+     "name": "2× Void-lance",
      "type": "Ranged",
      "range": "48\"",
      "A": "1",
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Void-Ravager Gunship"
-     ]
-    },
-    {
-     "name": "Void-lance",
-     "type": "Ranged",
-     "range": "48\"",
-     "A": "1",
-     "BS": "3+",
-     "S": "2+",
-     "AP": "-3",
-     "D": "D6+1",
-     "keywords": [
-      "HEAVY"
      ],
-     "models": [
-      "Void-Ravager Gunship"
-     ]
+     "count": 2
     },
     {
      "name": "Treads / hull ram",
@@ -2487,15 +2695,16 @@
      "keywords": [],
      "models": [
       "Void-Ravager Gunship"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 160,
+   "points": 165,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 160,
+     "points": 165,
      "models": [
       {
        "name": "Void-Ravager Gunship",
@@ -2523,11 +2732,7 @@
      "equipped": [
       {
        "item": "Void-lance",
-       "count": 1
-      },
-      {
-       "item": "Void-lance",
-       "count": 1
+       "count": 2
       },
       {
        "item": "Treads / hull ram",
@@ -2542,7 +2747,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.1,
+     "line": 1.1,
+     "elite": 1.9,
+     "heavy": 2.2,
+     "monster": 4.4,
+     "vehicle": 3.7
+    }
+   }
   },
   {
    "id": "20-shadow-barge",
@@ -2580,12 +2798,12 @@
     },
     {
      "name": "FIRING DECK 3",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2609,7 +2827,8 @@
      ],
      "models": [
       "Shadow-Barge"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bladed keel",
@@ -2623,7 +2842,8 @@
      "keywords": [],
      "models": [
       "Shadow-Barge"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2674,7 +2894,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.1,
+     "line": 0.7,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.5,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "20-agony-colossus",
@@ -2728,7 +2961,8 @@
      ],
      "models": [
       "Agony-Colossus"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -2738,19 +2972,20 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Agony-Colossus"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 135,
+   "points": 140,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 135,
+     "points": 140,
      "models": [
       {
        "name": "Agony-Colossus",
@@ -2793,7 +3028,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.1,
+     "line": 5.1,
+     "elite": 6.7,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   },
   {
    "id": "20-void-bomber",
@@ -2838,7 +3086,7 @@
      "name": "Void-bombs",
      "type": "Ranged",
      "range": "6\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -2848,7 +3096,8 @@
      ],
      "models": [
       "Void-Bomber"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Splinter-cannon",
@@ -2864,7 +3113,8 @@
      ],
      "models": [
       "Void-Bomber"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2915,7 +3165,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.5,
+     "line": 2.9,
+     "elite": 3.5,
+     "heavy": 3.5,
+     "monster": 3.1,
+     "vehicle": 2.3
+    }
+   }
   },
   {
    "id": "20-umbral-dread-cruiser",
@@ -2952,7 +3215,7 @@
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2963,39 +3226,24 @@
    ],
    "weapons": [
     {
-     "name": "Void-lance",
+     "name": "2× Void-lance",
      "type": "Ranged",
      "range": "48\"",
      "A": "1",
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Umbral Dread-Cruiser"
-     ]
-    },
-    {
-     "name": "Void-lance",
-     "type": "Ranged",
-     "range": "48\"",
-     "A": "1",
-     "BS": "2+",
-     "S": "2+",
-     "AP": "-3",
-     "D": "D6+1",
-     "keywords": [
-      "HEAVY"
      ],
-     "models": [
-      "Umbral Dread-Cruiser"
-     ]
+     "count": 2
     },
     {
-     "name": "Splinter-cannon",
+     "name": "2× Splinter-cannon",
      "type": "Ranged",
      "range": "36\"",
      "A": "3",
@@ -3008,23 +3256,8 @@
      ],
      "models": [
       "Umbral Dread-Cruiser"
-     ]
-    },
-    {
-     "name": "Splinter-cannon",
-     "type": "Ranged",
-     "range": "36\"",
-     "A": "3",
-     "BS": "2+",
-     "S": "4+",
-     "AP": "0",
-     "D": "1",
-     "keywords": [
-      "HAILFIRE 2"
      ],
-     "models": [
-      "Umbral Dread-Cruiser"
-     ]
+     "count": 2
     }
    ],
    "points": 200,
@@ -3060,19 +3293,11 @@
      "equipped": [
       {
        "item": "Void-lance",
-       "count": 1
-      },
-      {
-       "item": "Void-lance",
-       "count": 1
+       "count": 2
       },
       {
        "item": "Splinter-cannon",
-       "count": 1
-      },
-      {
-       "item": "Splinter-cannon",
-       "count": 1
+       "count": 2
       }
      ],
      "optional": []
@@ -3083,7 +3308,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.8,
+     "elite": 3.2,
+     "heavy": 3.6,
+     "monster": 6.1,
+     "vehicle": 4.8
+    }
+   }
   }
  ],
  "faq": []

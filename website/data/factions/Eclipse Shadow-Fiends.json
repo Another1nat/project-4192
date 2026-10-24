@@ -331,7 +331,8 @@
      "keywords": [],
      "models": [
       "Phantasm Lord on Spectral Steed"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Spectral hooves",
@@ -347,7 +348,8 @@
      ],
      "models": [
       "Phantasm Lord on Spectral Steed"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -407,7 +409,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 2.8,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "25-knight-phantasm",
@@ -464,7 +479,8 @@
      "keywords": [],
      "models": [
       "Knight-Phantasm"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -522,7 +538,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.4,
+     "elite": 4.2,
+     "heavy": 3.5,
+     "monster": 3.7,
+     "vehicle": 3.2
+    }
+   }
   },
   {
    "id": "25-lantern-warden",
@@ -577,7 +606,8 @@
      ],
      "models": [
       "Lantern-Warden"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Soul-blade",
@@ -591,7 +621,8 @@
      "keywords": [],
      "models": [
       "Lantern-Warden"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -655,7 +686,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "25-banshee-wailer-queen",
@@ -700,7 +744,7 @@
      "name": "Keening wail",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -711,7 +755,8 @@
      ],
      "models": [
       "Banshee Wailer-Queen"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Soul-blade",
@@ -725,7 +770,8 @@
      "keywords": [],
      "models": [
       "Banshee Wailer-Queen"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -789,7 +835,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 0.8,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "25-void-shades",
@@ -843,7 +902,8 @@
      "keywords": [],
      "models": [
       "Void-Shades"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -949,7 +1009,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 7.5,
+     "line": 5.0,
+     "elite": 3.8,
+     "heavy": 3.8,
+     "monster": 3.3,
+     "vehicle": 2.5
+    }
+   }
   },
   {
    "id": "25-eclipse-reapers",
@@ -1003,7 +1076,8 @@
      "keywords": [],
      "models": [
       "Eclipse Reapers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1109,7 +1183,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.7,
+     "line": 4.4,
+     "elite": 3.3,
+     "heavy": 3.3,
+     "monster": 3.0,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "25-wailing-spirit-host",
@@ -1162,7 +1249,8 @@
      "keywords": [],
      "models": [
       "Wailing Spirit-Host"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -1234,7 +1322,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.0,
+     "line": 4.0,
+     "elite": 3.0,
+     "heavy": 3.0,
+     "monster": 3.3,
+     "vehicle": 2.5
+    }
+   }
   },
   {
    "id": "25-grave-riders",
@@ -1289,7 +1390,8 @@
      ],
      "models": [
       "Grave-Riders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 130,
@@ -1361,7 +1463,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.5,
+     "line": 3.0,
+     "elite": 4.5,
+     "heavy": 4.5,
+     "monster": 6.5,
+     "vehicle": 4.7
+    }
+   }
   },
   {
    "id": "25-gloom-blade-guard",
@@ -1414,7 +1529,8 @@
      "keywords": [],
      "models": [
       "Gloom-Blade Guard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 175,
@@ -1486,7 +1602,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 8.0,
+     "line": 6.7,
+     "elite": 10,
+     "heavy": 8.0,
+     "monster": 11.7,
+     "vehicle": 9.3
+    }
+   }
   },
   {
    "id": "25-banshee-choir",
@@ -1523,7 +1652,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -1547,7 +1676,8 @@
      ],
      "models": [
       "Banshee Choir"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Spectral claws",
@@ -1561,7 +1691,8 @@
      "keywords": [],
      "models": [
       "Banshee Choir"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 55,
@@ -1638,7 +1769,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.5,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "25-shroud-hounds",
@@ -1690,7 +1834,8 @@
      "keywords": [],
      "models": [
       "Shroud-Hounds"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1796,7 +1941,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "25-grave-arbalest-shades",
@@ -1849,7 +2007,8 @@
      "keywords": [],
      "models": [
       "Grave-Arbalest Shades"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1863,7 +2022,8 @@
      "keywords": [],
      "models": [
       "Grave-Arbalest Shades"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -1973,7 +2133,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.1,
+     "line": 1.2,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.8,
+     "vehicle": 0.6
+    }
+   }
   },
   {
    "id": "25-gheist-flitters",
@@ -2010,7 +2183,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -2032,7 +2205,8 @@
      "keywords": [],
      "models": [
       "Gheist-Flitters"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 50,
@@ -2105,7 +2279,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.0,
+     "elite": 1.5,
+     "heavy": 1.5,
+     "monster": 1.3,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "25-soul-lantern-bearers",
@@ -2160,7 +2347,8 @@
      ],
      "models": [
       "Soul-Lantern Bearers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -2174,7 +2362,8 @@
      "keywords": [],
      "models": [
       "Soul-Lantern Bearers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -2239,7 +2428,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.4,
+     "line": 0.3,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.4,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "25-haunted-armour-colossus",
@@ -2291,7 +2493,8 @@
      "keywords": [],
      "models": [
       "Haunted Armour Colossus"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 105,
@@ -2341,7 +2544,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 5.2,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "25-shadow-stalker-abomination",
@@ -2396,7 +2612,8 @@
      ],
      "models": [
       "Shadow-Stalker Abomination"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -2446,7 +2663,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 4.1,
+     "heavy": 3.1,
+     "monster": 3.3,
+     "vehicle": 2.7
+    }
+   }
   },
   {
    "id": "25-shroud-hearse",
@@ -2485,12 +2715,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2514,7 +2744,8 @@
      ],
      "models": [
       "Shroud-Hearse"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Phantom steeds",
@@ -2528,7 +2759,8 @@
      "keywords": [],
      "models": [
       "Shroud-Hearse"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 125,
@@ -2580,7 +2812,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.4,
+     "elite": 0.3,
+     "heavy": 0.3,
+     "monster": 0.3,
+     "vehicle": 0.2
+    }
+   }
   },
   {
    "id": "25-soul-reliquary-engine",
@@ -2626,7 +2871,7 @@
      "name": "Soul-storm",
      "type": "Ranged",
      "range": "36\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "6+",
      "S": "3+",
      "AP": "-1",
@@ -2637,7 +2882,8 @@
      ],
      "models": [
       "Soul-Reliquary Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2651,7 +2897,8 @@
      "keywords": [],
      "models": [
       "Soul-Reliquary Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2703,7 +2950,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.4,
+     "elite": 0.7,
+     "heavy": 0.7,
+     "monster": 0.7,
+     "vehicle": 0.5
+    }
+   }
   },
   {
    "id": "25-eclipse-void-leviathan",
@@ -2759,7 +3019,8 @@
      ],
      "models": [
       "Eclipse Void-Leviathan"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Void-maw",
@@ -2769,19 +3030,20 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Eclipse Void-Leviathan"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 180,
+   "points": 190,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 180,
+     "points": 190,
      "models": [
       {
        "name": "Eclipse Void-Leviathan",
@@ -2825,7 +3087,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.0,
+     "line": 3.3,
+     "elite": 4.6,
+     "heavy": 4.2,
+     "monster": 7.9,
+     "vehicle": 6.8
+    }
+   }
   },
   {
    "id": "25-umbral-titan-wraith",
@@ -2881,7 +3156,8 @@
      ],
      "models": [
       "Umbral Titan-Wraith"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Void-maw",
@@ -2891,11 +3167,12 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Umbral Titan-Wraith"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 280,
@@ -2947,7 +3224,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.2,
+     "line": 6.2,
+     "elite": 8.1,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   }
  ],
  "faq": []

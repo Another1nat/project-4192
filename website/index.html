@@ -258,7 +258,9 @@
         <button onclick="openDatasheetIndex(); toggleMenu()">
             <i class="fa-solid fa-book-open"></i> Datasheets
         </button>
-        <button onclick="switchView('calc'); toggleMenu()">
+        <!-- Unit Calculator hidden until calc.js uses the 4192 dice maths (MS/RS hit, flat wound, PEN, 3+ cap, WARD);
+             each datasheet shows the calculator's role and expected damage instead -->
+        <button onclick="switchView('calc'); toggleMenu()" hidden>
             <i class="fa-solid fa-calculator"></i> Unit Calculator
         </button>
         <button onclick="switchView('data'); toggleMenu()">
@@ -1164,7 +1166,7 @@
     <script src="data_version.js"></script>
     <script src="det_info.js?v=15"></script>
     <script src="tracker_3d_viewer.js?v=14"></script>
-    <script src="app.js?v=18"></script>
+    <script src="app.js?v=20"></script>
     <script src="mission_text.js?v=3"></script>
     <script src="game_tracker.js?v=1791700003"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -1172,7 +1174,7 @@
     <script src="league.js?v=18"></script>
     <script src="calc.js?v=ms7"></script>
     <script src="tournament.js?v=4"></script>
-    <script src="pdf_export.js?v=22"></script>
+    <script src="pdf_export.js?v=23"></script>
     <script src="collection.js?v=3"></script>
     <script src="offline.js?v=18"></script>
     <script src="rules_engine.js?v=4"></script>

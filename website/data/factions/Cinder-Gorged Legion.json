@@ -309,7 +309,7 @@
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     },
     {
@@ -331,7 +331,8 @@
      "keywords": [],
      "models": [
       "Ash-Zealots"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -382,7 +383,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.6,
+     "line": 3.3,
+     "elite": 2.2,
+     "heavy": 2.2,
+     "monster": 2.2,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "11-cinder-berserkers",
@@ -435,7 +449,8 @@
      "keywords": [],
      "models": [
       "Cinder-Berserkers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 150,
@@ -542,7 +557,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 10,
+     "line": 6.9,
+     "elite": 5.2,
+     "heavy": 5.2,
+     "monster": 4.6,
+     "vehicle": 3.5
+    }
+   }
   },
   {
    "id": "11-ember-blade-daemons",
@@ -591,7 +619,8 @@
      ],
      "models": [
       "Ember-Blade Daemons"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -698,7 +727,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 5.6,
+     "line": 4.9,
+     "elite": 4.2,
+     "heavy": 3.5,
+     "monster": 3.7,
+     "vehicle": 3.2
+    }
+   }
   },
   {
    "id": "11-blood-hounds",
@@ -734,7 +776,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     }
    ],
@@ -751,7 +793,8 @@
      "keywords": [],
      "models": [
       "Blood-Hounds"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -824,7 +867,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "11-skull-cleaver-champion",
@@ -876,7 +932,8 @@
      "keywords": [],
      "models": [
       "Skull-Cleaver Champion"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -938,7 +995,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.2,
+     "line": 3.5,
+     "elite": 5.6,
+     "heavy": 4.2,
+     "monster": 5.6,
+     "vehicle": 4.4
+    }
+   }
   },
   {
    "id": "11-herald-of-the-cinder",
@@ -992,7 +1062,8 @@
      ],
      "models": [
       "Herald of the Cinder"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -1052,7 +1123,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.9,
+     "elite": 5.0,
+     "heavy": 4.2,
+     "monster": 4.4,
+     "vehicle": 3.9
+    }
+   }
   },
   {
    "id": "11-brass-hellsteed-riders",
@@ -1100,7 +1184,8 @@
      ],
      "models": [
       "Brass Hellsteed Riders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Brass hooves",
@@ -1116,7 +1201,8 @@
      ],
      "models": [
       "Brass Hellsteed Riders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 235,
@@ -1192,7 +1278,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 10,
+     "line": 8.0,
+     "elite": 10.0,
+     "heavy": 8.1,
+     "monster": 9.8,
+     "vehicle": 7.7
+    }
+   }
   },
   {
    "id": "11-gore-beast-slaughterer",
@@ -1245,7 +1344,8 @@
      ],
      "models": [
       "Gore-Beast Slaughterer"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 150,
@@ -1294,7 +1394,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "11-brass-crusher-engine",
@@ -1343,7 +1456,8 @@
      ],
      "models": [
       "Brass Crusher Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Crusher fists",
@@ -1357,7 +1471,8 @@
      "keywords": [],
      "models": [
       "Brass Crusher Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 230,
@@ -1410,7 +1525,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 5.2,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "11-brass-hell-titan",
@@ -1460,7 +1588,8 @@
      ],
      "models": [
       "Brass Hell-Titan"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Hell-cleaver",
@@ -1470,19 +1599,20 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [],
      "models": [
       "Brass Hell-Titan"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 390,
+   "points": 395,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 390,
+     "points": 395,
      "models": [
       {
        "name": "Brass Hell-Titan",
@@ -1526,7 +1656,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.2,
+     "line": 6.2,
+     "elite": 8.1,
+     "heavy": 8.3,
+     "monster": 14,
+     "vehicle": 12.2
+    }
+   }
   },
   {
    "id": "11-slaughter-lord-on-hellsteed",
@@ -1580,7 +1723,8 @@
      ],
      "models": [
       "Slaughter-Lord on Hellsteed"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -1637,7 +1781,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 6.7,
+     "heavy": 5.0,
+     "monster": 7.5,
+     "vehicle": 6.0
+    }
+   }
   },
   {
    "id": "11-skull-hunter",
@@ -1672,7 +1829,7 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     }
    ],
@@ -1691,7 +1848,8 @@
      ],
      "models": [
       "Skull-Hunter"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -1752,7 +1910,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.8,
+     "elite": 4.4,
+     "heavy": 3.3,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "11-brass-exalted-guard",
@@ -1799,7 +1970,8 @@
      "keywords": [],
      "models": [
       "Brass Exalted Guard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 220,
@@ -1872,7 +2044,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 7.5,
+     "line": 6.2,
+     "elite": 10,
+     "heavy": 7.5,
+     "monster": 10.0,
+     "vehicle": 8.0
+    }
+   }
   },
   {
    "id": "11-ember-fiends-of-the-pit",
@@ -1921,7 +2106,8 @@
      ],
      "models": [
       "Ember Fiends of the Pit"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -1994,7 +2180,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 10,
+     "line": 8.9,
+     "elite": 5.0,
+     "heavy": 5.0,
+     "monster": 4.2,
+     "vehicle": 3.1
+    }
+   }
   },
   {
    "id": "11-gore-champion-coterie",
@@ -2042,7 +2241,8 @@
      ],
      "models": [
       "Gore-Champion Coterie"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 125,
@@ -2092,7 +2292,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 8.0,
+     "line": 6.7,
+     "elite": 10,
+     "heavy": 8.0,
+     "monster": 10.0,
+     "vehicle": 8.0
+    }
+   }
   },
   {
    "id": "11-blood-leash-wardens",
@@ -2140,7 +2353,8 @@
      ],
      "models": [
       "Blood-Leash Wardens"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -2246,7 +2460,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 10,
+     "line": 6.2,
+     "elite": 2.8,
+     "heavy": 2.8,
+     "monster": 2.1,
+     "vehicle": 1.4
+    }
+   }
   },
   {
    "id": "11-rift-spawn-butchers",
@@ -2282,7 +2509,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     }
    ],
@@ -2299,7 +2526,8 @@
      "keywords": [],
      "models": [
       "Rift-Spawn Butchers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -2406,7 +2634,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.3,
+     "line": 5.6,
+     "elite": 4.2,
+     "heavy": 4.2,
+     "monster": 4.2,
+     "vehicle": 3.1
+    }
+   }
   },
   {
    "id": "11-brass-harpies",
@@ -2454,7 +2695,8 @@
      "keywords": [],
      "models": [
       "Brass Harpies"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -2561,7 +2803,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.2,
+     "line": 4.2,
+     "elite": 3.1,
+     "heavy": 3.1,
+     "monster": 2.8,
+     "vehicle": 2.1
+    }
+   }
   },
   {
    "id": "11-skull-altar-engine",
@@ -2613,7 +2868,8 @@
      "keywords": [],
      "models": [
       "Skull-Altar Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 220,
@@ -2662,7 +2918,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 5.2,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "11-furnace-fiend-behemoth",
@@ -2711,7 +2980,8 @@
      ],
      "models": [
       "Furnace-Fiend Behemoth"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -2721,19 +2991,20 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Furnace-Fiend Behemoth"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 205,
+   "points": 210,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 205,
+     "points": 210,
      "models": [
       {
        "name": "Furnace-Fiend Behemoth",
@@ -2778,7 +3049,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.8,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   },
   {
    "id": "11-cinder-prince-ascendant",
@@ -2837,7 +3121,8 @@
      "keywords": [],
      "models": [
       "Cinder-Prince Ascendant"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Brass talons",
@@ -2853,7 +3138,8 @@
      ],
      "models": [
       "Cinder-Prince Ascendant"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 290,
@@ -2916,7 +3202,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 5.0,
+     "line": 5.0,
+     "elite": 8.3,
+     "heavy": 5.0,
+     "monster": 11.2,
+     "vehicle": 8.9
+    }
+   }
   },
   {
    "id": "11-gorethane-the-unchained",
@@ -2973,7 +3272,8 @@
      "keywords": [],
      "models": [
       "Gorethane the Unchained"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -3033,7 +3333,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.7,
+     "line": 4.7,
+     "elite": 7.8,
+     "heavy": 4.7,
+     "monster": 7.0,
+     "vehicle": 5.8
+    }
+   }
   },
   {
    "id": "11-blood-priest-of-the-tithe",
@@ -3090,7 +3403,8 @@
      "keywords": [],
      "models": [
       "Blood-Priest of the Tithe"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -3152,7 +3466,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "11-skull-takers",
@@ -3188,12 +3515,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -3215,7 +3542,8 @@
      "keywords": [],
      "models": [
       "Skull-Takers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -3288,7 +3616,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "11-eviscerator-packs",
@@ -3340,7 +3681,8 @@
      "keywords": [],
      "models": [
       "Eviscerator Packs"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 170,
@@ -3447,7 +3789,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 8.3,
+     "line": 6.9,
+     "elite": 10,
+     "heavy": 8.3,
+     "monster": 10.4,
+     "vehicle": 8.3
+    }
+   }
   },
   {
    "id": "11-pyre-knights",
@@ -3500,7 +3855,8 @@
      ],
      "models": [
       "Pyre-Knights"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 175,
@@ -3572,7 +3928,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.6,
+     "line": 4.7,
+     "elite": 7.5,
+     "heavy": 5.6,
+     "monster": 7.3,
+     "vehicle": 5.8
+    }
+   }
   },
   {
    "id": "11-skull-chariot-of-the-pyre",
@@ -3623,7 +3992,8 @@
      "keywords": [],
      "models": [
       "Skull-Chariot of the Pyre"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 100,
@@ -3672,7 +4042,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.2,
+     "elite": 1.7,
+     "heavy": 1.7,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "11-cinder-spawn",
@@ -3715,7 +4098,7 @@
      "name": "Mutant maws",
      "type": "Melee",
      "range": "Melee",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "3+",
      "S": "3+",
      "AP": "-2",
@@ -3725,7 +4108,8 @@
      ],
      "models": [
       "Cinder-Spawn"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -3774,7 +4158,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "11-brass-gore-carrier",
@@ -3811,12 +4208,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -3838,7 +4235,8 @@
      "keywords": [],
      "models": [
       "Brass Gore-Carrier"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 175,
@@ -3887,7 +4285,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.5,
+     "elite": 2.2,
+     "heavy": 2.2,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "11-brass-gore-wyrm",
@@ -3941,7 +4352,8 @@
      ],
      "models": [
       "Brass Gore-Wyrm"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Furnace-maw",
@@ -3951,19 +4363,20 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Brass Gore-Wyrm"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 215,
+   "points": 220,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 215,
+     "points": 220,
      "models": [
       {
        "name": "Brass Gore-Wyrm",
@@ -4008,7 +4421,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.8,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   }
  ],
  "faq": []

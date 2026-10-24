@@ -73,9 +73,10 @@ def max_range(card):
     return max([U.target_num(w.get('range', '0'), 0) for w in card['weapons'] if w['type'] == 'Ranged'] or [0])
 
 
-def main():
-    simf = sys.argv[1] if len(sys.argv) > 1 else None
-    calib, lib = U.load_calibration(), U.load_library()
+def compute_rows(calib=None, lib=None):
+    """Every datasheet with its points, damage profile per target type (MIGHT removed per activation: 'dmg'),
+    efficiency per own point ('eff', 'rel' vs the median) and its role (anti-horde ... anti-armour, transport, support)."""
+    calib, lib = calib or U.load_calibration(), lib or U.load_library()
     ppm = target_pts_per_might(lib, calib)
     rows = []
     for p in sorted(os.listdir(os.path.join(ROOT, 'factions'))):
@@ -87,7 +88,7 @@ def main():
             prof, rng_d, mel_d = profile(card)
             eff = {t: prof[t] * ppm[t] / r['points'] for t in TARGETS}          # pts destroyed per activation per own pt
             rows.append({'fac': fac['name'], 'num': p[:2], 'unit': e['name'], 'role_txt': e.get('role', ''), 'cls': card['class'],
-                         'pts': r['points'], 'eff': eff, 'range': max_range(card),
+                         'pts': r['points'], 'eff': eff, 'dmg': prof, 'range': max_range(card),
                          'ranged_share': sum(rng_d.values()) / max(sum(rng_d.values()) + sum(mel_d.values()), 1e-9),
                          'leader': 'leader' in e.get('role', '').lower(), 'kws': card.get('keywords', [])})
     med = {t: statistics.median(r['eff'][t] for r in rows if not r['leader']) for t in TARGETS}
@@ -104,6 +105,12 @@ def main():
             r['role'] = 'transport'
         elif rel[best] < 0.45:
             r['role'] = 'support'
+    return rows, med, ppm
+
+
+def main():
+    simf = sys.argv[1] if len(sys.argv) > 1 else None
+    rows, med, ppm = compute_rows()
     # 1. within-role rank (non-leaders)
     byrole = defaultdict(list)
     for r in rows:

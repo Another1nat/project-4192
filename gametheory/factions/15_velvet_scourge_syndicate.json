@@ -782,7 +782,7 @@
      "name": "Pipe-organ shriek",
      "type": "Ranged",
      "range": "60\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "wound": "3+",
      "pen": "-1",
      "D": "2",
@@ -950,7 +950,7 @@
      "A": "5",
      "wound": "2+",
      "pen": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "traits": []
     }
    ],
@@ -984,7 +984,7 @@
      "name": "Agony-organ",
      "type": "Ranged",
      "range": "72\"",
-     "A": "2D6",
+     "A": "D6+3",
      "wound": "2+",
      "pen": "-2",
      "D": "3",

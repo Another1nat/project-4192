@@ -569,7 +569,7 @@
      "name": "Depth-charge mortar",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "wound": "4+",
      "pen": "0",
      "D": "1",
@@ -721,7 +721,7 @@
      "name": "Steam-vent",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "wound": "3+",
      "pen": "-1",
      "D": "1",
@@ -871,7 +871,7 @@
      "A": "2",
      "wound": "2+",
      "pen": "-2",
-     "D": "D6",
+     "D": "D3+2",
      "traits": [
       "[HEAVY]"
      ]
@@ -1004,7 +1004,7 @@
      "A": "5",
      "wound": "2+",
      "pen": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "traits": []
     }
    ],
@@ -1053,14 +1053,14 @@
      "A": "5",
      "wound": "2+",
      "pen": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "traits": []
     },
     {
      "name": "Bile-geyser",
      "type": "Ranged",
      "range": "24\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "wound": "3+",
      "pen": "-1",
      "D": "2",

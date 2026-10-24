@@ -332,7 +332,8 @@
      ],
      "models": [
       "High Thane of the Gate"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Gate-axe",
@@ -346,7 +347,8 @@
      "keywords": [],
      "models": [
       "High Thane of the Gate"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -408,7 +410,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "18-grudge-thane-champion",
@@ -462,7 +477,8 @@
      ],
      "models": [
       "Grudge-Thane Champion"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Grudge-hammer",
@@ -476,7 +492,8 @@
      "keywords": [],
      "models": [
       "Grudge-Thane Champion"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -538,7 +555,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 5.2,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "18-tomb-priest",
@@ -596,7 +626,8 @@
      ],
      "models": [
       "Tomb-Priest"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Ancestor-staff",
@@ -610,7 +641,8 @@
      "keywords": [],
      "models": [
       "Tomb-Priest"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -671,7 +703,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "18-rune-seer",
@@ -724,7 +769,8 @@
      ],
      "models": [
       "Rune-Seer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -738,7 +784,8 @@
      "keywords": [],
      "models": [
       "Rune-Seer"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -799,7 +846,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "18-obsidian-hearth-guard",
@@ -853,7 +913,8 @@
      ],
      "models": [
       "Obsidian Hearth-Guard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rune-axe",
@@ -867,7 +928,8 @@
      "keywords": [],
      "models": [
       "Obsidian Hearth-Guard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 105,
@@ -976,7 +1038,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.2,
+     "elite": 1.7,
+     "heavy": 1.7,
+     "monster": 1.5,
+     "vehicle": 1.1
+    }
+   }
   },
   {
    "id": "18-rune-gunner-line",
@@ -1030,7 +1105,8 @@
      ],
      "models": [
       "Rune-Gunner Line"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1044,7 +1120,8 @@
      "keywords": [],
      "models": [
       "Rune-Gunner Line"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 125,
@@ -1153,7 +1230,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 4.7,
+     "line": 3.1,
+     "elite": 2.3,
+     "heavy": 2.3,
+     "monster": 2.3,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "18-magma-rune-hammerers",
@@ -1205,7 +1295,8 @@
      "keywords": [],
      "models": [
       "Magma-Rune Hammerers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -1278,7 +1369,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.2,
+     "line": 5.2,
+     "elite": 8.3,
+     "heavy": 6.2,
+     "monster": 8.3,
+     "vehicle": 6.7
+    }
+   }
   },
   {
    "id": "18-tomb-warden-ironbreakers",
@@ -1322,7 +1426,7 @@
      "name": "Drake-fire pistol",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "4+",
      "AP": "0",
@@ -1333,7 +1437,8 @@
      ],
      "models": [
       "Tomb-Warden Ironbreakers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Gromhammer",
@@ -1347,7 +1452,8 @@
      "keywords": [],
      "models": [
       "Tomb-Warden Ironbreakers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 140,
@@ -1377,7 +1483,7 @@
     },
     {
      "default": false,
-     "points": 205,
+     "points": 210,
      "models": [
       {
        "name": "Tomb-Warden Ironbreakers",
@@ -1424,7 +1530,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 5.0,
+     "heavy": 5.0,
+     "monster": 5.0,
+     "vehicle": 3.8
+    }
+   }
   },
   {
    "id": "18-ember-gun-thunderers",
@@ -1477,7 +1596,8 @@
      ],
      "models": [
       "Ember-Gun Thunderers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rune-gun",
@@ -1493,7 +1613,8 @@
      ],
      "models": [
       "Ember-Gun Thunderers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1507,7 +1628,8 @@
      "keywords": [],
      "models": [
       "Ember-Gun Thunderers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 160,
@@ -1565,7 +1687,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 9.4,
+     "line": 6.3,
+     "elite": 7.3,
+     "heavy": 7.3,
+     "monster": 8.0,
+     "vehicle": 6.0
+    }
+   }
   },
   {
    "id": "18-obsidian-gyro-wardens",
@@ -1619,7 +1754,8 @@
      ],
      "models": [
       "Obsidian Gyro-Wardens"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rotor blades",
@@ -1633,7 +1769,8 @@
      "keywords": [],
      "models": [
       "Obsidian Gyro-Wardens"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 90,
@@ -1709,7 +1846,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 4.2,
+     "line": 2.5,
+     "elite": 1.7,
+     "heavy": 1.7,
+     "monster": 1.9,
+     "vehicle": 1.3
+    }
+   }
   },
   {
    "id": "18-tomb-delvers",
@@ -1745,12 +1895,12 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -1774,7 +1924,8 @@
      ],
      "models": [
       "Tomb-Delvers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Pick-axes",
@@ -1788,7 +1939,8 @@
      "keywords": [],
      "models": [
       "Tomb-Delvers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1864,7 +2016,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.0,
+     "elite": 1.5,
+     "heavy": 1.5,
+     "monster": 1.3,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "18-magma-cannon-battery",
@@ -1911,13 +2076,14 @@
      "BS": "4+",
      "S": "2+",
      "AP": "-4",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [
       "ERADICATE 2"
      ],
      "models": [
       "Magma-Cannon Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1931,7 +2097,8 @@
      "keywords": [],
      "models": [
       "Magma-Cannon Battery"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -1996,7 +2163,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 1.9,
+     "line": 1.9,
+     "elite": 3.9,
+     "heavy": 3.4,
+     "monster": 7.5,
+     "vehicle": 7.9
+    }
+   }
   },
   {
    "id": "18-liquid-gold-rune-golem",
@@ -2039,7 +2219,7 @@
      "name": "Molten-gold spray",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -2050,7 +2230,8 @@
      ],
      "models": [
       "Liquid-Gold Rune-Golem"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Gold-forged fists",
@@ -2064,7 +2245,8 @@
      "keywords": [],
      "models": [
       "Liquid-Gold Rune-Golem"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2115,7 +2297,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 5.2,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "18-basalt-tomb-sentinel",
@@ -2166,7 +2361,8 @@
      "keywords": [],
      "models": [
       "Basalt Tomb-Sentinel"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 115,
@@ -2213,7 +2409,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.5,
+     "line": 2.9,
+     "elite": 4.6,
+     "heavy": 3.5,
+     "monster": 6.5,
+     "vehicle": 4.9
+    }
+   }
   },
   {
    "id": "18-ancestor-engine",
@@ -2265,7 +2474,8 @@
      "keywords": [],
      "models": [
       "Ancestor-Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Gold-forged fists",
@@ -2279,7 +2489,8 @@
      "keywords": [],
      "models": [
       "Ancestor-Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 180,
@@ -2330,7 +2541,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 5.2,
+     "vehicle": 4.0
+    }
+   }
   },
   {
    "id": "18-magma-crawler",
@@ -2374,7 +2598,7 @@
      "name": "Magma cannon",
      "type": "Ranged",
      "range": "48\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "2+",
      "AP": "-1",
@@ -2384,13 +2608,14 @@
      ],
      "models": [
       "Magma-Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Magma-spout",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -2401,7 +2626,8 @@
      ],
      "models": [
       "Magma-Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Obsidian treads",
@@ -2415,15 +2641,16 @@
      "keywords": [],
      "models": [
       "Magma-Crawler"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 175,
+   "points": 180,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 175,
+     "points": 180,
      "models": [
       {
        "name": "Magma-Crawler",
@@ -2470,7 +2697,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.5,
+     "line": 3.7,
+     "elite": 3.4,
+     "heavy": 3.4,
+     "monster": 4.2,
+     "vehicle": 3.1
+    }
+   }
   },
   {
    "id": "18-tomb-barge",
@@ -2507,12 +2747,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2536,7 +2776,8 @@
      ],
      "models": [
       "Tomb-Barge"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Obsidian treads",
@@ -2550,7 +2791,8 @@
      "keywords": [],
      "models": [
       "Tomb-Barge"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2601,7 +2843,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.1,
+     "line": 0.7,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.5,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "18-rune-organ-battery",
@@ -2645,7 +2900,7 @@
      "name": "Organ-gun",
      "type": "Ranged",
      "range": "24\"",
-     "A": "3D6",
+     "A": "D6+7",
      "BS": "4+",
      "S": "4+",
      "AP": "-1",
@@ -2653,7 +2908,8 @@
      "keywords": [],
      "models": [
       "Rune-Organ Battery"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Obsidian treads",
@@ -2667,7 +2923,8 @@
      "keywords": [],
      "models": [
       "Rune-Organ Battery"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 120,
@@ -2718,7 +2975,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.5,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.2,
+     "vehicle": 0.9
+    }
+   }
   },
   {
    "id": "18-magma-wyrm-construct",
@@ -2762,7 +3032,7 @@
      "name": "Magma-breath",
      "type": "Ranged",
      "range": "12\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "6+",
      "S": "3+",
      "AP": "-1",
@@ -2773,7 +3043,8 @@
      ],
      "models": [
       "Magma-Wyrm Construct"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Monster talons",
@@ -2789,7 +3060,8 @@
      ],
      "models": [
       "Magma-Wyrm Construct"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 175,
@@ -2840,7 +3112,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "18-obsidian-tomb-fortress",
@@ -2876,7 +3161,7 @@
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2890,7 +3175,7 @@
      "name": "Magma-ordnance",
      "type": "Ranged",
      "range": "72\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "3+",
      "S": "2+",
      "AP": "-2",
@@ -2900,7 +3185,8 @@
      ],
      "models": [
       "Obsidian Tomb-Fortress"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Las-lance",
@@ -2910,13 +3196,14 @@
      "BS": "3+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Obsidian Tomb-Fortress"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Obsidian treads",
@@ -2930,7 +3217,8 @@
      "keywords": [],
      "models": [
       "Obsidian Tomb-Fortress"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 265,
@@ -2985,7 +3273,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 5.2,
+     "line": 4.4,
+     "elite": 6.4,
+     "heavy": 5.2,
+     "monster": 9.0,
+     "vehicle": 7.0
+    }
+   }
   }
  ],
  "faq": []

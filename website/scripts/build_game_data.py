@@ -26,6 +26,9 @@ SITE = os.path.abspath(os.path.join(HERE, '..'))
 GT = os.path.abspath(os.path.join(SITE, '..', 'gametheory'))
 sys.path.insert(0, os.path.join(GT, 'scripts'))
 import unit_calculator as U  # noqa: E402
+import role_lab as RL  # noqa: E402
+sys.path.insert(0, HERE)
+import build_rules_data as BR  # noqa: E402
 
 ALLIANCES = [  # (faction numbers, Grand Alliance)
     (range(1, 6), 'Crown of Solis'), (range(6, 11), 'Nocturne Covenants'), (range(11, 16), 'Hellbreach Legions'),
@@ -35,6 +38,18 @@ COLORS = {  # one readable accent colour per faction (dark UI)
     9: '#7fc8e8', 10: '#d9a441', 11: '#e0412f', 12: '#7a9b3a', 13: '#b56b2e', 14: '#5b6ee8', 15: '#d65fa8',
     16: '#f2d26b', 17: '#3fbf8f', 18: '#c9853a', 19: '#9bc23c', 20: '#9a6ad6', 21: '#a3a9b4', 22: '#e8e4dc',
     23: '#b24bd1', 24: '#88c040', 25: '#6d7cff'}
+BASE = {1: '25–32mm', 2: '40–50mm', 3: '60–80mm', 4: '90–120mm', 5: '130mm+'}   # CORE_RULES §1.2
+ROLE_NAME = {'anti-horde': 'Anti-horde', 'anti-infantry': 'Anti-infantry', 'anti-elite': 'Anti-elite', 'anti-armour': 'Anti-armour',
+             'transport': 'Transport', 'support': 'Support'}
+GLOSSARY = BR.glossary(open(BR.RULES_MD, encoding='utf-8').read())
+
+
+def gloss(name):
+    """Rule text for a keyword like 'DEEP STRIKE' or 'SCOUTS 6"' (numbers dropped), '' if unknown."""
+    k = re.sub(r'\s+([XY]|D?\d+)\+?"?$', '', name.strip().upper())
+    return GLOSSARY.get(k) or GLOSSARY.get(k.split('-')[0]) or ''
+
+
 CLASS_ROLE = {1: 'Class 1 · Infantry', 2: 'Class 2 · Elites', 3: 'Class 3 · Heavy', 4: 'Class 4 · Vehicles & Monsters',
               5: 'Class 5 · Colossal'}
 
@@ -85,7 +100,7 @@ def unit_points(entry, lib, calib, fac):
     return out, card
 
 
-def datasheet(entry, fac, fname, lib, calib, leaders_by_class, units_by_class):
+def datasheet(entry, fac, fname, lib, calib, leaders_by_class, units_by_class, prof=None):
     sizes, card = unit_points(entry, lib, calib, fac)
     c = card['class']
     leader = 'leader' in entry.get('role', '').lower()
@@ -103,14 +118,22 @@ def datasheet(entry, fac, fname, lib, calib, leaders_by_class, units_by_class):
     weapons = []
     for w in card['weapons']:
         ranged = w['type'] == 'Ranged'
-        weapons.append({'name': w['name'], 'type': w['type'], 'range': w.get('range', '') if ranged else 'Melee',
-                        'A': str(w['A']), 'BS': plus(card['RS'] if ranged else card['MS']), 'S': str(w['wound']),
-                        'AP': str(w.get('pen', '0')), 'D': str(w['D']), 'keywords': [clean_kw(t) for t in w.get('traits', [])],
-                        'models': [entry['name']]})
+        wp = {'name': w['name'], 'type': w['type'], 'range': w.get('range', '') if ranged else 'Melee',
+                'A': str(w['A']), 'BS': plus(card['RS'] if ranged else card['MS']), 'S': str(w['wound']),
+                'AP': str(w.get('pen', '0')), 'D': str(w['D']), 'keywords': [clean_kw(t) for t in w.get('traits', [])],
+                'models': [entry['name']]}
+        same = next((x for x in weapons if {k: v for k, v in x.items() if k != 'count'} == wp), None)
+        if same:                      # the same weapon twice (e.g. two las-lances): one line, "2× Las-lance"
+            same['count'] += 1
+        else:
+            weapons.append(dict(wp, count=1))
+    for w in weapons:
+        if w['count'] > 1:
+            w['name'] = f"{w['count']}× {w['name']}"
     abilities = [{'name': fac['core_rule']['name'], 'description': 'Army rule — see the faction rules.', 'type': 'faction'}]
     for k in card.get('keywords', []):
         if k.upper().strip('[]') not in ('FLY', 'HARDENED'):
-            abilities.append({'name': clean_kw(k), 'description': '', 'type': 'core'})
+            abilities.append({'name': clean_kw(k), 'description': gloss(clean_kw(k)), 'type': 'core'})
     for a in entry.get('abilities', []):
         if a.get('name'):
             abilities.append({'name': a['name'], 'description': a.get('text', ''), 'type': 'datasheet'})
@@ -119,12 +142,15 @@ def datasheet(entry, fac, fname, lib, calib, leaders_by_class, units_by_class):
     model = {'name': entry['name'], 'M': stats['MOV'], 'T': '-', 'Sv': stats['ARM'], 'W': stats['MIGHT'], 'Ld': '-', 'OC': stats['CTRL'],
              'MOV': stats['MOV'], 'MS': stats['MS'], 'RS': stats['RS'], 'ARM': stats['ARM'], 'MIGHT': stats['MIGHT'], 'CTRL': stats['CTRL'],
              **{k: stats[k] for k in ('WARD', 'UNY') if k in stats},
-             'equipped': [{'item': w['name'], 'count': 1} for w in weapons], 'optional': []}
+             'equipped': [{'item': w['name'].split('× ', 1)[-1], 'count': w['count']} for w in weapons], 'optional': []}
     ds = {'id': f'{fac["number"]}-{slug(entry["name"])}', 'name': entry['name'], 'role': role, 'composition': comp_txt, 'lore': '',
           'stats': stats, 'invuln': '-', 'keywords': kws, 'factionKeywords': [fname], 'abilities': abilities,
           'weapons': weapons, 'points': sizes[0][1], 'pointsSource': 'Calculated (gametheory/scripts/unit_calculator.py)',
           'compositions': [{'default': i == 0, 'points': p, 'models': [{'name': entry['name'], 'min': n, 'max': n}]} for i, (n, p) in enumerate(sizes)],
-          'models': [model], 'options': [], 'ledBy': [], 'leads': [], 'rules': [], 'faq': [], 'class': c}
+          'models': [model], 'options': [], 'ledBy': [], 'leads': [], 'rules': [], 'faq': [], 'class': c, 'base': BASE.get(c, '')}
+    if prof:   # unit_calculator: average MIGHT removed per activation (best of Shoot or Fight) against six target types
+        ds['profile'] = {'role': prof['role'], 'role_name': ROLE_NAME.get(prof['role'], prof['role']),
+                         'damage': {t: round(v, 1) for t, v in prof['dmg'].items()}}
     if leader:   # a Leader joins a same-Class bodyguard unit (core rules)
         ds['leads'] = [{'type': 'leader', 'units': units_by_class.get(c, [])}]
     else:
@@ -155,6 +181,7 @@ def detachments(fac, cards, lib, calib):
 
 def build():
     calib, lib = U.load_calibration(), U.load_library()
+    profiles = {(r['num'], r['unit']): r for r in RL.compute_rows(calib, lib)[0]}
     os.makedirs(os.path.join(SITE, 'data', 'factions'), exist_ok=True)
     factions_js = []
     files = sorted(f for f in os.listdir(os.path.join(GT, 'factions')) if re.match(r'^\d\d_.*\.json$', f))
@@ -169,7 +196,7 @@ def build():
             (leaders_by_class if 'leader' in e.get('role', '').lower() else units_by_class).setdefault(e['class'], []).append(e['name'])
         sheets, cards = [], {}
         for e in fac['units']:
-            ds, card = datasheet(e, fac, fname, lib, calib, leaders_by_class, units_by_class)
+            ds, card = datasheet(e, fac, fname, lib, calib, leaders_by_class, units_by_class, profiles.get((f[:2], e['name'])))
             sheets.append(ds)
             cards[e['name']] = U.build_card(U.with_faction_rules(e, fac), lib)[0]
         rules = [{'name': fac['core_rule']['name'], 'description': fac['core_rule']['text']}]

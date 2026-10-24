@@ -332,7 +332,8 @@
      ],
      "models": [
       "Maestro of Excess"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Whisper-blade",
@@ -346,7 +347,8 @@
      "keywords": [],
      "models": [
       "Maestro of Excess"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -408,7 +410,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.8,
+     "line": 2.3,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 3.5,
+     "vehicle": 2.8
+    }
+   }
   },
   {
    "id": "15-blade-diva-champion",
@@ -467,7 +482,8 @@
      ],
      "models": [
       "Blade-Diva Champion"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Twin rapture-blades",
@@ -481,7 +497,8 @@
      "keywords": [],
      "models": [
       "Blade-Diva Champion"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -543,7 +560,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.8,
+     "elite": 4.4,
+     "heavy": 3.3,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "15-siren-choirmistress",
@@ -601,7 +631,8 @@
      ],
      "models": [
       "Siren-Choirmistress"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rapture-blade",
@@ -615,7 +646,8 @@
      "keywords": [],
      "models": [
       "Siren-Choirmistress"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -676,7 +708,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "15-silk-veil-assassin",
@@ -712,12 +757,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
@@ -741,7 +786,8 @@
      ],
      "models": [
       "Silk-Veil Assassin"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Envenomed silk",
@@ -755,7 +801,8 @@
      "keywords": [],
      "models": [
       "Silk-Veil Assassin"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -816,7 +863,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 2.8,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "15-flayed-silk-initiates",
@@ -870,7 +930,8 @@
      ],
      "models": [
       "Flayed-Silk Initiates"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rapture-blade",
@@ -884,7 +945,8 @@
      "keywords": [],
      "models": [
       "Flayed-Silk Initiates"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -993,7 +1055,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 6.7,
+     "line": 5.6,
+     "elite": 4.4,
+     "heavy": 3.3,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "15-sonic-blaster-cultists",
@@ -1048,7 +1123,8 @@
      ],
      "models": [
       "Sonic-Blaster Cultists"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1062,7 +1138,8 @@
      "keywords": [],
      "models": [
       "Sonic-Blaster Cultists"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -1171,7 +1248,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.8,
+     "line": 1.7,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.1,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "15-maestro-duelists",
@@ -1228,7 +1318,8 @@
      "keywords": [],
      "models": [
       "Maestro Duelists"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 145,
@@ -1301,7 +1392,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.7,
+     "line": 5.6,
+     "elite": 8.9,
+     "heavy": 6.7,
+     "monster": 8.3,
+     "vehicle": 6.7
+    }
+   }
   },
   {
    "id": "15-cacophony-paladins",
@@ -1355,7 +1459,8 @@
      ],
      "models": [
       "Cacophony Paladins"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Great weapon / fist",
@@ -1369,7 +1474,8 @@
      "keywords": [],
      "models": [
       "Cacophony Paladins"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 160,
@@ -1446,7 +1552,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 6.7,
+     "line": 5.6,
+     "elite": 5.6,
+     "heavy": 4.2,
+     "monster": 5.6,
+     "vehicle": 4.4
+    }
+   }
   },
   {
    "id": "15-swift-steed-riders",
@@ -1499,7 +1618,8 @@
      ],
      "models": [
       "Swift-Steed Riders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Barbed lance",
@@ -1515,7 +1635,8 @@
      ],
      "models": [
       "Swift-Steed Riders"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -1591,7 +1712,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.6,
+     "line": 3.8,
+     "elite": 5.6,
+     "heavy": 5.6,
+     "monster": 5.8,
+     "vehicle": 4.4
+    }
+   }
   },
   {
    "id": "15-rapture-hounds",
@@ -1642,7 +1776,8 @@
      "keywords": [],
      "models": [
       "Rapture-Hounds"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -1747,7 +1882,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "15-dervish-blade-dancers",
@@ -1803,7 +1951,8 @@
      "keywords": [],
      "models": [
       "Dervish Blade-Dancers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -1908,7 +2057,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 8.3,
+     "line": 5.6,
+     "elite": 4.2,
+     "heavy": 4.2,
+     "monster": 4.2,
+     "vehicle": 3.1
+    }
+   }
   },
   {
    "id": "15-resonance-cannon-team",
@@ -1962,7 +2124,8 @@
      ],
      "models": [
       "Resonance Cannon Team"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1976,7 +2139,8 @@
      "keywords": [],
      "models": [
       "Resonance Cannon Team"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -2041,7 +2205,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.3,
+     "elite": 2.0,
+     "heavy": 2.0,
+     "monster": 2.0,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "15-velvet-strider",
@@ -2094,7 +2271,8 @@
      ],
      "models": [
       "Velvet-Strider"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Lash-claws",
@@ -2108,7 +2286,8 @@
      "keywords": [],
      "models": [
       "Velvet-Strider"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 95,
@@ -2159,7 +2338,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.2,
+     "line": 3.5,
+     "elite": 5.6,
+     "heavy": 4.2,
+     "monster": 5.6,
+     "vehicle": 4.4
+    }
+   }
   },
   {
    "id": "15-silk-chariot-of-rapture",
@@ -2210,7 +2402,8 @@
      "keywords": [],
      "models": [
       "Silk-Chariot of Rapture"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -2257,7 +2450,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.3,
+     "line": 2.2,
+     "elite": 1.7,
+     "heavy": 1.7,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "15-rapture-beast",
@@ -2310,7 +2516,8 @@
      ],
      "models": [
       "Rapture-Beast"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -2357,7 +2564,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 5.0,
+     "line": 4.2,
+     "elite": 5.2,
+     "heavy": 3.9,
+     "monster": 4.2,
+     "vehicle": 3.3
+    }
+   }
   },
   {
    "id": "15-sonic-organ-engine",
@@ -2401,7 +2621,7 @@
      "name": "Pipe-organ shriek",
      "type": "Ranged",
      "range": "60\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "3+",
      "S": "3+",
      "AP": "-1",
@@ -2412,7 +2632,8 @@
      ],
      "models": [
       "Sonic Organ-Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2426,15 +2647,16 @@
      "keywords": [],
      "models": [
       "Sonic Organ-Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 125,
+   "points": 130,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 125,
+     "points": 130,
      "models": [
       {
        "name": "Sonic Organ-Engine",
@@ -2477,7 +2699,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.7,
+     "line": 1.8,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.7,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "15-pleasure-barge",
@@ -2514,12 +2749,12 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
@@ -2543,7 +2778,8 @@
      ],
      "models": [
       "Pleasure-Barge"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Treads / hull ram",
@@ -2557,7 +2793,8 @@
      "keywords": [],
      "models": [
       "Pleasure-Barge"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2608,7 +2845,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 1.1,
+     "line": 0.7,
+     "elite": 0.4,
+     "heavy": 0.4,
+     "monster": 0.5,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "15-rapture-engine",
@@ -2662,7 +2912,8 @@
      ],
      "models": [
       "Rapture-Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bladed limbs",
@@ -2676,7 +2927,8 @@
      "keywords": [],
      "models": [
       "Rapture-Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 170,
@@ -2727,7 +2979,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.9,
+     "line": 4.1,
+     "elite": 6.5,
+     "heavy": 4.9,
+     "monster": 9.1,
+     "vehicle": 6.9
+    }
+   }
   },
   {
    "id": "15-exalted-rapture-fiend",
@@ -2781,7 +3046,8 @@
      ],
      "models": [
       "Exalted Rapture-Fiend"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -2791,19 +3057,20 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Exalted Rapture-Fiend"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 135,
+   "points": 140,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 135,
+     "points": 140,
      "models": [
       {
        "name": "Exalted Rapture-Fiend",
@@ -2846,7 +3113,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.1,
+     "line": 5.1,
+     "elite": 6.7,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   },
   {
    "id": "15-cathedral-of-agony",
@@ -2891,7 +3171,7 @@
      "name": "Agony-organ",
      "type": "Ranged",
      "range": "72\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "2+",
      "S": "2+",
      "AP": "-2",
@@ -2902,7 +3182,8 @@
      ],
      "models": [
       "Cathedral of Agony"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Titan stomp",
@@ -2918,7 +3199,8 @@
      ],
      "models": [
       "Cathedral of Agony"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 395,
@@ -2970,7 +3252,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.6,
+     "line": 6.2,
+     "elite": 8.1,
+     "heavy": 5.9,
+     "monster": 9.3,
+     "vehicle": 7.4
+    }
+   }
   }
  ],
  "faq": []

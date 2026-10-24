@@ -333,7 +333,8 @@
      ],
      "models": [
       "Star-Sage Elder"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Palanquin guards",
@@ -347,15 +348,16 @@
      "keywords": [],
      "models": [
       "Star-Sage Elder"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 125,
+   "points": 120,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 125,
+     "points": 120,
      "models": [
       {
        "name": "Star-Sage Elder",
@@ -406,7 +408,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "17-scar-veteran-old-blood",
@@ -458,7 +473,8 @@
      "keywords": [],
      "models": [
       "Scar-Veteran Old-Blood"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -475,15 +491,16 @@
      ],
      "models": [
       "Scar-Veteran Old-Blood"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 95,
+   "points": 90,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 95,
+     "points": 90,
      "models": [
       {
        "name": "Scar-Veteran Old-Blood",
@@ -537,7 +554,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.9,
+     "line": 3.3,
+     "elite": 5.4,
+     "heavy": 4.2,
+     "monster": 5.0,
+     "vehicle": 4.1
+    }
+   }
   },
   {
    "id": "17-sun-priest-astromancer",
@@ -595,7 +625,8 @@
      ],
      "models": [
       "Sun-Priest Astromancer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -609,15 +640,16 @@
      "keywords": [],
      "models": [
       "Sun-Priest Astromancer"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 85,
+   "points": 80,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 85,
+     "points": 80,
      "models": [
       {
        "name": "Sun-Priest Astromancer",
@@ -671,7 +703,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.7,
+     "line": 1.4,
+     "elite": 1.1,
+     "heavy": 0.8,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "17-chameleon-stalker",
@@ -707,12 +752,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
@@ -737,7 +782,8 @@
      ],
      "models": [
       "Chameleon Stalker"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -751,7 +797,8 @@
      "keywords": [],
      "models": [
       "Chameleon Stalker"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -813,7 +860,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.4,
+     "elite": 0.4,
+     "heavy": 0.3,
+     "monster": 0.6,
+     "vehicle": 0.4
+    }
+   }
   },
   {
    "id": "17-saurian-spawn-warriors",
@@ -867,7 +927,8 @@
      ],
      "models": [
       "Saurian Spawn-Warriors"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Obsidian club",
@@ -881,7 +942,8 @@
      "keywords": [],
      "models": [
       "Saurian Spawn-Warriors"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -898,15 +960,16 @@
      ],
      "models": [
       "Saurian Spawn-Warriors"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 175,
+   "points": 170,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 175,
+     "points": 170,
      "models": [
       {
        "name": "Saurian Spawn-Warriors",
@@ -917,7 +980,7 @@
     },
     {
      "default": false,
-     "points": 200,
+     "points": 190,
      "models": [
       {
        "name": "Saurian Spawn-Warriors",
@@ -928,7 +991,7 @@
     },
     {
      "default": false,
-     "points": 225,
+     "points": 215,
      "models": [
       {
        "name": "Saurian Spawn-Warriors",
@@ -939,7 +1002,7 @@
     },
     {
      "default": false,
-     "points": 250,
+     "points": 240,
      "models": [
       {
        "name": "Saurian Spawn-Warriors",
@@ -950,7 +1013,7 @@
     },
     {
      "default": false,
-     "points": 270,
+     "points": 265,
      "models": [
       {
        "name": "Saurian Spawn-Warriors",
@@ -961,7 +1024,7 @@
     },
     {
      "default": false,
-     "points": 295,
+     "points": 285,
      "models": [
       {
        "name": "Saurian Spawn-Warriors",
@@ -1011,7 +1074,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.7,
+     "line": 4.6,
+     "elite": 3.6,
+     "heavy": 3.6,
+     "monster": 3.1,
+     "vehicle": 2.5
+    }
+   }
   },
   {
    "id": "17-scaleling-javelin-scouts",
@@ -1047,7 +1123,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -1071,7 +1147,8 @@
      ],
      "models": [
       "Scaleling Javelin-Scouts"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1085,15 +1162,16 @@
      "keywords": [],
      "models": [
       "Scaleling Javelin-Scouts"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 75,
+   "points": 70,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 75,
+     "points": 70,
      "models": [
       {
        "name": "Scaleling Javelin-Scouts",
@@ -1115,7 +1193,7 @@
     },
     {
      "default": false,
-     "points": 90,
+     "points": 85,
      "models": [
       {
        "name": "Scaleling Javelin-Scouts",
@@ -1137,7 +1215,7 @@
     },
     {
      "default": false,
-     "points": 105,
+     "points": 100,
      "models": [
       {
        "name": "Scaleling Javelin-Scouts",
@@ -1148,7 +1226,7 @@
     },
     {
      "default": false,
-     "points": 115,
+     "points": 110,
      "models": [
       {
        "name": "Scaleling Javelin-Scouts",
@@ -1194,7 +1272,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.8,
+     "line": 1.7,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.4,
+     "vehicle": 0.9
+    }
+   }
   },
   {
    "id": "17-raptor-pack",
@@ -1245,7 +1336,8 @@
      "keywords": [],
      "models": [
       "Raptor Pack"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -1262,15 +1354,16 @@
      ],
      "models": [
       "Raptor Pack"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 100,
+   "points": 95,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 100,
+     "points": 95,
      "models": [
       {
        "name": "Raptor Pack",
@@ -1292,7 +1385,7 @@
     },
     {
      "default": false,
-     "points": 125,
+     "points": 120,
      "models": [
       {
        "name": "Raptor Pack",
@@ -1314,7 +1407,7 @@
     },
     {
      "default": false,
-     "points": 150,
+     "points": 145,
      "models": [
       {
        "name": "Raptor Pack",
@@ -1325,7 +1418,7 @@
     },
     {
      "default": false,
-     "points": 160,
+     "points": 155,
      "models": [
       {
        "name": "Raptor Pack",
@@ -1371,7 +1464,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 6.7,
+     "line": 4.6,
+     "elite": 3.6,
+     "heavy": 3.6,
+     "monster": 3.1,
+     "vehicle": 2.5
+    }
+   }
   },
   {
    "id": "17-temple-guard-saurians",
@@ -1428,7 +1534,8 @@
      "keywords": [],
      "models": [
       "Temple-Guard Saurians"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -1445,15 +1552,16 @@
      ],
      "models": [
       "Temple-Guard Saurians"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 180,
+   "points": 175,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 180,
+     "points": 175,
      "models": [
       {
        "name": "Temple-Guard Saurians",
@@ -1464,7 +1572,7 @@
     },
     {
      "default": false,
-     "points": 220,
+     "points": 210,
      "models": [
       {
        "name": "Temple-Guard Saurians",
@@ -1475,7 +1583,7 @@
     },
     {
      "default": false,
-     "points": 250,
+     "points": 240,
      "models": [
       {
        "name": "Temple-Guard Saurians",
@@ -1521,7 +1629,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 7.9,
+     "line": 6.5,
+     "elite": 9.7,
+     "heavy": 7.5,
+     "monster": 9.0,
+     "vehicle": 7.3
+    }
+   }
   },
   {
    "id": "17-raptor-knights",
@@ -1574,7 +1695,8 @@
      ],
      "models": [
       "Raptor-Knights"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Raptor-spear",
@@ -1590,7 +1712,8 @@
      ],
      "models": [
       "Raptor-Knights"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -1607,7 +1730,8 @@
      ],
      "models": [
       "Raptor-Knights"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 120,
@@ -1626,7 +1750,7 @@
     },
     {
      "default": false,
-     "points": 145,
+     "points": 140,
      "models": [
       {
        "name": "Raptor-Knights",
@@ -1637,7 +1761,7 @@
     },
     {
      "default": false,
-     "points": 165,
+     "points": 160,
      "models": [
       {
        "name": "Raptor-Knights",
@@ -1686,7 +1810,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 10.0,
+     "line": 6.9,
+     "elite": 9.2,
+     "heavy": 9.2,
+     "monster": 9.2,
+     "vehicle": 7.1
+    }
+   }
   },
   {
    "id": "17-wing-lizard-riders",
@@ -1722,7 +1859,7 @@
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -1746,7 +1883,8 @@
      ],
      "models": [
       "Wing-Lizard Riders"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Raking talons",
@@ -1760,15 +1898,16 @@
      "keywords": [],
      "models": [
       "Wing-Lizard Riders"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 85,
+   "points": 80,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 85,
+     "points": 80,
      "models": [
       {
        "name": "Wing-Lizard Riders",
@@ -1836,7 +1975,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.5,
+     "vehicle": 1.9
+    }
+   }
   },
   {
    "id": "17-horned-brute-saurians",
@@ -1887,7 +2039,8 @@
      "keywords": [],
      "models": [
       "Horned Brute-Saurians"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -1904,15 +2057,16 @@
      ],
      "models": [
       "Horned Brute-Saurians"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 175,
+   "points": 170,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 175,
+     "points": 170,
      "models": [
       {
        "name": "Horned Brute-Saurians",
@@ -1923,7 +2077,7 @@
     },
     {
      "default": false,
-     "points": 210,
+     "points": 205,
      "models": [
       {
        "name": "Horned Brute-Saurians",
@@ -1934,7 +2088,7 @@
     },
     {
      "default": false,
-     "points": 240,
+     "points": 230,
      "models": [
       {
        "name": "Horned Brute-Saurians",
@@ -1979,7 +2133,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 8.3,
+     "line": 6.2,
+     "elite": 10.0,
+     "heavy": 9.2,
+     "monster": 11.4,
+     "vehicle": 8.9
+    }
+   }
   },
   {
    "id": "17-chameleon-snipers",
@@ -2015,12 +2182,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
@@ -2045,7 +2212,8 @@
      ],
      "models": [
       "Chameleon Snipers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -2059,15 +2227,16 @@
      "keywords": [],
      "models": [
       "Chameleon Snipers"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 60,
+   "points": 55,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 60,
+     "points": 55,
      "models": [
       {
        "name": "Chameleon Snipers",
@@ -2078,7 +2247,7 @@
     },
     {
      "default": false,
-     "points": 70,
+     "points": 65,
      "models": [
       {
        "name": "Chameleon Snipers",
@@ -2124,7 +2293,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 0.8,
+     "line": 0.6,
+     "elite": 0.9,
+     "heavy": 0.7,
+     "monster": 1.0,
+     "vehicle": 0.8
+    }
+   }
   },
   {
    "id": "17-fire-spitter-handlers",
@@ -2167,7 +2349,7 @@
      "name": "Fire-spitter beast",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -2178,7 +2360,8 @@
      ],
      "models": [
       "Fire-Spitter Handlers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -2195,7 +2378,8 @@
      ],
      "models": [
       "Fire-Spitter Handlers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -2259,7 +2443,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.3,
+     "line": 3.6,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.7,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "17-feathered-sky-serpent",
@@ -2303,7 +2500,7 @@
      "name": "Sun-breath",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "6+",
      "S": "3+",
      "AP": "-1",
@@ -2313,7 +2510,8 @@
      ],
      "models": [
       "Feathered Sky-Serpent"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Raking claws",
@@ -2329,7 +2527,8 @@
      ],
      "models": [
       "Feathered Sky-Serpent"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -2346,15 +2545,16 @@
      ],
      "models": [
       "Feathered Sky-Serpent"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 105,
+   "points": 100,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 105,
+     "points": 100,
      "models": [
       {
        "name": "Feathered Sky-Serpent",
@@ -2403,7 +2603,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.1,
+     "line": 5.1,
+     "elite": 6.9,
+     "heavy": 5.3,
+     "monster": 5.6,
+     "vehicle": 4.6
+    }
+   }
   },
   {
    "id": "17-horned-shell-bastion",
@@ -2451,13 +2664,14 @@
      "BS": "6+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY"
      ],
      "models": [
       "Horned Shell-Bastion"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Tail-club",
@@ -2473,15 +2687,16 @@
      ],
      "models": [
       "Horned Shell-Bastion"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 225,
+   "points": 220,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 225,
+     "points": 220,
      "models": [
       {
        "name": "Horned Shell-Bastion",
@@ -2526,7 +2741,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.9,
+     "line": 3.2,
+     "elite": 3.7,
+     "heavy": 2.8,
+     "monster": 2.8,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "17-thunder-lizard-howdah",
@@ -2580,7 +2808,8 @@
      ],
      "models": [
       "Thunder-Lizard Howdah"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Horns & stomp",
@@ -2596,7 +2825,8 @@
      ],
      "models": [
       "Thunder-Lizard Howdah"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -2613,15 +2843,16 @@
      ],
      "models": [
       "Thunder-Lizard Howdah"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 210,
+   "points": 205,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 210,
+     "points": 205,
      "models": [
       {
        "name": "Thunder-Lizard Howdah",
@@ -2670,7 +2901,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 6.1,
+     "line": 5.1,
+     "elite": 6.9,
+     "heavy": 5.3,
+     "monster": 5.6,
+     "vehicle": 4.6
+    }
+   }
   },
   {
    "id": "17-sun-engine-shell-beast",
@@ -2714,7 +2958,7 @@
      "name": "Sun-engine",
      "type": "Ranged",
      "range": "36\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -2724,7 +2968,8 @@
      ],
      "models": [
       "Sun-Engine Shell-Beast"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Tail-club",
@@ -2740,15 +2985,16 @@
      ],
      "models": [
       "Sun-Engine Shell-Beast"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 165,
+   "points": 160,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 165,
+     "points": 160,
      "models": [
       {
        "name": "Sun-Engine Shell-Beast",
@@ -2793,7 +3039,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "support",
+    "role_name": "Support",
+    "damage": {
+     "horde": 1.6,
+     "line": 1.3,
+     "elite": 1.5,
+     "heavy": 1.3,
+     "monster": 1.3,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "17-old-blood-on-tyrant-lizard",
@@ -2850,7 +3109,8 @@
      "keywords": [],
      "models": [
       "Old-Blood on Tyrant-Lizard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -2867,7 +3127,8 @@
      ],
      "models": [
       "Old-Blood on Tyrant-Lizard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Thunder-lizard maw",
@@ -2877,19 +3138,20 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Old-Blood on Tyrant-Lizard"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 180,
+   "points": 175,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 180,
+     "points": 175,
      "models": [
       {
        "name": "Old-Blood on Tyrant-Lizard",
@@ -2946,7 +3208,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 4.6,
+     "line": 4.4,
+     "elite": 7.5,
+     "heavy": 6.6,
+     "monster": 11.4,
+     "vehicle": 9.7
+    }
+   }
   },
   {
    "id": "17-wild-tyrant-lizard",
@@ -3000,7 +3275,8 @@
      ],
      "models": [
       "Wild Tyrant-Lizard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Thunder-lizard maw",
@@ -3010,11 +3286,12 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Wild Tyrant-Lizard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Predatory jaws",
@@ -3031,7 +3308,8 @@
      ],
      "models": [
       "Wild Tyrant-Lizard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 205,
@@ -3088,7 +3366,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.1,
+     "line": 5.1,
+     "elite": 7.5,
+     "heavy": 6.6,
+     "monster": 11.4,
+     "vehicle": 9.7
+    }
+   }
   },
   {
    "id": "17-elder-thunder-titan",
@@ -3143,7 +3434,8 @@
      ],
      "models": [
       "Elder Thunder-Titan"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Thunder-lizard maw",
@@ -3153,11 +3445,12 @@
      "BS": "2+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Elder Thunder-Titan"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Howdah war-crew",
@@ -3173,15 +3466,16 @@
      ],
      "models": [
       "Elder Thunder-Titan"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 305,
+   "points": 295,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 305,
+     "points": 295,
      "models": [
       {
        "name": "Elder Thunder-Titan",
@@ -3229,7 +3523,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 6.2,
+     "line": 6.2,
+     "elite": 8.1,
+     "heavy": 5.2,
+     "monster": 9.9,
+     "vehicle": 8.4
+    }
+   }
   }
  ],
  "faq": []

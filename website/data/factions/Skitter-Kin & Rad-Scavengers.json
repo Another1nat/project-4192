@@ -333,7 +333,8 @@
      ],
      "models": [
       "Under-Chief Warlock-Engineer"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rad-blade",
@@ -347,7 +348,8 @@
      "keywords": [],
      "models": [
       "Under-Chief Warlock-Engineer"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -408,7 +410,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.2,
+     "line": 1.9,
+     "elite": 3.0,
+     "heavy": 2.2,
+     "monster": 2.8,
+     "vehicle": 2.2
+    }
+   }
   },
   {
    "id": "19-clan-lord-clawmaster",
@@ -467,7 +482,8 @@
      ],
      "models": [
       "Clan-Lord Clawmaster"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Warp-claws",
@@ -481,7 +497,8 @@
      "keywords": [],
      "models": [
       "Clan-Lord Clawmaster"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -542,7 +559,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.1,
+     "line": 2.6,
+     "elite": 4.1,
+     "heavy": 3.1,
+     "monster": 3.9,
+     "vehicle": 3.1
+    }
+   }
   },
   {
    "id": "19-rad-prophet",
@@ -600,7 +630,8 @@
      ],
      "models": [
       "Rad-Prophet"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Power weapon",
@@ -614,7 +645,8 @@
      "keywords": [],
      "models": [
       "Rad-Prophet"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 60,
@@ -677,7 +709,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-infantry",
+    "role_name": "Anti-infantry",
+    "damage": {
+     "horde": 1.0,
+     "line": 0.8,
+     "elite": 0.7,
+     "heavy": 0.5,
+     "monster": 0.6,
+     "vehicle": 0.5
+    }
+   }
   },
   {
    "id": "19-gutter-assassin",
@@ -713,12 +758,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "UNSEEN 12\"",
-     "description": "",
+     "description": "Unless attached to a squad, cannot be targeted by ranged attacks from more than 12\" away.",
      "type": "core"
     },
     {
@@ -742,7 +787,8 @@
      ],
      "models": [
       "Gutter-Assassin"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rad-dagger",
@@ -756,7 +802,8 @@
      "keywords": [],
      "models": [
       "Gutter-Assassin"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -819,7 +866,20 @@
    ],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 1.3,
+     "line": 1.1,
+     "elite": 1.8,
+     "heavy": 1.3,
+     "monster": 1.7,
+     "vehicle": 1.3
+    }
+   }
   },
   {
    "id": "19-clan-scavengers",
@@ -855,7 +915,7 @@
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     },
     {
@@ -879,7 +939,8 @@
      ],
      "models": [
       "Clan-Scavengers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rusty blades & teeth",
@@ -893,7 +954,8 @@
      "keywords": [],
      "models": [
       "Clan-Scavengers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -1002,7 +1064,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "19-clan-spearkin",
@@ -1056,7 +1131,8 @@
      ],
      "models": [
       "Clan-Spearkin"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Rusty spear",
@@ -1070,7 +1146,8 @@
      "keywords": [],
      "models": [
       "Clan-Spearkin"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -1179,7 +1256,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.8,
+     "line": 1.7,
+     "elite": 1.1,
+     "heavy": 1.1,
+     "monster": 1.1,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "19-iron-tail-guard",
@@ -1232,7 +1322,8 @@
      ],
      "models": [
       "Iron-Tail Guard"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Serrated halberd",
@@ -1246,7 +1337,8 @@
      "keywords": [],
      "models": [
       "Iron-Tail Guard"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 85,
@@ -1355,7 +1447,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.8,
+     "line": 2.5,
+     "elite": 1.9,
+     "heavy": 1.9,
+     "monster": 1.7,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "19-gutter-stalkers",
@@ -1391,12 +1496,12 @@
     },
     {
      "name": "INFILTRATORS",
-     "description": "",
+     "description": "During deployment, may set up anywhere on the battlefield more than 8\" from the enemy deployment zone and enemy models.",
      "type": "core"
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -1420,7 +1525,8 @@
      ],
      "models": [
       "Gutter-Stalkers"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Paired rad-blades",
@@ -1434,7 +1540,8 @@
      "keywords": [],
      "models": [
       "Gutter-Stalkers"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -1510,7 +1617,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.3,
+     "elite": 1.0,
+     "heavy": 1.0,
+     "monster": 0.9,
+     "vehicle": 0.7
+    }
+   }
   },
   {
    "id": "19-rad-fire-thrower-team",
@@ -1558,7 +1678,7 @@
      "name": "Rad-fire thrower",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -1570,7 +1690,8 @@
      ],
      "models": [
       "Rad-Fire Thrower Team"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1584,7 +1705,8 @@
      "keywords": [],
      "models": [
       "Rad-Fire Thrower Team"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -1649,7 +1771,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.3,
+     "line": 3.6,
+     "elite": 2.7,
+     "heavy": 2.7,
+     "monster": 2.7,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "19-rotary-scrap-gun-team",
@@ -1697,7 +1832,7 @@
      "name": "Rotary scrap-gun",
      "type": "Ranged",
      "range": "24\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -1707,7 +1842,8 @@
      ],
      "models": [
       "Rotary Scrap-Gun Team"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Bayonet / CCW",
@@ -1721,7 +1857,8 @@
      "keywords": [],
      "models": [
       "Rotary Scrap-Gun Team"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -1786,7 +1923,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.3,
+     "elite": 1.0,
+     "heavy": 1.0,
+     "monster": 1.3,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "19-rad-brute-packs",
@@ -1837,7 +1987,8 @@
      "keywords": [],
      "models": [
       "Rad-Brute Packs"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 80,
@@ -1909,7 +2060,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 2
+   "class": 2,
+   "base": "40–50mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 4.0,
+     "line": 2.7,
+     "elite": 4.0,
+     "heavy": 4.0,
+     "monster": 4.0,
+     "vehicle": 3.0
+    }
+   }
   },
   {
    "id": "19-gas-lobber-squad",
@@ -1944,7 +2108,7 @@
     },
     {
      "name": "SCOUTS 6\"",
-     "description": "",
+     "description": "Before Round 1 begins, may make a free X\" Move (ending >8\" from enemies).",
      "type": "core"
     },
     {
@@ -1969,7 +2133,8 @@
      ],
      "models": [
       "Gas-Lobber Squad"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Combat blade",
@@ -1983,7 +2148,8 @@
      "keywords": [],
      "models": [
       "Gas-Lobber Squad"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 45,
@@ -2059,7 +2225,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 3.1,
+     "line": 1.9,
+     "elite": 0.8,
+     "heavy": 0.8,
+     "monster": 0.5,
+     "vehicle": 0.3
+    }
+   }
   },
   {
    "id": "19-vermin-tide",
@@ -2095,12 +2274,12 @@
     },
     {
      "name": "EXPENDABLE",
-     "description": "",
+     "description": "This unit has CTRL 0, never becomes Broken, and cannot be targeted by friendly Core Tactics. (Priced −10%.)",
      "type": "core"
     },
     {
      "name": "FRAIL",
-     "description": "",
+     "description": "Add +1 to enemy Wound rolls targeting this unit (the mirror of [HARDENED]; for the flimsiest chaff).",
      "type": "core"
     },
     {
@@ -2122,7 +2301,8 @@
      "keywords": [],
      "models": [
       "Vermin Tide"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 70,
@@ -2227,7 +2407,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 1
+   "class": 1,
+   "base": "25–32mm",
+   "profile": {
+    "role": "anti-horde",
+    "role_name": "Anti-horde",
+    "damage": {
+     "horde": 5.0,
+     "line": 3.3,
+     "elite": 2.5,
+     "heavy": 2.5,
+     "monster": 2.2,
+     "vehicle": 1.7
+    }
+   }
   },
   {
    "id": "19-rad-wheel",
@@ -2275,7 +2468,7 @@
      "name": "Rad-arcs",
      "type": "Ranged",
      "range": "24\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "4+",
      "S": "3+",
      "AP": "-2",
@@ -2285,13 +2478,14 @@
      ],
      "models": [
       "Rad-Wheel"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Crushing wheel",
      "type": "Melee",
      "range": "Melee",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "4+",
      "S": "3+",
      "AP": "-1",
@@ -2299,7 +2493,8 @@
      "keywords": [],
      "models": [
       "Rad-Wheel"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 75,
@@ -2350,7 +2545,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 2.0,
+     "line": 1.3,
+     "elite": 2.0,
+     "heavy": 2.0,
+     "monster": 2.0,
+     "vehicle": 1.5
+    }
+   }
   },
   {
    "id": "19-rad-brute-monstrosity",
@@ -2403,7 +2611,8 @@
      ],
      "models": [
       "Rad-Brute Monstrosity"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Mutant claws",
@@ -2419,7 +2628,8 @@
      ],
      "models": [
       "Rad-Brute Monstrosity"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 65,
@@ -2470,7 +2680,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 3
+   "class": 3,
+   "base": "60–80mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.5,
+     "elite": 3.1,
+     "heavy": 2.3,
+     "monster": 2.5,
+     "vehicle": 2.0
+    }
+   }
   },
   {
    "id": "19-doom-gong-engine",
@@ -2514,7 +2737,7 @@
      "name": "Sonic gong-wave",
      "type": "Ranged",
      "range": "18\"",
-     "A": "D6+2",
+     "A": "D3+4",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -2525,7 +2748,8 @@
      ],
      "models": [
       "Doom-Gong Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Grinding wheels",
@@ -2539,7 +2763,8 @@
      "keywords": [],
      "models": [
       "Doom-Gong Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2590,7 +2815,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-elite",
+    "role_name": "Anti-elite",
+    "damage": {
+     "horde": 1.3,
+     "line": 0.9,
+     "elite": 1.3,
+     "heavy": 1.3,
+     "monster": 1.3,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "19-subterranean-rad-drill",
@@ -2628,17 +2866,17 @@
     },
     {
      "name": "FIRING DECK 2",
-     "description": "",
+     "description": "Up to X passengers embarked in this Transport may fire their ranged weapons when the Transport shoots.",
      "type": "core"
     },
     {
      "name": "TRANSPORT 10",
-     "description": "",
+     "description": "Can transport up to X models of Class 1 or Class 2.",
      "type": "core"
     },
     {
      "name": "VANGUARD STRIKE",
-     "description": "",
+     "description": "Starts in Strategic Reserves. Deploy in Round 2 or 3 anywhere on the board >8\" from all enemies. (Must deploy by end of Round 3 or destroyed).",
      "type": "core"
     },
     {
@@ -2652,7 +2890,7 @@
      "name": "Drill-vents",
      "type": "Ranged",
      "range": "12\"",
-     "A": "D6",
+     "A": "D3+2",
      "BS": "5+",
      "S": "3+",
      "AP": "-1",
@@ -2663,7 +2901,8 @@
      ],
      "models": [
       "Subterranean Rad-Drill"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Drill-head",
@@ -2677,7 +2916,8 @@
      "keywords": [],
      "models": [
       "Subterranean Rad-Drill"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2728,7 +2968,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "transport",
+    "role_name": "Transport",
+    "damage": {
+     "horde": 2.7,
+     "line": 1.8,
+     "elite": 1.3,
+     "heavy": 1.3,
+     "monster": 1.3,
+     "vehicle": 1.0
+    }
+   }
   },
   {
    "id": "19-rad-arc-cannon-crawler",
@@ -2776,14 +3029,15 @@
      "BS": "5+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6+1",
+     "D": "D3+3",
      "keywords": [
       "HEAVY",
       "OVERLOAD"
      ],
      "models": [
       "Rad-Arc Cannon Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Heavy stubber",
@@ -2799,7 +3053,8 @@
      ],
      "models": [
       "Rad-Arc Cannon Crawler"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Grinding wheels",
@@ -2813,7 +3068,8 @@
      "keywords": [],
      "models": [
       "Rad-Arc Cannon Crawler"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2868,7 +3124,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 0.7,
+     "line": 0.5,
+     "elite": 0.6,
+     "heavy": 0.7,
+     "monster": 1.5,
+     "vehicle": 1.2
+    }
+   }
   },
   {
    "id": "19-mutant-pit-abomination",
@@ -2922,7 +3191,8 @@
      ],
      "models": [
       "Mutant Pit-Abomination"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Colossal jaws",
@@ -2932,11 +3202,12 @@
      "BS": "4+",
      "S": "2+",
      "AP": "-3",
-     "D": "D6",
+     "D": "D3+2",
      "keywords": [],
      "models": [
       "Mutant Pit-Abomination"
-     ]
+     ],
+     "count": 1
     }
    ],
    "points": 110,
@@ -2987,7 +3258,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 4
+   "class": 4,
+   "base": "90–120mm",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.0,
+     "line": 2.5,
+     "elite": 3.5,
+     "heavy": 3.1,
+     "monster": 6.0,
+     "vehicle": 5.1
+    }
+   }
   },
   {
    "id": "19-rad-colossus-engine",
@@ -3031,7 +3315,7 @@
      "name": "Rad-storm cannon",
      "type": "Ranged",
      "range": "72\"",
-     "A": "2D6",
+     "A": "D6+3",
      "BS": "4+",
      "S": "2+",
      "AP": "-2",
@@ -3042,7 +3326,8 @@
      ],
      "models": [
       "Rad-Colossus Engine"
-     ]
+     ],
+     "count": 1
     },
     {
      "name": "Titan stomp",
@@ -3058,15 +3343,16 @@
      ],
      "models": [
       "Rad-Colossus Engine"
-     ]
+     ],
+     "count": 1
     }
    ],
-   "points": 225,
+   "points": 220,
    "pointsSource": "Calculated (gametheory/scripts/unit_calculator.py)",
    "compositions": [
     {
      "default": true,
-     "points": 225,
+     "points": 220,
      "models": [
       {
        "name": "Rad-Colossus Engine",
@@ -3109,7 +3395,20 @@
    "leads": [],
    "rules": [],
    "faq": [],
-   "class": 5
+   "class": 5,
+   "base": "130mm+",
+   "profile": {
+    "role": "anti-armour",
+    "role_name": "Anti-armour",
+    "damage": {
+     "horde": 3.8,
+     "line": 3.8,
+     "elite": 4.9,
+     "heavy": 3.0,
+     "monster": 5.6,
+     "vehicle": 4.4
+    }
+   }
   }
  ],
  "faq": []

@@ -174,10 +174,13 @@
             stats.forEach(st => { shade(doc, M, y - 3.6, W - 2 * M, 5.2, 0.1, [200, 150, 60]); let x = M; if (stats.length > 1 && st.n) { doc.setFont('helvetica', 'italic'); doc.setFontSize(7.5); doc.setTextColor(110); doc.text(clean(st.n) + (st.count > 1 ? ` x${st.count}` : ''), x, y); doc.setTextColor(0); x += doc.getTextWidth(clean(st.n) + (st.count > 1 ? ` x${st.count}` : '')) + 6; }
                 st.c.forEach(([k, v]) => { doc.setFont('helvetica', 'bold'); doc.setFontSize(8); doc.text(clean(k), x, y); const kw = doc.getTextWidth(clean(k)) + 1.2; doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.text(clean(v), x + kw, y); x += kw + doc.getTextWidth(clean(v)) + 5.5; }); y += 5.5; });
             const tab = (title, list, skill) => {
-                if (!list.length) return; doc.setFont('helvetica', 'bold'); doc.setFontSize(7); doc.setTextColor(100); shade(doc, M, y - 3, W - 2 * M, 4.4, 0.28); doc.text(title, M, y);
-                [['Range', 84], ['A', 102], ['Hit', 112], ['Wound', 122], ['PEN', 134], ['D', 146]].forEach(([t, cx]) => doc.text(t, cx, y)); doc.setTextColor(0); y += 3.8;
+                if (!list.length) return; const h4 = s.hit, mel = /MELEE/.test(title);
+                // 4192: the hit roll is the unit's RS / MS, printed once in the header instead of a column
+                const cols = h4 ? [['Range', 84, 0], ['A', 102, 1], ['Wound', 114, 3], ['PEN', 130, 4], ['D', 146, 5]].filter(c => !(mel && c[2] === 0)) : [['Range', 84, 0], ['A', 102, 1], ['Hit', 112, 2], ['Wound', 122, 3], ['PEN', 134, 4], ['D', 146, 5]];
+                doc.setFont('helvetica', 'bold'); doc.setFontSize(7); doc.setTextColor(100); shade(doc, M, y - 3, W - 2 * M, 4.4, 0.28); doc.text(title + (h4 ? `  -  HITS ON ${clean(mel ? h4.m : h4.r)}` : ''), M, y);
+                cols.forEach(([t, cx]) => doc.text(t, cx, y)); doc.setTextColor(0); y += 3.8;
                 list.forEach((w, wi) => { const nl = lines(wname(w), 64, 7.5); need(4.2 * nl.length + 1); if (wi % 2 === 0) shade(doc, M, y - 3, W - 2 * M, 4.2 * nl.length, 0.12); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.text(nl, M + 1, y);
-                    [[w.c[0], 84], [w.c[1], 102], [w.c[2], 112], [w.c[3], 124], [w.c[4], 134], [w.c[5], 146]].forEach(([v, cx]) => doc.text(clean(v), cx, y)); y += 4.2 * nl.length; }); y += 0.8;
+                    cols.forEach(([, cx, i]) => doc.text(clean(w.c[i]), cx, y)); y += 4.2 * nl.length; }); y += 0.8;
             };
             tab('RANGED WEAPONS', rw, 'BS'); tab('MELEE WEAPONS', mw, 'WS');
             (s.abilities || []).forEach((a, ai) => { const nl = lines(clean(`${a.g ? '[' + a.g + '] ' : ''}${a.n}: ${a.d}`), CW, 7.5); need(3.8 * nl.length + 2); if (ai % 2 === 0) shade(doc, M, y - 2.8, W - 2 * M, 3.8 * nl.length + 0.6, 0.08); doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.text(nl, M, y); y += 3.8 * nl.length + 1; });
