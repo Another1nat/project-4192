@@ -46,31 +46,31 @@ setTimeout(() => {
 // FACTIONS: one entry per faction. Each one loads data/factions/<name>.json (see README.md for the format).
 // banner = picture in assets/banners/, color = the faction colour the whole UI takes on.
 const FACTIONS = [
-    { id: 1, group: 'Crown of Solis', name: 'Auric Solar-Host', banner: 'assets/banners/0.jpg', color: '#e5b93f' },
-    { id: 2, group: 'Crown of Solis', name: 'Golgotha Trench-Legions', banner: 'assets/banners/0.jpg', color: '#8a9a5b' },
-    { id: 3, group: 'Crown of Solis', name: 'Sun-Pyre Witch-Courts', banner: 'assets/banners/0.jpg', color: '#e2683c' },
-    { id: 4, group: 'Crown of Solis', name: 'Aegis Knight-Houses', banner: 'assets/banners/0.jpg', color: '#4f8fd6' },
-    { id: 5, group: 'Crown of Solis', name: 'Abyssal Bathys-Corps', banner: 'assets/banners/0.jpg', color: '#2bb3a8' },
-    { id: 6, group: 'Nocturne Covenants', name: 'Sanguine Aristocracy', banner: 'assets/banners/0.jpg', color: '#c2324a' },
-    { id: 7, group: 'Nocturne Covenants', name: 'Mordant Ghoul-Courts', banner: 'assets/banners/0.jpg', color: '#9c8f6e' },
-    { id: 8, group: 'Nocturne Covenants', name: 'Prometheus Flesh-Guilds', banner: 'assets/banners/0.jpg', color: '#5fb36b' },
-    { id: 9, group: 'Nocturne Covenants', name: 'Frost-Skaer Blood-Raiders', banner: 'assets/banners/0.jpg', color: '#7fc8e8' },
-    { id: 10, group: 'Nocturne Covenants', name: 'Dread-Fleet Buccaneers', banner: 'assets/banners/0.jpg', color: '#d9a441' },
-    { id: 11, group: 'Hellbreach Legions', name: 'Cinder-Gorged Legion', banner: 'assets/banners/0.jpg', color: '#e0412f' },
-    { id: 12, group: 'Hellbreach Legions', name: 'Black-Bile Congregation', banner: 'assets/banners/0.jpg', color: '#7a9b3a' },
-    { id: 13, group: 'Hellbreach Legions', name: 'Moloch Iron-Forged', banner: 'assets/banners/0.jpg', color: '#b56b2e' },
-    { id: 14, group: 'Hellbreach Legions', name: 'Cabal of the Inverted Star', banner: 'assets/banners/0.jpg', color: '#5b6ee8' },
-    { id: 15, group: 'Hellbreach Legions', name: 'Velvet-Scourge Syndicate', banner: 'assets/banners/0.jpg', color: '#d65fa8' },
-    { id: 16, group: 'Celestial Dominion', name: 'Starfire High-Court', banner: 'assets/banners/0.jpg', color: '#f2d26b' },
-    { id: 17, group: 'Celestial Dominion', name: 'Sun-Scaled Temple-Host', banner: 'assets/banners/0.jpg', color: '#3fbf8f' },
-    { id: 18, group: 'Celestial Dominion', name: 'Obsidian Forge-Tombs', banner: 'assets/banners/0.jpg', color: '#c9853a' },
-    { id: 19, group: 'Celestial Dominion', name: 'Skitter-Kin & Rad-Scavengers', banner: 'assets/banners/0.jpg', color: '#9bc23c' },
-    { id: 20, group: 'Celestial Dominion', name: 'Astral Shadow-Clans', banner: 'assets/banners/0.jpg', color: '#9a6ad6' },
-    { id: 21, group: 'Voidborn Convergence', name: 'Rift-Stalker Menagerie', banner: 'assets/banners/0.jpg', color: '#a3a9b4' },
-    { id: 22, group: 'Voidborn Convergence', name: 'Radiant Concordat', banner: 'assets/banners/0.jpg', color: '#e8e4dc' },
-    { id: 23, group: 'Voidborn Convergence', name: 'Apex Bio-Swarm', banner: 'assets/banners/0.jpg', color: '#b24bd1' },
-    { id: 24, group: 'Voidborn Convergence', name: 'Diesel-Skull War-Horde', banner: 'assets/banners/0.jpg', color: '#88c040' },
-    { id: 25, group: 'Voidborn Convergence', name: 'Eclipse Shadow-Fiends', banner: 'assets/banners/0.jpg', color: '#6d7cff' }
+    { id: 1, group: 'Crown of Solis', name: 'Auric Solar-Host', banner: 'assets/banners/1.jpg', color: '#e5b93f' },
+    { id: 2, group: 'Crown of Solis', name: 'Golgotha Trench-Legions', banner: 'assets/banners/2.jpg', color: '#8a9a5b' },
+    { id: 3, group: 'Crown of Solis', name: 'Sun-Pyre Witch-Courts', banner: 'assets/banners/3.jpg', color: '#e2683c' },
+    { id: 4, group: 'Crown of Solis', name: 'Aegis Knight-Houses', banner: 'assets/banners/4.jpg', color: '#4f8fd6' },
+    { id: 5, group: 'Crown of Solis', name: 'Abyssal Bathys-Corps', banner: 'assets/banners/5.jpg', color: '#2bb3a8' },
+    { id: 6, group: 'Nocturne Covenants', name: 'Sanguine Aristocracy', banner: 'assets/banners/6.jpg', color: '#c2324a' },
+    { id: 7, group: 'Nocturne Covenants', name: 'Mordant Ghoul-Courts', banner: 'assets/banners/7.jpg', color: '#9c8f6e' },
+    { id: 8, group: 'Nocturne Covenants', name: 'Prometheus Flesh-Guilds', banner: 'assets/banners/8.jpg', color: '#5fb36b' },
+    { id: 9, group: 'Nocturne Covenants', name: 'Frost-Skaer Blood-Raiders', banner: 'assets/banners/9.jpg', color: '#7fc8e8' },
+    { id: 10, group: 'Nocturne Covenants', name: 'Dread-Fleet Buccaneers', banner: 'assets/banners/10.jpg', color: '#d9a441' },
+    { id: 11, group: 'Hellbreach Legions', name: 'Cinder-Gorged Legion', banner: 'assets/banners/11.jpg', color: '#e0412f' },
+    { id: 12, group: 'Hellbreach Legions', name: 'Black-Bile Congregation', banner: 'assets/banners/12.jpg', color: '#7a9b3a' },
+    { id: 13, group: 'Hellbreach Legions', name: 'Moloch Iron-Forged', banner: 'assets/banners/13.jpg', color: '#b56b2e' },
+    { id: 14, group: 'Hellbreach Legions', name: 'Cabal of the Inverted Star', banner: 'assets/banners/14.jpg', color: '#5b6ee8' },
+    { id: 15, group: 'Hellbreach Legions', name: 'Velvet-Scourge Syndicate', banner: 'assets/banners/15.jpg', color: '#d65fa8' },
+    { id: 16, group: 'Celestial Dominion', name: 'Starfire High-Court', banner: 'assets/banners/16.jpg', color: '#f2d26b' },
+    { id: 17, group: 'Celestial Dominion', name: 'Sun-Scaled Temple-Host', banner: 'assets/banners/17.jpg', color: '#3fbf8f' },
+    { id: 18, group: 'Celestial Dominion', name: 'Obsidian Forge-Tombs', banner: 'assets/banners/18.jpg', color: '#c9853a' },
+    { id: 19, group: 'Celestial Dominion', name: 'Skitter-Kin & Rad-Scavengers', banner: 'assets/banners/19.jpg', color: '#9bc23c' },
+    { id: 20, group: 'Celestial Dominion', name: 'Astral Shadow-Clans', banner: 'assets/banners/20.jpg', color: '#9a6ad6' },
+    { id: 21, group: 'Voidborn Convergence', name: 'Rift-Stalker Menagerie', banner: 'assets/banners/21.jpg', color: '#a3a9b4' },
+    { id: 22, group: 'Voidborn Convergence', name: 'Radiant Concordat', banner: 'assets/banners/22.jpg', color: '#e8e4dc' },
+    { id: 23, group: 'Voidborn Convergence', name: 'Apex Bio-Swarm', banner: 'assets/banners/23.jpg', color: '#b24bd1' },
+    { id: 24, group: 'Voidborn Convergence', name: 'Diesel-Skull War-Horde', banner: 'assets/banners/24.jpg', color: '#88c040' },
+    { id: 25, group: 'Voidborn Convergence', name: 'Eclipse Shadow-Fiends', banner: 'assets/banners/25.jpg', color: '#6d7cff' }
 ];
 
 
@@ -123,13 +123,13 @@ window.switchView = (viewId, pushHistory=true) => {
         target.classList.add('active');
         window.scrollTo(0, 0);
         
-        // Randomize banners on navigation (except home screen which looks good statically)
-        if (viewId !== 'home' && viewId !== 'new-roster') {
+        // a random faction banner behind each page header
+        {
             const banners = target.querySelectorAll('.home-header-card');
             if (banners.length > 0) {
-                const bannerList = ['0.jpg'];   // header pictures in assets/banners/ (add more files here to rotate them)
-                const randImg = bannerList[Math.floor(Math.random() * bannerList.length)];
-                banners.forEach(b => b.style.backgroundImage = `url('assets/banners/${randImg}')`);
+                const bannerList = (typeof FACTIONS !== 'undefined' ? FACTIONS.map(f => f.banner) : []).filter(b => b && !/\/0\.jpg$/.test(b));   // rotate the faction banners
+                const randImg = bannerList.length ? bannerList[Math.floor(Math.random() * bannerList.length)] : 'assets/banners/0.jpg';
+                banners.forEach(b => b.style.backgroundImage = `url('${randImg}')`);
             }
         }
     }
@@ -200,6 +200,9 @@ function openRosterBuilder(roster) {
     if (typeof fac === 'string') {
         fac = (typeof FACTIONS !== 'undefined' && FACTIONS.find(f => f.name.toLowerCase() === fac.toLowerCase())) || { name: fac, banner: 'assets/banners/0.jpg' };
         roster.faction = fac;
+    } else if (fac && fac.name && typeof FACTIONS !== 'undefined' && FACTIONS.find(f => f.name.toLowerCase() === fac.name.toLowerCase())) {
+        const cur = FACTIONS.find(f => f.name.toLowerCase() === fac.name.toLowerCase());   // refresh banner/colour saved in older rosters
+        fac = Object.assign({}, fac, { banner: cur.banner, color: cur.color }); roster.faction = fac;
     } else if (!fac || !fac.banner) {
         fac = (fac && typeof FACTIONS !== 'undefined' && FACTIONS.find(f => f.name && f.name.toLowerCase() === fac.name.toLowerCase())) || (typeof FACTIONS !== 'undefined' ? FACTIONS[0] : { name: 'Faction', banner: 'assets/banners/1.jpg' });
         roster.faction = fac;

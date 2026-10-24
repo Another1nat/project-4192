@@ -59,6 +59,14 @@ def faction_name(fac):
     return re.sub(r'^The ', '', fac['name'])
 
 
+def banner(num):
+    """assets/banners/<faction number>.jpg when that picture exists (prompts: BANNER_PROMPTS_GEMINI.md), else the default."""
+    for ext in ('jpg', 'webp', 'png'):
+        if os.path.exists(os.path.join(SITE, 'assets', 'banners', f'{num}.{ext}')):
+            return f'assets/banners/{num}.{ext}'
+    return 'assets/banners/0.jpg'
+
+
 def alliance(num):
     for rng, name in ALLIANCES:
         if num in rng:
@@ -172,7 +180,7 @@ def build():
                 'sources': ['Project 4192 — gametheory/factions/' + f, 'Points: gametheory/scripts/unit_calculator.py'],
                 'rules': rules, 'detachments': detachments(fac, cards, lib, calib), 'datasheets': sheets, 'faq': []}
         json.dump(data, open(os.path.join(SITE, 'data', 'factions', fname + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-        factions_js.append({'id': num, 'group': alliance(num), 'name': fname, 'banner': 'assets/banners/0.jpg', 'color': COLORS.get(num, '#c8a24a')})
+        factions_js.append({'id': num, 'group': alliance(num), 'name': fname, 'banner': banner(num), 'color': COLORS.get(num, '#c8a24a')})
         total_units += len(sheets)
         print(f'  {num:02d} {fname}: {len(sheets)} datasheets, {len(data["detachments"])} detachments')
     # example files go once real factions exist
